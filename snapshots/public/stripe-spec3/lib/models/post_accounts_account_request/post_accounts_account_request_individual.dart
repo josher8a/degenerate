@@ -21,7 +21,7 @@ factory PostAccountsAccountRequestIndividual.fromJson(Map<String, dynamic> json)
   lastNameKana: json['last_name_kana'] as String?,
   lastNameKanji: json['last_name_kanji'] as String?,
   maidenName: json['maiden_name'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   phone: json['phone'] as String?,
   politicalExposure: json['political_exposure'] != null ? PoliticalExposure.fromJson(json['political_exposure'] as String) : null,
   registeredAddress: json['registered_address'] != null ? RegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>) : null,

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compact_response_method_public_body/compact_response_method_public_body_input.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_compaction.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';@immutable final class CompactResponseMethodPublicBody {const CompactResponseMethodPublicBody({required this.model, this.input, this.previousResponseId, this.instructions, this.promptCacheKey, });
 
 factory CompactResponseMethodPublicBody.fromJson(Map<String, dynamic> json) { return CompactResponseMethodPublicBody(
-  model: OneOf3.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),), fromB: (v) => v as String, fromC: (v) => v,),
+  model: OneOf3.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),), fromB: (v) => v as String, fromC: (v) => v, greedy: const {2},),
   input: json['input'] != null ? OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null,
   previousResponseId: json['previous_response_id'] as String?,
   instructions: json['instructions'] as String?,

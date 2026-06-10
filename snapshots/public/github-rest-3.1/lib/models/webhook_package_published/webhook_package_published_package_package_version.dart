@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory WebhookPackagePublishedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersion(
   author: json['author'] != null ? WebhooksRelease1Author.fromJson(json['author'] as Map<String, dynamic>) : null,
-  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,) : null,
+  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
   bodyHtml: json['body_html'] as String?,
   containerMetadata: json['container_metadata'] != null ? PackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,

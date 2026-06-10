@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 
 factory CloudflareImagesBaseImageError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
-        _ when response.statusCode >= 400 && response.statusCode <= 499 => CloudflareImagesBaseImageError$4XX(OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,), response.statusCode),
+        _ when response.statusCode >= 400 && response.statusCode <= 499 => CloudflareImagesBaseImageError$4XX(OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},), response.statusCode),
         _ => CloudflareImagesBaseImageError$Unknown(response.statusCode, response.body),
       };
     } on Object {

@@ -47,7 +47,7 @@ final McpServerPortalApplication2? mcpServerPortalApplication2;
 
 /// At least one variant must be present.
 bool get isValid { return selfHostedApplication2 != null || saaSApplication2 != null || browserSshApplication2 != null || browserVncApplication2 != null || appLauncherApplication2 != null || deviceEnrollmentPermissionsApplication2 != null || browserIsolationPermissionsApplication2 != null || gatewayIdentityProxyEndpointApplication2 != null || bookmarkApplication2 != null || infrastructureApplication2 != null || browserRdpApplication2 != null || mcpServerApplication2 != null || mcpServerPortalApplication2 != null; } 
-Map<String, dynamic> toJson() { return {
+dynamic toJson() { return <String, dynamic>{
   ...?selfHostedApplication2?.toJson(),
   ...?saaSApplication2?.toJson(),
   ...?browserSshApplication2?.toJson(),

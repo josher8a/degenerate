@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: json['author'] != null ? PackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
-  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,) : null,
+  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
   bodyHtml: json['body_html'] as String?,
   containerMetadata: json['container_metadata'] != null ? RegistryPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,

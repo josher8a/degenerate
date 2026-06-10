@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/collection_one_of_object.dart';@immutable final class CollectionOneOfPostResponse {const CollectionOneOfPostResponse({required this.json});
 
 factory CollectionOneOfPostResponse.fromJson(Map<String, dynamic> json) { return CollectionOneOfPostResponse(
-  json: OneOf2.parse(json['json'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),
+  json: OneOf2.parse(json['json'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), greedy: const {0},),
 ); }
 
 final CollectionOneOfObject json;

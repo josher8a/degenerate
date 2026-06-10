@@ -13,7 +13,7 @@ final FirewallCustomResponseVariant1? firewallCustomResponseVariant1;
 
 /// At least one variant must be present.
 bool get isValid { return firewallCustomResponseVariant1 != null; } 
-Map<String, dynamic> toJson() { return {
+dynamic toJson() { return <String, dynamic>{
   ...?firewallCustomResponseVariant1?.toJson(),
 }; } 
 @override bool operator ==(Object other) => identical(this, other) ||

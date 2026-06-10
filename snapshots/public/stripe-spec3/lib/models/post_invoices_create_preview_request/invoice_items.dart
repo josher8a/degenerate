@@ -10,7 +10,7 @@ factory InvoiceItems.fromJson(Map<String, dynamic> json) { return InvoiceItems(
   discountable: json['discountable'] as bool?,
   discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   invoiceitem: json['invoiceitem'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   period: json['period'] != null ? PostInvoiceitemsInvoiceitemRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostInvoiceitemsInvoiceitemRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,

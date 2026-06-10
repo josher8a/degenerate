@@ -29,7 +29,7 @@ final ZonesSslRecommender? zonesSslRecommender;
 
 /// At least one variant must be present.
 bool get isValid { return zonesBase != null || zonesCacheRulesAegis != null || zonesDevelopmentMode != null || zonesCacheRulesOriginH2MaxStreams != null || zonesCacheRulesOriginMaxHttpVersion != null || zonesSchemasBase != null || zonesSslRecommender != null; } 
-Map<String, dynamic> toJson() { return {
+dynamic toJson() { return <String, dynamic>{
   ...?zonesBase?.toJson(),
   ...?zonesCacheRulesAegis?.toJson(),
   ...?zonesDevelopmentMode?.toJson(),

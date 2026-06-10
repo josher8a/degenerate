@@ -20,7 +20,7 @@ factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { retur
   individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   phone: json['phone'] as String?,

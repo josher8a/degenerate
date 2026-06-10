@@ -61,8 +61,8 @@ final TransferReversal? transferReversal;
 
 /// At least one variant must be present.
 bool get isValid { return string != null || applicationFee != null || charge != null || connectCollectionTransfer != null || customerCashBalanceTransaction != null || dispute != null || feeRefund != null || issuingAuthorization != null || issuingDispute != null || issuingTransaction != null || payout != null || refund != null || reserveTransaction != null || taxDeductedAtSource != null || topup != null || transfer != null || transferReversal != null; } 
-Map<String, dynamic> toJson() { return {
-  'string': ?string,
+dynamic toJson() {   if (string != null) return string!;
+return <String, dynamic>{
   ...?applicationFee?.toJson(),
   ...?charge?.toJson(),
   ...?connectCollectionTransfer?.toJson(),

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/circular_multi_level_leaf.dart';import 'package:pub_speakeasy/models/circular_multi_level_root.dart';@immutable final class CircularMultiLevelMiddle {const CircularMultiLevelMiddle({this.level3});
 
 factory CircularMultiLevelMiddle.fromJson(Map<String, dynamic> json) { return CircularMultiLevelMiddle(
-  level3: json['level3'] != null ? OneOf3.parse(json['level3'], fromA: (v) => v as String, fromB: (v) => CircularMultiLevelRoot.fromJson(v as Map<String, dynamic>), fromC: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, CircularMultiLevelMiddle.fromJson(v as Map<String, dynamic>))),) : null,
+  level3: json['level3'] != null ? OneOf3.parse(json['level3'], fromA: (v) => v as String, fromB: (v) => CircularMultiLevelRoot.fromJson(v as Map<String, dynamic>), fromC: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, CircularMultiLevelMiddle.fromJson(v as Map<String, dynamic>))), greedy: const {2},) : null,
 ); }
 
 final CircularMultiLevelLeaf? level3;

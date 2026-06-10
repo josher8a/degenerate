@@ -11,7 +11,7 @@ final AccessSchemasIdentityProvider? accessSchemasIdentityProvider;
 
 /// At least one variant must be present.
 bool get isValid { return accessSchemasIdentityProvider != null; } 
-Map<String, dynamic> toJson() { return {
+dynamic toJson() { return <String, dynamic>{
   ...?accessSchemasIdentityProvider?.toJson(),
 }; } 
 @override bool operator ==(Object other) => identical(this, other) ||

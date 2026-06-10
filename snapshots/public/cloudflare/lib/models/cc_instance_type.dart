@@ -147,8 +147,9 @@ final CcInstanceTypeVariant1? ccInstanceTypeVariant1;
 
 /// At least one variant must be present.
 bool get isValid { return ccInstanceTypeVariant1 != null; } 
-Map<String, dynamic> toJson() { return {
-  if (ccInstanceTypeVariant1 != null) 'ccInstanceTypeVariant1': ccInstanceTypeVariant1!.toJson(),
+dynamic toJson() {   if (ccInstanceTypeVariant1 != null) return ccInstanceTypeVariant1!.toJson();
+return <String, dynamic>{
+
 }; } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CcInstanceType &&

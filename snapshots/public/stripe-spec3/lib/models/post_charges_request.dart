@@ -14,7 +14,7 @@ factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChar
   description: json['description'] as String?,
   destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => DestinationSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   radarOptions: json['radar_options'] != null ? RadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,

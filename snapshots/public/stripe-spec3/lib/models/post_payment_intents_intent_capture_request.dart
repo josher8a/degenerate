@@ -10,7 +10,7 @@ factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> jso
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   finalCapture: json['final_capture'] as bool?,
   hooks: json['hooks'] != null ? Hooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => PaymentDetailsCaptureParams.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,

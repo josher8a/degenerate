@@ -75,7 +75,7 @@ factory IamPolicyWithPermissionGroupsAndResources.fromJson(Map<String, dynamic> 
   effect: IamEffect.fromJson(json['effect'] as String),
   id: IamPolicyIdentifier.fromJson(json['id'] as String),
   permissionGroups: (json['permission_groups'] as List<dynamic>).map((e) => IamPermissionGroup.fromJson(e as Map<String, dynamic>)).toList(),
-  resources: OneOf2.parse(json['resources'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))),),
+  resources: OneOf2.parse(json['resources'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))), greedy: const {0, 1},),
 ); }
 
 /// Allow or deny operations against the resources.

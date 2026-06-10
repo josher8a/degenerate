@@ -11,7 +11,7 @@ factory PostSetupIntentsIntentRequest.fromJson(Map<String, dynamic> json) { retu
   excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? OneOf2.parse(json['excluded_payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => ExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => FlowDirections.fromJson(e as String)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/nullable_typed_object1.dart';import 'package:pub_speakeasy/models/typed_object1.dart';@immutable final class NullableTypedObjectPostResponse {const NullableTypedObjectPostResponse({required this.json});
 
 factory NullableTypedObjectPostResponse.fromJson(Map<String, dynamic> json) { return NullableTypedObjectPostResponse(
-  json: OneOf2.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => v,),
+  json: OneOf2.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => v, greedy: const {1},),
 ); }
 
 final NullableTypedObject1 json;

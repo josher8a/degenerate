@@ -13,7 +13,7 @@ factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansR
   id: json['id'] as String?,
   interval: GetPricesRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
   product: json['product'] != null ? OneOf2.parse(json['product'], fromA: (v) => InlineProductParams.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,

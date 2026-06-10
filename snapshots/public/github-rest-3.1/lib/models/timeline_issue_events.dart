@@ -75,7 +75,7 @@ final StateChangeIssueEvent? stateChangeIssueEvent;
 
 /// At least one variant must be present.
 bool get isValid { return labeledIssueEvent != null || unlabeledIssueEvent != null || milestonedIssueEvent != null || demilestonedIssueEvent != null || renamedIssueEvent != null || reviewRequestedIssueEvent != null || reviewRequestRemovedIssueEvent != null || reviewDismissedIssueEvent != null || lockedIssueEvent != null || addedToProjectIssueEvent != null || movedColumnInProjectIssueEvent != null || removedFromProjectIssueEvent != null || convertedNoteToIssueIssueEvent != null || timelineCommentEvent != null || timelineCrossReferencedEvent != null || timelineCommittedEvent != null || timelineReviewedEvent != null || timelineLineCommentedEvent != null || timelineCommitCommentedEvent != null || timelineAssignedIssueEvent != null || timelineUnassignedIssueEvent != null || stateChangeIssueEvent != null; } 
-Map<String, dynamic> toJson() { return {
+dynamic toJson() { return <String, dynamic>{
   ...?labeledIssueEvent?.toJson(),
   ...?unlabeledIssueEvent?.toJson(),
   ...?milestonedIssueEvent?.toJson(),

@@ -11,7 +11,7 @@ factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { r
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fromSubscription: json['from_subscription'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => (v as num).toInt(), fromB: (v) => StartDateVariant2.fromJson(v as String),) : null,
 ); }

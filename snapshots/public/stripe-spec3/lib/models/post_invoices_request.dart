@@ -94,7 +94,7 @@ factory PostInvoicesRequest.fromJson(Map<String, dynamic> json) { return PostInv
   footer: json['footer'] as String?,
   fromInvoice: json['from_invoice'] != null ? FromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null,
   issuer: json['issuer'] != null ? Issuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   number: json['number'] as String?,
   onBehalfOf: json['on_behalf_of'] as String?,
   paymentSettings: json['payment_settings'] != null ? PostInvoicesInvoiceRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,

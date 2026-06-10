@@ -85,7 +85,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},);
   },
   onError: GetZonesZoneIdLogsRayidsRayIdError.fromResponse,
 );
@@ -128,7 +128,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},);
   },
   onError: GetZonesZoneIdLogsRayidsRayIdError.fromResponse,
 );

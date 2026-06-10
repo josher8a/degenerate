@@ -26,13 +26,14 @@ final List<WorkersKvAny>? listWorkersKvAny;
 
 /// At least one variant must be present.
 bool get isValid { return string != null || $double != null || $int != null || $bool != null || mapStringDynamic != null || listWorkersKvAny != null; } 
-Map<String, dynamic> toJson() { return {
-  'string': ?string,
-  r'$double': ?$double,
-  r'$int': ?$int,
-  r'$bool': ?$bool,
-  'mapStringDynamic': ?mapStringDynamic,
-  'listWorkersKvAny': ?listWorkersKvAny,
+dynamic toJson() {   if (string != null) return string!;
+  if ($double != null) return $double!;
+  if ($int != null) return $int!;
+  if ($bool != null) return $bool!;
+  if (mapStringDynamic != null) return mapStringDynamic;
+  if (listWorkersKvAny != null) return listWorkersKvAny;
+return <String, dynamic>{
+
 }; } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvAny &&

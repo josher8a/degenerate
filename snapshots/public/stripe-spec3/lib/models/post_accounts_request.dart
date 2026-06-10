@@ -102,7 +102,7 @@ factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAcc
   externalAccount: json['external_account'] as String?,
   groups: json['groups'] != null ? Groups.fromJson(json['groups'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? PostAccountsAccountRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   settings: json['settings'] != null ? PostAccountsRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostAccountsRequestType.fromJson(json['type'] as String) : null,

@@ -22,7 +22,7 @@ factory PostCustomersCustomerSubscriptionsRequest.fromJson(Map<String, dynamic> 
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerSubscriptionsRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsRequestItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   offSession: json['off_session'] as bool?,
   paymentBehavior: json['payment_behavior'] != null ? PaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
   paymentSettings: json['payment_settings'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,

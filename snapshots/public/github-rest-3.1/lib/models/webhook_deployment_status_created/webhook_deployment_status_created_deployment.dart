@@ -12,7 +12,7 @@ factory WebhookDeploymentStatusCreatedDeployment.fromJson(Map<String, dynamic> j
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
-  payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,) : null,
+  payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
   performedViaGithubApp: json['performed_via_github_app'] != null ? DeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,

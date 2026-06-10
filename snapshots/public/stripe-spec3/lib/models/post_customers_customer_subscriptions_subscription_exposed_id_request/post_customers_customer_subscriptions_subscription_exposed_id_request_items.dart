@@ -9,7 +9,7 @@ factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems.from
   deleted: json['deleted'] as bool?,
   discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   id: json['id'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostSubscriptionItemsItemRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,

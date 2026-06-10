@@ -8,7 +8,7 @@ factory Web3HostnameIpfsUniversalPathGatewayContentListEntryDetailsResponse5Xx.f
   messages: (json['messages'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? OneOf2.parse(json['result_info'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,) : null,
+  resultInfo: json['result_info'] != null ? OneOf2.parse(json['result_info'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},) : null,
 ); }
 
 /// Example: `[{code: 7003, message: No route for the URI}]`

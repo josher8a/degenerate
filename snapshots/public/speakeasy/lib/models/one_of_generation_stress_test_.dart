@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/one_of_generation_stress_test_/one_of_same_type.dart';@immutable final class OneOfGenerationStressTest {const OneOfGenerationStressTest({required this.oneOfSameType, required this.oneOfFromArrayOfTypes, required this.nullableAny, required this.any, });
 
 factory OneOfGenerationStressTest.fromJson(Map<String, dynamic> json) { return OneOfGenerationStressTest(
-  oneOfSameType: OneOf3.parse(json['oneOfSameType'], fromA: (v) => v as String, fromB: (v) => OneOfSameTypeVariant2.fromJson(v as String), fromC: (v) => v,),
+  oneOfSameType: OneOf3.parse(json['oneOfSameType'], fromA: (v) => v as String, fromB: (v) => OneOfSameTypeVariant2.fromJson(v as String), fromC: (v) => v, greedy: const {2},),
   oneOfFromArrayOfTypes: json['oneOfFromArrayOfTypes'] as String?,
   nullableAny: json['nullableAny'],
   any: json['any'],

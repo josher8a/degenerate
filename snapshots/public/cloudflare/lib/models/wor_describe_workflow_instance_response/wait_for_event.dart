@@ -60,7 +60,7 @@ factory WaitForEvent.fromJson(Map<String, dynamic> json) { return WaitForEvent(
   error: json['error'] != null ? ResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   finished: json['finished'] as bool,
   name: json['name'] as String,
-  output: OneOf4.parse(json['output'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, fromC: (v) => (v as num).toDouble(), fromD: (v) => v as bool,),
+  output: OneOf4.parse(json['output'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, fromC: (v) => (v as num).toDouble(), fromD: (v) => v as bool, greedy: const {0},),
   start: DateTime.parse(json['start'] as String),
   type: WaitForEventType.fromJson(json['type'] as String),
 ); }

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/nullable_one_of_schema_post_response/nullable_one_of_schema_post_response_json.dart';import 'package:pub_speakeasy/models/typed_object1.dart';import 'package:pub_speakeasy/models/typed_object2.dart';@immutable final class NullableOneOfSchemaPostResponse {const NullableOneOfSchemaPostResponse({required this.json});
 
 factory NullableOneOfSchemaPostResponse.fromJson(Map<String, dynamic> json) { return NullableOneOfSchemaPostResponse(
-  json: OneOf3.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>), fromC: (v) => v,),
+  json: OneOf3.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>), fromC: (v) => v, greedy: const {2},),
 ); }
 
 final NullableOneOfSchemaPostResponseJson json;

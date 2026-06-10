@@ -502,9 +502,9 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transpar
 @immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
-  model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v,) : null,
-  images: (json['images'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v, fromB: (v) => v,)).toList(),
-  mask: json['mask'] != null ? OneOf2.parse(json['mask'], fromA: (v) => v, fromB: (v) => v,) : null,
+  model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v, greedy: const {2},) : null,
+  images: (json['images'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v, fromB: (v) => v, greedy: const {0, 1},)).toList(),
+  mask: json['mask'] != null ? OneOf2.parse(json['mask'], fromA: (v) => v, fromB: (v) => v, greedy: const {0, 1},) : null,
   prompt: json['prompt'] as String,
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
   quality: json.containsKey('quality') ? json['quality'] != null ? EditImageBodyJsonParamQuality.fromJson(json['quality'] as String) : null : EditImageBodyJsonParamQuality.auto,

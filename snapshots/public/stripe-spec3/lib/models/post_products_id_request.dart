@@ -10,7 +10,7 @@ factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostP
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   images: json['images'] != null ? OneOf2.parse(json['images'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   marketingFeatures: json['marketing_features'] != null ? OneOf2.parse(json['marketing_features'], fromA: (v) => (v as List<dynamic>).map((e) => MarketingFeaturesVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   name: json['name'] as String?,
   packageDimensions: json['package_dimensions'] != null ? OneOf2.parse(json['package_dimensions'], fromA: (v) => PackageDimensionsSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   shippable: json['shippable'] as bool?,

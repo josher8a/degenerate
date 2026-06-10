@@ -7,7 +7,7 @@ factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Ma
   customerDetails: json['customer_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => ShippingDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 

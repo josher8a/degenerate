@@ -54,7 +54,7 @@ final ConvertedNoteToIssueIssueEvent? convertedNoteToIssueIssueEvent;
 
 /// At least one variant must be present.
 bool get isValid { return labeledIssueEvent != null || unlabeledIssueEvent != null || assignedIssueEvent != null || unassignedIssueEvent != null || milestonedIssueEvent != null || demilestonedIssueEvent != null || renamedIssueEvent != null || reviewRequestedIssueEvent != null || reviewRequestRemovedIssueEvent != null || reviewDismissedIssueEvent != null || lockedIssueEvent != null || addedToProjectIssueEvent != null || movedColumnInProjectIssueEvent != null || removedFromProjectIssueEvent != null || convertedNoteToIssueIssueEvent != null; } 
-Map<String, dynamic> toJson() { return {
+dynamic toJson() { return <String, dynamic>{
   ...?labeledIssueEvent?.toJson(),
   ...?unlabeledIssueEvent?.toJson(),
   ...?assignedIssueEvent?.toJson(),

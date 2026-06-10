@@ -1862,7 +1862,7 @@ factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return
   description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   enabledEvents: (json['enabled_events'] as List<dynamic>).map((e) => EnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
   url: json['url'] as String,
 ); }
 

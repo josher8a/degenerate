@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/entity_with_id.dart';import 'package:pub_speakeasy/models/entity_with_id_and_name.dart';import 'package:pub_speakeasy/models/tricky_to_unmarshal_weak_union_response/tricky_to_unmarshal_weak_union_response_json.dart';@immutable final class TrickyToUnmarshalWeakUnionResponse {const TrickyToUnmarshalWeakUnionResponse({required this.json});
 
 factory TrickyToUnmarshalWeakUnionResponse.fromJson(Map<String, dynamic> json) { return TrickyToUnmarshalWeakUnionResponse(
-  json: OneOf2.parse(json['json'], fromA: (v) => EntityWithId.fromJson(v as Map<String, dynamic>), fromB: (v) => EntityWithIdAndName.fromJson(v as Map<String, dynamic>),),
+  json: OneOf2.parse(json['json'], fromA: (v) => EntityWithId.fromJson(v as Map<String, dynamic>), fromB: (v) => EntityWithIdAndName.fromJson(v as Map<String, dynamic>), greedy: const {0},),
 ); }
 
 final TrickyToUnmarshalWeakUnionResponseJson json;
