@@ -1492,6 +1492,105 @@ void main() {
     );
 
     test(
+      'duplicate implicit discriminator keys keep last-wins and warn',
+      () {
+        // Two variants declaring the same discriminator enum value is a spec
+        // ambiguity. Pre-batch-25 behavior was last-wins; deployed clients
+        // depend on which class parses, so preserve it and surface a
+        // warning instead of silently flipping to first-wins.
+        final schemas = <String, dynamic>{
+          'Item': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/InputMessage'},
+              {r'$ref': '#/components/schemas/OutputMessage'},
+            ],
+            'discriminator': {'propertyName': 'type'},
+          },
+          'InputMessage': {
+            'type': 'object',
+            'properties': {
+              'type': {
+                'type': 'string',
+                'enum': ['message'],
+              },
+            },
+            'required': ['type'],
+          },
+          'OutputMessage': {
+            'type': 'object',
+            'properties': {
+              'type': {
+                'type': 'string',
+                'enum': ['message'],
+              },
+            },
+            'required': ['type'],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final union = mapper.typeRegistry['Item']! as IrDiscriminatedUnion;
+        expect(
+          (union.mapping['message']! as IrTypeRef).name,
+          equals('OutputMessage'),
+          reason: 'last declared variant wins, matching pre-existing behavior',
+        );
+        expect(
+          mapper.warnings.join('\n'),
+          contains('message'),
+          reason: 'duplicate discriminator value should warn',
+        );
+      },
+    );
+
+    test(
+      'explicit mapping entries win over implicit duplicates',
+      () {
+        final schemas = <String, dynamic>{
+          'Item': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/A'},
+              {r'$ref': '#/components/schemas/B'},
+            ],
+            'discriminator': {
+              'propertyName': 'type',
+              'mapping': {
+                'message': '#/components/schemas/A',
+              },
+            },
+          },
+          'A': {
+            'type': 'object',
+            'properties': {
+              'type': {'type': 'string'},
+            },
+            'required': ['type'],
+          },
+          'B': {
+            'type': 'object',
+            'properties': {
+              'type': {
+                'type': 'string',
+                'enum': ['message'],
+              },
+            },
+            'required': ['type'],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final union = mapper.typeRegistry['Item']! as IrDiscriminatedUnion;
+        // B's implicit enum value collides with the explicit entry — the
+        // explicit mapping must not be overwritten.
+        expect((union.mapping['message']! as IrTypeRef).name, equals('A'));
+      },
+    );
+
+    test(
       'partial discriminator mapping keeps unmapped oneOf variants',
       () {
         // Per OAS, an explicit mapping only overrides/adds to the implicit

@@ -922,7 +922,11 @@ final class IrMapper {
     }
 
     // Infer implicit mapping entries from oneOf variants not covered by the
-    // explicit mapping (all of them when no mapping is present).
+    // explicit mapping (all of them when no mapping is present). Explicit
+    // entries always win; among implicit duplicates the LAST declared
+    // variant wins (long-standing behavior deployed clients depend on) with
+    // a warning surfacing the spec ambiguity.
+    final explicitKeys = mapping.keys.toSet();
     for (var i = 0; i < oneOf.length; i++) {
       final variant = oneOf[i];
       if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
@@ -942,12 +946,25 @@ final class IrMapper {
               ) ??
               key;
         }
-        if (!mapping.containsKey(key)) {
-          mapping[key] = IrTypeRef(dartRefName);
+        if (explicitKeys.contains(key)) continue;
+        if (mapping.containsKey(key)) {
+          _warnings.add(
+            'Union $unionName: duplicate discriminator value "$key" — '
+            'keeping the last declared variant ($dartRefName).',
+          );
         }
+        mapping[key] = IrTypeRef(dartRefName);
       } else if (variant is Map<String, dynamic> &&
           (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
         final hint = _variantHint(unionName, variant, i);
+        // Derive the mapping key from the discriminator enum value if
+        // available — BEFORE lowering, so an explicit-mapping collision
+        // doesn't register an orphan type.
+        final enumKey = _discriminatorEnumValue(
+          variant['properties'] as Map<String, dynamic>?,
+          propertyName,
+        );
+        if (enumKey != null && explicitKeys.contains(enumKey)) continue;
         final lowered = lowerInlineSchema(
           variant,
           nameHint: hint,
@@ -956,19 +973,18 @@ final class IrMapper {
           // sealed base's `String get <disc>` and ref-variant payloads.
           discriminatorProperty: propertyName,
         );
-        // Derive the mapping key from the discriminator enum value if
-        // available, otherwise use the type name.
         final key =
-            _discriminatorEnumValue(
-              variant['properties'] as Map<String, dynamic>?,
-              propertyName,
-            ) ??
-            (lowered is IrObject ? lowered.name : hint);
-        if (!mapping.containsKey(key)) {
-          mapping[key] = lowered is IrObject
-              ? IrTypeRef(lowered.name)
-              : lowered;
+            enumKey ?? (lowered is IrObject ? lowered.name : hint);
+        if (explicitKeys.contains(key)) continue;
+        if (mapping.containsKey(key)) {
+          _warnings.add(
+            'Union $unionName: duplicate discriminator value "$key" — '
+            'keeping the last declared variant.',
+          );
         }
+        mapping[key] = lowered is IrObject
+            ? IrTypeRef(lowered.name)
+            : lowered;
       }
     }
 
