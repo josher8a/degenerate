@@ -114,6 +114,11 @@ final class UntaggedUnionEmitter {
     );
   }
 
+  /// fromJson for unions with at least one non-primitive variant. Accepts
+  /// any JSON value and dispatches every variant kind in declaration order:
+  /// object/ref variants via `canParse`, enums via wire-type + membership
+  /// (unknown values fall through), primitives/lists/maps via wire-type
+  /// checks. Anything unclaimed lands in `$Unknown`.
   Constructor _buildObjectFromJson() {
     final checks = <String>[];
     final seenTypes = <String>{};
@@ -126,17 +131,96 @@ final class UntaggedUnionEmitter {
       if (!seenTypes.add(typeName)) continue;
       final safeType = safeTypeName(typeName);
       final className = '${union.name}${toPascalCase(safeType)}';
+      final resolved = ctx.resolve(variant);
       if (variant is IrObject || variant is IrTypeRef) {
-        final refName = typeName;
+        if (resolved is IrEnum) {
+          checks.add(_enumCheck(resolved, typeName, className));
+          continue;
+        }
         if (ctx.isUnionType(variant)) {
-          checks.add('  return $className($refName.fromJson(json));');
-          hasUnconditionalReturn = true;
-        } else {
           checks.add(
-            '  if ($refName.canParse(json)) {\n'
-            '    return $className($refName.fromJson(json));\n'
+            '  if (json is Map<String, dynamic>) {\n'
+            '    return $className($typeName.fromJson(json));\n'
             '  }',
           );
+          continue;
+        }
+        checks.add(
+          '  if (json is Map<String, dynamic> && $typeName.canParse(json)) {\n'
+          '    return $className($typeName.fromJson(json));\n'
+          '  }',
+        );
+      } else if (variant is IrEnum) {
+        checks.add(_enumCheck(variant, variant.name, className));
+      } else if (variant is IrList) {
+        // `json is List` promotes — decode elements off the promoted value.
+        final elem = ctx.fromJson(
+          variant.items,
+          'e',
+          isOptional: variant.items.isNullable,
+        );
+        final tearoff = asTearoff(elem, 'e');
+        final mapper = tearoff != null
+            ? 'json.map($tearoff).toList()'
+            : 'json.map((e) => $elem).toList()';
+        checks.add(
+          '  if (json is List) {\n'
+          '    return $className($mapper);\n'
+          '  }',
+        );
+      } else if (variant is IrMap) {
+        final valueExpr = ctx.fromJson(
+          variant.values,
+          'v',
+          isOptional: variant.values.isNullable,
+        );
+        final decode = valueExpr == 'v'
+            ? 'json'
+            : 'json.map((k, v) => MapEntry(k, $valueExpr))';
+        checks.add(
+          '  if (json is Map<String, dynamic>) {\n'
+          '    return $className($decode);\n'
+          '  }',
+        );
+      } else if (variant is IrPrimitive) {
+        switch (variant.kind) {
+          case PrimitiveKind.dynamic_:
+            checks.add('  return $className(json);');
+            hasUnconditionalReturn = true;
+          case PrimitiveKind.string:
+            checks.add('  if (json is String) return $className(json);');
+          case PrimitiveKind.int:
+            checks.add('  if (json is int) return $className(json);');
+          case PrimitiveKind.double:
+            checks.add(
+              '  if (json is num) return $className(json.toDouble());',
+            );
+          case PrimitiveKind.num:
+            checks.add('  if (json is num) return $className(json);');
+          case PrimitiveKind.bool:
+            checks.add('  if (json is bool) return $className(json);');
+          // Conversion expressions are written against the promoted `json`
+          // (no redundant casts).
+          case PrimitiveKind.duration:
+            checks.add(
+              '  if (json is num) return $className(Duration(milliseconds: json.toInt()));',
+            );
+          case PrimitiveKind.dateTime:
+            checks.add(
+              '  if (json is String) return $className(DateTime.parse(json));',
+            );
+          case PrimitiveKind.uri:
+            checks.add(
+              '  if (json is String) return $className(Uri.parse(json));',
+            );
+          case PrimitiveKind.bigInt:
+            checks.add(
+              '  if (json is String) return $className(BigInt.parse(json));',
+            );
+          case PrimitiveKind.bytes:
+            checks.add(
+              '  if (json is String) return $className(base64Decode(json));',
+            );
         }
       }
     }
@@ -153,11 +237,25 @@ final class UntaggedUnionEmitter {
           Parameter(
             (p) => p
               ..name = 'json'
-              ..type = refer('Map<String, dynamic>'),
+              ..type = refer('Object?'),
           ),
         )
         ..body = Code(checks.join('\n')),
     );
+  }
+
+  /// Enum variant dispatch: wire-type check + membership rejection so
+  /// unknown values fall through to later variants or `$Unknown`.
+  String _enumCheck(IrEnum enumType, String typeName, String className) {
+    final (wireCheck, arg) = switch (enumType.valueKind) {
+      PrimitiveKind.int => ('json is num', 'json.toInt()'),
+      PrimitiveKind.double => ('json is num', 'json.toDouble()'),
+      _ => ('json is String', 'json'),
+    };
+    return '  if ($wireCheck) {\n'
+        '    final v = $typeName.fromJson($arg);\n'
+        '    if (!v.isUnknown) return $className(v);\n'
+        '  }';
   }
 
   Class _buildVariantClass(IrType variant) {

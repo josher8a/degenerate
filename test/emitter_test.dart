@@ -446,6 +446,45 @@ void main() {
         expect(source, isNot(contains('v as String)')));
       });
 
+      test(
+          'list of refs to a nullable OneOf union matches the declared '
+          'element type', () {
+        // The element TypeRef itself is NOT nullable (lowering does not
+        // propagate the component's nullable onto refs), so the declared
+        // type is List<Nu>. The decoder must not null-guard based on the
+        // resolved union's nullability — that produces List<OneOf2<...>?>
+        // against a List<Nu> declaration, which does not compile.
+        const union = IrUntaggedUnion(
+          'Nu',
+          [
+            IrPrimitive(PrimitiveKind.string),
+            IrPrimitive(PrimitiveKind.int),
+          ],
+          isNullable: true,
+        );
+        const model = IrObject(
+          'Holder',
+          [
+            IrField(
+              'items',
+              'items',
+              IrList(IrTypeRef('Nu')),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['items'],
+        );
+        final specs = const ModelEmitter(
+          model,
+          ctx: EmitContext({'Nu': union}),
+        ).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('final List<Nu> items;'));
+        expect(source, isNot(contains('e == null ? null :')));
+      });
+
       test('fromJson null-guards List of nullable ints', () {
         const model = IrObject(
           'Series',
@@ -4146,6 +4185,33 @@ void main() {
   // ─── analyzeApiImports ───────────────────────────────────────
 
   group('analyzeApiImports', () {
+    test('stops at an empty-content success response, mirroring the emitter',
+        () {
+      // The emitter treats an existing 2xx with no content as void and
+      // never deserializes the later 2XX body — importing its type would
+      // trip unused_import.
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getThing',
+          'getThing',
+          HttpMethod.get,
+          '/thing',
+          responses: {
+            200: IrResponse(),
+            kStatusRange2xx: IrResponse(
+              content: {
+                'application/json': IrMediaType(IrTypeRef('Thing')),
+              },
+            ),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.referencedTypes, isNot(contains('Thing')));
+    });
+
     test('collects types from operation parameters', () {
       const api = IrApi('TestApi', [
         IrOperation(
@@ -4369,6 +4435,26 @@ void main() {
       );
     });
 
+    test('default-response variant suffix is identifier-safe for collections',
+        () {
+      // The -1 (default) variant suffix embeds the body's type name; a
+      // collection type renders as List<Err?> which must be sanitized
+      // before becoming part of a class name.
+      const listBody = IrList(IrTypeRef('RangeError_', isNullable: true));
+      final lib = emitErrorUnionLibrary(
+        className: 'GetAError',
+        statusErrors: {
+          -1: (irTypeName(listBody), listBody),
+        },
+        ctx: EmitContext.empty,
+        packageName: 'pkg',
+        typeToFile: {'RangeError_': 'range_error_'},
+      );
+      final source = emitRaw(lib);
+      expect(source, isNot(contains(r'GetAError$List<')));
+      expect(source, contains(r'GetAError$ListRangeError_'));
+    });
+
     test('range variant exposes the actual response status code', () {
       final lib = emitErrorUnionLibrary(
         className: 'CreateJobError',
@@ -4384,6 +4470,109 @@ void main() {
       // default-response variant — not a hardcoded sentinel.
       expect(source, isNot(contains('=> -5')));
       expect(source, contains(r'CreateJobError$5XX('));
+    });
+  });
+
+  group('mixed sealed-union fromJson dispatch', () {
+    test('dispatches enum, primitive, list, and object variants', () {
+      // A self-referencing union (list of self) is not OneOf-eligible, so it
+      // becomes a sealed class. Its fromJson previously only dispatched
+      // object variants — string/list payloads fell through to $Unknown.
+      const widget = IrObject(
+        'Widget',
+        [
+          IrField(
+            'id',
+            'id',
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
+        ],
+        requiredFields: ['id'],
+      );
+      const union = IrUntaggedUnion('Setting', [
+        IrEnum('SettingMode', ['on', 'off']),
+        IrPrimitive(PrimitiveKind.num),
+        IrTypeRef('Widget'),
+        IrList(IrTypeRef('Setting')),
+      ]);
+      final specs = const UntaggedUnionEmitter(
+        union,
+        ctx: EmitContext({'Widget': widget, 'Setting': union}),
+      ).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      // Accepts any JSON value, not only maps.
+      expect(source, contains('fromJson(Object? json)'));
+      // Enum variant: wire-type check + membership rejection so unknown
+      // strings can fall through.
+      expect(source, contains('json is String'));
+      expect(source, contains('isUnknown'));
+      // Primitive variant.
+      expect(source, contains('json is num'));
+      // List variant.
+      expect(source, contains('json is List'));
+      // Object variant still guarded by canParse, now with a map check.
+      expect(
+        source,
+        contains('json is Map<String, dynamic> && Widget.canParse(json)'),
+      );
+    });
+
+    test('all-object unions keep canParse chains', () {
+      const a = IrObject(
+        'A',
+        [IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true)],
+        requiredFields: ['x'],
+      );
+      const union = IrUntaggedUnion('U', [
+        IrTypeRef('A'),
+        IrList(IrTypeRef('U')),
+      ]);
+      final specs = const UntaggedUnionEmitter(
+        union,
+        ctx: EmitContext({'A': a, 'U': union}),
+      ).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+      expect(source, contains('A.canParse(json)'));
+      expect(source, contains('json is List'));
+    });
+  });
+
+  group('path parameter names with escapable characters', () {
+    test(r'a path param named with $ still substitutes', () {
+      const api = IrApi('ThingsApi', [
+        IrOperation(
+          'getThing',
+          'getThing',
+          HttpMethod.get,
+          r'/x/{a$b}',
+          parameters: [
+            IrParameter(
+              r'a$b',
+              r'a$b',
+              ParameterLocation.path,
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final specs = const ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      // The placeholder must be substituted with the encoded argument —
+      // escaping the path before matching breaks the lookup and silently
+      // drops the parameter from the request.
+      expect(source, contains('Uri.encodeComponent('));
+      expect(source, isNot(contains(r'{a\$b}')));
     });
   });
 

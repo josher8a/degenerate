@@ -287,6 +287,42 @@ void main() {
     }));
   });
 
+  test('recursive mixed oneOf compiles and round-trips all wire shapes',
+      () async {
+    // oneOf [string, array<self>, map<self>] — self-referencing, so it
+    // emits as a sealed class. All three wire shapes must parse to typed
+    // variants and round-trip (previously string/array fell to $Unknown
+    // or threw on the Map cast).
+    await generateAndAnalyze(
+      _specWith({
+        'RecValue': {
+          'oneOf': [
+            {'type': 'string'},
+            {
+              'type': 'array',
+              'items': {r'$ref': '#/components/schemas/RecValue'},
+            },
+            {
+              'type': 'object',
+              'additionalProperties': {
+                r'$ref': '#/components/schemas/RecValue',
+              },
+            },
+          ],
+        },
+        'Holder': {
+          'type': 'object',
+          'properties': {
+            'value': {r'$ref': '#/components/schemas/RecValue'},
+          },
+          'required': ['value'],
+        },
+      }),
+      name: 'rec_mixed',
+      roundtrip: true,
+    );
+  });
+
   test('adversarial spec strings cannot inject source code', () async {
     // Every spec-controlled string that flows into generated source:
     // descriptions/examples (CR injection), paths, media type keys,

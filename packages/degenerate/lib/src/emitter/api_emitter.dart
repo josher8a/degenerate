@@ -520,9 +520,15 @@ final class ApiEmitter {
   /// covers.
   String? _sharedJsonDeserialize(IrType type) {
     return switch (type) {
-      IrList(:final items) =>
-        'final json = jsonDecode(response.body) as List<dynamic>;\n'
-            '    return json.map((e) => ${ctx.fromJson(items, 'e', isOptional: items.isNullable)}).toList();',
+      IrList(:final items) => () {
+        final elem = ctx.fromJson(items, 'e', isOptional: items.isNullable);
+        final tearoff = asTearoff(elem, 'e');
+        final mapper = tearoff != null
+            ? 'json.map($tearoff).toList()'
+            : 'json.map((e) => $elem).toList()';
+        return 'final json = jsonDecode(response.body) as List<dynamic>;\n'
+            '    return $mapper;';
+      }(),
       IrMap(:final values) => () {
         final valueExpr = ctx.fromJson(values, 'v', isOptional: values.isNullable);
         if (valueExpr == 'v') {

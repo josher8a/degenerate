@@ -96,7 +96,8 @@ final class RoundtripEmitter {
       if (unionVariants != null && !isOneOfType(type)) {
         final allPrimitive = unionVariants.every((v) => v is IrPrimitive);
         if (!allPrimitive) {
-          final decode = '$name.fromJson(json! as Map<String, dynamic>)';
+          // The sealed fromJson accepts any JSON value (Object?).
+          final decode = '$name.fromJson(json)';
           final encode = '(value! as $name).toJson()';
           var any = false;
           for (var k = 0; k < unionVariants.length; k++) {
@@ -329,19 +330,48 @@ final class RoundtripEmitter {
   }
 
   /// Whether variant [k] is provably reclaimed by the sealed class's
-  /// `canParse`-based first-match dispatch. Returns false (stops emitting
-  /// further fixtures) when a union-type variant is encountered — it
-  /// swallows all remaining input unconditionally.
+  /// first-match dispatch. Returns false (stops emitting further fixtures)
+  /// when a union-type variant is encountered (it swallows all map input)
+  /// or when an earlier non-object variant's wire-type check could claim
+  /// [k]'s sample.
   bool _canParseReclaims(List<IrType> variants, int k) {
     final vk = _effectiveSampleType(variants[k]);
     for (var j = 0; j < k; j++) {
       final vj = _overlap.resolve(variants[j]);
       if (_ctx.isUnionType(vj)) return false;
-      if (vj is! IrObject && vj is! IrTypeRef) continue;
+      if (vj is! IrObject && vj is! IrTypeRef) {
+        // The mixed-union dispatch claims by wire type for primitive,
+        // enum, list, and map variants. Only continue when [k]'s sample
+        // cannot match [j]'s wire-type check.
+        final wj = _wireKind(vj);
+        final wk = _wireKind(vk);
+        if (wj == '*' || wk == '*' || wj == wk) return false;
+        continue;
+      }
       if (!_overlap.canParseRejectsK(_overlap.resolve(variants[j]), vk)) return false;
     }
     return true;
   }
+
+  /// Coarse JSON wire kind for dispatch-claim analysis: 's'tring,
+  /// 'n'umber, 'b'ool, 'l'ist, 'm'ap, or '*' (claims/matches anything).
+  String _wireKind(IrType t) => switch (_overlap.resolve(t)) {
+    IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.dynamic_ => '*',
+      PrimitiveKind.int ||
+      PrimitiveKind.double ||
+      PrimitiveKind.num ||
+      PrimitiveKind.duration => 'n',
+      PrimitiveKind.bool => 'b',
+      _ => 's',
+    },
+    IrEnum(:final valueKind) =>
+      valueKind == PrimitiveKind.int || valueKind == PrimitiveKind.double
+          ? 'n'
+          : 's',
+    IrList() => 'l',
+    _ => 'm',
+  };
 
   /// The concrete type whose shape `_sampleLiteral` actually produces for [t]:
   /// a union samples as its first toJson-safe variant; a discriminated union as

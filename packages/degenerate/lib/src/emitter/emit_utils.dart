@@ -202,7 +202,7 @@ String? _simpleCastFromJson(
       _ => null, // needs null-check wrapper
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>?)?.map((e) => ${_elementFromJson(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>?)?${_listMapSuffix(items, ctx, resolving)}',
     IrMap(:final values) =>
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>?'
@@ -211,10 +211,27 @@ String? _simpleCastFromJson(
   };
 }
 
+/// `.map(...).toList()` suffix for decoding list elements, preferring a
+/// tearoff when the element expression is a simple call (`X.fromJson`).
+String _listMapSuffix(
+  IrType items,
+  EmitContext ctx,
+  Set<String>? resolving,
+) {
+  final elem = _elementFromJson(items, 'e', ctx: ctx, resolving: resolving);
+  final tearoff = _asTearoff(elem, 'e');
+  if (tearoff != null) return '.map($tearoff).toList()';
+  return '.map((e) => $elem).toList()';
+}
+
 /// fromJson expression for a collection element of [type], null-guarding
 /// when the element type itself is nullable (`List<String?>`,
 /// `Map<String, Model?>`): the non-null builder's casts would throw on a
 /// null element.
+///
+/// The guard keys off [type]'s OWN nullability — the same flag the declared
+/// Dart element type uses. Guarding off the resolved target's nullability
+/// would produce a nullable mapper against a non-nullable declaration.
 String _elementFromJson(
   IrType type,
   String accessor, {
@@ -247,15 +264,19 @@ bool _isIdentityMapValue(IrType type) =>
 
 /// If [expr] is a simple function call `funcName(accessor)`, returns the
 /// function name for use as a tearoff. Returns null otherwise.
+String? asTearoff(String expr, String accessor) => _asTearoff(expr, accessor);
+
 String? _asTearoff(String expr, String accessor) {
-  // Match pattern: identifier(accessor) — no dots, no chaining.
+  // Match pattern: identifier(accessor) — allows dotted names so static
+  // method and named-constructor tearoffs (`X.fromJson`) qualify.
   if (!expr.endsWith('($accessor)')) return null;
   final funcName = expr.substring(0, expr.length - accessor.length - 2);
   if (funcName.isEmpty) return null;
-  // Must be a simple identifier (no dots, spaces, etc.)
-  if (!_simpleIdent.hasMatch(funcName)) return null;
+  if (!_dottedIdent.hasMatch(funcName)) return null;
   return funcName;
 }
+
+final _dottedIdent = RegExp(r'^[a-zA-Z_$][\w$]*(\.[a-zA-Z_$][\w$]*)*$');
 
 /// Core non-null fromJson expression for a given type.
 String _buildFromJsonNonNull(
@@ -275,7 +296,7 @@ String _buildFromJsonNonNull(
       _ => '$name.fromJson($accessor as String)',
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>).map((e) => ${_elementFromJson(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>)${_listMapSuffix(items, ctx, resolving)}',
     IrMap(:final values) =>
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>'
@@ -283,15 +304,19 @@ String _buildFromJsonNonNull(
     IrUntaggedUnion(:final variants) || IrAnyOf(:final variants)
         when isOneOfEligible(variants) =>
       buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
-    IrUntaggedUnion(:final name, :final variants) =>
-      variants.every((v) => v is IrPrimitive)
-          ? '$name.fromJson($accessor)'
-          : '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
+    // Sealed untagged unions accept any JSON value (Object?) — both the
+    // all-primitive and mixed fromJson constructors dispatch on wire type.
+    IrUntaggedUnion(:final name) => '$name.fromJson($accessor)',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
     // Cycle-detected OneOf typedef: use generated parse helper function.
     IrTypeRef(:final name) when _isOneOfInRegistry(name, ctx) =>
       'parse$name($accessor)',
+    // Ref to a sealed (non-typedef) untagged union: its fromJson accepts
+    // any JSON value — a Map cast would throw on string/list payloads.
+    IrTypeRef(:final name)
+        when ctx.typeRegistry[name] is IrUntaggedUnion =>
+      '$name.fromJson($accessor)',
     // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
     IrObject(:final name) ||
     IrTypeRef(:final name) ||
@@ -495,8 +520,15 @@ String buildOneOfParseCode(
     final branchResolving = resolving != null
         ? Set<String>.from(resolving)
         : null;
+    final body = _buildFromJsonNonNull(
+      variant,
+      'v',
+      ctx: ctx,
+      resolving: branchResolving,
+    );
+    final tearoff = _asTearoff(body, 'v');
     args.add(
-      'from${_oneOfLetters[i]}: (v) => ${_buildFromJsonNonNull(variant, 'v', ctx: ctx, resolving: branchResolving)}',
+      'from${_oneOfLetters[i]}: ${tearoff ?? '(v) => $body'}',
     );
   }
 
@@ -510,7 +542,6 @@ String variantClassName(String baseName, String variantKey) {
   return '$baseName${toPascalCase(variantKey)}';
 }
 
-final _simpleIdent = RegExp(r'^[a-zA-Z_]\w*$');
 final _typeNameUnsafe = RegExp(r'[<>,?\s]');
 final _bareAngleBrackets = RegExp('<([^>]+)>');
 final _bareBrackets = RegExp(r'\[([^\]]+)\](?!\()');
