@@ -612,8 +612,10 @@ final class ApiEmitter {
       return;
     }
 
-    final guardStart = p.isRequired ? null : 'if (${p.dartName} != null) {';
-    if (guardStart != null) buf.writeln(guardStart);
+    // Required-but-nullable params (nullable: true in the spec) still carry
+    // null at runtime — guard whenever the declared type is nullable.
+    final needsGuard = !p.isRequired || p.type.isNullable;
+    if (needsGuard) buf.writeln('if (${p.dartName} != null) {');
     final accessor = p.dartName;
 
     switch (p.type) {
@@ -634,7 +636,7 @@ final class ApiEmitter {
         _writeSimpleQueryListEntry(buf, p, _queryScalarExpr(p.type, accessor));
     }
 
-    if (guardStart != null) buf.writeln('}');
+    if (needsGuard) buf.writeln('}');
   }
 
   void _writeSimpleQueryMapEntry(StringBuffer buf, IrParameter p) {
