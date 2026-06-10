@@ -192,7 +192,12 @@ return execute(
 Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueObject({Pet? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
-queryParametersList.add(ApiQueryParameter(name: 'query_object', value: queryObject.toString()));
+if (queryObject.id case final id$?) { queryParametersList.add(ApiQueryParameter(name: 'id', value: id$.toString())); }
+queryParametersList.add(ApiQueryParameter(name: 'name', value: queryObject.name));
+if (queryObject.category case final category$?) { queryParametersList.add(ApiQueryParameter(name: 'category', value: category$.toString())); }
+queryParametersList.add(ApiQueryParameter(name: 'photoUrls', value: queryObject.photoUrls.toString()));
+if (queryObject.tags case final tags$?) { queryParametersList.add(ApiQueryParameter(name: 'tags', value: tags$.toString())); }
+if (queryObject.status case final status$?) { queryParametersList.add(ApiQueryParameter(name: 'status', value: status$.toJson())); }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -219,7 +224,11 @@ return execute(
 Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueObjectAllOf({DataQuery? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
-queryParametersList.add(ApiQueryParameter(name: 'query_object', value: queryObject.toString()));
+if (queryObject.id case final id$?) { queryParametersList.add(ApiQueryParameter(name: 'id', value: id$.toString())); }
+if (queryObject.outcomes case final outcomes$?) { queryParametersList.add(ApiQueryParameter(name: 'outcomes', value: outcomes$.toString())); }
+if (queryObject.suffix case final suffix$?) { queryParametersList.add(ApiQueryParameter(name: 'suffix', value: suffix$)); }
+if (queryObject.text case final text$?) { queryParametersList.add(ApiQueryParameter(name: 'text', value: text$)); }
+if (queryObject.date case final date$?) { queryParametersList.add(ApiQueryParameter(name: 'date', value: date$.toIso8601String())); }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -246,7 +255,12 @@ return execute(
 Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObject({Pet? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
-queryParametersList.add(ApiQueryParameter(name: 'query_object', value: queryObject.toString()));
+if (queryObject.id case final id$?) { queryParameters['query_object[id]'] = id$.toString(); }
+queryParameters['query_object[name]'] = queryObject.name;
+if (queryObject.category case final category$?) { queryParameters['query_object[category]'] = category$.toString(); }
+queryParameters['query_object[photoUrls]'] = queryObject.photoUrls.toString();
+if (queryObject.tags case final tags$?) { queryParameters['query_object[tags]'] = tags$.toString(); }
+if (queryObject.status case final status$?) { queryParameters['query_object[status]'] = status$.toJson(); }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -303,7 +317,12 @@ return execute(
 Future<ApiResult<String, Never>> testQueryStyleJsonSerializationObject({Pet? jsonSerializedObjectRefStringQuery, List<Pet>? jsonSerializedObjectArrayRefStringQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (jsonSerializedObjectRefStringQuery != null) {
-queryParametersList.add(ApiQueryParameter(name: 'json_serialized_object_ref_string_query', value: jsonSerializedObjectRefStringQuery.toString()));
+if (jsonSerializedObjectRefStringQuery.id case final id$?) { queryParametersList.add(ApiQueryParameter(name: 'id', value: id$.toString())); }
+queryParametersList.add(ApiQueryParameter(name: 'name', value: jsonSerializedObjectRefStringQuery.name));
+if (jsonSerializedObjectRefStringQuery.category case final category$?) { queryParametersList.add(ApiQueryParameter(name: 'category', value: category$.toString())); }
+queryParametersList.add(ApiQueryParameter(name: 'photoUrls', value: jsonSerializedObjectRefStringQuery.photoUrls.toString()));
+if (jsonSerializedObjectRefStringQuery.tags case final tags$?) { queryParametersList.add(ApiQueryParameter(name: 'tags', value: tags$.toString())); }
+if (jsonSerializedObjectRefStringQuery.status case final status$?) { queryParametersList.add(ApiQueryParameter(name: 'status', value: status$.toJson())); }
 }
 if (jsonSerializedObjectArrayRefStringQuery != null) {
 for (final item in jsonSerializedObjectArrayRefStringQuery) {
