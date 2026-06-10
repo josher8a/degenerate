@@ -558,12 +558,21 @@ String escapeDocComment(String line) {
 /// Regex matching a fenced code block opening without a language specifier.
 final _bareCodeFence = RegExp(r'^(`{3,})$');
 
+/// Matches any line break Dart's scanner recognizes: `\r\n`, `\r`, or `\n`.
+/// A bare `\r` surviving into a `///` line would terminate the comment and
+/// turn the rest of the spec string into live source code.
+final _lineBreak = RegExp(r'\r\n?|\n');
+
+/// Collapse line breaks so spec-controlled text stays inside a single-line
+/// `//` comment — a raw `\r`/`\n` would end the comment and inject source.
+String sanitizeCommentText(String text) => text.replaceAll(_lineBreak, ' ');
+
 /// Format a description string as `///` doc comment lines.
 ///
 /// Splits on newlines, trims trailing whitespace, and escapes HTML-like tags.
 /// Adds a `text` language hint to fenced code blocks that lack one.
 List<String> formatDocComment(String description) {
-  return description.split('\n').map((l) {
+  return description.split(_lineBreak).map((l) {
     final trimmed = l.trimRight();
     // Add language to bare fenced code blocks (``` or ```` without language).
     final fenceMatch = _bareCodeFence.firstMatch(trimmed);

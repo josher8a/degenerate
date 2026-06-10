@@ -104,7 +104,7 @@ class DiscriminatedUnionEmitter {
     final cases = union.mapping.entries
         .map((e) {
           final className = _variantClassName(e.key, e.value);
-          return "  '${e.key}' => $className.fromJson(json),";
+          return '  ${dartStringLiteral(e.key)} => $className.fromJson(json),';
         })
         .join('\n');
 
@@ -120,10 +120,10 @@ class DiscriminatedUnionEmitter {
           ),
         )
         ..docs.add(
-          '/// Deserialize from JSON, dispatching on the `$_discJsonKey` discriminator.',
+          '/// Deserialize from JSON, dispatching on the `${sanitizeCommentText(_discJsonKey)}` discriminator.',
         )
         ..body = Code(
-          "return switch (json['$_discJsonKey']) {\n"
+          'return switch (json[${dartStringLiteral(_discJsonKey)}]) {\n'
           '$cases\n'
           '  _ => $unknownClassName(json),\n'
           '};',
@@ -170,7 +170,9 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return json['$_discJsonKey'] as String? ?? '';"),
+              ..body = Code(
+                "return json[${dartStringLiteral(_discJsonKey)}] as String? ?? '';",
+              ),
           ),
         )
         ..methods.add(
@@ -240,15 +242,17 @@ class DiscriminatedUnionEmitter {
 
     final fromJsonArgs = fields
         .map((f) {
-          final accessor = "json['${f.originalName}']";
+          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
           final isOptional = !f.isRequired;
           return '  ${f.name}: ${buildFromJsonCode(f.type, accessor, isOptional: isOptional)},';
         })
         .join('\n');
 
-    final toJsonEntries = <String>["  '$_discJsonKey': $_discDartName,"];
+    final toJsonEntries = <String>[
+      '  ${dartStringLiteral(_discJsonKey)}: $_discDartName,',
+    ];
     for (final f in fields) {
-      final key = "'${f.originalName}'";
+      final key = dartStringLiteral(f.originalName);
       final isNullable = !f.isRequired || f.type.isNullable;
       final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
       if (!f.isRequired) {
@@ -276,7 +280,11 @@ class DiscriminatedUnionEmitter {
 
     final toStrFields = fields
         .map((f) {
-          if (f.name.startsWith(r'$')) {
+          // `$` is legal anywhere in a Dart identifier ($-prefixed reserved
+          // words, spec names like `c$d`). The label must escape it, and the
+          // interpolation needs braces so the `$` isn't read as a nested
+          // interpolation start.
+          if (f.name.contains(r'$')) {
             final escaped = f.name.replaceAll(r'$', r'\$');
             return '$escaped: \${${f.name}}';
           }
@@ -320,7 +328,7 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
+              ..body = Code('return ${dartStringLiteral(discValue)};'),
           ),
         )
         ..methods.add(
@@ -414,7 +422,7 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
+              ..body = Code('return ${dartStringLiteral(discValue)};'),
           ),
         )
         ..methods.add(
@@ -435,7 +443,7 @@ class DiscriminatedUnionEmitter {
         ..methods.add(buildHashCodeOverride('return $fieldName.hashCode;'))
         ..methods.add(() {
           final String fieldStr;
-          if (fieldName.startsWith(r'$')) {
+          if (fieldName.contains(r'$')) {
             final escaped = fieldName.replaceAll(r'$', r'\$');
             fieldStr = '$escaped: \${$fieldName}';
           } else {
@@ -986,26 +994,30 @@ class AnyOfEmitter {
   ) {
     final spreads = fields
         .map((f) {
+          // Field names may be `$`-prefixed (dart:core collisions like
+          // $double); an unescaped key would interpolate the field value
+          // instead of emitting the name.
+          final key = dartStringLiteral(f.name);
           // Primitives and enums can't be spread into a Map - include as named
           // entries.
           if (f.type is IrPrimitive) {
-            return "  '${f.name}': ?${f.name},";
+            return '  $key: ?${f.name},';
           }
           if (f.type is IrEnum) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
           }
           // Extension types wrap a primitive - toJson returns a primitive, not
           // a Map.
           if (f.type is IrExtensionType) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
           }
           if (f.type is IrList || f.type is IrMap) {
-            return "  '${f.name}': ?${f.name},";
+            return '  $key: ?${f.name},';
           }
           // Sealed/union types have toJson returning Object?, so we can't
           // spread.
           if (_isUnionType(f.type)) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
           }
           return '  ...?${f.name}?.toJson(),';
         })

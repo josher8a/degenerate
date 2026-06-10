@@ -478,7 +478,11 @@ class ModelEmitter {
   Method _buildToString() {
     var fieldStr = model.fields
         .map((f) {
-          if (f.name.startsWith(r'$')) {
+          // `$` is legal anywhere in a Dart identifier ($-prefixed reserved
+          // words, spec names like `c$d`). The label must escape it, and the
+          // interpolation needs braces so the `$` isn't read as a nested
+          // interpolation start.
+          if (f.name.contains(r'$')) {
             final escaped = f.name.replaceAll(r'$', r'\$');
             return '$escaped: \${${f.name}}';
           }
@@ -487,7 +491,9 @@ class ModelEmitter {
         .join(', ');
     if (model.additionalProperties != null) {
       if (fieldStr.isNotEmpty) fieldStr += ', ';
-      fieldStr += '$_overflowFieldName: \$$_overflowFieldName';
+      fieldStr += _overflowFieldName.contains(r'$')
+          ? '${_overflowFieldName.replaceAll(r'$', r'\$')}: \${$_overflowFieldName}'
+          : '$_overflowFieldName: \$$_overflowFieldName';
     }
 
     return buildToStringOverride(

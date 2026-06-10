@@ -882,7 +882,9 @@ class FileEmitter {
       '  static final securitySchemes = <String, ApiSecurityScheme>{',
     );
     for (final scheme in securitySchemes) {
-      buf.writeln("    '${scheme.name}': ${_securitySchemeLiteral(scheme)},");
+      buf.writeln(
+        "    '${escapeDartString(scheme.name)}': ${_securitySchemeLiteral(scheme)},",
+      );
     }
     buf.writeln('  };');
     buf.writeln();
@@ -990,7 +992,7 @@ class FileEmitter {
           final entries = requirement.schemes.entries
               .map(
                 (entry) =>
-                    "'${entry.key}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
+                    "'${escapeDartString(entry.key)}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
           return 'const ApiSecurityRequirement({$entries})';
