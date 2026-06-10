@@ -34,13 +34,20 @@ final class DiscriminatedUnionEmitter {
   bool get _needsSyntheticDiscEnum => _discTypeName == _syntheticDiscEnumName;
 
   /// Name for the auto-generated discriminator enum (e.g. `BeneficiaryKind`).
-  /// Appends `Value` if the natural name collides with a variant class name.
+  /// Appends `Disc` when the natural name collides with a variant class name
+  /// OR an existing registered type. The registry check also keeps
+  /// [_needsSyntheticDiscEnum] honest: when the spec defines the shared disc
+  /// enum under the natural name, the names no longer compare equal, so the
+  /// getter reuses the spec enum instead of re-declaring it.
   String get _syntheticDiscEnumName {
     final natural = '${union.name}${toPascalCase(union.discriminatorProperty)}';
     final variantNames = union.mapping.keys.map(
       (k) => variantClassName(union.name, k),
     );
-    if (variantNames.contains(natural)) return '${natural}Disc';
+    if (variantNames.contains(natural) ||
+        ctx.typeRegistry.containsKey(natural)) {
+      return '${natural}Disc';
+    }
     return natural;
   }
 
