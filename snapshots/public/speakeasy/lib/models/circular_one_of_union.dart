@@ -4,7 +4,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value that is one of: `String`, `double`, `bool`, `Map<String, CircularOneOfUnion>`, `List<CircularOneOfUnion>`.
 sealed class CircularOneOfUnion {const CircularOneOfUnion();
 
-factory CircularOneOfUnion.fromJson(Map<String, dynamic> json) {   return CircularOneOfUnion$Unknown(json); }
+factory CircularOneOfUnion.fromJson(Object? json) {   if (json is String) return CircularOneOfUnionString(json);
+  if (json is num) return CircularOneOfUnionDouble(json.toDouble());
+  if (json is bool) return CircularOneOfUnionBool(json);
+  if (json is Map<String, dynamic>) {
+    return CircularOneOfUnionMapStringCircularOneOfUnion(json.map((k, v) => MapEntry(k, CircularOneOfUnion.fromJson(v))));
+  }
+  if (json is List) {
+    return CircularOneOfUnionListCircularOneOfUnion(json.map(CircularOneOfUnion.fromJson).toList());
+  }
+  return CircularOneOfUnion$Unknown(json); }
 
 /// The underlying raw value.
 dynamic get value;

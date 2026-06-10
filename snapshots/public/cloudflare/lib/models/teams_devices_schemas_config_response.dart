@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_tls_config_response.dart';/// A value that is one of: `TeamsDevicesTlsConfigResponse`.
 sealed class TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponse();
 
-factory TeamsDevicesSchemasConfigResponse.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesTlsConfigResponse.canParse(json)) {
+factory TeamsDevicesSchemasConfigResponse.fromJson(Object? json) {   if (json is Map<String, dynamic> && TeamsDevicesTlsConfigResponse.canParse(json)) {
     return TeamsDevicesSchemasConfigResponseTeamsDevicesTlsConfigResponse(TeamsDevicesTlsConfigResponse.fromJson(json));
   }
   return TeamsDevicesSchemasConfigResponse$Unknown(json); }

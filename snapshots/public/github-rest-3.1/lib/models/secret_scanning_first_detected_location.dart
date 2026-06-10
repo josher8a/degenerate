@@ -4,43 +4,43 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_commit.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_discussion_body.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_discussion_comment.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_discussion_title.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_issue_body.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_issue_comment.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_issue_title.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_pull_request_body.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_pull_request_comment.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_pull_request_review.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_pull_request_review_comment.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_pull_request_title.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location_wiki_commit.dart';/// A value that is one of: `SecretScanningLocationCommit`, `SecretScanningLocationWikiCommit`, `SecretScanningLocationIssueTitle`, `SecretScanningLocationIssueBody`, `SecretScanningLocationIssueComment`, `SecretScanningLocationDiscussionTitle`, `SecretScanningLocationDiscussionBody`, `SecretScanningLocationDiscussionComment`, `SecretScanningLocationPullRequestTitle`, `SecretScanningLocationPullRequestBody`, `SecretScanningLocationPullRequestComment`, `SecretScanningLocationPullRequestReview`, `SecretScanningLocationPullRequestReviewComment`.
 sealed class SecretScanningFirstDetectedLocation {const SecretScanningFirstDetectedLocation();
 
-factory SecretScanningFirstDetectedLocation.fromJson(Map<String, dynamic> json) {   if (SecretScanningLocationCommit.canParse(json)) {
+factory SecretScanningFirstDetectedLocation.fromJson(Object? json) {   if (json is Map<String, dynamic> && SecretScanningLocationCommit.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationCommit(SecretScanningLocationCommit.fromJson(json));
   }
-  if (SecretScanningLocationWikiCommit.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationWikiCommit.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(SecretScanningLocationWikiCommit.fromJson(json));
   }
-  if (SecretScanningLocationIssueTitle.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationIssueTitle.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(SecretScanningLocationIssueTitle.fromJson(json));
   }
-  if (SecretScanningLocationIssueBody.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationIssueBody.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationIssueBody(SecretScanningLocationIssueBody.fromJson(json));
   }
-  if (SecretScanningLocationIssueComment.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationIssueComment.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationIssueComment(SecretScanningLocationIssueComment.fromJson(json));
   }
-  if (SecretScanningLocationDiscussionTitle.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationDiscussionTitle.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle(SecretScanningLocationDiscussionTitle.fromJson(json));
   }
-  if (SecretScanningLocationDiscussionBody.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationDiscussionBody.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody(SecretScanningLocationDiscussionBody.fromJson(json));
   }
-  if (SecretScanningLocationDiscussionComment.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationDiscussionComment.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment(SecretScanningLocationDiscussionComment.fromJson(json));
   }
-  if (SecretScanningLocationPullRequestTitle.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationPullRequestTitle.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle(SecretScanningLocationPullRequestTitle.fromJson(json));
   }
-  if (SecretScanningLocationPullRequestBody.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationPullRequestBody.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody(SecretScanningLocationPullRequestBody.fromJson(json));
   }
-  if (SecretScanningLocationPullRequestComment.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationPullRequestComment.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment(SecretScanningLocationPullRequestComment.fromJson(json));
   }
-  if (SecretScanningLocationPullRequestReview.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationPullRequestReview.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview(SecretScanningLocationPullRequestReview.fromJson(json));
   }
-  if (SecretScanningLocationPullRequestReviewComment.canParse(json)) {
+  if (json is Map<String, dynamic> && SecretScanningLocationPullRequestReviewComment.canParse(json)) {
     return SecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment(SecretScanningLocationPullRequestReviewComment.fromJson(json));
   }
   return SecretScanningFirstDetectedLocation$Unknown(json); }

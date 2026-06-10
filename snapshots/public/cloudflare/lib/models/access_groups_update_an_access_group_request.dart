@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_is_default.dart';import 'package:pub_cloudflare/models/access_rule.dart';@immutable final class AccessGroupsUpdateAnAccessGroupRequest {const AccessGroupsUpdateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.isDefault, this.require, });
 
 factory AccessGroupsUpdateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return AccessGroupsUpdateAnAccessGroupRequest(
-  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-  include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  include: (json['include'] as List<dynamic>).map(AccessRule.fromJson).toList(),
   isDefault: json['is_default'] != null ? AccessIsDefault.fromJson(json['is_default'] as bool) : null,
   name: AccessGroupsComponentsSchemasName.fromJson(json['name'] as String),
-  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
 ); }
 
 /// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.

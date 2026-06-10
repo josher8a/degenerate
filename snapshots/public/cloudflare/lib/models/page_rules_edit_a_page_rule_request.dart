@@ -7,7 +7,7 @@ factory PageRulesEditAPageRuleRequest.fromJson(Map<String, dynamic> json) { retu
   actions: (json['actions'] as List<dynamic>?)?.map((e) => ZonesActions2.fromJson(e as Map<String, dynamic>)).toList(),
   priority: json['priority'] != null ? ZonesPriority.fromJson(json['priority'] as num) : null,
   status: json['status'] != null ? ZonesStatus.fromJson(json['status'] as String) : null,
-  targets: (json['targets'] as List<dynamic>?)?.map((e) => ZonesTarget.fromJson(e as Map<String, dynamic>)).toList(),
+  targets: (json['targets'] as List<dynamic>?)?.map(ZonesTarget.fromJson).toList(),
 ); }
 
 /// The set of actions to perform if the targets of this rule match the

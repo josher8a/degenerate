@@ -4,34 +4,34 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_stream_event/thread_run_cancelled.dart';import 'package:pub_openai/models/run_stream_event/thread_run_cancelling.dart';import 'package:pub_openai/models/run_stream_event/thread_run_completed.dart';import 'package:pub_openai/models/run_stream_event/thread_run_created.dart';import 'package:pub_openai/models/run_stream_event/thread_run_expired.dart';import 'package:pub_openai/models/run_stream_event/thread_run_failed.dart';import 'package:pub_openai/models/run_stream_event/thread_run_in_progress.dart';import 'package:pub_openai/models/run_stream_event/thread_run_incomplete.dart';import 'package:pub_openai/models/run_stream_event/thread_run_queued.dart';import 'package:pub_openai/models/run_stream_event/thread_run_requires_action.dart';/// A value that is one of: `ThreadRunCreated`, `ThreadRunQueued`, `ThreadRunInProgress`, `ThreadRunRequiresAction`, `ThreadRunCompleted`, `ThreadRunIncomplete`, `ThreadRunFailed`, `ThreadRunCancelling`, `ThreadRunCancelled`, `ThreadRunExpired`.
 sealed class RunStreamEvent {const RunStreamEvent();
 
-factory RunStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadRunCreated.canParse(json)) {
+factory RunStreamEvent.fromJson(Object? json) {   if (json is Map<String, dynamic> && ThreadRunCreated.canParse(json)) {
     return RunStreamEventThreadRunCreated(ThreadRunCreated.fromJson(json));
   }
-  if (ThreadRunQueued.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunQueued.canParse(json)) {
     return RunStreamEventThreadRunQueued(ThreadRunQueued.fromJson(json));
   }
-  if (ThreadRunInProgress.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunInProgress.canParse(json)) {
     return RunStreamEventThreadRunInProgress(ThreadRunInProgress.fromJson(json));
   }
-  if (ThreadRunRequiresAction.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunRequiresAction.canParse(json)) {
     return RunStreamEventThreadRunRequiresAction(ThreadRunRequiresAction.fromJson(json));
   }
-  if (ThreadRunCompleted.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunCompleted.canParse(json)) {
     return RunStreamEventThreadRunCompleted(ThreadRunCompleted.fromJson(json));
   }
-  if (ThreadRunIncomplete.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunIncomplete.canParse(json)) {
     return RunStreamEventThreadRunIncomplete(ThreadRunIncomplete.fromJson(json));
   }
-  if (ThreadRunFailed.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunFailed.canParse(json)) {
     return RunStreamEventThreadRunFailed(ThreadRunFailed.fromJson(json));
   }
-  if (ThreadRunCancelling.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunCancelling.canParse(json)) {
     return RunStreamEventThreadRunCancelling(ThreadRunCancelling.fromJson(json));
   }
-  if (ThreadRunCancelled.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunCancelled.canParse(json)) {
     return RunStreamEventThreadRunCancelled(ThreadRunCancelled.fromJson(json));
   }
-  if (ThreadRunExpired.canParse(json)) {
+  if (json is Map<String, dynamic> && ThreadRunExpired.canParse(json)) {
     return RunStreamEventThreadRunExpired(ThreadRunExpired.fromJson(json));
   }
   return RunStreamEvent$Unknown(json); }

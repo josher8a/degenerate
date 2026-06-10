@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory AccessInfraPolicyReq.fromJson(Map<String, dynamic> json) { return AccessInfraPolicyReq(
   decision: AccessDecision.fromJson(json['decision'] as String),
-  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-  include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  include: (json['include'] as List<dynamic>).map(AccessRule.fromJson).toList(),
   name: AccessPolicyComponentsSchemasName.fromJson(json['name'] as String),
-  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   connectionRules: json['connection_rules'] != null ? AccessConnectionRulesInfra.fromJson(json['connection_rules'] as Map<String, dynamic>) : null,
 ); }
 

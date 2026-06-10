@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination.dart';@immutable final class SubscriptionsPatchRequest {const SubscriptionsPatchRequest({this.destination, this.enabled, this.events, this.name, });
 
 factory SubscriptionsPatchRequest.fromJson(Map<String, dynamic> json) { return SubscriptionsPatchRequest(
-  destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
+  destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination']) : null,
   enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,

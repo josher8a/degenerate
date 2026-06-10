@@ -4,79 +4,79 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_group_rule.dart';import 'package:pub_cloudflare/models/access_any_valid_service_token_rule.dart';import 'package:pub_cloudflare/models/access_auth_context_rule.dart';import 'package:pub_cloudflare/models/access_authentication_method_rule.dart';import 'package:pub_cloudflare/models/access_azure_group_rule.dart';import 'package:pub_cloudflare/models/access_certificate_rule.dart';import 'package:pub_cloudflare/models/access_common_name_rule.dart';import 'package:pub_cloudflare/models/access_country_rule.dart';import 'package:pub_cloudflare/models/access_device_posture_rule.dart';import 'package:pub_cloudflare/models/access_domain_rule.dart';import 'package:pub_cloudflare/models/access_email_list_rule.dart';import 'package:pub_cloudflare/models/access_email_rule.dart';import 'package:pub_cloudflare/models/access_everyone_rule.dart';import 'package:pub_cloudflare/models/access_external_evaluation_rule.dart';import 'package:pub_cloudflare/models/access_github_organization_rule.dart';import 'package:pub_cloudflare/models/access_gsuite_group_rule.dart';import 'package:pub_cloudflare/models/access_ip_list_rule.dart';import 'package:pub_cloudflare/models/access_ip_rule.dart';import 'package:pub_cloudflare/models/access_linked_app_token_rule.dart';import 'package:pub_cloudflare/models/access_login_method_rule.dart';import 'package:pub_cloudflare/models/access_oidc_claim_rule.dart';import 'package:pub_cloudflare/models/access_okta_group_rule.dart';import 'package:pub_cloudflare/models/access_saml_group_rule.dart';import 'package:pub_cloudflare/models/access_service_token_rule.dart';import 'package:pub_cloudflare/models/access_user_risk_score_rule.dart';/// A value that is one of: `AccessAccessGroupRule`, `AccessAnyValidServiceTokenRule`, `AccessAuthContextRule`, `AccessAuthenticationMethodRule`, `AccessAzureGroupRule`, `AccessCertificateRule`, `AccessCommonNameRule`, `AccessCountryRule`, `AccessDevicePostureRule`, `AccessDomainRule`, `AccessEmailListRule`, `AccessEmailRule`, `AccessEveryoneRule`, `AccessExternalEvaluationRule`, `AccessGithubOrganizationRule`, `AccessGsuiteGroupRule`, `AccessLoginMethodRule`, `AccessIpListRule`, `AccessIpRule`, `AccessOktaGroupRule`, `AccessSamlGroupRule`, `AccessOidcClaimRule`, `AccessServiceTokenRule`, `AccessLinkedAppTokenRule`, `AccessUserRiskScoreRule`.
 sealed class AccessRule {const AccessRule();
 
-factory AccessRule.fromJson(Map<String, dynamic> json) {   if (AccessAccessGroupRule.canParse(json)) {
+factory AccessRule.fromJson(Object? json) {   if (json is Map<String, dynamic> && AccessAccessGroupRule.canParse(json)) {
     return AccessRuleAccessAccessGroupRule(AccessAccessGroupRule.fromJson(json));
   }
-  if (AccessAnyValidServiceTokenRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessAnyValidServiceTokenRule.canParse(json)) {
     return AccessRuleAccessAnyValidServiceTokenRule(AccessAnyValidServiceTokenRule.fromJson(json));
   }
-  if (AccessAuthContextRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessAuthContextRule.canParse(json)) {
     return AccessRuleAccessAuthContextRule(AccessAuthContextRule.fromJson(json));
   }
-  if (AccessAuthenticationMethodRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessAuthenticationMethodRule.canParse(json)) {
     return AccessRuleAccessAuthenticationMethodRule(AccessAuthenticationMethodRule.fromJson(json));
   }
-  if (AccessAzureGroupRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessAzureGroupRule.canParse(json)) {
     return AccessRuleAccessAzureGroupRule(AccessAzureGroupRule.fromJson(json));
   }
-  if (AccessCertificateRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessCertificateRule.canParse(json)) {
     return AccessRuleAccessCertificateRule(AccessCertificateRule.fromJson(json));
   }
-  if (AccessCommonNameRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessCommonNameRule.canParse(json)) {
     return AccessRuleAccessCommonNameRule(AccessCommonNameRule.fromJson(json));
   }
-  if (AccessCountryRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessCountryRule.canParse(json)) {
     return AccessRuleAccessCountryRule(AccessCountryRule.fromJson(json));
   }
-  if (AccessDevicePostureRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessDevicePostureRule.canParse(json)) {
     return AccessRuleAccessDevicePostureRule(AccessDevicePostureRule.fromJson(json));
   }
-  if (AccessDomainRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessDomainRule.canParse(json)) {
     return AccessRuleAccessDomainRule(AccessDomainRule.fromJson(json));
   }
-  if (AccessEmailListRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessEmailListRule.canParse(json)) {
     return AccessRuleAccessEmailListRule(AccessEmailListRule.fromJson(json));
   }
-  if (AccessEmailRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessEmailRule.canParse(json)) {
     return AccessRuleAccessEmailRule(AccessEmailRule.fromJson(json));
   }
-  if (AccessEveryoneRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessEveryoneRule.canParse(json)) {
     return AccessRuleAccessEveryoneRule(AccessEveryoneRule.fromJson(json));
   }
-  if (AccessExternalEvaluationRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessExternalEvaluationRule.canParse(json)) {
     return AccessRuleAccessExternalEvaluationRule(AccessExternalEvaluationRule.fromJson(json));
   }
-  if (AccessGithubOrganizationRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessGithubOrganizationRule.canParse(json)) {
     return AccessRuleAccessGithubOrganizationRule(AccessGithubOrganizationRule.fromJson(json));
   }
-  if (AccessGsuiteGroupRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessGsuiteGroupRule.canParse(json)) {
     return AccessRuleAccessGsuiteGroupRule(AccessGsuiteGroupRule.fromJson(json));
   }
-  if (AccessLoginMethodRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessLoginMethodRule.canParse(json)) {
     return AccessRuleAccessLoginMethodRule(AccessLoginMethodRule.fromJson(json));
   }
-  if (AccessIpListRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessIpListRule.canParse(json)) {
     return AccessRuleAccessIpListRule(AccessIpListRule.fromJson(json));
   }
-  if (AccessIpRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessIpRule.canParse(json)) {
     return AccessRuleAccessIpRule(AccessIpRule.fromJson(json));
   }
-  if (AccessOktaGroupRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessOktaGroupRule.canParse(json)) {
     return AccessRuleAccessOktaGroupRule(AccessOktaGroupRule.fromJson(json));
   }
-  if (AccessSamlGroupRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessSamlGroupRule.canParse(json)) {
     return AccessRuleAccessSamlGroupRule(AccessSamlGroupRule.fromJson(json));
   }
-  if (AccessOidcClaimRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessOidcClaimRule.canParse(json)) {
     return AccessRuleAccessOidcClaimRule(AccessOidcClaimRule.fromJson(json));
   }
-  if (AccessServiceTokenRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessServiceTokenRule.canParse(json)) {
     return AccessRuleAccessServiceTokenRule(AccessServiceTokenRule.fromJson(json));
   }
-  if (AccessLinkedAppTokenRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessLinkedAppTokenRule.canParse(json)) {
     return AccessRuleAccessLinkedAppTokenRule(AccessLinkedAppTokenRule.fromJson(json));
   }
-  if (AccessUserRiskScoreRule.canParse(json)) {
+  if (json is Map<String, dynamic> && AccessUserRiskScoreRule.canParse(json)) {
     return AccessRuleAccessUserRiskScoreRule(AccessUserRiskScoreRule.fromJson(json));
   }
   return AccessRule$Unknown(json); }

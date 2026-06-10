@@ -9,7 +9,7 @@ factory PredefinedEntry.fromJson(Map<String, dynamic> json) { return PredefinedE
   id: json['id'] as String,
   name: json['name'] as String,
   profileId: json['profile_id'] as String?,
-  variant: json['variant'] != null ? DlpPredefinedEntryVariant.fromJson(json['variant'] as Map<String, dynamic>) : null,
+  variant: json['variant'] != null ? DlpPredefinedEntryVariant.fromJson(json['variant']) : null,
   type: PredefinedEntryType.fromJson(json['type'] as String),
 ); }
 

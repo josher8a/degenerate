@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_components_schemas_name.dart';import 'package:pub_cloudflare/models/teams_devices_config_response.dart';import 'package:pub_cloudflare/models/teams_devices_interval.dart';import 'package:pub_cloudflare/models/teams_devices_schemas_type.dart';import 'package:pub_cloudflare/models/teams_devices_uuid.dart';@immutable final class TeamsDevicesDevicePostureIntegrations {const TeamsDevicesDevicePostureIntegrations({this.config, this.id, this.interval, this.name, this.type, });
 
 factory TeamsDevicesDevicePostureIntegrations.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicePostureIntegrations(
-  config: json['config'] != null ? TeamsDevicesConfigResponse.fromJson(json['config'] as Map<String, dynamic>) : null,
+  config: json['config'] != null ? TeamsDevicesConfigResponse.fromJson(json['config']) : null,
   id: json['id'] != null ? TeamsDevicesUuid.fromJson(json['id'] as String) : null,
   interval: json['interval'] != null ? TeamsDevicesInterval.fromJson(json['interval'] as String) : null,
   name: json['name'] != null ? TeamsDevicesComponentsSchemasName.fromJson(json['name'] as String) : null,

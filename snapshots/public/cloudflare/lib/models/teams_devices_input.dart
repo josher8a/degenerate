@@ -4,64 +4,64 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request.dart';import 'package:pub_cloudflare/models/teams_devices_access_serial_number_list_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_antivirus_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_application_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_carbonblack_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_client_certificate_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_custom_s2s_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_disk_encryption_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_domain_joined_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_file_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_firewall_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_intune_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_kolide_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_os_version_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_sentinelone_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_sentinelone_s2s_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_tanium_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_unique_client_id_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_workspace_one_input_request.dart';/// A value that is one of: `TeamsDevicesFileInputRequest`, `TeamsDevicesUniqueClientIdInputRequest`, `TeamsDevicesDomainJoinedInputRequest`, `TeamsDevicesOsVersionInputRequest`, `TeamsDevicesFirewallInputRequest`, `TeamsDevicesSentineloneInputRequest`, `TeamsDevicesCarbonblackInputRequest`, `TeamsDevicesAccessSerialNumberListInputRequest`, `TeamsDevicesDiskEncryptionInputRequest`, `TeamsDevicesApplicationInputRequest`, `TeamsDevicesClientCertificateInputRequest`, `InputRequest`, `TeamsDevicesAntivirusInputRequest`, `TeamsDevicesWorkspaceOneInputRequest`, `TeamsDevicesCrowdstrikeInputRequest`, `TeamsDevicesIntuneInputRequest`, `TeamsDevicesKolideInputRequest`, `TeamsDevicesTaniumInputRequest`, `TeamsDevicesSentineloneS2sInputRequest`, `TeamsDevicesCustomS2sInputRequest`.
 sealed class TeamsDevicesInput {const TeamsDevicesInput();
 
-factory TeamsDevicesInput.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesFileInputRequest.canParse(json)) {
+factory TeamsDevicesInput.fromJson(Object? json) {   if (json is Map<String, dynamic> && TeamsDevicesFileInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesFileInputRequest(TeamsDevicesFileInputRequest.fromJson(json));
   }
-  if (TeamsDevicesUniqueClientIdInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesUniqueClientIdInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest(TeamsDevicesUniqueClientIdInputRequest.fromJson(json));
   }
-  if (TeamsDevicesDomainJoinedInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesDomainJoinedInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest(TeamsDevicesDomainJoinedInputRequest.fromJson(json));
   }
-  if (TeamsDevicesOsVersionInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesOsVersionInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesOsVersionInputRequest(TeamsDevicesOsVersionInputRequest.fromJson(json));
   }
-  if (TeamsDevicesFirewallInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesFirewallInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesFirewallInputRequest(TeamsDevicesFirewallInputRequest.fromJson(json));
   }
-  if (TeamsDevicesSentineloneInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesSentineloneInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesSentineloneInputRequest(TeamsDevicesSentineloneInputRequest.fromJson(json));
   }
-  if (TeamsDevicesCarbonblackInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesCarbonblackInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesCarbonblackInputRequest(TeamsDevicesCarbonblackInputRequest.fromJson(json));
   }
-  if (TeamsDevicesAccessSerialNumberListInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesAccessSerialNumberListInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest(TeamsDevicesAccessSerialNumberListInputRequest.fromJson(json));
   }
-  if (TeamsDevicesDiskEncryptionInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesDiskEncryptionInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest(TeamsDevicesDiskEncryptionInputRequest.fromJson(json));
   }
-  if (TeamsDevicesApplicationInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesApplicationInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesApplicationInputRequest(TeamsDevicesApplicationInputRequest.fromJson(json));
   }
-  if (TeamsDevicesClientCertificateInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesClientCertificateInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesClientCertificateInputRequest(TeamsDevicesClientCertificateInputRequest.fromJson(json));
   }
-  if (InputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && InputRequest.canParse(json)) {
     return TeamsDevicesInputInputRequest(InputRequest.fromJson(json));
   }
-  if (TeamsDevicesAntivirusInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesAntivirusInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesAntivirusInputRequest(TeamsDevicesAntivirusInputRequest.fromJson(json));
   }
-  if (TeamsDevicesWorkspaceOneInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesWorkspaceOneInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest(TeamsDevicesWorkspaceOneInputRequest.fromJson(json));
   }
-  if (TeamsDevicesCrowdstrikeInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesCrowdstrikeInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest(TeamsDevicesCrowdstrikeInputRequest.fromJson(json));
   }
-  if (TeamsDevicesIntuneInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesIntuneInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesIntuneInputRequest(TeamsDevicesIntuneInputRequest.fromJson(json));
   }
-  if (TeamsDevicesKolideInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesKolideInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesKolideInputRequest(TeamsDevicesKolideInputRequest.fromJson(json));
   }
-  if (TeamsDevicesTaniumInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesTaniumInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesTaniumInputRequest(TeamsDevicesTaniumInputRequest.fromJson(json));
   }
-  if (TeamsDevicesSentineloneS2sInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesSentineloneS2sInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest(TeamsDevicesSentineloneS2sInputRequest.fromJson(json));
   }
-  if (TeamsDevicesCustomS2sInputRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && TeamsDevicesCustomS2sInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesCustomS2sInputRequest(TeamsDevicesCustomS2sInputRequest.fromJson(json));
   }
   return TeamsDevicesInput$Unknown(json); }

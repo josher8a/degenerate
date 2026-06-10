@@ -4,49 +4,52 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_comment_event.dart';import 'package:pub_github_rest_3_1/models/create_event.dart';import 'package:pub_github_rest_3_1/models/delete_event.dart';import 'package:pub_github_rest_3_1/models/discussion_event.dart';import 'package:pub_github_rest_3_1/models/fork_event.dart';import 'package:pub_github_rest_3_1/models/gollum_event.dart';import 'package:pub_github_rest_3_1/models/issue_comment_event.dart';import 'package:pub_github_rest_3_1/models/issues_event.dart';import 'package:pub_github_rest_3_1/models/member_event.dart';import 'package:pub_github_rest_3_1/models/pull_request_event.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment_event.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_event.dart';import 'package:pub_github_rest_3_1/models/push_event.dart';import 'package:pub_github_rest_3_1/models/release_event.dart';import 'package:pub_github_rest_3_1/models/watch_event.dart';/// A value that is one of: `CreateEvent`, `DeleteEvent`, `DiscussionEvent`, `IssuesEvent`, `IssueCommentEvent`, `ForkEvent`, `GollumEvent`, `MemberEvent`, `Map<String, dynamic>`, `PushEvent`, `PullRequestEvent`, `PullRequestReviewCommentEvent`, `PullRequestReviewEvent`, `CommitCommentEvent`, `ReleaseEvent`, `WatchEvent`.
 sealed class EventPayload {const EventPayload();
 
-factory EventPayload.fromJson(Map<String, dynamic> json) {   if (CreateEvent.canParse(json)) {
+factory EventPayload.fromJson(Object? json) {   if (json is Map<String, dynamic> && CreateEvent.canParse(json)) {
     return EventPayloadCreateEvent(CreateEvent.fromJson(json));
   }
-  if (DeleteEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && DeleteEvent.canParse(json)) {
     return EventPayloadDeleteEvent(DeleteEvent.fromJson(json));
   }
-  if (DiscussionEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && DiscussionEvent.canParse(json)) {
     return EventPayloadDiscussionEvent(DiscussionEvent.fromJson(json));
   }
-  if (IssuesEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && IssuesEvent.canParse(json)) {
     return EventPayloadIssuesEvent(IssuesEvent.fromJson(json));
   }
-  if (IssueCommentEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && IssueCommentEvent.canParse(json)) {
     return EventPayloadIssueCommentEvent(IssueCommentEvent.fromJson(json));
   }
-  if (ForkEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && ForkEvent.canParse(json)) {
     return EventPayloadForkEvent(ForkEvent.fromJson(json));
   }
-  if (GollumEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && GollumEvent.canParse(json)) {
     return EventPayloadGollumEvent(GollumEvent.fromJson(json));
   }
-  if (MemberEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && MemberEvent.canParse(json)) {
     return EventPayloadMemberEvent(MemberEvent.fromJson(json));
   }
-  if (PushEvent.canParse(json)) {
+  if (json is Map<String, dynamic>) {
+    return EventPayloadMapStringdynamic(json);
+  }
+  if (json is Map<String, dynamic> && PushEvent.canParse(json)) {
     return EventPayloadPushEvent(PushEvent.fromJson(json));
   }
-  if (PullRequestEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && PullRequestEvent.canParse(json)) {
     return EventPayloadPullRequestEvent(PullRequestEvent.fromJson(json));
   }
-  if (PullRequestReviewCommentEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && PullRequestReviewCommentEvent.canParse(json)) {
     return EventPayloadPullRequestReviewCommentEvent(PullRequestReviewCommentEvent.fromJson(json));
   }
-  if (PullRequestReviewEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && PullRequestReviewEvent.canParse(json)) {
     return EventPayloadPullRequestReviewEvent(PullRequestReviewEvent.fromJson(json));
   }
-  if (CommitCommentEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && CommitCommentEvent.canParse(json)) {
     return EventPayloadCommitCommentEvent(CommitCommentEvent.fromJson(json));
   }
-  if (ReleaseEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && ReleaseEvent.canParse(json)) {
     return EventPayloadReleaseEvent(ReleaseEvent.fromJson(json));
   }
-  if (WatchEvent.canParse(json)) {
+  if (json is Map<String, dynamic> && WatchEvent.canParse(json)) {
     return EventPayloadWatchEvent(WatchEvent.fromJson(json));
   }
   return EventPayload$Unknown(json); }

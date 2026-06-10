@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups_components_schemas_name2.dart';import 'package:pub_cloudflare/models/access_rule.dart';@immutable final class ZoneLevelAccessGroupsCreateAnAccessGroupRequest {const ZoneLevelAccessGroupsCreateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.require, });
 
 factory ZoneLevelAccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
-  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-  include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  include: (json['include'] as List<dynamic>).map(AccessRule.fromJson).toList(),
   name: AccessGroupsComponentsSchemasName2.fromJson(json['name'] as String),
-  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
 ); }
 
 /// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.

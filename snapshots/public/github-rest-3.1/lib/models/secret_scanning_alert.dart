@@ -29,7 +29,7 @@ factory SecretScanningAlert.fromJson(Map<String, dynamic> json) { return SecretS
   publiclyLeaked: json['publicly_leaked'] as bool?,
   multiRepo: json['multi_repo'] as bool?,
   isBase64Encoded: json['is_base64_encoded'] as bool?,
-  firstLocationDetected: json['first_location_detected'] != null ? SecretScanningFirstDetectedLocation.fromJson(json['first_location_detected'] as Map<String, dynamic>) : null,
+  firstLocationDetected: json['first_location_detected'] != null ? SecretScanningFirstDetectedLocation.fromJson(json['first_location_detected']) : null,
   hasMoreLocations: json['has_more_locations'] as bool?,
   assignedTo: json['assigned_to'] != null ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>) : null,
 ); }

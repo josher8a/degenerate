@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/recursive_one_of_value.dart';@immutable final class CircularReferenceRecursiveOneOfResponseJson {const CircularReferenceRecursiveOneOfResponseJson({required this.value});
 
 factory CircularReferenceRecursiveOneOfResponseJson.fromJson(Map<String, dynamic> json) { return CircularReferenceRecursiveOneOfResponseJson(
-  value: RecursiveOneOfValue.fromJson(json['value'] as Map<String, dynamic>),
+  value: RecursiveOneOfValue.fromJson(json['value']),
 ); }
 
 final RecursiveOneOfValue value;

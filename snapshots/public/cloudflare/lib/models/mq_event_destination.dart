@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination_queue.dart';/// A value that is one of: `MqEventDestinationQueue`.
 sealed class MqEventDestination {const MqEventDestination();
 
-factory MqEventDestination.fromJson(Map<String, dynamic> json) {   if (MqEventDestinationQueue.canParse(json)) {
+factory MqEventDestination.fromJson(Object? json) {   if (json is Map<String, dynamic> && MqEventDestinationQueue.canParse(json)) {
     return MqEventDestinationMqEventDestinationQueue(MqEventDestinationQueue.fromJson(json));
   }
   return MqEventDestination$Unknown(json); }

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_setting_value.dart';@immutable final class ZonesZoneSettingsSingleRequestVariant2 {const ZonesZoneSettingsSingleRequestVariant2({this.value});
 
 factory ZonesZoneSettingsSingleRequestVariant2.fromJson(Map<String, dynamic> json) { return ZonesZoneSettingsSingleRequestVariant2(
-  value: json['value'] != null ? ZonesSettingValue.fromJson(json['value'] as Map<String, dynamic>) : null,
+  value: json['value'] != null ? ZonesSettingValue.fromJson(json['value']) : null,
 ); }
 
 final ZonesSettingValue? value;

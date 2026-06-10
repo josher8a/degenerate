@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ownership_verification/txt.dart';/// A value that is one of: `Txt`.
 sealed class TlsCertificatesAndHostnamesOwnershipVerification {const TlsCertificatesAndHostnamesOwnershipVerification();
 
-factory TlsCertificatesAndHostnamesOwnershipVerification.fromJson(Map<String, dynamic> json) {   if (Txt.canParse(json)) {
+factory TlsCertificatesAndHostnamesOwnershipVerification.fromJson(Object? json) {   if (json is Map<String, dynamic> && Txt.canParse(json)) {
     return TlsCertificatesAndHostnamesOwnershipVerificationTxt(Txt.fromJson(json));
   }
   return TlsCertificatesAndHostnamesOwnershipVerification$Unknown(json); }

@@ -4,70 +4,70 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/repository_rule_detailed_variant1.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/repository_rule_detailed_variant2.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/repository_rule_detailed_variant3.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/repository_rule_detailed_variant4.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant10.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant11.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant12.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant13.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant14.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant15.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant16.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant17.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant18.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant19.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant20.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant21.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant22.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant5.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant6.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant7.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant8.dart';import 'package:pub_github_rest_3_1/models/repository_rule_detailed/variant9.dart';/// A value that is one of: `RepositoryRuleDetailedVariant1`, `RepositoryRuleDetailedVariant2`, `RepositoryRuleDetailedVariant3`, `RepositoryRuleDetailedVariant4`, `Variant5`, `Variant6`, `Variant7`, `Variant8`, `Variant9`, `Variant10`, `Variant11`, `Variant12`, `Variant13`, `Variant14`, `Variant15`, `Variant16`, `Variant17`, `Variant18`, `Variant19`, `Variant20`, `Variant21`, `Variant22`.
 sealed class RepositoryRuleDetailed {const RepositoryRuleDetailed();
 
-factory RepositoryRuleDetailed.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleDetailedVariant1.canParse(json)) {
+factory RepositoryRuleDetailed.fromJson(Object? json) {   if (json is Map<String, dynamic> && RepositoryRuleDetailedVariant1.canParse(json)) {
     return RepositoryRuleDetailedRepositoryRuleDetailedVariant1(RepositoryRuleDetailedVariant1.fromJson(json));
   }
-  if (RepositoryRuleDetailedVariant2.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleDetailedVariant2.canParse(json)) {
     return RepositoryRuleDetailedRepositoryRuleDetailedVariant2(RepositoryRuleDetailedVariant2.fromJson(json));
   }
-  if (RepositoryRuleDetailedVariant3.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleDetailedVariant3.canParse(json)) {
     return RepositoryRuleDetailedRepositoryRuleDetailedVariant3(RepositoryRuleDetailedVariant3.fromJson(json));
   }
-  if (RepositoryRuleDetailedVariant4.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleDetailedVariant4.canParse(json)) {
     return RepositoryRuleDetailedRepositoryRuleDetailedVariant4(RepositoryRuleDetailedVariant4.fromJson(json));
   }
-  if (Variant5.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant5.canParse(json)) {
     return RepositoryRuleDetailedVariant5(Variant5.fromJson(json));
   }
-  if (Variant6.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant6.canParse(json)) {
     return RepositoryRuleDetailedVariant6(Variant6.fromJson(json));
   }
-  if (Variant7.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant7.canParse(json)) {
     return RepositoryRuleDetailedVariant7(Variant7.fromJson(json));
   }
-  if (Variant8.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant8.canParse(json)) {
     return RepositoryRuleDetailedVariant8(Variant8.fromJson(json));
   }
-  if (Variant9.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant9.canParse(json)) {
     return RepositoryRuleDetailedVariant9(Variant9.fromJson(json));
   }
-  if (Variant10.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant10.canParse(json)) {
     return RepositoryRuleDetailedVariant10(Variant10.fromJson(json));
   }
-  if (Variant11.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant11.canParse(json)) {
     return RepositoryRuleDetailedVariant11(Variant11.fromJson(json));
   }
-  if (Variant12.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant12.canParse(json)) {
     return RepositoryRuleDetailedVariant12(Variant12.fromJson(json));
   }
-  if (Variant13.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant13.canParse(json)) {
     return RepositoryRuleDetailedVariant13(Variant13.fromJson(json));
   }
-  if (Variant14.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant14.canParse(json)) {
     return RepositoryRuleDetailedVariant14(Variant14.fromJson(json));
   }
-  if (Variant15.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant15.canParse(json)) {
     return RepositoryRuleDetailedVariant15(Variant15.fromJson(json));
   }
-  if (Variant16.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant16.canParse(json)) {
     return RepositoryRuleDetailedVariant16(Variant16.fromJson(json));
   }
-  if (Variant17.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant17.canParse(json)) {
     return RepositoryRuleDetailedVariant17(Variant17.fromJson(json));
   }
-  if (Variant18.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant18.canParse(json)) {
     return RepositoryRuleDetailedVariant18(Variant18.fromJson(json));
   }
-  if (Variant19.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant19.canParse(json)) {
     return RepositoryRuleDetailedVariant19(Variant19.fromJson(json));
   }
-  if (Variant20.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant20.canParse(json)) {
     return RepositoryRuleDetailedVariant20(Variant20.fromJson(json));
   }
-  if (Variant21.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant21.canParse(json)) {
     return RepositoryRuleDetailedVariant21(Variant21.fromJson(json));
   }
-  if (Variant22.canParse(json)) {
+  if (json is Map<String, dynamic> && Variant22.canParse(json)) {
     return RepositoryRuleDetailedVariant22(Variant22.fromJson(json));
   }
   return RepositoryRuleDetailed$Unknown(json); }

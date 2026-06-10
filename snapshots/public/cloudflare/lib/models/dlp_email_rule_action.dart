@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action/block.dart';/// A value that is one of: `Block`.
 sealed class DlpEmailRuleAction {const DlpEmailRuleAction();
 
-factory DlpEmailRuleAction.fromJson(Map<String, dynamic> json) {   if (Block.canParse(json)) {
+factory DlpEmailRuleAction.fromJson(Object? json) {   if (json is Map<String, dynamic> && Block.canParse(json)) {
     return DlpEmailRuleActionBlock(Block.fromJson(json));
   }
   return DlpEmailRuleAction$Unknown(json); }

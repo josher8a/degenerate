@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_error_code.dart';import 'package:pub_cloudflare/models/abuse_reports_submit_error_response/abuse_reports_submit_error_response_request.dart';@immutable final class AbuseReportsSubmitErrorResponse {const AbuseReportsSubmitErrorResponse({required this.errorCode, required this.msg, required this.request, required this.result, });
 
 factory AbuseReportsSubmitErrorResponse.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitErrorResponse(
-  errorCode: AbuseReportsErrorCode.fromJson(json['error_code'] as Map<String, dynamic>),
+  errorCode: AbuseReportsErrorCode.fromJson(json['error_code']),
   msg: json['msg'] as String,
   request: AbuseReportsSubmitErrorResponseRequest.fromJson(json['request'] as Map<String, dynamic>),
   result: json['result'] as String,

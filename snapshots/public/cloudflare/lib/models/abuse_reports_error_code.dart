@@ -95,7 +95,7 @@ String toJson() => value;
 /// A value that is one of: `AbuseReportsBadActError`, `AbuseReportsMaxIPsError`, `AbuseReportsPortsProtocolError`, `AbuseReportsInternalError`, `AbuseReportsInvalidNotifyError`, `AbuseReportsMustNotifyError`, `AbuseReportsNoAgreeError`, `AbuseReportsNoOriginalWorkError`, `AbuseReportsNoSigError`, `AbuseReportsUnexpectedActError`, `AbuseReportsUnknownError`, `AbuseReportsUrlNotOrangeError`, `AbuseReportsUrlNotvalidError`.
 sealed class AbuseReportsErrorCode {const AbuseReportsErrorCode();
 
-factory AbuseReportsErrorCode.fromJson(Map<String, dynamic> json) {   return AbuseReportsErrorCode$Unknown(json); }
+factory AbuseReportsErrorCode.fromJson(Object? json) {   return AbuseReportsErrorCode$Unknown(json); }
 
 /// The underlying raw value.
 dynamic get value;

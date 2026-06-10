@@ -4,43 +4,43 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_caa_record.dart';import 'package:pub_cloudflare/models/dns_records_cert_record.dart';import 'package:pub_cloudflare/models/dns_records_dnskey_record.dart';import 'package:pub_cloudflare/models/dns_records_ds_record.dart';import 'package:pub_cloudflare/models/dns_records_https_record.dart';import 'package:pub_cloudflare/models/dns_records_loc_record.dart';import 'package:pub_cloudflare/models/dns_records_naptr_record.dart';import 'package:pub_cloudflare/models/dns_records_smimea_record.dart';import 'package:pub_cloudflare/models/dns_records_srv_record.dart';import 'package:pub_cloudflare/models/dns_records_sshfp_record.dart';import 'package:pub_cloudflare/models/dns_records_svcb_record.dart';import 'package:pub_cloudflare/models/dns_records_tlsa_record.dart';import 'package:pub_cloudflare/models/dns_records_uri_record.dart';/// A value that is one of: `DnsRecordsCaaRecord`, `DnsRecordsCertRecord`, `DnsRecordsDnskeyRecord`, `DnsRecordsDsRecord`, `DnsRecordsHttpsRecord`, `DnsRecordsLocRecord`, `DnsRecordsNaptrRecord`, `DnsRecordsSmimeaRecord`, `DnsRecordsSrvRecord`, `DnsRecordsSshfpRecord`, `DnsRecordsSvcbRecord`, `DnsRecordsTlsaRecord`, `DnsRecordsUriRecord`.
 sealed class DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData();
 
-factory DnsRecordsDnsRecordWithData.fromJson(Map<String, dynamic> json) {   if (DnsRecordsCaaRecord.canParse(json)) {
+factory DnsRecordsDnsRecordWithData.fromJson(Object? json) {   if (json is Map<String, dynamic> && DnsRecordsCaaRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord(DnsRecordsCaaRecord.fromJson(json));
   }
-  if (DnsRecordsCertRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsCertRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsCertRecord(DnsRecordsCertRecord.fromJson(json));
   }
-  if (DnsRecordsDnskeyRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsDnskeyRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord(DnsRecordsDnskeyRecord.fromJson(json));
   }
-  if (DnsRecordsDsRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsDsRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsDsRecord(DnsRecordsDsRecord.fromJson(json));
   }
-  if (DnsRecordsHttpsRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsHttpsRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord(DnsRecordsHttpsRecord.fromJson(json));
   }
-  if (DnsRecordsLocRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsLocRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsLocRecord(DnsRecordsLocRecord.fromJson(json));
   }
-  if (DnsRecordsNaptrRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsNaptrRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord(DnsRecordsNaptrRecord.fromJson(json));
   }
-  if (DnsRecordsSmimeaRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsSmimeaRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord(DnsRecordsSmimeaRecord.fromJson(json));
   }
-  if (DnsRecordsSrvRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsSrvRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(DnsRecordsSrvRecord.fromJson(json));
   }
-  if (DnsRecordsSshfpRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsSshfpRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord(DnsRecordsSshfpRecord.fromJson(json));
   }
-  if (DnsRecordsSvcbRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsSvcbRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord(DnsRecordsSvcbRecord.fromJson(json));
   }
-  if (DnsRecordsTlsaRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsTlsaRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord(DnsRecordsTlsaRecord.fromJson(json));
   }
-  if (DnsRecordsUriRecord.canParse(json)) {
+  if (json is Map<String, dynamic> && DnsRecordsUriRecord.canParse(json)) {
     return DnsRecordsDnsRecordWithDataDnsRecordsUriRecord(DnsRecordsUriRecord.fromJson(json));
   }
   return DnsRecordsDnsRecordWithData$Unknown(json); }

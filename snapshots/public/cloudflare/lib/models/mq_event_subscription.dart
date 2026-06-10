@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory MqEventSubscription.fromJson(Map<String, dynamic> json) { return MqEventSubscription(
   createdAt: DateTime.parse(json['created_at'] as String),
-  destination: MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>),
+  destination: MqEventDestination.fromJson(json['destination']),
   enabled: json['enabled'] as bool,
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
   id: json['id'] as String,

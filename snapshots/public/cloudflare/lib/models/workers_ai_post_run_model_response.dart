@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_model_response/workers_ai_post_run_model_response_result.dart';@immutable final class WorkersAiPostRunModelResponse {const WorkersAiPostRunModelResponse({this.result});
 
 factory WorkersAiPostRunModelResponse.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunModelResponse(
-  result: json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result']) : null,
 ); }
 
 final WorkersAiPostRunModelResponseResult? result;

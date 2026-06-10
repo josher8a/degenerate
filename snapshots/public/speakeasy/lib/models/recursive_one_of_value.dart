@@ -4,7 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value that is one of: `String`, `List<RecursiveOneOfValue>`, `Map<String, RecursiveOneOfValue>`.
 sealed class RecursiveOneOfValue {const RecursiveOneOfValue();
 
-factory RecursiveOneOfValue.fromJson(Map<String, dynamic> json) {   return RecursiveOneOfValue$Unknown(json); }
+factory RecursiveOneOfValue.fromJson(Object? json) {   if (json is String) return RecursiveOneOfValueString(json);
+  if (json is List) {
+    return RecursiveOneOfValueListRecursiveOneOfValue(json.map(RecursiveOneOfValue.fromJson).toList());
+  }
+  if (json is Map<String, dynamic>) {
+    return RecursiveOneOfValueMapStringRecursiveOneOfValue(json.map((k, v) => MapEntry(k, RecursiveOneOfValue.fromJson(v))));
+  }
+  return RecursiveOneOfValue$Unknown(json); }
 
 /// The underlying raw value.
 dynamic get value;

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_url_target.dart';/// A value that is one of: `ZonesUrlTarget`.
 sealed class ZonesTarget {const ZonesTarget();
 
-factory ZonesTarget.fromJson(Map<String, dynamic> json) {   if (ZonesUrlTarget.canParse(json)) {
+factory ZonesTarget.fromJson(Object? json) {   if (json is Map<String, dynamic> && ZonesUrlTarget.canParse(json)) {
     return ZonesTargetZonesUrlTarget(ZonesUrlTarget.fromJson(json));
   }
   return ZonesTarget$Unknown(json); }

@@ -4,8 +4,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_ruleset_edited/rules_updated.dart';@immutable final class Rules {const Rules({this.added, this.deleted, this.updated, });
 
 factory Rules.fromJson(Map<String, dynamic> json) { return Rules(
-  added: (json['added'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
-  deleted: (json['deleted'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
+  added: (json['added'] as List<dynamic>?)?.map(RepositoryRule.fromJson).toList(),
+  deleted: (json['deleted'] as List<dynamic>?)?.map(RepositoryRule.fromJson).toList(),
   updated: (json['updated'] as List<dynamic>?)?.map((e) => RulesUpdated.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

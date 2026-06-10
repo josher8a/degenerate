@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ZonesSetting.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ZonesSetting.fromJson(json['result']) : null;
   },
   onError: ZoneSettingsEditSingleSettingError.fromResponse,
 );
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ZonesSetting.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ZonesSetting.fromJson(json['result']) : null;
   },
   onError: ZoneSettingsEditSingleSettingError.fromResponse,
 );

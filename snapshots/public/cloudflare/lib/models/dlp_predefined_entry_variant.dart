@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_predefined_entry_variant/prompt_topic.dart';/// A value that is one of: `PromptTopic`.
 sealed class DlpPredefinedEntryVariant {const DlpPredefinedEntryVariant();
 
-factory DlpPredefinedEntryVariant.fromJson(Map<String, dynamic> json) {   if (PromptTopic.canParse(json)) {
+factory DlpPredefinedEntryVariant.fromJson(Object? json) {   if (json is Map<String, dynamic> && PromptTopic.canParse(json)) {
     return DlpPredefinedEntryVariantPromptTopic(PromptTopic.fromJson(json));
   }
   return DlpPredefinedEntryVariant$Unknown(json); }

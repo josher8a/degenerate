@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RateLimitsForAZoneUpdateARateLimitRequest.fromJson(Map<String, dynamic> json) { return RateLimitsForAZoneUpdateARateLimitRequest(
   action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),
-  match: FirewallMatch.fromJson(json['match'] as Map<String, dynamic>),
+  match: FirewallMatch.fromJson(json['match']),
   period: FirewallPeriod.fromJson(json['period'] as num),
   threshold: FirewallThreshold.fromJson(json['threshold'] as num),
 ); }

@@ -4,52 +4,52 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_event/configure_cloudflared_tunnel.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_success.dart';import 'package:pub_cloudflare/models/mconn_event/leave.dart';import 'package:pub_cloudflare/models/mconn_event/mconn_event_init.dart';import 'package:pub_cloudflare/models/mconn_event/reconcile.dart';import 'package:pub_cloudflare/models/mconn_event/start_attestation.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_crypt_key.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_pki.dart';import 'package:pub_cloudflare/models/mconn_event/start_upgrade.dart';/// A value that is one of: `MconnEventInit`, `Leave`, `StartAttestation`, `FinishAttestationSuccess`, `FinishAttestationFailure`, `StartRotateCryptKey`, `FinishRotateCryptKeySuccess`, `FinishRotateCryptKeyFailure`, `StartRotatePki`, `FinishRotatePkiSuccess`, `FinishRotatePkiFailure`, `StartUpgrade`, `FinishUpgradeSuccess`, `FinishUpgradeFailure`, `Reconcile`, `ConfigureCloudflaredTunnel`.
 sealed class MconnEvent {const MconnEvent();
 
-factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (MconnEventInit.canParse(json)) {
+factory MconnEvent.fromJson(Object? json) {   if (json is Map<String, dynamic> && MconnEventInit.canParse(json)) {
     return MconnEventMconnEventInit(MconnEventInit.fromJson(json));
   }
-  if (Leave.canParse(json)) {
+  if (json is Map<String, dynamic> && Leave.canParse(json)) {
     return MconnEventLeave(Leave.fromJson(json));
   }
-  if (StartAttestation.canParse(json)) {
+  if (json is Map<String, dynamic> && StartAttestation.canParse(json)) {
     return MconnEventStartAttestation(StartAttestation.fromJson(json));
   }
-  if (FinishAttestationSuccess.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishAttestationSuccess.canParse(json)) {
     return MconnEventFinishAttestationSuccess(FinishAttestationSuccess.fromJson(json));
   }
-  if (FinishAttestationFailure.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishAttestationFailure.canParse(json)) {
     return MconnEventFinishAttestationFailure(FinishAttestationFailure.fromJson(json));
   }
-  if (StartRotateCryptKey.canParse(json)) {
+  if (json is Map<String, dynamic> && StartRotateCryptKey.canParse(json)) {
     return MconnEventStartRotateCryptKey(StartRotateCryptKey.fromJson(json));
   }
-  if (FinishRotateCryptKeySuccess.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishRotateCryptKeySuccess.canParse(json)) {
     return MconnEventFinishRotateCryptKeySuccess(FinishRotateCryptKeySuccess.fromJson(json));
   }
-  if (FinishRotateCryptKeyFailure.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishRotateCryptKeyFailure.canParse(json)) {
     return MconnEventFinishRotateCryptKeyFailure(FinishRotateCryptKeyFailure.fromJson(json));
   }
-  if (StartRotatePki.canParse(json)) {
+  if (json is Map<String, dynamic> && StartRotatePki.canParse(json)) {
     return MconnEventStartRotatePki(StartRotatePki.fromJson(json));
   }
-  if (FinishRotatePkiSuccess.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishRotatePkiSuccess.canParse(json)) {
     return MconnEventFinishRotatePkiSuccess(FinishRotatePkiSuccess.fromJson(json));
   }
-  if (FinishRotatePkiFailure.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishRotatePkiFailure.canParse(json)) {
     return MconnEventFinishRotatePkiFailure(FinishRotatePkiFailure.fromJson(json));
   }
-  if (StartUpgrade.canParse(json)) {
+  if (json is Map<String, dynamic> && StartUpgrade.canParse(json)) {
     return MconnEventStartUpgrade(StartUpgrade.fromJson(json));
   }
-  if (FinishUpgradeSuccess.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishUpgradeSuccess.canParse(json)) {
     return MconnEventFinishUpgradeSuccess(FinishUpgradeSuccess.fromJson(json));
   }
-  if (FinishUpgradeFailure.canParse(json)) {
+  if (json is Map<String, dynamic> && FinishUpgradeFailure.canParse(json)) {
     return MconnEventFinishUpgradeFailure(FinishUpgradeFailure.fromJson(json));
   }
-  if (Reconcile.canParse(json)) {
+  if (json is Map<String, dynamic> && Reconcile.canParse(json)) {
     return MconnEventReconcile(Reconcile.fromJson(json));
   }
-  if (ConfigureCloudflaredTunnel.canParse(json)) {
+  if (json is Map<String, dynamic> && ConfigureCloudflaredTunnel.canParse(json)) {
     return MconnEventConfigureCloudflaredTunnel(ConfigureCloudflaredTunnel.fromJson(json));
   }
   return MconnEvent$Unknown(json); }

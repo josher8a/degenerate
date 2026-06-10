@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_stream_event/thread_created.dart';/// A value that is one of: `ThreadCreated`.
 sealed class ThreadStreamEvent {const ThreadStreamEvent();
 
-factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadCreated.canParse(json)) {
+factory ThreadStreamEvent.fromJson(Object? json) {   if (json is Map<String, dynamic> && ThreadCreated.canParse(json)) {
     return ThreadStreamEventThreadCreated(ThreadCreated.fromJson(json));
   }
   return ThreadStreamEvent$Unknown(json); }

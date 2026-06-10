@@ -9,7 +9,7 @@ factory ReposCreateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { retur
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),) : null,
-  rules: (json['rules'] as List<dynamic>?)?.map((e) => OrgRules.fromJson(e as Map<String, dynamic>)).toList(),
+  rules: (json['rules'] as List<dynamic>?)?.map(OrgRules.fromJson).toList(),
 ); }
 
 /// The name of the ruleset.

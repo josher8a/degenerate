@@ -23,7 +23,7 @@ factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallR
   description: json['description'] != null ? FirewallDescription.fromJson(json['description'] as String) : null,
   disabled: json['disabled'] != null ? FirewallDisabled.fromJson(json['disabled'] as bool) : null,
   id: json['id'] != null ? FirewallId.fromJson(json['id'] as String) : null,
-  match: json['match'] != null ? FirewallMatch.fromJson(json['match'] as Map<String, dynamic>) : null,
+  match: json['match'] != null ? FirewallMatch.fromJson(json['match']) : null,
   period: json['period'] != null ? FirewallPeriod.fromJson(json['period'] as num) : null,
   threshold: json['threshold'] != null ? FirewallThreshold.fromJson(json['threshold'] as num) : null,
 ); }

@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory AccessSchemasGroups.fromJson(Map<String, dynamic> json) { return AccessSchemasGroups(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
-  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
-  include: (json['include'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-  isDefault: (json['is_default'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  include: (json['include'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  isDefault: (json['is_default'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   name: json['name'] != null ? AccessGroupsComponentsSchemasName.fromJson(json['name'] as String) : null,
-  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 

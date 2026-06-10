@@ -24,7 +24,7 @@ factory ZonesPageRule.fromJson(Map<String, dynamic> json) { return ZonesPageRule
   modifiedOn: ZonesModifiedOn.fromJson(json['modified_on'] as String),
   priority: ZonesPriority.fromJson(json['priority'] as num),
   status: ZonesStatus.fromJson(json['status'] as String),
-  targets: (json['targets'] as List<dynamic>).map((e) => ZonesTarget.fromJson(e as Map<String, dynamic>)).toList(),
+  targets: (json['targets'] as List<dynamic>).map(ZonesTarget.fromJson).toList(),
 ); }
 
 /// The set of actions to perform if the targets of this rule match the

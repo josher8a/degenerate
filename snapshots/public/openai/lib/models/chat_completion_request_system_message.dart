@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class ChatCompletionRequestSystemMessage {const ChatCompletionRequestSystemMessage({required this.content, required this.role, this.name, });
 
 factory ChatCompletionRequestSystemMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestSystemMessage(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestSystemMessageContentPart.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map(ChatCompletionRequestSystemMessageContentPart.fromJson).toList(),),
   role: json['role'] as String,
   name: json['name'] as String?,
 ); }

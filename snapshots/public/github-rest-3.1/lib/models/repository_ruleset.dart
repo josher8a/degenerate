@@ -198,7 +198,7 @@ factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return Repositor
   nodeId: json['node_id'] as String?,
   links: json['_links'] != null ? RepositoryRulesetLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
   conditions: json['conditions'] != null ? OneOf2.parse(json['conditions'], fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => OneOf3.parse(v, fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),),) : null,
-  rules: (json['rules'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
+  rules: (json['rules'] as List<dynamic>?)?.map(RepositoryRule.fromJson).toList(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }

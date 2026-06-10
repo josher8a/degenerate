@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/tls_certificates_and_hostnames_ssl_dv.dart';/// A value that is one of: `TlsCertificatesAndHostnamesSslDv`.
 sealed class TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSsl();
 
-factory TlsCertificatesAndHostnamesSsl.fromJson(Map<String, dynamic> json) {   if (TlsCertificatesAndHostnamesSslDv.canParse(json)) {
+factory TlsCertificatesAndHostnamesSsl.fromJson(Object? json) {   if (json is Map<String, dynamic> && TlsCertificatesAndHostnamesSslDv.canParse(json)) {
     return TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv(TlsCertificatesAndHostnamesSslDv.fromJson(json));
   }
   return TlsCertificatesAndHostnamesSsl$Unknown(json); }

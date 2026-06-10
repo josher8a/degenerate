@@ -8,15 +8,15 @@ factory AccessPolicies.fromJson(Map<String, dynamic> json) { return AccessPolici
   approvalRequired: json['approval_required'] != null ? AccessSchemasApprovalRequired.fromJson(json['approval_required'] as bool) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   decision: json['decision'] != null ? AccessSchemasDecision.fromJson(json['decision'] as String) : null,
-  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
-  include: (json['include'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  include: (json['include'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   isolationRequired: json['isolation_required'] != null ? AccessSchemasIsolationRequired.fromJson(json['isolation_required'] as bool) : null,
   name: json['name'] != null ? AccessPoliciesComponentsSchemasName.fromJson(json['name'] as String) : null,
   precedence: json['precedence'] != null ? AccessSchemasPrecedence.fromJson(json['precedence'] as num) : null,
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessSchemasPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
-  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 

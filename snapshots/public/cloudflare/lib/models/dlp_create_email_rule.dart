@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpCreateEmailRule {const DlpCreateEmailRule({required this.action, required this.conditions, required this.enabled, required this.name, this.description, });
 
 factory DlpCreateEmailRule.fromJson(Map<String, dynamic> json) { return DlpCreateEmailRule(
-  action: DlpEmailRuleAction.fromJson(json['action'] as Map<String, dynamic>),
+  action: DlpEmailRuleAction.fromJson(json['action']),
   conditions: (json['conditions'] as List<dynamic>).map((e) => DlpEmailRuleCondition.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   enabled: json['enabled'] as bool,

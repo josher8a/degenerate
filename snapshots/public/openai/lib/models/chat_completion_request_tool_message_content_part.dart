@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';/// A value that is one of: `ChatCompletionRequestMessageContentPartText`.
 sealed class ChatCompletionRequestToolMessageContentPart {const ChatCompletionRequestToolMessageContentPart();
 
-factory ChatCompletionRequestToolMessageContentPart.fromJson(Map<String, dynamic> json) {   if (ChatCompletionRequestMessageContentPartText.canParse(json)) {
+factory ChatCompletionRequestToolMessageContentPart.fromJson(Object? json) {   if (json is Map<String, dynamic> && ChatCompletionRequestMessageContentPartText.canParse(json)) {
     return ChatCompletionRequestToolMessageContentPartChatCompletionRequestMessageContentPartText(ChatCompletionRequestMessageContentPartText.fromJson(json));
   }
   return ChatCompletionRequestToolMessageContentPart$Unknown(json); }

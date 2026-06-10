@@ -4272,17 +4272,224 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 /// A value that is one of: `Zones0rttValue`, `ZonesAdvancedDdosValue`, `ZonesCacheRulesAegisValue`, `ZonesAlwaysOnlineValue`, `ZonesAlwaysUseHttpsValue`, `ZonesAutomaticHttpsRewritesValue`, `ZonesBrotliValue`, `ZonesBrowserCacheTtlValue`, `ZonesBrowserCheckValue`, `ZonesCacheLevelValue`, `ZonesChallengeTtlValue`, `ZonesChinaNetworkEnabledValue`, `ZonesContentConverterValue`, `List<String>`, `ZonesCnameFlatteningValue`, `ZonesDevelopmentModeValue`, `ZonesEarlyHintsValue`, `ZonesEdgeCacheTtlValue`, `ZonesEmailObfuscationValue`, `ZonesH2PrioritizationValue`, `ZonesHotlinkProtectionValue`, `ZonesHttp2Value`, `ZonesHttp3Value`, `ZonesImageResizingValue`, `ZonesIpGeolocationValue`, `ZonesIpv6Value`, `ZonesMaxUploadValue`, `ZonesMinTlsVersionValue`, `ZonesMirageValue`, `ZonesNelValue`, `ZonesOpportunisticEncryptionValue`, `ZonesOpportunisticOnionValue`, `ZonesOrangeToOrangeValue`, `ZonesOriginErrorPagePassThruValue`, `ZonesCacheRulesOriginMaxHttpVersionValue`, `ZonesPolishValue`, `ZonesPrefetchPreloadValue`, `ZonesPrivacyPassValue`, `ZonesPseudoIpv4Value`, `ZonesRedirectsForAiTrainingValue`, `ZonesReplaceInsecureJsValue`, `ZonesResponseBufferingValue`, `ZonesRocketLoaderValue`, `ZonesAutomaticPlatformOptimization`, `ZonesSecurityHeaderValue`, `ZonesSecurityLevelValue`, `ZonesServerSideExcludeValue`, `ZonesSha1SupportValue`, `ZonesSortQueryStringForCacheValue`, `ZonesSslValue`, `ZonesTls12OnlyValue`, `ZonesTls13Value`, `ZonesTlsClientAuthValue`, `ZonesTrueClientIpHeaderValue`, `ZonesWafValue`, `ZonesWebpValue`, `ZonesWebsocketsValue`.
 sealed class ZonesSettingValue {const ZonesSettingValue();
 
-factory ZonesSettingValue.fromJson(Map<String, dynamic> json) {   if (ZonesCacheRulesAegisValue.canParse(json)) {
+factory ZonesSettingValue.fromJson(Object? json) {   if (json is String) {
+    final v = Zones0rttValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZones0rttValue(v);
+  }
+  if (json is String) {
+    final v = ZonesAdvancedDdosValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesAdvancedDdosValue(v);
+  }
+  if (json is Map<String, dynamic> && ZonesCacheRulesAegisValue.canParse(json)) {
     return ZonesSettingValueZonesCacheRulesAegisValue(ZonesCacheRulesAegisValue.fromJson(json));
   }
-  if (ZonesNelValue.canParse(json)) {
+  if (json is String) {
+    final v = ZonesAlwaysOnlineValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesAlwaysOnlineValue(v);
+  }
+  if (json is String) {
+    final v = ZonesAlwaysUseHttpsValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesAlwaysUseHttpsValue(v);
+  }
+  if (json is String) {
+    final v = ZonesAutomaticHttpsRewritesValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesAutomaticHttpsRewritesValue(v);
+  }
+  if (json is String) {
+    final v = ZonesBrotliValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesBrotliValue(v);
+  }
+  if (json is String) {
+    final v = ZonesBrowserCheckValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesBrowserCheckValue(v);
+  }
+  if (json is String) {
+    final v = ZonesCacheLevelValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesCacheLevelValue(v);
+  }
+  if (json is num) {
+    final v = ZonesChallengeTtlValue.fromJson(json.toDouble());
+    if (!v.isUnknown) return ZonesSettingValueZonesChallengeTtlValue(v);
+  }
+  if (json is String) {
+    final v = ZonesChinaNetworkEnabledValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesChinaNetworkEnabledValue(v);
+  }
+  if (json is String) {
+    final v = ZonesContentConverterValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesContentConverterValue(v);
+  }
+  if (json is List) {
+    return ZonesSettingValueListString(json.map((e) => e as String).toList());
+  }
+  if (json is String) {
+    final v = ZonesCnameFlatteningValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesCnameFlatteningValue(v);
+  }
+  if (json is String) {
+    final v = ZonesDevelopmentModeValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesDevelopmentModeValue(v);
+  }
+  if (json is String) {
+    final v = ZonesEarlyHintsValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesEarlyHintsValue(v);
+  }
+  if (json is num) {
+    final v = ZonesEdgeCacheTtlValue.fromJson(json.toDouble());
+    if (!v.isUnknown) return ZonesSettingValueZonesEdgeCacheTtlValue(v);
+  }
+  if (json is String) {
+    final v = ZonesEmailObfuscationValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesEmailObfuscationValue(v);
+  }
+  if (json is String) {
+    final v = ZonesH2PrioritizationValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesH2PrioritizationValue(v);
+  }
+  if (json is String) {
+    final v = ZonesHotlinkProtectionValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesHotlinkProtectionValue(v);
+  }
+  if (json is String) {
+    final v = ZonesHttp2Value.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesHttp2Value(v);
+  }
+  if (json is String) {
+    final v = ZonesHttp3Value.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesHttp3Value(v);
+  }
+  if (json is String) {
+    final v = ZonesImageResizingValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesImageResizingValue(v);
+  }
+  if (json is String) {
+    final v = ZonesIpGeolocationValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesIpGeolocationValue(v);
+  }
+  if (json is String) {
+    final v = ZonesIpv6Value.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesIpv6Value(v);
+  }
+  if (json is num) {
+    final v = ZonesMaxUploadValue.fromJson(json.toInt());
+    if (!v.isUnknown) return ZonesSettingValueZonesMaxUploadValue(v);
+  }
+  if (json is String) {
+    final v = ZonesMinTlsVersionValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesMinTlsVersionValue(v);
+  }
+  if (json is String) {
+    final v = ZonesMirageValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesMirageValue(v);
+  }
+  if (json is Map<String, dynamic> && ZonesNelValue.canParse(json)) {
     return ZonesSettingValueZonesNelValue(ZonesNelValue.fromJson(json));
   }
-  if (ZonesAutomaticPlatformOptimization.canParse(json)) {
+  if (json is String) {
+    final v = ZonesOpportunisticEncryptionValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesOpportunisticEncryptionValue(v);
+  }
+  if (json is String) {
+    final v = ZonesOpportunisticOnionValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesOpportunisticOnionValue(v);
+  }
+  if (json is String) {
+    final v = ZonesOrangeToOrangeValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesOrangeToOrangeValue(v);
+  }
+  if (json is String) {
+    final v = ZonesOriginErrorPagePassThruValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesOriginErrorPagePassThruValue(v);
+  }
+  if (json is String) {
+    final v = ZonesCacheRulesOriginMaxHttpVersionValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue(v);
+  }
+  if (json is String) {
+    final v = ZonesPolishValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesPolishValue(v);
+  }
+  if (json is String) {
+    final v = ZonesPrefetchPreloadValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesPrefetchPreloadValue(v);
+  }
+  if (json is String) {
+    final v = ZonesPrivacyPassValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesPrivacyPassValue(v);
+  }
+  if (json is String) {
+    final v = ZonesPseudoIpv4Value.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesPseudoIpv4Value(v);
+  }
+  if (json is String) {
+    final v = ZonesRedirectsForAiTrainingValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesRedirectsForAiTrainingValue(v);
+  }
+  if (json is String) {
+    final v = ZonesReplaceInsecureJsValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesReplaceInsecureJsValue(v);
+  }
+  if (json is String) {
+    final v = ZonesResponseBufferingValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesResponseBufferingValue(v);
+  }
+  if (json is String) {
+    final v = ZonesRocketLoaderValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesRocketLoaderValue(v);
+  }
+  if (json is Map<String, dynamic> && ZonesAutomaticPlatformOptimization.canParse(json)) {
     return ZonesSettingValueZonesAutomaticPlatformOptimization(ZonesAutomaticPlatformOptimization.fromJson(json));
   }
-  if (ZonesSecurityHeaderValue.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesSecurityHeaderValue.canParse(json)) {
     return ZonesSettingValueZonesSecurityHeaderValue(ZonesSecurityHeaderValue.fromJson(json));
+  }
+  if (json is String) {
+    final v = ZonesSecurityLevelValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesSecurityLevelValue(v);
+  }
+  if (json is String) {
+    final v = ZonesServerSideExcludeValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesServerSideExcludeValue(v);
+  }
+  if (json is String) {
+    final v = ZonesSha1SupportValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesSha1SupportValue(v);
+  }
+  if (json is String) {
+    final v = ZonesSortQueryStringForCacheValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesSortQueryStringForCacheValue(v);
+  }
+  if (json is String) {
+    final v = ZonesSslValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesSslValue(v);
+  }
+  if (json is String) {
+    final v = ZonesTls12OnlyValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesTls12OnlyValue(v);
+  }
+  if (json is String) {
+    final v = ZonesTls13Value.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesTls13Value(v);
+  }
+  if (json is String) {
+    final v = ZonesTlsClientAuthValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesTlsClientAuthValue(v);
+  }
+  if (json is String) {
+    final v = ZonesTrueClientIpHeaderValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesTrueClientIpHeaderValue(v);
+  }
+  if (json is String) {
+    final v = ZonesWafValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesWafValue(v);
+  }
+  if (json is String) {
+    final v = ZonesWebpValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesWebpValue(v);
+  }
+  if (json is String) {
+    final v = ZonesWebsocketsValue.fromJson(json);
+    if (!v.isUnknown) return ZonesSettingValueZonesWebsocketsValue(v);
   }
   return ZonesSettingValue$Unknown(json); }
 

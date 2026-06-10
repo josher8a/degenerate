@@ -4726,7 +4726,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => RepositoryRuleDetailed.fromJson(e as Map<String, dynamic>)).toList();
+    return json.map(RepositoryRuleDetailed.fromJson).toList();
   },
 );
  } 

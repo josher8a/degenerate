@@ -7,14 +7,14 @@ factory ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest.fromJson(Map<String, 
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessSchemasApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
   approvalRequired: json['approval_required'] != null ? AccessSchemasApprovalRequired.fromJson(json['approval_required'] as bool) : null,
   decision: AccessSchemasDecision.fromJson(json['decision'] as String),
-  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-  include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  include: (json['include'] as List<dynamic>).map(AccessRule.fromJson).toList(),
   isolationRequired: json['isolation_required'] != null ? AccessSchemasIsolationRequired.fromJson(json['isolation_required'] as bool) : null,
   name: AccessPoliciesComponentsSchemasName.fromJson(json['name'] as String),
   precedence: json['precedence'] != null ? AccessSchemasPrecedence.fromJson(json['precedence'] as num) : null,
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessSchemasPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
-  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
 ); }
 
 /// Administrators who can approve a temporary authentication request.

@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_base.dart';import 'package:pub_cloudflare/models/zones_cache_rules_aegis.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_h2_max_streams.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_max_http_version.dart';import 'package:pub_cloudflare/models/zones_development_mode.dart';import 'package:pub_cloudflare/models/zones_schemas_base.dart';import 'package:pub_cloudflare/models/zones_ssl_recommender.dart';/// A value that is one of: `ZonesBase`, `ZonesCacheRulesAegis`, `ZonesDevelopmentMode`, `ZonesCacheRulesOriginH2MaxStreams`, `ZonesCacheRulesOriginMaxHttpVersion`, `ZonesSchemasBase`, `ZonesBase`, `ZonesSslRecommender`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`.
 sealed class ZonesSetting {const ZonesSetting();
 
-factory ZonesSetting.fromJson(Map<String, dynamic> json) {   if (ZonesBase.canParse(json)) {
+factory ZonesSetting.fromJson(Object? json) {   if (json is Map<String, dynamic> && ZonesBase.canParse(json)) {
     return ZonesSettingZonesBase(ZonesBase.fromJson(json));
   }
-  if (ZonesCacheRulesAegis.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesCacheRulesAegis.canParse(json)) {
     return ZonesSettingZonesCacheRulesAegis(ZonesCacheRulesAegis.fromJson(json));
   }
-  if (ZonesDevelopmentMode.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesDevelopmentMode.canParse(json)) {
     return ZonesSettingZonesDevelopmentMode(ZonesDevelopmentMode.fromJson(json));
   }
-  if (ZonesCacheRulesOriginH2MaxStreams.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesCacheRulesOriginH2MaxStreams.canParse(json)) {
     return ZonesSettingZonesCacheRulesOriginH2MaxStreams(ZonesCacheRulesOriginH2MaxStreams.fromJson(json));
   }
-  if (ZonesCacheRulesOriginMaxHttpVersion.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesCacheRulesOriginMaxHttpVersion.canParse(json)) {
     return ZonesSettingZonesCacheRulesOriginMaxHttpVersion(ZonesCacheRulesOriginMaxHttpVersion.fromJson(json));
   }
-  if (ZonesSchemasBase.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesSchemasBase.canParse(json)) {
     return ZonesSettingZonesSchemasBase(ZonesSchemasBase.fromJson(json));
   }
-  if (ZonesSslRecommender.canParse(json)) {
+  if (json is Map<String, dynamic> && ZonesSslRecommender.canParse(json)) {
     return ZonesSettingZonesSslRecommender(ZonesSslRecommender.fromJson(json));
   }
   return ZonesSetting$Unknown(json); }

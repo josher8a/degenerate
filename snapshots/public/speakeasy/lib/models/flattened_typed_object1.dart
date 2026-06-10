@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/typed_object1.dart';/// A value that is one of: `TypedObject1`.
 sealed class FlattenedTypedObject1 {const FlattenedTypedObject1();
 
-factory FlattenedTypedObject1.fromJson(Map<String, dynamic> json) {   if (TypedObject1.canParse(json)) {
+factory FlattenedTypedObject1.fromJson(Object? json) {   if (json is Map<String, dynamic> && TypedObject1.canParse(json)) {
     return FlattenedTypedObject1TypedObject1(TypedObject1.fromJson(json));
   }
   return FlattenedTypedObject1$Unknown(json); }

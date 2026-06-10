@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class MconnRecordedEvent {const MconnRecordedEvent({required this.e, required this.n, required this.t, });
 
 factory MconnRecordedEvent.fromJson(Map<String, dynamic> json) { return MconnRecordedEvent(
-  e: MconnEvent.fromJson(json['e'] as Map<String, dynamic>),
+  e: MconnEvent.fromJson(json['e']),
   n: (json['n'] as num).toDouble(),
   t: (json['t'] as num).toDouble(),
 ); }

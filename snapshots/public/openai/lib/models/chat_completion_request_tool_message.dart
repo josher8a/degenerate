@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory ChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestToolMessage(
   role: json['role'] as String,
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestToolMessageContentPart.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map(ChatCompletionRequestToolMessageContentPart.fromJson).toList(),),
   toolCallId: json['tool_call_id'] as String,
 ); }
 

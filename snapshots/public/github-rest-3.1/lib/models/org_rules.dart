@@ -4,67 +4,67 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_code_scanning.dart';import 'package:pub_github_rest_3_1/models/repository_rule_commit_author_email_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_commit_message_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_committer_email_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_copilot_code_review.dart';import 'package:pub_github_rest_3_1/models/repository_rule_creation.dart';import 'package:pub_github_rest_3_1/models/repository_rule_deletion.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_extension_restriction.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_path_length.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_size.dart';import 'package:pub_github_rest_3_1/models/repository_rule_non_fast_forward.dart';import 'package:pub_github_rest_3_1/models/repository_rule_pull_request.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_deployments.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_linear_history.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_signatures.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_status_checks.dart';import 'package:pub_github_rest_3_1/models/repository_rule_tag_name_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_update.dart';import 'package:pub_github_rest_3_1/models/repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
 sealed class OrgRules {const OrgRules();
 
-factory OrgRules.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreation.canParse(json)) {
+factory OrgRules.fromJson(Object? json) {   if (json is Map<String, dynamic> && RepositoryRuleCreation.canParse(json)) {
     return OrgRulesRepositoryRuleCreation(RepositoryRuleCreation.fromJson(json));
   }
-  if (RepositoryRuleUpdate.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleUpdate.canParse(json)) {
     return OrgRulesRepositoryRuleUpdate(RepositoryRuleUpdate.fromJson(json));
   }
-  if (RepositoryRuleDeletion.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleDeletion.canParse(json)) {
     return OrgRulesRepositoryRuleDeletion(RepositoryRuleDeletion.fromJson(json));
   }
-  if (RepositoryRuleRequiredLinearHistory.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleRequiredLinearHistory.canParse(json)) {
     return OrgRulesRepositoryRuleRequiredLinearHistory(RepositoryRuleRequiredLinearHistory.fromJson(json));
   }
-  if (RepositoryRuleRequiredDeployments.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleRequiredDeployments.canParse(json)) {
     return OrgRulesRepositoryRuleRequiredDeployments(RepositoryRuleRequiredDeployments.fromJson(json));
   }
-  if (RepositoryRuleRequiredSignatures.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleRequiredSignatures.canParse(json)) {
     return OrgRulesRepositoryRuleRequiredSignatures(RepositoryRuleRequiredSignatures.fromJson(json));
   }
-  if (RepositoryRulePullRequest.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRulePullRequest.canParse(json)) {
     return OrgRulesRepositoryRulePullRequest(RepositoryRulePullRequest.fromJson(json));
   }
-  if (RepositoryRuleRequiredStatusChecks.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleRequiredStatusChecks.canParse(json)) {
     return OrgRulesRepositoryRuleRequiredStatusChecks(RepositoryRuleRequiredStatusChecks.fromJson(json));
   }
-  if (RepositoryRuleNonFastForward.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleNonFastForward.canParse(json)) {
     return OrgRulesRepositoryRuleNonFastForward(RepositoryRuleNonFastForward.fromJson(json));
   }
-  if (RepositoryRuleCommitMessagePattern.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleCommitMessagePattern.canParse(json)) {
     return OrgRulesRepositoryRuleCommitMessagePattern(RepositoryRuleCommitMessagePattern.fromJson(json));
   }
-  if (RepositoryRuleCommitAuthorEmailPattern.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleCommitAuthorEmailPattern.canParse(json)) {
     return OrgRulesRepositoryRuleCommitAuthorEmailPattern(RepositoryRuleCommitAuthorEmailPattern.fromJson(json));
   }
-  if (RepositoryRuleCommitterEmailPattern.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleCommitterEmailPattern.canParse(json)) {
     return OrgRulesRepositoryRuleCommitterEmailPattern(RepositoryRuleCommitterEmailPattern.fromJson(json));
   }
-  if (RepositoryRuleBranchNamePattern.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleBranchNamePattern.canParse(json)) {
     return OrgRulesRepositoryRuleBranchNamePattern(RepositoryRuleBranchNamePattern.fromJson(json));
   }
-  if (RepositoryRuleTagNamePattern.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleTagNamePattern.canParse(json)) {
     return OrgRulesRepositoryRuleTagNamePattern(RepositoryRuleTagNamePattern.fromJson(json));
   }
-  if (RepositoryRuleFilePathRestriction.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleFilePathRestriction.canParse(json)) {
     return OrgRulesRepositoryRuleFilePathRestriction(RepositoryRuleFilePathRestriction.fromJson(json));
   }
-  if (RepositoryRuleMaxFilePathLength.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleMaxFilePathLength.canParse(json)) {
     return OrgRulesRepositoryRuleMaxFilePathLength(RepositoryRuleMaxFilePathLength.fromJson(json));
   }
-  if (RepositoryRuleFileExtensionRestriction.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleFileExtensionRestriction.canParse(json)) {
     return OrgRulesRepositoryRuleFileExtensionRestriction(RepositoryRuleFileExtensionRestriction.fromJson(json));
   }
-  if (RepositoryRuleMaxFileSize.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleMaxFileSize.canParse(json)) {
     return OrgRulesRepositoryRuleMaxFileSize(RepositoryRuleMaxFileSize.fromJson(json));
   }
-  if (RepositoryRuleWorkflows.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleWorkflows.canParse(json)) {
     return OrgRulesRepositoryRuleWorkflows(RepositoryRuleWorkflows.fromJson(json));
   }
-  if (RepositoryRuleCodeScanning.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleCodeScanning.canParse(json)) {
     return OrgRulesRepositoryRuleCodeScanning(RepositoryRuleCodeScanning.fromJson(json));
   }
-  if (RepositoryRuleCopilotCodeReview.canParse(json)) {
+  if (json is Map<String, dynamic> && RepositoryRuleCopilotCodeReview.canParse(json)) {
     return OrgRulesRepositoryRuleCopilotCodeReview(RepositoryRuleCopilotCodeReview.fromJson(json));
   }
   return OrgRules$Unknown(json); }

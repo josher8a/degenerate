@@ -4,25 +4,35 @@
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/automatic_speech_recognition2.dart';import 'package:pub_cloudflare/models/image_classification2.dart';import 'package:pub_cloudflare/models/image_text_to_text2.dart';import 'package:pub_cloudflare/models/image_to_text2.dart';import 'package:pub_cloudflare/models/multimodal_embeddings2.dart';import 'package:pub_cloudflare/models/object_detection2.dart';import 'package:pub_cloudflare/models/summarization2.dart';import 'package:pub_cloudflare/models/text_classification2.dart';import 'package:pub_cloudflare/models/text_embeddings2.dart';import 'package:pub_cloudflare/models/text_to_speech2.dart';import 'package:pub_cloudflare/models/translation2.dart';/// A value that is one of: `List<TextClassification2>`, `Uint8List`, `TextToSpeech2`, `TextEmbeddings2`, `AutomaticSpeechRecognition2`, `List<ImageClassification2>`, `List<ObjectDetection2>`, `Translation2`, `Summarization2`, `ImageToText2`, `ImageTextToText2`, `MultimodalEmbeddings2`.
 sealed class WorkersAiPostRunModelResponseResult {const WorkersAiPostRunModelResponseResult();
 
-factory WorkersAiPostRunModelResponseResult.fromJson(Map<String, dynamic> json) {   if (TextEmbeddings2.canParse(json)) {
+factory WorkersAiPostRunModelResponseResult.fromJson(Object? json) {   if (json is List) {
+    return WorkersAiPostRunModelResponseResultListTextClassification2(json.map((e) => TextClassification2.fromJson(e as Map<String, dynamic>)).toList());
+  }
+  if (json is String) return WorkersAiPostRunModelResponseResultUint8List(base64Decode(json));
+  if (json is Map<String, dynamic> && TextEmbeddings2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultTextEmbeddings2(TextEmbeddings2.fromJson(json));
   }
-  if (AutomaticSpeechRecognition2.canParse(json)) {
+  if (json is Map<String, dynamic> && AutomaticSpeechRecognition2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultAutomaticSpeechRecognition2(AutomaticSpeechRecognition2.fromJson(json));
   }
-  if (Translation2.canParse(json)) {
+  if (json is List) {
+    return WorkersAiPostRunModelResponseResultListImageClassification2(json.map((e) => ImageClassification2.fromJson(e as Map<String, dynamic>)).toList());
+  }
+  if (json is List) {
+    return WorkersAiPostRunModelResponseResultListObjectDetection2(json.map((e) => ObjectDetection2.fromJson(e as Map<String, dynamic>)).toList());
+  }
+  if (json is Map<String, dynamic> && Translation2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultTranslation2(Translation2.fromJson(json));
   }
-  if (Summarization2.canParse(json)) {
+  if (json is Map<String, dynamic> && Summarization2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultSummarization2(Summarization2.fromJson(json));
   }
-  if (ImageToText2.canParse(json)) {
+  if (json is Map<String, dynamic> && ImageToText2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultImageToText2(ImageToText2.fromJson(json));
   }
-  if (ImageTextToText2.canParse(json)) {
+  if (json is Map<String, dynamic> && ImageTextToText2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultImageTextToText2(ImageTextToText2.fromJson(json));
   }
-  if (MultimodalEmbeddings2.canParse(json)) {
+  if (json is Map<String, dynamic> && MultimodalEmbeddings2.canParse(json)) {
     return WorkersAiPostRunModelResponseResultMultimodalEmbeddings2(MultimodalEmbeddings2.fromJson(json));
   }
   return WorkersAiPostRunModelResponseResult$Unknown(json); }
