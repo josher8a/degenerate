@@ -276,7 +276,11 @@ class DiscriminatedUnionEmitter {
 
     final toStrFields = fields
         .map((f) {
-          if (f.name.startsWith(r'$')) {
+          // `$` is legal anywhere in a Dart identifier ($-prefixed reserved
+          // words, spec names like `c$d`). The label must escape it, and the
+          // interpolation needs braces so the `$` isn't read as a nested
+          // interpolation start.
+          if (f.name.contains(r'$')) {
             final escaped = f.name.replaceAll(r'$', r'\$');
             return '$escaped: \${${f.name}}';
           }
@@ -435,7 +439,7 @@ class DiscriminatedUnionEmitter {
         ..methods.add(buildHashCodeOverride('return $fieldName.hashCode;'))
         ..methods.add(() {
           final String fieldStr;
-          if (fieldName.startsWith(r'$')) {
+          if (fieldName.contains(r'$')) {
             final escaped = fieldName.replaceAll(r'$', r'\$');
             fieldStr = '$escaped: \${$fieldName}';
           } else {
@@ -986,26 +990,30 @@ class AnyOfEmitter {
   ) {
     final spreads = fields
         .map((f) {
+          // Field names may be `$`-prefixed (dart:core collisions like
+          // $double); an unescaped key would interpolate the field value
+          // instead of emitting the name.
+          final key = dartStringLiteral(f.name);
           // Primitives and enums can't be spread into a Map - include as named
           // entries.
           if (f.type is IrPrimitive) {
-            return "  '${f.name}': ?${f.name},";
+            return '  $key: ?${f.name},';
           }
           if (f.type is IrEnum) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
           }
           // Extension types wrap a primitive - toJson returns a primitive, not
           // a Map.
           if (f.type is IrExtensionType) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
           }
           if (f.type is IrList || f.type is IrMap) {
-            return "  '${f.name}': ?${f.name},";
+            return '  $key: ?${f.name},';
           }
           // Sealed/union types have toJson returning Object?, so we can't
           // spread.
           if (_isUnionType(f.type)) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
+            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
           }
           return '  ...?${f.name}?.toJson(),';
         })
