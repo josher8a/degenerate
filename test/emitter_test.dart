@@ -3325,6 +3325,47 @@ void main() {
     });
   });
 
+  group('ApiEmitter - required-but-nullable query parameters', () {
+    test('list and allowReserved paths null-guard nullable params', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'search',
+          'search',
+          HttpMethod.get,
+          '/search',
+          parameters: [
+            IrParameter(
+              'tags',
+              'tags',
+              ParameterLocation.query,
+              IrList(IrPrimitive(PrimitiveKind.string), isNullable: true),
+              isRequired: true,
+            ),
+            IrParameter(
+              'ref',
+              'ref',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.string, isNullable: true),
+              isRequired: true,
+              allowReserved: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // Required-but-nullable: the value may be null at runtime, so every
+      // non-simple serialization path needs a null guard or the generated
+      // code dereferences a nullable and fails to compile.
+      expect(source, contains('if (tags != null) {'));
+      expect(source, contains('if (ref != null) {'));
+      expect(_formatOrFail(source), isNotEmpty);
+    });
+  });
+
   group('ApiEmitter - DateTime, bytes, and Duration parameter wire formats', () {
     test('scalar DateTime params serialize RFC 3339, bytes as base64', () {
       const api = IrApi('TestApi', [
