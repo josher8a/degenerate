@@ -20,6 +20,27 @@ void main() {
       expect(names, containsAll(['Parent', 'ChildType', 'OtherType']));
     });
 
+    test('collects names from additionalProperties', () {
+      // AP value types are emitted as Map<String, ApValue> fields —
+      // missing them from the graph tree-shakes types that are still
+      // referenced and drops them from mini-barrels.
+      const obj = IrObject(
+        'Holder',
+        [],
+        additionalProperties: IrTypeRef('ApValue'),
+      );
+      final names = <String>{};
+      collectTypeRefs(obj, names);
+      expect(names, contains('ApValue'));
+
+      final deps = buildTypeDeps([obj]);
+      expect(deps['Holder'], contains('ApValue'));
+      expect(
+        transitiveTypes({'Holder'}, deps),
+        containsAll(['Holder', 'ApValue']),
+      );
+    });
+
     test('collects names from list items', () {
       const list = IrList(IrTypeRef('ItemType'));
       final names = <String>{};

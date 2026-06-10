@@ -40,6 +40,43 @@ void main() {
       expect(signer.signatureOf(a), isNot(signer.signatureOf(b)));
     });
 
+    test('field default values produce different signatures', () {
+      // defaultValue drives constructor defaults, required-ness in the ctor,
+      // Dart nullability, and toJson guards — same-shape types differing
+      // only in a default must not merge.
+      const a = IrObject('A', [
+        IrField('x', 'x', IrPrimitive(PrimitiveKind.int), isRequired: true),
+      ]);
+      const b = IrObject('B', [
+        IrField('x', 'x', IrPrimitive(PrimitiveKind.int),
+            isRequired: true, defaultValue: 0),
+      ]);
+      final registry = <String, IrType>{'A': a, 'B': b};
+      final signer = StructuralSigner(registry);
+      expect(signer.signatureOf(a), isNot(signer.signatureOf(b)));
+    });
+
+    test('JSON-key-to-Dart-name mapping is part of the signature', () {
+      // When two JSON keys camelize identically, declaration order decides
+      // which gets the numeric suffix — swapped mappings read each key into
+      // the other Dart field and must not merge.
+      const a = IrObject('A', [
+        IrField('testProp', 'testProp', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('testProp2', 'test_prop', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ]);
+      const b = IrObject('B', [
+        IrField('testProp2', 'testProp', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('testProp', 'test_prop', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ]);
+      final registry = <String, IrType>{'A': a, 'B': b};
+      final signer = StructuralSigner(registry);
+      expect(signer.signatureOf(a), isNot(signer.signatureOf(b)));
+    });
+
     test('required vs optional produces different signatures', () {
       const a = IrObject('A', [
         IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
@@ -311,6 +348,47 @@ void main() {
       expect(result.finalNames['FooBarRate'],
           result.finalNames['BazQuxRate']);
       expect(result.survivors.length, 1);
+    });
+
+    test('does NOT dedupe unions that differ only in discriminator', () {
+      // Same variants, same leaf — but dispatching on a different property
+      // with different mapping keys. Merging them gives the survivor's
+      // fromJson the wrong dispatch for the merged-away use site.
+      const x = IrObject('X', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ]);
+      const y = IrObject('Y', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ]);
+      const u1 = IrDiscriminatedUnion('FooEvent', 'type', {
+        'cat': IrTypeRef('X'),
+        'dog': IrTypeRef('Y'),
+      });
+      const u2 = IrDiscriminatedUnion('BarEvent', 'kind', {
+        'feline': IrTypeRef('X'),
+        'canine': IrTypeRef('Y'),
+      });
+      final registry = <String, IrType>{
+        'X': x,
+        'Y': y,
+        'FooEvent': u1,
+        'BarEvent': u2,
+      };
+      final result = resolveNames(
+        allNames: {'X', 'Y', 'FooEvent', 'BarEvent'},
+        reserved: {'X', 'Y'},
+        paths: {
+          'FooEvent': ['Foo', 'Event'],
+          'BarEvent': ['Bar', 'Event'],
+        },
+        registry: registry,
+      );
+      expect(
+        result.finalNames['FooEvent'],
+        isNot(equals(result.finalNames['BarEvent'])),
+      );
     });
 
     test('does NOT dedupe types with different leaves', () {

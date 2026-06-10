@@ -217,6 +217,19 @@ NameResolution resolveNames({
 
   String unionKey(String n) {
     final t = registry[n]!;
+    // Discriminated unions dispatch on a property with specific mapping
+    // keys; both are part of identity — same variants under a different
+    // discriminator (or different keys) must not merge, and key→variant
+    // PAIRING matters, so sort the pairs together.
+    if (t is IrDiscriminatedUnion) {
+      final pairs =
+          [
+              for (final e in t.mapping.entries)
+                '${e.key}=${variantIdentity(e.value)}',
+            ]
+            ..sort();
+      return 'du:${t.discriminatorProperty}{${pairs.join('|')}} ${leafOf(n)}';
+    }
     final parts = unionVariants(t).map(variantIdentity);
     return '${t.runtimeType}(${parts.join('|')}) ${leafOf(n)}';
   }

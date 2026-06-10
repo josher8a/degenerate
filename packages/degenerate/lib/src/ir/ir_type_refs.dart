@@ -64,9 +64,14 @@ void _walk(
   if (name != null) names.add(name);
 
   switch (type) {
-    case IrObject(:final fields) when walkFields:
+    case IrObject(:final fields, :final additionalProperties) when walkFields:
       for (final f in fields) {
         _walk(f.type, names, typeRegistry, walkFields, visited);
+      }
+      // The AP value type is emitted as a Map<String, V> overflow field —
+      // it is a real dependency (tree-shaking and mini-barrels rely on it).
+      if (additionalProperties != null) {
+        _walk(additionalProperties, names, typeRegistry, walkFields, visited);
       }
     case IrDiscriminatedUnion(:final mapping):
       for (final v in mapping.values) {

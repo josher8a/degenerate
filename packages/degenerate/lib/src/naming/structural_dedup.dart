@@ -62,9 +62,9 @@ final class StructuralSigner {
     switch (type) {
       case IrPrimitive(:final kind, :final format, :final constraints):
         return 'p:$kind:${format ?? ''}${_constraintSig(constraints)}';
-      case IrEnum(:final values, :final valueKind):
+      case IrEnum(:final values, :final valueKind, :final defaultValue):
         final v = [...values]..sort();
-        return 'e:$valueKind:${v.join(",")}';
+        return 'e:$valueKind:${v.join(",")}:d=$defaultValue';
       case IrExtensionType(:final inner):
         return 'x[${signatureOf(inner)}]';
       case IrList(:final items, :final constraints):
@@ -76,8 +76,14 @@ final class StructuralSigner {
           ..sort((a, b) => a.originalName.compareTo(b.originalName));
         final buf = StringBuffer('o{');
         for (final f in fs) {
+          // Every field property that affects emitted behavior belongs here
+          // (see Key gotchas): the Dart name (JSON-key↔field mapping is
+          // declaration-order dependent when keys camelize identically) and
+          // the default value (drives ctor defaults, required-ness,
+          // nullability, and toJson guards).
           buf.write(
-            '${f.originalName}:${f.isRequired ? 1 : 0}:${signatureOf(f.type)};',
+            '${f.originalName}>${f.name}:${f.isRequired ? 1 : 0}'
+            ':d=${f.defaultValue};${signatureOf(f.type)};',
           );
         }
         if (additionalProperties != null) {
