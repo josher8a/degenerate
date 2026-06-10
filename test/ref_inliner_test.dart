@@ -94,6 +94,48 @@ void main() {
       expect(asMap(asMap(schemas[gadgetAddr])['properties']), contains('port'));
     });
 
+    test('intra-file ref to a root-wrapped schema resolves to the root name',
+        () {
+      // Pet and Owner are both root-level wrappers around the same external
+      // file, and Pet references Owner WITHIN that file. The intra-file ref
+      // must resolve to the root name 'Owner' — not register a duplicate
+      // 'Owner2' clone.
+      writeFile('shared.json', r'''
+{
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "properties": { "owner": { "$ref": "#/components/schemas/Owner" } }
+      },
+      "Owner": {
+        "type": "object",
+        "properties": { "name": { "type": "string" } }
+      }
+    }
+  }
+}
+''');
+
+      final root = <String, dynamic>{
+        'openapi': '3.1.0',
+        'components': {
+          'schemas': {
+            'Pet': {r'$ref': 'shared.json#/components/schemas/Pet'},
+            'Owner': {r'$ref': 'shared.json#/components/schemas/Owner'},
+          },
+        },
+      };
+      final result = RefInliner(tmpDir.path).inline(root);
+      final schemas = schemasOf(result);
+
+      expect(schemas.containsKey('Owner2'), isFalse);
+      final ownerRef = asMap(
+        asMap(asMap(schemas['Pet'])['properties'])['owner'],
+      )[r'$ref'];
+      expect(ownerRef, equals('#/components/schemas/Owner'));
+    });
+
     test('external schemas never overwrite same-named root schemas', () {
       // The root spec defines Money; an external file's Thing refs its OWN
       // internal Money with a different shape. The external Money must get

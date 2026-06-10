@@ -45,6 +45,23 @@ final class RefInliner {
     // overwrite) the name of a root schema declared further down.
     _usedNames.addAll(existingSchemas.keys);
 
+    // Pre-register the ref keys of every pure-external-wrapper root schema.
+    // An intra-file ref encountered while resolving an EARLIER wrapper may
+    // point at the same target (Pet refs Owner inside shared.json, and the
+    // root also wraps Owner) — it must resolve to the promised root name
+    // instead of registering a duplicate clone.
+    for (final MapEntry(:key, :value) in existingSchemas.entries) {
+      if (value is Map<String, dynamic> &&
+          value.length == 1 &&
+          value[r'$ref'] is String &&
+          !(value[r'$ref'] as String).startsWith('#/')) {
+        final (absolutePath, pointer) =
+            _parseRef(value[r'$ref'] as String, _baseDir);
+        final refKey = '$absolutePath${pointer != null ? '#$pointer' : ''}';
+        _refToLocalName[refKey] = key;
+      }
+    }
+
     // First pass: resolve components/schemas entries that are pure external
     // $ref wrappers in place, so they keep their original names.
     final resolvedSchemas = <String, dynamic>{};
