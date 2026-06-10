@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposUpdateOrgRulesetRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_rules.dart';import 'package:pub_github_rest_3_1/models/org_ruleset_conditions.dart';import 'package:pub_github_rest_3_1/models/repos_create_org_ruleset_request/repos_create_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_id_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_name_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_property_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';@immutable final class ReposUpdateOrgRulesetRequest {const ReposUpdateOrgRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_rules.dart';import 'package:pub_github_rest_3_1/models/org_ruleset_conditions.dart';import 'package:pub_github_rest_3_1/models/repos_update_org_ruleset_request/repos_update_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_id_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_name_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_property_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';@immutable final class ReposUpdateOrgRulesetRequest {const ReposUpdateOrgRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateOrgRulesetRequest(
   name: json['name'] as String?,
-  target: json['target'] != null ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
+  target: json['target'] != null ? ReposUpdateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null,
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),) : null,
@@ -16,7 +16,7 @@ factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { retur
 final String? name;
 
 /// The target of the ruleset
-final ReposCreateOrgRulesetRequestTarget? target;
+final ReposUpdateOrgRulesetRequestTarget? target;
 
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final RepositoryRuleEnforcement? enforcement;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key)); } 
-ReposUpdateOrgRulesetRequest copyWith({String? Function()? name, ReposCreateOrgRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? Function()? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, OrgRulesetConditions? Function()? conditions, List<OrgRules>? Function()? rules, }) { return ReposUpdateOrgRulesetRequest(
+ReposUpdateOrgRulesetRequest copyWith({String? Function()? name, ReposUpdateOrgRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? Function()? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, OrgRulesetConditions? Function()? conditions, List<OrgRules>? Function()? rules, }) { return ReposUpdateOrgRulesetRequest(
   name: name != null ? name() : this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement != null ? enforcement() : this.enforcement,

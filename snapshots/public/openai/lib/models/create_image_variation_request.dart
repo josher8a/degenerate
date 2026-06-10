@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateImageVariationRequest
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_response_format.dart';import 'package:pub_openai/models/create_image_variation_request/create_image_variation_request_model.dart';/// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_request/create_image_request_response_format.dart';import 'package:pub_openai/models/create_image_variation_request/create_image_variation_request_model.dart';/// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 sealed class CreateImageVariationRequestSize {const CreateImageVariationRequestSize();
 
 factory CreateImageVariationRequestSize.fromJson(String json) { return switch (json) {
@@ -84,13 +84,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $256x256
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageEditRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
+@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
 
 factory CreateImageVariationRequest.fromJson(Map<String, dynamic> json) { return CreateImageVariationRequest(
   image: base64Decode(json['image'] as String),
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageVariationRequestModelVariant2.fromJson(v as String),) : null,
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageEditRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageEditRequestResponseFormat.url,
+  responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageRequestResponseFormat.url,
   size: json.containsKey('size') ? json['size'] != null ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : null : CreateImageVariationRequestSize.$1024x1024,
   user: json['user'] as String?,
 ); }
@@ -111,7 +111,7 @@ final int? n;
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 /// 
 /// Example: `'url'`
-final CreateImageEditRequestResponseFormat? responseFormat;
+final CreateImageRequestResponseFormat? responseFormat;
 
 /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 /// 
@@ -141,7 +141,7 @@ if (n$ != null) {
   if (n$ > 10) { errors.add('n: must be <= 10'); }
 }
 return errors; } 
-CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(
+CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(
   image: image ?? this.image,
   model: model != null ? model() : this.model,
   n: n != null ? n() : this.n,

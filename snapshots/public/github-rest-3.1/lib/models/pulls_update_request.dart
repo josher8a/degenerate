@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PullsUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';@immutable final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';@immutable final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
 
 factory PullsUpdateRequest.fromJson(Map<String, dynamic> json) { return PullsUpdateRequest(
   title: json['title'] as String?,
   body: json['body'] as String?,
-  state: json['state'] != null ? IssuesCreateMilestoneRequestState.fromJson(json['state'] as String) : null,
+  state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
   base: json['base'] as String?,
   maintainerCanModify: json['maintainer_can_modify'] as bool?,
 ); }
@@ -18,7 +18,7 @@ final String? title;
 final String? body;
 
 /// State of this Pull Request. Either `open` or `closed`.
-final IssuesCreateMilestoneRequestState? state;
+final IssuesUpdateRequestState? state;
 
 /// The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
 final String? base;
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'maintainer_can_modify': ?maintainerCanModify,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'state', 'base', 'maintainer_can_modify'}.contains(key)); } 
-PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? base, bool? Function()? maintainerCanModify, }) { return PullsUpdateRequest(
+PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body, IssuesUpdateRequestState? Function()? state, String? Function()? base, bool? Function()? maintainerCanModify, }) { return PullsUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,
   state: state != null ? state() : this.state,

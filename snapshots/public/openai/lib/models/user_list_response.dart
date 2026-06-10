@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UserListResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/user.dart';@immutable final class UserListResponse {const UserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/user.dart';@immutable final class UserListResponse {const UserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory UserListResponse.fromJson(Map<String, dynamic> json) { return UserListResponse(
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
 ); }
 
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 final List<User> data;
 
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-UserListResponse copyWith({ChatCompletionListObject? object, List<User>? data, String? firstId, String? lastId, bool? hasMore, }) { return UserListResponse(
+UserListResponse copyWith({ContainerFileListResourceObject? object, List<User>? data, String? firstId, String? lastId, bool? hasMore, }) { return UserListResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

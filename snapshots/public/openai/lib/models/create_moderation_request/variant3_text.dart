@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateModerationRequest (inline: Input > Variant3 > Text)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';/// An object describing text to classify.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_object/message_content_text_object_type.dart';/// An object describing text to classify.
 @immutable final class Variant3Text {const Variant3Text({required this.type, required this.text, });
 
 factory Variant3Text.fromJson(Map<String, dynamic> json) { return Variant3Text(
-  type: CustomTextFormatParamType.fromJson(json['type'] as String),
+  type: MessageContentTextObjectType.fromJson(json['type'] as String),
   text: json['text'] as String,
 ); }
 
 /// Always `text`.
-final CustomTextFormatParamType type;
+final MessageContentTextObjectType type;
 
 /// A string of text to classify.
 /// 
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('text') && json['text'] is String; } 
-Variant3Text copyWith({CustomTextFormatParamType? type, String? text, }) { return Variant3Text(
+Variant3Text copyWith({MessageContentTextObjectType? type, String? text, }) { return Variant3Text(
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 

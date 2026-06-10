@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages10_functions.dart';import 'package:pub_cloudflare/models/messages/messages10_messages.dart';import 'package:pub_cloudflare/models/messages/messages10_tools.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';import 'package:pub_cloudflare/models/messages/tools_variant1.dart';import 'package:pub_cloudflare/models/messages/tools_variant2.dart';@immutable final class Messages10 {const Messages10({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens = 2000, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages10_functions.dart';import 'package:pub_cloudflare/models/messages/messages10_messages.dart';import 'package:pub_cloudflare/models/messages/messages10_tools.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';import 'package:pub_cloudflare/models/messages/tools_variant1.dart';import 'package:pub_cloudflare/models/messages/tools_variant2.dart';@immutable final class Messages10 {const Messages10({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
 
 factory Messages10.fromJson(Map<String, dynamic> json) { return Messages10(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages10Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 2000,
+  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   messages: (json['messages'] as List<dynamic>).map((e) => Messages10Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   raw: json.containsKey('raw') ? json['raw'] as bool : false,

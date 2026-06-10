@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleset
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_org_ruleset_request/repos_create_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_id_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_name_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_property_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_conditions2.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';/// The type of the source of the ruleset
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_org_ruleset_request/repos_update_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_id_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_name_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_property_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_conditions2.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';/// The type of the source of the ruleset
 sealed class RepositoryRulesetSourceType {const RepositoryRulesetSourceType();
 
 factory RepositoryRulesetSourceType.fromJson(String json) { return switch (json) {
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return RepositoryRuleset(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
-  target: json['target'] != null ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
+  target: json['target'] != null ? ReposUpdateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   sourceType: json['source_type'] != null ? RepositoryRulesetSourceType.fromJson(json['source_type'] as String) : null,
   source: json['source'] as String,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
@@ -210,7 +210,7 @@ final int id;
 final String name;
 
 /// The target of the ruleset
-final ReposCreateOrgRulesetRequestTarget? target;
+final ReposUpdateOrgRulesetRequestTarget? target;
 
 /// The type of the source of the ruleset
 final RepositoryRulesetSourceType? sourceType;
@@ -260,7 +260,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('enforcement'); } 
-RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, CurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return RepositoryRuleset(
+RepositoryRuleset copyWith({int? id, String? name, ReposUpdateOrgRulesetRequestTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, CurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return RepositoryRuleset(
   id: id ?? this.id,
   name: name ?? this.name,
   target: target != null ? target() : this.target,

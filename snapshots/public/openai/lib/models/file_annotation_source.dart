@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FileAnnotationSource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_file/chat_completion_request_message_content_part_file_type.dart';/// Attachment source referenced by an annotation.
-@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.filename, this.type = ChatCompletionRequestMessageContentPartFileType.file, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation_source/file_annotation_source_type.dart';/// Attachment source referenced by an annotation.
+@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.filename, this.type = FileAnnotationSourceType.file, });
 
 factory FileAnnotationSource.fromJson(Map<String, dynamic> json) { return FileAnnotationSource(
-  type: ChatCompletionRequestMessageContentPartFileType.fromJson(json['type'] as String),
+  type: FileAnnotationSourceType.fromJson(json['type'] as String),
   filename: json['filename'] as String,
 ); }
 
 /// Type discriminator that is always `file`.
-final ChatCompletionRequestMessageContentPartFileType type;
+final FileAnnotationSourceType type;
 
 /// Filename referenced by the annotation.
 final String filename;
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('filename') && json['filename'] is String; } 
-FileAnnotationSource copyWith({ChatCompletionRequestMessageContentPartFileType? type, String? filename, }) { return FileAnnotationSource(
+FileAnnotationSource copyWith({FileAnnotationSourceType? type, String? filename, }) { return FileAnnotationSource(
   type: type ?? this.type,
   filename: filename ?? this.filename,
 ); } 

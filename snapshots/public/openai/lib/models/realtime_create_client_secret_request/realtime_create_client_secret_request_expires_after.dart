@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeCreateClientSecretRequest (inline: ExpiresAfter)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after/batch_file_expiration_after_anchor.dart';/// Configuration for the client secret expiration. Expiration refers to the time after which
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/expires_after_param/expires_after_param_anchor.dart';/// Configuration for the client secret expiration. Expiration refers to the time after which
 /// a client secret will no longer be valid for creating sessions. The session itself may
 /// continue after that time once started. A secret can be used to create multiple sessions
 /// until it expires.
 /// 
-@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = BatchFileExpirationAfterAnchor.createdAt, this.seconds = 600, });
+@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = ExpiresAfterParamAnchor.createdAt, this.seconds = 600, });
 
 factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
-  anchor: json.containsKey('anchor') ? BatchFileExpirationAfterAnchor.fromJson(json['anchor'] as String) : BatchFileExpirationAfterAnchor.createdAt,
+  anchor: json.containsKey('anchor') ? ExpiresAfterParamAnchor.fromJson(json['anchor'] as String) : ExpiresAfterParamAnchor.createdAt,
   seconds: json.containsKey('seconds') ? (json['seconds'] as num).toInt() : 600,
 ); }
 
 /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
 /// 
-final BatchFileExpirationAfterAnchor anchor;
+final ExpiresAfterParamAnchor anchor;
 
 /// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200` (2 hours). This default to 600 seconds (10 minutes) if not specified.
 /// 
@@ -31,7 +31,7 @@ List<String> validate() { final errors = <String>[];
 if (seconds < 10) { errors.add('seconds: must be >= 10'); }
 if (seconds > 7200) { errors.add('seconds: must be <= 7200'); }
 return errors; } 
-RealtimeCreateClientSecretRequestExpiresAfter copyWith({BatchFileExpirationAfterAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
+RealtimeCreateClientSecretRequestExpiresAfter copyWith({ExpiresAfterParamAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,
 ); } 

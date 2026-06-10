@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PullsCreateReviewCommentRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';/// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/pulls_create_review_comment_request/pulls_create_review_comment_request_side.dart';/// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
 sealed class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide();
 
 factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) { return switch (json) {
@@ -91,7 +91,7 @@ factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) { re
   commitId: json['commit_id'] as String,
   path: json['path'] as String,
   position: json['position'] != null ? (json['position'] as num).toInt() : null,
-  side: json['side'] != null ? Side.fromJson(json['side'] as String) : null,
+  side: json['side'] != null ? PullsCreateReviewCommentRequestSide.fromJson(json['side'] as String) : null,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
   startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
   startSide: json['start_side'] != null ? PullsCreateReviewCommentRequestStartSide.fromJson(json['start_side'] as String) : null,
@@ -112,7 +112,7 @@ final String path;
 final int? position;
 
 /// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
-final Side? side;
+final PullsCreateReviewCommentRequestSide? side;
 
 /// **Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
 final int? line;
@@ -144,7 +144,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('path') && json['path'] is String; } 
-PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, Side? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, SubjectType? Function()? subjectType, }) { return PullsCreateReviewCommentRequest(
+PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, PullsCreateReviewCommentRequestSide? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, SubjectType? Function()? subjectType, }) { return PullsCreateReviewCommentRequest(
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,
   path: path ?? this.path,

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeBetaResponseCreateParams
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/output_audio_format.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_conversation.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// Create a new Realtime response with these parameters
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_conversation.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_output_audio_format.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// Create a new Realtime response with these parameters
 @immutable final class RealtimeBetaResponseCreateParams {const RealtimeBetaResponseCreateParams({this.modalities, this.instructions, this.voice, this.outputAudioFormat, this.tools, this.toolChoice, this.temperature, this.maxOutputTokens, this.conversation, this.metadata, this.prompt, this.input, });
 
 factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParams(
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Modalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),) : null,
-  outputAudioFormat: json['output_audio_format'] != null ? OutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
+  outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsTools.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
@@ -49,7 +49,7 @@ final VoiceIdsOrCustomVoice? voice;
 
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
-final OutputAudioFormat? outputAudioFormat;
+final RealtimeBetaResponseCreateParamsOutputAudioFormat? outputAudioFormat;
 
 /// Tools (functions) available to the model.
 final List<RealtimeBetaResponseCreateParamsTools>? tools;
@@ -111,7 +111,7 @@ Map<String, dynamic> toJson() { return {
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modalities', 'instructions', 'voice', 'output_audio_format', 'tools', 'tool_choice', 'temperature', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
-RealtimeBetaResponseCreateParams copyWith({List<Modalities>? Function()? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, OutputAudioFormat? Function()? outputAudioFormat, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation? Function()? conversation, Map<String, String>? Function()? metadata, Prompt? Function()? prompt, List<RealtimeConversationItem>? Function()? input, }) { return RealtimeBetaResponseCreateParams(
+RealtimeBetaResponseCreateParams copyWith({List<Modalities>? Function()? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, RealtimeBetaResponseCreateParamsOutputAudioFormat? Function()? outputAudioFormat, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation? Function()? conversation, Map<String, String>? Function()? metadata, Prompt? Function()? prompt, List<RealtimeConversationItem>? Function()? input, }) { return RealtimeBetaResponseCreateParams(
   modalities: modalities != null ? modalities() : this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,
   voice: voice != null ? voice() : this.voice,

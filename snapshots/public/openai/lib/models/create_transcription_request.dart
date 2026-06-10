@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateTranscriptionRequest
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';import 'package:pub_openai/models/vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
 /// 
 sealed class AudioResponseFormat {const AudioResponseFormat();
 
@@ -261,7 +261,7 @@ factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return 
   include: (json['include'] as List<dynamic>?)?.map((e) => TranscriptionInclude.fromJson(e as String)).toList(),
   timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => TimestampGranularities.fromJson(e as String)).toList(),
   stream: json['stream'] as bool?,
-  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null,
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

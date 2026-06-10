@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseItemList
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/item_resource.dart';/// A list of Response items.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/item_resource.dart';/// A list of Response items.
 @immutable final class ResponseItemList {const ResponseItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
 
 factory ResponseItemList.fromJson(Map<String, dynamic> json) { return ResponseItemList(
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ItemResource.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   firstId: json['first_id'] as String,
@@ -13,7 +13,7 @@ factory ResponseItemList.fromJson(Map<String, dynamic> json) { return ResponseIt
 ); }
 
 /// The type of object returned, must be `list`.
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 /// A list of items used to generate this response.
 final List<ItemResource> data;
@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String; } 
-ResponseItemList copyWith({ChatCompletionListObject? object, List<ItemResource>? data, bool? hasMore, String? firstId, String? lastId, }) { return ResponseItemList(
+ResponseItemList copyWith({ContainerFileListResourceObject? object, List<ItemResource>? data, bool? hasMore, String? firstId, String? lastId, }) { return ResponseItemList(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

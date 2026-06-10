@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TeamsUpdateInOrgRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';import 'package:pub_github_rest_3_1/models/teams_add_or_update_repo_permissions_legacy_request/teams_add_or_update_repo_permissions_legacy_request_permission.dart';@immutable final class TeamsUpdateInOrgRequest {const TeamsUpdateInOrgRequest({this.name, this.description, this.privacy, this.notificationSetting, this.permission = TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.pull, this.parentTeamId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';import 'package:pub_github_rest_3_1/models/teams_update_in_org_request/teams_update_in_org_request_permission.dart';@immutable final class TeamsUpdateInOrgRequest {const TeamsUpdateInOrgRequest({this.name, this.description, this.privacy, this.notificationSetting, this.permission = TeamsUpdateInOrgRequestPermission.pull, this.parentTeamId, });
 
 factory TeamsUpdateInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsUpdateInOrgRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   privacy: json['privacy'] != null ? TeamFullPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamFullNotificationSetting.fromJson(json['notification_setting'] as String) : null,
-  permission: json.containsKey('permission') ? TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.fromJson(json['permission'] as String) : TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.pull,
+  permission: json.containsKey('permission') ? TeamsUpdateInOrgRequestPermission.fromJson(json['permission'] as String) : TeamsUpdateInOrgRequestPermission.pull,
   parentTeamId: json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null,
 ); }
 
@@ -32,7 +32,7 @@ final TeamFullPrivacy? privacy;
 final TeamFullNotificationSetting? notificationSetting;
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-final TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission permission;
+final TeamsUpdateInOrgRequestPermission permission;
 
 /// The ID of a team to set as the parent team.
 final int? parentTeamId;
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'parent_team_id': ?parentTeamId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'privacy', 'notification_setting', 'permission', 'parent_team_id'}.contains(key)); } 
-TeamsUpdateInOrgRequest copyWith({String? Function()? name, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsUpdateInOrgRequest(
+TeamsUpdateInOrgRequest copyWith({String? Function()? name, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsUpdateInOrgRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsUpdateInOrgRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   privacy: privacy != null ? privacy() : this.privacy,

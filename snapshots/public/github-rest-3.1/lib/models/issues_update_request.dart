@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssuesUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels_variant2.dart';@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels_variant2.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequest(
   title: json['title'],
   body: json['body'] as String?,
   assignee: json['assignee'] as String?,
-  state: json['state'] != null ? IssuesCreateMilestoneRequestState.fromJson(json['state'] as String) : null,
+  state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
   stateReason: json['state_reason'] != null ? IssueStateReason.fromJson(json['state_reason'] as String) : null,
   milestone: json['milestone'],
   labels: (json['labels'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => IssuesCreateRequestLabelsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
@@ -29,7 +29,7 @@ final String? body;
 final String? assignee;
 
 /// The open or closed state of the issue.
-final IssuesCreateMilestoneRequestState? state;
+final IssuesUpdateRequestState? state;
 
 /// The reason for the state change. Ignored unless `state` is changed.
 final IssueStateReason? stateReason;
@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'assignee', 'state', 'state_reason', 'milestone', 'labels', 'assignees', 'type'}.contains(key)); } 
-IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesCreateMilestoneRequestState? Function()? state, IssueStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesCreateRequestLabels>? Function()? labels, List<String>? Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
+IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesUpdateRequestState? Function()? state, IssueStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesCreateRequestLabels>? Function()? labels, List<String>? Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,
   assignee: assignee != null ? assignee() : this.assignee,

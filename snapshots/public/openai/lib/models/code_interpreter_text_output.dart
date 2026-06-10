@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeInterpreterTextOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// The output of a code interpreter tool call that is text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_text_output/code_interpreter_text_output_type.dart';/// The output of a code interpreter tool call that is text.
 /// 
 @immutable final class CodeInterpreterTextOutput {const CodeInterpreterTextOutput({required this.type, required this.logs, });
 
 factory CodeInterpreterTextOutput.fromJson(Map<String, dynamic> json) { return CodeInterpreterTextOutput(
-  type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),
+  type: CodeInterpreterTextOutputType.fromJson(json['type'] as String),
   logs: json['logs'] as String,
 ); }
 
 /// The type of the code interpreter text output. Always `logs`.
 /// 
-final CodeInterpreterOutputLogsType type;
+final CodeInterpreterTextOutputType type;
 
 /// The logs of the code interpreter tool call.
 /// 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('logs') && json['logs'] is String; } 
-CodeInterpreterTextOutput copyWith({CodeInterpreterOutputLogsType? type, String? logs, }) { return CodeInterpreterTextOutput(
+CodeInterpreterTextOutput copyWith({CodeInterpreterTextOutputType? type, String? logs, }) { return CodeInterpreterTextOutput(
   type: type ?? this.type,
   logs: logs ?? this.logs,
 ); } 

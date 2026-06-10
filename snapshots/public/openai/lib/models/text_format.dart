@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TextFormat
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';/// Unconstrained free-form text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_object/message_content_text_object_type.dart';/// Unconstrained free-form text.
 @immutable final class TextFormat {const TextFormat({required this.type});
 
 factory TextFormat.fromJson(Map<String, dynamic> json) { return TextFormat(
-  type: CustomTextFormatParamType.fromJson(json['type'] as String),
+  type: MessageContentTextObjectType.fromJson(json['type'] as String),
 ); }
 
 /// Unconstrained text format. Always `text`.
-final CustomTextFormatParamType type;
+final MessageContentTextObjectType type;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TextFormat copyWith({CustomTextFormatParamType? type}) { return TextFormat(
+TextFormat copyWith({MessageContentTextObjectType? type}) { return TextFormat(
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

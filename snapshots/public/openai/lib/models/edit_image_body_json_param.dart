@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EditImageBodyJsonParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_request/create_image_request_moderation.dart';import 'package:pub_openai/models/edit_image_body_json_param/edit_image_body_json_param_model.dart';import 'package:pub_openai/models/image_ref_param.dart';import 'package:pub_openai/models/partial_images.dart';sealed class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/edit_image_body_json_param/edit_image_body_json_param_model.dart';import 'package:pub_openai/models/image_ref_param.dart';import 'package:pub_openai/models/partial_images.dart';sealed class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality();
 
 factory EditImageBodyJsonParamQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -262,13 +262,244 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 @override int get hashCode => value.hashCode;
 
  }
+sealed class EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat();
+
+factory EditImageBodyJsonParamOutputFormat.fromJson(String json) { return switch (json) {
+  'png' => png,
+  'jpeg' => jpeg,
+  'webp' => webp,
+  _ => EditImageBodyJsonParamOutputFormat$Unknown(json),
+}; }
+
+static const EditImageBodyJsonParamOutputFormat png = EditImageBodyJsonParamOutputFormat$png._();
+
+static const EditImageBodyJsonParamOutputFormat jpeg = EditImageBodyJsonParamOutputFormat$jpeg._();
+
+static const EditImageBodyJsonParamOutputFormat webp = EditImageBodyJsonParamOutputFormat$webp._();
+
+static const List<EditImageBodyJsonParamOutputFormat> values = [png, jpeg, webp];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'png' => 'png',
+  'jpeg' => 'jpeg',
+  'webp' => 'webp',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is EditImageBodyJsonParamOutputFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() png, required W Function() jpeg, required W Function() webp, required W Function(String value) $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamOutputFormat$png() => png(),
+      EditImageBodyJsonParamOutputFormat$jpeg() => jpeg(),
+      EditImageBodyJsonParamOutputFormat$webp() => webp(),
+      EditImageBodyJsonParamOutputFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? png, W Function()? jpeg, W Function()? webp, W Function(String value)? $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamOutputFormat$png() => png != null ? png() : orElse(value),
+      EditImageBodyJsonParamOutputFormat$jpeg() => jpeg != null ? jpeg() : orElse(value),
+      EditImageBodyJsonParamOutputFormat$webp() => webp != null ? webp() : orElse(value),
+      EditImageBodyJsonParamOutputFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'EditImageBodyJsonParamOutputFormat($value)';
+
+ }
+@immutable final class EditImageBodyJsonParamOutputFormat$png extends EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat$png._();
+
+@override String get value => 'png';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamOutputFormat$png;
+
+@override int get hashCode => 'png'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamOutputFormat$jpeg extends EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat$jpeg._();
+
+@override String get value => 'jpeg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamOutputFormat$jpeg;
+
+@override int get hashCode => 'jpeg'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamOutputFormat$webp extends EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat$webp._();
+
+@override String get value => 'webp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamOutputFormat$webp;
+
+@override int get hashCode => 'webp'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamOutputFormat$Unknown extends EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamOutputFormat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration();
+
+factory EditImageBodyJsonParamModeration.fromJson(String json) { return switch (json) {
+  'low' => low,
+  'auto' => auto,
+  _ => EditImageBodyJsonParamModeration$Unknown(json),
+}; }
+
+static const EditImageBodyJsonParamModeration low = EditImageBodyJsonParamModeration$low._();
+
+static const EditImageBodyJsonParamModeration auto = EditImageBodyJsonParamModeration$auto._();
+
+static const List<EditImageBodyJsonParamModeration> values = [low, auto];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'low' => 'low',
+  'auto' => 'auto',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is EditImageBodyJsonParamModeration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamModeration$low() => low(),
+      EditImageBodyJsonParamModeration$auto() => auto(),
+      EditImageBodyJsonParamModeration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamModeration$low() => low != null ? low() : orElse(value),
+      EditImageBodyJsonParamModeration$auto() => auto != null ? auto() : orElse(value),
+      EditImageBodyJsonParamModeration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'EditImageBodyJsonParamModeration($value)';
+
+ }
+@immutable final class EditImageBodyJsonParamModeration$low extends EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamModeration$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamModeration$auto extends EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamModeration$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamModeration$Unknown extends EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamModeration$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground();
+
+factory EditImageBodyJsonParamBackground.fromJson(String json) { return switch (json) {
+  'transparent' => transparent,
+  'opaque' => opaque,
+  'auto' => auto,
+  _ => EditImageBodyJsonParamBackground$Unknown(json),
+}; }
+
+static const EditImageBodyJsonParamBackground transparent = EditImageBodyJsonParamBackground$transparent._();
+
+static const EditImageBodyJsonParamBackground opaque = EditImageBodyJsonParamBackground$opaque._();
+
+static const EditImageBodyJsonParamBackground auto = EditImageBodyJsonParamBackground$auto._();
+
+static const List<EditImageBodyJsonParamBackground> values = [transparent, opaque, auto];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'transparent' => 'transparent',
+  'opaque' => 'opaque',
+  'auto' => 'auto',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is EditImageBodyJsonParamBackground$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transparent, required W Function() opaque, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamBackground$transparent() => transparent(),
+      EditImageBodyJsonParamBackground$opaque() => opaque(),
+      EditImageBodyJsonParamBackground$auto() => auto(),
+      EditImageBodyJsonParamBackground$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamBackground$transparent() => transparent != null ? transparent() : orElse(value),
+      EditImageBodyJsonParamBackground$opaque() => opaque != null ? opaque() : orElse(value),
+      EditImageBodyJsonParamBackground$auto() => auto != null ? auto() : orElse(value),
+      EditImageBodyJsonParamBackground$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'EditImageBodyJsonParamBackground($value)';
+
+ }
+@immutable final class EditImageBodyJsonParamBackground$transparent extends EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground$transparent._();
+
+@override String get value => 'transparent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamBackground$transparent;
+
+@override int get hashCode => 'transparent'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamBackground$opaque extends EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground$opaque._();
+
+@override String get value => 'opaque';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamBackground$opaque;
+
+@override int get hashCode => 'opaque'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamBackground$auto extends EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamBackground$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamBackground$Unknown extends EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamBackground$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// JSON request body for image edits.
 /// 
 /// Use `images` (array of `ImageRefParam`) instead of multipart `image` uploads.
 /// You can reference images via external URLs, data URLs, or uploaded file IDs.
 /// JSON edits support GPT image models only; DALL-E edits require multipart (`dall-e-2` only).
 /// 
-@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression, this.moderation = CreateImageRequestModeration.auto, this.background = CreateImageEditRequestBackground.auto, this.stream = false, this.partialImages, });
+@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
   model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v,) : null,
@@ -280,10 +511,10 @@ factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return Edit
   inputFidelity: json['input_fidelity'] != null ? EditImageBodyJsonParamInputFidelity.fromJson(json['input_fidelity'] as String) : null,
   size: json.containsKey('size') ? json['size'] != null ? EditImageBodyJsonParamSize.fromJson(json['size'] as String) : null : EditImageBodyJsonParamSize.auto,
   user: json['user'] as String?,
-  outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? CreateImageEditRequestOutputFormat.fromJson(json['output_format'] as String) : null : CreateImageEditRequestOutputFormat.png,
+  outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? EditImageBodyJsonParamOutputFormat.fromJson(json['output_format'] as String) : null : EditImageBodyJsonParamOutputFormat.png,
   outputCompression: json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null,
-  moderation: json.containsKey('moderation') ? json['moderation'] != null ? CreateImageRequestModeration.fromJson(json['moderation'] as String) : null : CreateImageRequestModeration.auto,
-  background: json.containsKey('background') ? json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null : CreateImageEditRequestBackground.auto,
+  moderation: json.containsKey('moderation') ? json['moderation'] != null ? EditImageBodyJsonParamModeration.fromJson(json['moderation'] as String) : null : EditImageBodyJsonParamModeration.auto,
+  background: json.containsKey('background') ? json['background'] != null ? EditImageBodyJsonParamBackground.fromJson(json['background'] as String) : null : EditImageBodyJsonParamBackground.auto,
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
   partialImages: json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null,
 ); }
@@ -334,7 +565,7 @@ final String? user;
 /// Output image format. Supported for GPT image models.
 /// 
 /// Example: `'png'`
-final CreateImageEditRequestOutputFormat? outputFormat;
+final EditImageBodyJsonParamOutputFormat? outputFormat;
 
 /// Compression level for `jpeg` or `webp` output.
 /// 
@@ -344,12 +575,12 @@ final int? outputCompression;
 /// Moderation level for GPT image models.
 /// 
 /// Example: `'auto'`
-final CreateImageRequestModeration? moderation;
+final EditImageBodyJsonParamModeration? moderation;
 
 /// Background behavior for generated image output.
 /// 
 /// Example: `'transparent'`
-final CreateImageEditRequestBackground? background;
+final EditImageBodyJsonParamBackground? background;
 
 /// Stream partial image results as events.
 /// 
@@ -394,7 +625,7 @@ if (outputCompression$ != null) {
   if (outputCompression$ > 100) { errors.add('outputCompression: must be <= 100'); }
 }
 return errors; } 
-EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model, List<ImageRefParam>? images, ImageRefParam? Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String? Function()? user, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
+EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model, List<ImageRefParam>? images, ImageRefParam? Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String? Function()? user, EditImageBodyJsonParamOutputFormat? Function()? outputFormat, int? Function()? outputCompression, EditImageBodyJsonParamModeration? Function()? moderation, EditImageBodyJsonParamBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
   model: model != null ? model() : this.model,
   images: images ?? this.images,
   mask: mask != null ? mask() : this.mask,

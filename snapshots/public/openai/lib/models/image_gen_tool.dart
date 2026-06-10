@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageGenTool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';sealed class ImageGenActionEnum {const ImageGenActionEnum();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';sealed class ImageGenActionEnum {const ImageGenActionEnum();
 
 factory ImageGenActionEnum.fromJson(String json) { return switch (json) {
   'generate' => generate,
@@ -83,6 +83,291 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? generate
 @override int get hashCode => value.hashCode;
 
  }
+/// The quality of the generated image. One of `low`, `medium`, `high`,
+/// or `auto`. Default: `auto`.
+/// 
+sealed class ImageGenToolQuality {const ImageGenToolQuality();
+
+factory ImageGenToolQuality.fromJson(String json) { return switch (json) {
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  'auto' => auto,
+  _ => ImageGenToolQuality$Unknown(json),
+}; }
+
+static const ImageGenToolQuality low = ImageGenToolQuality$low._();
+
+static const ImageGenToolQuality medium = ImageGenToolQuality$medium._();
+
+static const ImageGenToolQuality high = ImageGenToolQuality$high._();
+
+static const ImageGenToolQuality auto = ImageGenToolQuality$auto._();
+
+static const List<ImageGenToolQuality> values = [low, medium, high, auto];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'auto' => 'auto',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ImageGenToolQuality$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolQuality$low() => low(),
+      ImageGenToolQuality$medium() => medium(),
+      ImageGenToolQuality$high() => high(),
+      ImageGenToolQuality$auto() => auto(),
+      ImageGenToolQuality$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolQuality$low() => low != null ? low() : orElse(value),
+      ImageGenToolQuality$medium() => medium != null ? medium() : orElse(value),
+      ImageGenToolQuality$high() => high != null ? high() : orElse(value),
+      ImageGenToolQuality$auto() => auto != null ? auto() : orElse(value),
+      ImageGenToolQuality$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ImageGenToolQuality($value)';
+
+ }
+@immutable final class ImageGenToolQuality$low extends ImageGenToolQuality {const ImageGenToolQuality$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolQuality$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class ImageGenToolQuality$medium extends ImageGenToolQuality {const ImageGenToolQuality$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolQuality$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class ImageGenToolQuality$high extends ImageGenToolQuality {const ImageGenToolQuality$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolQuality$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class ImageGenToolQuality$auto extends ImageGenToolQuality {const ImageGenToolQuality$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolQuality$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class ImageGenToolQuality$Unknown extends ImageGenToolQuality {const ImageGenToolQuality$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenToolQuality$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// The size of the generated image. One of `1024x1024`, `1024x1536`,
+/// `1536x1024`, or `auto`. Default: `auto`.
+/// 
+sealed class ImageGenToolSize {const ImageGenToolSize();
+
+factory ImageGenToolSize.fromJson(String json) { return switch (json) {
+  '1024x1024' => $1024x1024,
+  '1024x1536' => $1024x1536,
+  '1536x1024' => $1536x1024,
+  'auto' => auto,
+  _ => ImageGenToolSize$Unknown(json),
+}; }
+
+static const ImageGenToolSize $1024x1024 = ImageGenToolSize$$1024x1024._();
+
+static const ImageGenToolSize $1024x1536 = ImageGenToolSize$$1024x1536._();
+
+static const ImageGenToolSize $1536x1024 = ImageGenToolSize$$1536x1024._();
+
+static const ImageGenToolSize auto = ImageGenToolSize$auto._();
+
+static const List<ImageGenToolSize> values = [$1024x1024, $1024x1536, $1536x1024, auto];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1024x1024' => r'$1024x1024',
+  '1024x1536' => r'$1024x1536',
+  '1536x1024' => r'$1536x1024',
+  'auto' => 'auto',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ImageGenToolSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1024x1024, required W Function() $1024x1536, required W Function() $1536x1024, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolSize$$1024x1024() => $1024x1024(),
+      ImageGenToolSize$$1024x1536() => $1024x1536(),
+      ImageGenToolSize$$1536x1024() => $1536x1024(),
+      ImageGenToolSize$auto() => auto(),
+      ImageGenToolSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x1024, W Function()? $1024x1536, W Function()? $1536x1024, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
+      ImageGenToolSize$$1024x1536() => $1024x1536 != null ? $1024x1536() : orElse(value),
+      ImageGenToolSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
+      ImageGenToolSize$auto() => auto != null ? auto() : orElse(value),
+      ImageGenToolSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ImageGenToolSize($value)';
+
+ }
+@immutable final class ImageGenToolSize$$1024x1024 extends ImageGenToolSize {const ImageGenToolSize$$1024x1024._();
+
+@override String get value => '1024x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolSize$$1024x1024;
+
+@override int get hashCode => '1024x1024'.hashCode;
+
+ }
+@immutable final class ImageGenToolSize$$1024x1536 extends ImageGenToolSize {const ImageGenToolSize$$1024x1536._();
+
+@override String get value => '1024x1536';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolSize$$1024x1536;
+
+@override int get hashCode => '1024x1536'.hashCode;
+
+ }
+@immutable final class ImageGenToolSize$$1536x1024 extends ImageGenToolSize {const ImageGenToolSize$$1536x1024._();
+
+@override String get value => '1536x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolSize$$1536x1024;
+
+@override int get hashCode => '1536x1024'.hashCode;
+
+ }
+@immutable final class ImageGenToolSize$auto extends ImageGenToolSize {const ImageGenToolSize$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolSize$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class ImageGenToolSize$Unknown extends ImageGenToolSize {const ImageGenToolSize$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenToolSize$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// The output format of the generated image. One of `png`, `webp`, or
+/// `jpeg`. Default: `png`.
+/// 
+sealed class ImageGenToolOutputFormat {const ImageGenToolOutputFormat();
+
+factory ImageGenToolOutputFormat.fromJson(String json) { return switch (json) {
+  'png' => png,
+  'webp' => webp,
+  'jpeg' => jpeg,
+  _ => ImageGenToolOutputFormat$Unknown(json),
+}; }
+
+static const ImageGenToolOutputFormat png = ImageGenToolOutputFormat$png._();
+
+static const ImageGenToolOutputFormat webp = ImageGenToolOutputFormat$webp._();
+
+static const ImageGenToolOutputFormat jpeg = ImageGenToolOutputFormat$jpeg._();
+
+static const List<ImageGenToolOutputFormat> values = [png, webp, jpeg];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'png' => 'png',
+  'webp' => 'webp',
+  'jpeg' => 'jpeg',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ImageGenToolOutputFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() png, required W Function() webp, required W Function() jpeg, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolOutputFormat$png() => png(),
+      ImageGenToolOutputFormat$webp() => webp(),
+      ImageGenToolOutputFormat$jpeg() => jpeg(),
+      ImageGenToolOutputFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? png, W Function()? webp, W Function()? jpeg, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolOutputFormat$png() => png != null ? png() : orElse(value),
+      ImageGenToolOutputFormat$webp() => webp != null ? webp() : orElse(value),
+      ImageGenToolOutputFormat$jpeg() => jpeg != null ? jpeg() : orElse(value),
+      ImageGenToolOutputFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ImageGenToolOutputFormat($value)';
+
+ }
+@immutable final class ImageGenToolOutputFormat$png extends ImageGenToolOutputFormat {const ImageGenToolOutputFormat$png._();
+
+@override String get value => 'png';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolOutputFormat$png;
+
+@override int get hashCode => 'png'.hashCode;
+
+ }
+@immutable final class ImageGenToolOutputFormat$webp extends ImageGenToolOutputFormat {const ImageGenToolOutputFormat$webp._();
+
+@override String get value => 'webp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolOutputFormat$webp;
+
+@override int get hashCode => 'webp'.hashCode;
+
+ }
+@immutable final class ImageGenToolOutputFormat$jpeg extends ImageGenToolOutputFormat {const ImageGenToolOutputFormat$jpeg._();
+
+@override String get value => 'jpeg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolOutputFormat$jpeg;
+
+@override int get hashCode => 'jpeg'.hashCode;
+
+ }
+@immutable final class ImageGenToolOutputFormat$Unknown extends ImageGenToolOutputFormat {const ImageGenToolOutputFormat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenToolOutputFormat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Moderation level for the generated image. Default: `auto`.
 /// 
 sealed class ImageGenToolModeration {const ImageGenToolModeration();
@@ -152,19 +437,104 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 @override int get hashCode => value.hashCode;
 
  }
+/// Background type for the generated image. One of `transparent`,
+/// `opaque`, or `auto`. Default: `auto`.
+/// 
+sealed class ImageGenToolBackground {const ImageGenToolBackground();
+
+factory ImageGenToolBackground.fromJson(String json) { return switch (json) {
+  'transparent' => transparent,
+  'opaque' => opaque,
+  'auto' => auto,
+  _ => ImageGenToolBackground$Unknown(json),
+}; }
+
+static const ImageGenToolBackground transparent = ImageGenToolBackground$transparent._();
+
+static const ImageGenToolBackground opaque = ImageGenToolBackground$opaque._();
+
+static const ImageGenToolBackground auto = ImageGenToolBackground$auto._();
+
+static const List<ImageGenToolBackground> values = [transparent, opaque, auto];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'transparent' => 'transparent',
+  'opaque' => 'opaque',
+  'auto' => 'auto',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ImageGenToolBackground$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transparent, required W Function() opaque, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolBackground$transparent() => transparent(),
+      ImageGenToolBackground$opaque() => opaque(),
+      ImageGenToolBackground$auto() => auto(),
+      ImageGenToolBackground$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolBackground$transparent() => transparent != null ? transparent() : orElse(value),
+      ImageGenToolBackground$opaque() => opaque != null ? opaque() : orElse(value),
+      ImageGenToolBackground$auto() => auto != null ? auto() : orElse(value),
+      ImageGenToolBackground$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ImageGenToolBackground($value)';
+
+ }
+@immutable final class ImageGenToolBackground$transparent extends ImageGenToolBackground {const ImageGenToolBackground$transparent._();
+
+@override String get value => 'transparent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolBackground$transparent;
+
+@override int get hashCode => 'transparent'.hashCode;
+
+ }
+@immutable final class ImageGenToolBackground$opaque extends ImageGenToolBackground {const ImageGenToolBackground$opaque._();
+
+@override String get value => 'opaque';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolBackground$opaque;
+
+@override int get hashCode => 'opaque'.hashCode;
+
+ }
+@immutable final class ImageGenToolBackground$auto extends ImageGenToolBackground {const ImageGenToolBackground$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolBackground$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class ImageGenToolBackground$Unknown extends ImageGenToolBackground {const ImageGenToolBackground$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenToolBackground$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// A tool that generates images using the GPT image models.
 /// 
-@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageEditCompletedEventQuality.auto, this.size = ImageEditCompletedEventSize.auto, this.outputFormat = ImageEditCompletedEventOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageEditCompletedEventBackground.auto, this.inputFidelity, this.inputImageMask, this.partialImages = 0, this.action, });
+@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageGenToolQuality.auto, this.size = ImageGenToolSize.auto, this.outputFormat = ImageGenToolOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageGenToolBackground.auto, this.inputFidelity, this.inputImageMask, this.partialImages = 0, this.action, });
 
 factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   type: json['type'] as String,
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => ImageGenToolModelVariant2.fromJson(v as String),) : null,
-  quality: json.containsKey('quality') ? ImageEditCompletedEventQuality.fromJson(json['quality'] as String) : ImageEditCompletedEventQuality.auto,
-  size: json.containsKey('size') ? ImageEditCompletedEventSize.fromJson(json['size'] as String) : ImageEditCompletedEventSize.auto,
-  outputFormat: json.containsKey('output_format') ? ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String) : ImageEditCompletedEventOutputFormat.png,
+  quality: json.containsKey('quality') ? ImageGenToolQuality.fromJson(json['quality'] as String) : ImageGenToolQuality.auto,
+  size: json.containsKey('size') ? ImageGenToolSize.fromJson(json['size'] as String) : ImageGenToolSize.auto,
+  outputFormat: json.containsKey('output_format') ? ImageGenToolOutputFormat.fromJson(json['output_format'] as String) : ImageGenToolOutputFormat.png,
   outputCompression: json.containsKey('output_compression') ? (json['output_compression'] as num).toInt() : 100,
   moderation: json.containsKey('moderation') ? ImageGenToolModeration.fromJson(json['moderation'] as String) : ImageGenToolModeration.auto,
-  background: json.containsKey('background') ? ImageEditCompletedEventBackground.fromJson(json['background'] as String) : ImageEditCompletedEventBackground.auto,
+  background: json.containsKey('background') ? ImageGenToolBackground.fromJson(json['background'] as String) : ImageGenToolBackground.auto,
   inputFidelity: json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null,
   inputImageMask: json['input_image_mask'] != null ? InputImageMask.fromJson(json['input_image_mask'] as Map<String, dynamic>) : null,
   partialImages: json.containsKey('partial_images') ? (json['partial_images'] as num).toInt() : 0,
@@ -180,17 +550,17 @@ final ImageGenToolModel? model;
 /// The quality of the generated image. One of `low`, `medium`, `high`,
 /// or `auto`. Default: `auto`.
 /// 
-final ImageEditCompletedEventQuality quality;
+final ImageGenToolQuality quality;
 
 /// The size of the generated image. One of `1024x1024`, `1024x1536`,
 /// `1536x1024`, or `auto`. Default: `auto`.
 /// 
-final ImageEditCompletedEventSize size;
+final ImageGenToolSize size;
 
 /// The output format of the generated image. One of `png`, `webp`, or
 /// `jpeg`. Default: `png`.
 /// 
-final ImageEditCompletedEventOutputFormat outputFormat;
+final ImageGenToolOutputFormat outputFormat;
 
 /// Compression level for the output image. Default: 100.
 /// 
@@ -203,7 +573,7 @@ final ImageGenToolModeration moderation;
 /// Background type for the generated image. One of `transparent`,
 /// `opaque`, or `auto`. Default: `auto`.
 /// 
-final ImageEditCompletedEventBackground background;
+final ImageGenToolBackground background;
 
 final InputFidelity? inputFidelity;
 
@@ -242,7 +612,7 @@ if (outputCompression > 100) { errors.add('outputCompression: must be <= 100'); 
 if (partialImages < 0) { errors.add('partialImages: must be >= 0'); }
 if (partialImages > 3) { errors.add('partialImages: must be <= 3'); }
 return errors; } 
-ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageEditCompletedEventQuality Function()? quality, ImageEditCompletedEventSize Function()? size, ImageEditCompletedEventOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageEditCompletedEventBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
+ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageGenToolQuality Function()? quality, ImageGenToolSize Function()? size, ImageGenToolOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageGenToolBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
   type: type ?? this.type,
   model: model != null ? model() : this.model,
   quality: quality != null ? quality() : this.quality,

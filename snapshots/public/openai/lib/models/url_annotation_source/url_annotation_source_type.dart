@@ -1,8 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UrlAnnotationSource (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source. Always `url`.
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `url`.
 sealed class UrlAnnotationSourceType {const UrlAnnotationSourceType();
 
 factory UrlAnnotationSourceType.fromJson(String json) { return switch (json) {

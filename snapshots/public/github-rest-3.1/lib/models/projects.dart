@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Projects
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/status_update.dart';/// A projects v2 project
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/status_update.dart';/// A projects v2 project
 @immutable final class Projects {const Projects({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state, this.latestStatusUpdate, this.isTemplate, });
 
 factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
@@ -19,7 +19,7 @@ factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
   shortDescription: json['short_description'] as String?,
   deletedAt: json['deleted_at'] != null ? DateTime.parse(json['deleted_at'] as String) : null,
   deletedBy: json['deleted_by'] != null ? SimpleUser.fromJson(json['deleted_by'] as Map<String, dynamic>) : null,
-  state: json['state'] != null ? IssuesCreateMilestoneRequestState.fromJson(json['state'] as String) : null,
+  state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
   latestStatusUpdate: json['latest_status_update'] != null ? StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>) : null,
   isTemplate: json['is_template'] as bool?,
 ); }
@@ -64,7 +64,7 @@ final DateTime? deletedAt;
 final SimpleUser? deletedBy;
 
 /// The current state of the project.
-final IssuesCreateMilestoneRequestState? state;
+final IssuesUpdateRequestState? state;
 
 final StatusUpdate? latestStatusUpdate;
 
@@ -104,7 +104,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('short_description') && json['short_description'] is String &&
       json.containsKey('deleted_at') && json['deleted_at'] is String &&
       json.containsKey('deleted_by'); } 
-Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, IssuesCreateMilestoneRequestState? Function()? state, StatusUpdate? Function()? latestStatusUpdate, bool? Function()? isTemplate, }) { return Projects(
+Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, IssuesUpdateRequestState? Function()? state, StatusUpdate? Function()? latestStatusUpdate, bool? Function()? isTemplate, }) { return Projects(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   owner: owner ?? this.owner,

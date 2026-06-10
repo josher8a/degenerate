@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputTextContentParam (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type. Always `input_text` for system messages.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the input item. Always `input_text`.
 sealed class InputTextContentParamType {const InputTextContentParamType();
 
 factory InputTextContentParamType.fromJson(String json) { return switch (json) {

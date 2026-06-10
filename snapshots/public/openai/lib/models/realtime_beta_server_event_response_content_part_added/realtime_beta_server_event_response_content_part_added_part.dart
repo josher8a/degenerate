@@ -2,19 +2,19 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseContentPartAdded (inline: Part)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type ("text", "audio").
-sealed class PartType {const PartType();
+sealed class RealtimeBetaServerEventResponseContentPartAddedPartType {const RealtimeBetaServerEventResponseContentPartAddedPartType();
 
-factory PartType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseContentPartAddedPartType.fromJson(String json) { return switch (json) {
   'audio' => audio,
   'text' => text,
-  _ => PartType$Unknown(json),
+  _ => RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown(json),
 }; }
 
-static const PartType audio = PartType$audio._();
+static const RealtimeBetaServerEventResponseContentPartAddedPartType audio = RealtimeBetaServerEventResponseContentPartAddedPartType$audio._();
 
-static const PartType text = PartType$text._();
+static const RealtimeBetaServerEventResponseContentPartAddedPartType text = RealtimeBetaServerEventResponseContentPartAddedPartType$text._();
 
-static const List<PartType> values = [audio, text];
+static const List<RealtimeBetaServerEventResponseContentPartAddedPartType> values = [audio, text];
 
 String get value;
 String toJson() { return value; } 
@@ -25,46 +25,46 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PartType$Unknown; } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown; } 
 /// Exhaustive match on the enum value.
 W when<W>({required W Function() audio, required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
-      PartType$audio() => audio(),
-      PartType$text() => text(),
-      PartType$Unknown(:final value) => $unknown(value),
+      RealtimeBetaServerEventResponseContentPartAddedPartType$audio() => audio(),
+      RealtimeBetaServerEventResponseContentPartAddedPartType$text() => text(),
+      RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown(:final value) => $unknown(value),
     }; } 
 /// Partial match with a required fallback for unhandled variants.
 W maybeWhen<W>({required W Function(String value) orElse, W Function()? audio, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
-      PartType$audio() => audio != null ? audio() : orElse(value),
-      PartType$text() => text != null ? text() : orElse(value),
-      PartType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+      RealtimeBetaServerEventResponseContentPartAddedPartType$audio() => audio != null ? audio() : orElse(value),
+      RealtimeBetaServerEventResponseContentPartAddedPartType$text() => text != null ? text() : orElse(value),
+      RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
     }; } 
-@override String toString() => 'PartType($value)';
+@override String toString() => 'RealtimeBetaServerEventResponseContentPartAddedPartType($value)';
 
  }
-@immutable final class PartType$audio extends PartType {const PartType$audio._();
+@immutable final class RealtimeBetaServerEventResponseContentPartAddedPartType$audio extends RealtimeBetaServerEventResponseContentPartAddedPartType {const RealtimeBetaServerEventResponseContentPartAddedPartType$audio._();
 
 @override String get value => 'audio';
 
-@override bool operator ==(Object other) => identical(this, other) || other is PartType$audio;
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseContentPartAddedPartType$audio;
 
 @override int get hashCode => 'audio'.hashCode;
 
  }
-@immutable final class PartType$text extends PartType {const PartType$text._();
+@immutable final class RealtimeBetaServerEventResponseContentPartAddedPartType$text extends RealtimeBetaServerEventResponseContentPartAddedPartType {const RealtimeBetaServerEventResponseContentPartAddedPartType$text._();
 
 @override String get value => 'text';
 
-@override bool operator ==(Object other) => identical(this, other) || other is PartType$text;
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseContentPartAddedPartType$text;
 
 @override int get hashCode => 'text'.hashCode;
 
  }
-@immutable final class PartType$Unknown extends PartType {const PartType$Unknown(this.value);
+@immutable final class RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown extends RealtimeBetaServerEventResponseContentPartAddedPartType {const RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown(this.value);
 
 @override final String value;
 
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PartType$Unknown && other.value == value;
+    other is RealtimeBetaServerEventResponseContentPartAddedPartType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 
@@ -73,14 +73,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? audio, W
 @immutable final class RealtimeBetaServerEventResponseContentPartAddedPart {const RealtimeBetaServerEventResponseContentPartAddedPart({this.type, this.text, this.audio, this.transcript, });
 
 factory RealtimeBetaServerEventResponseContentPartAddedPart.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseContentPartAddedPart(
-  type: json['type'] != null ? PartType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? RealtimeBetaServerEventResponseContentPartAddedPartType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
   audio: json['audio'] as String?,
   transcript: json['transcript'] as String?,
 ); }
 
 /// The content type ("text", "audio").
-final PartType? type;
+final RealtimeBetaServerEventResponseContentPartAddedPartType? type;
 
 /// The text content (if type is "text").
 final String? text;
@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'transcript': ?transcript,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'audio', 'transcript'}.contains(key)); } 
-RealtimeBetaServerEventResponseContentPartAddedPart copyWith({PartType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? transcript, }) { return RealtimeBetaServerEventResponseContentPartAddedPart(
+RealtimeBetaServerEventResponseContentPartAddedPart copyWith({RealtimeBetaServerEventResponseContentPartAddedPartType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? transcript, }) { return RealtimeBetaServerEventResponseContentPartAddedPart(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   audio: audio != null ? audio() : this.audio,

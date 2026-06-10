@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchInstanceChatCompletionRequest (inline: AiSearchOptions > Retrieval)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/boost_by.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/fusion_method.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/keyword_match_mode.dart';sealed class RetrievalType {const RetrievalType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/boost_by.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/keyword_match_mode.dart';sealed class RetrievalFusionMethod {const RetrievalFusionMethod();
+
+factory RetrievalFusionMethod.fromJson(String json) { return switch (json) {
+  'max' => max,
+  'rrf' => rrf,
+  _ => RetrievalFusionMethod$Unknown(json),
+}; }
+
+static const RetrievalFusionMethod max = RetrievalFusionMethod$max._();
+
+static const RetrievalFusionMethod rrf = RetrievalFusionMethod$rrf._();
+
+static const List<RetrievalFusionMethod> values = [max, rrf];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'max' => 'max',
+  'rrf' => 'rrf',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is RetrievalFusionMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() max, required W Function() rrf, required W Function(String value) $unknown, }) { return switch (this) {
+      RetrievalFusionMethod$max() => max(),
+      RetrievalFusionMethod$rrf() => rrf(),
+      RetrievalFusionMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? max, W Function()? rrf, W Function(String value)? $unknown, }) { return switch (this) {
+      RetrievalFusionMethod$max() => max != null ? max() : orElse(value),
+      RetrievalFusionMethod$rrf() => rrf != null ? rrf() : orElse(value),
+      RetrievalFusionMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'RetrievalFusionMethod($value)';
+
+ }
+@immutable final class RetrievalFusionMethod$max extends RetrievalFusionMethod {const RetrievalFusionMethod$max._();
+
+@override String get value => 'max';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RetrievalFusionMethod$max;
+
+@override int get hashCode => 'max'.hashCode;
+
+ }
+@immutable final class RetrievalFusionMethod$rrf extends RetrievalFusionMethod {const RetrievalFusionMethod$rrf._();
+
+@override String get value => 'rrf';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RetrievalFusionMethod$rrf;
+
+@override int get hashCode => 'rrf'.hashCode;
+
+ }
+@immutable final class RetrievalFusionMethod$Unknown extends RetrievalFusionMethod {const RetrievalFusionMethod$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RetrievalFusionMethod$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class RetrievalType {const RetrievalType();
 
 factory RetrievalType.fromJson(String json) { return switch (json) {
   'vector' => vector,
@@ -89,7 +156,7 @@ factory Retrieval.fromJson(Map<String, dynamic> json) { return Retrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => BoostBy.fromJson(e as Map<String, dynamic>)).toList(),
   contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
   filters: json['filters'] as Map<String, dynamic>?,
-  fusionMethod: json['fusion_method'] != null ? FusionMethod.fromJson(json['fusion_method'] as String) : null,
+  fusionMethod: json['fusion_method'] != null ? RetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
   keywordMatchMode: json.containsKey('keyword_match_mode') ? KeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : KeywordMatchMode.exactMatch,
   matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
@@ -106,7 +173,7 @@ final int contextExpansion;
 
 final Map<String,dynamic>? filters;
 
-final FusionMethod? fusionMethod;
+final RetrievalFusionMethod? fusionMethod;
 
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
 final KeywordMatchMode keywordMatchMode;
@@ -144,7 +211,7 @@ if (matchThreshold > 1) { errors.add('matchThreshold: must be <= 1'); }
 if (maxNumResults < 1) { errors.add('maxNumResults: must be >= 1'); }
 if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }
 return errors; } 
-Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic>? Function()? filters, FusionMethod? Function()? fusionMethod, KeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, RetrievalType? Function()? retrievalType, bool Function()? returnOnFailure, }) { return Retrieval(
+Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic>? Function()? filters, RetrievalFusionMethod? Function()? fusionMethod, KeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, RetrievalType? Function()? retrievalType, bool Function()? returnOnFailure, }) { return Retrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
   filters: filters != null ? filters() : this.filters,

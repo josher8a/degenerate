@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateEmbeddingResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/create_embedding_response/create_embedding_response_usage.dart';import 'package:pub_openai/models/embedding.dart';@immutable final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/create_embedding_response/create_embedding_response_usage.dart';import 'package:pub_openai/models/embedding.dart';@immutable final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
 
 factory CreateEmbeddingResponse.fromJson(Map<String, dynamic> json) { return CreateEmbeddingResponse(
   data: (json['data'] as List<dynamic>).map((e) => Embedding.fromJson(e as Map<String, dynamic>)).toList(),
   model: json['model'] as String,
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   usage: CreateEmbeddingResponseUsage.fromJson(json['usage'] as Map<String, dynamic>),
 ); }
 
@@ -17,7 +17,7 @@ final List<Embedding> data;
 final String model;
 
 /// The object type, which is always "list".
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 /// The usage information for the request.
 final CreateEmbeddingResponseUsage usage;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object') &&
       json.containsKey('usage'); } 
-CreateEmbeddingResponse copyWith({List<Embedding>? data, String? model, ChatCompletionListObject? object, CreateEmbeddingResponseUsage? usage, }) { return CreateEmbeddingResponse(
+CreateEmbeddingResponse copyWith({List<Embedding>? data, String? model, ContainerFileListResourceObject? object, CreateEmbeddingResponseUsage? usage, }) { return CreateEmbeddingResponse(
   data: data ?? this.data,
   model: model ?? this.model,
   object: object ?? this.object,

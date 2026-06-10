@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeSecurityConfiguration
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_scanning_delegated_alert_dismissal.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_advanced_security.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_code_scanning_default_setup.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_code_scanning_default_setup_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependabot_security_updates.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_enforcement.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_alert_dismissal.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_non_provider_patterns.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_push_protection.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependabot_alerts.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependency_graph.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependency_graph_autosubmit_action.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependency_graph_autosubmit_action_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/private_vulnerability_reporting.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/secret_scanning_extended_metadata.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/secret_scanning_generic_secrets.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/secret_scanning_validity_checks.dart';/// The type of the code security configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_advanced_security.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_code_scanning_default_setup.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_code_scanning_default_setup_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependabot_alerts.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependabot_security_updates.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependency_graph.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependency_graph_autosubmit_action.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependency_graph_autosubmit_action_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_enforcement.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_private_vulnerability_reporting.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_alert_dismissal.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_extended_metadata.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_generic_secrets.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_non_provider_patterns.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_push_protection.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_validity_checks.dart';/// The type of the code security configuration.
 sealed class TargetType {const TargetType();
 
 factory TargetType.fromJson(String json) { return switch (json) {
@@ -182,6 +182,89 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 @override int get hashCode => value.hashCode;
 
  }
+/// The enablement status of code scanning delegated alert dismissal
+sealed class CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal {const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal();
+
+factory CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
+  'enabled' => enabled,
+  'disabled' => disabled,
+  'not_set' => notSet,
+  _ => CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown(json),
+}; }
+
+static const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal enabled = CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$enabled._();
+
+static const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal disabled = CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$disabled._();
+
+static const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal notSet = CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$notSet._();
+
+static const List<CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal> values = [enabled, disabled, notSet];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enabled' => 'enabled',
+  'disabled' => 'disabled',
+  'not_set' => 'notSet',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$enabled() => enabled(),
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$disabled() => disabled(),
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$notSet() => notSet(),
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$enabled() => enabled != null ? enabled() : orElse(value),
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$disabled() => disabled != null ? disabled() : orElse(value),
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$notSet() => notSet != null ? notSet() : orElse(value),
+      CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal($value)';
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$enabled extends CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal {const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$disabled extends CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal {const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$notSet extends CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal {const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$notSet._();
+
+@override String get value => 'not_set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$notSet;
+
+@override int get hashCode => 'not_set'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown extends CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal {const CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// A code security configuration
 @immutable final class CodeSecurityConfiguration {const CodeSecurityConfiguration({this.id, this.name, this.targetType, this.description, this.advancedSecurity, this.dependencyGraph, this.dependencyGraphAutosubmitAction, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts, this.dependabotSecurityUpdates, this.dependabotDelegatedAlertDismissal, this.codeScanningOptions, this.codeScanningDefaultSetup, this.codeScanningDefaultSetupOptions, this.codeScanningDelegatedAlertDismissal, this.secretScanning, this.secretScanningPushProtection, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, this.secretScanningValidityChecks, this.secretScanningNonProviderPatterns, this.secretScanningGenericSecrets, this.secretScanningDelegatedAlertDismissal, this.secretScanningExtendedMetadata, this.privateVulnerabilityReporting, this.enforcement, this.url, this.htmlUrl, this.createdAt, this.updatedAt, });
 
@@ -191,26 +274,26 @@ factory CodeSecurityConfiguration.fromJson(Map<String, dynamic> json) { return C
   targetType: json['target_type'] != null ? TargetType.fromJson(json['target_type'] as String) : null,
   description: json['description'] as String?,
   advancedSecurity: json['advanced_security'] != null ? CodeSecurityConfigurationAdvancedSecurity.fromJson(json['advanced_security'] as String) : null,
-  dependencyGraph: json['dependency_graph'] != null ? DependencyGraph.fromJson(json['dependency_graph'] as String) : null,
-  dependencyGraphAutosubmitAction: json['dependency_graph_autosubmit_action'] != null ? DependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : null,
-  dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null ? DependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>) : null,
-  dependabotAlerts: json['dependabot_alerts'] != null ? DependabotAlerts.fromJson(json['dependabot_alerts'] as String) : null,
+  dependencyGraph: json['dependency_graph'] != null ? CodeSecurityConfigurationDependencyGraph.fromJson(json['dependency_graph'] as String) : null,
+  dependencyGraphAutosubmitAction: json['dependency_graph_autosubmit_action'] != null ? CodeSecurityConfigurationDependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : null,
+  dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null ? CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>) : null,
+  dependabotAlerts: json['dependabot_alerts'] != null ? CodeSecurityConfigurationDependabotAlerts.fromJson(json['dependabot_alerts'] as String) : null,
   dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? CodeSecurityConfigurationDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as String) : null,
   dependabotDelegatedAlertDismissal: json['dependabot_delegated_alert_dismissal'] != null ? CodeSecurityConfigurationDependabotDelegatedAlertDismissal.fromJson(json['dependabot_delegated_alert_dismissal'] as String) : null,
   codeScanningOptions: json['code_scanning_options'] != null ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>) : null,
   codeScanningDefaultSetup: json['code_scanning_default_setup'] != null ? CodeSecurityConfigurationCodeScanningDefaultSetup.fromJson(json['code_scanning_default_setup'] as String) : null,
   codeScanningDefaultSetupOptions: json['code_scanning_default_setup_options'] != null ? CodeSecurityConfigurationCodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>) : null,
-  codeScanningDelegatedAlertDismissal: json['code_scanning_delegated_alert_dismissal'] != null ? CodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : null,
+  codeScanningDelegatedAlertDismissal: json['code_scanning_delegated_alert_dismissal'] != null ? CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : null,
   secretScanning: json['secret_scanning'] != null ? CodeSecurityConfigurationSecretScanning.fromJson(json['secret_scanning'] as String) : null,
   secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? CodeSecurityConfigurationSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as String) : null,
   secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? CodeSecurityConfigurationSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as String) : null,
   secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? CodeSecurityConfigurationSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
-  secretScanningValidityChecks: json['secret_scanning_validity_checks'] != null ? SecretScanningValidityChecks.fromJson(json['secret_scanning_validity_checks'] as String) : null,
+  secretScanningValidityChecks: json['secret_scanning_validity_checks'] != null ? CodeSecurityConfigurationSecretScanningValidityChecks.fromJson(json['secret_scanning_validity_checks'] as String) : null,
   secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? CodeSecurityConfigurationSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as String) : null,
-  secretScanningGenericSecrets: json['secret_scanning_generic_secrets'] != null ? SecretScanningGenericSecrets.fromJson(json['secret_scanning_generic_secrets'] as String) : null,
+  secretScanningGenericSecrets: json['secret_scanning_generic_secrets'] != null ? CodeSecurityConfigurationSecretScanningGenericSecrets.fromJson(json['secret_scanning_generic_secrets'] as String) : null,
   secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as String) : null,
-  secretScanningExtendedMetadata: json['secret_scanning_extended_metadata'] != null ? SecretScanningExtendedMetadata.fromJson(json['secret_scanning_extended_metadata'] as String) : null,
-  privateVulnerabilityReporting: json['private_vulnerability_reporting'] != null ? PrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : null,
+  secretScanningExtendedMetadata: json['secret_scanning_extended_metadata'] != null ? CodeSecurityConfigurationSecretScanningExtendedMetadata.fromJson(json['secret_scanning_extended_metadata'] as String) : null,
+  privateVulnerabilityReporting: json['private_vulnerability_reporting'] != null ? CodeSecurityConfigurationPrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : null,
   enforcement: json['enforcement'] != null ? CodeSecurityConfigurationEnforcement.fromJson(json['enforcement'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
@@ -234,16 +317,16 @@ final String? description;
 final CodeSecurityConfigurationAdvancedSecurity? advancedSecurity;
 
 /// The enablement status of Dependency Graph
-final DependencyGraph? dependencyGraph;
+final CodeSecurityConfigurationDependencyGraph? dependencyGraph;
 
 /// The enablement status of Automatic dependency submission
-final DependencyGraphAutosubmitAction? dependencyGraphAutosubmitAction;
+final CodeSecurityConfigurationDependencyGraphAutosubmitAction? dependencyGraphAutosubmitAction;
 
 /// Feature options for Automatic dependency submission
-final DependencyGraphAutosubmitActionOptions? dependencyGraphAutosubmitActionOptions;
+final CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions? dependencyGraphAutosubmitActionOptions;
 
 /// The enablement status of Dependabot alerts
-final DependabotAlerts? dependabotAlerts;
+final CodeSecurityConfigurationDependabotAlerts? dependabotAlerts;
 
 /// The enablement status of Dependabot security updates
 final CodeSecurityConfigurationDependabotSecurityUpdates? dependabotSecurityUpdates;
@@ -261,7 +344,7 @@ final CodeSecurityConfigurationCodeScanningDefaultSetup? codeScanningDefaultSetu
 final CodeSecurityConfigurationCodeScanningDefaultSetupOptions? codeScanningDefaultSetupOptions;
 
 /// The enablement status of code scanning delegated alert dismissal
-final CodeScanningDelegatedAlertDismissal? codeScanningDelegatedAlertDismissal;
+final CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal? codeScanningDelegatedAlertDismissal;
 
 /// The enablement status of secret scanning
 final CodeSecurityConfigurationSecretScanning? secretScanning;
@@ -276,22 +359,22 @@ final CodeSecurityConfigurationSecretScanningDelegatedBypass? secretScanningDele
 final CodeSecurityConfigurationSecretScanningDelegatedBypassOptions? secretScanningDelegatedBypassOptions;
 
 /// The enablement status of secret scanning validity checks
-final SecretScanningValidityChecks? secretScanningValidityChecks;
+final CodeSecurityConfigurationSecretScanningValidityChecks? secretScanningValidityChecks;
 
 /// The enablement status of secret scanning non-provider patterns
 final CodeSecurityConfigurationSecretScanningNonProviderPatterns? secretScanningNonProviderPatterns;
 
 /// The enablement status of Copilot secret scanning
-final SecretScanningGenericSecrets? secretScanningGenericSecrets;
+final CodeSecurityConfigurationSecretScanningGenericSecrets? secretScanningGenericSecrets;
 
 /// The enablement status of secret scanning delegated alert dismissal
 final CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal? secretScanningDelegatedAlertDismissal;
 
 /// The enablement status of secret scanning extended metadata
-final SecretScanningExtendedMetadata? secretScanningExtendedMetadata;
+final CodeSecurityConfigurationSecretScanningExtendedMetadata? secretScanningExtendedMetadata;
 
 /// The enablement status of private vulnerability reporting
-final PrivateVulnerabilityReporting? privateVulnerabilityReporting;
+final CodeSecurityConfigurationPrivateVulnerabilityReporting? privateVulnerabilityReporting;
 
 /// The enforcement status for a security configuration
 final CodeSecurityConfigurationEnforcement? enforcement;
@@ -339,7 +422,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'target_type', 'description', 'advanced_security', 'dependency_graph', 'dependency_graph_autosubmit_action', 'dependency_graph_autosubmit_action_options', 'dependabot_alerts', 'dependabot_security_updates', 'dependabot_delegated_alert_dismissal', 'code_scanning_options', 'code_scanning_default_setup', 'code_scanning_default_setup_options', 'code_scanning_delegated_alert_dismissal', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options', 'secret_scanning_validity_checks', 'secret_scanning_non_provider_patterns', 'secret_scanning_generic_secrets', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_extended_metadata', 'private_vulnerability_reporting', 'enforcement', 'url', 'html_url', 'created_at', 'updated_at'}.contains(key)); } 
-CodeSecurityConfiguration copyWith({int? Function()? id, String? Function()? name, TargetType? Function()? targetType, String? Function()? description, CodeSecurityConfigurationAdvancedSecurity? Function()? advancedSecurity, DependencyGraph? Function()? dependencyGraph, DependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, DependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, DependabotAlerts? Function()? dependabotAlerts, CodeSecurityConfigurationDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityConfigurationDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, CodeScanningOptions? Function()? codeScanningOptions, CodeSecurityConfigurationCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, CodeSecurityConfigurationCodeScanningDefaultSetupOptions? Function()? codeScanningDefaultSetupOptions, CodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, CodeSecurityConfigurationSecretScanning? Function()? secretScanning, CodeSecurityConfigurationSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityConfigurationSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityConfigurationSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, SecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityConfigurationSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, SecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, SecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, PrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityConfigurationEnforcement? Function()? enforcement, Uri? Function()? url, Uri? Function()? htmlUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return CodeSecurityConfiguration(
+CodeSecurityConfiguration copyWith({int? Function()? id, String? Function()? name, TargetType? Function()? targetType, String? Function()? description, CodeSecurityConfigurationAdvancedSecurity? Function()? advancedSecurity, CodeSecurityConfigurationDependencyGraph? Function()? dependencyGraph, CodeSecurityConfigurationDependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityConfigurationDependabotAlerts? Function()? dependabotAlerts, CodeSecurityConfigurationDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityConfigurationDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, CodeScanningOptions? Function()? codeScanningOptions, CodeSecurityConfigurationCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, CodeSecurityConfigurationCodeScanningDefaultSetupOptions? Function()? codeScanningDefaultSetupOptions, CodeSecurityConfigurationCodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, CodeSecurityConfigurationSecretScanning? Function()? secretScanning, CodeSecurityConfigurationSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityConfigurationSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityConfigurationSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityConfigurationSecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityConfigurationSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, CodeSecurityConfigurationSecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityConfigurationSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityConfigurationPrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityConfigurationEnforcement? Function()? enforcement, Uri? Function()? url, Uri? Function()? htmlUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return CodeSecurityConfiguration(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   targetType: targetType != null ? targetType() : this.targetType,

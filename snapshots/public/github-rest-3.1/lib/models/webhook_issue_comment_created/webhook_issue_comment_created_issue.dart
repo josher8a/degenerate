@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookIssueCommentCreated (inline: Issue)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/issue_reactions.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/webhook_issue_comment_created_issue_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_assignee.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_labels.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_pull_request.dart';/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/issue_reactions.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/webhook_issue_comment_created_issue_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_assignee.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_labels.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_pull_request.dart';/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
 @immutable final class WebhookIssueCommentCreatedIssue {const WebhookIssueCommentCreatedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, required this.reactions, required this.repositoryUrl, required this.state, required this.title, required this.updatedAt, required this.url, required this.user, this.draft, this.performedViaGithubApp, this.pullRequest, this.subIssuesSummary, this.issueDependenciesSummary, this.stateReason, this.timelineUrl, this.type, });
 
 factory WebhookIssueCommentCreatedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreatedIssue(
@@ -30,7 +30,7 @@ factory WebhookIssueCommentCreatedIssue.fromJson(Map<String, dynamic> json) { re
   repositoryUrl: json['repository_url'] as String,
   subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
   issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
-  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
+  state: IssuesUpdateRequestState.fromJson(json['state'] as String),
   stateReason: json['state_reason'] as String?,
   timelineUrl: json['timeline_url'] as String?,
   title: json['title'] as String,
@@ -91,7 +91,7 @@ final SubIssuesSummary? subIssuesSummary;
 final IssueDependenciesSummary? issueDependenciesSummary;
 
 /// State of the issue; either 'open' or 'closed'
-final IssuesCreateMilestoneRequestState state;
+final IssuesUpdateRequestState state;
 
 final String? stateReason;
 
@@ -167,7 +167,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssueCommentCreatedIssue copyWith({String? Function()? activeLockReason, WebhooksIssueAssignee? Function()? assignee, List<Map<String,dynamic>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool? Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<WebhooksIssue2Labels>? labels, String? labelsUrl, bool? locked, Map<String, dynamic>? Function()? milestone, String? nodeId, int? number, Map<String, dynamic>? Function()? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, IssueReactions? reactions, String? repositoryUrl, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, IssuesCreateMilestoneRequestState? state, String? Function()? stateReason, String? Function()? timelineUrl, String? title, IssueType? Function()? type, String? updatedAt, String? url, WebhookIssueCommentCreatedIssueUser? user, }) { return WebhookIssueCommentCreatedIssue(
+WebhookIssueCommentCreatedIssue copyWith({String? Function()? activeLockReason, WebhooksIssueAssignee? Function()? assignee, List<Map<String,dynamic>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool? Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<WebhooksIssue2Labels>? labels, String? labelsUrl, bool? locked, Map<String, dynamic>? Function()? milestone, String? nodeId, int? number, Map<String, dynamic>? Function()? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, IssueReactions? reactions, String? repositoryUrl, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, IssuesUpdateRequestState? state, String? Function()? stateReason, String? Function()? timelineUrl, String? title, IssueType? Function()? type, String? updatedAt, String? url, WebhookIssueCommentCreatedIssueUser? user, }) { return WebhookIssueCommentCreatedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees ?? this.assignees,

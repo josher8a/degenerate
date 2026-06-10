@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeBetaResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_object.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_status.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_usage.dart';import 'package:pub_openai/models/realtime_beta_response/status_details.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/output_audio_format.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The response resource.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_object.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_status.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_usage.dart';import 'package:pub_openai/models/realtime_beta_response/status_details.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_output_audio_format.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The response resource.
 @immutable final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
 
 factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponse(
@@ -15,7 +15,7 @@ factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return Realti
   conversationId: json['conversation_id'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Modalities.fromJson(e as String)).toList(),
-  outputAudioFormat: json['output_audio_format'] != null ? OutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
+  outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
 ); }
@@ -77,7 +77,7 @@ final List<Modalities>? modalities;
 
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
-final OutputAudioFormat? outputAudioFormat;
+final RealtimeBetaResponseCreateParamsOutputAudioFormat? outputAudioFormat;
 
 /// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key)); } 
-RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, VoiceIdsShared? Function()? voice, List<Modalities>? Function()? modalities, OutputAudioFormat? Function()? outputAudioFormat, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
+RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, VoiceIdsShared? Function()? voice, List<Modalities>? Function()? modalities, RealtimeBetaResponseCreateParamsOutputAudioFormat? Function()? outputAudioFormat, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListModelsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/model.dart';@immutable final class ListModelsResponse {const ListModelsResponse({required this.object, required this.data, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/model.dart';@immutable final class ListModelsResponse {const ListModelsResponse({required this.object, required this.data, });
 
 factory ListModelsResponse.fromJson(Map<String, dynamic> json) { return ListModelsResponse(
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => Model.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 final List<Model> data;
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data'); } 
-ListModelsResponse copyWith({ChatCompletionListObject? object, List<Model>? data, }) { return ListModelsResponse(
+ListModelsResponse copyWith({ContainerFileListResourceObject? object, List<Model>? data, }) { return ListModelsResponse(
   object: object ?? this.object,
   data: data ?? this.data,
 ); } 

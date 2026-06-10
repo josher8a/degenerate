@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListFineTuningJobCheckpointsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
 
 factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobCheckpointsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobCheckpoint.fromJson(e as Map<String, dynamic>)).toList(),
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
@@ -13,7 +13,7 @@ factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json)
 
 final List<FineTuningJobCheckpoint> data;
 
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 final String? firstId;
 
@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('object') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ChatCompletionListObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
+ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ContainerFileListResourceObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
   data: data ?? this.data,
   object: object ?? this.object,
   firstId: firstId != null ? firstId() : this.firstId,

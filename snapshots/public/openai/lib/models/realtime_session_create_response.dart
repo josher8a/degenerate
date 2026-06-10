@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeSessionCreateResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_turn_detection.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_response/realtime_session_create_response_audio.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/tracing_configuration.dart';/// A Realtime session configuration object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_turn_detection.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_response/realtime_session_create_response_audio.dart';import 'package:pub_openai/models/tracing_configuration.dart';/// A Realtime session configuration object.
 /// 
 @immutable final class RealtimeSessionCreateResponse {const RealtimeSessionCreateResponse({this.id, this.object, this.expiresAt, this.include, this.model, this.outputModalities, this.instructions, this.audio, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.maxOutputTokens, });
 
@@ -14,7 +14,7 @@ factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { retu
   outputModalities: json['output_modalities'],
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeSessionCreateResponseAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
+  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
   turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] as String?,

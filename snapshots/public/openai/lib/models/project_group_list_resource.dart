@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ProjectGroupListResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/project_group.dart';/// Paginated list of groups that have access to a project.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/project_group.dart';/// Paginated list of groups that have access to a project.
 @immutable final class ProjectGroupListResource {const ProjectGroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory ProjectGroupListResource.fromJson(Map<String, dynamic> json) { return ProjectGroupListResource(
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ProjectGroup.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
 ); }
 
 /// Always `list`.
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 /// Project group memberships returned in the current page.
 final List<ProjectGroup> data;
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next') && json['next'] is String; } 
-ProjectGroupListResource copyWith({ChatCompletionListObject? object, List<ProjectGroup>? data, bool? hasMore, String? Function()? next, }) { return ProjectGroupListResource(
+ProjectGroupListResource copyWith({ContainerFileListResourceObject? object, List<ProjectGroup>? data, bool? hasMore, String? Function()? next, }) { return ProjectGroupListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

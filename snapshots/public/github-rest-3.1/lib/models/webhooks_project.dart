@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksProject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
 
 factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksProject(
   body: json['body'] as String?,
@@ -14,7 +14,7 @@ factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksPro
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   ownerUrl: Uri.parse(json['owner_url'] as String),
-  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
+  state: IssuesUpdateRequestState.fromJson(json['state'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
 ); }
@@ -42,7 +42,7 @@ final int number;
 final Uri ownerUrl;
 
 /// State of the project; either 'open' or 'closed'
-final IssuesCreateMilestoneRequestState state;
+final IssuesUpdateRequestState state;
 
 final DateTime updatedAt;
 
@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('body'
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, Uri? htmlUrl, int? id, String? name, String? nodeId, int? number, Uri? ownerUrl, IssuesCreateMilestoneRequestState? state, DateTime? updatedAt, Uri? url, }) { return WebhooksProject(
+WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, Uri? htmlUrl, int? id, String? name, String? nodeId, int? number, Uri? ownerUrl, IssuesUpdateRequestState? state, DateTime? updatedAt, Uri? url, }) { return WebhooksProject(
   body: body != null ? body() : this.body,
   columnsUrl: columnsUrl ?? this.columnsUrl,
   createdAt: createdAt ?? this.createdAt,

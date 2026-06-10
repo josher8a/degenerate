@@ -1,12 +1,65 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EvalResponsesSource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_type.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// A EvalResponsesSource object describing a run data source configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// The type of run data source. Always `responses`.
+sealed class EvalResponsesSourceType {const EvalResponsesSourceType();
+
+factory EvalResponsesSourceType.fromJson(String json) { return switch (json) {
+  'responses' => responses,
+  _ => EvalResponsesSourceType$Unknown(json),
+}; }
+
+static const EvalResponsesSourceType responses = EvalResponsesSourceType$responses._();
+
+static const List<EvalResponsesSourceType> values = [responses];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'responses' => 'responses',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is EvalResponsesSourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() responses, required W Function(String value) $unknown, }) { return switch (this) {
+      EvalResponsesSourceType$responses() => responses(),
+      EvalResponsesSourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responses, W Function(String value)? $unknown, }) { return switch (this) {
+      EvalResponsesSourceType$responses() => responses != null ? responses() : orElse(value),
+      EvalResponsesSourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'EvalResponsesSourceType($value)';
+
+ }
+@immutable final class EvalResponsesSourceType$responses extends EvalResponsesSourceType {const EvalResponsesSourceType$responses._();
+
+@override String get value => 'responses';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalResponsesSourceType$responses;
+
+@override int get hashCode => 'responses'.hashCode;
+
+ }
+@immutable final class EvalResponsesSourceType$Unknown extends EvalResponsesSourceType {const EvalResponsesSourceType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EvalResponsesSourceType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// A EvalResponsesSource object describing a run data source configuration.
 /// 
 @immutable final class EvalResponsesSource {const EvalResponsesSource({required this.type, this.metadata, this.model, this.instructionsSearch, this.createdAfter, this.createdBefore, this.reasoningEffort, this.temperature, this.topP, this.users, this.tools, });
 
 factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
-  type: CreateEvalResponsesRunDataSourceType.fromJson(json['type'] as String),
+  type: EvalResponsesSourceType.fromJson(json['type'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
   model: json['model'] as String?,
   instructionsSearch: json['instructions_search'] as String?,
@@ -20,7 +73,7 @@ factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalRes
 ); }
 
 /// The type of run data source. Always `responses`.
-final CreateEvalResponsesRunDataSourceType type;
+final EvalResponsesSourceType type;
 
 /// Metadata filter for the responses. This is a query parameter used to select responses.
 final Map<String,dynamic>? metadata;
@@ -77,7 +130,7 @@ if (createdBefore$ != null) {
   if (createdBefore$ < 0) { errors.add('createdBefore: must be >= 0'); }
 }
 return errors; } 
-EvalResponsesSource copyWith({CreateEvalResponsesRunDataSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
+EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   model: model != null ? model() : this.model,

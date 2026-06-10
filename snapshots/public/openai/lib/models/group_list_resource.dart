@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GroupListResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/group_response.dart';/// Paginated list of organization groups.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/group_response.dart';/// Paginated list of organization groups.
 @immutable final class GroupListResource {const GroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory GroupListResource.fromJson(Map<String, dynamic> json) { return GroupListResource(
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => GroupResponse.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
 ); }
 
 /// Always `list`.
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 /// Groups returned in the current page.
 final List<GroupResponse> data;
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next') && json['next'] is String; } 
-GroupListResource copyWith({ChatCompletionListObject? object, List<GroupResponse>? data, bool? hasMore, String? Function()? next, }) { return GroupListResource(
+GroupListResource copyWith({ContainerFileListResourceObject? object, List<GroupResponse>? data, bool? hasMore, String? Function()? next, }) { return GroupListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

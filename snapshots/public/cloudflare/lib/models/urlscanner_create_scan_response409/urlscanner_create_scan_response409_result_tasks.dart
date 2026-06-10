@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UrlscannerCreateScanResponse409 (inline: Result > Tasks)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/urlscanner_create_scan_bulk_request_visibility.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/scanned_from.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_client_type.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_status.dart';@immutable final class UrlscannerCreateScanResponse409ResultTasks {const UrlscannerCreateScanResponse409ResultTasks({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/scanned_from.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_client_type.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_status.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_visibility.dart';@immutable final class UrlscannerCreateScanResponse409ResultTasks {const UrlscannerCreateScanResponse409ResultTasks({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerCreateScanResponse409ResultTasks.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409ResultTasks(
   clientLocation: json['clientLocation'] as String,
@@ -15,7 +15,7 @@ factory UrlscannerCreateScanResponse409ResultTasks.fromJson(Map<String, dynamic>
   timeEnd: json['timeEnd'] as String,
   url: json['url'] as String,
   uuid: json['uuid'] as String,
-  visibility: UrlscannerCreateScanBulkRequestVisibility.fromJson(json['visibility'] as String),
+  visibility: TasksVisibility.fromJson(json['visibility'] as String),
 ); }
 
 /// Submitter location
@@ -55,7 +55,7 @@ final String url;
 /// Example: `'2ee568d0-bf70-4827-b922-b7088c0f056f'`
 final String uuid;
 
-final UrlscannerCreateScanBulkRequestVisibility visibility;
+final TasksVisibility visibility;
 
 Map<String, dynamic> toJson() { return {
   'clientLocation': clientLocation,
@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
       json.containsKey('visibility'); } 
-UrlscannerCreateScanResponse409ResultTasks copyWith({String? clientLocation, TasksClientType? clientType, String? effectiveUrl, List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, ScannedFrom? scannedFrom, TasksStatus? status, bool? success, String? time, String? timeEnd, String? url, String? uuid, UrlscannerCreateScanBulkRequestVisibility? visibility, }) { return UrlscannerCreateScanResponse409ResultTasks(
+UrlscannerCreateScanResponse409ResultTasks copyWith({String? clientLocation, TasksClientType? clientType, String? effectiveUrl, List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, ScannedFrom? scannedFrom, TasksStatus? status, bool? success, String? time, String? timeEnd, String? url, String? uuid, TasksVisibility? visibility, }) { return UrlscannerCreateScanResponse409ResultTasks(
   clientLocation: clientLocation ?? this.clientLocation,
   clientType: clientType ?? this.clientType,
   effectiveUrl: effectiveUrl ?? this.effectiveUrl,

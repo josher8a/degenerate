@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeInterpreterOutputImage
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image/code_interpreter_output_image_type.dart';/// The image output from the code interpreter.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output. Always `image`.
+sealed class CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType();
+
+factory CodeInterpreterOutputImageType.fromJson(String json) { return switch (json) {
+  'image' => image,
+  _ => CodeInterpreterOutputImageType$Unknown(json),
+}; }
+
+static const CodeInterpreterOutputImageType image = CodeInterpreterOutputImageType$image._();
+
+static const List<CodeInterpreterOutputImageType> values = [image];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'image' => 'image',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is CodeInterpreterOutputImageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeInterpreterOutputImageType$image() => image(),
+      CodeInterpreterOutputImageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeInterpreterOutputImageType$image() => image != null ? image() : orElse(value),
+      CodeInterpreterOutputImageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'CodeInterpreterOutputImageType($value)';
+
+ }
+@immutable final class CodeInterpreterOutputImageType$image extends CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterOutputImageType$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class CodeInterpreterOutputImageType$Unknown extends CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeInterpreterOutputImageType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// The image output from the code interpreter.
 @immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.url, this.type = CodeInterpreterOutputImageType.image, });
 
 factory CodeInterpreterOutputImage.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputImage(

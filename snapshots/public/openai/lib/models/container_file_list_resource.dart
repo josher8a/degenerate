@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ContainerFileListResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/container_file_resource.dart';@immutable final class ContainerFileListResource {const ContainerFileListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/container_file_resource.dart';@immutable final class ContainerFileListResource {const ContainerFileListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ContainerFileListResource.fromJson(Map<String, dynamic> json) { return ContainerFileListResource(
-  object: ChatCompletionListObject.fromJson(json['object'] as String),
+  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ContainerFileResource.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
@@ -12,7 +12,7 @@ factory ContainerFileListResource.fromJson(Map<String, dynamic> json) { return C
 ); }
 
 /// The type of object returned, must be 'list'.
-final ChatCompletionListObject object;
+final ContainerFileListResourceObject object;
 
 /// A list of container files.
 final List<ContainerFileResource> data;
@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ContainerFileListResource copyWith({ChatCompletionListObject? object, List<ContainerFileResource>? data, String? firstId, String? lastId, bool? hasMore, }) { return ContainerFileListResource(
+ContainerFileListResource copyWith({ContainerFileListResourceObject? object, List<ContainerFileResource>? data, String? firstId, String? lastId, bool? hasMore, }) { return ContainerFileListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

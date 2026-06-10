@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateImageEditRequest
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_image.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_model.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_response_format.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/partial_images.dart';/// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_image.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_model.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/partial_images.dart';/// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
 sealed class CreateImageEditRequestSize {const CreateImageEditRequestSize();
 
 factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) {
@@ -125,6 +125,74 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $256x256
 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateImageEditRequestSize$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
+sealed class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat();
+
+factory CreateImageEditRequestResponseFormat.fromJson(String json) { return switch (json) {
+  'url' => url,
+  'b64_json' => b64Json,
+  _ => CreateImageEditRequestResponseFormat$Unknown(json),
+}; }
+
+static const CreateImageEditRequestResponseFormat url = CreateImageEditRequestResponseFormat$url._();
+
+static const CreateImageEditRequestResponseFormat b64Json = CreateImageEditRequestResponseFormat$b64Json._();
+
+static const List<CreateImageEditRequestResponseFormat> values = [url, b64Json];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'url' => 'url',
+  'b64_json' => 'b64Json',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is CreateImageEditRequestResponseFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() url, required W Function() b64Json, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageEditRequestResponseFormat$url() => url(),
+      CreateImageEditRequestResponseFormat$b64Json() => b64Json(),
+      CreateImageEditRequestResponseFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? url, W Function()? b64Json, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageEditRequestResponseFormat$url() => url != null ? url() : orElse(value),
+      CreateImageEditRequestResponseFormat$b64Json() => b64Json != null ? b64Json() : orElse(value),
+      CreateImageEditRequestResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'CreateImageEditRequestResponseFormat($value)';
+
+ }
+@immutable final class CreateImageEditRequestResponseFormat$url extends CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestResponseFormat$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestResponseFormat$b64Json extends CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat$b64Json._();
+
+@override String get value => 'b64_json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestResponseFormat$b64Json;
+
+@override int get hashCode => 'b64_json'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestResponseFormat$Unknown extends CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageEditRequestResponseFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 

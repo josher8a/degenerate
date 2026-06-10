@@ -1,8 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomTextFormatParam (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `text`.
-sealed class CustomTextFormatParamType {const CustomTextFormatParamType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CustomTextFormatParamType {const CustomTextFormatParamType();
 
 factory CustomTextFormatParamType.fromJson(String json) { return switch (json) {
   'text' => text,

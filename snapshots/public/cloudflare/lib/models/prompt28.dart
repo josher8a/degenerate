@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Prompt
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt28 {const Prompt28({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt28 {const Prompt28({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
 
 factory Prompt28.fromJson(Map<String, dynamic> json) { return Prompt28(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
@@ -13,7 +13,7 @@ factory Prompt28.fromJson(Map<String, dynamic> json) { return Prompt28(
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   stream: json.containsKey('stream') ? json['stream'] as bool : false,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
+  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.15,
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
 ); }
@@ -21,7 +21,7 @@ factory Prompt28.fromJson(Map<String, dynamic> json) { return Prompt28(
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
 
-/// JSON schema that should be fufilled for the response.
+/// JSON schema that should be fulfilled for the response.
 final Map<String,dynamic>? guidedJson;
 
 /// The maximum number of tokens to generate in the response.

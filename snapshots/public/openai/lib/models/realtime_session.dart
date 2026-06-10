@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeSession
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/output_audio_format.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session/input_audio_format.dart';import 'package:pub_openai/models/realtime_session/input_audio_noise_reduction.dart';import 'package:pub_openai/models/realtime_session_create_request/max_response_output_tokens.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_turn_detection.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/tracing_configuration.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The object type. Always `realtime.session`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session/input_audio_format.dart';import 'package:pub_openai/models/realtime_session/input_audio_noise_reduction.dart';import 'package:pub_openai/models/realtime_session_create_request/max_response_output_tokens.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_turn_detection.dart';import 'package:pub_openai/models/tracing_configuration.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The object type. Always `realtime.session`.
 sealed class RealtimeSessionObject {const RealtimeSessionObject();
 
 factory RealtimeSessionObject.fromJson(String json) { return switch (json) {
@@ -54,8 +54,93 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime
 @override int get hashCode => value.hashCode;
 
  }
+/// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+/// For `pcm16`, output audio is sampled at a rate of 24kHz.
+/// 
+sealed class RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat();
+
+factory RealtimeSessionOutputAudioFormat.fromJson(String json) { return switch (json) {
+  'pcm16' => pcm16,
+  'g711_ulaw' => g711Ulaw,
+  'g711_alaw' => g711Alaw,
+  _ => RealtimeSessionOutputAudioFormat$Unknown(json),
+}; }
+
+static const RealtimeSessionOutputAudioFormat pcm16 = RealtimeSessionOutputAudioFormat$pcm16._();
+
+static const RealtimeSessionOutputAudioFormat g711Ulaw = RealtimeSessionOutputAudioFormat$g711Ulaw._();
+
+static const RealtimeSessionOutputAudioFormat g711Alaw = RealtimeSessionOutputAudioFormat$g711Alaw._();
+
+static const List<RealtimeSessionOutputAudioFormat> values = [pcm16, g711Ulaw, g711Alaw];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'pcm16' => 'pcm16',
+  'g711_ulaw' => 'g711Ulaw',
+  'g711_alaw' => 'g711Alaw',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is RealtimeSessionOutputAudioFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pcm16, required W Function() g711Ulaw, required W Function() g711Alaw, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeSessionOutputAudioFormat$pcm16() => pcm16(),
+      RealtimeSessionOutputAudioFormat$g711Ulaw() => g711Ulaw(),
+      RealtimeSessionOutputAudioFormat$g711Alaw() => g711Alaw(),
+      RealtimeSessionOutputAudioFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W Function()? g711Ulaw, W Function()? g711Alaw, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeSessionOutputAudioFormat$pcm16() => pcm16 != null ? pcm16() : orElse(value),
+      RealtimeSessionOutputAudioFormat$g711Ulaw() => g711Ulaw != null ? g711Ulaw() : orElse(value),
+      RealtimeSessionOutputAudioFormat$g711Alaw() => g711Alaw != null ? g711Alaw() : orElse(value),
+      RealtimeSessionOutputAudioFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'RealtimeSessionOutputAudioFormat($value)';
+
+ }
+@immutable final class RealtimeSessionOutputAudioFormat$pcm16 extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$pcm16._();
+
+@override String get value => 'pcm16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeSessionOutputAudioFormat$pcm16;
+
+@override int get hashCode => 'pcm16'.hashCode;
+
+ }
+@immutable final class RealtimeSessionOutputAudioFormat$g711Ulaw extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$g711Ulaw._();
+
+@override String get value => 'g711_ulaw';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeSessionOutputAudioFormat$g711Ulaw;
+
+@override int get hashCode => 'g711_ulaw'.hashCode;
+
+ }
+@immutable final class RealtimeSessionOutputAudioFormat$g711Alaw extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$g711Alaw._();
+
+@override String get value => 'g711_alaw';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeSessionOutputAudioFormat$g711Alaw;
+
+@override int get hashCode => 'g711_alaw'.hashCode;
+
+ }
+@immutable final class RealtimeSessionOutputAudioFormat$Unknown extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeSessionOutputAudioFormat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Realtime session object for the beta interface.
-@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities, this.model, this.instructions, this.voice, this.inputAudioFormat = InputAudioFormat.pcm16, this.outputAudioFormat = OutputAudioFormat.pcm16, this.inputAudioTranscription, this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing, this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt, this.include, });
+@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities, this.model, this.instructions, this.voice, this.inputAudioFormat = InputAudioFormat.pcm16, this.outputAudioFormat = RealtimeSessionOutputAudioFormat.pcm16, this.inputAudioTranscription, this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing, this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt, this.include, });
 
 factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
   id: json['id'] as String?,
@@ -65,12 +150,12 @@ factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSes
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
   inputAudioFormat: json.containsKey('input_audio_format') ? InputAudioFormat.fromJson(json['input_audio_format'] as String) : InputAudioFormat.pcm16,
-  outputAudioFormat: json.containsKey('output_audio_format') ? OutputAudioFormat.fromJson(json['output_audio_format'] as String) : OutputAudioFormat.pcm16,
+  outputAudioFormat: json.containsKey('output_audio_format') ? RealtimeSessionOutputAudioFormat.fromJson(json['output_audio_format'] as String) : RealtimeSessionOutputAudioFormat.pcm16,
   inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
   turnDetection: json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? InputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
   speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
+  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json.containsKey('tool_choice') ? json['tool_choice'] as String : 'auto',
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.8,
@@ -128,7 +213,7 @@ final InputAudioFormat inputAudioFormat;
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, output audio is sampled at a rate of 24kHz.
 /// 
-final OutputAudioFormat outputAudioFormat;
+final RealtimeSessionOutputAudioFormat outputAudioFormat;
 
 /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
 /// 
@@ -213,7 +298,7 @@ List<String> validate() { final errors = <String>[];
 if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
 if (speed > 1.5) { errors.add('speed: must be <= 1.5'); }
 return errors; } 
-RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, dynamic Function()? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat Function()? inputAudioFormat, OutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection? Function()? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, List<RealtimeFunctionTool>? Function()? tools, String Function()? toolChoice, double Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Prompt? Function()? prompt, List<Include>? Function()? include, }) { return RealtimeSession(
+RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, dynamic Function()? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection? Function()? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, List<RealtimeFunctionTool>? Function()? tools, String Function()? toolChoice, double Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Prompt? Function()? prompt, List<Include>? Function()? include, }) { return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   modalities: modalities != null ? modalities() : this.modalities,

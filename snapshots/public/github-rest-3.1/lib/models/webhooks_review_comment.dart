@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksReviewComment
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_start_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_review_comment/webhooks_review_comment_links.dart';/// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_start_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/pulls_create_review_comment_request/pulls_create_review_comment_request_side.dart';import 'package:pub_github_rest_3_1/models/webhooks_review_comment/webhooks_review_comment_links.dart';/// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
 @immutable final class WebhooksReviewComment {const WebhooksReviewComment({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.updatedAt, required this.url, required this.user, this.inReplyToId, this.startSide = PullRequestReviewCommentStartSide.right, this.subjectType, });
 
 factory WebhooksReviewComment.fromJson(Map<String, dynamic> json) { return WebhooksReviewComment(
@@ -25,7 +25,7 @@ factory WebhooksReviewComment.fromJson(Map<String, dynamic> json) { return Webho
   pullRequestReviewId: json['pull_request_review_id'] != null ? (json['pull_request_review_id'] as num).toInt() : null,
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
   reactions: DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>),
-  side: Side.fromJson(json['side'] as String),
+  side: PullsCreateReviewCommentRequestSide.fromJson(json['side'] as String),
   startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
   startSide: json['start_side'] != null ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : null,
   subjectType: json['subject_type'] != null ? SubjectType.fromJson(json['subject_type'] as String) : null,
@@ -92,7 +92,7 @@ final Uri pullRequestUrl;
 final DiscussionReactions reactions;
 
 /// The side of the first line of the range for a multi-line comment.
-final Side side;
+final PullsCreateReviewCommentRequestSide side;
 
 /// The first line of the range for a multi-line comment.
 final int? startLine;
@@ -164,7 +164,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksReviewComment copyWith({WebhooksReviewCommentLinks? links, AuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, DiscussionReactions? reactions, Side? side, int? Function()? startLine, PullRequestReviewCommentStartSide? Function()? startSide, SubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksReviewComment(
+WebhooksReviewComment copyWith({WebhooksReviewCommentLinks? links, AuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, DiscussionReactions? reactions, PullsCreateReviewCommentRequestSide? side, int? Function()? startLine, PullRequestReviewCommentStartSide? Function()? startSide, SubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksReviewComment(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,

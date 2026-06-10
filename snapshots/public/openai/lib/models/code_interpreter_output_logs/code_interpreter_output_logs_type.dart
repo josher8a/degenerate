@@ -1,8 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeInterpreterOutputLogs (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the code interpreter text output. Always `logs`.
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `logs`.
 sealed class CodeInterpreterOutputLogsType {const CodeInterpreterOutputLogsType();
 
 factory CodeInterpreterOutputLogsType.fromJson(String json) { return switch (json) {
