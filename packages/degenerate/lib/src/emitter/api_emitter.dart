@@ -457,7 +457,7 @@ class ApiEmitter {
       for (final p in cookieParams) {
         final sanitizedName = _paramNameLiteral(p.name);
         final cookieValue = _toStringExpr(p);
-        if (p.isRequired) {
+        if (p.isRequired && !p.type.isNullable) {
           buf.writeln('cookies[$sanitizedName] = $cookieValue;');
         } else {
           buf.writeln('if (${p.dartName} != null) {');
@@ -485,7 +485,7 @@ class ApiEmitter {
     for (final p in headerParams) {
       final sanitizedName = _paramNameLiteral(p.name);
       final headerValue = _toStringExpr(p);
-      if (p.isRequired) {
+      if (p.isRequired && !p.type.isNullable) {
         buf.writeln('headers[$sanitizedName] = $headerValue;');
       } else {
         buf.writeln('if (${p.dartName} != null) {');
@@ -1134,7 +1134,7 @@ class ApiEmitter {
       for (final p in cookieParams) {
         final sanitizedName = _paramNameLiteral(p.name);
         final cookieValue = _toStringExpr(p);
-        if (p.isRequired) {
+        if (p.isRequired && !p.type.isNullable) {
           buf.writeln('cookies[$sanitizedName] = $cookieValue;');
         } else {
           buf.writeln('if (${p.dartName} != null) {');
@@ -1160,7 +1160,7 @@ class ApiEmitter {
     for (final p in headerParams) {
       final sanitizedName = _paramNameLiteral(p.name);
       final headerValue = _toStringExpr(p);
-      if (p.isRequired) {
+      if (p.isRequired && !p.type.isNullable) {
         buf.writeln('headers[$sanitizedName] = $headerValue;');
       } else {
         buf.writeln('if (${p.dartName} != null) {');

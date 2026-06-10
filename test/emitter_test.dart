@@ -3524,6 +3524,49 @@ void main() {
     });
   });
 
+  group('ApiEmitter - required-but-nullable header and cookie parameters', () {
+    test('typed wire conversions are null-guarded', () {
+      // A required header/cookie param with nullable: true still carries
+      // null at runtime; an unguarded toIso8601String()/base64Encode on the
+      // nullable receiver does not compile.
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          '/send',
+          parameters: [
+            IrParameter(
+              'X-Since',
+              'xSince',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+              isRequired: true,
+            ),
+            IrParameter(
+              'session',
+              'session',
+              ParameterLocation.cookie,
+              IrPrimitive(PrimitiveKind.bytes, isNullable: true),
+              isRequired: true,
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(ApiEmitter(api).emit()),
+        ),
+      );
+
+      expect(source, contains('if (xSince != null) {'));
+      expect(source, contains('if (session != null) {'));
+    });
+  });
+
   group('ApiEmitter - DateTime, bytes, and Duration parameter wire formats', () {
     test('scalar DateTime params serialize RFC 3339, bytes as base64', () {
       const api = IrApi('TestApi', [
