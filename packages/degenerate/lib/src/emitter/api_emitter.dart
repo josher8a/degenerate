@@ -252,17 +252,20 @@ final class ApiEmitter {
     ) = reqCtx;
     final httpMethod = _httpMethodString(op);
 
-    // Build path with parameter interpolation (URL-encoded). The literal
-    // segments are spec-controlled and must be escaped before the `${...}`
-    // substitutions are spliced in.
+    // Build path with parameter interpolation (URL-encoded). Match `{param}`
+    // placeholders on the RAW path (escaping first would corrupt names
+    // containing $/'/\ and break the lookup), then escape only the literal
+    // spec-controlled segments around the `${...}` substitutions.
     final pathParamsByName = {for (final p in pathParams) p.name: p};
-    final path = escapeDartString(op.path).replaceAllMapped(_pathParamPattern, (
-      m,
-    ) {
-      final p = pathParamsByName[m[1]];
-      if (p == null) return m[0]!;
-      return '\${${_pathSegmentEncodeExpr(p)}}';
-    });
+    final path = op.path.splitMapJoin(
+      _pathParamPattern,
+      onMatch: (m) {
+        final p = pathParamsByName[m[1]];
+        if (p == null) return escapeDartString(m[0]!);
+        return '\${${_pathSegmentEncodeExpr(p)}}';
+      },
+      onNonMatch: escapeDartString,
+    );
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
