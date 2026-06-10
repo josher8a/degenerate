@@ -596,14 +596,35 @@ final class Generator {
           );
         }
       }
+      // apiKey schemes require `name` and `in`; non-conforming specs still
+      // generate, with the documented defaults and a warning.
+      final type = value['type'] as String? ?? 'unknown';
+      var parameterName = value['name'] as String?;
+      var location = value['in'] as String?;
+      if (type == 'apiKey') {
+        if (parameterName == null) {
+          _log(
+            'Warning: apiKey security scheme "$key" is missing the required '
+            "'name' field; defaulting to the scheme key.",
+          );
+          parameterName = key;
+        }
+        if (location == null) {
+          _log(
+            'Warning: apiKey security scheme "$key" is missing the required '
+            "'in' field; defaulting to header.",
+          );
+          location = 'header';
+        }
+      }
       schemes.add(
         IrSecurityScheme(
           name: key,
-          type: value['type'] as String? ?? 'unknown',
+          type: type,
           scheme: value['scheme'] as String?,
           bearerFormat: value['bearerFormat'] as String?,
-          parameterName: value['name'] as String?,
-          location: value['in'] as String?,
+          parameterName: parameterName,
+          location: location,
           openIdConnectUrl: value['openIdConnectUrl'] as String?,
           flows: flows,
         ),
@@ -627,7 +648,14 @@ final class Generator {
     }).toList();
   }
 
+  /// All diagnostic lines emitted during generation, in order. Also written
+  /// to stderr unless `--quiet`; collected here so programmatic callers and
+  /// tests can inspect warnings without capturing stderr.
+  List<String> get logs => List.unmodifiable(_logs);
+  final _logs = <String>[];
+
   void _log(String message) {
+    _logs.add(message);
     if (config.quiet) return;
     stderr.writeln(message);
   }

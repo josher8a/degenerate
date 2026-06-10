@@ -1030,11 +1030,17 @@ final class FileEmitter {
       );
     }
 
+    // apiKey defaults (parameterName → scheme key, location → header) are
+    // normalized at lowering with a warning; these fallbacks are defense in
+    // depth for directly-constructed schemes.
     return switch (scheme.type) {
       'apiKey' => switch (scheme.location) {
-        'header' => apiKey('defaultHeaders', scheme.parameterName),
-        'query' => apiKey('defaultQueryParameters', scheme.parameterName),
-        'cookie' => apiKey('defaultCookies', scheme.parameterName),
+        'header' => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
+        'query' => apiKey(
+          'defaultQueryParameters',
+          scheme.parameterName ?? scheme.name,
+        ),
+        'cookie' => apiKey('defaultCookies', scheme.parameterName ?? scheme.name),
         _ => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
       },
       'http' => switch (scheme.scheme) {

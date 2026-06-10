@@ -2,6 +2,22 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## 0.4.2
+
+**Bug fixes for enum parameter serialization, generated security helpers, and union parsing; `anyOf` + `discriminator` support.**
+
+### Bug fixes
+
+- **Enum path parameters interpolate their wire value** (#7): a path parameter whose schema is a `$ref` string enum produced debug strings like `Color(red)` in request URLs. Path interpolation now uses the enum's underlying value, and every other parameter serialization site (query, header, cookie, deepObject fields, list items, multipart text fields) was hardened so non-string enums and non-string-backed extension types no longer generate uncompilable code.
+- **apiKey schemes missing `in` or `name` no longer emit uncompilable code** (#8): the generator defaults a missing `name` to the scheme key and a missing/invalid `in` to `header` (each with a CLI warning), and the `with<Scheme>` facade helper is only emitted when its matching `apply<Scheme>` method exists.
+- **Security requirement lists are explicitly typed** (#9): operations opting out via `security: []` emitted an untyped `[]` inferred as `List<dynamic>`; all requirement lists now carry an explicit `<ApiSecurityRequirement>` type argument.
+- **`OneOf.parse` falls through on `Error`, not just `Exception`** (#10, thanks @josher8a): a variant's `fromJson` that discriminates by casting (e.g. `json['x'] as String`) throws a `TypeError` when the payload is a different variant; trial-parsing previously aborted instead of trying the next variant.
+- **Union variant names no longer collide with their referenced model**: when the derived variant name `<UnionName><PascalCase(value)>` matches the referenced schema's own class name (e.g. OpenAI's Realtime events), the wrapper now uses a `$` separator (`RealtimeClientEvent$SessionUpdate`), fixing ambiguous barrel exports and a self-recursive `fromJson`.
+
+### Improvements
+
+- **`anyOf` + `discriminator` generates sealed unions** (#10, thanks @josher8a): schemas using `anyOf` with a discriminator (allowed by the OpenAPI spec) now lower to the same sealed-class hierarchy as `oneOf` when every variant is a `$ref`, instead of an untagged `OneOfN`. Affected schemas in regenerated clients change shape accordingly (e.g. OpenAI's `ResponsesClientEvent`).
+
 ## 0.4.1
 
 **Generated code is now lint-clean under `very_good_analysis`.**
