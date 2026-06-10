@@ -92,6 +92,9 @@ analyzeApiImports(
           if (isBytesType(schema)) needsTypedData = true;
           break;
         }
+        // An existing success response with no content means void — the
+        // emitter stops here and never deserializes a later body.
+        if (resp.content.isEmpty) break;
       }
     }
     if (streamingContent(op) case final streaming?) {
