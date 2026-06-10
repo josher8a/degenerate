@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/cancel_token.dart';
 import 'package:degenerate_runtime/src/interceptor.dart';
 
 /// A function that delays execution for the given [delay] duration.
@@ -107,6 +108,11 @@ class RetryInterceptor implements Interceptor {
             attempt == maxRetries) {
           return response;
         }
+      } on CancelledException {
+        // Cancellation (user-initiated or executor timeout) must surface
+        // immediately — retrying would extend every timeout by the whole
+        // backoff schedule.
+        rethrow;
       } on Object catch (e, st) {
         lastError = e;
         lastStack = st;

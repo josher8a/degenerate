@@ -116,6 +116,31 @@ void main() {
       expect(attempts, 3);
     });
 
+    test('does not retry cancellation', () async {
+      // Timeouts surface as CancelledException (the executor cancels the
+      // adapter token) — retrying one silently extends every timeout by the
+      // whole backoff schedule and ignores user-initiated cancellation.
+      var attempts = 0;
+      const interceptor = RetryInterceptor(
+        maxRetries: 3,
+        initialDelay: Duration.zero,
+      );
+
+      final chain = buildInterceptorChain(
+        interceptors: [interceptor],
+        terminal: (_) async {
+          attempts++;
+          throw const CancelledException('user cancelled');
+        },
+      );
+
+      await expectLater(
+        () => chain(const ApiRequest(method: 'GET', path: '/test')),
+        throwsA(isA<CancelledException>()),
+      );
+      expect(attempts, 1, reason: 'cancellation must surface immediately');
+    });
+
     test('rethrows after exhausting retries on exceptions', () async {
       const interceptor = RetryInterceptor(
         maxRetries: 1,
