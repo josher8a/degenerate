@@ -121,9 +121,11 @@ int _statusSortKey(int key) => switch (key) {
   _ => key,
 };
 
-/// The variant class-name suffix for a status entry.
+/// The variant class-name suffix for a status entry. The default-response
+/// suffix embeds the body's type name, which may be a collection rendering
+/// (`List<Err?>`) — sanitize it into a valid identifier fragment.
 String _variantSuffix(int code, String typeName) => switch (code) {
-  -1 => '\$$typeName',
+  -1 => '\$${safeTypeName(typeName)}',
   kStatusRange4xx => r'$4XX',
   kStatusRange5xx => r'$5XX',
   _ => '\$$code',
