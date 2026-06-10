@@ -22,10 +22,10 @@ if (direction != null) {
   queryParameters['direction'] = direction.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toIso8601String();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();

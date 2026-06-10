@@ -28,10 +28,10 @@ if (uuid != null) {
   queryParameters['uuid'] = uuid.toString();
 }
 if (wasActiveAt != null) {
-  queryParameters['was_active_at'] = wasActiveAt.toString();
+  queryParameters['was_active_at'] = wasActiveAt.toIso8601String();
 }
 if (wasInactiveAt != null) {
-  queryParameters['was_inactive_at'] = wasInactiveAt.toString();
+  queryParameters['was_inactive_at'] = wasInactiveAt.toIso8601String();
 }
 if (includePrefix != null) {
   queryParameters['include_prefix'] = includePrefix;
@@ -304,10 +304,10 @@ if (uuid != null) {
   queryParameters['uuid'] = uuid.toString();
 }
 if (wasActiveAt != null) {
-  queryParameters['was_active_at'] = wasActiveAt.toString();
+  queryParameters['was_active_at'] = wasActiveAt.toIso8601String();
 }
 if (wasInactiveAt != null) {
-  queryParameters['was_inactive_at'] = wasInactiveAt.toString();
+  queryParameters['was_inactive_at'] = wasInactiveAt.toIso8601String();
 }
 if (includePrefix != null) {
   queryParameters['include_prefix'] = includePrefix;
@@ -369,10 +369,10 @@ if (uuid != null) {
   queryParameters['uuid'] = uuid.toString();
 }
 if (wasActiveAt != null) {
-  queryParameters['was_active_at'] = wasActiveAt.toString();
+  queryParameters['was_active_at'] = wasActiveAt.toIso8601String();
 }
 if (wasInactiveAt != null) {
-  queryParameters['was_inactive_at'] = wasInactiveAt.toString();
+  queryParameters['was_inactive_at'] = wasInactiveAt.toIso8601String();
 }
 if (includePrefix != null) {
   queryParameters['include_prefix'] = includePrefix;

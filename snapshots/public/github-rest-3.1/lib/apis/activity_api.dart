@@ -130,10 +130,10 @@ if (participating != null) {
   queryParameters['participating'] = participating.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (before != null) {
-  queryParameters['before'] = before.toString();
+  queryParameters['before'] = before.toIso8601String();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -415,10 +415,10 @@ if (participating != null) {
   queryParameters['participating'] = participating.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (before != null) {
-  queryParameters['before'] = before.toString();
+  queryParameters['before'] = before.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

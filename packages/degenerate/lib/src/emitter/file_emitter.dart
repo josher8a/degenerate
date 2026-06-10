@@ -377,7 +377,11 @@ class FileEmitter {
     for (final op in api.operations) {
       for (final param in op.parameters) {
         _collectTopLevelTypeName(param.type, names);
-        if (isBytesType(param.type)) needsTypedData = true;
+        if (isBytesType(param.type)) {
+          needsTypedData = true;
+          // Bytes params serialize via base64Encode.
+          needsConvert = true;
+        }
       }
       // Match the type selection logic used by ApiEmitter:
       // prefer application/json, fallback to first content type.

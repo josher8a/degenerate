@@ -3324,4 +3324,93 @@ void main() {
       expect(escapeDartString('a\u200Bb'), r'a\u200Bb');
     });
   });
+
+  group('ApiEmitter - DateTime, bytes, and Duration parameter wire formats', () {
+    test('scalar DateTime params serialize RFC 3339, bytes as base64', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'search',
+          'search',
+          HttpMethod.get,
+          '/search/{when}',
+          parameters: [
+            IrParameter(
+              'when',
+              'when',
+              ParameterLocation.path,
+              IrPrimitive(PrimitiveKind.dateTime),
+              isRequired: true,
+            ),
+            IrParameter(
+              'since',
+              'since',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.dateTime),
+              isRequired: true,
+            ),
+            IrParameter(
+              'X-Sig',
+              'xSig',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.bytes),
+              isRequired: true,
+            ),
+            IrParameter(
+              'ttl',
+              'ttl',
+              ParameterLocation.cookie,
+              IrPrimitive(PrimitiveKind.duration),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // DateTime.toString() is '2024-01-02 03:04:05.000Z' \u2014 not RFC 3339;
+      // Uint8List.toString() is '[1, 2, 3]' \u2014 not base64;
+      // Duration.toString() is 'Duration: ...' \u2014 not a number.
+      expect(source, contains('Uri.encodeComponent(when.toIso8601String())'));
+      expect(source, contains("queryParameters['since'] = since.toIso8601String();"));
+      expect(source, contains("headers['X-Sig'] = base64Encode(xSig);"));
+      expect(source, contains("cookies['ttl'] = ttl.inMilliseconds.toString();"));
+      expect(source, isNot(contains('when.toString()')));
+      expect(source, isNot(contains('since.toString()')));
+      expect(source, isNot(contains('xSig.toString()')));
+      expect(source, isNot(contains('ttl.toString()')));
+    });
+
+    test('API file imports dart:convert for bytes params', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          '/send',
+          parameters: [
+            IrParameter(
+              'sig',
+              'sig',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.bytes),
+              isRequired: true,
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final files = FileEmitter().emitAll(
+        types: [],
+        apis: [api],
+        packageName: 'bytes_param_test',
+      );
+      final file = files['apis/test_api.dart']!;
+      // base64Encode requires dart:convert.
+      expect(file, contains("import 'dart:convert'"));
+      expect(file, contains("import 'dart:typed_data'"));
+    });
+  });
 }

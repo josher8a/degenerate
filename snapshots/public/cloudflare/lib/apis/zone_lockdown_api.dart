@@ -40,7 +40,7 @@ if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
 }
 if (createdOn != null) {
-  queryParameters['created_on'] = createdOn.toString();
+  queryParameters['created_on'] = createdOn.toIso8601String();
 }
 if (descriptionSearch != null) {
   queryParameters['description_search'] = descriptionSearch;

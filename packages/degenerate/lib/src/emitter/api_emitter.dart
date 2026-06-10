@@ -323,6 +323,15 @@ class ApiEmitter {
       final encodeExpr = switch (p.type) {
         IrPrimitive(kind: PrimitiveKind.string) =>
           'Uri.encodeComponent(${p.dartName})',
+        // DateTime.toString() is not RFC 3339 ('2024-01-02 03:04:05.000Z');
+        // Uint8List.toString() is a debug list dump; Duration.toString() is
+        // 'Duration: ...'.
+        IrPrimitive(kind: PrimitiveKind.dateTime) =>
+          'Uri.encodeComponent(${p.dartName}.toIso8601String())',
+        IrPrimitive(kind: PrimitiveKind.bytes) =>
+          'Uri.encodeComponent(base64Encode(${p.dartName}))',
+        IrPrimitive(kind: PrimitiveKind.duration) =>
+          'Uri.encodeComponent(${p.dartName}.inMilliseconds.toString())',
         IrEnum(valueKind: PrimitiveKind.string) =>
           'Uri.encodeComponent(${p.dartName}.value)',
         IrEnum() => 'Uri.encodeComponent(${p.dartName}.value.toString())',
@@ -567,6 +576,12 @@ class ApiEmitter {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.string => p.dartName,
+        // DateTime.toString() is not RFC 3339 ('2024-01-02 03:04:05.000Z');
+        // Uint8List.toString() is a debug list dump; Duration.toString() is
+        // 'Duration: ...'.
+        PrimitiveKind.dateTime => '${p.dartName}.toIso8601String()',
+        PrimitiveKind.bytes => 'base64Encode(${p.dartName})',
+        PrimitiveKind.duration => '${p.dartName}.inMilliseconds.toString()',
         _ => '${p.dartName}.toString()',
       },
       IrEnum(valueKind: PrimitiveKind.string) => '${p.dartName}.toJson()',

@@ -32,16 +32,16 @@ if (ipV6 != null) {
   queryParameters['ip_v6'] = ipV6;
 }
 if (createdBefore != null) {
-  queryParameters['created_before'] = createdBefore.toString();
+  queryParameters['created_before'] = createdBefore.toIso8601String();
 }
 if (createdAfter != null) {
-  queryParameters['created_after'] = createdAfter.toString();
+  queryParameters['created_after'] = createdAfter.toIso8601String();
 }
 if (modifiedBefore != null) {
-  queryParameters['modified_before'] = modifiedBefore.toString();
+  queryParameters['modified_before'] = modifiedBefore.toIso8601String();
 }
 if (modifiedAfter != null) {
-  queryParameters['modified_after'] = modifiedAfter.toString();
+  queryParameters['modified_after'] = modifiedAfter.toIso8601String();
 }
 if (ips != null) {
 for (final item in ips) {
