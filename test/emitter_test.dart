@@ -3325,6 +3325,164 @@ void main() {
     });
   });
 
+  group('ApiEmitter - object/array styled parameters', () {
+    const filterObj = IrObject('Filter', [
+      IrField('a', 'a', IrPrimitive(PrimitiveKind.string), isRequired: true),
+      IrField('b', 'b', IrPrimitive(PrimitiveKind.int), isRequired: true),
+    ], requiredFields: ['a', 'b']);
+
+    String emitFor(IrParameter p) {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getX',
+          'getX',
+          HttpMethod.get,
+          p.location == ParameterLocation.path ? '/x/{v}' : '/x',
+          parameters: [p],
+          responses: const {200: IrResponse()},
+        ),
+      ]);
+      return emitRaw(
+        Library(
+          (b) => b
+            ..body.addAll(
+              ApiEmitter(api, typeRegistry: const {'Filter': filterObj})
+                  .emit(),
+            ),
+        ),
+      );
+    }
+
+    test('array path params join items, not debug toString()', () {
+      final source = emitFor(
+        const IrParameter(
+          'v',
+          'v',
+          ParameterLocation.path,
+          IrList(IrPrimitive(PrimitiveKind.int)),
+          isRequired: true,
+        ),
+      );
+      // List.toString() is '[1, 2]' — simple style is '1,2'.
+      expect(source, contains("v.map((item) => item.toString()).join(',')"));
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+    });
+
+    test('object path params serialize simple-style pairs', () {
+      final source = emitFor(
+        const IrParameter(
+          'v',
+          'v',
+          ParameterLocation.path,
+          IrTypeRef('Filter'),
+          isRequired: true,
+        ),
+      );
+      // simple, explode=false: a,<value>,b,<value>
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, contains("'a'"));
+      expect(source, contains('v.a'));
+    });
+
+    test('exploded object path params serialize k=v pairs', () {
+      final source = emitFor(
+        const IrParameter(
+          'v',
+          'v',
+          ParameterLocation.path,
+          IrTypeRef('Filter'),
+          isRequired: true,
+          explode: true,
+        ),
+      );
+      // simple, explode=true: a=<value>,b=<value>
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, contains(r"'a=${v.a}'"));
+    });
+
+    test('map path params serialize simple-style pairs', () {
+      final source = emitFor(
+        const IrParameter(
+          'v',
+          'v',
+          ParameterLocation.path,
+          IrMap(IrPrimitive(PrimitiveKind.string)),
+          isRequired: true,
+        ),
+      );
+      // simple, explode=false: k1,v1,k2,v2
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(
+        source,
+        contains('v.entries.expand((entry) => [entry.key, entry.value])'),
+      );
+    });
+
+    test('ref query params take the styled object path', () {
+      final source = emitFor(
+        const IrParameter(
+          'filter',
+          'filter',
+          ParameterLocation.query,
+          IrTypeRef('Filter'),
+          isRequired: true,
+        ),
+      );
+      // A $ref to an object schema must not stringify via the scalar
+      // default ('SimpleObject(\n  str: ...)' in the URL).
+      expect(source, isNot(contains('filter.toString()')));
+      expect(source, contains('filter.a'));
+    });
+
+    test('pipeDelimited exploded arrays repeat the key', () {
+      final source = emitFor(
+        const IrParameter(
+          'ids',
+          'ids',
+          ParameterLocation.query,
+          IrList(IrPrimitive(PrimitiveKind.int)),
+          isRequired: true,
+          style: 'pipeDelimited',
+          explode: true,
+        ),
+      );
+      // explode=true means one query entry per item for every style.
+      expect(source, contains('for (final item in ids)'));
+      expect(source, isNot(contains("join('|')")));
+    });
+
+    test('pipeDelimited objects join pairs with |', () {
+      final source = emitFor(
+        const IrParameter(
+          'filter',
+          'filter',
+          ParameterLocation.query,
+          IrTypeRef('Filter'),
+          isRequired: true,
+          style: 'pipeDelimited',
+          explode: false,
+        ),
+      );
+      expect(source, contains("join('|')"));
+      expect(source, isNot(contains("join(',')")));
+    });
+
+    test('pipeDelimited maps join pairs with |', () {
+      final source = emitFor(
+        const IrParameter(
+          'attrs',
+          'attrs',
+          ParameterLocation.query,
+          IrMap(IrPrimitive(PrimitiveKind.string)),
+          isRequired: true,
+          style: 'pipeDelimited',
+          explode: false,
+        ),
+      );
+      expect(source, contains("attrsParts.join('|')"));
+    });
+  });
+
   group('ApiEmitter - required-but-nullable query parameters', () {
     test('list and allowReserved paths null-guard nullable params', () {
       const api = IrApi('TestApi', [

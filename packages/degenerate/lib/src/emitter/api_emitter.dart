@@ -314,32 +314,82 @@ class ApiEmitter {
   /// Interpolate path parameters into [path], URL-encoding each value.
   ///
   /// Enum wrappers expose the wire value via `value`; their `toString()` is a
-  /// debug form (`ClassName(value)`) that must never reach the URL.
+  /// debug form (`ClassName(value)`) that must never reach the URL. Arrays,
+  /// objects, and maps serialize per the `simple` style (the only one
+  /// supported here): comma-joined items / `k,v` pairs (explode=false) or
+  /// `k=v` pairs (explode=true) — never the Dart debug `toString()`.
   String _interpolatePath(String path, List<IrParameter> pathParams) {
     final pathParamsByName = {for (final p in pathParams) p.name: p};
     return path.replaceAllMapped(_pathParamPattern, (m) {
       final p = pathParamsByName[m[1]];
       if (p == null) return m[0]!;
-      final encodeExpr = switch (p.type) {
-        IrPrimitive(kind: PrimitiveKind.string) =>
-          'Uri.encodeComponent(${p.dartName})',
+      final explode = p.explode ?? false;
+      // Resolve refs: a $ref to an object/array schema must serialize per
+      // the simple style, not stringify via the scalar default.
+      final valueExpr = switch (_resolveType(p.type)) {
+        IrPrimitive(kind: PrimitiveKind.string) => p.dartName,
         // DateTime.toString() is not RFC 3339 ('2024-01-02 03:04:05.000Z');
         // Uint8List.toString() is a debug list dump; Duration.toString() is
         // 'Duration: ...'.
         IrPrimitive(kind: PrimitiveKind.dateTime) =>
-          'Uri.encodeComponent(${p.dartName}.toIso8601String())',
-        IrPrimitive(kind: PrimitiveKind.bytes) =>
-          'Uri.encodeComponent(base64Encode(${p.dartName}))',
+          '${p.dartName}.toIso8601String()',
+        IrPrimitive(kind: PrimitiveKind.bytes) => 'base64Encode(${p.dartName})',
         IrPrimitive(kind: PrimitiveKind.duration) =>
-          'Uri.encodeComponent(${p.dartName}.inMilliseconds.toString())',
-        IrEnum(valueKind: PrimitiveKind.string) =>
-          'Uri.encodeComponent(${p.dartName}.value)',
-        IrEnum() => 'Uri.encodeComponent(${p.dartName}.value.toString())',
-        _ => 'Uri.encodeComponent(${p.dartName}.toString())',
+          '${p.dartName}.inMilliseconds.toString()',
+        IrEnum(valueKind: PrimitiveKind.string) => '${p.dartName}.value',
+        IrEnum() => '${p.dartName}.value.toString()',
+        IrList(:final items) => () {
+          final item = _queryScalarExpr(items, 'item');
+          return item == 'item'
+              ? "${p.dartName}.join(',')"
+              : "${p.dartName}.map((item) => $item).join(',')";
+        }(),
+        IrObject(:final fields) => () {
+          final parts = <String>[];
+          for (final f in fields) {
+            final value = _queryScalarExpr(f.type, '${p.dartName}.${f.name}');
+            if (explode) {
+              // Interpolation stringifies — a trailing .toString() is a no-op.
+              parts.add(
+                "'${escapeDartString(f.originalName)}=\${${_interpolatable(value)}}'",
+              );
+            } else {
+              parts
+                ..add("'${escapeDartString(f.originalName)}'")
+                ..add(value);
+            }
+          }
+          final elementType = explode ? 'String' : 'Object?';
+          return "<$elementType>[${parts.join(', ')}].join(',')";
+        }(),
+        IrMap(:final values) => () {
+          final value = _queryScalarExpr(values, 'entry.value');
+          return explode
+              ? "${p.dartName}.entries.map((entry) => '\${entry.key}=\${${_interpolatable(value)}}').join(',')"
+              : "${p.dartName}.entries.expand((entry) => [entry.key, $value]).join(',')";
+        }(),
+        _ => '${p.dartName}.toString()',
       };
-      return '\${$encodeExpr}';
+      return '\${Uri.encodeComponent($valueExpr)}';
     });
   }
+
+  /// Resolve a type ref through the registry (identity for everything else).
+  IrType _resolveType(IrType type) =>
+      type is IrTypeRef ? (typeRegistry[type.name] ?? type) : type;
+
+  /// Strip a trailing `.toString()` for use inside a string interpolation,
+  /// where it is a no-op (interpolation already stringifies).
+  String _interpolatable(String expr) => expr.endsWith('.toString()')
+      ? expr.substring(0, expr.length - '.toString()'.length)
+      : expr;
+
+  /// The explode=false pair/item join delimiter for a query style.
+  String _joinDelimiter(String style) => switch (style) {
+    'pipeDelimited' => '|',
+    'spaceDelimited' => ' ',
+    _ => ',',
+  };
 
   String _buildOperationBody(
     IrOperation op,
@@ -605,7 +655,9 @@ class ApiEmitter {
     if (needsGuard) buf.writeln('if (${p.dartName} != null) {');
     final accessor = p.dartName;
 
-    switch (p.type) {
+    // Resolve refs: a $ref to an object/array schema must take the styled
+    // serialization paths, not stringify via the scalar default.
+    switch (_resolveType(p.type)) {
       case IrList(:final items):
         _writeListQuerySerialization(buf, p, accessor, items, style, explode);
       case IrObject(:final fields):
@@ -659,7 +711,9 @@ class ApiEmitter {
   ) {
     final nameLiteral = _paramNameLiteral(p.name);
     final itemExpr = _queryScalarExpr(items, 'item');
-    if (style == 'form' && explode) {
+    // explode=true means one query entry per item for EVERY style — the
+    // pipe/space delimiters only apply to the explode=false joined form.
+    if (explode) {
       buf.writeln('for (final item in $accessor) {');
       if (items.isNullable) {
         buf.writeln('  if (item == null) continue;');
@@ -671,12 +725,7 @@ class ApiEmitter {
       return;
     }
 
-    final delimiter = switch (style) {
-      'pipeDelimited' => '|',
-      'spaceDelimited' => ' ',
-      _ => ',',
-    };
-    final escapedDelimiter = escapeDartString(delimiter);
+    final escapedDelimiter = escapeDartString(_joinDelimiter(style));
     final joined = itemExpr == 'item'
         ? "$accessor.join('$escapedDelimiter')"
         : "$accessor.map((item) => $itemExpr).join('$escapedDelimiter')";
@@ -744,7 +793,8 @@ class ApiEmitter {
       parts.add("'${escapeDartString(field.originalName)}'");
       parts.add(valueExpr);
     }
-    final joined = "[${parts.join(', ')}].join(',')";
+    final delimiter = _joinDelimiter(style);
+    final joined = "[${parts.join(', ')}].join('$delimiter')";
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, joined);
     } else {
@@ -779,15 +829,18 @@ class ApiEmitter {
       return;
     }
 
+    final delimiter = _joinDelimiter(style);
     buf.writeln('final ${p.dartName}Parts = <String>[];');
     buf.writeln('for (final entry in $accessor.entries) {');
     buf.writeln('  ${p.dartName}Parts.add(entry.key);');
     buf.writeln('  ${p.dartName}Parts.add($valueExpr);');
     buf.writeln('}');
     if (p.allowReserved) {
-      _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join(',')");
+      _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join('$delimiter')");
     } else {
-      buf.writeln("queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');");
+      buf.writeln(
+        "queryParameters[$nameLiteral] = ${p.dartName}Parts.join('$delimiter');",
+      );
     }
   }
 

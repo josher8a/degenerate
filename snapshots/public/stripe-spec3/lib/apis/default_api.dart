@@ -16,7 +16,9 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 Future<ApiResult<Account, ErrorModel>> getAccount({List<String>? expand, GetAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -127,7 +129,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -237,7 +241,9 @@ return execute(
 Future<ApiResult<Account, ErrorModel>> getAccountsAccount({required String account, List<String>? expand, GetAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -411,7 +417,9 @@ return execute(
 Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -538,7 +546,9 @@ return execute(
 Future<ApiResult<GetAccountsAccountCapabilitiesResponse, ErrorModel>> getAccountsAccountCapabilities({required String account, List<String>? expand, GetAccountsAccountCapabilitiesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -573,7 +583,9 @@ return execute(
 Future<ApiResult<Capability, ErrorModel>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, GetAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -642,7 +654,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -723,7 +737,9 @@ return execute(
 Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -884,7 +900,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1018,7 +1036,9 @@ return execute(
 Future<ApiResult<Person, ErrorModel>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, GetAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1168,7 +1188,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1302,7 +1324,9 @@ return execute(
 Future<ApiResult<Person, ErrorModel>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, GetAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1486,7 +1510,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1555,7 +1581,9 @@ return execute(
 Future<ApiResult<ApplePayDomain, ErrorModel>> getApplePayDomainsDomain({required String domain, List<String>? expand, GetApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1625,7 +1653,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1666,7 +1696,9 @@ return execute(
 Future<ApiResult<FeeRefund, ErrorModel>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, GetApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1734,7 +1766,9 @@ return execute(
 Future<ApiResult<ApplicationFee, ErrorModel>> getApplicationFeesId({required String id, List<String>? expand, GetApplicationFeesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1804,7 +1838,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1889,7 +1925,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1997,7 +2035,9 @@ return execute(
 Future<ApiResult<AppsSecret, ErrorModel>> getAppsSecretsFind({required String name, required GetAppsSecretsFindScope scope, List<String>? expand, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['name'] = name;
 queryParameters['scope[type]'] = scope.type.toJson();
@@ -2036,7 +2076,9 @@ return execute(
 Future<ApiResult<Balance, ErrorModel>> getBalance({List<String>? expand, GetBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2082,7 +2124,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2134,7 +2178,9 @@ return execute(
 Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceHistoryId({required String id, List<String>? expand, GetBalanceHistoryIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2170,7 +2216,9 @@ return execute(
 Future<ApiResult<BalanceSettings, ErrorModel>> getBalanceSettings({List<String>? expand, GetBalanceSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2248,7 +2296,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2300,7 +2350,9 @@ return execute(
 Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceTransactionsId({required String id, List<String>? expand, GetBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2341,7 +2393,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2418,7 +2472,9 @@ return execute(
 Future<ApiResult<BillingAlert, ErrorModel>> getBillingAlertsId({required String id, List<String>? expand, GetBillingAlertsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2546,7 +2602,9 @@ if (customerAccount != null) {
   queryParameters['customer_account'] = customerAccount;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (filter.applicabilityScope case final applicabilityScope$?) { queryParameters['filter[applicability_scope]'] = applicabilityScope$.toString(); }
 if (filter.creditGrant case final creditGrant$?) { queryParameters['filter[credit_grant]'] = creditGrant$; }
@@ -2596,7 +2654,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2637,7 +2697,9 @@ return execute(
 Future<ApiResult<BillingCreditBalanceTransaction, ErrorModel>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, GetBillingCreditBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2681,7 +2743,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2769,7 +2833,9 @@ return execute(
 Future<ApiResult<BillingCreditGrant, ErrorModel>> getBillingCreditGrantsId({required String id, List<String>? expand, GetBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2966,7 +3032,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -3048,7 +3116,9 @@ return execute(
 Future<ApiResult<BillingMeter, ErrorModel>> getBillingMetersId({required String id, List<String>? expand, GetBillingMetersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -3148,7 +3218,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -3228,7 +3300,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (isDefault != null) {
   queryParameters['is_default'] = isDefault.toString();
@@ -3312,7 +3386,9 @@ return execute(
 Future<ApiResult<BillingPortalConfiguration, ErrorModel>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, GetBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -3442,7 +3518,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -3560,7 +3638,9 @@ return execute(
 Future<ApiResult<GetChargesSearchResponse, ErrorModel>> getChargesSearch({required String query, List<String>? expand, int? limit, String? page, GetChargesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -3602,7 +3682,9 @@ return execute(
 Future<ApiResult<Charge, ErrorModel>> getChargesCharge({required String charge, List<String>? expand, GetChargesChargeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -3728,7 +3810,9 @@ return execute(
 Future<ApiResult<Dispute, ErrorModel>> getChargesChargeDispute({required String charge, List<String>? expand, GetChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -3881,7 +3965,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -3980,7 +4066,9 @@ return execute(
 Future<ApiResult<Refund, ErrorModel>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, GetChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4060,7 +4148,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4238,7 +4328,9 @@ return execute(
 Future<ApiResult<CheckoutSession, ErrorModel>> getCheckoutSessionsSession({required String session, List<String>? expand, GetCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4346,7 +4438,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4391,7 +4485,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4473,7 +4569,9 @@ return execute(
 Future<ApiResult<ClimateOrder, ErrorModel>> getClimateOrdersOrder({required String order, List<String>? expand, GetClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4576,7 +4674,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4617,7 +4717,9 @@ return execute(
 Future<ApiResult<ClimateProduct, ErrorModel>> getClimateProductsProduct({required String product, List<String>? expand, GetClimateProductsProductRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4655,7 +4757,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4696,7 +4800,9 @@ return execute(
 Future<ApiResult<ClimateSupplier, ErrorModel>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, GetClimateSuppliersSupplierRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4731,7 +4837,9 @@ return execute(
 Future<ApiResult<ConfirmationToken, ErrorModel>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, GetConfirmationTokensConfirmationTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4769,7 +4877,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4810,7 +4920,9 @@ return execute(
 Future<ApiResult<CountrySpec, ErrorModel>> getCountrySpecsCountry({required String country, List<String>? expand, GetCountrySpecsCountryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4851,7 +4963,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4947,7 +5061,9 @@ return execute(
 Future<ApiResult<Coupon, ErrorModel>> getCouponsCoupon({required String coupon, List<String>? expand, GetCouponsCouponRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -5056,7 +5172,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (invoice != null) {
   queryParameters['invoice'] = invoice;
@@ -5178,11 +5296,15 @@ if (emailType != null) {
   queryParameters['email_type'] = emailType.toJson();
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['invoice'] = invoice;
 if (lines != null) {
-queryParameters['lines'] = lines.map((item) => item.toString()).join(',');
+for (final item in lines) {
+  queryParametersList.add(ApiQueryParameter(name: 'lines', value: item.toString()));
+}
 }
 if (memo != null) {
   queryParameters['memo'] = memo;
@@ -5202,7 +5324,9 @@ if (refundAmount != null) {
   queryParameters['refund_amount'] = refundAmount.toString();
 }
 if (refunds != null) {
-queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
+for (final item in refunds) {
+  queryParametersList.add(ApiQueryParameter(name: 'refunds', value: item.toString()));
+}
 }
 if (shippingCost != null) {
 if (shippingCost.shippingRate case final shippingRate$?) { queryParameters['shipping_cost[shipping_rate]'] = shippingRate$; }
@@ -5255,14 +5379,18 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['invoice'] = invoice;
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (lines != null) {
-queryParameters['lines'] = lines.map((item) => item.toString()).join(',');
+for (final item in lines) {
+  queryParametersList.add(ApiQueryParameter(name: 'lines', value: item.toString()));
+}
 }
 if (memo != null) {
   queryParameters['memo'] = memo;
@@ -5282,7 +5410,9 @@ if (refundAmount != null) {
   queryParameters['refund_amount'] = refundAmount.toString();
 }
 if (refunds != null) {
-queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
+for (final item in refunds) {
+  queryParametersList.add(ApiQueryParameter(name: 'refunds', value: item.toString()));
+}
 }
 if (shippingCost != null) {
 if (shippingCost.shippingRate case final shippingRate$?) { queryParameters['shipping_cost[shipping_rate]'] = shippingRate$; }
@@ -5326,7 +5456,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5367,7 +5499,9 @@ return execute(
 Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesId({required String id, List<String>? expand, GetCreditNotesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -5507,7 +5641,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5625,7 +5761,9 @@ return execute(
 Future<ApiResult<GetCustomersSearchResponse, ErrorModel>> getCustomersSearch({required String query, List<String>? expand, int? limit, String? page, GetCustomersSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5667,7 +5805,9 @@ return execute(
 Future<ApiResult<GetCustomersCustomerResponse, ErrorModel>> getCustomersCustomer({required String customer, List<String>? expand, GetCustomersCustomerRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -5814,7 +5954,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (invoice != null) {
   queryParameters['invoice'] = invoice;
@@ -5893,7 +6035,9 @@ return execute(
 Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -6244,7 +6388,9 @@ return execute(
 Future<ApiResult<CashBalance, ErrorModel>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, GetCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -6313,7 +6459,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -6354,7 +6502,9 @@ return execute(
 Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerCashBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -6388,7 +6538,9 @@ return execute(
 Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerDiscount({required String customer, List<String>? expand, GetCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -6490,7 +6642,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -6534,7 +6688,9 @@ return execute(
 Future<ApiResult<PaymentMethod, ErrorModel>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, GetCustomersCustomerPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -6571,7 +6727,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -6657,7 +6815,9 @@ return execute(
 Future<ApiResult<PaymentSource, ErrorModel>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, GetCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -6809,7 +6969,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -6935,7 +7097,9 @@ return execute(
 Future<ApiResult<Subscription, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7091,7 +7255,9 @@ return execute(
 Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7156,7 +7322,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -7228,7 +7396,9 @@ return execute(
 Future<ApiResult<TaxId, ErrorModel>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, GetCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7299,7 +7469,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -7343,7 +7515,9 @@ return execute(
 Future<ApiResult<Dispute, ErrorModel>> getDisputesDispute({required String dispute, List<String>? expand, GetDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7450,7 +7624,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -7491,7 +7667,9 @@ return execute(
 Future<ApiResult<EntitlementsActiveEntitlement, ErrorModel>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, GetEntitlementsActiveEntitlementsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7532,7 +7710,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -7609,7 +7789,9 @@ return execute(
 Future<ApiResult<EntitlementsFeature, ErrorModel>> getEntitlementsFeaturesId({required String id, List<String>? expand, GetEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7754,7 +7936,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -7766,7 +7950,9 @@ if (type != null) {
   queryParameters['type'] = type;
 }
 if (types != null) {
-queryParameters['types'] = types.join(',');
+for (final item in types) {
+  queryParametersList.add(ApiQueryParameter(name: 'types', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7801,7 +7987,9 @@ return execute(
 Future<ApiResult<Event, ErrorModel>> getEventsId({required String id, List<String>? expand, GetEventsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7841,7 +8029,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -7884,7 +8074,9 @@ return execute(
 Future<ApiResult<ExchangeRate, ErrorModel>> getExchangeRatesRateId({required String rateId, List<String>? expand, GetExchangeRatesRateIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -7990,7 +8182,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (expired != null) {
   queryParameters['expired'] = expired.toString();
@@ -8071,7 +8265,9 @@ return execute(
 Future<ApiResult<FileLink, ErrorModel>> getFileLinksLink({required String link, List<String>? expand, GetFileLinksLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8145,7 +8341,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8224,7 +8422,9 @@ return execute(
 Future<ApiResult<File, ErrorModel>> getFilesFile({required String file, List<String>? expand, GetFilesFileRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8267,7 +8467,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8311,7 +8513,9 @@ return execute(
 Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, GetFinancialConnectionsAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8378,7 +8582,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8547,7 +8753,9 @@ return execute(
 Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, GetFinancialConnectionsSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8586,7 +8794,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8633,7 +8843,9 @@ return execute(
 Future<ApiResult<FinancialConnectionsTransaction, ErrorModel>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, GetFinancialConnectionsTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8677,7 +8889,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8754,7 +8968,9 @@ return execute(
 Future<ApiResult<ForwardingRequest, ErrorModel>> getForwardingRequestsId({required String id, List<String>? expand, GetForwardingRequestsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8798,7 +9014,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8845,7 +9063,9 @@ return execute(
 Future<ApiResult<IdentityVerificationReport, ErrorModel>> getIdentityVerificationReportsReport({required String report, List<String>? expand, GetIdentityVerificationReportsReportRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -8889,7 +9109,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -8997,7 +9219,9 @@ return execute(
 Future<ApiResult<IdentityVerificationSession, ErrorModel>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, GetIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -9156,7 +9380,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (invoice != null) {
   queryParameters['invoice'] = invoice;
@@ -9208,7 +9434,9 @@ return execute(
 Future<ApiResult<InvoicePayment, ErrorModel>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, GetInvoicePaymentsInvoicePaymentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -9246,7 +9474,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -9290,7 +9520,9 @@ return execute(
 Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, GetInvoiceRenderingTemplatesTemplateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (version != null) {
   queryParameters['version'] = version.toString();
@@ -9398,7 +9630,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (invoice != null) {
   queryParameters['invoice'] = invoice;
@@ -9510,7 +9744,9 @@ return execute(
 Future<ApiResult<Invoiceitem, ErrorModel>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, GetInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -9645,7 +9881,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -9853,7 +10091,9 @@ return execute(
 Future<ApiResult<GetInvoicesSearchResponse, ErrorModel>> getInvoicesSearch({required String query, List<String>? expand, int? limit, String? page, GetInvoicesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -9895,7 +10135,9 @@ return execute(
 Future<ApiResult<Invoice, ErrorModel>> getInvoicesInvoice({required String invoice, List<String>? expand, GetInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -10151,7 +10393,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -10454,7 +10698,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -10498,7 +10744,9 @@ return execute(
 Future<ApiResult<IssuingAuthorization, ErrorModel>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, GetIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -10573,7 +10821,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -10672,7 +10922,9 @@ return execute(
 Future<ApiResult<IssuingCardholder, ErrorModel>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, GetIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -10769,7 +11021,9 @@ if (expYear != null) {
   queryParameters['exp_year'] = expYear.toString();
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (last4 != null) {
   queryParameters['last4'] = last4;
@@ -10879,7 +11133,9 @@ return execute(
 Future<ApiResult<IssuingCard, ErrorModel>> getIssuingCardsCard({required String card, List<String>? expand, GetIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -10963,7 +11219,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -11049,7 +11307,9 @@ return execute(
 Future<ApiResult<IssuingDispute, ErrorModel>> getIssuingDisputesDispute({required String dispute, List<String>? expand, GetIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11153,13 +11413,17 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (lookupKeys != null) {
-queryParameters['lookup_keys'] = lookupKeys.join(',');
+for (final item in lookupKeys) {
+  queryParametersList.add(ApiQueryParameter(name: 'lookup_keys', value: item));
+}
 }
 if (preferences != null) {
 if (preferences.isDefault case final isDefault$?) { queryParameters['preferences[is_default]'] = isDefault$.toString(); }
@@ -11248,7 +11512,9 @@ return execute(
 Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, GetIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11331,7 +11597,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -11378,7 +11646,9 @@ return execute(
 Future<ApiResult<IssuingPhysicalBundle, ErrorModel>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, GetIssuingPhysicalBundlesPhysicalBundleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11413,7 +11683,9 @@ return execute(
 Future<ApiResult<IssuingSettlement, ErrorModel>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, GetIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11486,7 +11758,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -11530,7 +11804,9 @@ return execute(
 Future<ApiResult<IssuingToken, ErrorModel>> getIssuingTokensToken({required String token, List<String>? expand, GetIssuingTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11607,7 +11883,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -11651,7 +11929,9 @@ return execute(
 Future<ApiResult<IssuingTransaction, ErrorModel>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, GetIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11754,7 +12034,9 @@ return execute(
 Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getLinkAccountSessionsSession({required String session, List<String>? expand, GetLinkAccountSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11797,7 +12079,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -11841,7 +12125,9 @@ return execute(
 Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getLinkedAccountsAccount({required String account, List<String>? expand, GetLinkedAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11908,7 +12194,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -11980,7 +12268,9 @@ return execute(
 Future<ApiResult<Mandate, ErrorModel>> getMandatesMandate({required String mandate, List<String>? expand, GetMandatesMandateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -12015,7 +12305,9 @@ return execute(
 Future<ApiResult<GetPaymentAttemptRecordsResponse, ErrorModel>> getPaymentAttemptRecords({required String paymentRecord, List<String>? expand, int? limit, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -12057,7 +12349,9 @@ return execute(
 Future<ApiResult<PaymentAttemptRecord, ErrorModel>> getPaymentAttemptRecordsId({required String id, List<String>? expand, GetPaymentAttemptRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -12104,7 +12398,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -12256,7 +12552,9 @@ return execute(
 Future<ApiResult<GetPaymentIntentsSearchResponse, ErrorModel>> getPaymentIntentsSearch({required String query, List<String>? expand, int? limit, String? page, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -12305,7 +12603,9 @@ if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -12426,7 +12726,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -12798,7 +13100,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -12925,7 +13229,9 @@ return execute(
 Future<ApiResult<PaymentLink, ErrorModel>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, GetPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -13038,7 +13344,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -13085,7 +13393,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -13271,7 +13581,9 @@ return execute(
 Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, GetPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -13460,7 +13772,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -13533,7 +13847,9 @@ return execute(
 Future<ApiResult<PaymentMethodDomain, ErrorModel>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, GetPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -13645,7 +13961,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -13838,7 +14156,9 @@ return execute(
 Future<ApiResult<PaymentMethod, ErrorModel>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, GetPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -14040,7 +14360,9 @@ return execute(
 Future<ApiResult<PaymentRecord, ErrorModel>> getPaymentRecordsId({required String id, List<String>? expand, GetPaymentRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -14307,7 +14629,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -14400,7 +14724,9 @@ return execute(
 Future<ApiResult<Payout, ErrorModel>> getPayoutsPayout({required String payout, List<String>? expand, GetPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -14537,7 +14863,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -14642,7 +14970,9 @@ return execute(
 Future<ApiResult<Plan, ErrorModel>> getPlansPlan({required String plan, List<String>? expand, GetPlansPlanRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -14755,13 +15085,17 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (lookupKeys != null) {
-queryParameters['lookup_keys'] = lookupKeys.join(',');
+for (final item in lookupKeys) {
+  queryParametersList.add(ApiQueryParameter(name: 'lookup_keys', value: item));
+}
 }
 if (product != null) {
   queryParameters['product'] = product;
@@ -14877,7 +15211,9 @@ return execute(
 Future<ApiResult<GetPricesSearchResponse, ErrorModel>> getPricesSearch({required String query, List<String>? expand, int? limit, String? page, GetPricesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -14919,7 +15255,9 @@ return execute(
 Future<ApiResult<Price, ErrorModel>> getPricesPrice({required String price, List<String>? expand, GetPricesPriceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -15006,10 +15344,14 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (ids != null) {
-queryParameters['ids'] = ids.join(',');
+for (final item in ids) {
+  queryParametersList.add(ApiQueryParameter(name: 'ids', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15115,7 +15457,9 @@ return execute(
 Future<ApiResult<GetProductsSearchResponse, ErrorModel>> getProductsSearch({required String query, List<String>? expand, int? limit, String? page, GetProductsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15157,7 +15501,9 @@ return execute(
 Future<ApiResult<Product, ErrorModel>> getProductsId({required String id, List<String>? expand, GetProductsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -15277,7 +15623,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15348,7 +15696,9 @@ return execute(
 Future<ApiResult<ProductFeature, ErrorModel>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, GetProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -15431,7 +15781,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15518,7 +15870,9 @@ return execute(
 Future<ApiResult<PromotionCode, ErrorModel>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, GetPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -15597,7 +15951,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15713,7 +16069,9 @@ return execute(
 Future<ApiResult<Quote, ErrorModel>> getQuotesQuote({required String quote, List<String>? expand, GetQuotesQuoteRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -15874,7 +16232,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15949,7 +16309,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -15990,7 +16352,9 @@ return execute(
 Future<ApiResult<Uint8List, ErrorModel>> getQuotesQuotePdf({required String quote, List<String>? expand, GetQuotesQuotePdfRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16034,7 +16398,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -16080,7 +16446,9 @@ return execute(
 Future<ApiResult<RadarEarlyFraudWarning, ErrorModel>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, GetRadarEarlyFraudWarningsEarlyFraudWarningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16156,7 +16524,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -16232,7 +16602,9 @@ return execute(
 Future<ApiResult<RadarValueListItem, ErrorModel>> getRadarValueListItemsItem({required String item, List<String>? expand, GetRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16306,7 +16678,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -16382,7 +16756,9 @@ return execute(
 Future<ApiResult<RadarValueList, ErrorModel>> getRadarValueListsValueList({required String valueList, List<String>? expand, GetRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16488,7 +16864,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -16593,7 +16971,9 @@ return execute(
 Future<ApiResult<Refund, ErrorModel>> getRefundsRefund({required String refund, List<String>? expand, GetRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16698,7 +17078,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -16771,7 +17153,9 @@ return execute(
 Future<ApiResult<ReportingReportRun, ErrorModel>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, GetReportingReportRunsReportRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16806,7 +17190,9 @@ return execute(
 Future<ApiResult<GetReportingReportTypesResponse, ErrorModel>> getReportingReportTypes({List<String>? expand, GetReportingReportTypesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16841,7 +17227,9 @@ return execute(
 Future<ApiResult<ReportingReportType, ErrorModel>> getReportingReportTypesReportType({required String reportType, List<String>? expand, GetReportingReportTypesReportTypeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16882,7 +17270,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -16923,7 +17313,9 @@ return execute(
 Future<ApiResult<Review, ErrorModel>> getReviewsReview({required String review, List<String>? expand, GetReviewsReviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -16993,7 +17385,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -17050,7 +17444,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -17175,7 +17571,9 @@ if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17401,7 +17799,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -17484,7 +17884,9 @@ return execute(
 Future<ApiResult<ShippingRate, ErrorModel>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, GetShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17592,7 +17994,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -17633,7 +18037,9 @@ return execute(
 Future<ApiResult<ScheduledQueryRun, ErrorModel>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, GetSigmaScheduledQueryRunsScheduledQueryRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17730,7 +18136,9 @@ if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17806,7 +18214,9 @@ return execute(
 Future<ApiResult<SourceMandateNotification, ErrorModel>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, GetSourcesSourceMandateNotificationsMandateNotificationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17843,7 +18253,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -17884,7 +18296,9 @@ return execute(
 Future<ApiResult<SourceTransaction, ErrorModel>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, GetSourcesSourceSourceTransactionsSourceTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17951,7 +18365,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -18043,7 +18459,9 @@ return execute(
 Future<ApiResult<SubscriptionItem, ErrorModel>> getSubscriptionItemsItem({required String item, List<String>? expand, GetSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -18182,7 +18600,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -18276,7 +18696,9 @@ return execute(
 Future<ApiResult<SubscriptionSchedule, ErrorModel>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, GetSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -18438,7 +18860,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -18594,7 +19018,9 @@ return execute(
 Future<ApiResult<GetSubscriptionsSearchResponse, ErrorModel>> getSubscriptionsSearch({required String query, List<String>? expand, int? limit, String? page, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -18636,7 +19062,9 @@ return execute(
 Future<ApiResult<Subscription, ErrorModel>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, GetSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -18911,7 +19339,9 @@ return execute(
 Future<ApiResult<TaxAssociation, ErrorModel>> getTaxAssociationsFind({required String paymentIntent, List<String>? expand, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['payment_intent'] = paymentIntent;
 
@@ -18988,7 +19418,9 @@ return execute(
 Future<ApiResult<TaxCalculation, ErrorModel>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, GetTaxCalculationsCalculationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19026,7 +19458,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -19070,7 +19504,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -19148,7 +19584,9 @@ return execute(
 Future<ApiResult<TaxRegistration, ErrorModel>> getTaxRegistrationsId({required String id, List<String>? expand, GetTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19218,7 +19656,9 @@ return execute(
 Future<ApiResult<TaxSettings, ErrorModel>> getTaxSettings({List<String>? expand, GetTaxSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19361,7 +19801,9 @@ return execute(
 Future<ApiResult<TaxTransaction, ErrorModel>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, GetTaxTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19399,7 +19841,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -19443,7 +19887,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -19484,7 +19930,9 @@ return execute(
 Future<ApiResult<TaxCode, ErrorModel>> getTaxCodesId({required String id, List<String>? expand, GetTaxCodesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19522,7 +19970,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -19602,7 +20052,9 @@ return execute(
 Future<ApiResult<TaxId, ErrorModel>> getTaxIdsId({required String id, List<String>? expand, GetTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19673,7 +20125,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (inclusive != null) {
   queryParameters['inclusive'] = inclusive.toString();
@@ -19763,7 +20217,9 @@ return execute(
 Future<ApiResult<TaxRate, ErrorModel>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, GetTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -19846,7 +20302,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (isAccountDefault != null) {
   queryParameters['is_account_default'] = isAccountDefault.toString();
@@ -19941,7 +20399,9 @@ return execute(
 Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, ErrorModel>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, GetTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -20088,7 +20548,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -20177,7 +20639,9 @@ return execute(
 Future<ApiResult<GetTerminalLocationsLocationResponse, ErrorModel>> getTerminalLocationsLocation({required String location, List<String>? expand, GetTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -20325,7 +20789,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -20411,7 +20877,9 @@ return execute(
 Future<ApiResult<GetTerminalReadersReaderResponse, ErrorModel>> getTerminalReadersReader({required String reader, List<String>? expand, GetTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -21683,7 +22151,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -21756,7 +22226,9 @@ return execute(
 Future<ApiResult<TestHelpersTestClock, ErrorModel>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, GetTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -22293,7 +22765,9 @@ return execute(
 Future<ApiResult<Token, ErrorModel>> getTokensToken({required String token, List<String>? expand, GetTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -22337,7 +22811,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -22422,7 +22898,9 @@ return execute(
 Future<ApiResult<Topup, ErrorModel>> getTopupsTopup({required String topup, List<String>? expand, GetTopupsTopupRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -22528,7 +23006,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -22618,7 +23098,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -22700,7 +23182,9 @@ return execute(
 Future<ApiResult<Transfer, ErrorModel>> getTransfersTransfer({required String transfer, List<String>? expand, GetTransfersTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -22770,7 +23254,9 @@ return execute(
 Future<ApiResult<TransferReversal, ErrorModel>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, GetTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -22841,7 +23327,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -22921,7 +23409,9 @@ return execute(
 Future<ApiResult<TreasuryCreditReversal, ErrorModel>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, GetTreasuryCreditReversalsCreditReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -22959,7 +23449,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -23042,7 +23534,9 @@ return execute(
 Future<ApiResult<TreasuryDebitReversal, ErrorModel>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, GetTreasuryDebitReversalsDebitReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23083,7 +23577,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -23165,7 +23661,9 @@ return execute(
 Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23270,7 +23768,9 @@ return execute(
 Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23351,7 +23851,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -23435,7 +23937,9 @@ return execute(
 Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> getTreasuryInboundTransfersId({required String id, List<String>? expand, GetTreasuryInboundTransfersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23508,7 +24012,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -23601,7 +24107,9 @@ return execute(
 Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, GetTreasuryOutboundPaymentsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23668,7 +24176,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -23757,7 +24267,9 @@ return execute(
 Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, GetTreasuryOutboundTransfersOutboundTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23824,7 +24336,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -23872,7 +24386,9 @@ return execute(
 Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, GetTreasuryReceivedCreditsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23910,7 +24426,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -23955,7 +24473,9 @@ return execute(
 Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, GetTreasuryReceivedDebitsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23999,7 +24519,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -24047,7 +24569,9 @@ return execute(
 Future<ApiResult<TreasuryTransactionEntry, ErrorModel>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, GetTreasuryTransactionEntriesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -24088,7 +24612,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 queryParameters['financial_account'] = financialAccount;
 if (limit != null) {
@@ -24139,7 +24665,9 @@ return execute(
 Future<ApiResult<TreasuryTransaction, ErrorModel>> getTreasuryTransactionsId({required String id, List<String>? expand, GetTreasuryTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -24177,7 +24705,9 @@ if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
 }
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -24257,7 +24787,9 @@ return execute(
 Future<ApiResult<WebhookEndpoint, ErrorModel>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, GetWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
-queryParameters['expand'] = expand.join(',');
+for (final item in expand) {
+  queryParametersList.add(ApiQueryParameter(name: 'expand', value: item));
+}
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
