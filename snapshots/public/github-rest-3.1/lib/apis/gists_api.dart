@@ -16,7 +16,7 @@ final class GistsApi with ApiExecutor {const GistsApi(this.apiConfig);
 Future<ApiResult<List<BaseGist>, BasicError>> gistsList({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -86,7 +86,7 @@ return execute(
 Future<ApiResult<List<BaseGist>, ValidationError>> gistsListPublic({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -125,7 +125,7 @@ return execute(
 Future<ApiResult<List<BaseGist>, BasicError>> gistsListStarred({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -595,7 +595,7 @@ return execute(
 Future<ApiResult<List<BaseGist>, ValidationError>> gistsListForUser({required String username, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

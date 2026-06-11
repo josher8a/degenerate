@@ -25,10 +25,10 @@ if (dateRange != null) {
   queryParameters['dateRange'] = dateRange;
 }
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (dataSource != null) {
   queryParameters['dataSource'] = dataSource.toJson();
@@ -88,10 +88,10 @@ if (dateRange != null) {
   queryParameters['dateRange'] = dateRange;
 }
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (asn != null) {
   queryParameters['asn'] = asn.toString();
@@ -142,10 +142,10 @@ if (dateRange != null) {
   queryParameters['dateRange'] = dateRange;
 }
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (format != null) {
   queryParameters['format'] = format.toJson();

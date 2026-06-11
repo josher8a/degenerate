@@ -58,13 +58,13 @@ return execute(
 Future<ApiResult<ListRecordingResponse, Never>> listRecording({required String accountSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, String? callSid, String? conferenceSid, bool? includeSoftDeleted, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateCreated != null) {
-  queryParameters['DateCreated'] = dateCreated.toString();
+  queryParameters['DateCreated'] = dateCreated.toIso8601String();
 }
 if (dateCreatedBefore != null) {
-  queryParameters['DateCreated<'] = dateCreatedBefore.toString();
+  queryParameters['DateCreated<'] = dateCreatedBefore.toIso8601String();
 }
 if (dateCreatedAfter != null) {
-  queryParameters['DateCreated>'] = dateCreatedAfter.toString();
+  queryParameters['DateCreated>'] = dateCreatedAfter.toIso8601String();
 }
 if (callSid != null) {
   queryParameters['CallSid'] = callSid;

@@ -16,10 +16,10 @@ final class LiveStreamsApi with ApiExecutor {const LiveStreamsApi(this.apiConfig
 Future<ApiResult<GetLivestreamAnalyticsCompleteResponse, Never>> getLivestreamAnalyticsComplete({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, DateTime? startTime, DateTime? endTime, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startTime != null) {
-  queryParameters['start_time'] = startTime.toString();
+  queryParameters['start_time'] = startTime.toIso8601String();
 }
 if (endTime != null) {
-  queryParameters['end_time'] = endTime.toString();
+  queryParameters['end_time'] = endTime.toIso8601String();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -60,10 +60,10 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (startTime != null) {
-  queryParameters['start_time'] = startTime.toString();
+  queryParameters['start_time'] = startTime.toIso8601String();
 }
 if (endTime != null) {
-  queryParameters['end_time'] = endTime.toString();
+  queryParameters['end_time'] = endTime.toIso8601String();
 }
 if (sortOrder != null) {
   queryParameters['sort_order'] = sortOrder.toJson();

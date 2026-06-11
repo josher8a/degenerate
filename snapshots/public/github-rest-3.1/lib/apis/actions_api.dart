@@ -3712,7 +3712,7 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (created != null) {
-  queryParameters['created'] = created.toString();
+  queryParameters['created'] = created.toIso8601String();
 }
 if (excludePullRequests != null) {
   queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
@@ -4724,7 +4724,7 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (created != null) {
-  queryParameters['created'] = created.toString();
+  queryParameters['created'] = created.toIso8601String();
 }
 if (excludePullRequests != null) {
   queryParameters['exclude_pull_requests'] = excludePullRequests.toString();

@@ -18,10 +18,10 @@ final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
 if (from != null) {
-  queryParameters['from'] = from.toString();
+  queryParameters['from'] = from.toIso8601String();
 }
 if (to != null) {
-  queryParameters['to'] = to.toString();
+  queryParameters['to'] = to.toIso8601String();
 }
 if (deviceId != null) {
   queryParameters['device_id'] = deviceId;

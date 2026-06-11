@@ -147,10 +147,10 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (dateStart != null) {
-  queryParameters['date_start'] = dateStart.toString();
+  queryParameters['date_start'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['date_end'] = dateEnd.toString();
+  queryParameters['date_end'] = dateEnd.toIso8601String();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

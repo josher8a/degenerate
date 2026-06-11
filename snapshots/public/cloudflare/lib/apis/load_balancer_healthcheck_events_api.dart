@@ -28,7 +28,7 @@ if (poolId != null) {
   queryParameters['pool_id'] = poolId.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (originName != null) {
   queryParameters['origin_name'] = originName;

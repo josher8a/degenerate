@@ -2117,10 +2117,10 @@ if (permission != null) {
   queryParameters['permission'] = permission;
 }
 if (lastUsedBefore != null) {
-  queryParameters['last_used_before'] = lastUsedBefore.toString();
+  queryParameters['last_used_before'] = lastUsedBefore.toIso8601String();
 }
 if (lastUsedAfter != null) {
-  queryParameters['last_used_after'] = lastUsedAfter.toString();
+  queryParameters['last_used_after'] = lastUsedAfter.toIso8601String();
 }
 if (tokenId != null) {
 for (final item in tokenId) {
@@ -2275,10 +2275,10 @@ if (permission != null) {
   queryParameters['permission'] = permission;
 }
 if (lastUsedBefore != null) {
-  queryParameters['last_used_before'] = lastUsedBefore.toString();
+  queryParameters['last_used_before'] = lastUsedBefore.toIso8601String();
 }
 if (lastUsedAfter != null) {
-  queryParameters['last_used_after'] = lastUsedAfter.toString();
+  queryParameters['last_used_after'] = lastUsedAfter.toIso8601String();
 }
 if (tokenId != null) {
 for (final item in tokenId) {

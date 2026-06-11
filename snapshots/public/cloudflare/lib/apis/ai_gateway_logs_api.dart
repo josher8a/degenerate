@@ -40,10 +40,10 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (startDate != null) {
-  queryParameters['start_date'] = startDate.toString();
+  queryParameters['start_date'] = startDate.toIso8601String();
 }
 if (endDate != null) {
-  queryParameters['end_date'] = endDate.toString();
+  queryParameters['end_date'] = endDate.toIso8601String();
 }
 if (minCost != null) {
   queryParameters['min_cost'] = minCost.toString();

@@ -2051,10 +2051,10 @@ if (committer != null) {
   queryParameters['committer'] = committer;
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -5866,10 +5866,10 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (before != null) {
-  queryParameters['before'] = before.toString();
+  queryParameters['before'] = before.toIso8601String();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

@@ -3325,6 +3325,468 @@ void main() {
     });
   });
 
+  group('ApiEmitter - object/array styled parameters', () {
+    const filterObj = IrObject('Filter', [
+      IrField('a', SpecString('a'), IrPrimitive(PrimitiveKind.string),
+          isRequired: true),
+      IrField('b', SpecString('b'), IrPrimitive(PrimitiveKind.int),
+          isRequired: true),
+    ], requiredFields: ['a', 'b']);
+
+    // Required-but-nullable field: the generated model declares `t` as
+    // DateTime?, so unguarded serialization would not compile.
+    const nullableFieldObj = IrObject('NFilter', [
+      IrField(
+        't',
+        SpecString('t'),
+        IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+        isRequired: true,
+      ),
+    ], requiredFields: ['t']);
+
+    String emitFor(IrParameter p) {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getX',
+          'getX',
+          HttpMethod.get,
+          p.location == ParameterLocation.path
+              ? const SpecString('/x/{v}')
+              : const SpecString('/x'),
+          parameters: [p],
+          responses: const {200: IrResponse()},
+        ),
+      ]);
+      return emitRaw(
+        Library(
+          (b) => b
+            ..body.addAll(
+              ApiEmitter(api, typeRegistry: const {
+                'Filter': filterObj,
+                'NFilter': nullableFieldObj,
+              }).emit(),
+            ),
+        ),
+      );
+    }
+
+    test('array path params join items, not debug toString()', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrList(IrPrimitive(PrimitiveKind.int)),
+          isRequired: true,
+        ),
+      );
+      // List.toString() is '[1, 2]' — simple style is '1,2'. RFC 6570
+      // percent-encodes the values, not the `,` separators: encoding the
+      // joined string would send 1%2C2 to a server that splits on `,`.
+      expect(
+        source,
+        contains("v.map((item) => Uri.encodeComponent(item.toString()))"),
+      );
+      expect(source, contains(".join(',')"));
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, isNot(contains('Uri.encodeComponent(v.map')));
+    });
+
+    test('nullable path array items are skipped, not dereferenced', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrList(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+        ),
+      );
+      // Items are DateTime?; calling toIso8601String() on the bare item
+      // would not compile. RFC 6570 omits undefined values.
+      expect(source, contains('v.nonNulls'));
+      expect(source, contains('item.toIso8601String()'));
+    });
+
+    test('object path params serialize simple-style pairs', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrTypeRef('Filter'),
+          isRequired: true,
+        ),
+      );
+      // simple, explode=false: a,<value>,b,<value>
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, contains("'a'"));
+      expect(source, contains('v.a'));
+    });
+
+    test('exploded object path params serialize k=v pairs', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrTypeRef('Filter'),
+          isRequired: true,
+          explode: true,
+        ),
+      );
+      // simple, explode=true: a=<value>,b=<value> — value encoded, the
+      // `=` and `,` delimiters literal.
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, contains(r"'a=${Uri.encodeComponent(v.a)}'"));
+    });
+
+    test('map path params serialize simple-style pairs', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrMap(IrPrimitive(PrimitiveKind.string)),
+          isRequired: true,
+        ),
+      );
+      // simple, explode=false: k1,v1,k2,v2 — keys and values encoded,
+      // the `,` separators literal.
+      expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(
+        source,
+        contains(
+          '[Uri.encodeComponent(entry.key), Uri.encodeComponent(entry.value)]',
+        ),
+      );
+    });
+
+    test('nullable map values are skipped in path params', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrMap(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+        ),
+      );
+      expect(source, contains('entry.value != null'));
+      expect(source, contains('entry.value!.toIso8601String()'));
+    });
+
+    test('required-but-nullable object fields are null-guarded in query', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('filter'),
+          'filter',
+          ParameterLocation.query,
+          IrTypeRef('NFilter'),
+          isRequired: true,
+        ),
+      );
+      // The model declares `t` as DateTime? (required-but-nullable); an
+      // unguarded toIso8601String() would not compile.
+      expect(source, contains(r'if (filter.t case final t$?)'));
+      expect(source, contains(r't$.toIso8601String()'));
+    });
+
+    test('nullable list items are skipped in joined query form', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('ids'),
+          'ids',
+          ParameterLocation.query,
+          IrList(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+          explode: false,
+        ),
+      );
+      expect(source, contains('ids.nonNulls'));
+      expect(source, contains('item.toIso8601String()'));
+    });
+
+    test('ref query params take the styled object path', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('filter'),
+          'filter',
+          ParameterLocation.query,
+          IrTypeRef('Filter'),
+          isRequired: true,
+        ),
+      );
+      // A $ref to an object schema must not stringify via the scalar
+      // default ('SimpleObject(\n  str: ...)' in the URL).
+      expect(source, isNot(contains('filter.toString()')));
+      expect(source, contains('filter.a'));
+    });
+
+    test('pipeDelimited exploded arrays repeat the key', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('ids'),
+          'ids',
+          ParameterLocation.query,
+          IrList(IrPrimitive(PrimitiveKind.int)),
+          isRequired: true,
+          style: 'pipeDelimited',
+          explode: true,
+        ),
+      );
+      // explode=true means one query entry per item for every style.
+      expect(source, contains('for (final item in ids)'));
+      expect(source, isNot(contains("join('|')")));
+    });
+
+    test('pipeDelimited objects join pairs with |', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('filter'),
+          'filter',
+          ParameterLocation.query,
+          IrTypeRef('Filter'),
+          isRequired: true,
+          style: 'pipeDelimited',
+          explode: false,
+        ),
+      );
+      expect(source, contains("join('|')"));
+      expect(source, isNot(contains("join(',')")));
+    });
+
+    test('pipeDelimited maps join pairs with |', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('attrs'),
+          'attrs',
+          ParameterLocation.query,
+          IrMap(IrPrimitive(PrimitiveKind.string)),
+          isRequired: true,
+          style: 'pipeDelimited',
+          explode: false,
+        ),
+      );
+      expect(source, contains("attrsParts.join('|')"));
+    });
+  });
+
+  group('ApiEmitter - required-but-nullable query parameters', () {
+    test('list and allowReserved paths null-guard nullable params', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'search',
+          'search',
+          HttpMethod.get,
+          SpecString('/search'),
+          parameters: [
+            IrParameter(
+              SpecString('tags'),
+              'tags',
+              ParameterLocation.query,
+              IrList(IrPrimitive(PrimitiveKind.string), isNullable: true),
+              isRequired: true,
+            ),
+            IrParameter(
+              SpecString('ref'),
+              'ref',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.string, isNullable: true),
+              isRequired: true,
+              allowReserved: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // Required-but-nullable: the value may be null at runtime, so every
+      // non-simple serialization path needs a null guard or the generated
+      // code dereferences a nullable and fails to compile.
+      expect(source, contains('if (tags != null) {'));
+      expect(source, contains('if (ref != null) {'));
+      expect(_formatOrFail(source), isNotEmpty);
+    });
+  });
+
+  group('ApiEmitter - required-but-nullable header and cookie parameters', () {
+    test('typed wire conversions are null-guarded', () {
+      // A required header/cookie param with nullable: true still carries
+      // null at runtime; an unguarded toIso8601String()/base64Encode on the
+      // nullable receiver does not compile.
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          SpecString('/send'),
+          parameters: [
+            IrParameter(
+              SpecString('X-Since'),
+              'xSince',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+              isRequired: true,
+            ),
+            IrParameter(
+              SpecString('session'),
+              'session',
+              ParameterLocation.cookie,
+              IrPrimitive(PrimitiveKind.bytes, isNullable: true),
+              isRequired: true,
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(const ApiEmitter(api).emit()),
+        ),
+      );
+
+      expect(source, contains('if (xSince != null) {'));
+      expect(source, contains('if (session != null) {'));
+    });
+  });
+
+  group('ApiEmitter - DateTime, bytes, and Duration parameter wire formats', () {
+    test('scalar DateTime params serialize RFC 3339, bytes as base64', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'search',
+          'search',
+          HttpMethod.get,
+          SpecString('/search/{when}'),
+          parameters: [
+            IrParameter(
+              SpecString('when'),
+              'when',
+              ParameterLocation.path,
+              IrPrimitive(PrimitiveKind.dateTime),
+              isRequired: true,
+            ),
+            IrParameter(
+              SpecString('since'),
+              'since',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.dateTime),
+              isRequired: true,
+            ),
+            IrParameter(
+              SpecString('X-Sig'),
+              'xSig',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.bytes),
+              isRequired: true,
+            ),
+            IrParameter(
+              SpecString('ttl'),
+              'ttl',
+              ParameterLocation.cookie,
+              IrPrimitive(PrimitiveKind.duration),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // DateTime.toString() is '2024-01-02 03:04:05.000Z' \u2014 not RFC 3339;
+      // Uint8List.toString() is '[1, 2, 3]' \u2014 not base64;
+      // Duration.toString() is 'Duration: ...' \u2014 not a number.
+      expect(source, contains('Uri.encodeComponent(when.toIso8601String())'));
+      expect(source, contains("queryParameters['since'] = since.toIso8601String();"));
+      expect(source, contains("headers['X-Sig'] = base64Encode(xSig);"));
+      expect(source, contains("cookies['ttl'] = ttl.inMilliseconds.toString();"));
+      expect(source, isNot(contains('when.toString()')));
+      expect(source, isNot(contains('since.toString()')));
+      expect(source, isNot(contains('xSig.toString()')));
+      expect(source, isNot(contains('ttl.toString()')));
+    });
+
+    test('API file imports dart:convert for bytes params', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          SpecString('/send'),
+          parameters: [
+            IrParameter(
+              SpecString('sig'),
+              'sig',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.bytes),
+              isRequired: true,
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final files = FileEmitter().emitAll(
+        types: [],
+        apis: [api],
+        packageName: 'bytes_param_test',
+      );
+      final file = files['apis/test_api.dart']!;
+      // base64Encode requires dart:convert.
+      expect(file, contains("import 'dart:convert'"));
+      expect(file, contains("import 'dart:typed_data'"));
+    });
+
+    test('API file imports dart:convert for bytes fields of object params',
+        () {
+      const blob = IrObject('Blob', [
+        IrField(
+          'data',
+          SpecString('data'),
+          IrPrimitive(PrimitiveKind.bytes),
+          isRequired: true,
+        ),
+      ], requiredFields: ['data']);
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          SpecString('/send'),
+          parameters: [
+            IrParameter(
+              SpecString('q'),
+              'q',
+              ParameterLocation.query,
+              IrTypeRef('Blob'),
+              isRequired: true,
+              style: 'deepObject',
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final files = FileEmitter().emitAll(
+        types: [blob],
+        apis: [api],
+        packageName: 'bytes_field_test',
+      );
+      final file = files['apis/test_api.dart']!;
+      // The styled object serialization emits base64Encode for the bytes
+      // field, which requires dart:convert even though the signature only
+      // references the model class.
+      expect(file, contains('base64Encode'));
+      expect(file, contains("import 'dart:convert'"));
+    });
+  });
+
   group('SpecString leak detection', () {
     test('gates produce no leak sentinel', () {
       const s = SpecString("ev'il\rinjected");
