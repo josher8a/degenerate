@@ -3608,7 +3608,7 @@ void main() {
       // joined string would send 1%2C2 to a server that splits on `,`.
       expect(
         source,
-        contains("v.map((item) => Uri.encodeComponent(item.toString()))"),
+        contains('v.map((item) => Uri.encodeComponent(item.toString()))'),
       );
       expect(source, contains(".join(',')"));
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));

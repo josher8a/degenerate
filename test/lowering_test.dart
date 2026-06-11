@@ -1515,15 +1515,15 @@ void main() {
         expect(event, isA<IrDiscriminatedUnion>());
         final union = event! as IrDiscriminatedUnion;
 
-        expect(union.mapping, contains('dep'));
+        expect(union.mapping, contains(const SpecString('dep')));
         // Unmapped variants are inferred: enum value when declared,
         // schema name otherwise.
-        expect(union.mapping, contains('withdrawal'));
-        expect(union.mapping, contains('Transfer'));
+        expect(union.mapping, contains(const SpecString('withdrawal')));
+        expect(union.mapping, contains(const SpecString('Transfer')));
         expect(union.mapping, hasLength(3));
         // An explicitly mapped schema must not also appear under its
         // implicit key.
-        expect(union.mapping, isNot(contains('Deposit')));
+        expect(union.mapping, isNot(contains(const SpecString('Deposit'))));
       },
     );
 
@@ -1568,7 +1568,7 @@ void main() {
 
         final union = mapper.typeRegistry['Item']! as IrDiscriminatedUnion;
         expect(
-          (union.mapping['message']! as IrTypeRef).name,
+          (union.mapping[const SpecString('message')]! as IrTypeRef).name,
           equals('OutputMessage'),
           reason: 'last declared variant wins, matching existing behavior',
         );
@@ -1621,7 +1621,7 @@ void main() {
         final union = mapper.typeRegistry['Item']! as IrDiscriminatedUnion;
         // B's implicit enum value collides with the explicit entry — the
         // explicit mapping must not be overwritten.
-        expect((union.mapping['message']! as IrTypeRef).name, equals('A'));
+        expect((union.mapping[const SpecString('message')]! as IrTypeRef).name, equals('A'));
       },
     );
 
