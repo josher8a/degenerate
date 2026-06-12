@@ -222,7 +222,7 @@ Future<ApiResult<SimplePathParameterObjectsResponse, Never>> simplePathParameter
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/pathParams/obj/${Uri.encodeComponent(<Object?>['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), 'any', objParam.any.toString(), 'strOpt', objParam.strOpt, 'boolOpt', objParam.boolOpt.toString(), 'intOptNull', objParam.intOptNull.toString(), 'numOptNull', objParam.numOptNull.toString(), 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), 'bigint', objParam.bigint.toString(), 'bigintStr', objParam.bigintStr, 'decimal', objParam.decimal.toString(), 'decimalStr', objParam.decimalStr, 'decimalNullableOpt', objParam.decimalNullableOpt.toString(), 'int64Str', objParam.int64Str, 'float64Str', objParam.float64Str].join(','))}/objExploded/${Uri.encodeComponent(<String>['str=${objParamExploded.str}', 'bool=${objParamExploded.$bool}', 'int=${objParamExploded.$int}', 'int32=${objParamExploded.int32}', 'num=${objParamExploded.$num}', 'float32=${objParamExploded.float32}', 'enum=${objParamExploded.$enum.toJson()}', 'date=${objParamExploded.date}', 'dateTime=${objParamExploded.dateTime.toIso8601String()}', 'any=${objParamExploded.any}', 'strOpt=${objParamExploded.strOpt}', 'boolOpt=${objParamExploded.boolOpt}', 'intOptNull=${objParamExploded.intOptNull}', 'numOptNull=${objParamExploded.numOptNull}', 'intEnum=${objParamExploded.intEnum.toJson()}', 'int32Enum=${objParamExploded.int32Enum.toJson()}', 'bigint=${objParamExploded.bigint}', 'bigintStr=${objParamExploded.bigintStr}', 'decimal=${objParamExploded.decimal}', 'decimalStr=${objParamExploded.decimalStr}', 'decimalNullableOpt=${objParamExploded.decimalNullableOpt}', 'int64Str=${objParamExploded.int64Str}', 'float64Str=${objParamExploded.float64Str}'].join(','))}',
+  path: '/anything/pathParams/obj/${<String>['str', Uri.encodeComponent(objParam.str), 'bool', Uri.encodeComponent(objParam.$bool.toString()), 'int', Uri.encodeComponent(objParam.$int.toString()), 'int32', Uri.encodeComponent(objParam.int32.toString()), 'num', Uri.encodeComponent(objParam.$num.toString()), 'float32', Uri.encodeComponent(objParam.float32.toString()), 'enum', Uri.encodeComponent(objParam.$enum.toJson()), 'date', Uri.encodeComponent(objParam.date), 'dateTime', Uri.encodeComponent(objParam.dateTime.toIso8601String()), if (objParam.any != null) ...['any', Uri.encodeComponent(objParam.any!.toString())], if (objParam.strOpt != null) ...['strOpt', Uri.encodeComponent(objParam.strOpt!)], if (objParam.boolOpt != null) ...['boolOpt', Uri.encodeComponent(objParam.boolOpt!.toString())], if (objParam.intOptNull != null) ...['intOptNull', Uri.encodeComponent(objParam.intOptNull!.toString())], if (objParam.numOptNull != null) ...['numOptNull', Uri.encodeComponent(objParam.numOptNull!.toString())], 'intEnum', Uri.encodeComponent(objParam.intEnum.toJson().toString()), 'int32Enum', Uri.encodeComponent(objParam.int32Enum.toJson().toString()), if (objParam.bigint != null) ...['bigint', Uri.encodeComponent(objParam.bigint!.toString())], if (objParam.bigintStr != null) ...['bigintStr', Uri.encodeComponent(objParam.bigintStr!)], if (objParam.decimal != null) ...['decimal', Uri.encodeComponent(objParam.decimal!.toString())], if (objParam.decimalStr != null) ...['decimalStr', Uri.encodeComponent(objParam.decimalStr!)], if (objParam.decimalNullableOpt != null) ...['decimalNullableOpt', Uri.encodeComponent(objParam.decimalNullableOpt!.toString())], if (objParam.int64Str != null) ...['int64Str', Uri.encodeComponent(objParam.int64Str!)], if (objParam.float64Str != null) ...['float64Str', Uri.encodeComponent(objParam.float64Str!)]].join(',')}/objExploded/${<String>['str=${Uri.encodeComponent(objParamExploded.str)}', 'bool=${Uri.encodeComponent(objParamExploded.$bool.toString())}', 'int=${Uri.encodeComponent(objParamExploded.$int.toString())}', 'int32=${Uri.encodeComponent(objParamExploded.int32.toString())}', 'num=${Uri.encodeComponent(objParamExploded.$num.toString())}', 'float32=${Uri.encodeComponent(objParamExploded.float32.toString())}', 'enum=${Uri.encodeComponent(objParamExploded.$enum.toJson())}', 'date=${Uri.encodeComponent(objParamExploded.date)}', 'dateTime=${Uri.encodeComponent(objParamExploded.dateTime.toIso8601String())}', if (objParamExploded.any != null) 'any=${Uri.encodeComponent(objParamExploded.any!.toString())}', if (objParamExploded.strOpt != null) 'strOpt=${Uri.encodeComponent(objParamExploded.strOpt!)}', if (objParamExploded.boolOpt != null) 'boolOpt=${Uri.encodeComponent(objParamExploded.boolOpt!.toString())}', if (objParamExploded.intOptNull != null) 'intOptNull=${Uri.encodeComponent(objParamExploded.intOptNull!.toString())}', if (objParamExploded.numOptNull != null) 'numOptNull=${Uri.encodeComponent(objParamExploded.numOptNull!.toString())}', 'intEnum=${Uri.encodeComponent(objParamExploded.intEnum.toJson().toString())}', 'int32Enum=${Uri.encodeComponent(objParamExploded.int32Enum.toJson().toString())}', if (objParamExploded.bigint != null) 'bigint=${Uri.encodeComponent(objParamExploded.bigint!.toString())}', if (objParamExploded.bigintStr != null) 'bigintStr=${Uri.encodeComponent(objParamExploded.bigintStr!)}', if (objParamExploded.decimal != null) 'decimal=${Uri.encodeComponent(objParamExploded.decimal!.toString())}', if (objParamExploded.decimalStr != null) 'decimalStr=${Uri.encodeComponent(objParamExploded.decimalStr!)}', if (objParamExploded.decimalNullableOpt != null) 'decimalNullableOpt=${Uri.encodeComponent(objParamExploded.decimalNullableOpt!.toString())}', if (objParamExploded.int64Str != null) 'int64Str=${Uri.encodeComponent(objParamExploded.int64Str!)}', if (objParamExploded.float64Str != null) 'float64Str=${Uri.encodeComponent(objParamExploded.float64Str!)}'].join(',')}',
   headers: headers,
   options: options,
 );
@@ -239,7 +239,7 @@ Future<ApiResult<SimplePathParameterArraysResponse, Never>> simplePathParameterA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/pathParams/arr/${Uri.encodeComponent(arrParam.join(','))}',
+  path: '/anything/pathParams/arr/${arrParam.map(Uri.encodeComponent).join(',')}',
   headers: headers,
   options: options,
 );
@@ -256,7 +256,7 @@ Future<ApiResult<SimplePathParameterMapsResponse, Never>> simplePathParameterMap
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/pathParams/map/${Uri.encodeComponent(mapParam.entries.expand((entry) => [entry.key, entry.value]).join(','))}/mapExploded/${Uri.encodeComponent(mapParamExploded.entries.map((entry) => '${entry.key}=${entry.value}').join(','))}',
+  path: '/anything/pathParams/map/${mapParam.entries.expand((entry) => [Uri.encodeComponent(entry.key), Uri.encodeComponent(entry.value)]).join(',')}/mapExploded/${mapParamExploded.entries.map((entry) => '${Uri.encodeComponent(entry.key)}=${Uri.encodeComponent(entry.value.toString())}').join(',')}',
   headers: headers,
   options: options,
 );
@@ -273,7 +273,7 @@ Future<ApiResult<PathParameterJsonResponse, Never>> pathParameterJson({required 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/pathParams/json/${Uri.encodeComponent(<Object?>['str', jsonObj.str, 'bool', jsonObj.$bool.toString(), 'int', jsonObj.$int.toString(), 'int32', jsonObj.int32.toString(), 'num', jsonObj.$num.toString(), 'float32', jsonObj.float32.toString(), 'enum', jsonObj.$enum.toJson(), 'date', jsonObj.date, 'dateTime', jsonObj.dateTime.toIso8601String(), 'any', jsonObj.any.toString(), 'strOpt', jsonObj.strOpt, 'boolOpt', jsonObj.boolOpt.toString(), 'intOptNull', jsonObj.intOptNull.toString(), 'numOptNull', jsonObj.numOptNull.toString(), 'intEnum', jsonObj.intEnum.toJson().toString(), 'int32Enum', jsonObj.int32Enum.toJson().toString(), 'bigint', jsonObj.bigint.toString(), 'bigintStr', jsonObj.bigintStr, 'decimal', jsonObj.decimal.toString(), 'decimalStr', jsonObj.decimalStr, 'decimalNullableOpt', jsonObj.decimalNullableOpt.toString(), 'int64Str', jsonObj.int64Str, 'float64Str', jsonObj.float64Str].join(','))}',
+  path: '/anything/pathParams/json/${<String>['str', Uri.encodeComponent(jsonObj.str), 'bool', Uri.encodeComponent(jsonObj.$bool.toString()), 'int', Uri.encodeComponent(jsonObj.$int.toString()), 'int32', Uri.encodeComponent(jsonObj.int32.toString()), 'num', Uri.encodeComponent(jsonObj.$num.toString()), 'float32', Uri.encodeComponent(jsonObj.float32.toString()), 'enum', Uri.encodeComponent(jsonObj.$enum.toJson()), 'date', Uri.encodeComponent(jsonObj.date), 'dateTime', Uri.encodeComponent(jsonObj.dateTime.toIso8601String()), if (jsonObj.any != null) ...['any', Uri.encodeComponent(jsonObj.any!.toString())], if (jsonObj.strOpt != null) ...['strOpt', Uri.encodeComponent(jsonObj.strOpt!)], if (jsonObj.boolOpt != null) ...['boolOpt', Uri.encodeComponent(jsonObj.boolOpt!.toString())], if (jsonObj.intOptNull != null) ...['intOptNull', Uri.encodeComponent(jsonObj.intOptNull!.toString())], if (jsonObj.numOptNull != null) ...['numOptNull', Uri.encodeComponent(jsonObj.numOptNull!.toString())], 'intEnum', Uri.encodeComponent(jsonObj.intEnum.toJson().toString()), 'int32Enum', Uri.encodeComponent(jsonObj.int32Enum.toJson().toString()), if (jsonObj.bigint != null) ...['bigint', Uri.encodeComponent(jsonObj.bigint!.toString())], if (jsonObj.bigintStr != null) ...['bigintStr', Uri.encodeComponent(jsonObj.bigintStr!)], if (jsonObj.decimal != null) ...['decimal', Uri.encodeComponent(jsonObj.decimal!.toString())], if (jsonObj.decimalStr != null) ...['decimalStr', Uri.encodeComponent(jsonObj.decimalStr!)], if (jsonObj.decimalNullableOpt != null) ...['decimalNullableOpt', Uri.encodeComponent(jsonObj.decimalNullableOpt!.toString())], if (jsonObj.int64Str != null) ...['int64Str', Uri.encodeComponent(jsonObj.int64Str!)], if (jsonObj.float64Str != null) ...['float64Str', Uri.encodeComponent(jsonObj.float64Str!)]].join(',')}',
   headers: headers,
   options: options,
 );
@@ -489,7 +489,7 @@ queryParametersList.add(ApiQueryParameter(name: 'float32', value: objParamExplod
 queryParametersList.add(ApiQueryParameter(name: 'enum', value: objParamExploded.$enum.toJson()));
 queryParametersList.add(ApiQueryParameter(name: 'date', value: objParamExploded.date));
 queryParametersList.add(ApiQueryParameter(name: 'dateTime', value: objParamExploded.dateTime.toIso8601String()));
-queryParametersList.add(ApiQueryParameter(name: 'any', value: objParamExploded.any.toString()));
+if (objParamExploded.any case final any$?) { queryParametersList.add(ApiQueryParameter(name: 'any', value: any$.toString())); }
 if (objParamExploded.strOpt case final strOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'strOpt', value: strOpt$)); }
 if (objParamExploded.boolOpt case final boolOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'boolOpt', value: boolOpt$.toString())); }
 if (objParamExploded.intOptNull case final intOptNull$?) { queryParametersList.add(ApiQueryParameter(name: 'intOptNull', value: intOptNull$.toString())); }
@@ -504,7 +504,7 @@ if (objParamExploded.decimalNullableOpt case final decimalNullableOpt$?) { query
 if (objParamExploded.int64Str case final int64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'int64Str', value: int64Str$)); }
 if (objParamExploded.float64Str case final float64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'float64Str', value: float64Str$)); }
 if (objParam != null) {
-queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), 'any', objParam.any.toString(), 'strOpt', objParam.strOpt, 'boolOpt', objParam.boolOpt.toString(), 'intOptNull', objParam.intOptNull.toString(), 'numOptNull', objParam.numOptNull.toString(), 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), 'bigint', objParam.bigint.toString(), 'bigintStr', objParam.bigintStr, 'decimal', objParam.decimal.toString(), 'decimalStr', objParam.decimalStr, 'decimalNullableOpt', objParam.decimalNullableOpt.toString(), 'int64Str', objParam.int64Str, 'float64Str', objParam.float64Str].join(',');
+queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), if (objParam.any != null) ...['any', objParam.any!.toString()], if (objParam.strOpt != null) ...['strOpt', objParam.strOpt!], if (objParam.boolOpt != null) ...['boolOpt', objParam.boolOpt!.toString()], if (objParam.intOptNull != null) ...['intOptNull', objParam.intOptNull!.toString()], if (objParam.numOptNull != null) ...['numOptNull', objParam.numOptNull!.toString()], 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), if (objParam.bigint != null) ...['bigint', objParam.bigint!.toString()], if (objParam.bigintStr != null) ...['bigintStr', objParam.bigintStr!], if (objParam.decimal != null) ...['decimal', objParam.decimal!.toString()], if (objParam.decimalStr != null) ...['decimalStr', objParam.decimalStr!], if (objParam.decimalNullableOpt != null) ...['decimalNullableOpt', objParam.decimalNullableOpt!.toString()], if (objParam.int64Str != null) ...['int64Str', objParam.int64Str!], if (objParam.float64Str != null) ...['float64Str', objParam.float64Str!]].join(',');
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -531,7 +531,7 @@ final queryParametersList = <ApiQueryParameter>[];
 if (objParamExploded.searchTerm case final searchTerm$?) { queryParametersList.add(ApiQueryParameter(name: 'search_term', value: searchTerm$)); }
 if (objParamExploded.itemCount case final itemCount$?) { queryParametersList.add(ApiQueryParameter(name: 'item_count', value: itemCount$)); }
 if (objParam != null) {
-queryParameters['obj_param'] = ['encoded_term', objParam.encodedTerm, 'encoded_count', objParam.encodedCount].join(',');
+queryParameters['obj_param'] = [if (objParam.encodedTerm != null) ...['encoded_term', objParam.encodedTerm!], if (objParam.encodedCount != null) ...['encoded_count', objParam.encodedCount!]].join(',');
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -625,7 +625,7 @@ for (final item in arrParamExploded) {
 }
 }
 if (objParam != null) {
-queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), 'any', objParam.any.toString(), 'strOpt', objParam.strOpt, 'boolOpt', objParam.boolOpt.toString(), 'intOptNull', objParam.intOptNull.toString(), 'numOptNull', objParam.numOptNull.toString(), 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), 'bigint', objParam.bigint.toString(), 'bigintStr', objParam.bigintStr, 'decimal', objParam.decimal.toString(), 'decimalStr', objParam.decimalStr, 'decimalNullableOpt', objParam.decimalNullableOpt.toString(), 'int64Str', objParam.int64Str, 'float64Str', objParam.float64Str].join('|');
+queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), if (objParam.any != null) ...['any', objParam.any!.toString()], if (objParam.strOpt != null) ...['strOpt', objParam.strOpt!], if (objParam.boolOpt != null) ...['boolOpt', objParam.boolOpt!.toString()], if (objParam.intOptNull != null) ...['intOptNull', objParam.intOptNull!.toString()], if (objParam.numOptNull != null) ...['numOptNull', objParam.numOptNull!.toString()], 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), if (objParam.bigint != null) ...['bigint', objParam.bigint!.toString()], if (objParam.bigintStr != null) ...['bigintStr', objParam.bigintStr!], if (objParam.decimal != null) ...['decimal', objParam.decimal!.toString()], if (objParam.decimalStr != null) ...['decimalStr', objParam.decimalStr!], if (objParam.decimalNullableOpt != null) ...['decimalNullableOpt', objParam.decimalNullableOpt!.toString()], if (objParam.int64Str != null) ...['int64Str', objParam.int64Str!], if (objParam.float64Str != null) ...['float64Str', objParam.float64Str!]].join('|');
 }
 if (mapParam != null) {
 final mapParamParts = <String>[];
@@ -701,7 +701,7 @@ queryParameters['objParam[float32]'] = objParam.float32.toString();
 queryParameters['objParam[enum]'] = objParam.$enum.toJson();
 queryParameters['objParam[date]'] = objParam.date;
 queryParameters['objParam[dateTime]'] = objParam.dateTime.toIso8601String();
-queryParameters['objParam[any]'] = objParam.any.toString();
+if (objParam.any case final any$?) { queryParameters['objParam[any]'] = any$.toString(); }
 if (objParam.strOpt case final strOpt$?) { queryParameters['objParam[strOpt]'] = strOpt$; }
 if (objParam.boolOpt case final boolOpt$?) { queryParameters['objParam[boolOpt]'] = boolOpt$.toString(); }
 if (objParam.intOptNull case final intOptNull$?) { queryParameters['objParam[intOptNull]'] = intOptNull$.toString(); }
@@ -810,7 +810,7 @@ queryParametersList.add(ApiQueryParameter(name: 'float32', value: simpleObjParam
 queryParametersList.add(ApiQueryParameter(name: 'enum', value: simpleObjParam.$enum.toJson()));
 queryParametersList.add(ApiQueryParameter(name: 'date', value: simpleObjParam.date));
 queryParametersList.add(ApiQueryParameter(name: 'dateTime', value: simpleObjParam.dateTime.toIso8601String()));
-queryParametersList.add(ApiQueryParameter(name: 'any', value: simpleObjParam.any.toString()));
+if (simpleObjParam.any case final any$?) { queryParametersList.add(ApiQueryParameter(name: 'any', value: any$.toString())); }
 if (simpleObjParam.strOpt case final strOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'strOpt', value: strOpt$)); }
 if (simpleObjParam.boolOpt case final boolOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'boolOpt', value: boolOpt$.toString())); }
 if (simpleObjParam.intOptNull case final intOptNull$?) { queryParametersList.add(ApiQueryParameter(name: 'intOptNull', value: intOptNull$.toString())); }
@@ -864,7 +864,7 @@ queryParametersList.add(ApiQueryParameter(name: 'float32', value: simpleObjParam
 queryParametersList.add(ApiQueryParameter(name: 'enum', value: simpleObjParam.$enum.toJson()));
 queryParametersList.add(ApiQueryParameter(name: 'date', value: simpleObjParam.date));
 queryParametersList.add(ApiQueryParameter(name: 'dateTime', value: simpleObjParam.dateTime.toIso8601String()));
-queryParametersList.add(ApiQueryParameter(name: 'any', value: simpleObjParam.any.toString()));
+if (simpleObjParam.any case final any$?) { queryParametersList.add(ApiQueryParameter(name: 'any', value: any$.toString())); }
 if (simpleObjParam.strOpt case final strOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'strOpt', value: strOpt$)); }
 if (simpleObjParam.boolOpt case final boolOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'boolOpt', value: boolOpt$.toString())); }
 if (simpleObjParam.intOptNull case final intOptNull$?) { queryParametersList.add(ApiQueryParameter(name: 'intOptNull', value: intOptNull$.toString())); }
@@ -972,7 +972,7 @@ queryParametersList.add(ApiQueryParameter(name: 'float32', value: jsonParam.floa
 queryParametersList.add(ApiQueryParameter(name: 'enum', value: jsonParam.$enum.toJson()));
 queryParametersList.add(ApiQueryParameter(name: 'date', value: jsonParam.date));
 queryParametersList.add(ApiQueryParameter(name: 'dateTime', value: jsonParam.dateTime.toIso8601String()));
-queryParametersList.add(ApiQueryParameter(name: 'any', value: jsonParam.any.toString()));
+if (jsonParam.any case final any$?) { queryParametersList.add(ApiQueryParameter(name: 'any', value: any$.toString())); }
 if (jsonParam.strOpt case final strOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'strOpt', value: strOpt$)); }
 if (jsonParam.boolOpt case final boolOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'boolOpt', value: boolOpt$.toString())); }
 if (jsonParam.intOptNull case final intOptNull$?) { queryParametersList.add(ApiQueryParameter(name: 'intOptNull', value: intOptNull$.toString())); }
@@ -995,7 +995,7 @@ queryParametersList.add(ApiQueryParameter(name: 'float32', value: formParam.floa
 queryParametersList.add(ApiQueryParameter(name: 'enum', value: formParam.$enum.toJson()));
 queryParametersList.add(ApiQueryParameter(name: 'date', value: formParam.date));
 queryParametersList.add(ApiQueryParameter(name: 'dateTime', value: formParam.dateTime.toIso8601String()));
-queryParametersList.add(ApiQueryParameter(name: 'any', value: formParam.any.toString()));
+if (formParam.any case final any$?) { queryParametersList.add(ApiQueryParameter(name: 'any', value: any$.toString())); }
 if (formParam.strOpt case final strOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'strOpt', value: strOpt$)); }
 if (formParam.boolOpt case final boolOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'boolOpt', value: boolOpt$.toString())); }
 if (formParam.intOptNull case final intOptNull$?) { queryParametersList.add(ApiQueryParameter(name: 'intOptNull', value: intOptNull$.toString())); }
@@ -1018,7 +1018,7 @@ queryParameters['deepObjectParam[float32]'] = deepObjectParam.float32.toString()
 queryParameters['deepObjectParam[enum]'] = deepObjectParam.$enum.toJson();
 queryParameters['deepObjectParam[date]'] = deepObjectParam.date;
 queryParameters['deepObjectParam[dateTime]'] = deepObjectParam.dateTime.toIso8601String();
-queryParameters['deepObjectParam[any]'] = deepObjectParam.any.toString();
+if (deepObjectParam.any case final any$?) { queryParameters['deepObjectParam[any]'] = any$.toString(); }
 if (deepObjectParam.strOpt case final strOpt$?) { queryParameters['deepObjectParam[strOpt]'] = strOpt$; }
 if (deepObjectParam.boolOpt case final boolOpt$?) { queryParameters['deepObjectParam[boolOpt]'] = boolOpt$.toString(); }
 if (deepObjectParam.intOptNull case final intOptNull$?) { queryParameters['deepObjectParam[intOptNull]'] = intOptNull$.toString(); }

@@ -68,6 +68,17 @@ analyzeApiImports(
         needsTypedData = true;
         // Bytes params serialize via base64Encode.
         needsConvert = true;
+      } else {
+        // Styled object params serialize bytes FIELDS via base64Encode,
+        // but the signature references the model class, not Uint8List —
+        // dart:convert is needed, dart:typed_data is not.
+        final resolved = ctx != null
+            ? param.type.resolveRef(ctx.typeRegistry)
+            : param.type;
+        if (resolved is IrObject &&
+            resolved.fields.any((f) => isBytesType(f.type))) {
+          needsConvert = true;
+        }
       }
     }
     if (op.requestBody case final body? when body.content.isNotEmpty) {

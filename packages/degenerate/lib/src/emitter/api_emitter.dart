@@ -689,9 +689,12 @@ final class ApiEmitter {
     }
 
     final escapedDelimiter = escapeDartString(_joinDelimiter(style));
+    // Null items are omitted (matching the explode loop above); the typed
+    // conversions would not compile on a nullable item.
+    final source = items.isNullable ? '$accessor.nonNulls' : accessor;
     final joined = itemExpr == 'item'
-        ? "$accessor.join('$escapedDelimiter')"
-        : "$accessor.map((item) => $itemExpr).join('$escapedDelimiter')";
+        ? "$source.join('$escapedDelimiter')"
+        : "$source.map((item) => $itemExpr).join('$escapedDelimiter')";
 
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, joined);
@@ -709,10 +712,14 @@ final class ApiEmitter {
     bool explode,
   ) {
     final name = _sanitizeParameterName(p.name);
+    // A field is nullable in the generated model when it's optional OR its
+    // type is nullable (required-but-nullable) — mirror that here or the
+    // typed conversions dereference a nullable and don't compile.
+    bool fieldNullable(IrField f) => !f.isRequired || f.type.isNullable;
     if (style == 'deepObject') {
       for (final field in fields) {
         final key = '$name[${escapeDartString(field.originalName)}]';
-        if (!field.isRequired) {
+        if (fieldNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
@@ -732,7 +739,7 @@ final class ApiEmitter {
     if (style == 'form' && explode) {
       for (final field in fields) {
         final fieldNameLiteral = dartStringLiteral(field.originalName);
-        if (!field.isRequired) {
+        if (fieldNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
@@ -753,9 +760,20 @@ final class ApiEmitter {
 
     final parts = <String>[];
     for (final field in fields) {
-      final valueExpr = _queryScalarExpr(field.type, '$accessor.${field.name}');
-      parts.add("'${escapeDartString(field.originalName)}'");
-      parts.add(valueExpr);
+      final nullable = fieldNullable(field);
+      final fieldAccessor = '$accessor.${field.name}${nullable ? '!' : ''}';
+      final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
+      if (nullable) {
+        // Null fields are omitted (RFC 6570 drops undefined values).
+        parts.add(
+          'if ($accessor.${field.name} != null) '
+          "...['${escapeDartString(field.originalName)}', $valueExpr]",
+        );
+      } else {
+        parts
+          ..add("'${escapeDartString(field.originalName)}'")
+          ..add(valueExpr);
+      }
     }
     final delimiter = _joinDelimiter(style);
     final joined = "[${parts.join(', ')}].join('$delimiter')";
@@ -765,12 +783,6 @@ final class ApiEmitter {
       buf.writeln("queryParameters['$name'] = $joined;");
     }
   }
-
-  /// Strip a trailing `.toString()` for use inside a string interpolation,
-  /// where it is a no-op (interpolation already stringifies).
-  String _interpolatable(String expr) => expr.endsWith('.toString()')
-      ? expr.substring(0, expr.length - '.toString()'.length)
-      : expr;
 
   /// The explode=false pair/item join delimiter for a query style.
   String _joinDelimiter(String style) => switch (style) {
@@ -789,9 +801,18 @@ final class ApiEmitter {
   ) {
     final name = _sanitizeParameterName(p.name);
     final nameLiteral = _paramNameLiteral(p.name);
-    final valueExpr = _queryScalarExpr(values, 'entry.value');
+    // Null values are omitted; the typed conversions would not compile on a
+    // nullable receiver.
+    final skipNull = values.isNullable
+        ? '  if (entry.value == null) continue;\n'
+        : '';
+    final valueExpr = _queryScalarExpr(
+      values,
+      values.isNullable ? 'entry.value!' : 'entry.value',
+    );
     if (style == 'deepObject') {
       buf.writeln('for (final entry in $accessor.entries) {');
+      buf.write(skipNull);
       buf.writeln("  queryParameters['$name[\${entry.key}]'] = $valueExpr;");
       buf.writeln('}');
       return;
@@ -799,6 +820,7 @@ final class ApiEmitter {
 
     if (style == 'form' && explode) {
       buf.writeln('for (final entry in $accessor.entries) {');
+      buf.write(skipNull);
       buf.writeln(
         '  queryParametersList.add(ApiQueryParameter(name: entry.key, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));',
       );
@@ -809,6 +831,7 @@ final class ApiEmitter {
     final delimiter = _joinDelimiter(style);
     buf.writeln('final ${p.dartName}Parts = <String>[];');
     buf.writeln('for (final entry in $accessor.entries) {');
+    buf.write(skipNull);
     buf.writeln('  ${p.dartName}Parts.add(entry.key);');
     buf.writeln('  ${p.dartName}Parts.add($valueExpr);');
     buf.writeln('}');
@@ -830,21 +853,35 @@ final class ApiEmitter {
   /// (explode=true) — never the Dart debug `toString()`.
   String _pathSegmentEncodeExpr(IrParameter p) {
     final explode = p.explode ?? false;
-    final valueExpr = switch (ctx.resolve(p.type)) {
+    return switch (ctx.resolve(p.type)) {
       IrList(:final items) => () {
+        // Per RFC 6570 only the values are percent-encoded; the comma
+        // delimiters stay literal. Null items are omitted (undefined
+        // values are dropped) — the typed conversions would not compile
+        // on a nullable item anyway.
+        final source = items.isNullable
+            ? '${p.dartName}.nonNulls'
+            : p.dartName;
         final item = _queryScalarExpr(items, 'item');
         return item == 'item'
-            ? "${p.dartName}.join(',')"
-            : "${p.dartName}.map((item) => $item).join(',')";
+            ? "$source.map(Uri.encodeComponent).join(',')"
+            : "$source.map((item) => Uri.encodeComponent($item)).join(',')";
       }(),
       IrObject(:final fields) => () {
         final parts = <String>[];
         for (final f in fields) {
-          final value = _queryScalarExpr(f.type, '${p.dartName}.${f.name}');
+          final nullable = !f.isRequired || f.type.isNullable;
+          final accessor = '${p.dartName}.${f.name}${nullable ? '!' : ''}';
+          final value =
+              'Uri.encodeComponent(${_queryScalarExpr(f.type, accessor)})';
+          final guard = nullable
+              ? 'if (${p.dartName}.${f.name} != null) '
+              : '';
           if (explode) {
-            // Interpolation stringifies — a trailing .toString() is a no-op.
+            parts.add("$guard'${escapeDartString(f.originalName)}=\${$value}'");
+          } else if (nullable) {
             parts.add(
-              "'${escapeDartString(f.originalName)}=\${${_interpolatable(value)}}'",
+              "$guard...['${escapeDartString(f.originalName)}', $value]",
             );
           } else {
             parts
@@ -852,19 +889,23 @@ final class ApiEmitter {
               ..add(value);
           }
         }
-        final elementType = explode ? 'String' : 'Object?';
-        return "<$elementType>[${parts.join(', ')}].join(',')";
+        return "<String>[${parts.join(', ')}].join(',')";
       }(),
       IrMap(:final values) => () {
-        final value = _queryScalarExpr(values, 'entry.value');
+        final source = values.isNullable
+            ? '${p.dartName}.entries.where((entry) => entry.value != null)'
+            : '${p.dartName}.entries';
+        final accessor = values.isNullable ? 'entry.value!' : 'entry.value';
+        final value =
+            'Uri.encodeComponent(${_queryScalarExpr(values, accessor)})';
         return explode
-            ? "${p.dartName}.entries.map((entry) => '\${entry.key}=\${${_interpolatable(value)}}').join(',')"
-            : "${p.dartName}.entries.expand((entry) => [entry.key, $value]).join(',')";
+            ? "$source.map((entry) => '\${Uri.encodeComponent(entry.key)}=\${$value}').join(',')"
+            : "$source.expand((entry) => [Uri.encodeComponent(entry.key), $value]).join(',')";
       }(),
-      _ => typeToStringExpr(p.type, p.dartName),
+      _ => 'Uri.encodeComponent(${typeToStringExpr(p.type, p.dartName)})',
     };
-    return 'Uri.encodeComponent($valueExpr)';
   }
+
 
   String _queryScalarExpr(IrType type, String accessor) {
     return typeToStringExpr(
@@ -875,8 +916,10 @@ final class ApiEmitter {
           PrimitiveKind.string => acc,
           PrimitiveKind.dateTime ||
           PrimitiveKind.uri ||
-          PrimitiveKind.bigInt ||
-          PrimitiveKind.duration => buildToJsonCode(IrPrimitive(kind), acc),
+          PrimitiveKind.bigInt => buildToJsonCode(IrPrimitive(kind), acc),
+          // toJson for durations is an int (milliseconds); every caller
+          // here needs a String.
+          PrimitiveKind.duration => '$acc.inMilliseconds.toString()',
           PrimitiveKind.bytes => 'base64Encode($acc)',
           _ => '$acc.toString()',
         };

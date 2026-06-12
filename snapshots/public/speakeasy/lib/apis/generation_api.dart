@@ -29,7 +29,7 @@ Future<ApiResult<void, Never>> emptyObjectGet({required EmptyObjectGetEmptyObjec
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/${Uri.encodeComponent(<Object?>[].join(','))}',
+  path: '/anything/${<String>[].join(',')}',
   headers: headers,
   options: options,
 );

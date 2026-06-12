@@ -5056,9 +5056,17 @@ void main() {
           isRequired: true,
         ),
       );
-      // List.toString() is '[1, 2]' — simple style is '1,2'.
-      expect(source, contains(r"v.map((item) => item.toString()).join(',')"));
+      // List.toString() is '[1, 2]' — simple style is '1,2'. Only the
+      // VALUES are percent-encoded; the comma delimiters stay literal
+      // (RFC 6570), so the whole joined value must not be re-encoded.
+      expect(
+        source,
+        contains(
+          r"v.map((item) => Uri.encodeComponent(item.toString())).join(',')",
+        ),
+      );
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, isNot(contains(".join(','))}'")));
     });
 
     test('object path params serialize simple-style pairs', () {
@@ -5075,6 +5083,83 @@ void main() {
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
       expect(source, contains("'a'"));
       expect(source, contains('v.a'));
+    });
+
+    test('nullable structured params compile and omit nulls', () {
+      // List<DateTime?> path params, nullable map values, and
+      // required-but-nullable object fields previously dereferenced a
+      // nullable receiver; RFC 6570 drops undefined values, so nulls are
+      // omitted instead.
+      final source = emitFor(
+        const IrParameter(
+          'v',
+          'v',
+          ParameterLocation.path,
+          IrList(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+        ),
+      );
+      expect(source, contains('v.nonNulls'));
+      expect(source, isNot(contains('v.map((item) => item.toIso8601String')));
+    });
+
+    test('joined object query params guard required-but-nullable fields', () {
+      const obj = IrObject('NFilter', [
+        IrField('a', 'a', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField(
+          'when',
+          'when',
+          IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+          isRequired: true,
+        ),
+      ], requiredFields: ['a', 'when']);
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getX',
+          'getX',
+          HttpMethod.get,
+          '/x',
+          parameters: const [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrTypeRef('NFilter'),
+              isRequired: true,
+              explode: false,
+            ),
+          ],
+          responses: const {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(
+              ApiEmitter(api, ctx: const EmitContext({'NFilter': obj})).emit(),
+            ),
+        ),
+      );
+      // The nullable field is spread in only when present.
+      expect(source, contains('if (filter.when != null)'));
+      expect(source, contains('filter.when!'));
+    });
+
+    test('map query params with nullable values skip null entries', () {
+      final source = emitFor(
+        const IrParameter(
+          'attrs',
+          'attrs',
+          ParameterLocation.query,
+          IrMap(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+          style: 'deepObject',
+          explode: true,
+        ),
+      );
+      expect(source, contains('if (entry.value == null) continue;'));
+      expect(source, contains('entry.value!'));
     });
 
     test('pipeDelimited exploded arrays repeat the key', () {
@@ -5163,6 +5248,45 @@ void main() {
       expect(source, isNot(contains('since.toString()')));
       expect(source, contains('base64Encode(xSig)'));
       expect(source, isNot(contains('xSig.toString()')));
+    });
+
+    test('import analysis sees bytes fields inside styled object params', () {
+      const obj = IrObject('Sig', [
+        IrField(
+          'mac',
+          'mac',
+          IrPrimitive(PrimitiveKind.bytes),
+          isRequired: true,
+        ),
+      ], requiredFields: ['mac']);
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          '/send',
+          parameters: [
+            IrParameter(
+              'sig',
+              'sig',
+              ParameterLocation.query,
+              IrTypeRef('Sig'),
+              isRequired: true,
+              style: 'deepObject',
+              explode: true,
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final result = analyzeApiImports(
+        api,
+        const EmitContext({'Sig': obj}),
+      );
+      // The styled serialization emits base64Encode for the bytes FIELD,
+      // but the signature references the model class — dart:convert is
+      // needed, dart:typed_data is not.
+      expect(result.needsConvert, isTrue);
     });
 
     test('import analysis requires dart:convert for bytes params', () {
