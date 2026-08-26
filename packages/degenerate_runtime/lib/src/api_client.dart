@@ -151,11 +151,46 @@ final class ApiRequest {
   }
 }
 
+/// RFC 6265 `cookie-octet`: US-ASCII excluding CTLs, whitespace, DQUOTE,
+/// comma, semicolon and backslash.
+bool _isCookieOctet(int byte) =>
+    byte == 0x21 ||
+    (byte >= 0x23 && byte <= 0x2B) ||
+    (byte >= 0x2D && byte <= 0x3A) ||
+    (byte >= 0x3C && byte <= 0x5B) ||
+    (byte >= 0x5D && byte <= 0x7E);
+
+/// Percent-escapes a cookie value so the result is a valid RFC 6265
+/// `cookie-value`.
+///
+/// Escaping only `%`, `;` and `=` — as this used to — left everything else the
+/// grammar forbids to reach the wire verbatim, with two distinct consequences:
+/// comma, space, double quote, backslash, TAB and DEL produced a malformed
+/// `Cookie` header (comma being a cookie separator to some server-side
+/// parsers, so one value could arrive as two cookies), while CR, LF, NUL and
+/// every non-ASCII character made `dart:io` throw
+/// `FormatException: Invalid HTTP header field value` when the request was
+/// sent — so a non-ASCII cookie value crashed rather than sending.
+///
+/// `%` and `=` are themselves cookie-octets but stay escaped: `%` is the escape
+/// character, and `=` separates the name from the value. Values that were
+/// already made only of cookie-octets encode exactly as before, so this cannot
+/// change a request that previously worked.
+///
+/// Cookie *names* are left alone deliberately. Generated clients take the name
+/// from the spec and only the value from the caller, so the value is the
+/// untrusted half; percent-escaping a name would silently change which cookie
+/// the server sees, which is worse than rejecting it.
 String _encodeCookieValue(String value) {
-  return value
-      .replaceAll('%', '%25')
-      .replaceAll(';', '%3B')
-      .replaceAll('=', '%3D');
+  final buffer = StringBuffer();
+  for (final byte in utf8.encode(value)) {
+    if (_isCookieOctet(byte) && byte != 0x25 && byte != 0x3D) {
+      buffer.writeCharCode(byte);
+    } else {
+      buffer.write('%${byte.toRadixString(16).toUpperCase().padLeft(2, '0')}');
+    }
+  }
+  return buffer.toString();
 }
 
 const _unreservedOrReservedQueryChars =

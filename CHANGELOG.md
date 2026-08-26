@@ -2,6 +2,12 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## Unreleased
+
+### Bug fixes
+
+- **Cookie values are escaped to the full RFC 6265 grammar** (`degenerate_runtime`): `_encodeCookieValue` escaped only `%`, `;` and `=`, leaving everything else the `cookie-octet` grammar forbids to reach the wire verbatim. Comma, space, double quote, backslash, TAB and DEL produced a malformed `Cookie` header — comma is a cookie separator to some server-side parsers, so one value could arrive as two cookies — while CR, LF, NUL and every non-ASCII character made `dart:io` throw `FormatException: Invalid HTTP header field value` at send time, so a non-ASCII cookie value crashed instead of sending. Every non-`cookie-octet` byte is now percent-escaped. Values already composed only of `cookie-octet`s encode byte-for-byte as before, so no request that previously worked changes. Cookie *names* are deliberately untouched: generated clients take the name from the spec and only the value from the caller, and silently rewriting a name would be worse than rejecting it.
+
 ## 0.4.2
 
 **Bug fixes for enum parameter serialization, generated security helpers, and union parsing; `anyOf` + `discriminator` support.**
