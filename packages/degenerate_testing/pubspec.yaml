@@ -1,0 +1,16 @@
+name: degenerate_testing
+description: Property-based testing primitives for degenerate-generated API clients. Dev-only; generated clients never depend on this at runtime.
+version: 0.1.0
+repository: https://github.com/blopker/degenerate
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  meta: ^1.17.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
