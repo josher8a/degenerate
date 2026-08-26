@@ -77,15 +77,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('model
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 256) { errors.add('name: length must be <= 256'); }
+  if (name$.runes.length > 256) { errors.add('name: length must be <= 256'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 512) { errors.add('description: length must be <= 512'); }
+  if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
 }
 final instructions$ = instructions;
 if (instructions$ != null) {
-  if (instructions$.length > 256000) { errors.add('instructions: length must be <= 256000'); }
+  if (instructions$.runes.length > 256000) { errors.add('instructions: length must be <= 256000'); }
 }
 if (tools.length > 128) { errors.add('tools: must have <= 128 items'); }
 final temperature$ = temperature;

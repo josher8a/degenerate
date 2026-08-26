@@ -109,8 +109,8 @@ if (string$ != null) {
 if (!RegExp('^[A-Z].*').hasMatch(patternWithoutDelimiter)) { errors.add('patternWithoutDelimiter: must match pattern ^[A-Z].*'); }
 final password$ = password;
 if (password$ != null) {
-  if (password$.length < 10) { errors.add('password: length must be >= 10'); }
-  if (password$.length > 64) { errors.add('password: length must be <= 64'); }
+  if (password$.runes.length < 10) { errors.add('password: length must be >= 10'); }
+  if (password$.runes.length > 64) { errors.add('password: length must be <= 64'); }
 }
 return errors; } 
 TestEndpointParametersRequest copyWith({int? Function()? integer, int? Function()? int32, int? Function()? int64, double? number, double? Function()? float, double? $double, String? Function()? string, String? patternWithoutDelimiter, Uint8List? byte, Uint8List? Function()? binary, String? Function()? date, DateTime? Function()? dateTime, String? Function()? password, String? Function()? callback, }) { return TestEndpointParametersRequest(

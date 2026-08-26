@@ -141,8 +141,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final callSidToCoach$ = callSidToCoach;
 if (callSidToCoach$ != null) {
-  if (callSidToCoach$.length < 34) { errors.add('callSidToCoach: length must be >= 34'); }
-  if (callSidToCoach$.length > 34) { errors.add('callSidToCoach: length must be <= 34'); }
+  if (callSidToCoach$.runes.length < 34) { errors.add('callSidToCoach: length must be >= 34'); }
+  if (callSidToCoach$.runes.length > 34) { errors.add('callSidToCoach: length must be <= 34'); }
   if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSidToCoach$)) { errors.add(r'callSidToCoach: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
 return errors; } 

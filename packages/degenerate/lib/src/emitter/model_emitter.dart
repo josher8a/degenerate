@@ -371,16 +371,23 @@ final class ModelEmitter {
     final out = <String>[];
     if (type is IrPrimitive) {
       if (type.kind == PrimitiveKind.string) {
+        // JSON Schema defines a string's length as its number of characters
+        // (RFC 8259), while Dart's `String.length` counts UTF-16 code units.
+        // Every astral character would otherwise be counted twice, so
+        // `maxLength: 1` rejected a single emoji and `minLength: 3` accepted a
+        // two-character string. `runes.length` counts code points.
+        // The isEmpty/isNotEmpty forms need no such care: emptiness is the same
+        // under either measure, and they avoid walking the string.
         if (c.minLength != null && c.minLength! > 0) {
           final cond = c.minLength == 1
               ? '$accessor.isEmpty'
-              : '$accessor.length < ${c.minLength}';
+              : '$accessor.runes.length < ${c.minLength}';
           out.add(check(cond, 'length must be >= ${c.minLength}'));
         }
         if (c.maxLength != null) {
           final cond = c.maxLength == 0
               ? '$accessor.isNotEmpty'
-              : '$accessor.length > ${c.maxLength}';
+              : '$accessor.runes.length > ${c.maxLength}';
           out.add(check(cond, 'length must be <= ${c.maxLength}'));
         }
         if (c.pattern != null) {

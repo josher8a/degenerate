@@ -96,8 +96,8 @@ if (logManagement$ != null) {
 }
 final logpushPublicKey$ = logpushPublicKey;
 if (logpushPublicKey$ != null) {
-  if (logpushPublicKey$.length < 16) { errors.add('logpushPublicKey: length must be >= 16'); }
-  if (logpushPublicKey$.length > 1024) { errors.add('logpushPublicKey: length must be <= 1024'); }
+  if (logpushPublicKey$.runes.length < 16) { errors.add('logpushPublicKey: length must be >= 16'); }
+  if (logpushPublicKey$.runes.length > 1024) { errors.add('logpushPublicKey: length must be <= 1024'); }
 }
 final rateLimitingInterval$ = rateLimitingInterval;
 if (rateLimitingInterval$ != null) {

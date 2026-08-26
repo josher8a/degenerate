@@ -30,7 +30,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
-if (name.length > 100) { errors.add('name: length must be <= 100'); }
+if (name.runes.length > 100) { errors.add('name: length must be <= 100'); }
 if (!RegExp('^[a-zA-Z]').hasMatch(name)) { errors.add('name: must match pattern ^[a-zA-Z]'); }
 if (age < 0) { errors.add('age: must be >= 0'); }
 if (age > 150) { errors.add('age: must be <= 150'); }

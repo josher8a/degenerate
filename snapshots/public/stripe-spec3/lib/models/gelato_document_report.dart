@@ -172,27 +172,27 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 List<String> validate() { final errors = <String>[];
 final firstName$ = firstName;
 if (firstName$ != null) {
-  if (firstName$.length > 5000) { errors.add('firstName: length must be <= 5000'); }
+  if (firstName$.runes.length > 5000) { errors.add('firstName: length must be <= 5000'); }
 }
 final issuingCountry$ = issuingCountry;
 if (issuingCountry$ != null) {
-  if (issuingCountry$.length > 5000) { errors.add('issuingCountry: length must be <= 5000'); }
+  if (issuingCountry$.runes.length > 5000) { errors.add('issuingCountry: length must be <= 5000'); }
 }
 final lastName$ = lastName;
 if (lastName$ != null) {
-  if (lastName$.length > 5000) { errors.add('lastName: length must be <= 5000'); }
+  if (lastName$.runes.length > 5000) { errors.add('lastName: length must be <= 5000'); }
 }
 final number$ = number;
 if (number$ != null) {
-  if (number$.length > 5000) { errors.add('number: length must be <= 5000'); }
+  if (number$.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
 }
 final unparsedPlaceOfBirth$ = unparsedPlaceOfBirth;
 if (unparsedPlaceOfBirth$ != null) {
-  if (unparsedPlaceOfBirth$.length > 5000) { errors.add('unparsedPlaceOfBirth: length must be <= 5000'); }
+  if (unparsedPlaceOfBirth$.runes.length > 5000) { errors.add('unparsedPlaceOfBirth: length must be <= 5000'); }
 }
 final unparsedSex$ = unparsedSex;
 if (unparsedSex$ != null) {
-  if (unparsedSex$.length > 5000) { errors.add('unparsedSex: length must be <= 5000'); }
+  if (unparsedSex$.runes.length > 5000) { errors.add('unparsedSex: length must be <= 5000'); }
 }
 return errors; } 
 GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentReportDateOfBirth? Function()? dob, GelatoDocumentReportError? Function()? error, GelatoDataDocumentReportExpirationDate? Function()? expirationDate, List<String>? Function()? files, String? Function()? firstName, GelatoDataDocumentReportIssuedDate? Function()? issuedDate, String? Function()? issuingCountry, String? Function()? lastName, String? Function()? number, Sex? Function()? sex, GelatoDocumentReportStatus? status, GelatoDocumentReportType? Function()? type, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoDocumentReport(

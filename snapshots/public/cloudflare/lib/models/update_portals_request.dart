@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 512) { errors.add('description: length must be <= 512'); }
+  if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
 }
 final hostname$ = hostname;
 if (hostname$ != null) {
@@ -47,7 +47,7 @@ if (hostname$ != null) {
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 350) { errors.add('name: length must be <= 350'); }
+  if (name$.runes.length > 350) { errors.add('name: length must be <= 350'); }
 }
 final servers$ = servers;
 if (servers$ != null) {

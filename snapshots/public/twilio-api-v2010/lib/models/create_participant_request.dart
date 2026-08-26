@@ -468,14 +468,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('From'
 List<String> validate() { final errors = <String>[];
 final callSidToCoach$ = callSidToCoach;
 if (callSidToCoach$ != null) {
-  if (callSidToCoach$.length < 34) { errors.add('callSidToCoach: length must be >= 34'); }
-  if (callSidToCoach$.length > 34) { errors.add('callSidToCoach: length must be <= 34'); }
+  if (callSidToCoach$.runes.length < 34) { errors.add('callSidToCoach: length must be >= 34'); }
+  if (callSidToCoach$.runes.length > 34) { errors.add('callSidToCoach: length must be <= 34'); }
   if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSidToCoach$)) { errors.add(r'callSidToCoach: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
 final byoc$ = byoc;
 if (byoc$ != null) {
-  if (byoc$.length < 34) { errors.add('byoc: length must be >= 34'); }
-  if (byoc$.length > 34) { errors.add('byoc: length must be <= 34'); }
+  if (byoc$.runes.length < 34) { errors.add('byoc: length must be >= 34'); }
+  if (byoc$.runes.length > 34) { errors.add('byoc: length must be <= 34'); }
   if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byoc$)) { errors.add(r'byoc: must match pattern ^BY[0-9a-fA-F]{32}$'); }
 }
 return errors; } 

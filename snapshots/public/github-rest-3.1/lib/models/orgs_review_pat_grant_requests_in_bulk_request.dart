@@ -33,7 +33,7 @@ if (patRequestIds$ != null) {
 }
 final reason$ = reason;
 if (reason$ != null) {
-  if (reason$.length > 1024) { errors.add('reason: length must be <= 1024'); }
+  if (reason$.runes.length > 1024) { errors.add('reason: length must be <= 1024'); }
 }
 return errors; } 
 OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequestIds, OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(

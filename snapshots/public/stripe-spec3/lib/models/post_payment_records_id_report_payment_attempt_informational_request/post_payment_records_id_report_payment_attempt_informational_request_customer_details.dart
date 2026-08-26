@@ -30,11 +30,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
+  if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
+  if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
 PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails copyWith({String? Function()? customer, String? Function()? email, String? Function()? name, String? Function()? phone, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(

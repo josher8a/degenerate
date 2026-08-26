@@ -36,11 +36,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('passw
 List<String> validate() { final errors = <String>[];
 final caCertificateFile$ = caCertificateFile;
 if (caCertificateFile$ != null) {
-  if (caCertificateFile$.length > 5000) { errors.add('caCertificateFile: length must be <= 5000'); }
+  if (caCertificateFile$.runes.length > 5000) { errors.add('caCertificateFile: length must be <= 5000'); }
 }
-if (password.length > 5000) { errors.add('password: length must be <= 5000'); }
-if (ssid.length > 5000) { errors.add('ssid: length must be <= 5000'); }
-if (username.length > 5000) { errors.add('username: length must be <= 5000'); }
+if (password.runes.length > 5000) { errors.add('password: length must be <= 5000'); }
+if (ssid.runes.length > 5000) { errors.add('ssid: length must be <= 5000'); }
+if (username.runes.length > 5000) { errors.add('username: length must be <= 5000'); }
 return errors; } 
 TerminalConfigurationConfigurationResourceEnterprisePeapWifi copyWith({String? Function()? caCertificateFile, String? password, String? ssid, String? username, }) { return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,

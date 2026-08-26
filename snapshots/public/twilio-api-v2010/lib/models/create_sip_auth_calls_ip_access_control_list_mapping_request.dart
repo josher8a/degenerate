@@ -16,8 +16,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IpAccessControlListSid') && json['IpAccessControlListSid'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (ipAccessControlListSid.length < 34) { errors.add('ipAccessControlListSid: length must be >= 34'); }
-if (ipAccessControlListSid.length > 34) { errors.add('ipAccessControlListSid: length must be <= 34'); }
+if (ipAccessControlListSid.runes.length < 34) { errors.add('ipAccessControlListSid: length must be >= 34'); }
+if (ipAccessControlListSid.runes.length > 34) { errors.add('ipAccessControlListSid: length must be <= 34'); }
 if (!RegExp(r'^AL[0-9a-fA-F]{32}$').hasMatch(ipAccessControlListSid)) { errors.add(r'ipAccessControlListSid: must match pattern ^AL[0-9a-fA-F]{32}$'); }
 return errors; } 
 CreateSipAuthCallsIpAccessControlListMappingRequest copyWith({String? ipAccessControlListSid}) { return CreateSipAuthCallsIpAccessControlListMappingRequest(

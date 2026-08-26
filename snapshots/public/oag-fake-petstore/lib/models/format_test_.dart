@@ -107,8 +107,8 @@ final string$ = string;
 if (string$ != null) {
   if (!RegExp('/[a-z]/i').hasMatch(string$)) { errors.add('string: must match pattern /[a-z]/i'); }
 }
-if (password.length < 10) { errors.add('password: length must be >= 10'); }
-if (password.length > 64) { errors.add('password: length must be <= 64'); }
+if (password.runes.length < 10) { errors.add('password: length must be >= 10'); }
+if (password.runes.length > 64) { errors.add('password: length must be <= 64'); }
 final patternWithDigits$ = patternWithDigits;
 if (patternWithDigits$ != null) {
   if (!RegExp(r'^\d{10}$').hasMatch(patternWithDigits$)) { errors.add(r'patternWithDigits: must match pattern ^\d{10}$'); }

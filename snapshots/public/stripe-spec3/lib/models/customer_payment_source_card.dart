@@ -67,37 +67,37 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_m
 List<String> validate() { final errors = <String>[];
 final addressCity$ = addressCity;
 if (addressCity$ != null) {
-  if (addressCity$.length > 5000) { errors.add('addressCity: length must be <= 5000'); }
+  if (addressCity$.runes.length > 5000) { errors.add('addressCity: length must be <= 5000'); }
 }
 final addressCountry$ = addressCountry;
 if (addressCountry$ != null) {
-  if (addressCountry$.length > 5000) { errors.add('addressCountry: length must be <= 5000'); }
+  if (addressCountry$.runes.length > 5000) { errors.add('addressCountry: length must be <= 5000'); }
 }
 final addressLine1$ = addressLine1;
 if (addressLine1$ != null) {
-  if (addressLine1$.length > 5000) { errors.add('addressLine1: length must be <= 5000'); }
+  if (addressLine1$.runes.length > 5000) { errors.add('addressLine1: length must be <= 5000'); }
 }
 final addressLine2$ = addressLine2;
 if (addressLine2$ != null) {
-  if (addressLine2$.length > 5000) { errors.add('addressLine2: length must be <= 5000'); }
+  if (addressLine2$.runes.length > 5000) { errors.add('addressLine2: length must be <= 5000'); }
 }
 final addressState$ = addressState;
 if (addressState$ != null) {
-  if (addressState$.length > 5000) { errors.add('addressState: length must be <= 5000'); }
+  if (addressState$.runes.length > 5000) { errors.add('addressState: length must be <= 5000'); }
 }
 final addressZip$ = addressZip;
 if (addressZip$ != null) {
-  if (addressZip$.length > 5000) { errors.add('addressZip: length must be <= 5000'); }
+  if (addressZip$.runes.length > 5000) { errors.add('addressZip: length must be <= 5000'); }
 }
 final cvc$ = cvc;
 if (cvc$ != null) {
-  if (cvc$.length > 5000) { errors.add('cvc: length must be <= 5000'); }
+  if (cvc$.runes.length > 5000) { errors.add('cvc: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
+  if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-if (number.length > 5000) { errors.add('number: length must be <= 5000'); }
+if (number.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
 return errors; } 
 CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? cvc, int? expMonth, int? expYear, Map<String, String>? Function()? metadata, String? Function()? name, String? number, CardObject? Function()? object, }) { return CustomerPaymentSourceCard(
   addressCity: addressCity != null ? addressCity() : this.addressCity,

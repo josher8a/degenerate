@@ -357,7 +357,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 255) { errors.add('name: length must be <= 255'); }
+  if (name$.runes.length > 255) { errors.add('name: length must be <= 255'); }
 }
 final priority$ = priority;
 if (priority$ != null) {

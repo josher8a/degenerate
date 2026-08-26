@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (eventType.isEmpty) { errors.add('eventType: length must be >= 1'); }
-if (eventType.length > 100) { errors.add('eventType: length must be <= 100'); }
+if (eventType.runes.length > 100) { errors.add('eventType: length must be <= 100'); }
 return errors; } 
 ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, dynamic>? Function()? clientPayload, }) { return ReposCreateDispatchEventRequest(
   eventType: eventType ?? this.eventType,

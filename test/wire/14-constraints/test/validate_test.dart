@@ -34,6 +34,33 @@ void main() {
     );
   });
 
+  test('string length is counted in characters, not UTF-16 code units', () {
+    // JSON Schema (RFC 8259) defines a string's length as its number of
+    // characters. Dart's `String.length` counts UTF-16 code units, so an astral
+    // character used to be counted twice: `label` has maxLength 5, and five
+    // emoji occupy ten code units.
+    expect(
+      const Widget(name: 'abc', score: 50, label: '\u{1F600}\u{1F600}')
+          .validate(),
+      isEmpty,
+      reason: 'two emoji are two characters, comfortably inside 2..5',
+    );
+    expect(
+      const Widget(name: 'abc', score: 50, label: '\u{1F600}').validate(),
+      contains('label: length must be >= 2'),
+      reason: 'one emoji is one character, below the minimum of 2',
+    );
+    expect(
+      const Widget(
+        name: 'abc',
+        score: 50,
+        label: '\u{1F600}\u{1F600}\u{1F600}\u{1F600}\u{1F600}\u{1F600}',
+      ).validate(),
+      contains('label: length must be <= 5'),
+      reason: 'six emoji are six characters, above the maximum of 5',
+    );
+  });
+
   test('numeric constraints fire on int (minimum / maximum / multipleOf)', () {
     expect(
       const Widget(name: 'abc', score: -5).validate(),

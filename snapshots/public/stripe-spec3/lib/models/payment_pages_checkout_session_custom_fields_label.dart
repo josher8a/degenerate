@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final custom$ = custom;
 if (custom$ != null) {
-  if (custom$.length > 5000) { errors.add('custom: length must be <= 5000'); }
+  if (custom$.runes.length > 5000) { errors.add('custom: length must be <= 5000'); }
 }
 return errors; } 
 PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({String? Function()? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PaymentPagesCheckoutSessionCustomFieldsLabel(

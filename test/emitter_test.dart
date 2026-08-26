@@ -584,7 +584,9 @@ void main() {
 
       expect(source, contains('List<String> validate()'));
       // String checks gated to the string field; required → no null guard.
-      expect(source, contains('if (name.length < 3) {'));
+      // `runes.length`, not `.length`: JSON Schema counts characters while
+      // Dart's `String.length` counts UTF-16 code units.
+      expect(source, contains('if (name.runes.length < 3) {'));
       expect(source, contains(r"RegExp(r'^[a-z]+$').hasMatch(name)"));
       // Numeric checks (not `.length`) on the int field.
       expect(source, contains('if (score < 0) {'));
@@ -592,6 +594,7 @@ void main() {
       // List field is optional → null-guarded via a captured local.
       expect(source, contains(r'final tags$ = tags;'));
       expect(source, contains(r'if (tags$.isEmpty) {'));
+      // Collection lengths stay `.length` — item counts, not characters.
       expect(source, contains(r'tags$.toSet().length != tags$.length'));
       expect(() => _formatOrFail(source), returnsNormally);
     });

@@ -30,7 +30,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 35) { errors.add('reference: length must be <= 35'); }
+  if (reference$.runes.length > 35) { errors.add('reference: length must be <= 35'); }
 }
 return errors; } 
 PaymentIntentPaymentMethodOptionsSwish copyWith({String? Function()? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(

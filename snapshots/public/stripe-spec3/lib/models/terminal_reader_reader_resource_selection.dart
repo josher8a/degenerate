@@ -29,11 +29,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('choic
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 5000) { errors.add('id: length must be <= 5000'); }
+  if (id$.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
 final text$ = text;
 if (text$ != null) {
-  if (text$.length > 5000) { errors.add('text: length must be <= 5000'); }
+  if (text$.runes.length > 5000) { errors.add('text: length must be <= 5000'); }
 }
 return errors; } 
 TerminalReaderReaderResourceSelection copyWith({List<TerminalReaderReaderResourceChoice>? choices, String? Function()? id, String? Function()? text, }) { return TerminalReaderReaderResourceSelection(

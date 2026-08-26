@@ -51,11 +51,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('swift_code') && json['swift_code'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (accountHolderName.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
-if (accountNumber.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
-if (accountType.length > 5000) { errors.add('accountType: length must be <= 5000'); }
-if (bankName.length > 5000) { errors.add('bankName: length must be <= 5000'); }
-if (swiftCode.length > 5000) { errors.add('swiftCode: length must be <= 5000'); }
+if (accountHolderName.runes.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
+if (accountNumber.runes.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
+if (accountType.runes.length > 5000) { errors.add('accountType: length must be <= 5000'); }
+if (bankName.runes.length > 5000) { errors.add('bankName: length must be <= 5000'); }
+if (swiftCode.runes.length > 5000) { errors.add('swiftCode: length must be <= 5000'); }
 return errors; } 
 FundingInstructionsBankTransferSwiftRecord copyWith({Address? accountHolderAddress, String? accountHolderName, String? accountNumber, String? accountType, Address? bankAddress, String? bankName, String? swiftCode, }) { return FundingInstructionsBankTransferSwiftRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,

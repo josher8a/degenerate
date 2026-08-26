@@ -245,10 +245,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('model
       json.containsKey('voice'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (input.length > 4096) { errors.add('input: length must be <= 4096'); }
+if (input.runes.length > 4096) { errors.add('input: length must be <= 4096'); }
 final instructions$ = instructions;
 if (instructions$ != null) {
-  if (instructions$.length > 4096) { errors.add('instructions: length must be <= 4096'); }
+  if (instructions$.runes.length > 4096) { errors.add('instructions: length must be <= 4096'); }
 }
 if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
 if (speed > 4) { errors.add('speed: must be <= 4'); }

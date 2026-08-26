@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (gatewayId.isEmpty) { errors.add('gatewayId: length must be >= 1'); }
-if (gatewayId.length > 64) { errors.add('gatewayId: length must be <= 64'); }
+if (gatewayId.runes.length > 64) { errors.add('gatewayId: length must be <= 64'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(gatewayId)) { errors.add(r'gatewayId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 return errors; } 
 AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<AigConfigCreateEvaluationsResponseResultDatasets>? datasets, String? gatewayId, String? id, DateTime? modifiedAt, String? name, bool? processed, List<AigConfigCreateEvaluationsResponseResultResults>? results, double? totalLogs, }) { return AigConfigCreateEvaluationsResponseResult(

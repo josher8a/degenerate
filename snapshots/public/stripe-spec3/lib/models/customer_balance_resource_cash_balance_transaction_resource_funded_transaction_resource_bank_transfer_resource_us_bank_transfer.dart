@@ -107,7 +107,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final senderName$ = senderName;
 if (senderName$ != null) {
-  if (senderName$.length > 5000) { errors.add('senderName: length must be <= 5000'); }
+  if (senderName$.runes.length > 5000) { errors.add('senderName: length must be <= 5000'); }
 }
 return errors; } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork? Function()? network, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer(

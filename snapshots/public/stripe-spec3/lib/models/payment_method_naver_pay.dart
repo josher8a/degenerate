@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('fundi
 List<String> validate() { final errors = <String>[];
 final buyerId$ = buyerId;
 if (buyerId$ != null) {
-  if (buyerId$.length > 5000) { errors.add('buyerId: length must be <= 5000'); }
+  if (buyerId$.runes.length > 5000) { errors.add('buyerId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodNaverPay copyWith({String? Function()? buyerId, PaymentMethodNaverPayFunding? funding, }) { return PaymentMethodNaverPay(

@@ -29,15 +29,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
+  if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 final statementDescriptorKana$ = statementDescriptorKana;
 if (statementDescriptorKana$ != null) {
-  if (statementDescriptorKana$.length > 5000) { errors.add('statementDescriptorKana: length must be <= 5000'); }
+  if (statementDescriptorKana$.runes.length > 5000) { errors.add('statementDescriptorKana: length must be <= 5000'); }
 }
 final statementDescriptorKanji$ = statementDescriptorKanji;
 if (statementDescriptorKanji$ != null) {
-  if (statementDescriptorKanji$.length > 5000) { errors.add('statementDescriptorKanji: length must be <= 5000'); }
+  if (statementDescriptorKanji$.runes.length > 5000) { errors.add('statementDescriptorKanji: length must be <= 5000'); }
 }
 return errors; } 
 AccountPaymentsSettings copyWith({String? Function()? statementDescriptor, String? Function()? statementDescriptorKana, String? Function()? statementDescriptorKanji, }) { return AccountPaymentsSettings(

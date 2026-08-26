@@ -44,23 +44,23 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final bankCode$ = bankCode;
 if (bankCode$ != null) {
-  if (bankCode$.length > 5000) { errors.add('bankCode: length must be <= 5000'); }
+  if (bankCode$.runes.length > 5000) { errors.add('bankCode: length must be <= 5000'); }
 }
 final branchCode$ = branchCode;
 if (branchCode$ != null) {
-  if (branchCode$.length > 5000) { errors.add('branchCode: length must be <= 5000'); }
+  if (branchCode$.runes.length > 5000) { errors.add('branchCode: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
+  if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
+  if (fingerprint$.runes.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
+  if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String? Function()? fingerprint, SepaDebitGeneratedFrom? Function()? generatedFrom, String? Function()? last4, }) { return PaymentMethodSepaDebit(
