@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final title$ = title;
 if (title$ != null) {
-  if (title$.length > 5000) { errors.add('title: length must be <= 5000'); }
+  if (title$.runes.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
 return errors; } 
 IndividualRelationship copyWith({bool? Function()? director, bool? Function()? executive, bool? Function()? owner, PercentOwnership? Function()? percentOwnership, String? Function()? title, }) { return IndividualRelationship(

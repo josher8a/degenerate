@@ -512,7 +512,7 @@ if (topP$ != null) {
 }
 final safetyIdentifier$ = safetyIdentifier;
 if (safetyIdentifier$ != null) {
-  if (safetyIdentifier$.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
+  if (safetyIdentifier$.runes.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
 return errors; } 
 Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? Function()? previousResponseId, ModelIdsResponses? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, String? Function()? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(

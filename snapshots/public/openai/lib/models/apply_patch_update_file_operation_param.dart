@@ -30,7 +30,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (path.isEmpty) { errors.add('path: length must be >= 1'); }
-if (diff.length > 10485760) { errors.add('diff: length must be <= 10485760'); }
+if (diff.runes.length > 10485760) { errors.add('diff: length must be <= 10485760'); }
 return errors; } 
 ApplyPatchUpdateFileOperationParam copyWith({String? type, String? path, String? diff, }) { return ApplyPatchUpdateFileOperationParam(
   type: type ?? this.type,

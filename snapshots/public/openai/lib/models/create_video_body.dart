@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promp
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
-if (prompt.length > 32000) { errors.add('prompt: length must be <= 32000'); }
+if (prompt.runes.length > 32000) { errors.add('prompt: length must be <= 32000'); }
 return errors; } 
 CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8List? Function()? inputReference, ImageRefParam2? Function()? imageReference, VideoSeconds? Function()? seconds, VideoSize? Function()? size, }) { return CreateVideoBody(
   model: model != null ? model() : this.model,

@@ -43,14 +43,14 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final callSid$ = callSid;
 if (callSid$ != null) {
-  if (callSid$.length < 34) { errors.add('callSid: length must be >= 34'); }
-  if (callSid$.length > 34) { errors.add('callSid: length must be <= 34'); }
+  if (callSid$.runes.length < 34) { errors.add('callSid: length must be >= 34'); }
+  if (callSid$.runes.length > 34) { errors.add('callSid: length must be <= 34'); }
   if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSid$)) { errors.add(r'callSid: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
 final queueSid$ = queueSid;
 if (queueSid$ != null) {
-  if (queueSid$.length < 34) { errors.add('queueSid: length must be >= 34'); }
-  if (queueSid$.length > 34) { errors.add('queueSid: length must be <= 34'); }
+  if (queueSid$.runes.length < 34) { errors.add('queueSid: length must be >= 34'); }
+  if (queueSid$.runes.length > 34) { errors.add('queueSid: length must be <= 34'); }
   if (!RegExp(r'^QU[0-9a-fA-F]{32}$').hasMatch(queueSid$)) { errors.add(r'queueSid: must match pattern ^QU[0-9a-fA-F]{32}$'); }
 }
 return errors; } 

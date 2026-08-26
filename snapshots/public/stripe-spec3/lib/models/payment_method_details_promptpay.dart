@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
+  if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsPromptpay copyWith({String? Function()? reference}) { return PaymentMethodDetailsPromptpay(

@@ -27,7 +27,7 @@ final class FeedbackSchema {
     if (message.isEmpty) {
       errors.add('message: length must be >= 1');
     }
-    if (message.length > 10000) {
+    if (message.runes.length > 10000) {
       errors.add('message: length must be <= 10000');
     }
     return errors;

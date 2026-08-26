@@ -25,7 +25,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
+  if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 return errors; } 
 SettingsPayouts copyWith({bool? Function()? debitNegativeBalances, SettingsPayoutsSchedule? Function()? schedule, String? Function()? statementDescriptor, }) { return SettingsPayouts(

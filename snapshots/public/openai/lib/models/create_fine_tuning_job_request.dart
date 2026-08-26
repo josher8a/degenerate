@@ -94,7 +94,7 @@ List<String> validate() { final errors = <String>[];
 final suffix$ = suffix;
 if (suffix$ != null) {
   if (suffix$.isEmpty) { errors.add('suffix: length must be >= 1'); }
-  if (suffix$.length > 64) { errors.add('suffix: length must be <= 64'); }
+  if (suffix$.runes.length > 64) { errors.add('suffix: length must be <= 64'); }
 }
 final seed$ = seed;
 if (seed$ != null) {

@@ -441,20 +441,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') 
 List<String> validate() { final errors = <String>[];
 final applicationSid$ = applicationSid;
 if (applicationSid$ != null) {
-  if (applicationSid$.length < 34) { errors.add('applicationSid: length must be >= 34'); }
-  if (applicationSid$.length > 34) { errors.add('applicationSid: length must be <= 34'); }
+  if (applicationSid$.runes.length < 34) { errors.add('applicationSid: length must be >= 34'); }
+  if (applicationSid$.runes.length > 34) { errors.add('applicationSid: length must be <= 34'); }
   if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(applicationSid$)) { errors.add(r'applicationSid: must match pattern ^AP[0-9a-fA-F]{32}$'); }
 }
 final messagingServiceSid$ = messagingServiceSid;
 if (messagingServiceSid$ != null) {
-  if (messagingServiceSid$.length < 34) { errors.add('messagingServiceSid: length must be >= 34'); }
-  if (messagingServiceSid$.length > 34) { errors.add('messagingServiceSid: length must be <= 34'); }
+  if (messagingServiceSid$.runes.length < 34) { errors.add('messagingServiceSid: length must be >= 34'); }
+  if (messagingServiceSid$.runes.length > 34) { errors.add('messagingServiceSid: length must be <= 34'); }
   if (!RegExp(r'^MG[0-9a-fA-F]{32}$').hasMatch(messagingServiceSid$)) { errors.add(r'messagingServiceSid: must match pattern ^MG[0-9a-fA-F]{32}$'); }
 }
 final contentSid$ = contentSid;
 if (contentSid$ != null) {
-  if (contentSid$.length < 34) { errors.add('contentSid: length must be >= 34'); }
-  if (contentSid$.length > 34) { errors.add('contentSid: length must be <= 34'); }
+  if (contentSid$.runes.length < 34) { errors.add('contentSid: length must be >= 34'); }
+  if (contentSid$.runes.length > 34) { errors.add('contentSid: length must be <= 34'); }
   if (!RegExp(r'^HX[0-9a-fA-F]{32}$').hasMatch(contentSid$)) { errors.add(r'contentSid: must match pattern ^HX[0-9a-fA-F]{32}$'); }
 }
 return errors; } 

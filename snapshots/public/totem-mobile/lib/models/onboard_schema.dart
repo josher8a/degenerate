@@ -349,7 +349,7 @@ final class OnboardSchema {
     final errors = <String>[];
     final referralOther$ = referralOther;
     if (referralOther$ != null) {
-      if (referralOther$.length > 100) {
+      if (referralOther$.runes.length > 100) {
         errors.add('referralOther: length must be <= 100');
       }
     }

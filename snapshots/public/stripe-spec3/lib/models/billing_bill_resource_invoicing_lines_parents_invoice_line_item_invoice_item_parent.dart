@@ -33,10 +33,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoi
       json.containsKey('proration') && json['proration'] is bool; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (invoiceItem.length > 5000) { errors.add('invoiceItem: length must be <= 5000'); }
+if (invoiceItem.runes.length > 5000) { errors.add('invoiceItem: length must be <= 5000'); }
 final subscription$ = subscription;
 if (subscription$ != null) {
-  if (subscription$.length > 5000) { errors.add('subscription: length must be <= 5000'); }
+  if (subscription$.runes.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 }
 return errors; } 
 BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent copyWith({String? invoiceItem, bool? proration, BillingBillResourceInvoicingLinesCommonProrationDetails? Function()? prorationDetails, String? Function()? subscription, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(

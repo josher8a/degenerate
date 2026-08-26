@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (eventPayloadKey.length > 5000) { errors.add('eventPayloadKey: length must be <= 5000'); }
+if (eventPayloadKey.runes.length > 5000) { errors.add('eventPayloadKey: length must be <= 5000'); }
 return errors; } 
 BillingMeterResourceCustomerMappingSettings copyWith({String? eventPayloadKey, BillingMeterResourceCustomerMappingSettingsType? type, }) { return BillingMeterResourceCustomerMappingSettings(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,

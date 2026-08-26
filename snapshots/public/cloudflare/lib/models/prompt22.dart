@@ -86,7 +86,7 @@ if (presencePenalty$ != null) {
   if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
 if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
-if (prompt.length > 131072) { errors.add('prompt: length must be <= 131072'); }
+if (prompt.runes.length > 131072) { errors.add('prompt: length must be <= 131072'); }
 final repetitionPenalty$ = repetitionPenalty;
 if (repetitionPenalty$ != null) {
   if (repetitionPenalty$ < 0) { errors.add('repetitionPenalty: must be >= 0'); }

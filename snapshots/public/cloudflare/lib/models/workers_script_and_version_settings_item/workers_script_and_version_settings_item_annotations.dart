@@ -35,11 +35,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final workersMessage$ = workersMessage;
 if (workersMessage$ != null) {
-  if (workersMessage$.length > 100) { errors.add('workersMessage: length must be <= 100'); }
+  if (workersMessage$.runes.length > 100) { errors.add('workersMessage: length must be <= 100'); }
 }
 final workersTag$ = workersTag;
 if (workersTag$ != null) {
-  if (workersTag$.length > 25) { errors.add('workersTag: length must be <= 25'); }
+  if (workersTag$.runes.length > 25) { errors.add('workersTag: length must be <= 25'); }
 }
 return errors; } 
 WorkersScriptAndVersionSettingsItemAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTag, String? Function()? workersTriggeredBy, }) { return WorkersScriptAndVersionSettingsItemAnnotations(

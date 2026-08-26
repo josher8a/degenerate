@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
-if (name.length > 128) { errors.add('name: length must be <= 128'); }
+if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
 return errors; } 
 Tables copyWith({String? id, int? latest, String? name, TablesType? type, int? version, }) { return Tables(
   id: id ?? this.id,

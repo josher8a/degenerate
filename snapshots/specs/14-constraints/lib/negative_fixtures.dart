@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Negative fixtures: 4 canParse, 9 validate.
+// Negative fixtures: 4 canParse, 11 validate.
 import 'package:spec_14_constraints/spec_14_constraints.dart';
 
 /// A fixture asserting `canParse` returns false.
@@ -60,6 +60,20 @@ final List<ValidateFixture> validateFixtures = [
     'Widget',
     'name: maxLength violation',
     <String, dynamic>{'name': 'aaaaaaaaaaa', 'score': 1},
+    (json) => Widget.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as Widget).validate(),
+  ),
+  ValidateFixture(
+    'Widget',
+    'label: minLength violation',
+    <String, dynamic>{'name': 'string', 'score': 1, 'label': 'a'},
+    (json) => Widget.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as Widget).validate(),
+  ),
+  ValidateFixture(
+    'Widget',
+    'label: maxLength violation',
+    <String, dynamic>{'name': 'string', 'score': 1, 'label': 'aaaaaa'},
     (json) => Widget.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as Widget).validate(),
   ),

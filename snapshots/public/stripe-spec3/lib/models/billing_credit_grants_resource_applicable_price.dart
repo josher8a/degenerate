@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 5000) { errors.add('id: length must be <= 5000'); }
+  if (id$.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
 return errors; } 
 BillingCreditGrantsResourceApplicablePrice copyWith({String? Function()? id}) { return BillingCreditGrantsResourceApplicablePrice(

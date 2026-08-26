@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('payme
 List<String> validate() { final errors = <String>[];
 final intervalDescription$ = intervalDescription;
 if (intervalDescription$ != null) {
-  if (intervalDescription$.length > 5000) { errors.add('intervalDescription: length must be <= 5000'); }
+  if (intervalDescription$.runes.length > 5000) { errors.add('intervalDescription: length must be <= 5000'); }
 }
 return errors; } 
 MandateAcssDebit copyWith({List<DefaultFor>? Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(

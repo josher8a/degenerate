@@ -134,11 +134,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
+  if (description$.runes.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
 final parent$ = parent;
 if (parent$ != null) {
-  if (parent$.length > 5000) { errors.add('parent: length must be <= 5000'); }
+  if (parent$.runes.length > 5000) { errors.add('parent: length must be <= 5000'); }
 }
 return errors; } 
 SourceOrderItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, String? Function()? parent, int? Function()? quantity, ItemsType? Function()? type, }) { return SourceOrderItems(

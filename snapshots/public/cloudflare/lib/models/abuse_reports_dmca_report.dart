@@ -189,47 +189,47 @@ List<String> validate() { final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
-  if (comments$.length > 2000) { errors.add('comments: length must be <= 2000'); }
+  if (comments$.runes.length > 2000) { errors.add('comments: length must be <= 2000'); }
 }
 final company$ = company;
 if (company$ != null) {
   if (company$.isEmpty) { errors.add('company: length must be >= 1'); }
-  if (company$.length > 100) { errors.add('company: length must be <= 100'); }
+  if (company$.runes.length > 100) { errors.add('company: length must be <= 100'); }
 }
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
-if (name.length > 255) { errors.add('name: length must be <= 255'); }
+if (name.runes.length > 255) { errors.add('name: length must be <= 255'); }
 final reportedCountry$ = reportedCountry;
 if (reportedCountry$ != null) {
-  if (reportedCountry$.length < 2) { errors.add('reportedCountry: length must be >= 2'); }
-  if (reportedCountry$.length > 2) { errors.add('reportedCountry: length must be <= 2'); }
+  if (reportedCountry$.runes.length < 2) { errors.add('reportedCountry: length must be >= 2'); }
+  if (reportedCountry$.runes.length > 2) { errors.add('reportedCountry: length must be <= 2'); }
 }
 final reportedUserAgent$ = reportedUserAgent;
 if (reportedUserAgent$ != null) {
   if (reportedUserAgent$.isEmpty) { errors.add('reportedUserAgent: length must be >= 1'); }
-  if (reportedUserAgent$.length > 255) { errors.add('reportedUserAgent: length must be <= 255'); }
+  if (reportedUserAgent$.runes.length > 255) { errors.add('reportedUserAgent: length must be <= 255'); }
 }
 final tele$ = tele;
 if (tele$ != null) {
   if (tele$.isEmpty) { errors.add('tele: length must be >= 1'); }
-  if (tele$.length > 20) { errors.add('tele: length must be <= 20'); }
+  if (tele$.runes.length > 20) { errors.add('tele: length must be <= 20'); }
 }
 final title$ = title;
 if (title$ != null) {
   if (title$.isEmpty) { errors.add('title: length must be >= 1'); }
-  if (title$.length > 255) { errors.add('title: length must be <= 255'); }
+  if (title$.runes.length > 255) { errors.add('title: length must be <= 255'); }
 }
 if (address1.isEmpty) { errors.add('address1: length must be >= 1'); }
-if (address1.length > 100) { errors.add('address1: length must be <= 100'); }
+if (address1.runes.length > 100) { errors.add('address1: length must be <= 100'); }
 if (agentName.isEmpty) { errors.add('agentName: length must be >= 1'); }
-if (agentName.length > 60) { errors.add('agentName: length must be <= 60'); }
+if (agentName.runes.length > 60) { errors.add('agentName: length must be <= 60'); }
 if (city.isEmpty) { errors.add('city: length must be >= 1'); }
-if (city.length > 255) { errors.add('city: length must be <= 255'); }
+if (city.runes.length > 255) { errors.add('city: length must be <= 255'); }
 if (country.isEmpty) { errors.add('country: length must be >= 1'); }
-if (country.length > 255) { errors.add('country: length must be <= 255'); }
+if (country.runes.length > 255) { errors.add('country: length must be <= 255'); }
 if (originalWork.isEmpty) { errors.add('originalWork: length must be >= 1'); }
-if (originalWork.length > 255) { errors.add('originalWork: length must be <= 255'); }
+if (originalWork.runes.length > 255) { errors.add('originalWork: length must be <= 255'); }
 if (state.isEmpty) { errors.add('state: length must be >= 1'); }
-if (state.length > 255) { errors.add('state: length must be <= 255'); }
+if (state.runes.length > 255) { errors.add('state: length must be <= 255'); }
 return errors; } 
 AbuseReportsDmcaReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? address1, String? agentName, Agree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) { return AbuseReportsDmcaReport(
   act: act != null ? act() : this.act,

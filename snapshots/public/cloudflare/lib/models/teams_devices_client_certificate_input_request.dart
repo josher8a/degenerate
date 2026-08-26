@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('cn') && json['cn'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (certificateId.length > 36) { errors.add('certificateId: length must be <= 36'); }
+if (certificateId.runes.length > 36) { errors.add('certificateId: length must be <= 36'); }
 return errors; } 
 TeamsDevicesClientCertificateInputRequest copyWith({String? certificateId, String? cn, }) { return TeamsDevicesClientCertificateInputRequest(
   certificateId: certificateId ?? this.certificateId,

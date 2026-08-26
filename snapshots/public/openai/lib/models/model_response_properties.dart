@@ -101,7 +101,7 @@ if (topP$ != null) {
 }
 final safetyIdentifier$ = safetyIdentifier;
 if (safetyIdentifier$ != null) {
-  if (safetyIdentifier$.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
+  if (safetyIdentifier$.runes.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
 return errors; } 
 ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, }) { return ModelResponseProperties(

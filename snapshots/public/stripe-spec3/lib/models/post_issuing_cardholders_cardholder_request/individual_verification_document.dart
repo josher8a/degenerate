@@ -21,11 +21,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final back$ = back;
 if (back$ != null) {
-  if (back$.length > 5000) { errors.add('back: length must be <= 5000'); }
+  if (back$.runes.length > 5000) { errors.add('back: length must be <= 5000'); }
 }
 final front$ = front;
 if (front$ != null) {
-  if (front$.length > 5000) { errors.add('front: length must be <= 5000'); }
+  if (front$.runes.length > 5000) { errors.add('front: length must be <= 5000'); }
 }
 return errors; } 
 IndividualVerificationDocument copyWith({String? Function()? back, String? Function()? front, }) { return IndividualVerificationDocument(

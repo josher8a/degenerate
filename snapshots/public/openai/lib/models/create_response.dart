@@ -223,7 +223,7 @@ if (topP$ != null) {
 }
 final safetyIdentifier$ = safetyIdentifier;
 if (safetyIdentifier$ != null) {
-  if (safetyIdentifier$.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
+  if (safetyIdentifier$.runes.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
 final contextManagement$ = contextManagement;
 if (contextManagement$ != null) {

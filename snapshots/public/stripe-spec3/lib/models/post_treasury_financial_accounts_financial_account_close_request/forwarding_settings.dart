@@ -93,7 +93,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
-  if (paymentMethod$.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
+  if (paymentMethod$.runes.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
 return errors; } 
 ForwardingSettings copyWith({String? Function()? financialAccount, String? Function()? paymentMethod, ForwardingSettingsType? type, }) { return ForwardingSettings(

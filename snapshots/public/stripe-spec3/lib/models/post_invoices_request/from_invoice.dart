@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('invoice') && json['invoice'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (invoice.length > 5000) { errors.add('invoice: length must be <= 5000'); }
+if (invoice.runes.length > 5000) { errors.add('invoice: length must be <= 5000'); }
 return errors; } 
 FromInvoice copyWith({FromInvoiceAction? action, String? invoice, }) { return FromInvoice(
   action: action ?? this.action,

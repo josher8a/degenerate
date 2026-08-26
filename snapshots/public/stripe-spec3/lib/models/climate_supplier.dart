@@ -189,9 +189,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('removal_pathway'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
-if (infoUrl.length > 5000) { errors.add('infoUrl: length must be <= 5000'); }
-if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
+if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (infoUrl.runes.length > 5000) { errors.add('infoUrl: length must be <= 5000'); }
+if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 return errors; } 
 ClimateSupplier copyWith({String? id, String? infoUrl, bool? livemode, List<ClimateRemovalsLocation>? locations, String? name, ClimateSupplierObject? object, RemovalPathway? removalPathway, }) { return ClimateSupplier(
   id: id ?? this.id,

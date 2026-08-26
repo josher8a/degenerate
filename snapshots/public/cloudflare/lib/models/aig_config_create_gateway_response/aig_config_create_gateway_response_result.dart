@@ -112,7 +112,7 @@ if (cacheTtl$ != null) {
   if (cacheTtl$ < 0) { errors.add('cacheTtl: must be >= 0'); }
 }
 if (id.isEmpty) { errors.add('id: length must be >= 1'); }
-if (id.length > 64) { errors.add('id: length must be <= 64'); }
+if (id.runes.length > 64) { errors.add('id: length must be <= 64'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 final logManagement$ = logManagement;
 if (logManagement$ != null) {
@@ -121,8 +121,8 @@ if (logManagement$ != null) {
 }
 final logpushPublicKey$ = logpushPublicKey;
 if (logpushPublicKey$ != null) {
-  if (logpushPublicKey$.length < 16) { errors.add('logpushPublicKey: length must be >= 16'); }
-  if (logpushPublicKey$.length > 1024) { errors.add('logpushPublicKey: length must be <= 1024'); }
+  if (logpushPublicKey$.runes.length < 16) { errors.add('logpushPublicKey: length must be >= 16'); }
+  if (logpushPublicKey$.runes.length > 1024) { errors.add('logpushPublicKey: length must be <= 1024'); }
 }
 final rateLimitingInterval$ = rateLimitingInterval;
 if (rateLimitingInterval$ != null) {

@@ -372,28 +372,28 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
+  if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final failureCode$ = failureCode;
 if (failureCode$ != null) {
-  if (failureCode$.length > 5000) { errors.add('failureCode: length must be <= 5000'); }
+  if (failureCode$.runes.length > 5000) { errors.add('failureCode: length must be <= 5000'); }
 }
 final failureMessage$ = failureMessage;
 if (failureMessage$ != null) {
-  if (failureMessage$.length > 5000) { errors.add('failureMessage: length must be <= 5000'); }
+  if (failureMessage$.runes.length > 5000) { errors.add('failureMessage: length must be <= 5000'); }
 }
-if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
-if (method.length > 5000) { errors.add('method: length must be <= 5000'); }
+if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (method.runes.length > 5000) { errors.add('method: length must be <= 5000'); }
 final payoutMethod$ = payoutMethod;
 if (payoutMethod$ != null) {
-  if (payoutMethod$.length > 5000) { errors.add('payoutMethod: length must be <= 5000'); }
+  if (payoutMethod$.runes.length > 5000) { errors.add('payoutMethod: length must be <= 5000'); }
 }
-if (sourceType.length > 5000) { errors.add('sourceType: length must be <= 5000'); }
+if (sourceType.runes.length > 5000) { errors.add('sourceType: length must be <= 5000'); }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
+  if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
-if (status.length > 5000) { errors.add('status: length must be <= 5000'); }
+if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 return errors; } 
 Payout copyWith({int? amount, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, FailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, OriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, ReconciliationStatus? reconciliationStatus, ReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutsTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
   amount: amount ?? this.amount,

@@ -49,12 +49,12 @@ List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
-  if (name$.length > 50) { errors.add('name: length must be <= 50'); }
+  if (name$.runes.length > 50) { errors.add('name: length must be <= 50'); }
 }
 final description$ = description;
 if (description$ != null) {
   if (description$.isEmpty) { errors.add('description: length must be >= 1'); }
-  if (description$.length > 255) { errors.add('description: length must be <= 255'); }
+  if (description$.runes.length > 255) { errors.add('description: length must be <= 255'); }
 }
 final managers$ = managers;
 if (managers$ != null) {

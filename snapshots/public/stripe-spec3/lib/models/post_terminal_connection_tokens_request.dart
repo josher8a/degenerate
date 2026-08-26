@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final location$ = location;
 if (location$ != null) {
-  if (location$.length > 5000) { errors.add('location: length must be <= 5000'); }
+  if (location$.runes.length > 5000) { errors.add('location: length must be <= 5000'); }
 }
 return errors; } 
 PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, String? Function()? location, }) { return PostTerminalConnectionTokensRequest(

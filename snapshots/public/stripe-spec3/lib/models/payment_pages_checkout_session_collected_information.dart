@@ -29,11 +29,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final businessName$ = businessName;
 if (businessName$ != null) {
-  if (businessName$.length > 5000) { errors.add('businessName: length must be <= 5000'); }
+  if (businessName$.runes.length > 5000) { errors.add('businessName: length must be <= 5000'); }
 }
 final individualName$ = individualName;
 if (individualName$ != null) {
-  if (individualName$.length > 5000) { errors.add('individualName: length must be <= 5000'); }
+  if (individualName$.runes.length > 5000) { errors.add('individualName: length must be <= 5000'); }
 }
 return errors; } 
 PaymentPagesCheckoutSessionCollectedInformation copyWith({String? Function()? businessName, String? Function()? individualName, PaymentPagesCheckoutSessionCheckoutAddressDetails? Function()? shippingDetails, }) { return PaymentPagesCheckoutSessionCollectedInformation(

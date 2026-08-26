@@ -76,7 +76,7 @@ final class PublicUserSchema {
     final errors = <String>[];
     final name$ = name;
     if (name$ != null) {
-      if (name$.length > 255) {
+      if (name$.runes.length > 255) {
         errors.add('name: length must be <= 255');
       }
     }

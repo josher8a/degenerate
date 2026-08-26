@@ -129,14 +129,14 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final ownerAccountSid$ = ownerAccountSid;
 if (ownerAccountSid$ != null) {
-  if (ownerAccountSid$.length < 34) { errors.add('ownerAccountSid: length must be >= 34'); }
-  if (ownerAccountSid$.length > 34) { errors.add('ownerAccountSid: length must be <= 34'); }
+  if (ownerAccountSid$.runes.length < 34) { errors.add('ownerAccountSid: length must be >= 34'); }
+  if (ownerAccountSid$.runes.length > 34) { errors.add('ownerAccountSid: length must be <= 34'); }
   if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(ownerAccountSid$)) { errors.add(r'ownerAccountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
 final sid$ = sid;
 if (sid$ != null) {
-  if (sid$.length < 34) { errors.add('sid: length must be >= 34'); }
-  if (sid$.length > 34) { errors.add('sid: length must be <= 34'); }
+  if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
+  if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
 return errors; } 

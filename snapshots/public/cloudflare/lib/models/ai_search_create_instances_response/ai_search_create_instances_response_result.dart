@@ -161,7 +161,7 @@ if (customMetadata$ != null) {
   if (customMetadata$.length > 5) { errors.add('customMetadata: must have <= 5 items'); }
 }
 if (id.isEmpty) { errors.add('id: length must be >= 1'); }
-if (id.length > 32) { errors.add('id: length must be <= 32'); }
+if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (maxNumResults < 1) { errors.add('maxNumResults: must be >= 1'); }
 if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }

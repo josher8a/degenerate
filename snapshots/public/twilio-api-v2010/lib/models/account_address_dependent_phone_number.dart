@@ -307,38 +307,38 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final sid$ = sid;
 if (sid$ != null) {
-  if (sid$.length < 34) { errors.add('sid: length must be >= 34'); }
-  if (sid$.length > 34) { errors.add('sid: length must be <= 34'); }
+  if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
+  if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
 final accountSid$ = accountSid;
 if (accountSid$ != null) {
-  if (accountSid$.length < 34) { errors.add('accountSid: length must be >= 34'); }
-  if (accountSid$.length > 34) { errors.add('accountSid: length must be <= 34'); }
+  if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
+  if (accountSid$.runes.length > 34) { errors.add('accountSid: length must be <= 34'); }
   if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) { errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
 final smsApplicationSid$ = smsApplicationSid;
 if (smsApplicationSid$ != null) {
-  if (smsApplicationSid$.length < 34) { errors.add('smsApplicationSid: length must be >= 34'); }
-  if (smsApplicationSid$.length > 34) { errors.add('smsApplicationSid: length must be <= 34'); }
+  if (smsApplicationSid$.runes.length < 34) { errors.add('smsApplicationSid: length must be >= 34'); }
+  if (smsApplicationSid$.runes.length > 34) { errors.add('smsApplicationSid: length must be <= 34'); }
   if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(smsApplicationSid$)) { errors.add(r'smsApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$'); }
 }
 final voiceApplicationSid$ = voiceApplicationSid;
 if (voiceApplicationSid$ != null) {
-  if (voiceApplicationSid$.length < 34) { errors.add('voiceApplicationSid: length must be >= 34'); }
-  if (voiceApplicationSid$.length > 34) { errors.add('voiceApplicationSid: length must be <= 34'); }
+  if (voiceApplicationSid$.runes.length < 34) { errors.add('voiceApplicationSid: length must be >= 34'); }
+  if (voiceApplicationSid$.runes.length > 34) { errors.add('voiceApplicationSid: length must be <= 34'); }
   if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(voiceApplicationSid$)) { errors.add(r'voiceApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$'); }
 }
 final trunkSid$ = trunkSid;
 if (trunkSid$ != null) {
-  if (trunkSid$.length < 34) { errors.add('trunkSid: length must be >= 34'); }
-  if (trunkSid$.length > 34) { errors.add('trunkSid: length must be <= 34'); }
+  if (trunkSid$.runes.length < 34) { errors.add('trunkSid: length must be >= 34'); }
+  if (trunkSid$.runes.length > 34) { errors.add('trunkSid: length must be <= 34'); }
   if (!RegExp(r'^TK[0-9a-fA-F]{32}$').hasMatch(trunkSid$)) { errors.add(r'trunkSid: must match pattern ^TK[0-9a-fA-F]{32}$'); }
 }
 final emergencyAddressSid$ = emergencyAddressSid;
 if (emergencyAddressSid$ != null) {
-  if (emergencyAddressSid$.length < 34) { errors.add('emergencyAddressSid: length must be >= 34'); }
-  if (emergencyAddressSid$.length > 34) { errors.add('emergencyAddressSid: length must be <= 34'); }
+  if (emergencyAddressSid$.runes.length < 34) { errors.add('emergencyAddressSid: length must be >= 34'); }
+  if (emergencyAddressSid$.runes.length > 34) { errors.add('emergencyAddressSid: length must be <= 34'); }
   if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(emergencyAddressSid$)) { errors.add(r'emergencyAddressSid: must match pattern ^AD[0-9a-fA-F]{32}$'); }
 }
 return errors; } 
