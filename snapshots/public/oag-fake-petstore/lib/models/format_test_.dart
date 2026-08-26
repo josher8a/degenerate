@@ -113,10 +113,6 @@ final patternWithDigits$ = patternWithDigits;
 if (patternWithDigits$ != null) {
   if (!RegExp(r'^\d{10}$').hasMatch(patternWithDigits$)) { errors.add(r'patternWithDigits: must match pattern ^\d{10}$'); }
 }
-final patternWithDigitsAndDelimiter$ = patternWithDigitsAndDelimiter;
-if (patternWithDigitsAndDelimiter$ != null) {
-  if (!RegExp(r'/^image_\d{1,3}$/i').hasMatch(patternWithDigitsAndDelimiter$)) { errors.add(r'patternWithDigitsAndDelimiter: must match pattern /^image_\d{1,3}$/i'); }
-}
 return errors; } 
 FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Function()? int64, double? number, double? Function()? float, double? Function()? $double, String? Function()? decimal, String? Function()? string, Uint8List? byte, Uint8List? Function()? binary, String? date, DateTime? Function()? dateTime, String? Function()? uuid, String? password, String? Function()? patternWithDigits, String? Function()? patternWithDigitsAndDelimiter, }) { return FormatTest(
   integer: integer != null ? integer() : this.integer,
