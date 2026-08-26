@@ -492,7 +492,7 @@ final class IrMapper {
 
     // Primitives.
     if (type != null) {
-      return _lowerPrimitive(type, flattened);
+      return _lowerPrimitive(type, flattened, nameHint: name);
     }
 
     // Fallback: no explicit type - treat as dynamic.
@@ -505,7 +505,11 @@ final class IrMapper {
 
   // ─── Primitive ────────────────────────────────────────────────
 
-  IrType _lowerPrimitive(String type, Map<String, dynamic> schema) {
+  IrType _lowerPrimitive(
+    String type,
+    Map<String, dynamic> schema, {
+    String? nameHint,
+  }) {
     final format = schema['format'] as String?;
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
@@ -514,23 +518,113 @@ final class IrMapper {
     return IrPrimitive(
       kind,
       format: format,
-      constraints: _constraintsFrom(schema),
+      constraints: _constraintsFrom(schema, nameHint: nameHint),
       description: description,
       isNullable: nullable,
     );
+  }
+
+  /// A `pattern` that can actually be used for validation, or `null` (dropping
+  /// the constraint) when it cannot.
+  ///
+  /// Emitting an unusable pattern is worse than emitting nothing: the generated
+  /// `validate()` would either throw at runtime (it does not compile) or reject
+  /// every possible value (it compiles but matches nothing), and both read as
+  /// codec bugs rather than spec bugs. Non-conforming specs still generate
+  /// code, with the reason reported as a warning.
+  String? _usablePattern(String? pattern, String? nameHint) {
+    if (pattern == null) return null;
+    final reason = _deadPatternReason(pattern);
+    if (reason == null) return pattern;
+    final where = nameHint != null ? ' on $nameHint' : '';
+    _warnings.add(
+      'Pattern$where $reason; dropping the constraint. '
+      'Pattern was: $pattern',
+    );
+    return null;
+  }
+
+  /// Why [pattern] can never be used, or `null` if it is usable.
+  ///
+  /// Deliberately narrow. Regular-expression emptiness is not something to
+  /// decide by heuristic, and wrongly dropping a live constraint silently
+  /// weakens validation — so this proves only two things, and abstains
+  /// otherwise:
+  ///
+  ///  * the expression does not compile in the ECMA-262 dialect OpenAPI
+  ///    mandates (and that Dart's `RegExp` implements), so the emitted check
+  ///    would throw; or
+  ///  * an anchor is provably unreachable because a fixed, non-empty run of
+  ///    literal characters must be consumed before `^` (or must follow `$`).
+  ///    `pattern: '/^image_\d{1,3}\$/i'` — a JavaScript regex *literal* where
+  ///    a bare expression belongs — is the case seen in the wild.
+  ///
+  /// Anything involving groups, alternation or quantifiers around the anchor is
+  /// left alone: `(x?)^y` may match, and so may `^a\$|^b\$`.
+  String? _deadPatternReason(String pattern) {
+    try {
+      RegExp(pattern);
+    } on FormatException catch (e) {
+      return 'is not a valid ECMA-262 regular expression (${e.message})';
+    }
+
+    // Any of these around an anchor can make it reachable, so their presence
+    // means abstain rather than judge.
+    const meta = r'\^$.|?*+()[]{}';
+    const backslash = r'\';
+    const dollar = r'$';
+    var inClass = false;
+    var escaped = false;
+    for (var i = 0; i < pattern.length; i++) {
+      final c = pattern[i];
+      if (escaped) {
+        escaped = false;
+        continue;
+      }
+      if (c == backslash) {
+        escaped = true;
+        continue;
+      }
+      if (inClass) {
+        if (c == ']') inClass = false;
+        continue;
+      }
+      if (c == '[') {
+        inClass = true;
+        continue;
+      }
+      if (c == '^' && i > 0) {
+        final prefix = pattern.substring(0, i);
+        if (!prefix.split('').any(meta.contains)) {
+          return 'can never match: the caret at offset $i is unreachable '
+              'because "$prefix" must be consumed first';
+        }
+      }
+      if (c == dollar && i < pattern.length - 1) {
+        final suffix = pattern.substring(i + 1);
+        if (!suffix.split('').any(meta.contains)) {
+          return 'can never match: the end anchor at offset $i cannot be '
+              'followed by "$suffix"';
+        }
+      }
+    }
+    return null;
   }
 
   /// Reads JSON-Schema validation constraints from a [schema] map. Returns
   /// [IrConstraints.none] when none are present. (OpenAPI 3.0's boolean
   /// `exclusiveMinimum`/`exclusiveMaximum` is ignored — only the 3.1/JSON-Schema
   /// numeric form is read — so no incorrect bound is emitted.)
-  IrConstraints _constraintsFrom(Map<String, dynamic> schema) {
+  IrConstraints _constraintsFrom(
+    Map<String, dynamic> schema, {
+    String? nameHint,
+  }) {
     num? asNum(Object? v) => v is num ? v : null;
     int? asInt(Object? v) => v is int ? v : (v is num ? v.toInt() : null);
     final c = IrConstraints(
       minLength: asInt(schema['minLength']),
       maxLength: asInt(schema['maxLength']),
-      pattern: schema['pattern'] as String?,
+      pattern: _usablePattern(schema['pattern'] as String?, nameHint),
       minimum: asNum(schema['minimum']),
       maximum: asNum(schema['maximum']),
       exclusiveMinimum: asNum(schema['exclusiveMinimum']),
