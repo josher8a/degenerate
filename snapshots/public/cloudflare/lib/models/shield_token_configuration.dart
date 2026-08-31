@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('last_updated') &&
       json.containsKey('title') &&
       json.containsKey('token_sources') &&
-      json.containsKey('token_type'); } 
+      json.containsKey('token_type') && json['token_type'] == 'JWT'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (tokenSources.isEmpty) { errors.add('tokenSources: must have >= 1 items'); }

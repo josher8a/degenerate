@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'silence_duration_ms': silenceDurationMs,
   'threshold': threshold,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'server_vad'; } 
 VadConfig copyWith({VadConfigType? type, int Function()? prefixPaddingMs, int Function()? silenceDurationMs, double Function()? threshold, }) { return VadConfig(
   type: type ?? this.type,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,

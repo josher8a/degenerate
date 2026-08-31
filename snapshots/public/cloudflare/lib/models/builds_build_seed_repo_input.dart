@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('branch') &&
       json.containsKey('owner') && json['owner'] is String &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('provider') &&
+      json.containsKey('provider') && json['provider'] == 'github' &&
       json.containsKey('repository') && json['repository'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

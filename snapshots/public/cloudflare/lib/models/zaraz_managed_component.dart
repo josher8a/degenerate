@@ -64,7 +64,7 @@ final ZarazManagedComponentType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'component'; } 
 ZarazManagedComponent copyWith({ZarazManagedComponentType? type}) { return ZarazManagedComponent(
   type: type ?? this.type,
 ); } 

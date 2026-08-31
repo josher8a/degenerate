@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'text': text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'text' &&
       json.containsKey('text') && json['text'] is String; } 
 TextContent copyWith({CustomTextFormatParamType? type, String? text, }) { return TextContent(
   type: type ?? this.type,

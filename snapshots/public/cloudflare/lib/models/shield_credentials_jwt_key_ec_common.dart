@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'x': x,
   'y': y,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kty') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kty') && json['kty'] == 'EC' &&
       json.containsKey('x') && json['x'] is String &&
       json.containsKey('y') && json['y'] is String; } 
 ShieldCredentialsJwtKeyEcCommon copyWith({ShieldCredentialsJwtKeyEcCommonKty? kty, String? x, String? y, }) { return ShieldCredentialsJwtKeyEcCommon(

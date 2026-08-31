@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'settings': settings.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'clickListener' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('settings'); } 
 ZarazClickListenerRule copyWith({ZarazClickListenerRuleAction? action, String? id, ZarazClickListenerRuleSettings? settings, }) { return ZarazClickListenerRule(

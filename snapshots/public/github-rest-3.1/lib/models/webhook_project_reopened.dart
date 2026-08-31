@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'reopened' &&
       json.containsKey('project') &&
       json.containsKey('sender'); } 
 WebhookProjectReopened copyWith({ProjectReopenedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookProjectReopened(

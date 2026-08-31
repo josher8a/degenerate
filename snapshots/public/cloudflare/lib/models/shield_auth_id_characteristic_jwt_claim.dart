@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'jwt'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }

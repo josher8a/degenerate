@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'graders': graders.toJson(),
   'calculate_output': calculateOutput,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'multi' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('graders') &&
       json.containsKey('calculate_output') && json['calculate_output'] is String; } 

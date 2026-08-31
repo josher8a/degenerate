@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'os_version_extra': ?osVersionExtra,
   'version': version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') && json['operating_system'] == 'windows' &&
       json.containsKey('operator') &&
       json.containsKey('version') && json['version'] is String; } 
 TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesDomainJoinedInputRequestOperatingSystem? operatingSystem, TeamsDevicesCrowdstrikeInputRequestOperator? $operator, String? Function()? osDistroName, String? Function()? osDistroRevision, String? Function()? osVersionExtra, String? version, }) { return TeamsDevicesOsVersionInputRequest(

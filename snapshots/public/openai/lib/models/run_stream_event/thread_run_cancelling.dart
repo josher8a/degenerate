@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'event': event.toJson(),
   'data': data.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'thread.run.cancelling' &&
       json.containsKey('data'); } 
 ThreadRunCancelling copyWith({ThreadRunCancellingEvent? event, RunObject? data, }) { return ThreadRunCancelling(
   event: event ?? this.event,

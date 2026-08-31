@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxAgeSeconds') && json['maxAgeSeconds'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'Age'; } 
 R2LockRuleAgeCondition copyWith({int? maxAgeSeconds, R2LifecycleAgeConditionType? type, }) { return R2LockRuleAgeCondition(
   maxAgeSeconds: maxAgeSeconds ?? this.maxAgeSeconds,
   type: type ?? this.type,

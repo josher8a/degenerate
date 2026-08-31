@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxAge') && json['maxAge'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'Age'; } 
 R2LifecycleAgeCondition copyWith({int? maxAge, R2LifecycleAgeConditionType? type, }) { return R2LifecycleAgeCondition(
   maxAge: maxAge ?? this.maxAge,
   type: type ?? this.type,

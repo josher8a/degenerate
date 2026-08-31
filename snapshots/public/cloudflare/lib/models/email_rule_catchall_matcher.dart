@@ -69,7 +69,7 @@ final EmailRuleCatchallMatcherType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'all'; } 
 EmailRuleCatchallMatcher copyWith({EmailRuleCatchallMatcherType? type}) { return EmailRuleCatchallMatcher(
   type: type ?? this.type,
 ); } 

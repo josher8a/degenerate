@@ -121,8 +121,8 @@ Map<String, dynamic> toJson() { return {
   'event': event.toJson(),
   'data': data.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'done' &&
+      json.containsKey('data') && json['data'] == '[DONE]'; } 
 DoneEvent copyWith({DoneEventEvent? event, DoneEventData? data, }) { return DoneEvent(
   event: event ?? this.event,
   data: data ?? this.data,

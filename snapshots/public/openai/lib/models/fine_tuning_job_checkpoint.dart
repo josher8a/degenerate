@@ -104,7 +104,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('step_number') && json['step_number'] is num &&
       json.containsKey('metrics') &&
       json.containsKey('fine_tuning_job_id') && json['fine_tuning_job_id'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'fine_tuning.job.checkpoint'; } 
 FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedModelCheckpoint, int? stepNumber, Metrics? metrics, String? fineTuningJobId, FineTuningJobCheckpointObject? object, }) { return FineTuningJobCheckpoint(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,

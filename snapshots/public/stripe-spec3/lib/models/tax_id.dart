@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'tax_id' &&
       json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
 /// Constraint violations for this value (empty when valid).

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'schema': schema,
   'strict': ?strict,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'json_schema' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema'); } 
 TextResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, String? Function()? description, String? name, Map<String,dynamic>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(

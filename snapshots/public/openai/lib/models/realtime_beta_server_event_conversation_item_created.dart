@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'item': item.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'conversation.item.created' &&
       json.containsKey('item'); } 
 RealtimeBetaServerEventConversationItemCreated copyWith({String? eventId, RealtimeBetaServerEventConversationItemCreatedType? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeBetaServerEventConversationItemCreated(
   eventId: eventId ?? this.eventId,

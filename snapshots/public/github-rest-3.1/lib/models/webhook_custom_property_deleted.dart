@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'deleted' &&
       json.containsKey('definition'); } 
 WebhookCustomPropertyDeleted copyWith({ItemDeletedAction? action, Definition? definition, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, SimpleUser? Function()? sender, }) { return WebhookCustomPropertyDeleted(
   action: action ?? this.action,

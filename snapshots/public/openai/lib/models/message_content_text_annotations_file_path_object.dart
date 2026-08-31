@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'start_index': startIndex,
   'end_index': endIndex,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_path' &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('file_path') &&
       json.containsKey('start_index') && json['start_index'] is num &&

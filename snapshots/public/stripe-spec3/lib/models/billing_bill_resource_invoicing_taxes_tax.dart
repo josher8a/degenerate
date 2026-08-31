@@ -373,7 +373,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('tax_behavior') &&
       json.containsKey('taxability_reason') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'tax_rate_details'; } 
 BillingBillResourceInvoicingTaxesTax copyWith({int? amount, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, BillingBillResourceInvoicingTaxesTaxRateDetails? Function()? taxRateDetails, BillingBillResourceInvoicingTaxesTaxTaxabilityReason? taxabilityReason, int? Function()? taxableAmount, BillingBillResourceInvoicingTaxesTaxType? type, }) { return BillingBillResourceInvoicingTaxesTax(
   amount: amount ?? this.amount,
   taxBehavior: taxBehavior ?? this.taxBehavior,

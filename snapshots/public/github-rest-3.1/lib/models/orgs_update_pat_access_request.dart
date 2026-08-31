@@ -13,7 +13,7 @@ final OrgsUpdatePatAccessRequestAction action;
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'revoke'; } 
 OrgsUpdatePatAccessRequest copyWith({OrgsUpdatePatAccessRequestAction? action}) { return OrgsUpdatePatAccessRequest(
   action: action ?? this.action,
 ); } 

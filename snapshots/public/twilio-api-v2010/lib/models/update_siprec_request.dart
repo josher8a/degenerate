@@ -64,7 +64,7 @@ final SiprecEnumUpdateStatus status;
 Map<String, dynamic> toJson() { return {
   'Status': status.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status') && json['Status'] == 'stopped'; } 
 UpdateSiprecRequest copyWith({SiprecEnumUpdateStatus? status}) { return UpdateSiprecRequest(
   status: status ?? this.status,
 ); } 

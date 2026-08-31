@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'value': value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'max_count' &&
       json.containsKey('value') && json['value'] is num; } 
 MaxCountAllocation copyWith({MaxCountAllocationType? type, int? value, }) { return MaxCountAllocation(
   type: type ?? this.type,

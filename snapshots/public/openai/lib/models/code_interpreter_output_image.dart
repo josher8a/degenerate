@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'url': url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'image' &&
       json.containsKey('url') && json['url'] is String; } 
 CodeInterpreterOutputImage copyWith({CodeInterpreterOutputImageType? type, String? url, }) { return CodeInterpreterOutputImage(
   type: type ?? this.type,

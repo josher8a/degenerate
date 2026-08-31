@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   'requester': ?requester,
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'new_permissions_accepted' &&
       json.containsKey('installation') &&
       json.containsKey('sender'); } 
 WebhookInstallationNewPermissionsAccepted copyWith({WebhookInstallationNewPermissionsAcceptedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, dynamic Function()? requester, SimpleUser? sender, }) { return WebhookInstallationNewPermissionsAccepted(

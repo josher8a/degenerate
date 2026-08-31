@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'current_bookmark': currentBookmark,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'poll' &&
       json.containsKey('current_bookmark') && json['current_bookmark'] is String; } 
 Poll copyWith({PollAction? action, String? currentBookmark, }) { return Poll(
   action: action ?? this.action,

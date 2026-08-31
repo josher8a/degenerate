@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('online') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'online'; } 
 ClientKeyParamCustomerAcceptance copyWith({ClientKeyParamCustomerAcceptanceOnline? online, ClientKeyParamCustomerAcceptanceType? type, }) { return ClientKeyParamCustomerAcceptance(
   online: online ?? this.online,
   type: type ?? this.type,

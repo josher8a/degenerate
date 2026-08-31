@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
-      json.containsKey('scheme'); } 
+      json.containsKey('scheme') && json['scheme'] == 'access_service_token'; } 
 AccessScimConfigAuthenticationAccessServiceToken copyWith({String? clientId, String? clientSecret, AccessScimConfigAuthenticationAccessServiceTokenScheme? scheme, }) { return AccessScimConfigAuthenticationAccessServiceToken(
   clientId: clientId ?? this.clientId,
   clientSecret: clientSecret ?? this.clientSecret,

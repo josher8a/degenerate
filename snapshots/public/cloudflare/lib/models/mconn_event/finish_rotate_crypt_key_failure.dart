@@ -66,7 +66,7 @@ final FinishRotateCryptKeyFailureK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'FinishRotateCryptKeyFailure'; } 
 FinishRotateCryptKeyFailure copyWith({FinishRotateCryptKeyFailureK? k}) { return FinishRotateCryptKeyFailure(
   k: k ?? this.k,
 ); } 

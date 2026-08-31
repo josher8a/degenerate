@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (couponOffer != null) 'coupon_offer': couponOffer?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'coupon_offer'; } 
 PortalFlowsRetention copyWith({PortalFlowsCouponOffer? Function()? couponOffer, PortalFlowsRetentionType? type, }) { return PortalFlowsRetention(
   couponOffer: couponOffer != null ? couponOffer() : this.couponOffer,
   type: type ?? this.type,

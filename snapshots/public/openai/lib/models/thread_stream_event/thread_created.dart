@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'event': event.toJson(),
   'data': data.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'thread.created' &&
       json.containsKey('data'); } 
 ThreadCreated copyWith({bool? Function()? enabled, ThreadCreatedEvent? event, ThreadObject? data, }) { return ThreadCreated(
   enabled: enabled != null ? enabled() : this.enabled,

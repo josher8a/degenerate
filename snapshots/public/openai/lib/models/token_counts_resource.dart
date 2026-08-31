@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'input_tokens': inputTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'response.input_tokens' &&
       json.containsKey('input_tokens') && json['input_tokens'] is num; } 
 TokenCountsResource copyWith({TokenCountsResourceObject? object, int? inputTokens, }) { return TokenCountsResource(
   object: object ?? this.object,

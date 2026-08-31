@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'static': $static.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'static' &&
       json.containsKey('static'); } 
 StaticChunkingStrategyResponseParam copyWith({StaticChunkingStrategyResponseParamType? type, StaticChunkingStrategy? $static, }) { return StaticChunkingStrategyResponseParam(
   type: type ?? this.type,

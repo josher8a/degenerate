@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'etag': etag,
   'filename': filename,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'ingest' &&
       json.containsKey('etag') && json['etag'] is String &&
       json.containsKey('filename') && json['filename'] is String; } 
 Ingest copyWith({IngestAction? action, String? etag, String? filename, }) { return Ingest(

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (audio != null) 'audio': audio?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'transcription'; } 
 RealtimeTranscriptionSessionCreateRequestGa copyWith({RealtimeTranscriptionSessionCreateRequestGaType? type, RealtimeTranscriptionSessionCreateRequestGaAudio? Function()? audio, List<Include>? Function()? include, }) { return RealtimeTranscriptionSessionCreateRequestGa(
   type: type ?? this.type,
   audio: audio != null ? audio() : this.audio,

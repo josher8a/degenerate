@@ -71,7 +71,7 @@ final ResponseFormatJsonObjectType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'json_object'; } 
 ResponseFormatJsonObject copyWith({ResponseFormatJsonObjectType? type}) { return ResponseFormatJsonObject(
   type: type ?? this.type,
 ); } 

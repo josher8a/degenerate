@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
   'attributes': ?attributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'vector_store.file' &&
       json.containsKey('usage_bytes') && json['usage_bytes'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&

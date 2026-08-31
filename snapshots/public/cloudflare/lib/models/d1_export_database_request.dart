@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (dumpOptions != null) 'dump_options': dumpOptions?.toJson(),
   'output_format': outputFormat.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('output_format'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('output_format') && json['output_format'] == 'polling'; } 
 D1ExportDatabaseRequest copyWith({String? Function()? currentBookmark, DumpOptions? Function()? dumpOptions, OutputFormat? outputFormat, }) { return D1ExportDatabaseRequest(
   currentBookmark: currentBookmark != null ? currentBookmark() : this.currentBookmark,
   dumpOptions: dumpOptions != null ? dumpOptions() : this.dumpOptions,

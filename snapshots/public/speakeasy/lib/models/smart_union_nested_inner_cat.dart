@@ -12,7 +12,7 @@ final SmartUnionNestedInnerCatKind kind;
 Map<String, dynamic> toJson() { return {
   'kind': kind.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] == 'cat'; } 
 SmartUnionNestedInnerCat copyWith({SmartUnionNestedInnerCatKind? kind}) { return SmartUnionNestedInnerCat(
   kind: kind ?? this.kind,
 ); } 

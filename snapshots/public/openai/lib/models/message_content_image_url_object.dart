@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'image_url': imageUrl.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'image_url' &&
       json.containsKey('image_url'); } 
 MessageContentImageUrlObject copyWith({ChatCompletionRequestMessageContentPartImageType? type, ChatCompletionRequestMessageContentPartImageImageUrl? imageUrl, }) { return MessageContentImageUrlObject(
   type: type ?? this.type,

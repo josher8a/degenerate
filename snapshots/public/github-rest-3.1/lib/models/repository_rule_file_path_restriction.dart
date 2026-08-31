@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_path_restriction'; } 
 RepositoryRuleFilePathRestriction copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters? Function()? parameters, }) { return RepositoryRuleFilePathRestriction(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('function') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'function'; } 
 ToolCallsFunction copyWith({ToolCallsFunctionFunction? function, String? id, FunctionType? type, }) { return ToolCallsFunction(
   function: function ?? this.function,
   id: id ?? this.id,

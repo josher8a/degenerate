@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'stored_completions'; } 
 CreateEvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, dynamic>? Function()? metadata, }) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'logs': logs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'logs' &&
       json.containsKey('logs') && json['logs'] is String; } 
 RunStepDetailsToolCallsCodeOutputLogsObject copyWith({CodeInterpreterTextOutputType? type, String? logs, }) { return RunStepDetailsToolCallsCodeOutputLogsObject(
   type: type ?? this.type,

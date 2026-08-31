@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_content' &&
       json.containsKey('content'); } 
 EvalJsonlFileContentSource copyWith({EvalJsonlFileContentSourceType? type, List<EvalJsonlFileContentSourceContent>? content, }) { return EvalJsonlFileContentSource(
   type: type ?? this.type,

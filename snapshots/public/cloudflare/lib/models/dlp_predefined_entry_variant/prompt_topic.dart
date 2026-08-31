@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('topic_type') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'PromptTopic'; } 
 PromptTopic copyWith({String? Function()? description, DlpPromptTopicType? topicType, PromptTopicType? type, }) { return PromptTopic(
   description: description != null ? description() : this.description,
   topicType: topicType ?? this.topicType,

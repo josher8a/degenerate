@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('function') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'function'; } 
 Variant1Function copyWith({Variant1FunctionFunction? function, FunctionType? type, }) { return Variant1Function(
   function: function ?? this.function,
   type: type ?? this.type,

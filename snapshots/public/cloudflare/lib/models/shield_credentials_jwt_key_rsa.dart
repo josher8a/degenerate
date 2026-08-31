@@ -218,7 +218,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kid') && json['kid'] is String &&
       json.containsKey('alg') &&
       json.containsKey('e') && json['e'] is String &&
-      json.containsKey('kty') &&
+      json.containsKey('kty') && json['kty'] == 'RSA' &&
       json.containsKey('n') && json['n'] is String; } 
 ShieldCredentialsJwtKeyRsa copyWith({String? kid, ShieldCredentialsJwtKeyRsaAlg? alg, String? e, ShieldCredentialsJwtKeyRsaKty? kty, String? n, }) { return ShieldCredentialsJwtKeyRsa(
   kid: kid ?? this.kid,

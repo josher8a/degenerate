@@ -162,7 +162,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('defaults') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'tax.settings' &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
 TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, TaxProductResourceTaxSettingsHeadOffice? Function()? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) { return TaxSettings(

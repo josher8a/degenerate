@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'source': source.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'jsonl' &&
       json.containsKey('source'); } 
 CreateEvalJsonlRunDataSource copyWith({CreateEvalJsonlRunDataSourceType? type, CreateEvalJsonlRunDataSourceSource? source, }) { return CreateEvalJsonlRunDataSource(
   type: type ?? this.type,

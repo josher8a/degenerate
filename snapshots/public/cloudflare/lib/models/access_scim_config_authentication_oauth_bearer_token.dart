@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'scheme': scheme.toJson(),
   'token': token,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('scheme') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('scheme') && json['scheme'] == 'oauthbearertoken' &&
       json.containsKey('token') && json['token'] is String; } 
 AccessScimConfigAuthenticationOauthBearerToken copyWith({AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme? scheme, String? token, }) { return AccessScimConfigAuthenticationOauthBearerToken(
   scheme: scheme ?? this.scheme,

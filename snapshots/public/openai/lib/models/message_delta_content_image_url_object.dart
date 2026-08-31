@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (imageUrl != null) 'image_url': imageUrl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'image_url'; } 
 MessageDeltaContentImageUrlObject copyWith({int? index, ChatCompletionRequestMessageContentPartImageType? type, MessageDeltaContentImageUrlObjectImageUrl? Function()? imageUrl, }) { return MessageDeltaContentImageUrlObject(
   index: index ?? this.index,
   type: type ?? this.type,

@@ -13,7 +13,7 @@ final RepositoryRuleNonFastForwardType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'non_fast_forward'; } 
 RepositoryRuleNonFastForward copyWith({RepositoryRuleNonFastForwardType? type}) { return RepositoryRuleNonFastForward(
   type: type ?? this.type,
 ); } 

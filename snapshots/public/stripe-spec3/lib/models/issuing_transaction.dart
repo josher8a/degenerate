@@ -336,7 +336,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('merchant_currency') && json['merchant_currency'] is String &&
       json.containsKey('merchant_data') &&
       json.containsKey('metadata') &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'issuing.transaction' &&
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

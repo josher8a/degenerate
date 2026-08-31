@@ -66,7 +66,7 @@ final StartRotateCryptKeyK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'StartRotateCryptKey'; } 
 StartRotateCryptKey copyWith({StartRotateCryptKeyK? k}) { return StartRotateCryptKey(
   k: k ?? this.k,
 ); } 

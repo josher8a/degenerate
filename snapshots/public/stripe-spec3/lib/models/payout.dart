@@ -363,7 +363,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('method') && json['method'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'payout' &&
       json.containsKey('reconciliation_status') &&
       json.containsKey('source_type') && json['source_type'] is String &&
       json.containsKey('status') && json['status'] is String &&

@@ -106,7 +106,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('components') &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'account_session'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (account.runes.length > 5000) { errors.add('account: length must be <= 5000'); }

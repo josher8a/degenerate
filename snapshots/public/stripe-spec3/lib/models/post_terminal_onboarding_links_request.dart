@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'on_behalf_of': ?onBehalfOf,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
-      json.containsKey('link_type'); } 
+      json.containsKey('link_type') && json['link_type'] == 'apple_terms_and_conditions'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final onBehalfOf$ = onBehalfOf;

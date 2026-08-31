@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('device_type') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'terminal.reader' &&
       json.containsKey('serial_number') && json['serial_number'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

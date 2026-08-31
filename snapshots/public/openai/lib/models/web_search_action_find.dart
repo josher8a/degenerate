@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'pattern': pattern,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'find_in_page' &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('pattern') && json['pattern'] is String; } 
 WebSearchActionFind copyWith({WebSearchActionFindType? type, Uri? url, String? pattern, }) { return WebSearchActionFind(

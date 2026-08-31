@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'subscription_details'; } 
 BillingBillResourceInvoiceItemParentsInvoiceItemParent copyWith({BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent? Function()? subscriptionDetails, BillingBillResourceInvoiceItemParentsInvoiceItemParentType? type, }) { return BillingBillResourceInvoiceItemParentsInvoiceItemParent(
   subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
   type: type ?? this.type,

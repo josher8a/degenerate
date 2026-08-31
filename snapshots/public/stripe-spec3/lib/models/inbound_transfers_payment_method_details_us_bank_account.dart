@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'network': network.toJson(),
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('network'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('network') && json['network'] == 'ach'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final bankName$ = bankName;

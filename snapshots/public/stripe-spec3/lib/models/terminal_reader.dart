@@ -149,7 +149,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('devic
       json.containsKey('label') && json['label'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'terminal.reader' &&
       json.containsKey('serial_number') && json['serial_number'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

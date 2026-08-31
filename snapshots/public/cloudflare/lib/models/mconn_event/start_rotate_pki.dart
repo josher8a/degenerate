@@ -66,7 +66,7 @@ final StartRotatePkiK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'StartRotatePki'; } 
 StartRotatePki copyWith({StartRotatePkiK? k}) { return StartRotatePki(
   k: k ?? this.k,
 ); } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'image': image.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'image' &&
       json.containsKey('image'); } 
 RunStepDetailsToolCallsCodeOutputImageObject copyWith({RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type, RunStepDetailsToolCallsCodeOutputImageObjectImage? image, }) { return RunStepDetailsToolCallsCodeOutputImageObject(
   type: type ?? this.type,

@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'tool_execution_error' &&
       json.containsKey('message') && json['message'] is String; } 
 RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type, String? message, }) { return RealtimeMcpToolExecutionError(
   type: type ?? this.type,

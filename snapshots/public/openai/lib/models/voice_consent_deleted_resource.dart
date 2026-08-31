@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'audio.voice_consent' &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 VoiceConsentDeletedResource copyWith({String? id, VoiceConsentDeletedResourceObject? object, bool? deleted, }) { return VoiceConsentDeletedResource(
   id: id ?? this.id,

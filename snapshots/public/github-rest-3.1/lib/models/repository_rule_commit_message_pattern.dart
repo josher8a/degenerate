@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'commit_message_pattern'; } 
 RepositoryRuleCommitMessagePattern copyWith({RepositoryRuleCommitMessagePatternType? type, RepositoryRuleBranchNamePatternParameters? Function()? parameters, }) { return RepositoryRuleCommitMessagePattern(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,

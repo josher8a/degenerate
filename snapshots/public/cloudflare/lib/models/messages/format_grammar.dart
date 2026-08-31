@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grammar') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'grammar'; } 
 FormatGrammar copyWith({GrammarGrammar? grammar, GrammarType? type, }) { return FormatGrammar(
   grammar: grammar ?? this.grammar,
   type: type ?? this.type,

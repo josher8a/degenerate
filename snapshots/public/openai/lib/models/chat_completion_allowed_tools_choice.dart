@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'allowed_tools': allowedTools.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'allowed_tools' &&
       json.containsKey('allowed_tools'); } 
 ChatCompletionAllowedToolsChoice copyWith({ChatCompletionAllowedToolsChoiceType? type, ChatCompletionAllowedTools? allowedTools, }) { return ChatCompletionAllowedToolsChoice(
   type: type ?? this.type,

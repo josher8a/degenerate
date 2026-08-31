@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_microsoft_organizations') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'Org'; } 
 Org copyWith({List<String>? allowedMicrosoftOrganizations, OrgType? type, }) { return Org(
   allowedMicrosoftOrganizations: allowedMicrosoftOrganizations ?? this.allowedMicrosoftOrganizations,
   type: type ?? this.type,

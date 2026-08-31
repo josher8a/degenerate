@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'files': files.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'files' &&
       json.containsKey('files'); } 
 CodeInterpreterFileOutput copyWith({CodeInterpreterFileOutputType? type, List<CodeInterpreterFileOutputFiles>? files, }) { return CodeInterpreterFileOutput(
   type: type ?? this.type,

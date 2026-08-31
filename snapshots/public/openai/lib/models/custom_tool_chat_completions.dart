@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'custom': custom.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom' &&
       json.containsKey('custom'); } 
 CustomToolChatCompletions copyWith({ChatCompletionMessageCustomToolCallType? type, CustomToolChatCompletionsCustom? custom, }) { return CustomToolChatCompletions(
   type: type ?? this.type,

@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'input_audio_buffer.cleared'; } 
 RealtimeBetaServerEventInputAudioBufferCleared copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferClearedType? type, }) { return RealtimeBetaServerEventInputAudioBufferCleared(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,

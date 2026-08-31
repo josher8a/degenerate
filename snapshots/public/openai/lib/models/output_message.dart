@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('role') &&
+      json.containsKey('role') && json['role'] == 'assistant' &&
       json.containsKey('content') &&
       json.containsKey('status'); } 
 OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputStatus? status, }) { return OutputMessage(

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_payload_key') && json['event_payload_key'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'by_id'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (eventPayloadKey.runes.length > 5000) { errors.add('eventPayloadKey: length must be <= 5000'); }

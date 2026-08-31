@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'settings': settings.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'formSubmission' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('settings'); } 
 ZarazFormSubmissionRule copyWith({ZarazFormSubmissionRuleAction? action, String? id, ZarazFormSubmissionRuleSettings? settings, }) { return ZarazFormSubmissionRule(

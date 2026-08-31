@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'schema': schema,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'logs' &&
       json.containsKey('schema'); } 
 EvalLogsDataSourceConfig copyWith({CodeInterpreterOutputLogsType? type, Map<String, String>? Function()? metadata, Map<String,dynamic>? schema, }) { return EvalLogsDataSourceConfig(
   type: type ?? this.type,

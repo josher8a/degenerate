@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'reopened' &&
       json.containsKey('alert') &&
       json.containsKey('commit_oid') && json['commit_oid'] is String &&
       json.containsKey('ref') && json['ref'] is String &&

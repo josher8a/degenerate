@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom') && json['custom'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'custom'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (custom.runes.length > 50) { errors.add('custom: length must be <= 50'); }

@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
   'batch': ?batch,
   'service_tier': ?serviceTier,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.completions.result' &&
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 

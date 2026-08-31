@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'audio': audio,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'input_audio_buffer.append' &&
       json.containsKey('audio') && json['audio'] is String; } 
 RealtimeBetaClientEventInputAudioBufferAppend copyWith({String? Function()? eventId, RealtimeBetaClientEventInputAudioBufferAppendType? type, String? audio, }) { return RealtimeBetaClientEventInputAudioBufferAppend(
   eventId: eventId != null ? eventId() : this.eventId,

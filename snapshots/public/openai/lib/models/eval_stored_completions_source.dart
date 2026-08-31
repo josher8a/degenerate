@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'created_before': ?createdBefore,
   'limit': ?limit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'stored_completions'; } 
 EvalStoredCompletionsSource copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, String>? Function()? metadata, String? Function()? model, int? Function()? createdAfter, int? Function()? createdBefore, int? Function()? limit, }) { return EvalStoredCompletionsSource(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -66,7 +66,7 @@ final FinishRotatePkiSuccessK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'FinishRotatePkiSuccess'; } 
 FinishRotatePkiSuccess copyWith({FinishRotatePkiSuccessK? k}) { return FinishRotatePkiSuccess(
   k: k ?? this.k,
 ); } 

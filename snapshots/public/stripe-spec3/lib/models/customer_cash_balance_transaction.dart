@@ -319,7 +319,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('net_amount') && json['net_amount'] is num &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'customer_cash_balance_transaction' &&
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

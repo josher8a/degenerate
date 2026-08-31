@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'function': function.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'function' &&
       json.containsKey('function'); } 
 ChatCompletionTool copyWith({AssistantToolsFunctionType? type, FunctionObject? function, }) { return ChatCompletionTool(
   type: type ?? this.type,

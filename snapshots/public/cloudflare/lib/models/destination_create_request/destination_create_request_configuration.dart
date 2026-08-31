@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('headers') &&
       json.containsKey('logpushDataset') &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'logpush' &&
       json.containsKey('url') && json['url'] is String; } 
 DestinationCreateRequestConfiguration copyWith({Map<String,String>? headers, ConfigurationLogpushDataset? logpushDataset, ConfigurationType? type, String? url, }) { return DestinationCreateRequestConfiguration(
   headers: headers ?? this.headers,

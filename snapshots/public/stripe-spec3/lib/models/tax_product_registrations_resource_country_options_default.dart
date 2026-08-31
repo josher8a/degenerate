@@ -14,7 +14,7 @@ final TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'standard'; } 
 TaxProductRegistrationsResourceCountryOptionsDefault copyWith({TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType? type}) { return TaxProductRegistrationsResourceCountryOptionsDefault(
   type: type ?? this.type,
 ); } 

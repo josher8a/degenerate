@@ -291,7 +291,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('finished_at') && json['finished_at'] is num &&
       json.containsKey('hyperparameters') &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'fine_tuning.job' &&
       json.containsKey('organization_id') && json['organization_id'] is String &&
       json.containsKey('result_files') &&
       json.containsKey('status') &&

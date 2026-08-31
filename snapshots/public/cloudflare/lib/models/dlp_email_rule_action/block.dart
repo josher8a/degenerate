@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'message': ?message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'Block'; } 
 Block copyWith({BlockAction? action, String? Function()? message, }) { return Block(
   action: action ?? this.action,
   message: message != null ? message() : this.message,

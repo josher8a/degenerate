@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'realtime.call.incoming'; } 
 WebhookRealtimeCallIncoming copyWith({int? createdAt, String? id, WebhookRealtimeCallIncomingData? data, WebhookBatchCancelledObject? Function()? object, WebhookRealtimeCallIncomingType? type, }) { return WebhookRealtimeCallIncoming(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,

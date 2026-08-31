@@ -66,7 +66,7 @@ final ConfigureCloudflaredTunnelK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'ConfigureCloudflaredTunnel'; } 
 ConfigureCloudflaredTunnel copyWith({ConfigureCloudflaredTunnelK? k}) { return ConfigureCloudflaredTunnel(
   k: k ?? this.k,
 ); } 

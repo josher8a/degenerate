@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
-      json.containsKey('mode'); } 
+      json.containsKey('mode') && json['mode'] == 'targeted'; } 
 WorkersPlacementInfoNoStatusTargeted2 copyWith({String? hostname, TargetedMode? mode, }) { return WorkersPlacementInfoNoStatusTargeted2(
   hostname: hostname ?? this.hostname,
   mode: mode ?? this.mode,

@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'etag': etag,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'init' &&
       json.containsKey('etag') && json['etag'] is String; } 
 Init copyWith({InitAction? action, String? etag, }) { return Init(
   action: action ?? this.action,

@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
   'id': id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'video.deleted' &&
       json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String; } 
 DeletedVideoResource copyWith({DeletedVideoResourceObject? object, bool? deleted, String? id, }) { return DeletedVideoResource(

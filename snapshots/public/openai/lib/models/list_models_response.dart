@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'list' &&
       json.containsKey('data'); } 
 ListModelsResponse copyWith({ContainerFileListResourceObject? object, List<Model>? data, }) { return ListModelsResponse(
   object: object ?? this.object,

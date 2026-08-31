@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'seconds': seconds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'duration' &&
       json.containsKey('seconds') && json['seconds'] is num; } 
 TranscriptTextUsageDuration copyWith({TranscriptTextUsageDurationType? type, double? seconds, }) { return TranscriptTextUsageDuration(
   type: type ?? this.type,

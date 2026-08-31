@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'kind': kind.toJson(),
   'name': name.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] == 'identity' &&
       json.containsKey('name'); } 
 ZeroTrustGatewayProxyEndpointIdentityCreate copyWith({ZeroTrustGatewayProxyEndpointIdentityCreateKind? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, }) { return ZeroTrustGatewayProxyEndpointIdentityCreate(
   kind: kind ?? this.kind,

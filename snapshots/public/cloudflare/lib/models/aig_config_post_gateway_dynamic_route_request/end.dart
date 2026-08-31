@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'end'; } 
 End copyWith({String? id, Map<String,OutputsValue>? outputs, EndType? type, }) { return End(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,

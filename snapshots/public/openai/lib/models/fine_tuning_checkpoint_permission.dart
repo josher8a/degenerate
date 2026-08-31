@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('project_id') && json['project_id'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'checkpoint.permission'; } 
 FineTuningCheckpointPermission copyWith({String? id, int? createdAt, String? projectId, DeleteFineTuningCheckpointPermissionResponseObject? object, }) { return FineTuningCheckpointPermission(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,

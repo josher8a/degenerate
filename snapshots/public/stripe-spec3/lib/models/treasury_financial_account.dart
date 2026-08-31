@@ -829,7 +829,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('financial_addresses') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'treasury.financial_account' &&
       json.containsKey('status') &&
       json.containsKey('status_details') &&
       json.containsKey('supported_currencies'); } 

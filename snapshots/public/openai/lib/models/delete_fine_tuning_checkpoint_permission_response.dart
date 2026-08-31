@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'checkpoint.permission' &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 DeleteFineTuningCheckpointPermissionResponse copyWith({String? id, DeleteFineTuningCheckpointPermissionResponseObject? object, bool? deleted, }) { return DeleteFineTuningCheckpointPermissionResponse(
   id: id ?? this.id,

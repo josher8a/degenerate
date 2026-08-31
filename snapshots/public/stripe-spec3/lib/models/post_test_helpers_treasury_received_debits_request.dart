@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
-      json.containsKey('network'); } 
+      json.containsKey('network') && json['network'] == 'ach'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final description$ = description;

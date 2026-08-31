@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'code': code,
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'protocol_error' &&
       json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
 RealtimeMcpProtocolError copyWith({RealtimeMcpProtocolErrorType? type, int? code, String? message, }) { return RealtimeMcpProtocolError(

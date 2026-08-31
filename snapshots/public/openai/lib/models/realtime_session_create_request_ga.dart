@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   if (truncation != null) 'truncation': truncation?.toJson(),
   if (prompt != null) 'prompt': prompt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'realtime'; } 
 RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? type, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateRequestGaAudio? Function()? audio, List<Include>? Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequestGa(
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,

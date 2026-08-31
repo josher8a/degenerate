@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'data': data,
   'transcript': transcript,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'output_audio' &&
       json.containsKey('data') && json['data'] is String &&
       json.containsKey('transcript') && json['transcript'] is String; } 
 OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }) { return OutputAudio(

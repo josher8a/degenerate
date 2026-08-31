@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'delta': delta.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'thread.run.step.delta' &&
       json.containsKey('delta'); } 
 RunStepDeltaObject copyWith({String? id, RunStepDeltaObjectObject? object, RunStepDeltaObjectDelta? delta, }) { return RunStepDeltaObject(
   id: id ?? this.id,

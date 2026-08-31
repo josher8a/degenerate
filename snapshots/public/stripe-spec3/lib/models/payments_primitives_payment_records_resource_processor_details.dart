@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (custom != null) 'custom': custom?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom'; } 
 PaymentsPrimitivesPaymentRecordsResourceProcessorDetails copyWith({PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails? Function()? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetails(
   custom: custom != null ? custom() : this.custom,
   type: type ?? this.type,

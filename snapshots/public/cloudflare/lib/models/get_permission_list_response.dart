@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'uuid': uuid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
-      json.containsKey('resourceType') &&
+      json.containsKey('resourceType') && json['resourceType'] == 'dataset' &&
       json.containsKey('role') &&
       json.containsKey('subjectId') && json['subjectId'] is String &&
       json.containsKey('subjectType') &&

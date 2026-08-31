@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('role'); } 
+      json.containsKey('role') && json['role'] == 'system'; } 
 MessagesSystem copyWith({DeveloperContent? content, String? Function()? name, SystemRole? role, }) { return MessagesSystem(
   content: content ?? this.content,
   name: name != null ? name() : this.name,

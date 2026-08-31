@@ -159,7 +159,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('network') &&
       json.containsKey('network_fees_amount') && json['network_fees_amount'] is num &&
       json.containsKey('network_settlement_identifier') && json['network_settlement_identifier'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'issuing.settlement' &&
       json.containsKey('settlement_service') && json['settlement_service'] is String &&
       json.containsKey('status') &&
       json.containsKey('transaction_amount') && json['transaction_amount'] is num &&

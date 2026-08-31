@@ -45,9 +45,9 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('batch') &&
       json.containsKey('compression') &&
-      json.containsKey('format') &&
+      json.containsKey('format') && json['format'] == 'json' &&
       json.containsKey('path') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'r2'; } 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch? batch, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression? compression, DestinationCredentials? Function()? credentials, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, DestinationPath? path, MqEventSourceR2Type? type, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
   batch: batch ?? this.batch,
   compression: compression ?? this.compression,

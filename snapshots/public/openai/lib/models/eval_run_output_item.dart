@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
   'results': results.map((e) => e.toJson()).toList(),
   'sample': sample.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'eval.run.output_item' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('run_id') && json['run_id'] is String &&
       json.containsKey('eval_id') && json['eval_id'] is String &&

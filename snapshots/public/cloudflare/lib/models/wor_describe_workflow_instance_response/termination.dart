@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('trigger') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'termination'; } 
 Termination copyWith({TerminationTrigger? trigger, TerminationType? type, }) { return Termination(
   trigger: trigger ?? this.trigger,
   type: type ?? this.type,

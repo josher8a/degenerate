@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'tax_deduction_account_number': taxDeductionAccountNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'tax_deducted_at_source' &&
       json.containsKey('period_end') && json['period_end'] is num &&
       json.containsKey('period_start') && json['period_start'] is num &&
       json.containsKey('tax_deduction_account_number') && json['tax_deduction_account_number'] is String; } 

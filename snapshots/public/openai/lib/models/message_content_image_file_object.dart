@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'image_file': imageFile.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'image_file' &&
       json.containsKey('image_file'); } 
 MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type, MessageContentImageFileObjectImageFile? imageFile, }) { return MessageContentImageFileObject(
   type: type ?? this.type,

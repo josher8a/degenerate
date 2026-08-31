@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'has_more': hasMore,
   'next_page': nextPage,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'vector_store.search_results.page' &&
       json.containsKey('search_query') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&

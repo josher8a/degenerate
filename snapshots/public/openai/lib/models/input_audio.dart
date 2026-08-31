@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'input_audio': inputAudio.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'input_audio' &&
       json.containsKey('input_audio'); } 
 InputAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, ChatCompletionRequestMessageContentPartAudioInputAudio? inputAudio, }) { return InputAudio(
   type: type ?? this.type,

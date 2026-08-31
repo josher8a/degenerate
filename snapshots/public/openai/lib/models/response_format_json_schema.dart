@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'json_schema': jsonSchema.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'json_schema' &&
       json.containsKey('json_schema'); } 
 ResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, JsonSchema? jsonSchema, }) { return ResponseFormatJsonSchema(
   type: type ?? this.type,

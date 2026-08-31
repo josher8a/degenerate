@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'conditional'; } 
 Conditional copyWith({String? id, ConditionalOutputs? outputs, ConditionalProperties? properties, ConditionalType? type, }) { return Conditional(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,

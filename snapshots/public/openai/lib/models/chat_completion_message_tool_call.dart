@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'function': function.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'function' &&
       json.containsKey('function'); } 
 ChatCompletionMessageToolCall copyWith({String? id, AssistantToolsFunctionType? type, ChatCompletionMessageToolCallFunction? function, }) { return ChatCompletionMessageToolCall(
   id: id ?? this.id,

@@ -131,7 +131,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'error': error.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'eval.run' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('eval_id') && json['eval_id'] is String &&
       json.containsKey('status') && json['status'] is String &&

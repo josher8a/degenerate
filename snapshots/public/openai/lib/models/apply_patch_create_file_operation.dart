@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'diff': diff,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'create_file' &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('diff') && json['diff'] is String; } 
 ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type, String? path, String? diff, }) { return ApplyPatchCreateFileOperation(

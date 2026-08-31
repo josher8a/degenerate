@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'latest_version': latestVersion,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'skill' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&

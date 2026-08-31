@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   if (outboundPayments != null) 'outbound_payments': outboundPayments?.toJson(),
   if (outboundTransfers != null) 'outbound_transfers': outboundTransfers?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'treasury.financial_account_features'; } 
 TreasuryFinancialAccountFeatures copyWith({TreasuryFinancialAccountsResourceToggleSettings? Function()? cardIssuing, TreasuryFinancialAccountsResourceToggleSettings? Function()? depositInsurance, TreasuryFinancialAccountsResourceFinancialAddressesFeatures? Function()? financialAddresses, TreasuryFinancialAccountsResourceInboundTransfers? Function()? inboundTransfers, TreasuryFinancialAccountsResourceToggleSettings? Function()? intraStripeFlows, TreasuryFinancialAccountFeaturesObject? object, TreasuryFinancialAccountsResourceOutboundPayments? Function()? outboundPayments, TreasuryFinancialAccountsResourceOutboundTransfers? Function()? outboundTransfers, }) { return TreasuryFinancialAccountFeatures(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   depositInsurance: depositInsurance != null ? depositInsurance() : this.depositInsurance,

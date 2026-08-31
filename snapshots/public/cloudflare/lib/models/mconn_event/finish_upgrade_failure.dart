@@ -66,7 +66,7 @@ final FinishUpgradeFailureK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'FinishUpgradeFailure'; } 
 FinishUpgradeFailure copyWith({FinishUpgradeFailureK? k}) { return FinishUpgradeFailure(
   k: k ?? this.k,
 ); } 

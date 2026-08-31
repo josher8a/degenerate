@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   'expression': expression.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'bypass_waiting_room' &&
       json.containsKey('expression'); } 
 WaitingroomCreateRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? expression, }) { return WaitingroomCreateRule(
   action: action ?? this.action,

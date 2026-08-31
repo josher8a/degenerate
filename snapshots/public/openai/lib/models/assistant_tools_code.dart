@@ -13,7 +13,7 @@ final AssistantToolsCodeType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'code_interpreter'; } 
 AssistantToolsCode copyWith({AssistantToolsCodeType? type}) { return AssistantToolsCode(
   type: type ?? this.type,
 ); } 

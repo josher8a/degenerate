@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'coupon': ?coupon,
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'coupon'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final coupon$ = coupon;

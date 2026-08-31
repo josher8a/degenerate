@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'user_id': userId,
   'group_id': groupId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'group.user' &&
       json.containsKey('user_id') && json['user_id'] is String &&
       json.containsKey('group_id') && json['group_id'] is String; } 
 GroupUserAssignment copyWith({GroupUserAssignmentObject? object, String? userId, String? groupId, }) { return GroupUserAssignment(

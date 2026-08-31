@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] == 'origin_h2_max_streams'; } 
 ZonesCacheRulesOriginH2MaxStreams copyWith({CacheRulesOriginH2MaxStreamsId? id, DateTime? Function()? modifiedOn, ZonesCacheRulesOriginH2MaxStreamsValue? Function()? value, }) { return ZonesCacheRulesOriginH2MaxStreams(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

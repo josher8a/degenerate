@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'tool_call_id': toolCallId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('role') &&
+      json.containsKey('role') && json['role'] == 'tool' &&
       json.containsKey('tool_call_id') && json['tool_call_id'] is String; } 
 Tool copyWith({DeveloperContent? content, ToolRole? role, String? toolCallId, }) { return Tool(
   content: content ?? this.content,

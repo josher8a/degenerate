@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'skill_id': skillId,
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'skill_reference' &&
       json.containsKey('skill_id') && json['skill_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

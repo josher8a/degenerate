@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   'processor_details': processorDetails.toJson(),
   'refunded': refunded.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('outcome') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('outcome') && json['outcome'] == 'refunded' &&
       json.containsKey('processor_details') &&
       json.containsKey('refunded'); } 
 PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount? Function()? amount, List<String>? Function()? expand, int? Function()? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, Refunded? refunded, }) { return PostPaymentRecordsIdReportRefundRequest(

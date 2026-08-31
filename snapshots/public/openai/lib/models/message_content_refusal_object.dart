@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'refusal': refusal,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'refusal' &&
       json.containsKey('refusal') && json['refusal'] is String; } 
 MessageContentRefusalObject copyWith({MessageContentRefusalObjectType? type, String? refusal, }) { return MessageContentRefusalObject(
   type: type ?? this.type,

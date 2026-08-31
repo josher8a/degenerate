@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'Team'; } 
 RepositoryRuleParamsReviewer copyWith({int? id, RepositoryRuleParamsReviewerType? type, }) { return RepositoryRuleParamsReviewer(
   id: id ?? this.id,
   type: type ?? this.type,

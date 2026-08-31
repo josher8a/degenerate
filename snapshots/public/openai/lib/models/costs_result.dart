@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   'line_item': ?lineItem,
   'project_id': ?projectId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.costs.result'; } 
 CostsResult copyWith({CostsResultObject? object, Amount? Function()? amount, String? Function()? lineItem, String? Function()? projectId, }) { return CostsResult(
   object: object ?? this.object,
   amount: amount != null ? amount() : this.amount,

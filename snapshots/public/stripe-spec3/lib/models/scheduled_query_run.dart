@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('data_load_time') && json['data_load_time'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'scheduled_query_run' &&
       json.containsKey('result_available_until') && json['result_available_until'] is num &&
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&

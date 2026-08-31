@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'diff': diff,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'update_file' &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('diff') && json['diff'] is String; } 
 ApplyPatchUpdateFileOperation copyWith({ApplyPatchUpdateFileOperationType? type, String? path, String? diff, }) { return ApplyPatchUpdateFileOperation(

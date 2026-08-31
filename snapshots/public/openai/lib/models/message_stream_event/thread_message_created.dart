@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'event': event.toJson(),
   'data': data.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'thread.message.created' &&
       json.containsKey('data'); } 
 ThreadMessageCreated copyWith({ThreadMessageCreatedEvent? event, MessageObject? data, }) { return ThreadMessageCreated(
   event: event ?? this.event,

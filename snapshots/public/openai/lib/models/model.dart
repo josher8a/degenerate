@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created') && json['created'] is num &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'model' &&
       json.containsKey('owned_by') && json['owned_by'] is String; } 
 Model copyWith({String? id, int? created, ModelObject? object, String? ownedBy, }) { return Model(
   id: id ?? this.id,
