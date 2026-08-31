@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory WorkersKvKey.fromJson(Map<String, dynamic> json) { return WorkersKvKey(
   expiration: json['expiration'] != null ? (json['expiration'] as num).toDouble() : null,
-  metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata']) : null,
   name: WorkersKvKeyName.fromJson(json['name'] as String),
 ); }
 

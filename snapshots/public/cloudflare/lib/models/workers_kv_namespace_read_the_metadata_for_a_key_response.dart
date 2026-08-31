@@ -7,7 +7,7 @@ factory WorkersKvNamespaceReadTheMetadataForAKeyResponse.fromJson(Map<String, dy
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? WorkersKvAny.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? WorkersKvAny.fromJson(json['result']) : null,
 ); }
 
 final List<WorkersKvMessages2> errors;

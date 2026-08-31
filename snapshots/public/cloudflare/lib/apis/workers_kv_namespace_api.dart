@@ -275,7 +275,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvAny.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? WorkersKvAny.fromJson(json['result']) : null;
   },
   onError: WorkersKvNamespaceCreateANamespaceError.fromResponse,
 );

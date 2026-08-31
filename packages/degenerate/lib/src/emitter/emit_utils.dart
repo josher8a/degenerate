@@ -48,15 +48,23 @@ extension EmitContextX on EmitContext {
   ///
   /// Every caller that writes a call to that `fromJson` has to agree with the
   /// anyOf emitter on this, or it passes an `Object?` to a map parameter.
-  bool anyOfFromJsonTakesMap(List<IrType> variants) => variants.every(
-    (v) =>
-        v is IrObject ||
-        v is IrTypeRef ||
-        v is IrDiscriminatedUnion ||
-        v is IrUntaggedUnion ||
-        v is IrAnyOf ||
-        isUnionType(v),
-  );
+  bool anyOfFromJsonTakesMap(List<IrType> variants) {
+    // Deduped by `irTypeName` because `AnyOfEmitter` dedupes before it decides
+    // the parameter type. A caller holding the raw variant list would compute
+    // a different answer than the signature it is calling, which is the
+    // divergence this predicate exists to prevent.
+    final seen = <String>{};
+    return variants
+        .where((v) => seen.add(irTypeName(v)))
+        .every(
+          (v) =>
+              v is IrObject ||
+              v is IrTypeRef ||
+              v is IrDiscriminatedUnion ||
+              v is IrUntaggedUnion ||
+              v is IrAnyOf,
+        );
+  }
 
   bool isUnionType(IrType type) {
     final resolved = type.resolveRef(typeRegistry);
@@ -332,6 +340,15 @@ String _buildFromJsonNonNull(
     IrTypeRef(:final name)
         when ctx.typeRegistry[name] is IrUntaggedUnion =>
       '$name.fromJson($accessor)',
+    // A sealed anyOf whose `fromJson` takes `dynamic` — because some variant
+    // is not object-like — must be passed the payload uncast. Its body
+    // branches on `json is String` and friends, and a map cast throws before
+    // the branch it was written for can run.
+    IrAnyOf(:final name, :final variants)
+        when !ctx.anyOfFromJsonTakesMap(variants) =>
+      '$name.fromJson($accessor)',
+    IrTypeRef(:final name) when _refIsNonMapAnyOf(name, ctx) =>
+      '$name.fromJson($accessor)',
     // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
     IrObject(:final name) ||
     IrTypeRef(:final name) ||
@@ -412,6 +429,12 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
 
 /// Whether a name in the type registry maps to a OneOf-eligible union
 /// (excluding self-referencing types which can't be Dart typedefs).
+/// Whether [name] refers to a sealed anyOf whose `fromJson` takes `dynamic`.
+bool _refIsNonMapAnyOf(String name, EmitContext ctx) {
+  final target = ctx.typeRegistry[name];
+  return target is IrAnyOf && !ctx.anyOfFromJsonTakesMap(target.variants);
+}
+
 bool _isOneOfInRegistry(String name, EmitContext ctx) {
   final target = ctx.typeRegistry[name];
   if (target == null) return false;

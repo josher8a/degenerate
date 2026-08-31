@@ -6063,6 +6063,63 @@ void main() {
       );
     });
 
+    test('a ref to a scalar-bearing sealed anyOf is passed uncast', () {
+      // The shape that ships. `WorkersKvAny` is a self-referencing anyOf over
+      // string/num/bool/object, so it is not a OneOfN typedef and AnyOfEmitter
+      // gives its `fromJson` a `dynamic` parameter, whose body branches on
+      // `json is String`. `WorkersKvKey` casts the payload to a map before
+      // calling it, so the branch it was written for can never run.
+      const anyOf = IrAnyOf('AnyValue', [
+        IrPrimitive(PrimitiveKind.string),
+        IrObject('Boxed', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['id']),
+        IrTypeRef('AnyValue'),
+      ]);
+      final ctx = EmitContext(<String, IrType>{'AnyValue': anyOf});
+
+      expect(ctx.anyOfFromJsonTakesMap(anyOf.variants), isFalse);
+      expect(
+        ctx.fromJson(const IrTypeRef('AnyValue'), 'v'),
+        equals('AnyValue.fromJson(v)'),
+      );
+    });
+
+    test('a ref to an all-object-like sealed anyOf keeps the map cast', () {
+      // The other direction: its `fromJson` does take a map, so the cast is
+      // right and removing it would be the mirror bug.
+      const anyOf = IrAnyOf('Pair', [
+        IrObject('A', [
+          IrField('a', 'a', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['a']),
+        IrTypeRef('Pair'),
+      ]);
+      final ctx = EmitContext(<String, IrType>{'Pair': anyOf});
+
+      expect(ctx.anyOfFromJsonTakesMap(anyOf.variants), isTrue);
+      expect(
+        ctx.fromJson(const IrTypeRef('Pair'), 'v'),
+        equals('Pair.fromJson(v as Map<String, dynamic>)'),
+      );
+    });
+
+    test('the map predicate dedupes as the anyOf emitter does', () {
+      // AnyOfEmitter dedupes variants by `irTypeName` before deciding the
+      // parameter type. A caller passing the raw list computes a different
+      // answer and emits a call the signature refuses -- the divergence the
+      // shared predicate exists to prevent.
+      const colour = IrEnum('Colour', ['red'], valueKind: PrimitiveKind.string);
+      final ctx = EmitContext(<String, IrType>{'Colour': colour});
+
+      expect(
+        ctx.anyOfFromJsonTakesMap(const [IrTypeRef('Colour'), colour]),
+        isTrue,
+        reason: 'the enum dedupes away, so the emitted parameter is a map',
+      );
+    });
+
     test('sealed untagged union fixture passes json uncast', () {
       // UntaggedUnionEmitter gives fromJson an `Object?` parameter so it can
       // dispatch on wire type. Casting here would throw on the variants that

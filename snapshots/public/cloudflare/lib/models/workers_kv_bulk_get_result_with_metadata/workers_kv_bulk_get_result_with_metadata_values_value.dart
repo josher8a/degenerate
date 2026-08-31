@@ -5,8 +5,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory WorkersKvBulkGetResultWithMetadataValuesValue.fromJson(Map<String, dynamic> json) { return WorkersKvBulkGetResultWithMetadataValuesValue(
   expiration: json['expiration'] != null ? WorkersKvExpiration.fromJson(json['expiration'] as num) : null,
-  metadata: WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>),
-  value: WorkersKvAny.fromJson(json['value'] as Map<String, dynamic>),
+  metadata: WorkersKvAny.fromJson(json['metadata']),
+  value: WorkersKvAny.fromJson(json['value']),
 ); }
 
 final WorkersKvExpiration? expiration;
