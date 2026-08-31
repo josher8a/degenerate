@@ -180,10 +180,10 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   if (usageThreshold != null) 'usage_threshold': usageThreshold?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_type') && json['alert_type'] == 'usage_threshold' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') && json['object'] == 'billing.alert' &&
+      json.containsKey('object') &&
       json.containsKey('title') && json['title'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

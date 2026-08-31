@@ -190,7 +190,7 @@ Map<String, dynamic> toJson() { return {
   'accepted_at': ?acceptedAt,
   if (projects != null) 'projects': projects?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.invite' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('role') &&

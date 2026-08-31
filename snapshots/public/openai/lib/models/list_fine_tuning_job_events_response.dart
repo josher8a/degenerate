@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'has_more': hasMore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('object') && json['object'] == 'list' &&
+      json.containsKey('object') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
 ListFineTuningJobEventsResponse copyWith({List<FineTuningJobEvent>? data, ContainerFileListResourceObject? object, bool? hasMore, }) { return ListFineTuningJobEventsResponse(
   data: data ?? this.data,

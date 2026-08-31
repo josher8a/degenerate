@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'open_page'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 WebSearchActionOpenPage copyWith({WebSearchActionOpenPageType? type, Uri? Function()? url, }) { return WebSearchActionOpenPage(
   type: type ?? this.type,
   url: url != null ? url() : this.url,

@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'segments': segments.map((e) => e.toJson()).toList(),
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('task') && json['task'] == 'transcribe' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('task') &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('segments'); } 

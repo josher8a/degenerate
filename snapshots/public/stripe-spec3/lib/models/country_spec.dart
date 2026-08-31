@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_currency') && json['default_currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'country_spec' &&
+      json.containsKey('object') &&
       json.containsKey('supported_bank_account_currencies') &&
       json.containsKey('supported_payment_currencies') &&
       json.containsKey('supported_payment_methods') &&

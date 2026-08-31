@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'last_id': lastId,
   'has_more': hasMore,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'list' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&

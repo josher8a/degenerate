@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'group_name': groupName,
   'created_at': createdAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'project.group' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('project_id') && json['project_id'] is String &&
       json.containsKey('group_id') && json['group_id'] is String &&
       json.containsKey('group_name') && json['group_name'] is String &&

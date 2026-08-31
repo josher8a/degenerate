@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'container_id': containerId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'container_reference' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('container_id') && json['container_id'] is String; } 
 ContainerReferenceParam copyWith({ContainerReferenceParamType? type, String? containerId, }) { return ContainerReferenceParam(
   type: type ?? this.type,

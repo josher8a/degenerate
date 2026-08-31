@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('deleted') && json['deleted'] is bool &&
-      json.containsKey('object') && json['object'] == 'assistant.deleted'; } 
+      json.containsKey('object'); } 
 DeleteAssistantResponse copyWith({String? id, bool? deleted, DeleteAssistantResponseObject? object, }) { return DeleteAssistantResponse(
   id: id ?? this.id,
   deleted: deleted ?? this.deleted,

@@ -176,12 +176,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('urls') && json['urls'] is String &&
       json.containsKey('address1') && json['address1'] is String &&
       json.containsKey('agent_name') && json['agent_name'] is String &&
-      json.containsKey('agree') && json['agree'] == 1 &&
+      json.containsKey('agree') &&
       json.containsKey('city') && json['city'] is String &&
       json.containsKey('country') && json['country'] is String &&
-      json.containsKey('host_notification') && json['host_notification'] == 'send' &&
+      json.containsKey('host_notification') &&
       json.containsKey('original_work') && json['original_work'] is String &&
-      json.containsKey('owner_notification') && json['owner_notification'] == 'send' &&
+      json.containsKey('owner_notification') &&
       json.containsKey('signature') && json['signature'] is String &&
       json.containsKey('state') && json['state'] is String; } 
 /// Constraint violations for this value (empty when valid).

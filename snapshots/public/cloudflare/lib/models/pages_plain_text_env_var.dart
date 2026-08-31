@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'value': value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'plain_text' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
 PagesPlainTextEnvVar copyWith({PagesPlainTextEnvVarType? type, String? value, }) { return PagesPlainTextEnvVar(
   type: type ?? this.type,

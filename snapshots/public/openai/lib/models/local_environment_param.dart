@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'local'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final skills$ = skills;

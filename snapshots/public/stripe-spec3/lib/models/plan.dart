@@ -124,7 +124,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('interval') &&
       json.containsKey('interval_count') && json['interval_count'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') && json['object'] == 'plan' &&
+      json.containsKey('object') &&
       json.containsKey('usage_type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

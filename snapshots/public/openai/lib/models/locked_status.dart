@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'reason': reason,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'locked' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('reason') && json['reason'] is String; } 
 LockedStatus copyWith({LockedStatusType? type, String? Function()? reason, }) { return LockedStatus(
   type: type ?? this.type,

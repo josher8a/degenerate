@@ -127,3 +127,61 @@ List<IrField> _computeCommonFields(
   }
   return result;
 }
+
+/// Which fields must be pinned to their const wire value in `canParse`, keyed
+/// by the owning type's name.
+///
+/// A single-value enum is a const discriminator only in context. Pinning one
+/// costs the `$Unknown` fallback the generated enums exist for: a server that
+/// adds an enum value makes `canParse` return false while `fromJson` still
+/// parses the payload, and on an `anyOf` no variant claims it and the result is
+/// a silently empty object. So the pin is worth its cost exactly where a
+/// sibling variant could otherwise claim the payload, and nowhere else.
+///
+/// That is the case when the owner is a variant of an untagged or `anyOf`
+/// union and at least one sibling variant declares a field with the same wire
+/// name. Discriminated unions dispatch on the discriminator itself rather than
+/// through `canParse`, so they need no pin.
+Map<String, Set<String>> analyzeConstDiscriminators(
+  List<IrType> types,
+  Map<String, IrType> registry,
+) {
+  final pinned = <String, Set<String>>{};
+
+  for (final type in types) {
+    final variants = switch (type) {
+      IrUntaggedUnion(:final variants) || IrAnyOf(:final variants) => variants,
+      _ => null,
+    };
+    if (variants == null || variants.length < 2) continue;
+
+    final objects = <IrObject>[];
+    for (final v in variants) {
+      final resolved = v.resolveRef(registry);
+      if (resolved is IrObject) objects.add(resolved);
+    }
+    if (objects.length < 2) continue;
+
+    // Wire names declared by more than one variant: the ones key presence
+    // alone cannot tell apart.
+    final declaredBy = <String, int>{};
+    for (final o in objects) {
+      for (final name in o.fields.map((f) => f.originalName).toSet()) {
+        declaredBy[name] = (declaredBy[name] ?? 0) + 1;
+      }
+    }
+
+    for (final o in objects) {
+      if (o.name.isEmpty) continue;
+      for (final f in o.fields) {
+        if (!f.isRequired) continue;
+        if ((declaredBy[f.originalName] ?? 0) < 2) continue;
+        final resolved = f.type.resolveRef(registry);
+        if (resolved is! IrEnum || resolved.values.length != 1) continue;
+        (pinned[o.name] ??= <String>{}).add(f.originalName);
+      }
+    }
+  }
+
+  return pinned;
+}

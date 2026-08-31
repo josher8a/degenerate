@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'content_index': contentIndex,
   'audio_end_ms': audioEndMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'conversation.item.truncate' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 

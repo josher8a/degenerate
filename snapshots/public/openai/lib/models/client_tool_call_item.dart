@@ -127,7 +127,7 @@ Map<String, dynamic> toJson() { return {
   'output': output,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'chatkit.thread_item' &&
+      json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
       json.containsKey('type') && json['type'] is String &&

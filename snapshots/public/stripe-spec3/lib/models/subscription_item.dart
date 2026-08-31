@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('discounts') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('metadata') &&
-      json.containsKey('object') && json['object'] == 'subscription_item' &&
+      json.containsKey('object') &&
       json.containsKey('price') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
 /// Constraint violations for this value (empty when valid).

@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'deleted' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('hook') &&
       json.containsKey('hook_id') && json['hook_id'] is num; } 
 WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookMetaDeleted(

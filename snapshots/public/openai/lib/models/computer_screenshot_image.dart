@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'image_url': ?imageUrl,
   'file_id': ?fileId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'computer_screenshot'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 ComputerScreenshotImage copyWith({ComputerScreenshotContentType? type, String? Function()? imageUrl, String? Function()? fileId, }) { return ComputerScreenshotImage(
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,

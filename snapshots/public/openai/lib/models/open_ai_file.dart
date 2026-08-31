@@ -299,7 +299,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('bytes') && json['bytes'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('filename') && json['filename'] is String &&
-      json.containsKey('object') && json['object'] == 'file' &&
+      json.containsKey('object') &&
       json.containsKey('purpose') &&
       json.containsKey('status'); } 
 OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? expiresAt, String? filename, DeleteFileResponseObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String? Function()? statusDetails, }) { return OpenAiFile(

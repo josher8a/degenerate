@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type') && json['type'] == 'response.completed'; } 
+      json.containsKey('type'); } 
 WebhookResponseCompleted copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject? Function()? object, WebhookResponseCompletedType? type, }) { return WebhookResponseCompleted(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,

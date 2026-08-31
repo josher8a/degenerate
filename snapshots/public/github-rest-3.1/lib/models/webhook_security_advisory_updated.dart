@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'security_advisory': securityAdvisory.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'updated' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('security_advisory'); } 
 WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, WebhooksSecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) { return WebhookSecurityAdvisoryUpdated(
   action: action ?? this.action,

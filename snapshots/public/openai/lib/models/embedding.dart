@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('embedding') &&
-      json.containsKey('object') && json['object'] == 'embedding'; } 
+      json.containsKey('object'); } 
 Embedding copyWith({int? index, List<double>? embedding, EmbeddingObject? object, }) { return Embedding(
   index: index ?? this.index,
   embedding: embedding ?? this.embedding,

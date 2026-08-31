@@ -64,7 +64,7 @@ final StreamEnumUpdateStatus status;
 Map<String, dynamic> toJson() { return {
   'Status': status.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status') && json['Status'] == 'stopped'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status'); } 
 UpdateStreamRequest copyWith({StreamEnumUpdateStatus? status}) { return UpdateStreamRequest(
   status: status ?? this.status,
 ); } 

@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (validationEnabled != null) 'validation_enabled': validationEnabled?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('kind') && json['kind'] == 'openapi_v3'; } 
+      json.containsKey('kind'); } 
 ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String? Function()? name, ValidationEnabled? Function()? validationEnabled, }) { return ShieldSchemaValidationPostSchemaRequest(
   file: file ?? this.file,
   kind: kind ?? this.kind,

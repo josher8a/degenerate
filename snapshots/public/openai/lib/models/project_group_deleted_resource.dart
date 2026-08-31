@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'deleted': deleted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'project.group.deleted' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 ProjectGroupDeletedResource copyWith({ProjectGroupDeletedResourceObject? object, bool? deleted, }) { return ProjectGroupDeletedResource(
   object: object ?? this.object,

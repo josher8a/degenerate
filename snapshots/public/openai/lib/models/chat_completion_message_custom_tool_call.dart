@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'custom': custom.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('type') && json['type'] == 'custom' &&
+      json.containsKey('type') &&
       json.containsKey('custom'); } 
 ChatCompletionMessageCustomToolCall copyWith({String? id, ChatCompletionMessageCustomToolCallType? type, ChatCompletionMessageCustomToolCallCustom? custom, }) { return ChatCompletionMessageCustomToolCall(
   id: id ?? this.id,

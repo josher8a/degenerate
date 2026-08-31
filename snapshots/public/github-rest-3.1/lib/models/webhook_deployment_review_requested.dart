@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'workflow_job_run': workflowJobRun.toJson(),
   'workflow_run': workflowRun?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'requested' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('organization') &&
       json.containsKey('repository') &&

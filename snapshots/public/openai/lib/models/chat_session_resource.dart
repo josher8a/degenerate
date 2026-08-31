@@ -229,7 +229,7 @@ Map<String, dynamic> toJson() { return {
   'chatkit_configuration': chatkitConfiguration.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'chatkit.session' &&
+      json.containsKey('object') &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('workflow') &&

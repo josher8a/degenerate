@@ -381,7 +381,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
-      json.containsKey('object') && json['object'] == 'issuing.card' &&
+      json.containsKey('object') &&
       json.containsKey('spending_controls') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 

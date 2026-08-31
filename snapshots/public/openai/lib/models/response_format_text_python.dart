@@ -16,7 +16,7 @@ final EvalGraderPythonType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'python'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 ResponseFormatTextPython copyWith({EvalGraderPythonType? type}) { return ResponseFormatTextPython(
   type: type ?? this.type,
 ); } 

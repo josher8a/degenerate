@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'price_details'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 BillingBillResourceInvoicingPricingPricing copyWith({BillingBillResourceInvoicingPricingPricingPriceDetails? Function()? priceDetails, BillingBillResourceInvoicingPricingPricingType? type, String? Function()? unitAmountDecimal, }) { return BillingBillResourceInvoicingPricingPricing(
   priceDetails: priceDetails != null ? priceDetails() : this.priceDetails,
   type: type ?? this.type,

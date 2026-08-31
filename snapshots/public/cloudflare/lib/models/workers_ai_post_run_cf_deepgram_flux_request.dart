@@ -169,7 +169,7 @@ Map<String, dynamic> toJson() { return {
   'sample_rate': sampleRate,
   'tag': ?tag,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding') && json['encoding'] == 'linear16' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding') &&
       json.containsKey('sample_rate') && json['sample_rate'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

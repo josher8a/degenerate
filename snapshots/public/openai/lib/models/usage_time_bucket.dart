@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'end_time': endTime,
   'result': result.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'bucket' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('start_time') && json['start_time'] is num &&
       json.containsKey('end_time') && json['end_time'] is num &&
       json.containsKey('result'); } 

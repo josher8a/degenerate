@@ -118,7 +118,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object') && json['object'] == 'apps.secret' &&
+      json.containsKey('object') &&
       json.containsKey('scope'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

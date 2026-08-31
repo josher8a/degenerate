@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'target_type': targetType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
-      json.containsKey('action') && json['action'] == 'renamed' &&
+      json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('installation') &&
       json.containsKey('target_type') && json['target_type'] is String; } 

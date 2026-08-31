@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'deleted': deleted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'role.deleted' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 RoleDeletedResource copyWith({RoleDeletedResourceObject? object, String? id, bool? deleted, }) { return RoleDeletedResource(

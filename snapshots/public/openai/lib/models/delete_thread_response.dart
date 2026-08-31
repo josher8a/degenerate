@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('deleted') && json['deleted'] is bool &&
-      json.containsKey('object') && json['object'] == 'thread.deleted'; } 
+      json.containsKey('object'); } 
 DeleteThreadResponse copyWith({String? id, bool? deleted, DeleteThreadResponseObject? object, }) { return DeleteThreadResponse(
   id: id ?? this.id,
   deleted: deleted ?? this.deleted,

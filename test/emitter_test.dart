@@ -240,6 +240,9 @@ void main() {
     });
 
     group('canParse pins a const discriminator to its wire value', () {
+      /// `GasPayment` beside a sibling that also declares `type`, which is the
+      /// situation a pin exists for: both share the key, so presence alone
+      /// lets either claim the other's payload.
       String sourceFor(IrType typeField) {
         final model = IrObject(
           'GasPayment',
@@ -251,7 +254,23 @@ void main() {
           ],
           requiredFields: ['type', 'amount'],
         );
-        final specs = ModelEmitter(model).emit();
+        const sibling = IrObject(
+          'Erc20Approve',
+          [
+            IrField('type', 'type', IrEnum('Erc20Type', ['ERC20_APPROVE']),
+                isRequired: true),
+            IrField('token', 'token', IrPrimitive(PrimitiveKind.string),
+                isRequired: true),
+          ],
+          requiredFields: ['type', 'token'],
+        );
+        final ctx = contextFor([
+          model,
+          sibling,
+          const IrAnyOf('WalletOperation',
+              [IrTypeRef('GasPayment'), IrTypeRef('Erc20Approve')]),
+        ]);
+        final specs = ModelEmitter(model, ctx: ctx).emit();
         return emitRaw(Library((b) => b..body.addAll(specs)));
       }
 
@@ -262,6 +281,85 @@ void main() {
         final source = sourceFor(const IrEnum('GasPaymentType', ['GAS_PAYMENT']));
 
         expect(source, contains("json['type'] == 'GAS_PAYMENT'"));
+      });
+
+      test('a model in no union is not pinned', () {
+        // The pin exists so sibling variants of a union stop claiming each
+        // other's payloads. A model that is a variant of nothing has no
+        // sibling to be confused with, and pinning it only breaks the
+        // `$Unknown` fallback the generated enums exist for: a server adding
+        // an enum value would make canParse false while fromJson still
+        // succeeds.
+        const health = IrObject('Health', [
+          IrField('status', 'status', IrEnum('Status', ['OK']),
+              isRequired: true),
+          IrField('detail', 'detail', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['status', 'detail']);
+        final ctx = contextFor(const [health]);
+
+        final source = emitRaw(Library((b) =>
+            b..body.addAll(ModelEmitter(health, ctx: ctx).emit())));
+
+        expect(source, contains("json.containsKey('status')"));
+        expect(source, isNot(contains("json['status'] ==")));
+      });
+
+      test('a variant sharing the field with a sibling is pinned', () {
+        // Cat and Dog both declare `kind`, so key presence alone lets either
+        // claim the other's payload. This is the case the pin is for.
+        final ctx = contextFor(petTypes);
+
+        final source = emitRaw(Library((b) => b
+          ..body.addAll(ModelEmitter(petTypes[0] as IrObject, ctx: ctx).emit())));
+
+        expect(source, contains("json['kind'] == 'cat'"));
+      });
+
+      test('a pinned field reached through a ref is still pinned', () {
+        // `ctx.resolve` is load-bearing: the reported bug arrives through
+        // variants whose type enums are `\$ref`s, and a test passing IrEnum
+        // directly would stay green if that call were removed.
+        const cat = IrObject('Cat', [
+          IrField('kind', 'kind', IrTypeRef('CatKind'), isRequired: true),
+        ], requiredFields: ['kind']);
+        const dog = IrObject('Dog', [
+          IrField('kind', 'kind', IrTypeRef('DogKind'), isRequired: true),
+        ], requiredFields: ['kind']);
+        final types = <IrType>[
+          cat,
+          dog,
+          const IrEnum('CatKind', ['cat']),
+          const IrEnum('DogKind', ['dog']),
+          const IrAnyOf('Pet', [IrTypeRef('Cat'), IrTypeRef('Dog')]),
+        ];
+        final ctx = contextFor(types);
+
+        final source = emitRaw(
+            Library((b) => b..body.addAll(ModelEmitter(cat, ctx: ctx).emit())));
+
+        expect(source, contains("json['kind'] == 'cat'"));
+      });
+
+      test('a nullable pinned field still admits null', () {
+        // The field is required but nullable, so `null` is a legal wire value.
+        // Pinning it by equality alone makes canParse reject a payload that
+        // fromJson parses without complaint.
+        const a = IrObject('A', [
+          IrField('tag', 'tag', IrEnum('TagA', ['ONLY'], isNullable: true),
+              isRequired: true),
+        ], requiredFields: ['tag']);
+        const b = IrObject('B', [
+          IrField('tag', 'tag', IrEnum('TagB', ['OTHER']), isRequired: true),
+        ], requiredFields: ['tag']);
+        final ctx = contextFor(
+          const [a, b, IrAnyOf('U', [IrTypeRef('A'), IrTypeRef('B')])],
+        );
+
+        final source = emitRaw(
+            Library((x) => x..body.addAll(ModelEmitter(a, ctx: ctx).emit())));
+
+        expect(source, contains("json['tag'] == null || json['tag'] == 'ONLY'"));
       });
 
       test('multi-value enum field is left unchecked', () {
@@ -6656,3 +6754,30 @@ void main() {
     });
   });
 }
+
+/// A context carrying the const-discriminator analysis, as `file_emitter` builds it.
+EmitContext contextFor(List<IrType> types) {
+  final registry = <String, IrType>{
+    for (final t in types)
+      if (t.emittableName != null) t.emittableName!: t,
+  };
+  return EmitContext(
+    registry,
+    constDiscriminators: analyzeConstDiscriminators(types, registry),
+  );
+}
+
+/// Two sibling variants that both declare `kind`.
+final petTypes = <IrType>[
+  const IrObject('Cat', [
+    IrField('kind', 'kind', IrEnum('CatKind', ['cat']), isRequired: true),
+    IrField('lives', 'lives', IrPrimitive(PrimitiveKind.string),
+        isRequired: true),
+  ], requiredFields: ['kind', 'lives']),
+  const IrObject('Dog', [
+    IrField('kind', 'kind', IrEnum('DogKind', ['dog']), isRequired: true),
+    IrField('bark', 'bark', IrPrimitive(PrimitiveKind.string),
+        isRequired: true),
+  ], requiredFields: ['kind', 'bark']),
+  const IrAnyOf('Pet', [IrTypeRef('Cat'), IrTypeRef('Dog')]),
+];

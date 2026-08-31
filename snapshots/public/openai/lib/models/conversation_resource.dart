@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'conversation' &&
+      json.containsKey('object') &&
       json.containsKey('metadata') &&
       json.containsKey('created_at') && json['created_at'] is num; } 
 ConversationResource copyWith({String? id, ConversationResourceObject? object, dynamic Function()? metadata, int? createdAt, }) { return ConversationResource(

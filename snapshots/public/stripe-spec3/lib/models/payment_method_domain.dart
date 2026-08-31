@@ -129,7 +129,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amazo
       json.containsKey('klarna') &&
       json.containsKey('link') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') && json['object'] == 'payment_method_domain' &&
+      json.containsKey('object') &&
       json.containsKey('paypal'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

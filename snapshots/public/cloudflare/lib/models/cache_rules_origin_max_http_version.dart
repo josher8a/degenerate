@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] == 'origin_max_http_version'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
 CacheRulesOriginMaxHttpVersion copyWith({CacheRulesOriginMaxHttpVersionId? id, DateTime? Function()? modifiedOn, CacheRulesOriginMaxHttpVersionValue? Function()? value, }) { return CacheRulesOriginMaxHttpVersion(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

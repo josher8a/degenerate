@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
+import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
@@ -128,7 +129,11 @@ final class FileEmitter {
       typeToFile[name] = fileStemFor(name);
       typeRegistryMap[name] = type;
     }
-    final ctx = EmitContext(typeRegistryMap, unionMetadata: unionMetadata);
+    final ctx = EmitContext(
+      typeRegistryMap,
+      unionMetadata: unionMetadata,
+      constDiscriminators: analyzeConstDiscriminators(types, typeRegistryMap),
+    );
 
     final inlining = _computeInlining(types, apis, typeToFile);
 

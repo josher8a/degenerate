@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'text': text,
   'annotations': annotations.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'output_text' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('annotations'); } 
 ResponseOutputText copyWith({ResponseOutputTextType? type, String? text, List<ResponseOutputTextAnnotations>? annotations, }) { return ResponseOutputText(

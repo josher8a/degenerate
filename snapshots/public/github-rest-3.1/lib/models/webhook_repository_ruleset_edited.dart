@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (changes != null) 'changes': changes?.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'edited' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository_ruleset') &&
       json.containsKey('sender'); } 
 WebhookRepositoryRulesetEdited copyWith({ItemEditedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, RepositoryRuleset? repositoryRuleset, WebhookRepositoryRulesetEditedChanges? Function()? changes, SimpleUser? sender, }) { return WebhookRepositoryRulesetEdited(

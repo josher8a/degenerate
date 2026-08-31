@@ -334,7 +334,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'batch' &&
+      json.containsKey('object') &&
       json.containsKey('endpoint') && json['endpoint'] is String &&
       json.containsKey('input_file_id') && json['input_file_id'] is String &&
       json.containsKey('completion_window') && json['completion_window'] is String &&

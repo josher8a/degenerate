@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'id': id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'certificate.deleted' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String; } 
 DeleteCertificateResponse copyWith({DeleteCertificateResponseObject? object, String? id, }) { return DeleteCertificateResponse(
   object: object ?? this.object,

@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'response': response.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') && json['type'] == 'response.created' &&
+      json.containsKey('type') &&
       json.containsKey('response'); } 
 RealtimeBetaServerEventResponseCreated copyWith({String? eventId, RealtimeBetaServerEventResponseCreatedType? type, RealtimeBetaResponse? response, }) { return RealtimeBetaServerEventResponseCreated(
   eventId: eventId ?? this.eventId,

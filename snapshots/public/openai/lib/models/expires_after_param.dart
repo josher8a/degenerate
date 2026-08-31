@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'anchor': anchor.toJson(),
   'seconds': seconds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') && json['anchor'] == 'created_at' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') &&
       json.containsKey('seconds') && json['seconds'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

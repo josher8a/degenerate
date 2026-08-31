@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
-      json.containsKey('type') && json['type'] == 'us_bank_account'; } 
+      json.containsKey('type'); } 
 InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return InboundTransfers(
   billingDetails: billingDetails ?? this.billingDetails,
   type: type ?? this.type,

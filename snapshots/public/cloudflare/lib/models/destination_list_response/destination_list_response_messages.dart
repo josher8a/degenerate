@@ -64,7 +64,7 @@ final DestinationListResponseMessagesMessage message;
 Map<String, dynamic> toJson() { return {
   'message': message.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] == 'Successful request'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
 DestinationListResponseMessages copyWith({DestinationListResponseMessagesMessage? message}) { return DestinationListResponseMessages(
   message: message ?? this.message,
 ); } 

@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'rate_limits': rateLimits.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') && json['type'] == 'rate_limits.updated' &&
+      json.containsKey('type') &&
       json.containsKey('rate_limits'); } 
 RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBetaServerEventRateLimitsUpdatedType? type, List<RateLimits>? rateLimits, }) { return RealtimeBetaServerEventRateLimitsUpdated(
   eventId: eventId ?? this.eventId,

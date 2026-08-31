@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'text': text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'input_text' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('text') && json['text'] is String; } 
 UserMessageInputText copyWith({InputTextContentParamType? type, String? text, }) { return UserMessageInputText(
   type: type ?? this.type,

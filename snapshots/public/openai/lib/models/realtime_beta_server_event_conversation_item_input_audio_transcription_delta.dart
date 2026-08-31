@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') && json['type'] == 'conversation.item.input_audio_transcription.delta' &&
+      json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String; } 
 RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int? Function()? contentIndex, String? Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: eventId ?? this.eventId,

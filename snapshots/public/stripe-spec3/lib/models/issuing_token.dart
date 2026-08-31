@@ -376,7 +376,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card'
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('network') &&
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
-      json.containsKey('object') && json['object'] == 'issuing.token' &&
+      json.containsKey('object') &&
       json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

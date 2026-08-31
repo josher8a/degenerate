@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'thread' &&
+      json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('tool_resources') &&
       json.containsKey('metadata'); } 

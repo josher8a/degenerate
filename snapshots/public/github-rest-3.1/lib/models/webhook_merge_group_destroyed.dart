@@ -172,7 +172,7 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'destroyed' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('merge_group'); } 
 WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, WebhookMergeGroupDestroyedReason? Function()? reason, SimpleInstallation? Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookMergeGroupDestroyed(
   action: action ?? this.action,

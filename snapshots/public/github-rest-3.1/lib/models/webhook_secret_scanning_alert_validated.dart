@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'validated' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository'); } 
 WebhookSecretScanningAlertValidated copyWith({WebhookSecretScanningAlertValidatedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookSecretScanningAlertValidated(

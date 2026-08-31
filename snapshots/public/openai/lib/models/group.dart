@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'scim_managed': scimManaged,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'group' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&

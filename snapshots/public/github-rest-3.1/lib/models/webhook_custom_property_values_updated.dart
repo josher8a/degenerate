@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'new_property_values': newPropertyValues.map((e) => e.toJson()).toList(),
   'old_property_values': oldPropertyValues.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'updated' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('organization') &&
       json.containsKey('new_property_values') &&

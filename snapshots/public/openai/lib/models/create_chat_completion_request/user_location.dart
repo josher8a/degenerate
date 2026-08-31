@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'approximate': approximate.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'approximate' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('approximate'); } 
 UserLocation copyWith({UserLocationType? type, WebSearchLocation? approximate, }) { return UserLocation(
   type: type ?? this.type,

@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'resource_type': resourceType,
   'predefined_role': predefinedRole,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'role' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String &&

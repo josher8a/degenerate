@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'has_more': hasMore,
   'next': next,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'list' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next') && json['next'] is String; } 

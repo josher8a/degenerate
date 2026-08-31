@@ -66,7 +66,7 @@ final OrgsUpdateMembershipForAuthenticatedUserRequestState state;
 Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] == 'active'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
 OrgsUpdateMembershipForAuthenticatedUserRequest copyWith({OrgsUpdateMembershipForAuthenticatedUserRequestState? state}) { return OrgsUpdateMembershipForAuthenticatedUserRequest(
   state: state ?? this.state,
 ); } 

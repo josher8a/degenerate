@@ -258,7 +258,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   if (undeliverableReason != null) 'undeliverable_reason': undeliverableReason?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') && json['channel'] == 'sms' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') &&
       json.containsKey('status'); } 
 IssuingAuthorizationFraudChallenge copyWith({Channel? channel, IssuingAuthorizationFraudChallengeStatus? status, UndeliverableReason? Function()? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
   channel: channel ?? this.channel,

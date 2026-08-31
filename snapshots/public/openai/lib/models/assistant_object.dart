@@ -136,7 +136,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'assistant' &&
+      json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String &&

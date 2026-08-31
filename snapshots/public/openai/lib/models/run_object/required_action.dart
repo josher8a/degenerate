@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'submit_tool_outputs': submitToolOutputs.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'submit_tool_outputs' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('submit_tool_outputs'); } 
 RequiredAction copyWith({RequiredActionType? type, SubmitToolOutputs? submitToolOutputs, }) { return RequiredAction(
   type: type ?? this.type,
