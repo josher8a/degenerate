@@ -91,15 +91,9 @@ final class AnyOfEmitter {
   Constructor _buildFromJson(
     List<({String name, IrType type, String typeName})> fields,
   ) {
-    final allObjectLike = fields.every(
-      (f) =>
-          f.type is IrObject ||
-          f.type is IrTypeRef ||
-          f.type is IrDiscriminatedUnion ||
-          f.type is IrUntaggedUnion ||
-          f.type is IrAnyOf ||
-          ctx.isUnionType(f.type),
-    );
+    final allObjectLike = ctx.anyOfFromJsonTakesMap([
+      for (final f in fields) f.type,
+    ]);
     final paramType = allObjectLike ? 'Map<String, dynamic>' : 'dynamic';
 
     final needsMap =

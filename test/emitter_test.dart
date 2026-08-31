@@ -6040,6 +6040,47 @@ void main() {
       expect(source, isNot(contains("'note'")));
       expect(source, contains('1 synthesized'));
     });
+
+    test('sealed anyOf fixture casts json to the map its fromJson takes', () {
+      // Past the OneOfN arity, so this lowers to a sealed class instead of a
+      // typedef. Every variant is object-like, so AnyOfEmitter gives its
+      // fromJson a `Map<String, dynamic>` parameter — the fixture's `json` is
+      // `Object?` and has to be cast to match.
+      final variants = <IrType>[
+        for (var i = 0; i < 10; i++)
+          IrObject('Variant$i', [
+            IrField('f$i', 'f$i', const IrPrimitive(PrimitiveKind.string),
+                isRequired: true),
+          ], requiredFields: ['f$i']),
+      ];
+      final types = <IrType>[IrAnyOf('Payload', variants)];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(
+        source,
+        contains('Payload.fromJson(json! as Map<String, dynamic>)'),
+      );
+    });
+
+    test('sealed untagged union fixture passes json uncast', () {
+      // UntaggedUnionEmitter gives fromJson an `Object?` parameter so it can
+      // dispatch on wire type. Casting here would throw on the variants that
+      // arrive as a string rather than a map.
+      final variants = <IrType>[
+        const IrObject('Boxed', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['id']),
+        for (var i = 0; i < 9; i++) const IrPrimitive(PrimitiveKind.string),
+      ];
+      final types = <IrType>[IrUntaggedUnion('Mixed', variants)];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains('Mixed.fromJson(json)'));
+      expect(source, isNot(contains('Mixed.fromJson(json!')));
+    });
   });
 
   // ─── NegativeFixtureEmitter ─────────────────────────────────
