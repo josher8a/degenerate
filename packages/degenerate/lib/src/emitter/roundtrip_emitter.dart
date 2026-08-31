@@ -96,8 +96,14 @@ final class RoundtripEmitter {
       if (unionVariants != null && !isOneOfType(type)) {
         final allPrimitive = unionVariants.every((v) => v is IrPrimitive);
         if (!allPrimitive) {
-          // The sealed fromJson accepts any JSON value (Object?).
-          final decode = '$name.fromJson(json)';
+          // An untagged union's fromJson accepts any JSON value (Object?) so
+          // it can dispatch on wire type; an anyOf over object-like variants
+          // takes a map instead, and the fixture's json has to be cast.
+          final takesMap =
+              type is IrAnyOf && _ctx.anyOfFromJsonTakesMap(unionVariants);
+          final decode = takesMap
+              ? '$name.fromJson(json! as Map<String, dynamic>)'
+              : '$name.fromJson(json)';
           final encode = '(value! as $name).toJson()';
           var any = false;
           for (var k = 0; k < unionVariants.length; k++) {

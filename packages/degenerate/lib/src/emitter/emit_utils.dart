@@ -43,6 +43,21 @@ extension EmitContextX on EmitContext {
     return vs != null && isOneOfTypedef(resolved.name!, vs);
   }
 
+  /// Whether the `fromJson` emitted for an anyOf over [variants] takes a
+  /// `Map<String, dynamic>` rather than the raw wire value.
+  ///
+  /// Every caller that writes a call to that `fromJson` has to agree with the
+  /// anyOf emitter on this, or it passes an `Object?` to a map parameter.
+  bool anyOfFromJsonTakesMap(List<IrType> variants) => variants.every(
+    (v) =>
+        v is IrObject ||
+        v is IrTypeRef ||
+        v is IrDiscriminatedUnion ||
+        v is IrUntaggedUnion ||
+        v is IrAnyOf ||
+        isUnionType(v),
+  );
+
   bool isUnionType(IrType type) {
     final resolved = type.resolveRef(typeRegistry);
     return resolved is IrDiscriminatedUnion ||
