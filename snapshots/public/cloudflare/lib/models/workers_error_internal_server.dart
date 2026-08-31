@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] == 10002 &&
       json.containsKey('message') && json['message'] is String; } 
 WorkersErrorInternalServer copyWith({WorkersErrorInternalServerCode? code, String? message, }) { return WorkersErrorInternalServer(
   code: code ?? this.code,

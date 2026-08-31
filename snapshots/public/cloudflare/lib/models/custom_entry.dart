@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'custom'; } 
 CustomEntry copyWith({DateTime? createdAt, String? Function()? description, bool? enabled, String? id, String? name, DlpPattern? pattern, String? Function()? profileId, DateTime? updatedAt, CustomEntryType? type, }) { return CustomEntry(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,

@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'delta': delta.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'thread.message.delta' &&
       json.containsKey('delta'); } 
 MessageDeltaObject copyWith({String? id, MessageDeltaObjectObject? object, MessageDeltaObjectDelta? delta, }) { return MessageDeltaObject(
   id: id ?? this.id,

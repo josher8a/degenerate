@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'input_audio_buffer.speech_stopped' &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num &&
       json.containsKey('item_id') && json['item_id'] is String; } 
 RealtimeBetaServerEventInputAudioBufferSpeechStopped copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferSpeechStoppedType? type, int? audioEndMs, String? itemId, }) { return RealtimeBetaServerEventInputAudioBufferSpeechStopped(

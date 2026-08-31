@@ -102,7 +102,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('case_
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('secret') && json['secret'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'exact_data'; } 
 ExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled, String? id, String? name, bool? secret, DateTime? updatedAt, ExactDataEntryType? type, }) { return ExactDataEntry(
   caseSensitive: caseSensitive ?? this.caseSensitive,
   createdAt: createdAt ?? this.createdAt,

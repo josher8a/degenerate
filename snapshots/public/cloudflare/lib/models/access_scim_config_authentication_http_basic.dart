@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'user': user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
-      json.containsKey('scheme') &&
+      json.containsKey('scheme') && json['scheme'] == 'httpbasic' &&
       json.containsKey('user') && json['user'] is String; } 
 AccessScimConfigAuthenticationHttpBasic copyWith({String? password, AccessScimConfigAuthenticationHttpBasicScheme? scheme, String? user, }) { return AccessScimConfigAuthenticationHttpBasic(
   password: password ?? this.password,

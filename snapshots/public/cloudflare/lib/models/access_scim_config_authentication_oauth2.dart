@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization_url') && json['authorization_url'] is String &&
       json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
-      json.containsKey('scheme') &&
+      json.containsKey('scheme') && json['scheme'] == 'oauth2' &&
       json.containsKey('token_url') && json['token_url'] is String; } 
 AccessScimConfigAuthenticationOauth2 copyWith({String? authorizationUrl, String? clientId, String? clientSecret, AccessScimConfigAuthenticationOauth2Scheme? scheme, List<String>? Function()? scopes, String? tokenUrl, }) { return AccessScimConfigAuthenticationOauth2(
   authorizationUrl: authorizationUrl ?? this.authorizationUrl,

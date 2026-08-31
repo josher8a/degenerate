@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (image != null) 'image': image?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'image'; } 
 RunStepDeltaStepDetailsToolCallsCodeOutputImageObject copyWith({int? index, RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type, RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Function()? image, }) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
   index: index ?? this.index,
   type: type ?? this.type,

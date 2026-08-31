@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'deleted': deleted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.project.user.deleted' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 ProjectUserDeleteResponse copyWith({ProjectUserDeleteResponseObject? object, String? id, bool? deleted, }) { return ProjectUserDeleteResponse(

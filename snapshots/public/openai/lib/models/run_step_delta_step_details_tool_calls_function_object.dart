@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (function != null) 'function': function?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'function'; } 
 RunStepDeltaStepDetailsToolCallsFunctionObject copyWith({int? index, String? Function()? id, AssistantToolsFunctionType? type, RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Function()? function, }) { return RunStepDeltaStepDetailsToolCallsFunctionObject(
   index: index ?? this.index,
   id: id != null ? id() : this.id,

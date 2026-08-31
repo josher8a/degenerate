@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'kind': kind.toJson(),
   'name': name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] == 'cat' &&
       json.containsKey('name') && json['name'] is String; } 
 SmartUnionOpenEnumsAndSizeCatWithName copyWith({SmartUnionNestedInnerCatKind? kind, String? name, }) { return SmartUnionOpenEnumsAndSizeCatWithName(
   kind: kind ?? this.kind,

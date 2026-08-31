@@ -66,7 +66,7 @@ final StartAttestationK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'StartAttestation'; } 
 StartAttestation copyWith({StartAttestationK? k}) { return StartAttestation(
   k: k ?? this.k,
 ); } 

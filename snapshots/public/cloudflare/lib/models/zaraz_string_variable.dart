@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'string' &&
       json.containsKey('value') && json['value'] is String; } 
 ZarazStringVariable copyWith({String? name, ZarazStringVariableType? type, String? value, }) { return ZarazStringVariable(
   name: name ?? this.name,

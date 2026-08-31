@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'model'; } 
 ElementsModel copyWith({String? id, ModelOutputs? outputs, ModelProperties? properties, ModelType? type, }) { return ElementsModel(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,

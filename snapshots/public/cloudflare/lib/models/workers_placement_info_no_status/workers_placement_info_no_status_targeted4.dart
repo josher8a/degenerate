@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
   'target': target.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') && json['mode'] == 'targeted' &&
       json.containsKey('target'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

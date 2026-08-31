@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('word_list') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'word_list'; } 
 WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, }) { return WordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,

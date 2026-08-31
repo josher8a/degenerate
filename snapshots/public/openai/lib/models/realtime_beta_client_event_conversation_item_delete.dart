@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'item_id': itemId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'conversation.item.delete' &&
       json.containsKey('item_id') && json['item_id'] is String; } 
 RealtimeBetaClientEventConversationItemDelete copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemDeleteType? type, String? itemId, }) { return RealtimeBetaClientEventConversationItemDelete(
   eventId: eventId != null ? eventId() : this.eventId,

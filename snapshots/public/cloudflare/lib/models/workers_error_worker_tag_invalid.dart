@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] == 100134 &&
       json.containsKey('message') && json['message'] is String; } 
 WorkersErrorWorkerTagInvalid copyWith({WorkersErrorWorkerTagInvalidCode? code, String? message, }) { return WorkersErrorWorkerTagInvalid(
   code: code ?? this.code,

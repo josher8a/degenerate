@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updatedAt': updatedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'car' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('make') && json['make'] is String &&
       json.containsKey('model') && json['model'] is String &&

@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('colo_name') &&
       json.containsKey('destination_conf') &&
-      json.containsKey('system') &&
+      json.containsKey('system') && json['system'] == 'magic-transit' &&
       json.containsKey('time_limit') &&
       json.containsKey('type'); } 
 MagicVisibilityPcapsPcapsRequestFull copyWith({MagicVisibilityPcapsPcapsByteLimit? Function()? byteLimit, MagicVisibilityPcapsPcapsColoName? coloName, MagicVisibilityPcapsPcapsDestinationConf? destinationConf, MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsPacketLimit? Function()? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitFull? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestFull(

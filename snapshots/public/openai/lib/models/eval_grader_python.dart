@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'image_tag': ?imageTag,
   'pass_threshold': ?passThreshold,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'python' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String; } 
 EvalGraderPython copyWith({EvalGraderPythonType? type, String? name, String? source, String? Function()? imageTag, double? Function()? passThreshold, }) { return EvalGraderPython(

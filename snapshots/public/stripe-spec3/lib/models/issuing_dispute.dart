@@ -586,7 +586,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'issuing.dispute' &&
       json.containsKey('status') &&
       json.containsKey('transaction'); } 
 /// Constraint violations for this value (empty when valid).

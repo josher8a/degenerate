@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'message_creation': messageCreation.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'message_creation' &&
       json.containsKey('message_creation'); } 
 RunStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMessageCreationObjectType? type, RunStepDetailsMessageCreationObjectMessageCreation? messageCreation, }) { return RunStepDetailsMessageCreationObject(
   type: type ?? this.type,

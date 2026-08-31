@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_tools') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'allowed_tools'; } 
 Variant1AllowedTools copyWith({AllowedToolsAllowedTools? allowedTools, AllowedToolsType? type, }) { return Variant1AllowedTools(
   allowedTools: allowedTools ?? this.allowedTools,
   type: type ?? this.type,

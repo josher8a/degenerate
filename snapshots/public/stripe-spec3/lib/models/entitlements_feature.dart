@@ -104,7 +104,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('lookup_key') && json['lookup_key'] is String &&
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'entitlements.feature'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }

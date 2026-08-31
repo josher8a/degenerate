@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'item_reference': itemReference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'item_reference' &&
       json.containsKey('item_reference') && json['item_reference'] is String; } 
 ItemReferenceInputMessages copyWith({InputMessagesItemReferenceType? type, String? itemReference, }) { return ItemReferenceInputMessages(
   type: type ?? this.type,

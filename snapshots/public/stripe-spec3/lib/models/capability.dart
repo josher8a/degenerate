@@ -202,7 +202,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'capability' &&
       json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).

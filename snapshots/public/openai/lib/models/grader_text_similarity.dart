@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'reference': reference,
   'evaluation_metric': evaluationMetric.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'text_similarity' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('reference') && json['reference'] is String &&

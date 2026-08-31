@@ -130,8 +130,8 @@ Map<String, dynamic> toJson() { return {
   'media_type': mediaType.toJson(),
   'data': data,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('media_type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'base64' &&
+      json.containsKey('media_type') && json['media_type'] == 'application/zip' &&
       json.containsKey('data') && json['data'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'file_search': fileSearch.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'file_search' &&
       json.containsKey('file_search'); } 
 RunStepDetailsToolCallsFileSearchObject copyWith({String? id, AssistantToolsFileSearchType? type, RunStepDetailsToolCallsFileSearchObjectFileSearch? fileSearch, }) { return RunStepDetailsToolCallsFileSearchObject(
   id: id ?? this.id,

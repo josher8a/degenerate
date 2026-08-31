@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('created_by') && json['created_by'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'radar.value_list_item' &&
       json.containsKey('value') && json['value'] is String &&
       json.containsKey('value_list') && json['value_list'] is String; } 
 /// Constraint violations for this value (empty when valid).

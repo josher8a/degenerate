@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
   'url': url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'StartUpgrade' &&
       json.containsKey('url') && json['url'] is String; } 
 StartUpgrade copyWith({StartUpgradeK? k, String? url, }) { return StartUpgrade(
   k: k ?? this.k,

@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'file': file.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file' &&
       json.containsKey('file'); } 
 ChatCompletionRequestMessageContentPartFile copyWith({ChatCompletionRequestMessageContentPartFileType? type, File? file, }) { return ChatCompletionRequestMessageContentPartFile(
   type: type ?? this.type,

@@ -67,7 +67,7 @@ final SpecificFunctionShellParamType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'shell'; } 
 SpecificFunctionShellParam copyWith({SpecificFunctionShellParamType? type}) { return SpecificFunctionShellParam(
   type: type ?? this.type,
 ); } 

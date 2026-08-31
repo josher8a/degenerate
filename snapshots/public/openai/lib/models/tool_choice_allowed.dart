@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
   'tools': tools.map((e) => e).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'allowed_tools' &&
       json.containsKey('mode') &&
       json.containsKey('tools'); } 
 ToolChoiceAllowed copyWith({ChatCompletionAllowedToolsChoiceType? type, Mode? mode, List<Map<String,dynamic>>? tools, }) { return ToolChoiceAllowed(

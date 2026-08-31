@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('gte') && json['gte'] is num &&
       json.containsKey('meter') &&
-      json.containsKey('recurrence'); } 
+      json.containsKey('recurrence') && json['recurrence'] == 'one_time'; } 
 ThresholdsResourceUsageThresholdConfig copyWith({List<ThresholdsResourceUsageAlertFilter>? Function()? filters, int? gte, Meter? meter, Recurrence? recurrence, }) { return ThresholdsResourceUsageThresholdConfig(
   filters: filters != null ? filters() : this.filters,
   gte: gte ?? this.gte,

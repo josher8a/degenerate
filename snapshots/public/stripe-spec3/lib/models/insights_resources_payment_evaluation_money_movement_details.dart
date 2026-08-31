@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (card != null) 'card': card?.toJson(),
   'money_movement_type': moneyMovementType.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type') && json['money_movement_type'] == 'card'; } 
 InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({InsightsResourcesPaymentEvaluationMoneyMovementCard? Function()? card, MoneyMovementType? moneyMovementType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,

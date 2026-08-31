@@ -319,7 +319,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('merchant_currency') && json['merchant_currency'] is String &&
       json.containsKey('merchant_data') &&
       json.containsKey('metadata') &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'issuing.authorization' &&
       json.containsKey('request_history') &&
       json.containsKey('status') &&
       json.containsKey('transactions') &&

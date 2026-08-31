@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'settings': settings.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'timer' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('settings'); } 
 ZarazTimerRule copyWith({ZarazTimerRuleAction? action, String? id, ZarazTimerRuleSettings? settings, }) { return ZarazTimerRule(

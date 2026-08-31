@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'file_search': fileSearch,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'file_search' &&
       json.containsKey('file_search'); } 
 RunStepDeltaStepDetailsToolCallsFileSearchObject copyWith({int? index, String? Function()? id, AssistantToolsFileSearchType? type, Map<String,dynamic>? fileSearch, }) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
   index: index ?? this.index,

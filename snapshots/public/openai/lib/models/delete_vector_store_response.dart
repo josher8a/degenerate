@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('deleted') && json['deleted'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'vector_store.deleted'; } 
 DeleteVectorStoreResponse copyWith({String? id, bool? deleted, DeleteVectorStoreResponseObject? object, }) { return DeleteVectorStoreResponse(
   id: id ?? this.id,
   deleted: deleted ?? this.deleted,

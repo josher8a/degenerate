@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'single_select_options': singleSelectOptions.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('data_type') &&
+      json.containsKey('data_type') && json['data_type'] == 'single_select' &&
       json.containsKey('single_select_options'); } 
 SingleSelect copyWith({String? name, SingleSelectDataType? dataType, List<FieldSingleSelectOption>? singleSelectOptions, }) { return SingleSelect(
   name: name ?? this.name,

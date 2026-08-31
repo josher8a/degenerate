@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'custom'; } 
 Variant1Custom copyWith({Variant1CustomCustom? custom, CustomEntryType? type, }) { return Variant1Custom(
   custom: custom ?? this.custom,
   type: type ?? this.type,

@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   'api_key_id': ?apiKeyId,
   'model': ?model,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.images.result' &&
       json.containsKey('images') && json['images'] is num &&
       json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
 UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? numModelRequests, String? Function()? source, String? Function()? size, String? Function()? projectId, String? Function()? userId, String? Function()? apiKeyId, String? Function()? model, }) { return UsageImagesResult(

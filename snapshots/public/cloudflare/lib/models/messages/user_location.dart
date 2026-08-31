@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('approximate') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'approximate'; } 
 UserLocation copyWith({Approximate? approximate, UserLocationType? type, }) { return UserLocation(
   approximate: approximate ?? this.approximate,
   type: type ?? this.type,

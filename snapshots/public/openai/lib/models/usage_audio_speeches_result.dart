@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   'api_key_id': ?apiKeyId,
   'model': ?model,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.audio_speeches.result' &&
       json.containsKey('characters') && json['characters'] is num &&
       json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
 UsageAudioSpeechesResult copyWith({UsageAudioSpeechesResultObject? object, int? characters, int? numModelRequests, String? Function()? projectId, String? Function()? userId, String? Function()? apiKeyId, String? Function()? model, }) { return UsageAudioSpeechesResult(

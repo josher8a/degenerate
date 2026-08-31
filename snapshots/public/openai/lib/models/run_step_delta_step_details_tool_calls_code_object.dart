@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'code_interpreter'; } 
 RunStepDeltaStepDetailsToolCallsCodeObject copyWith({int? index, String? Function()? id, AssistantToolsCodeType? type, RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Function()? codeInterpreter, }) { return RunStepDeltaStepDetailsToolCallsCodeObject(
   index: index ?? this.index,
   id: id != null ? id() : this.id,

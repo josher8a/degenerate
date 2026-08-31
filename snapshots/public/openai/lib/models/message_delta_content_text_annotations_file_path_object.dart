@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'end_index': ?endIndex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'file_path'; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final startIndex$ = startIndex;

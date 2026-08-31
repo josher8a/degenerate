@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (text != null) 'text': text?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'text'; } 
 MessageDeltaContentTextObject copyWith({int? index, MessageContentTextObjectType? type, MessageDeltaContentTextObjectText? Function()? text, }) { return MessageDeltaContentTextObject(
   index: index ?? this.index,
   type: type ?? this.type,

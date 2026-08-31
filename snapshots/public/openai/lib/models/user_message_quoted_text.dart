@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'text': text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'quoted_text' &&
       json.containsKey('text') && json['text'] is String; } 
 UserMessageQuotedText copyWith({UserMessageQuotedTextType? type, String? text, }) { return UserMessageQuotedText(
   type: type ?? this.type,

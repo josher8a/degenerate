@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'usage_bytes': usageBytes,
   'project_id': ?projectId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.vector_stores.result' &&
       json.containsKey('usage_bytes') && json['usage_bytes'] is num; } 
 UsageVectorStoresResult copyWith({UsageVectorStoresResultObject? object, int? usageBytes, String? Function()? projectId, }) { return UsageVectorStoresResult(
   object: object ?? this.object,

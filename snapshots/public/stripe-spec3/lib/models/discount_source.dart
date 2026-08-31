@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (coupon != null) 'coupon': coupon?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'coupon'; } 
 DiscountSource copyWith({DiscountSourceCoupon? Function()? coupon, DiscountSourceType? type, }) { return DiscountSource(
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,

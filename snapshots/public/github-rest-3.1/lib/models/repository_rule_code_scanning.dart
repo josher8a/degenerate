@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'code_scanning'; } 
 RepositoryRuleCodeScanning copyWith({RepositoryRuleCodeScanningType? type, RepositoryRuleCodeScanningParameters? Function()? parameters, }) { return RepositoryRuleCodeScanning(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,

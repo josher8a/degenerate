@@ -124,8 +124,8 @@ Map<String, dynamic> toJson() { return {
   'kind': kind.toJson(),
   'name': name.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
-      json.containsKey('name'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] == 'x' &&
+      json.containsKey('name') && json['name'] == 'y'; } 
 SmartUnionNestedOuterB copyWith({SmartUnionNestedOuterBKind? kind, Name? name, }) { return SmartUnionNestedOuterB(
   kind: kind ?? this.kind,
   name: name ?? this.name,

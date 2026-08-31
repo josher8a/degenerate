@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('source') && json['source'] is String &&
-      json.containsKey('strategy') &&
+      json.containsKey('strategy') && json['strategy'] == 'percentage' &&
       json.containsKey('versions'); } 
 WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotations, String? Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentStrategy? strategy, List<WorkersDeploymentVersions>? versions, }) { return WorkersDeployment(
   annotations: annotations != null ? annotations() : this.annotations,

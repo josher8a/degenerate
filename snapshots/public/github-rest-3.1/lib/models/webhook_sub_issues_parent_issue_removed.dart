@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'parent_issue_removed' &&
       json.containsKey('parent_issue_id') && json['parent_issue_id'] is num &&
       json.containsKey('parent_issue') &&
       json.containsKey('parent_issue_repo') &&

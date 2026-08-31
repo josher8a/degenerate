@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('shared_entries') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'integration'; } 
 IntegrationProfile copyWith({DateTime? createdAt, String? Function()? description, List<DlpEntry>? entries, String? id, String? name, List<DlpEntry>? sharedEntries, DateTime? updatedAt, IntegrationEntryType? type, }) { return IntegrationProfile(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,

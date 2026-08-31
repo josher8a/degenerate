@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   'target': ?target,
   'submodule_git_url': ?submoduleGitUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file' &&
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&

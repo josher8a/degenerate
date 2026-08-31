@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'percentage'; } 
 Percentage copyWith({String? id, Map<String,OutputsValue>? outputs, PercentageType? type, }) { return Percentage(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,

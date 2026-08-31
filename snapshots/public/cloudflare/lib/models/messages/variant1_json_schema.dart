@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('json_schema') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'json_schema'; } 
 Variant1JsonSchema copyWith({JsonSchemaJsonSchema? jsonSchema, JsonSchemaType? type, }) { return Variant1JsonSchema(
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type ?? this.type,

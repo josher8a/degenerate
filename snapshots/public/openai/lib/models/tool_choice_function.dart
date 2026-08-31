@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'name': name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'function' &&
       json.containsKey('name') && json['name'] is String; } 
 ToolChoiceFunction copyWith({AssistantToolsFunctionType? type, String? name, }) { return ToolChoiceFunction(
   type: type ?? this.type,

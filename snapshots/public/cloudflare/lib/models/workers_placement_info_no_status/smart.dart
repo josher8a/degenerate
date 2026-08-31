@@ -66,7 +66,7 @@ final SmartMode mode;
 Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') && json['mode'] == 'smart'; } 
 Smart copyWith({SmartMode? mode}) { return Smart(
   mode: mode ?? this.mode,
 ); } 

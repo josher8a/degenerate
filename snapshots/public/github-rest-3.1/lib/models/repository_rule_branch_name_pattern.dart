@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'branch_name_pattern'; } 
 RepositoryRuleBranchNamePattern copyWith({RepositoryRuleBranchNamePatternType? type, RepositoryRuleBranchNamePatternParameters? Function()? parameters, }) { return RepositoryRuleBranchNamePattern(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'tool_calls': toolCalls.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'tool_calls' &&
       json.containsKey('tool_calls'); } 
 RunStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDetailsToolCallsObjectToolCalls>? toolCalls, }) { return RunStepDetailsToolCallsObject(
   type: type ?? this.type,

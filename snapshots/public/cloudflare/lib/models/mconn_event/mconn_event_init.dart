@@ -66,7 +66,7 @@ final InitK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'Init'; } 
 MconnEventInit copyWith({InitK? k}) { return MconnEventInit(
   k: k ?? this.k,
 ); } 

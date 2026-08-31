@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'filename': filename,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file' &&
       json.containsKey('filename') && json['filename'] is String; } 
 FileAnnotationSource copyWith({FileAnnotationSourceType? type, String? filename, }) { return FileAnnotationSource(
   type: type ?? this.type,

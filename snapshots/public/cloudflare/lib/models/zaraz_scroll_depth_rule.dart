@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'settings': settings.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'scrollDepth' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('settings'); } 
 ZarazScrollDepthRule copyWith({ZarazScrollDepthRuleAction? action, String? id, ZarazScrollDepthRuleSettings? settings, }) { return ZarazScrollDepthRule(

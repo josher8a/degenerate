@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'output_tokens': outputTokens,
   'total_tokens': totalTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'tokens' &&
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('total_tokens') && json['total_tokens'] is num; } 

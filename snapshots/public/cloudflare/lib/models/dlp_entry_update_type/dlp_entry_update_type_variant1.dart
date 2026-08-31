@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'custom'; } 
 DlpEntryUpdateTypeVariant1 copyWith({String? Function()? description, String? name, DlpPattern? pattern, CustomEntryType? type, }) { return DlpEntryUpdateTypeVariant1(
   description: description != null ? description() : this.description,
   name: name ?? this.name,

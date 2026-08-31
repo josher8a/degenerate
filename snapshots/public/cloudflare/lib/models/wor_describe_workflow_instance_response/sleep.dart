@@ -89,7 +89,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('end')
       json.containsKey('finished') && json['finished'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('start') && json['start'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'sleep'; } 
 Sleep copyWith({DateTime? end, ResultError? Function()? error, bool? finished, String? name, DateTime? start, SleepType? type, }) { return Sleep(
   end: end ?? this.end,
   error: error != null ? error() : this.error,

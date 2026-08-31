@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'refusal': ?refusal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'refusal'; } 
 MessageDeltaContentRefusalObject copyWith({int? index, MessageContentRefusalObjectType? type, String? Function()? refusal, }) { return MessageDeltaContentRefusalObject(
   index: index ?? this.index,
   type: type ?? this.type,

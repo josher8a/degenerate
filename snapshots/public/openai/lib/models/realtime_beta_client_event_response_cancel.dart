@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'response_id': ?responseId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'response.cancel'; } 
 RealtimeBetaClientEventResponseCancel copyWith({String? Function()? eventId, RealtimeBetaClientEventResponseCancelType? type, String? Function()? responseId, }) { return RealtimeBetaClientEventResponseCancel(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,

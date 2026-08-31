@@ -443,7 +443,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'setup_intent' &&
       json.containsKey('payment_method_types') &&
       json.containsKey('status') &&
       json.containsKey('usage') && json['usage'] is String; } 

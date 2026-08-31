@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (imageFile != null) 'image_file': imageFile?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'image_file'; } 
 MessageDeltaContentImageFileObject copyWith({int? index, MessageContentImageFileObjectType? type, MessageDeltaContentImageFileObjectImageFile? Function()? imageFile, }) { return MessageDeltaContentImageFileObject(
   index: index ?? this.index,
   type: type ?? this.type,

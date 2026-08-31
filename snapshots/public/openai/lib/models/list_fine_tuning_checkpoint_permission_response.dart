@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'has_more': hasMore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'list' &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
 ListFineTuningCheckpointPermissionResponse copyWith({List<FineTuningCheckpointPermission>? data, ContainerFileListResourceObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningCheckpointPermissionResponse(
   data: data ?? this.data,

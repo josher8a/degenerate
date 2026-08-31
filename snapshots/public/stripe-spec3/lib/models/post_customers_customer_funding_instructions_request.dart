@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_transfer') &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('funding_type'); } 
+      json.containsKey('funding_type') && json['funding_type'] == 'bank_transfer'; } 
 PostCustomersCustomerFundingInstructionsRequest copyWith({PostCustomersCustomerFundingInstructionsRequestBankTransfer? bankTransfer, String? currency, List<String>? Function()? expand, FundingInstructionsFundingType? fundingType, }) { return PostCustomersCustomerFundingInstructionsRequest(
   bankTransfer: bankTransfer ?? this.bankTransfer,
   currency: currency ?? this.currency,

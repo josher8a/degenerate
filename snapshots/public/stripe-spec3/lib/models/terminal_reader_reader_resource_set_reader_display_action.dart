@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (cart != null) 'cart': cart?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'cart'; } 
 TerminalReaderReaderResourceSetReaderDisplayAction copyWith({TerminalReaderReaderResourceCart? Function()? cart, PostTerminalReadersReaderSetReaderDisplayRequestType? type, }) { return TerminalReaderReaderResourceSetReaderDisplayAction(
   cart: cart != null ? cart() : this.cart,
   type: type ?? this.type,

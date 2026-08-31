@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'Date'; } 
 R2LockRuleDateCondition copyWith({DateTime? date, R2LifecycleDateConditionType? type, }) { return R2LockRuleDateCondition(
   date: date ?? this.date,
   type: type ?? this.type,

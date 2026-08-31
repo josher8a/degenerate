@@ -66,7 +66,7 @@ final LeaveK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'Leave'; } 
 Leave copyWith({LeaveK? k}) { return Leave(
   k: k ?? this.k,
 ); } 

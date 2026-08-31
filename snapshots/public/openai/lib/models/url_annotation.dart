@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'source': source.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'url' &&
       json.containsKey('source'); } 
 UrlAnnotation copyWith({UrlAnnotationSourceType? type, UrlAnnotationSource? source, }) { return UrlAnnotation(
   type: type ?? this.type,

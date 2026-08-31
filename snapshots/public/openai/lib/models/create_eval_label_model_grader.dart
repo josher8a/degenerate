@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'labels': labels,
   'passing_labels': passingLabels,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'label_model' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('input') &&

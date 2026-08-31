@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'event': event.toJson(),
   'data': data.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'thread.run.step.cancelled' &&
       json.containsKey('data'); } 
 ThreadRunStepCancelled copyWith({ThreadRunStepCancelledEvent? event, RunStepObject? data, }) { return ThreadRunStepCancelled(
   event: event ?? this.event,

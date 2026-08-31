@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('provider_account_id') &&
       json.containsKey('provider_account_name') &&
-      json.containsKey('provider_type') &&
+      json.containsKey('provider_type') && json['provider_type'] == 'github' &&
       json.containsKey('repo_id') &&
       json.containsKey('repo_name'); } 
 BuildsUpsertRepoConnectionRequest copyWith({BuildsProviderAccountId? providerAccountId, BuildsProviderAccountName? providerAccountName, BuildsScmProviderType? providerType, BuildsRepoId? repoId, BuildsRepoName? repoName, }) { return BuildsUpsertRepoConnectionRequest(

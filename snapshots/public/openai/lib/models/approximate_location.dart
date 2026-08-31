@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'city': ?city,
   'timezone': ?timezone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'approximate'; } 
 ApproximateLocation copyWith({ApproximateLocationType? type, String? Function()? country, String? Function()? region, String? Function()? city, String? Function()? timezone, }) { return ApproximateLocation(
   type: type ?? this.type,
   country: country != null ? country() : this.country,

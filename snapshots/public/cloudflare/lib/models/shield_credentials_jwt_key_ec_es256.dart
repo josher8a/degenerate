@@ -146,11 +146,11 @@ Map<String, dynamic> toJson() { return {
   'crv': crv.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kid') && json['kid'] is String &&
-      json.containsKey('kty') &&
+      json.containsKey('kty') && json['kty'] == 'EC' &&
       json.containsKey('x') && json['x'] is String &&
       json.containsKey('y') && json['y'] is String &&
-      json.containsKey('alg') &&
-      json.containsKey('crv'); } 
+      json.containsKey('alg') && json['alg'] == 'ES256' &&
+      json.containsKey('crv') && json['crv'] == 'P-256'; } 
 ShieldCredentialsJwtKeyEcEs256 copyWith({String? kid, ShieldCredentialsJwtKeyEcCommonKty? kty, String? x, String? y, ShieldCredentialsJwtKeyEcEs256Alg? alg, ShieldCredentialsJwtKeyEcEs256Crv? crv, }) { return ShieldCredentialsJwtKeyEcEs256(
   kid: kid ?? this.kid,
   kty: kty ?? this.kty,

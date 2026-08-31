@@ -294,7 +294,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('network') &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'treasury.debit_reversal' &&
       json.containsKey('received_debit') && json['received_debit'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 

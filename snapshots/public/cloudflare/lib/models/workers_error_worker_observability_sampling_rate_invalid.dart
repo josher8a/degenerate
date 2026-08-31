@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] == 100308 &&
       json.containsKey('message') && json['message'] is String; } 
 WorkersErrorWorkerObservabilitySamplingRateInvalid copyWith({WorkersErrorWorkerObservabilitySamplingRateInvalidCode? code, String? message, }) { return WorkersErrorWorkerObservabilitySamplingRateInvalid(
   code: code ?? this.code,

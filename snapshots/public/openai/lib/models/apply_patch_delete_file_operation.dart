@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'path': path,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'delete_file' &&
       json.containsKey('path') && json['path'] is String; } 
 ApplyPatchDeleteFileOperation copyWith({ApplyPatchDeleteFileOperationType? type, String? path, }) { return ApplyPatchDeleteFileOperation(
   type: type ?? this.type,

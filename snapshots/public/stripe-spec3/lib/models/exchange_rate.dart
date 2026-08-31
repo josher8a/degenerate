@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   'rates': rates,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'exchange_rate' &&
       json.containsKey('rates'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

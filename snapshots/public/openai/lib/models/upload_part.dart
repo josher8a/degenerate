@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('upload_id') && json['upload_id'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'upload.part'; } 
 UploadPart copyWith({String? id, int? createdAt, String? uploadId, UploadPartObject? object, }) { return UploadPart(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,

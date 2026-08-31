@@ -64,7 +64,7 @@ final JsonObjectType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'json_object'; } 
 JsonObject copyWith({JsonObjectType? type}) { return JsonObject(
   type: type ?? this.type,
 ); } 

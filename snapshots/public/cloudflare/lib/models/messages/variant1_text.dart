@@ -12,7 +12,7 @@ final TextType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'text'; } 
 Variant1Text copyWith({TextType? type}) { return Variant1Text(
   type: type ?? this.type,
 ); } 

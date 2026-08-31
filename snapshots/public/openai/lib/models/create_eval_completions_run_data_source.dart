@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'model': ?model,
   'source': source.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'completions' &&
       json.containsKey('source'); } 
 CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceType? type, CreateEvalCompletionsRunDataSourceInputMessages? Function()? inputMessages, CreateEvalCompletionsRunDataSourceSamplingParams? Function()? samplingParams, String? Function()? model, CreateEvalCompletionsRunDataSourceSource? source, }) { return CreateEvalCompletionsRunDataSource(
   type: type ?? this.type,

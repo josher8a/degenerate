@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'content'; } 
 PredictionContent copyWith({DeveloperContent? content, ContentType? type, }) { return PredictionContent(
   content: content ?? this.content,
   type: type ?? this.type,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'reference_id': ?referenceId,
   'tenant_url': tenantUrl.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('integration_type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('integration_type') && json['integration_type'] == 'Okta' &&
       json.containsKey('tenant_url') && json['tenant_url'] is String; } 
 DlpCreateIntegrationBody copyWith({DlpRiskScoreIntegrationType? integrationType, String? Function()? referenceId, Uri? tenantUrl, }) { return DlpCreateIntegrationBody(
   integrationType: integrationType ?? this.integrationType,

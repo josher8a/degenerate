@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'iteration_configuration': iterationConfiguration.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('data_type') &&
+      json.containsKey('data_type') && json['data_type'] == 'iteration' &&
       json.containsKey('iteration_configuration'); } 
 Iteration copyWith({String? name, IterationDataType? dataType, FieldIterationConfiguration? iterationConfiguration, }) { return Iteration(
   name: name ?? this.name,

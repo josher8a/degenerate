@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
       json.containsKey('headers') &&
       json.containsKey('jobStatus') &&
       json.containsKey('logpushDataset') &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'logpush' &&
       json.containsKey('url') && json['url'] is String; } 
 DestinationListResponseResultConfiguration copyWith({String? destinationConf, Map<String,String>? headers, JobStatus? jobStatus, ConfigurationLogpushDataset? logpushDataset, ConfigurationType? type, String? url, }) { return DestinationListResponseResultConfiguration(
   destinationConf: destinationConf ?? this.destinationConf,

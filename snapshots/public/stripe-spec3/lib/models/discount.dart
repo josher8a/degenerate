@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'subscription_item': ?subscriptionItem,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'discount' &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
 /// Constraint violations for this value (empty when valid).

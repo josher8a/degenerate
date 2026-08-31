@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'domain': ?domain,
   'operating_system': operatingSystem.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') && json['operating_system'] == 'windows'; } 
 TeamsDevicesDomainJoinedInputRequest copyWith({String? Function()? domain, TeamsDevicesDomainJoinedInputRequestOperatingSystem? operatingSystem, }) { return TeamsDevicesDomainJoinedInputRequest(
   domain: domain != null ? domain() : this.domain,
   operatingSystem: operatingSystem ?? this.operatingSystem,

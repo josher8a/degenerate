@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'text': text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'output_text' &&
       json.containsKey('text') && json['text'] is String; } 
 EvalItemContentOutputText copyWith({EvalItemContentOutputTextType? type, String? text, }) { return EvalItemContentOutputText(
   type: type ?? this.type,

@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'data': data.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'webhook.created' &&
       json.containsKey('data'); } 
 WebhookRequestCreated copyWith({WebhookRequestCreatedType? type, SimpleObject? data, }) { return WebhookRequestCreated(
   type: type ?? this.type,

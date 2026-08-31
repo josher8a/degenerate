@@ -66,7 +66,7 @@ final FinishAttestationSuccessK k;
 Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'FinishAttestationSuccess'; } 
 FinishAttestationSuccess copyWith({FinishAttestationSuccessK? k}) { return FinishAttestationSuccess(
   k: k ?? this.k,
 ); } 

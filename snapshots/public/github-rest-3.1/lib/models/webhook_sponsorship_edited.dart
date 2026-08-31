@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'edited' &&
       json.containsKey('changes') &&
       json.containsKey('sender') &&
       json.containsKey('sponsorship'); } 

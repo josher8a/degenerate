@@ -104,7 +104,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('choices') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object') && json['object'] == 'text_completion'; } 
 CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoices>? choices, int? created, String? model, String? Function()? systemFingerprint, CreateCompletionResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateCompletionResponse(
   id: id ?? this.id,
   choices: choices ?? this.choices,

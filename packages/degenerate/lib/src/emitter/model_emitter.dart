@@ -277,6 +277,18 @@ final class ModelEmitter {
   /// Returns a Dart `is` type check expression for canParse, or null if
   /// not worth checking (complex nested types).
   String? _canParseTypeCheck(IrType type, String accessor) {
+    // A single-value enum is a const discriminator: the one thing that tells
+    // this variant apart from its siblings, which share its field names. Key
+    // presence alone lets a sibling claim the payload, and the fromJson behind
+    // the canParse guard then throws on the first mismatched cast.
+    final resolved = ctx.resolve(type);
+    if (resolved is IrEnum && resolved.values.length == 1) {
+      final value = resolved.values.single;
+      final literal = resolved.valueKind == PrimitiveKind.string
+          ? dartStringLiteral(value)
+          : value;
+      return '$accessor == $literal';
+    }
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.dynamic_ => null,

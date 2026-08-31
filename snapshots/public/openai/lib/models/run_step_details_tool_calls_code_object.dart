@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'code_interpreter': codeInterpreter.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'code_interpreter' &&
       json.containsKey('code_interpreter'); } 
 RunStepDetailsToolCallsCodeObject copyWith({String? id, AssistantToolsCodeType? type, RunStepDetailsToolCallsCodeObjectCodeInterpreter? codeInterpreter, }) { return RunStepDetailsToolCallsCodeObject(
   id: id ?? this.id,

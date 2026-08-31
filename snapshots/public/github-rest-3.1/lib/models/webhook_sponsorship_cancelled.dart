@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'cancelled' &&
       json.containsKey('sender') &&
       json.containsKey('sponsorship'); } 
 WebhookSponsorshipCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipCancelled(

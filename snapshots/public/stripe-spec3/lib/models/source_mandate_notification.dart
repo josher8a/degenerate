@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'source_mandate_notification' &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('source') &&
       json.containsKey('status') && json['status'] is String &&

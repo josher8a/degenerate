@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] == 'mcp_list_tools.completed' &&
       json.containsKey('item_id') && json['item_id'] is String; } 
 RealtimeBetaServerEventMcpListToolsCompleted copyWith({String? eventId, RealtimeBetaServerEventMcpListToolsCompletedType? type, String? itemId, }) { return RealtimeBetaServerEventMcpListToolsCompleted(
   eventId: eventId ?? this.eventId,

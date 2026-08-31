@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updatedAt': updatedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'boat' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('length') && json['length'] is num; } 
 ExampleBoat copyWith({ExampleBoatType? type, String? name, double? length, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return ExampleBoat(

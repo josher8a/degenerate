@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'format': format.toJson(),
   'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('format') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('format') && json['format'] == 'json' &&
       json.containsKey('type') && json['type'] is String; } 
 CloudflarePipelinesWorkersPipelinesBindingSource copyWith({CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, String? type, }) { return CloudflarePipelinesWorkersPipelinesBindingSource(
   format: format ?? this.format,

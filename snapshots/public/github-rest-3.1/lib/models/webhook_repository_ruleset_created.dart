@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'repository_ruleset': repositoryRuleset.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'created' &&
       json.containsKey('repository_ruleset') &&
       json.containsKey('sender'); } 
 WebhookRepositoryRulesetCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, RepositoryRuleset? repositoryRuleset, SimpleUser? sender, }) { return WebhookRepositoryRulesetCreated(

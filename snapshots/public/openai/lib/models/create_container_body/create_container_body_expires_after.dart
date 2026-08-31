@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'anchor': anchor.toJson(),
   'minutes': minutes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') && json['anchor'] == 'last_active_at' &&
       json.containsKey('minutes') && json['minutes'] is num; } 
 CreateContainerBodyExpiresAfter copyWith({VectorStoreExpirationAfterAnchor? anchor, int? minutes, }) { return CreateContainerBodyExpiresAfter(
   anchor: anchor ?? this.anchor,

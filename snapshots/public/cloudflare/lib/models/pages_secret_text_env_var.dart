@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'value': value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'secret_text' &&
       json.containsKey('value') && json['value'] is String; } 
 PagesSecretTextEnvVar copyWith({PagesSecretTextEnvVarType? type, String? value, }) { return PagesSecretTextEnvVar(
   type: type ?? this.type,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'function': function.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'function' &&
       json.containsKey('function'); } 
 ChatCompletionNamedToolChoice copyWith({AssistantToolsFunctionType? type, AssistantsNamedToolChoiceFunction? function, }) { return ChatCompletionNamedToolChoice(
   type: type ?? this.type,

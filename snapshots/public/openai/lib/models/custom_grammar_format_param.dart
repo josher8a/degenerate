@@ -144,7 +144,7 @@ Map<String, dynamic> toJson() { return {
   'syntax': syntax.toJson(),
   'definition': definition,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'grammar' &&
       json.containsKey('syntax') &&
       json.containsKey('definition') && json['definition'] is String; } 
 CustomGrammarFormatParam copyWith({CustomGrammarFormatParamType? type, GrammarSyntax1? syntax, String? definition, }) { return CustomGrammarFormatParam(

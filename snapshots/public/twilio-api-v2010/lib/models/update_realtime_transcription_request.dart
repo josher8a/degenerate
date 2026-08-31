@@ -64,7 +64,7 @@ final RealtimeTranscriptionEnumUpdateStatus status;
 Map<String, dynamic> toJson() { return {
   'Status': status.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status') && json['Status'] == 'stopped'; } 
 UpdateRealtimeTranscriptionRequest copyWith({RealtimeTranscriptionEnumUpdateStatus? status}) { return UpdateRealtimeTranscriptionRequest(
   status: status ?? this.status,
 ); } 

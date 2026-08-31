@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   'max_requests_per_1_day': ?maxRequestsPer1Day,
   'batch_1_day_max_input_tokens': ?batch1DayMaxInputTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'project.rate_limit' &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('max_requests_per_1_minute') && json['max_requests_per_1_minute'] is num &&

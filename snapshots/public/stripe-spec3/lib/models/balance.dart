@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('available') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'balance' &&
       json.containsKey('pending'); } 
 Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function()? connectReserved, List<BalanceAmountNet>? Function()? instantAvailable, BalanceDetail? Function()? issuing, bool? livemode, BalanceObject? object, List<BalanceAmount>? pending, BalanceDetailUngated? Function()? refundAndDisputePrefunding, }) { return Balance(
   available: available ?? this.available,

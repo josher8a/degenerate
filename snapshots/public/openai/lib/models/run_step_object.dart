@@ -330,7 +330,7 @@ Map<String, dynamic> toJson() { return {
   'usage': usage.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'thread.run.step' &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('assistant_id') && json['assistant_id'] is String &&
       json.containsKey('thread_id') && json['thread_id'] is String &&

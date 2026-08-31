@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&
       json.containsKey('target_attributes') &&
-      json.containsKey('protocol'); } 
+      json.containsKey('protocol') && json['protocol'] == 'SSH'; } 
 AccessTargetCriteriaInfraApp copyWith({AccessPort? port, Map<String,List<String>>? targetAttributes, AccessProtocolInfraApp? protocol, }) { return AccessTargetCriteriaInfraApp(
   port: port ?? this.port,
   targetAttributes: targetAttributes ?? this.targetAttributes,

@@ -239,6 +239,42 @@ void main() {
       });
     });
 
+    group('canParse pins a const discriminator to its wire value', () {
+      String sourceFor(IrType typeField) {
+        final model = IrObject(
+          'GasPayment',
+          [
+            IrField('type', 'type', typeField, isRequired: true),
+            const IrField(
+                'amount', 'amount', IrPrimitive(PrimitiveKind.string),
+                isRequired: true),
+          ],
+          requiredFields: ['type', 'amount'],
+        );
+        final specs = ModelEmitter(model).emit();
+        return emitRaw(Library((b) => b..body.addAll(specs)));
+      }
+
+      test('single-value enum field is checked by value, not just presence', () {
+        // Sibling variants of a union share their field names, so key presence
+        // alone lets one variant claim another's payload — and the fromJson
+        // behind the canParse guard then throws on the first mismatched cast.
+        final source = sourceFor(const IrEnum('GasPaymentType', ['GAS_PAYMENT']));
+
+        expect(source, contains("json['type'] == 'GAS_PAYMENT'"));
+      });
+
+      test('multi-value enum field is left unchecked', () {
+        // Any of its values parses, and an unrecognized one is still accepted
+        // as the enum's unknown case, so there is nothing to pin.
+        final source =
+            sourceFor(const IrEnum('Status', ['ACTIVE', 'CLOSED']));
+
+        expect(source, contains("json.containsKey('type')"));
+        expect(source, isNot(contains("json['type'] == 'ACTIVE'")));
+      });
+    });
+
     group('field named toString does not conflict with Object.toString', () {
       late String source;
 

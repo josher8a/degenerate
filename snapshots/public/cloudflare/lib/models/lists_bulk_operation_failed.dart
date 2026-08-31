@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed') &&
       json.containsKey('error') && json['error'] is String &&
       json.containsKey('id') &&
-      json.containsKey('status'); } 
+      json.containsKey('status') && json['status'] == 'failed'; } 
 ListsBulkOperationFailed copyWith({ListsCompleted? completed, String? error, ListsOperationId? id, ListsBulkOperationFailedStatus? status, }) { return ListsBulkOperationFailed(
   completed: completed ?? this.completed,
   error: error ?? this.error,

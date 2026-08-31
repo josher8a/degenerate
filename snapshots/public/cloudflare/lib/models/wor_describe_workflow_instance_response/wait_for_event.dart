@@ -94,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('end')
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('output') &&
       json.containsKey('start') && json['start'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type') && json['type'] == 'waitForEvent'; } 
 WaitForEvent copyWith({DateTime? end, ResultError? Function()? error, bool? finished, String? name, WaitForEventOutput? output, DateTime? start, WaitForEventType? type, }) { return WaitForEvent(
   end: end ?? this.end,
   error: error != null ? error() : this.error,

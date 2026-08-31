@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'ruleset_source': ?rulesetSource,
   'ruleset_id': ?rulesetId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'non_fast_forward'; } 
 Variant10 copyWith({RepositoryRuleNonFastForwardType? type, RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) { return Variant10(
   type: type ?? this.type,
   rulesetSourceType: rulesetSourceType != null ? rulesetSourceType() : this.rulesetSourceType,

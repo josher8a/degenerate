@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'schema': schema,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom' &&
       json.containsKey('schema'); } 
 EvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) { return EvalCustomDataSourceConfig(
   type: type ?? this.type,

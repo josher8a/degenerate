@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'ruleset_source': ?rulesetSource,
   'ruleset_id': ?rulesetId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'code_scanning'; } 
 Variant21 copyWith({RepositoryRuleCodeScanningType? type, RepositoryRuleCodeScanningParameters? Function()? parameters, RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) { return Variant21(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,

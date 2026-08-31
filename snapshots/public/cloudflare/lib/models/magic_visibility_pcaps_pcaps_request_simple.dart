@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('packet_limit') &&
-      json.containsKey('system') &&
+      json.containsKey('system') && json['system'] == 'magic-transit' &&
       json.containsKey('time_limit') &&
       json.containsKey('type'); } 
 MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsOffsetTime? Function()? offsetTime, MagicVisibilityPcapsPcapsPacketLimit? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestSimple(

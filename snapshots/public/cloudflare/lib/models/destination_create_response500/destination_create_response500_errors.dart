@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'detail': ?detail,
   'message': message.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] == 'Internal error'; } 
 DestinationCreateResponse500Errors copyWith({String? Function()? detail, DestinationCreateResponse500ErrorsMessage? message, }) { return DestinationCreateResponse500Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,

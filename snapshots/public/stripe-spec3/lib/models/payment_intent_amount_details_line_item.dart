@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   'unit_of_measure': ?unitOfMeasure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') &&
+      json.containsKey('object') && json['object'] == 'payment_intent_amount_details_line_item' &&
       json.containsKey('product_name') && json['product_name'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
       json.containsKey('unit_cost') && json['unit_cost'] is num; } 
