@@ -64,7 +64,7 @@ final AiSearchInstanceChangeJobStatusRequestAction action;
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'cancel'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
 AiSearchInstanceChangeJobStatusRequest copyWith({AiSearchInstanceChangeJobStatusRequestAction? action}) { return AiSearchInstanceChangeJobStatusRequest(
   action: action ?? this.action,
 ); } 

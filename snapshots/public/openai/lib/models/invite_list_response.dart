@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'last_id': ?lastId,
   'has_more': ?hasMore,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'list' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data'); } 
 InviteListResponse copyWith({ContainerFileListResourceObject? object, List<Invite>? data, String? Function()? firstId, String? Function()? lastId, bool? Function()? hasMore, }) { return InviteListResponse(
   object: object ?? this.object,

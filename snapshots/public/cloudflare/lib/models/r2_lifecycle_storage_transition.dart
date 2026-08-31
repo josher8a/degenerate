@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'storageClass': storageClass.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('condition') &&
-      json.containsKey('storageClass') && json['storageClass'] == 'InfrequentAccess'; } 
+      json.containsKey('storageClass'); } 
 R2LifecycleStorageTransition copyWith({R2LifecycleStorageTransitionCondition? condition, StorageClass? storageClass, }) { return R2LifecycleStorageTransition(
   condition: condition ?? this.condition,
   storageClass: storageClass ?? this.storageClass,

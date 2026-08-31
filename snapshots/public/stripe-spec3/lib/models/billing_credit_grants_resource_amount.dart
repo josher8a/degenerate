@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (monetary != null) 'monetary': monetary?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'monetary'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 BillingCreditGrantsResourceAmount copyWith({BillingCreditGrantsResourceMonetaryAmount? Function()? monetary, BillingCreditGrantsResourceAmountType? type, }) { return BillingCreditGrantsResourceAmount(
   monetary: monetary != null ? monetary() : this.monetary,
   type: type ?? this.type,

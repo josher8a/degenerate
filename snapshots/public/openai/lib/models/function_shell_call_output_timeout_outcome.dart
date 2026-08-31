@@ -67,7 +67,7 @@ final FunctionShellCallOutputTimeoutOutcomeType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'timeout'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 FunctionShellCallOutputTimeoutOutcome copyWith({FunctionShellCallOutputTimeoutOutcomeType? type}) { return FunctionShellCallOutputTimeoutOutcome(
   type: type ?? this.type,
 ); } 

@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
       json.containsKey('headers') &&
-      json.containsKey('http_method') && json['http_method'] == 'POST'; } 
+      json.containsKey('http_method'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (body.runes.length > 5000) { errors.add('body: length must be <= 5000'); }

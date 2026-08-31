@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'thread': thread.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'resolved' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('thread'); } 

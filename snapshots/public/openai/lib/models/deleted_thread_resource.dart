@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'chatkit.thread.deleted' &&
+      json.containsKey('object') &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 DeletedThreadResource copyWith({String? id, DeletedThreadResourceObject? object, bool? deleted, }) { return DeletedThreadResource(
   id: id ?? this.id,

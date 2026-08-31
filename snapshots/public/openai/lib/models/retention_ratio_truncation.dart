@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'retention_ratio': retentionRatio,
   if (tokenLimits != null) 'token_limits': tokenLimits?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'retention_ratio' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('retention_ratio') && json['retention_ratio'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

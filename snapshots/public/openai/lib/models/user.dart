@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
   'added_at': addedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.user' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('email') && json['email'] is String &&

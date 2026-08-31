@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'worker_id': workerId.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
-      json.containsKey('resource_type') && json['resource_type'] == 'worker_version' &&
+      json.containsKey('resource_type') &&
       json.containsKey('worker_id'); } 
 ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeWorkerVersionEnum? resourceType, ResourceTaggingWorkerId? workerId, }) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(
   resourceId: resourceId ?? this.resourceId,

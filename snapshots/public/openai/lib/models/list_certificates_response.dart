@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('object') && json['object'] == 'list'; } 
+      json.containsKey('object'); } 
 ListCertificatesResponse copyWith({List<Certificate>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, ContainerFileListResourceObject? object, }) { return ListCertificatesResponse(
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,

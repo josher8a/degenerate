@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] == 10037 &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
       json.containsKey('message') && json['message'] is String; } 
 WorkersErrorWorkerLimit copyWith({WorkersErrorWorkerLimitCode? code, String? message, }) { return WorkersErrorWorkerLimit(
   code: code ?? this.code,

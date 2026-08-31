@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'unpublished' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('release') &&
       json.containsKey('repository'); } 
 WebhookReleaseUnpublished copyWith({WebhookReleaseUnpublishedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease1? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookReleaseUnpublished(

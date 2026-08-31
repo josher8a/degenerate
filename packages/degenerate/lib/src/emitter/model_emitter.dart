@@ -235,10 +235,10 @@ final class ModelEmitter {
         .map((f) {
           final keyCheck =
               'json.containsKey(${dartStringLiteral(f.originalName)})';
-          final typeCheck = _canParseTypeCheck(
-            f.type,
-            'json[${dartStringLiteral(f.originalName)}]',
-          );
+          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
+          final typeCheck =
+              _constDiscriminatorCheck(f, accessor) ??
+              _canParseTypeCheck(f.type, accessor);
           if (typeCheck != null) {
             return '$keyCheck && $typeCheck';
           }
@@ -274,21 +274,39 @@ final class ModelEmitter {
     );
   }
 
+  /// Pins [f] to its const wire value, or null where no pin is warranted.
+  ///
+  /// A single-value enum tells a union variant apart from siblings that share
+  /// its field names: key presence alone lets a sibling claim the payload, and
+  /// the `fromJson` behind the `canParse` guard then throws on the first
+  /// mismatched cast. `analyzeConstDiscriminators` decides where that applies,
+  /// because pinning costs the `$Unknown` fallback a generated enum carries and
+  /// is only worth paying where a sibling could otherwise claim the payload.
+  ///
+  /// A nullable field still admits `null` on the wire, so the pin allows it
+  /// rather than rejecting a payload `fromJson` accepts. Use-site nullability
+  /// is checked separately because `resolveRef` drops it.
+  String? _constDiscriminatorCheck(IrField f, String accessor) {
+    if (!(ctx.constDiscriminators[model.name]?.contains(f.originalName) ??
+        false)) {
+      return null;
+    }
+    final resolved = ctx.resolve(f.type);
+    if (resolved is! IrEnum || resolved.values.length != 1) return null;
+
+    final value = resolved.values.single;
+    final literal = resolved.valueKind == PrimitiveKind.string
+        ? dartStringLiteral(value)
+        : value;
+    final pin = '$accessor == $literal';
+    return f.type.isNullable || resolved.isNullable
+        ? '($accessor == null || $pin)'
+        : pin;
+  }
+
   /// Returns a Dart `is` type check expression for canParse, or null if
   /// not worth checking (complex nested types).
   String? _canParseTypeCheck(IrType type, String accessor) {
-    // A single-value enum is a const discriminator: the one thing that tells
-    // this variant apart from its siblings, which share its field names. Key
-    // presence alone lets a sibling claim the payload, and the fromJson behind
-    // the canParse guard then throws on the first mismatched cast.
-    final resolved = ctx.resolve(type);
-    if (resolved is IrEnum && resolved.values.length == 1) {
-      final value = resolved.values.single;
-      final literal = resolved.valueKind == PrimitiveKind.string
-          ? dartStringLiteral(value)
-          : value;
-      return '$accessor == $literal';
-    }
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.dynamic_ => null,

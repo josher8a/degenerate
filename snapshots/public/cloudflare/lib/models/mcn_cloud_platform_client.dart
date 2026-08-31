@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
   'name': name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_type') && json['client_type'] == 'MAGIC_WAN_CLOUD_ONRAMP' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_type') &&
       json.containsKey('id') &&
       json.containsKey('name') && json['name'] is String; } 
 McnCloudPlatformClient copyWith({McnCloudPlatformClientClientType? clientType, McnPlatformClientId? id, String? name, }) { return McnCloudPlatformClient(

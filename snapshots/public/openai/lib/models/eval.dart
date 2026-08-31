@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'metadata': metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'eval' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('data_source_config') &&

@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type') && json['type'] == 'http'; } 
+      json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final httpPort$ = httpPort;

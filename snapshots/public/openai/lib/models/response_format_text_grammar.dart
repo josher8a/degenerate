@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'grammar': grammar,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'grammar' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('grammar') && json['grammar'] is String; } 
 ResponseFormatTextGrammar copyWith({GrammarFormatType? type, String? grammar, }) { return ResponseFormatTextGrammar(
   type: type ?? this.type,

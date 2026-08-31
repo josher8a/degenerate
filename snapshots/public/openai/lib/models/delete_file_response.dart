@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'file' &&
+      json.containsKey('object') &&
       json.containsKey('deleted') && json['deleted'] is bool; } 
 DeleteFileResponse copyWith({String? id, DeleteFileResponseObject? object, bool? deleted, }) { return DeleteFileResponse(
   id: id ?? this.id,

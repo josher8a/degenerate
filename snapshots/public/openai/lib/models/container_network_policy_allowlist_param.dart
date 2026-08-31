@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'allowed_domains': allowedDomains,
   if (domainSecrets != null) 'domain_secrets': domainSecrets?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'allowlist' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('allowed_domains'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

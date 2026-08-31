@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'exit_code': exitCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'exit' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('exit_code') && json['exit_code'] is num; } 
 FunctionShellCallOutputExitOutcome copyWith({FunctionShellCallOutputExitOutcomeType? type, int? exitCode, }) { return FunctionShellCallOutputExitOutcome(
   type: type ?? this.type,

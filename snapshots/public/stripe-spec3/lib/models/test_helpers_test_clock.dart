@@ -143,7 +143,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('frozen_time') && json['frozen_time'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') && json['object'] == 'test_helpers.test_clock' &&
+      json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
 /// Constraint violations for this value (empty when valid).

@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   'previous_item_id': ?previousItemId,
   'item': item.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'conversation.item.create' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('item'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

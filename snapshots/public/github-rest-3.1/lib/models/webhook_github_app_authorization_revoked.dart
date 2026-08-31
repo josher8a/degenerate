@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'revoked' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('sender'); } 
 WebhookGithubAppAuthorizationRevoked copyWith({WebhookGithubAppAuthorizationRevokedAction? action, SimpleUser? sender, }) { return WebhookGithubAppAuthorizationRevoked(
   action: action ?? this.action,

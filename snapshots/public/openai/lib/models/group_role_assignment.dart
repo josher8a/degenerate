@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'group': group.toJson(),
   'role': role.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'group.role' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('group') &&
       json.containsKey('role'); } 
 GroupRoleAssignment copyWith({GroupRoleAssignmentObject? object, Group? group, Role? role, }) { return GroupRoleAssignment(

@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'promote_to_enterprise' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('definition'); } 
 WebhookCustomPropertyPromotedToEnterprise copyWith({WebhookCustomPropertyPromotedToEnterpriseAction? action, CustomProperty? definition, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, SimpleUser? Function()? sender, }) { return WebhookCustomPropertyPromotedToEnterprise(
   action: action ?? this.action,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': fileId,
   'detail': detail.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'computer_screenshot' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('image_url') && json['image_url'] is String &&
       json.containsKey('file_id') && json['file_id'] is String &&
       json.containsKey('detail'); } 

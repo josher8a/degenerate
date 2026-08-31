@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'id': id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.project.service_account.api_key' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('value') && json['value'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&

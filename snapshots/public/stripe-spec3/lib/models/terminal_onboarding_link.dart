@@ -85,8 +85,8 @@ Map<String, dynamic> toJson() { return {
   'redirect_url': redirectUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
-      json.containsKey('link_type') && json['link_type'] == 'apple_terms_and_conditions' &&
-      json.containsKey('object') && json['object'] == 'terminal.onboarding_link' &&
+      json.containsKey('link_type') &&
+      json.containsKey('object') &&
       json.containsKey('redirect_url') && json['redirect_url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

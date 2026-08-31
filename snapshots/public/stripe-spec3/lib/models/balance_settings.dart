@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'payments': payments.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'balance_settings' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('payments'); } 
 BalanceSettings copyWith({BalanceSettingsObject? object, BalanceSettingsResourcePayments? payments, }) { return BalanceSettings(
   object: object ?? this.object,

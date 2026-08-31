@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('object') && json['object'] == 'list' &&
+      json.containsKey('object') &&
       json.containsKey('usage'); } 
 CreateEmbeddingResponse copyWith({List<Embedding>? data, String? model, ContainerFileListResourceObject? object, CreateEmbeddingResponseUsage? usage, }) { return CreateEmbeddingResponse(
   data: data ?? this.data,

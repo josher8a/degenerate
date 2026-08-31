@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   'item': item.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') && json['type'] == 'response.output_item.done' &&
+      json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item'); } 

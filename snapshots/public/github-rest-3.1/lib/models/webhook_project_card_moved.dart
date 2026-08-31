@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'moved' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project_card') &&
       json.containsKey('sender'); } 
 WebhookProjectCardMoved copyWith({WebhookProjectCardMovedAction? action, WebhookProjectCardMovedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardMovedProjectCard? projectCard, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookProjectCardMoved(

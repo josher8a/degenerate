@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (standard != null) 'standard': standard?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'standard'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 Jp copyWith({AeStandard? Function()? standard, TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType? type, }) { return Jp(
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,

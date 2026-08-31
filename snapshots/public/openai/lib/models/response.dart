@@ -486,7 +486,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
       json.containsKey('tools') &&
       json.containsKey('tool_choice') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'response' &&
+      json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('error') &&
       json.containsKey('incomplete_details') &&

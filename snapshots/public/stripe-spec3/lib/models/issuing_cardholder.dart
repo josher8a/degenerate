@@ -232,7 +232,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object') && json['object'] == 'issuing.cardholder' &&
+      json.containsKey('object') &&
       json.containsKey('requirements') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 

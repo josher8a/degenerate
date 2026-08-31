@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'access_application_id': accessApplicationId.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
-      json.containsKey('resource_type') && json['resource_type'] == 'access_application_policy' &&
+      json.containsKey('resource_type') &&
       json.containsKey('access_application_id'); } 
 ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum? resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, }) { return ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(
   resourceId: resourceId ?? this.resourceId,

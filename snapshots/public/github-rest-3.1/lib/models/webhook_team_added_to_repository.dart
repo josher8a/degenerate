@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
   'team': team.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'added_to_repository' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('team'); } 
 WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository? Function()? repository, SimpleUser? Function()? sender, WebhooksTeam1? team, }) { return WebhookTeamAddedToRepository(

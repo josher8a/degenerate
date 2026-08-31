@@ -12,7 +12,7 @@ final TaxProductRegistrationsResourceCountryOptionsSimplifiedType type;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'simplified'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 Kh copyWith({TaxProductRegistrationsResourceCountryOptionsSimplifiedType? type}) { return Kh(
   type: type ?? this.type,
 ); } 

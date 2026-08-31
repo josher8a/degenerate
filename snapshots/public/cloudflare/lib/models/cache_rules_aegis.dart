@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] == 'aegis'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
 CacheRulesAegis copyWith({CacheRulesAegisId? id, DateTime? Function()? modifiedOn, CacheRulesAegisValue? Function()? value, }) { return CacheRulesAegis(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'projects_v2_item': projectsV2Item.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'archived' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('organization') &&
       json.containsKey('projects_v2_item') &&

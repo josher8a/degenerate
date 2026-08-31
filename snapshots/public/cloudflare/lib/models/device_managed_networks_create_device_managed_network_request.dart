@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
-      json.containsKey('type') && json['type'] == 'tls'; } 
+      json.containsKey('type'); } 
 DeviceManagedNetworksCreateDeviceManagedNetworkRequest copyWith({TeamsDevicesSchemasConfigRequest? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName? name, TeamsDevicesComponentsSchemasType? type, }) { return DeviceManagedNetworksCreateDeviceManagedNetworkRequest(
   config: config ?? this.config,
   name: name ?? this.name,

@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'synchronize' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('after') && json['after'] is String &&
       json.containsKey('before') && json['before'] is String &&
       json.containsKey('number') &&

@@ -100,9 +100,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('urls') && json['urls'] is String &&
-      json.containsKey('host_notification') && json['host_notification'] == 'send' &&
+      json.containsKey('host_notification') &&
       json.containsKey('justification') && json['justification'] is String &&
-      json.containsKey('owner_notification') && json['owner_notification'] == 'send' &&
+      json.containsKey('owner_notification') &&
       json.containsKey('trademark_number') && json['trademark_number'] is String &&
       json.containsKey('trademark_office') && json['trademark_office'] is String &&
       json.containsKey('trademark_symbol') && json['trademark_symbol'] is String; } 

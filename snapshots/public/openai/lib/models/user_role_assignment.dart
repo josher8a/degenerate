@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'user': user.toJson(),
   'role': role.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'user.role' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('user') &&
       json.containsKey('role'); } 
 UserRoleAssignment copyWith({UserRoleAssignmentObject? object, User? user, Role? role, }) { return UserRoleAssignment(

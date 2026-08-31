@@ -32,12 +32,12 @@ Map<String, dynamic> toJson() { return {
   'spacing_base': spacingBase,
   'theme': theme.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('border_radius') && json['border_radius'] == 'rounded' &&
-      json.containsKey('border_width') && json['border_width'] == 'thin' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('border_radius') &&
+      json.containsKey('border_width') &&
       json.containsKey('colors') &&
       json.containsKey('logo') && json['logo'] is String &&
       json.containsKey('spacing_base') && json['spacing_base'] is num &&
-      json.containsKey('theme') && json['theme'] == 'dark'; } 
+      json.containsKey('theme'); } 
 RealtimekitPresetUiDesignTokens copyWith({BorderRadius? borderRadius, BorderWidth? borderWidth, RealtimekitPresetUiDesignTokensColors? colors, String? logo, double? spacingBase, DesignTokensTheme? theme, }) { return RealtimekitPresetUiDesignTokens(
   borderRadius: borderRadius ?? this.borderRadius,
   borderWidth: borderWidth ?? this.borderWidth,

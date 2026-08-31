@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'source': source,
   'validation_enabled': validationEnabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] == 'openapi_v3' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('validation_enabled') && json['validation_enabled'] is bool; } 

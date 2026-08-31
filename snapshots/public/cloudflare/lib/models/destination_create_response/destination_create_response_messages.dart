@@ -64,7 +64,7 @@ final DestinationCreateResponseMessagesMessage message;
 Map<String, dynamic> toJson() { return {
   'message': message.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] == 'Resource created'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
 DestinationCreateResponseMessages copyWith({DestinationCreateResponseMessagesMessage? message}) { return DestinationCreateResponseMessages(
   message: message ?? this.message,
 ); } 

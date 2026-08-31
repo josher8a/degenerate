@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('integration_type') && json['integration_type'] == 'Okta' &&
+      json.containsKey('integration_type') &&
       json.containsKey('reference_id') && json['reference_id'] is String &&
       json.containsKey('tenant_url') && json['tenant_url'] is String &&
       json.containsKey('well_known_url') && json['well_known_url'] is String; } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'entries': entries.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'block' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('entries'); } 
 Web3ContentListUpdateRequest copyWith({Web3ContentListAction? action, List<Web3ContentListEntry>? entries, }) { return Web3ContentListUpdateRequest(
   action: action ?? this.action,

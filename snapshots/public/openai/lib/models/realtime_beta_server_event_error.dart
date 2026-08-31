@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'error': error.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') && json['type'] == 'error' &&
+      json.containsKey('type') &&
       json.containsKey('error'); } 
 RealtimeBetaServerEventError copyWith({String? eventId, RealtimeBetaServerEventErrorType? type, RealtimeBetaServerEventErrorError? error, }) { return RealtimeBetaServerEventError(
   eventId: eventId ?? this.eventId,

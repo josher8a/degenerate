@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'content': content.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('role') && json['role'] == 'assistant' &&
+      json.containsKey('role') &&
       json.containsKey('content'); } 
 RealtimeConversationItemMessageAssistant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessageAssistant(
   id: id != null ? id() : this.id,

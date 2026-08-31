@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'detail': ?detail,
   'message': message.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] == 'Unauthorized'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
 DestinationCreateResponse401Errors copyWith({String? Function()? detail, DestinationCreateResponse401ErrorsMessage? message, }) { return DestinationCreateResponse401Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,

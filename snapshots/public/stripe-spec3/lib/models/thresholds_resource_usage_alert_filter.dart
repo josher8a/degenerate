@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (customer != null) 'customer': customer?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'customer'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 ThresholdsResourceUsageAlertFilter copyWith({BankConnectionsResourceAccountholderCustomer? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,

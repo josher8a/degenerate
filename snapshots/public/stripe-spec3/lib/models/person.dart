@@ -166,7 +166,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'person'; } 
+      json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (account.runes.length > 5000) { errors.add('account: length must be <= 5000'); }

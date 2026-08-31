@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'content': content.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'content' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('content'); } 
 PredictionContent copyWith({PredictionContentType? type, ChatCompletionRequestDeveloperMessageContent? content, }) { return PredictionContent(
   type: type ?? this.type,

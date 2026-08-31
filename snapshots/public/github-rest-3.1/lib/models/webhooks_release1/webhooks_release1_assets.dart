@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brows
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('digest') && json['digest'] is String &&
-      json.containsKey('state') && json['state'] == 'uploaded' &&
+      json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
 WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, AssetsState? state, DateTime? updatedAt, Uploader? Function()? uploader, Uri? url, }) { return WebhooksRelease1Assets(

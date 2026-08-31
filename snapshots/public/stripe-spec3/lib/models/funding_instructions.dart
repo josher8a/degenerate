@@ -92,9 +92,9 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_transfer') &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('funding_type') && json['funding_type'] == 'bank_transfer' &&
+      json.containsKey('funding_type') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') && json['object'] == 'funding_instructions'; } 
+      json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }

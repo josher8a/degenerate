@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'has_more': hasMore,
   'next_page': nextPage,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'page' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next_page') && json['next_page'] is String; } 

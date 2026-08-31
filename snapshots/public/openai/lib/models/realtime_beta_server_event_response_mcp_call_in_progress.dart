@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') && json['type'] == 'response.mcp_call.in_progress' &&
+      json.containsKey('type') &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String; } 
 RealtimeBetaServerEventResponseMcpCallInProgress copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallInProgressType? type, int? outputIndex, String? itemId, }) { return RealtimeBetaServerEventResponseMcpCallInProgress(

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'wandb': wandb.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'wandb' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('wandb'); } 
 Integrations copyWith({FineTuningIntegrationType? type, Wandb? wandb, }) { return Integrations(
   type: type ?? this.type,

@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_authority') &&
       json.containsKey('hosts') &&
-      json.containsKey('type') && json['type'] == 'advanced' &&
+      json.containsKey('type') &&
       json.containsKey('validation_method') &&
       json.containsKey('validity_days'); } 
 CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<String>? hosts, TlsCertificatesAndHostnamesAdvancedType? type, TlsCertificatesAndHostnamesValidationMethod? validationMethod, TlsCertificatesAndHostnamesValidityDays? validityDays, }) { return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(

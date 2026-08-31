@@ -86,10 +86,10 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'api_key': apiKey.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.project.service_account' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('role') && json['role'] == 'member' &&
+      json.containsKey('role') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('api_key'); } 
 ProjectServiceAccountCreateResponse copyWith({ProjectServiceAccountCreateResponseObject? object, String? id, String? name, ProjectServiceAccountCreateResponseRole? role, int? createdAt, Key4? apiKey, }) { return ProjectServiceAccountCreateResponse(

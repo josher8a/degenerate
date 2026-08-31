@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'cart'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 PostTerminalReadersReaderSetReaderDisplayRequest copyWith({Cart? Function()? cart, List<String>? Function()? expand, PostTerminalReadersReaderSetReaderDisplayRequestType? type, }) { return PostTerminalReadersReaderSetReaderDisplayRequest(
   cart: cart != null ? cart() : this.cart,
   expand: expand != null ? expand() : this.expand,

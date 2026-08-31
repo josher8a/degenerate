@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'url_citation': urlCitation.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'url_citation' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('url_citation'); } 
 ChatCompletionResponseMessageAnnotations copyWith({AnnotationsType? type, UrlCitation? urlCitation, }) { return ChatCompletionResponseMessageAnnotations(
   type: type ?? this.type,

@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'invoice': invoice,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'revision' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('invoice') && json['invoice'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

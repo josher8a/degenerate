@@ -159,7 +159,7 @@ Map<String, dynamic> toJson() { return {
   'file_url': ?fileUrl,
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'input_file'; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final fileData$ = fileData;

@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'language': language,
   'created_at': createdAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'audio.voice_consent' &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('language') && json['language'] is String &&

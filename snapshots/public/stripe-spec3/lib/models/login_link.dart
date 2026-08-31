@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
-      json.containsKey('object') && json['object'] == 'login_link' &&
+      json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

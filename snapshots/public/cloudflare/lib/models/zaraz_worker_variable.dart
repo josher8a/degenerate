@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type') && json['type'] == 'worker' &&
+      json.containsKey('type') &&
       json.containsKey('value'); } 
 ZarazWorkerVariable copyWith({String? name, MqWorkerProducerType? type, ZarazWorkerVariableValue? value, }) { return ZarazWorkerVariable(
   name: name ?? this.name,

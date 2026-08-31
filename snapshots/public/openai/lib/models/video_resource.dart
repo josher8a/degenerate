@@ -225,7 +225,7 @@ Map<String, dynamic> toJson() { return {
   'error': error?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'video' &&
+      json.containsKey('object') &&
       json.containsKey('model') &&
       json.containsKey('status') &&
       json.containsKey('progress') && json['progress'] is num &&

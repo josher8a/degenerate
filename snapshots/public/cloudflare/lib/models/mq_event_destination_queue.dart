@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('queue_id') && json['queue_id'] is String &&
-      json.containsKey('type') && json['type'] == 'queues.queue'; } 
+      json.containsKey('type'); } 
 MqEventDestinationQueue copyWith({String? queueId, MqEventDestinationQueueType? type, }) { return MqEventDestinationQueue(
   queueId: queueId ?? this.queueId,
   type: type ?? this.type,

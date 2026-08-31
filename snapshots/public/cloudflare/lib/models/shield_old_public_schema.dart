@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (validationEnabled != null) 'validation_enabled': validationEnabled?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
-      json.containsKey('kind') && json['kind'] == 'openapi_v3' &&
+      json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema_id'); } 
 ShieldOldPublicSchema copyWith({ShieldTimestamp? createdAt, ShieldOldKind? kind, String? name, ShieldUuid? schemaId, String? Function()? source, ShieldOldValidationEnabled? Function()? validationEnabled, }) { return ShieldOldPublicSchema(
