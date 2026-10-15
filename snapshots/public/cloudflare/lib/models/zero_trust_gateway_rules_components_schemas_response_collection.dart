@@ -1,27 +1,56 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZeroTrustGatewayRulesComponentsSchemasResponseCollection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rules.dart';@immutable final class ZeroTrustGatewayRulesComponentsSchemasResponseCollection {const ZeroTrustGatewayRulesComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_result_info.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rules.dart';@immutable final class ZeroTrustGatewayRulesComponentsSchemasResponseCollection {const ZeroTrustGatewayRulesComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
 factory ZeroTrustGatewayRulesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRulesComponentsSchemasResponseCollection(
+  errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  resultInfo: json['result_info'] != null ? ZeroTrustGatewayResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayRules.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
+
+final List<ZeroTrustGatewayMessages2> errors;
+
+final List<ZeroTrustGatewayMessages2> messages;
+
+/// Indicate whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
+
+final ZeroTrustGatewayResultInfo? resultInfo;
 
 final List<ZeroTrustGatewayRules>? result;
 
 Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-ZeroTrustGatewayRulesComponentsSchemasResponseCollection copyWith({List<ZeroTrustGatewayRules>? Function()? result}) { return ZeroTrustGatewayRulesComponentsSchemasResponseCollection(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+ZeroTrustGatewayRulesComponentsSchemasResponseCollection copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayResultInfo? Function()? resultInfo, List<ZeroTrustGatewayRules>? Function()? result, }) { return ZeroTrustGatewayRulesComponentsSchemasResponseCollection(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayRulesComponentsSchemasResponseCollection &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          resultInfo == other.resultInfo &&
           listEquals(result, other.result);
 
-@override int get hashCode => Object.hashAll(result ?? const []);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const []));
 
-@override String toString() => 'ZeroTrustGatewayRulesComponentsSchemasResponseCollection(result: $result)';
+@override String toString() => 'ZeroTrustGatewayRulesComponentsSchemasResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
  }

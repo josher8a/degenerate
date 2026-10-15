@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicSiteWaNsApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_account_apps_add_app_error.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_wan.dart';import 'package:pub_cloudflare/models/magic_wan_update_request.dart';import 'package:pub_cloudflare/models/magic_wans_add_single_request.dart';/// MagicSiteWaNsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_account_apps_add_app_error.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_wan_update_request.dart';import 'package:pub_cloudflare/models/magic_wans_add_single_request.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';/// MagicSiteWaNsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class MagicSiteWaNsApi with ApiExecutor {const MagicSiteWaNsApi(this.apiCo
 /// Lists Site WANs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/wans`
-Future<ApiResult<List<MagicWan>?, MagicAccountAppsAddAppError>> magicSiteWansListWans({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteWansListWans({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MagicWan.fromJson(e as Map<String, dynamic>)).toList();
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Creates a new Site WAN.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/wans`
-Future<ApiResult<List<MagicWan>?, MagicAccountAppsAddAppError>> magicSiteWansCreateWan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicWansAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteWansCreateWan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicWansAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MagicWan.fromJson(e as Map<String, dynamic>)).toList();
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -62,7 +62,7 @@ return execute(
 /// Get a specific Site WAN.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<MagicWan?, MagicAccountAppsAddAppError>> magicSiteWansWanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteWansWanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +75,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicWan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -85,7 +85,7 @@ return execute(
 /// Update a specific Site WAN.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<MagicWan?, MagicAccountAppsAddAppError>> magicSiteWansUpdateWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteWansUpdateWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicWan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -110,7 +110,7 @@ return execute(
 /// Patch a specific Site WAN.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<MagicWan?, MagicAccountAppsAddAppError>> magicSiteWansPatchWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteWansPatchWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, required MagicWanUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -125,7 +125,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicWan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -135,7 +135,7 @@ return execute(
 /// Remove a specific Site WAN.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}`
-Future<ApiResult<MagicWan?, MagicAccountAppsAddAppError>> magicSiteWansDeleteWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteWansDeleteWan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier wanId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -148,7 +148,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicWan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );

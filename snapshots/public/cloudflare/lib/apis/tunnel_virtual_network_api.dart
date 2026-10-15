@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TunnelVirtualNetworkApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_create_a_virtual_network_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_delete_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_get_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_list_virtual_networks_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_update_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_create_a_virtual_network_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_get_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_update_request.dart';/// TunnelVirtualNetworkApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_create_a_virtual_network_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_delete_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_get_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_list_virtual_networks_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_virtual_network_update_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_create_a_virtual_network_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_get_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_update_request.dart';/// TunnelVirtualNetworkApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class TunnelVirtualNetworkApi with ApiExecutor {const TunnelVirtualNetwork
 /// Lists and filters virtual networks in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<List<TunnelVirtualNetwork>?, TunnelVirtualNetworkListVirtualNetworksError>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, TunnelVirtualNetworkListVirtualNetworksError>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toJson();
@@ -47,7 +47,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelVirtualNetwork.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: TunnelVirtualNetworkListVirtualNetworksError.fromResponse,
 );

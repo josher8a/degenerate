@@ -14,7 +14,7 @@ final class OnRampsApi with ApiExecutor {const OnRampsApi(this.apiConfig);
 /// List On-ramps (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<List<McnOnramp>?, CatalogSyncsPrebuiltPoliciesListError>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<McnOnramp>, CatalogSyncsPrebuiltPoliciesListError>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderBy != null) {
   queryParameters['order_by'] = orderBy;
@@ -44,7 +44,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CatalogSyncsPrebuiltPoliciesListError.fromResponse,
 );
@@ -54,7 +54,7 @@ return execute(
 /// Create a new On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<McnOnramp?, CatalogSyncsCreateError>> onrampsCreate({required McnAccountId accountId, required McnCreateOnrampRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnOnramp, CatalogSyncsCreateError>> onrampsCreate({required McnAccountId accountId, required McnCreateOnrampRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;
@@ -72,7 +72,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsCreateError.fromResponse,
 );
@@ -82,7 +82,7 @@ return execute(
 /// Read an On-ramp (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnOnramp?, CatalogSyncsListError>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnOnramp, CatalogSyncsListError>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toString();
@@ -112,7 +112,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsListError.fromResponse,
 );
@@ -122,7 +122,7 @@ return execute(
 /// Update an On-ramp (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnOnramp?, CatalogSyncsPatchError>> onrampsUpdate({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnOnramp, CatalogSyncsPatchError>> onrampsUpdate({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,7 +137,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsPatchError.fromResponse,
 );
@@ -147,7 +147,7 @@ return execute(
 /// Update an On-ramp (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnOnramp?, CatalogSyncsPatchError>> onrampsPatch({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnOnramp, CatalogSyncsPatchError>> onrampsPatch({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -162,7 +162,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsPatchError.fromResponse,
 );
@@ -172,7 +172,7 @@ return execute(
 /// Delete an On-ramp (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnDeletedOnramp?, CatalogSyncsDeleteError>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnDeletedOnramp, CatalogSyncsDeleteError>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (destroy != null) {
   queryParameters['destroy'] = destroy.toString();
@@ -196,7 +196,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnDeletedOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnDeletedOnramp.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsDeleteError.fromResponse,
 );
@@ -272,7 +272,7 @@ return execute(
 /// Read the Magic WAN Address Space (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnMagicWanAddressSpace?, CatalogSyncsListError>> onrampsMwanAddrSpaceRead({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnMagicWanAddressSpace, CatalogSyncsListError>> onrampsMwanAddrSpaceRead({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -285,7 +285,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsListError.fromResponse,
 );
@@ -295,7 +295,7 @@ return execute(
 /// Update the Magic WAN Address Space (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnMagicWanAddressSpace?, OnrampsMwanAddrSpacePatchError>> onrampsMwanAddrSpaceUpdate({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnMagicWanAddressSpace, OnrampsMwanAddrSpacePatchError>> onrampsMwanAddrSpaceUpdate({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -310,7 +310,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: OnrampsMwanAddrSpacePatchError.fromResponse,
 );
@@ -320,7 +320,7 @@ return execute(
 /// Update the Magic WAN Address Space (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnMagicWanAddressSpace?, OnrampsMwanAddrSpacePatchError>> onrampsMwanAddrSpacePatch({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnMagicWanAddressSpace, OnrampsMwanAddrSpacePatchError>> onrampsMwanAddrSpacePatch({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -335,7 +335,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: OnrampsMwanAddrSpacePatchError.fromResponse,
 );

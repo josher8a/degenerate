@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WebAnalyticsApi" (12 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/web_analytics_create_rule_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/rum_create_rule_request.dart';import 'package:pub_cloudflare/models/rum_create_site_request.dart';import 'package:pub_cloudflare/models/rum_identifier.dart';import 'package:pub_cloudflare/models/rum_modify_rules_request.dart';import 'package:pub_cloudflare/models/rum_order_by.dart';import 'package:pub_cloudflare/models/rum_page.dart';import 'package:pub_cloudflare/models/rum_per_page.dart';import 'package:pub_cloudflare/models/rum_rule.dart';import 'package:pub_cloudflare/models/rum_rule_identifier.dart';import 'package:pub_cloudflare/models/rum_rules_response_collection/rum_rules_response_collection_result.dart';import 'package:pub_cloudflare/models/rum_ruleset_identifier.dart';import 'package:pub_cloudflare/models/rum_rum_site.dart';import 'package:pub_cloudflare/models/rum_site.dart';import 'package:pub_cloudflare/models/rum_site_tag_response_single/rum_site_tag_response_single_result.dart';import 'package:pub_cloudflare/models/rum_toggle_rum_request.dart';import 'package:pub_cloudflare/models/rum_update_site_request.dart';/// WebAnalyticsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/web_analytics_create_rule_error.dart';import 'package:pub_cloudflare/models/rum_create_rule_request.dart';import 'package:pub_cloudflare/models/rum_create_site_request.dart';import 'package:pub_cloudflare/models/rum_identifier.dart';import 'package:pub_cloudflare/models/rum_modify_rules_request.dart';import 'package:pub_cloudflare/models/rum_order_by.dart';import 'package:pub_cloudflare/models/rum_page.dart';import 'package:pub_cloudflare/models/rum_per_page.dart';import 'package:pub_cloudflare/models/rum_rule.dart';import 'package:pub_cloudflare/models/rum_rule_id_response_single/rum_rule_id_response_single_result.dart';import 'package:pub_cloudflare/models/rum_rule_identifier.dart';import 'package:pub_cloudflare/models/rum_rules_response_collection/rum_rules_response_collection_result.dart';import 'package:pub_cloudflare/models/rum_ruleset_identifier.dart';import 'package:pub_cloudflare/models/rum_rum_site.dart';import 'package:pub_cloudflare/models/rum_site.dart';import 'package:pub_cloudflare/models/rum_site_tag_response_single/rum_site_tag_response_single_result.dart';import 'package:pub_cloudflare/models/rum_toggle_rum_request.dart';import 'package:pub_cloudflare/models/rum_update_site_request.dart';/// WebAnalyticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -197,7 +197,7 @@ return execute(
 /// Deletes an existing rule from a Web Analytics ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, WebAnalyticsCreateRuleError>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRuleIdResponseSingleResult?, WebAnalyticsCreateRuleError>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -210,7 +210,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? RumRuleIdResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );

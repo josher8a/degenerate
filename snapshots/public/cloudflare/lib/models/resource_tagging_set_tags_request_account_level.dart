@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResourceTaggingSetTagsRequestAccountLevel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_worker_version.dart';sealed class ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_worker_version_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_worker_version.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType();
 
 factory ResourceTaggingSetTagsRequestAccountLevelResourceType.fromJson(String json) { return switch (json) {
   'access_application' => accessApplication,
@@ -392,7 +392,7 @@ factory ResourceTaggingSetTagsRequestAccountLevel.streamVideo({required Resource
 factory ResourceTaggingSetTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker'), resourceId: resourceId, tags: tags)); }
 
 /// Build the `worker_version` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({Map<String,String>? tags}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId, required ResourceTaggingWorkerId workerId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(resourceType: ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson('worker_version'), resourceId: resourceId, workerId: workerId, tags: tags)); }
 
 /// The discriminator value identifying this variant.
 ResourceTaggingSetTagsRequestAccountLevelResourceType get resourceType;
@@ -400,6 +400,8 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevel$Unknown;
 
+/// Shared by all variants of this union.
+ResourceTaggingResourceId get resourceId;
 /// Shared by all variants of this union.
 Map<String,String>? get tags;
 R when<R>({required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessApplication) accessApplication, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessGroup) accessGroup, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccount) account, required R Function(ResourceTaggingSetTagsRequestAccountLevelAiGateway) aiGateway, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingSetTagsRequestAccountLevelD1Database) d1Database, required R Function(ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayList) gatewayList, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayRule) gatewayRule, required R Function(ResourceTaggingSetTagsRequestAccountLevelImage) image, required R Function(ResourceTaggingSetTagsRequestAccountLevelKvNamespace) kvNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelQueue) queue, required R Function(ResourceTaggingSetTagsRequestAccountLevelR2Bucket) r2Bucket, required R Function(ResourceTaggingSetTagsRequestAccountLevelResourceShare) resourceShare, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamVideo) streamVideo, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorker) worker, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant) workerVersion, required R Function(ResourceTaggingSetTagsRequestAccountLevel$Unknown) unknown, }) { return switch (this) {
@@ -447,6 +449,8 @@ ResourceTaggingSetTagsRequestAccountLevelAccessApplication copyWith({ResourceTag
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.accessApplication($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -470,6 +474,8 @@ ResourceTaggingSetTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingRe
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.accessGroup($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -495,6 +501,8 @@ ResourceTaggingSetTagsRequestAccountLevelAccount copyWith({ResourceTaggingResour
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.account($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -518,6 +526,8 @@ ResourceTaggingSetTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingReso
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.aiGateway($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -543,6 +553,8 @@ ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggin
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -566,6 +578,8 @@ ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggi
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -591,6 +605,8 @@ ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTag
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -614,6 +630,8 @@ ResourceTaggingSetTagsRequestAccountLevelD1Database copyWith({ResourceTaggingRes
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.d1Database($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -639,6 +657,8 @@ ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace copyWith({Resour
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -662,6 +682,8 @@ ResourceTaggingSetTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingRe
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.gatewayList($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -687,6 +709,8 @@ ResourceTaggingSetTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.gatewayRule($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -710,6 +734,8 @@ ResourceTaggingSetTagsRequestAccountLevelImage copyWith({ResourceTaggingResource
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.image($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -735,6 +761,8 @@ ResourceTaggingSetTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.kvNamespace($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -758,6 +786,8 @@ ResourceTaggingSetTagsRequestAccountLevelQueue copyWith({ResourceTaggingResource
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.queue($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -783,6 +813,8 @@ ResourceTaggingSetTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResou
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.r2Bucket($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -806,6 +838,8 @@ ResourceTaggingSetTagsRequestAccountLevelResourceShare copyWith({ResourceTagging
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.resourceShare($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -831,6 +865,8 @@ ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggi
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -854,6 +890,8 @@ ResourceTaggingSetTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingRe
 @override int get hashCode => resourceTaggingSetTagsRequestAccountLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.streamVideo($resourceTaggingSetTagsRequestAccountLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
@@ -879,6 +917,8 @@ ResourceTaggingSetTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourc
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.worker($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
  }
@@ -892,7 +932,9 @@ final ResourceTaggingSetTagsRequestAccountLevelWorkerVersion resourceTaggingSetT
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelWorkerVersion.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({Map<String, String>? Function()? tags}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(resourceTaggingSetTagsRequestAccountLevelWorkerVersion.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingWorkerId? workerId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(resourceTaggingSetTagsRequestAccountLevelWorkerVersion.copyWith(
+  resourceId: resourceId,
+  workerId: workerId,
   tags: tags,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -902,6 +944,8 @@ ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({Map<Str
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.workerVersion($resourceTaggingSetTagsRequestAccountLevelWorkerVersion)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelWorkerVersion.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelWorkerVersion.tags;
 
  }
@@ -910,6 +954,8 @@ ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({Map<Str
 @immutable final class ResourceTaggingSetTagsRequestAccountLevel$Unknown extends ResourceTaggingSetTagsRequestAccountLevel {ResourceTaggingSetTagsRequestAccountLevel$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
 late final Map<String,String>? _tags = (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String));
 
@@ -923,6 +969,8 @@ late final Map<String,String>? _tags = (json['tags'] as Map<String, dynamic>?)?.
 @override int get hashCode => json.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.unknown($json)';
+
+@override ResourceTaggingResourceId get resourceId => _resourceId;
 
 @override Map<String,String>? get tags => _tags;
 

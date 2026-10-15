@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RumRuleIdResponseSingle
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/rum_messages2.dart';@immutable final class RumRuleIdResponseSingle {const RumRuleIdResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_messages2.dart';import 'package:pub_cloudflare/models/rum_rule_id_response_single/rum_rule_id_response_single_result.dart';@immutable final class RumRuleIdResponseSingle {const RumRuleIdResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory RumRuleIdResponseSingle.fromJson(Map<String, dynamic> json) { return RumRuleIdResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => RumMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => RumMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? RumRuleIdResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<RumMessages2> errors;
@@ -19,7 +19,7 @@ final List<RumMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final LoadBalancingComponentsSchemasIdResponseResult? result;
+final RumRuleIdResponseSingleResult? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-RumRuleIdResponseSingle copyWith({List<RumMessages2>? errors, List<RumMessages2>? messages, bool? success, LoadBalancingComponentsSchemasIdResponseResult? Function()? result, }) { return RumRuleIdResponseSingle(
+RumRuleIdResponseSingle copyWith({List<RumMessages2>? errors, List<RumMessages2>? messages, bool? success, RumRuleIdResponseSingleResult? Function()? result, }) { return RumRuleIdResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

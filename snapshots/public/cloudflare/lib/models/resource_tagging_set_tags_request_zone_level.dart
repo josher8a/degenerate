@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResourceTaggingSetTagsRequestZoneLevel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_zone_level_access_application_policy.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_zone_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_zone_resource_type_base_enum.dart';sealed class ResourceTaggingSetTagsRequestZoneLevelResourceType {const ResourceTaggingSetTagsRequestZoneLevelResourceType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_zone_level_access_application_policy.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_zone_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_zone_resource_type_access_application_policy_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_zone_resource_type_base_enum.dart';sealed class ResourceTaggingSetTagsRequestZoneLevelResourceType {const ResourceTaggingSetTagsRequestZoneLevelResourceType();
 
 factory ResourceTaggingSetTagsRequestZoneLevelResourceType.fromJson(String json) { return switch (json) {
   'access_application_policy' => accessApplicationPolicy,
@@ -140,7 +140,7 @@ factory ResourceTaggingSetTagsRequestZoneLevel.fromJson(Map<String, dynamic> jso
 }; }
 
 /// Build the `access_application_policy` variant.
-factory ResourceTaggingSetTagsRequestZoneLevel.accessApplicationPolicy({Map<String,String>? tags}) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant(ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(tags: tags)); }
+factory ResourceTaggingSetTagsRequestZoneLevel.accessApplicationPolicy({required ResourceTaggingResourceId resourceId, required ResourceTaggingAccessApplicationId accessApplicationId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant(ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(resourceType: ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum.fromJson('access_application_policy'), resourceId: resourceId, accessApplicationId: accessApplicationId, tags: tags)); }
 
 /// Build the `api_gateway_operation` variant.
 factory ResourceTaggingSetTagsRequestZoneLevel.apiGatewayOperation({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestZoneLevelGatewayOperation(ResourceTaggingSetTagsRequestZoneLevelBase(resourceType: ResourceTaggingZoneResourceTypeBaseEnum.fromJson('api_gateway_operation'), resourceId: resourceId, tags: tags)); }
@@ -167,6 +167,8 @@ Map<String, dynamic> toJson();
 bool get isUnknown => this is ResourceTaggingSetTagsRequestZoneLevel$Unknown;
 
 /// Shared by all variants of this union.
+ResourceTaggingResourceId get resourceId;
+/// Shared by all variants of this union.
 Map<String,String>? get tags;
 R when<R>({required R Function(ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant) accessApplicationPolicy, required R Function(ResourceTaggingSetTagsRequestZoneLevelGatewayOperation) apiGatewayOperation, required R Function(ResourceTaggingSetTagsRequestZoneLevelCustomCertificate) customCertificate, required R Function(ResourceTaggingSetTagsRequestZoneLevelCustomHostname) customHostname, required R Function(ResourceTaggingSetTagsRequestZoneLevelDnsRecord) dnsRecord, required R Function(ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate) managedClientCertificate, required R Function(ResourceTaggingSetTagsRequestZoneLevelZone) zone, required R Function(ResourceTaggingSetTagsRequestZoneLevel$Unknown) unknown, }) { return switch (this) {
   final ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant v => accessApplicationPolicy(v),
@@ -189,7 +191,9 @@ final ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy resourceTagg
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant copyWith({Map<String, String>? Function()? tags}) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant(resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.copyWith(
+ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccessApplicationId? accessApplicationId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant(resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.copyWith(
+  resourceId: resourceId,
+  accessApplicationId: accessApplicationId,
   tags: tags,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -198,6 +202,8 @@ ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy$Variant copyWith({
 @override int get hashCode => resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.accessApplicationPolicy($resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.tags;
 
@@ -223,6 +229,8 @@ ResourceTaggingSetTagsRequestZoneLevelGatewayOperation copyWith({ResourceTagging
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.apiGatewayOperation($resourceTaggingSetTagsRequestZoneLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelBase.tags;
 
  }
@@ -246,6 +254,8 @@ ResourceTaggingSetTagsRequestZoneLevelCustomCertificate copyWith({ResourceTaggin
 @override int get hashCode => resourceTaggingSetTagsRequestZoneLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.customCertificate($resourceTaggingSetTagsRequestZoneLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelBase.tags;
 
@@ -271,6 +281,8 @@ ResourceTaggingSetTagsRequestZoneLevelCustomHostname copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.customHostname($resourceTaggingSetTagsRequestZoneLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelBase.tags;
 
  }
@@ -294,6 +306,8 @@ ResourceTaggingSetTagsRequestZoneLevelDnsRecord copyWith({ResourceTaggingResourc
 @override int get hashCode => resourceTaggingSetTagsRequestZoneLevelBase.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.dnsRecord($resourceTaggingSetTagsRequestZoneLevelBase)';
+
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelBase.resourceId;
 
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelBase.tags;
 
@@ -319,6 +333,8 @@ ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate copyWith({Resourc
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.managedClientCertificate($resourceTaggingSetTagsRequestZoneLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelBase.tags;
 
  }
@@ -343,6 +359,8 @@ ResourceTaggingSetTagsRequestZoneLevelZone copyWith({ResourceTaggingResourceId? 
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.zone($resourceTaggingSetTagsRequestZoneLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestZoneLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestZoneLevelBase.tags;
 
  }
@@ -351,6 +369,8 @@ ResourceTaggingSetTagsRequestZoneLevelZone copyWith({ResourceTaggingResourceId? 
 @immutable final class ResourceTaggingSetTagsRequestZoneLevel$Unknown extends ResourceTaggingSetTagsRequestZoneLevel {ResourceTaggingSetTagsRequestZoneLevel$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
 late final Map<String,String>? _tags = (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String));
 
@@ -364,6 +384,8 @@ late final Map<String,String>? _tags = (json['tags'] as Map<String, dynamic>?)?.
 @override int get hashCode => json.hashCode;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestZoneLevel.unknown($json)';
+
+@override ResourceTaggingResourceId get resourceId => _resourceId;
 
 @override Map<String,String>? get tags => _tags;
 

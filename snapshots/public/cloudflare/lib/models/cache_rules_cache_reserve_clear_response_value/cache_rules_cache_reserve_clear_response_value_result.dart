@@ -83,13 +83,78 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.startTs, required this.state, this.endTs, });
+/// ID of the zone setting.
+sealed class CacheRulesCacheReserveClearResponseValueResultId {const CacheRulesCacheReserveClearResponseValueResultId();
+
+factory CacheRulesCacheReserveClearResponseValueResultId.fromJson(String json) { return switch (json) {
+  'cache_reserve_clear' => cacheReserveClear,
+  _ => CacheRulesCacheReserveClearResponseValueResultId$Unknown(json),
+}; }
+
+static const CacheRulesCacheReserveClearResponseValueResultId cacheReserveClear = CacheRulesCacheReserveClearResponseValueResultId$cacheReserveClear._();
+
+static const List<CacheRulesCacheReserveClearResponseValueResultId> values = [cacheReserveClear];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cache_reserve_clear' => 'cacheReserveClear',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is CacheRulesCacheReserveClearResponseValueResultId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cacheReserveClear, required W Function(String value) $unknown, }) { return switch (this) {
+      CacheRulesCacheReserveClearResponseValueResultId$cacheReserveClear() => cacheReserveClear(),
+      CacheRulesCacheReserveClearResponseValueResultId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheReserveClear, W Function(String value)? $unknown, }) { return switch (this) {
+      CacheRulesCacheReserveClearResponseValueResultId$cacheReserveClear() => cacheReserveClear != null ? cacheReserveClear() : orElse(value),
+      CacheRulesCacheReserveClearResponseValueResultId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'CacheRulesCacheReserveClearResponseValueResultId($value)';
+
+ }
+@immutable final class CacheRulesCacheReserveClearResponseValueResultId$cacheReserveClear extends CacheRulesCacheReserveClearResponseValueResultId {const CacheRulesCacheReserveClearResponseValueResultId$cacheReserveClear._();
+
+@override String get value => 'cache_reserve_clear';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesCacheReserveClearResponseValueResultId$cacheReserveClear;
+
+@override int get hashCode => 'cache_reserve_clear'.hashCode;
+
+ }
+@immutable final class CacheRulesCacheReserveClearResponseValueResultId$Unknown extends CacheRulesCacheReserveClearResponseValueResultId {const CacheRulesCacheReserveClearResponseValueResultId$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CacheRulesCacheReserveClearResponseValueResultId$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+@immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.id, required this.startTs, required this.state, this.modifiedOn, this.endTs, });
 
 factory CacheRulesCacheReserveClearResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesCacheReserveClearResponseValueResult(
+  id: CacheRulesCacheReserveClearResponseValueResultId.fromJson(json['id'] as String),
+  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   endTs: json['end_ts'] != null ? CacheRulesCacheReserveClearEndTs.fromJson(json['end_ts'] as String) : null,
   startTs: CacheRulesCacheReserveClearStartTs.fromJson(json['start_ts'] as String),
   state: CacheRulesCacheReserveClearState.fromJson(json['state'] as String),
 ); }
+
+/// ID of the zone setting.
+/// 
+/// Example: `'cache_reserve_clear'`
+final CacheRulesCacheReserveClearResponseValueResultId id;
+
+/// Last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
+final DateTime? modifiedOn;
 
 /// The time that the latest Cache Reserve Clear operation completed.
 final CacheRulesCacheReserveClearEndTs? endTs;
@@ -99,25 +164,32 @@ final CacheRulesCacheReserveClearStartTs startTs;
 final CacheRulesCacheReserveClearState state;
 
 Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (endTs != null) 'end_ts': endTs?.toJson(),
   'start_ts': startTs.toJson(),
   'state': state.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('start_ts') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('start_ts') &&
       json.containsKey('state'); } 
-CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveClearEndTs? Function()? endTs, CacheRulesCacheReserveClearStartTs? startTs, CacheRulesCacheReserveClearState? state, }) { return CacheRulesCacheReserveClearResponseValueResult(
+CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveClearResponseValueResultId? id, DateTime? Function()? modifiedOn, CacheRulesCacheReserveClearEndTs? Function()? endTs, CacheRulesCacheReserveClearStartTs? startTs, CacheRulesCacheReserveClearState? state, }) { return CacheRulesCacheReserveClearResponseValueResult(
+  id: id ?? this.id,
+  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   endTs: endTs != null ? endTs() : this.endTs,
   startTs: startTs ?? this.startTs,
   state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesCacheReserveClearResponseValueResult &&
+          id == other.id &&
+          modifiedOn == other.modifiedOn &&
           endTs == other.endTs &&
           startTs == other.startTs &&
           state == other.state;
 
-@override int get hashCode => Object.hash(endTs, startTs, state);
+@override int get hashCode => Object.hash(id, modifiedOn, endTs, startTs, state);
 
-@override String toString() => 'CacheRulesCacheReserveClearResponseValueResult(endTs: $endTs, startTs: $startTs, state: $state)';
+@override String toString() => 'CacheRulesCacheReserveClearResponseValueResult(id: $id, modifiedOn: $modifiedOn, endTs: $endTs, startTs: $startTs, state: $state)';
 
  }

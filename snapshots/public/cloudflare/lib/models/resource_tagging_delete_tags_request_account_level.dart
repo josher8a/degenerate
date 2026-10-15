@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResourceTaggingDeleteTagsRequestAccountLevel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_worker_version.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_worker_version_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_worker_version.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType();
 
 factory ResourceTaggingDeleteTagsRequestAccountLevelResourceType.fromJson(String json) { return switch (json) {
   'access_application' => accessApplication,

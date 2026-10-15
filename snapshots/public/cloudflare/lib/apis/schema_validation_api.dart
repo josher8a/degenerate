@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SchemaValidationApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/discovery_retrieve_discovered_operations_on_a_zone_error.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_response.dart';import 'package:pub_cloudflare/models/schema_validation_delete_schema_response/schema_validation_delete_schema_response_result.dart';import 'package:pub_cloudflare/models/schema_validation_edit_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_feature.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_operation_status.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_basic_operation.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_operation.dart';import 'package:pub_cloudflare/models/shield_public_schema.dart';import 'package:pub_cloudflare/models/shield_schema_hosts.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// SchemaValidationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/discovery_retrieve_discovered_operations_on_a_zone_error.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_delete_schema_response/schema_validation_delete_schema_response_result.dart';import 'package:pub_cloudflare/models/schema_validation_edit_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_feature.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_operation_status.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_basic_operation.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_operation.dart';import 'package:pub_cloudflare/models/shield_public_schema.dart';import 'package:pub_cloudflare/models/shield_schema_hosts.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// SchemaValidationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -54,7 +54,7 @@ return execute(
 /// Uploads a new OpenAPI schema for API Shield schema validation. The schema defines expected request/response formats for API endpoints.
 ///
 /// `POST /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<SchemaValidationCreateSchemaResponse, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPublicSchema, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,7 +68,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SchemaValidationCreateSchemaResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldPublicSchema.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );

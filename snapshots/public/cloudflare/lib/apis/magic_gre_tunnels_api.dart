@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicGreTunnelsApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_create_gre_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_delete_gre_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_list_gre_tunnel_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_list_gre_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_update_gre_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_update_multiple_gre_tunnels_error.dart';import 'package:pub_cloudflare/models/magic_create_gre_tunnel_request.dart';import 'package:pub_cloudflare/models/magic_gre_tunnel.dart';import 'package:pub_cloudflare/models/magic_gre_tunnel_add_single_request.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_modified_tunnels_collection_response/magic_modified_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_tunnel_deleted_response/magic_tunnel_deleted_response_result.dart';import 'package:pub_cloudflare/models/magic_tunnel_modified_response/magic_tunnel_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_tunnel_single_response/magic_tunnel_single_response_result.dart';import 'package:pub_cloudflare/models/magic_tunnels_collection_response/magic_tunnels_collection_response_result.dart';/// MagicGreTunnelsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_create_gre_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_delete_gre_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_list_gre_tunnel_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_list_gre_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_update_gre_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/magic_gre_tunnels_update_multiple_gre_tunnels_error.dart';import 'package:pub_cloudflare/models/magic_create_gre_tunnel_request.dart';import 'package:pub_cloudflare/models/magic_gre_tunnel_add_single_request.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';/// MagicGreTunnelsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class MagicGreTunnelsApi with ApiExecutor {const MagicGreTunnelsApi(this.a
 /// Lists GRE tunnels associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicTunnelsCollectionResponseResult?, MagicGreTunnelsListGreTunnelsError>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicGreTunnelsListGreTunnelsError>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -30,7 +30,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicTunnelsCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicGreTunnelsListGreTunnelsError.fromResponse,
 );
@@ -40,7 +40,7 @@ return execute(
 /// Creates a new GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicGreTunnel?, MagicGreTunnelsCreateGreTunnelsError>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, required MagicCreateGreTunnelRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicGreTunnelsCreateGreTunnelsError>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, required MagicCreateGreTunnelRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -58,7 +58,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicGreTunnel.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicGreTunnelsCreateGreTunnelsError.fromResponse,
 );
@@ -68,7 +68,7 @@ return execute(
 /// Updates multiple GRE tunnels. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicModifiedTunnelsCollectionResponseResult?, MagicGreTunnelsUpdateMultipleGreTunnelsError>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicGreTunnelsUpdateMultipleGreTunnelsError>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -86,7 +86,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicModifiedTunnelsCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicGreTunnelsUpdateMultipleGreTunnelsError.fromResponse,
 );
@@ -96,7 +96,7 @@ return execute(
 /// Lists informtion for a specific GRE tunnel.
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelSingleResponseResult?, MagicGreTunnelsListGreTunnelDetailsError>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicGreTunnelsListGreTunnelDetailsError>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -112,7 +112,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicTunnelSingleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicGreTunnelsListGreTunnelDetailsError.fromResponse,
 );
@@ -122,7 +122,7 @@ return execute(
 /// Updates a specific GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelModifiedResponseResult?, MagicGreTunnelsUpdateGreTunnelError>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, required MagicGreTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicGreTunnelsUpdateGreTunnelError>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, required MagicGreTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -140,7 +140,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicTunnelModifiedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicGreTunnelsUpdateGreTunnelError.fromResponse,
 );
@@ -150,7 +150,7 @@ return execute(
 /// Disables and removes a specific static GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `DELETE /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelDeletedResponseResult?, MagicGreTunnelsDeleteGreTunnelError>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicGreTunnelsDeleteGreTunnelError>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -166,7 +166,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicTunnelDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: MagicGreTunnelsDeleteGreTunnelError.fromResponse,
 );

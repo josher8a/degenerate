@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "CloudflareTunnelApi" (17 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_clean_up_cloudflare_tunnel_connections_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_create_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_create_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_delete_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_delete_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_cloudflare_tunnel_token_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_warp_connector_tunnel_token_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_cloudflare_tunnel_connector_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_all_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_cloudflare_tunnel_connections_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_cloudflare_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_warp_connector_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_update_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_update_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_cfd_tunnel.dart';import 'package:pub_cloudflare/models/tunnel_client_id.dart';import 'package:pub_cloudflare/models/tunnel_existed_at.dart';import 'package:pub_cloudflare/models/tunnel_page_number.dart';import 'package:pub_cloudflare/models/tunnel_per_page.dart';import 'package:pub_cloudflare/models/tunnel_status.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_client.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_response_collection/tunnel_tunnel_response_collection_result.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';import 'package:pub_cloudflare/models/tunnel_warp_connector_tunnel.dart';/// CloudflareTunnelApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_clean_up_cloudflare_tunnel_connections_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_create_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_create_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_delete_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_delete_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_cloudflare_tunnel_token_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_a_warp_connector_tunnel_token_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_get_cloudflare_tunnel_connector_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_all_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_cloudflare_tunnel_connections_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_cloudflare_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_list_warp_connector_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_update_a_cloudflare_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_update_a_warp_connector_tunnel_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_client_id.dart';import 'package:pub_cloudflare/models/tunnel_existed_at.dart';import 'package:pub_cloudflare/models/tunnel_page_number.dart';import 'package:pub_cloudflare/models/tunnel_per_page.dart';import 'package:pub_cloudflare/models/tunnel_status.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';/// CloudflareTunnelApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class CloudflareTunnelApi with ApiExecutor {const CloudflareTunnelApi(this
 /// Lists and filters Cloudflare Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<List<TunnelCfdTunnel>?, CloudflareTunnelListCloudflareTunnelsError>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, CloudflareTunnelListCloudflareTunnelsError>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name.toJson();
@@ -65,7 +65,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelCfdTunnel.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: CloudflareTunnelListCloudflareTunnelsError.fromResponse,
 );
@@ -173,7 +173,7 @@ return execute(
 /// Fetches connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<List<TunnelTunnelClient>?, CloudflareTunnelListCloudflareTunnelConnectionsError>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<dynamic>?, CloudflareTunnelListCloudflareTunnelConnectionsError>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -186,7 +186,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelTunnelClient.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: CloudflareTunnelListCloudflareTunnelConnectionsError.fromResponse,
 );
@@ -300,7 +300,7 @@ return execute(
 /// Lists and filters all types of Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/tunnels`
-Future<ApiResult<List<TunnelTunnelResponseCollectionResult>?, CloudflareTunnelListAllTunnelsError>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, CloudflareTunnelListAllTunnelsError>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -356,7 +356,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TunnelCfdTunnel.fromJson(v as Map<String, dynamic>), fromB: (v) => TunnelWarpConnectorTunnel.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: CloudflareTunnelListAllTunnelsError.fromResponse,
 );
@@ -366,7 +366,7 @@ return execute(
 /// Lists and filters Warp Connector Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/warp_connector`
-Future<ApiResult<List<TunnelWarpConnectorTunnel>?, CloudflareTunnelListWarpConnectorTunnelsError>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, CloudflareTunnelListWarpConnectorTunnelsError>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -417,7 +417,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelWarpConnectorTunnel.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: CloudflareTunnelListWarpConnectorTunnelsError.fromResponse,
 );

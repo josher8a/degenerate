@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessAppPolicyResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_approval_group.dart';import 'package:pub_cloudflare/models/access_approval_required.dart';import 'package:pub_cloudflare/models/access_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_connection_rules.dart';import 'package:pub_cloudflare/models/access_isolation_required.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_precedence.dart';import 'package:pub_cloudflare/models/access_purpose_justification_prompt.dart';import 'package:pub_cloudflare/models/access_purpose_justification_required.dart';@immutable final class AccessAppPolicyResponse {const AccessAppPolicyResponse({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.precedence, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_approval_group.dart';import 'package:pub_cloudflare/models/access_approval_required.dart';import 'package:pub_cloudflare/models/access_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_connection_rules.dart';import 'package:pub_cloudflare/models/access_decision.dart';import 'package:pub_cloudflare/models/access_isolation_required.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_policy_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_precedence.dart';import 'package:pub_cloudflare/models/access_purpose_justification_prompt.dart';import 'package:pub_cloudflare/models/access_purpose_justification_required.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessAppPolicyResponse {const AccessAppPolicyResponse({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.precedence, });
 
 factory AccessAppPolicyResponse.fromJson(Map<String, dynamic> json) { return AccessAppPolicyResponse(
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
@@ -12,6 +12,14 @@ factory AccessAppPolicyResponse.fromJson(Map<String, dynamic> json) { return Acc
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
   sessionDuration: json['session_duration'] != null ? AccessComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  decision: json['decision'] != null ? AccessDecision.fromJson(json['decision'] as String) : null,
+  exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,
+  include: (json['include'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  name: json['name'] != null ? AccessPolicyComponentsSchemasName.fromJson(json['name'] as String) : null,
+  require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   precedence: json['precedence'] != null ? AccessPrecedence.fromJson(json['precedence'] as num) : null,
 ); }
 
@@ -31,6 +39,22 @@ final AccessPurposeJustificationRequired? purposeJustificationRequired;
 
 final AccessComponentsSchemasSessionDuration? sessionDuration;
 
+final AccessTimestamp? createdAt;
+
+final AccessDecision? decision;
+
+final List<AccessRule>? exclude;
+
+final AccessSchemasUuid? id;
+
+final List<AccessRule>? include;
+
+final AccessPolicyComponentsSchemasName? name;
+
+final List<AccessRule>? require;
+
+final AccessTimestamp? updatedAt;
+
 final AccessPrecedence? precedence;
 
 Map<String, dynamic> toJson() { return {
@@ -42,10 +66,18 @@ Map<String, dynamic> toJson() { return {
   if (purposeJustificationPrompt != null) 'purpose_justification_prompt': purposeJustificationPrompt?.toJson(),
   if (purposeJustificationRequired != null) 'purpose_justification_required': purposeJustificationRequired?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (decision != null) 'decision': decision?.toJson(),
+  if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
+  if (id != null) 'id': id?.toJson(),
+  if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
+  if (name != null) 'name': name?.toJson(),
+  if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (precedence != null) 'precedence': precedence?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration', 'precedence'}.contains(key)); } 
-AccessAppPolicyResponse copyWith({List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessPrecedence? Function()? precedence, }) { return AccessAppPolicyResponse(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration', 'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'precedence'}.contains(key)); } 
+AccessAppPolicyResponse copyWith({List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, AccessPrecedence? Function()? precedence, }) { return AccessAppPolicyResponse(
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
   connectionRules: connectionRules != null ? connectionRules() : this.connectionRules,
@@ -54,6 +86,14 @@ AccessAppPolicyResponse copyWith({List<AccessApprovalGroup>? Function()? approva
   purposeJustificationPrompt: purposeJustificationPrompt != null ? purposeJustificationPrompt() : this.purposeJustificationPrompt,
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  decision: decision != null ? decision() : this.decision,
+  exclude: exclude != null ? exclude() : this.exclude,
+  id: id != null ? id() : this.id,
+  include: include != null ? include() : this.include,
+  name: name != null ? name() : this.name,
+  require: require != null ? require() : this.require,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   precedence: precedence != null ? precedence() : this.precedence,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -66,10 +106,18 @@ AccessAppPolicyResponse copyWith({List<AccessApprovalGroup>? Function()? approva
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
           sessionDuration == other.sessionDuration &&
+          createdAt == other.createdAt &&
+          decision == other.decision &&
+          listEquals(exclude, other.exclude) &&
+          id == other.id &&
+          listEquals(include, other.include) &&
+          name == other.name &&
+          listEquals(require, other.require) &&
+          updatedAt == other.updatedAt &&
           precedence == other.precedence;
 
-@override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, precedence);
+@override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, precedence);
 
-@override String toString() => 'AccessAppPolicyResponse(\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n  precedence: $precedence,\n)';
+@override String toString() => 'AccessAppPolicyResponse(\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n  createdAt: $createdAt,\n  decision: $decision,\n  exclude: $exclude,\n  id: $id,\n  include: $include,\n  name: $name,\n  require: $require,\n  updatedAt: $updatedAt,\n  precedence: $precedence,\n)';
 
  }

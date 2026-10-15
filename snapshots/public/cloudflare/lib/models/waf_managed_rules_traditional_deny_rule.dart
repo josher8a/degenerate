@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WafManagedRulesTraditionalDenyRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_base/waf_managed_rules_base_group.dart';import 'package:pub_cloudflare/models/waf_managed_rules_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_priority.dart';import 'package:pub_cloudflare/models/waf_managed_rules_rule_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_schemas_description.dart';/// Defines the default action/mode of a rule.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_anomaly_rule/waf_managed_rules_anomaly_rule_group.dart';import 'package:pub_cloudflare/models/waf_managed_rules_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_priority.dart';import 'package:pub_cloudflare/models/waf_managed_rules_rule_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_schemas_description.dart';/// Defines the default action/mode of a rule.
 extension type WafManagedRulesDefaultMode(dynamic value) {
 factory WafManagedRulesDefaultMode.fromJson(dynamic json) => WafManagedRulesDefaultMode(json);
 
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $default
 
 factory WafManagedRulesTraditionalDenyRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalDenyRule(
   description: WafManagedRulesSchemasDescription.fromJson(json['description'] as String),
-  group: WafManagedRulesBaseGroup.fromJson(json['group'] as Map<String, dynamic>),
+  group: WafManagedRulesAnomalyRuleGroup.fromJson(json['group'] as Map<String, dynamic>),
   id: WafManagedRulesRuleComponentsSchemasIdentifier.fromJson(json['id'] as String),
   packageId: WafManagedRulesIdentifier.fromJson(json['package_id'] as String),
   priority: WafManagedRulesPriority.fromJson(json['priority'] as String),
@@ -139,7 +139,7 @@ factory WafManagedRulesTraditionalDenyRule.fromJson(Map<String, dynamic> json) {
 final WafManagedRulesSchemasDescription description;
 
 /// Defines the rule group to which the current WAF rule belongs.
-final WafManagedRulesBaseGroup group;
+final WafManagedRulesAnomalyRuleGroup group;
 
 /// Defines the unique identifier of the WAF rule.
 final WafManagedRulesRuleComponentsSchemasIdentifier id;
@@ -177,7 +177,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('allowed_modes') &&
       json.containsKey('default_mode') &&
       json.containsKey('mode'); } 
-WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesBaseGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeDenyTraditional>? allowedModes, WafManagedRulesDefaultMode? Function()? defaultMode, WafManagedRulesModeDenyTraditional? mode, }) { return WafManagedRulesTraditionalDenyRule(
+WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesAnomalyRuleGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeDenyTraditional>? allowedModes, WafManagedRulesDefaultMode? Function()? defaultMode, WafManagedRulesModeDenyTraditional? mode, }) { return WafManagedRulesTraditionalDenyRule(
   description: description ?? this.description,
   group: group ?? this.group,
   id: id ?? this.id,

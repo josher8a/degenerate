@@ -1,27 +1,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StreamSignedTokenResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_signed_token_response/stream_signed_token_response_result.dart';@immutable final class StreamSignedTokenResponse {const StreamSignedTokenResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';import 'package:pub_cloudflare/models/stream_signed_token_response/stream_signed_token_response_result.dart';@immutable final class StreamSignedTokenResponse {const StreamSignedTokenResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamSignedTokenResponse.fromJson(Map<String, dynamic> json) { return StreamSignedTokenResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
   result: json['result'] != null ? StreamSignedTokenResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
+
+final List<StreamMessages2> errors;
+
+final List<StreamMessages2> messages;
+
+/// Whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
 
 final StreamSignedTokenResponseResult? result;
 
 Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
   if (result != null) 'result': result?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-StreamSignedTokenResponse copyWith({StreamSignedTokenResponseResult? Function()? result}) { return StreamSignedTokenResponse(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+StreamSignedTokenResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamSignedTokenResponseResult? Function()? result, }) { return StreamSignedTokenResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamSignedTokenResponse &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
           result == other.result;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result);
 
-@override String toString() => 'StreamSignedTokenResponse(result: $result)';
+@override String toString() => 'StreamSignedTokenResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
  }

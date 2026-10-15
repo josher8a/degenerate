@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SecondaryDnsAclApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_acl_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_create_acl_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_delete_acl_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_list_ac_ls_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_update_acl_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/secondary_dns_account_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_acl.dart';import 'package:pub_cloudflare/models/secondary_dns_acl_create_acl_request.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_identifier.dart';/// SecondaryDnsAclApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_acl_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_create_acl_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_delete_acl_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_list_ac_ls_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_acl_update_acl_error.dart';import 'package:pub_cloudflare/models/rum_rule_id_response_single/rum_rule_id_response_single_result.dart';import 'package:pub_cloudflare/models/secondary_dns_account_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_acl.dart';import 'package:pub_cloudflare/models/secondary_dns_acl_create_acl_request.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_identifier.dart';/// SecondaryDnsAclApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -110,7 +110,7 @@ return execute(
 /// Delete ACL.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsAclDeleteAclError>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRuleIdResponseSingleResult?, SecondaryDnsAclDeleteAclError>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,7 +123,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? RumRuleIdResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: SecondaryDnsAclDeleteAclError.fromResponse,
 );

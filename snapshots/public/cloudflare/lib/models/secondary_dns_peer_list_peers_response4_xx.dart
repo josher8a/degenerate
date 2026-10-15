@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecondaryDnsPeerListPeersResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx_result_info.dart';import 'package:pub_cloudflare/models/secondary_dns_messages2.dart';@immutable final class SecondaryDnsPeerListPeersResponse4Xx {const SecondaryDnsPeerListPeersResponse4Xx({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/secondary_dns_messages2.dart';@immutable final class SecondaryDnsPeerListPeersResponse4Xx {const SecondaryDnsPeerListPeersResponse4Xx({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
 
 factory SecondaryDnsPeerListPeersResponse4Xx.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeerListPeersResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => SecondaryDnsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SecondaryDnsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: json['result'] as Map<String, dynamic>?,
 ); }
 
@@ -22,7 +22,7 @@ final List<SecondaryDnsMessages2> messages;
 /// Example: `false`
 final bool success;
 
-final AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? resultInfo;
+final AccessActiveSessionsResponseResultInfo? resultInfo;
 
 final Map<String,dynamic>? result;
 
@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-SecondaryDnsPeerListPeersResponse4Xx copyWith({List<SecondaryDnsMessages2>? errors, List<SecondaryDnsMessages2>? messages, bool? success, AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return SecondaryDnsPeerListPeersResponse4Xx(
+SecondaryDnsPeerListPeersResponse4Xx copyWith({List<SecondaryDnsMessages2>? errors, List<SecondaryDnsMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return SecondaryDnsPeerListPeersResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TieredCachingPatchTieredCachingSettingResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_response_value/cache_rules_cache_reserve_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';@immutable final class TieredCachingPatchTieredCachingSettingResponse {const TieredCachingPatchTieredCachingSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';import 'package:pub_cloudflare/models/cache_rules_tiered_cache_response_value/cache_rules_tiered_cache_response_value_result.dart';@immutable final class TieredCachingPatchTieredCachingSettingResponse {const TieredCachingPatchTieredCachingSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory TieredCachingPatchTieredCachingSettingResponse.fromJson(Map<String, dynamic> json) { return TieredCachingPatchTieredCachingSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? CacheRulesCacheReserveResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? CacheRulesTieredCacheResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<CacheRulesMessages2> errors;
@@ -19,7 +19,7 @@ final List<CacheRulesMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final CacheRulesCacheReserveResponseValueResult? result;
+final CacheRulesTieredCacheResponseValueResult? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-TieredCachingPatchTieredCachingSettingResponse copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesCacheReserveResponseValueResult? Function()? result, }) { return TieredCachingPatchTieredCachingSettingResponse(
+TieredCachingPatchTieredCachingSettingResponse copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesTieredCacheResponseValueResult? Function()? result, }) { return TieredCachingPatchTieredCachingSettingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

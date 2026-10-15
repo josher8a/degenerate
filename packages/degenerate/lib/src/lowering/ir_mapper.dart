@@ -1381,7 +1381,13 @@ final class IrMapper {
     final rawRefName = _extractRefName(refPath);
     final refName = _dartRefName(rawRefName);
 
-    final refSchema = _rawSchemas[rawRefName];
+    // The target may itself be an allOf chain (multi-level inheritance) —
+    // expand it first or its own and inherited properties are invisible to
+    // the merge.
+    final rawTarget = _rawSchemas[rawRefName];
+    final refSchema = rawTarget is Map<String, dynamic>
+        ? _expandNestedAllOf(rawTarget, {rawRefName})
+        : rawTarget;
     final refPropKeys = refSchema is Map<String, dynamic>
         ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
             <String>{}

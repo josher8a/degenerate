@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneHoldsApi" (4 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/page_rules_create_a_page_rule_error.dart';import 'package:pub_cloudflare/models/zones0_hold_delete_response/zones0_hold_delete_response_result.dart';import 'package:pub_cloudflare/models/zones0_hold_patch_request.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// ZoneHoldsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/page_rules_create_a_page_rule_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/zones0_hold_patch_request.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// ZoneHoldsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZoneHoldsApi with ApiExecutor {const ZoneHoldsApi(this.apiConfig);
 /// Retrieve whether the zone is subject to a zone hold, and metadata about the hold.
 ///
 /// `GET /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldDeleteResponseResult?, PageRulesCreateAPageRuleError>> zones0HoldGet({required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, PageRulesCreateAPageRuleError>> zones0HoldGet({required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname.
 ///
 /// `POST /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldDeleteResponseResult?, PageRulesCreateAPageRuleError>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon33Result, PageRulesCreateAPageRuleError>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeSubdomains != null) {
   queryParameters['include_subdomains'] = includeSubdomains.toString();
@@ -58,7 +58,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
@@ -69,7 +69,7 @@ return execute(
 /// The hold is enabled if the `hold_after` date-time value is in the past.
 ///
 /// `PATCH /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldDeleteResponseResult?, PageRulesCreateAPageRuleError>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, PageRulesCreateAPageRuleError>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,7 +84,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
@@ -95,7 +95,7 @@ return execute(
 /// creation and activation of zones with this zone's hostname.
 ///
 /// `DELETE /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldDeleteResponseResult?, PageRulesCreateAPageRuleError>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon33Result, PageRulesCreateAPageRuleError>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (holdAfter != null) {
   queryParameters['hold_after'] = holdAfter;
@@ -116,7 +116,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );

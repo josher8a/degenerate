@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ResourceSharingApi" (16 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/organization_shares_list_error.dart';import 'package:pub_cloudflare/models/organization_shares_list_direction.dart';import 'package:pub_cloudflare/models/organization_shares_list_order.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_recipient_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_resource_request.dart';import 'package:pub_cloudflare/models/resource_sharing_organization_id.dart';import 'package:pub_cloudflare/models/resource_sharing_recipient_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_status.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_type.dart';import 'package:pub_cloudflare/models/resource_sharing_share_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_kind.dart';import 'package:pub_cloudflare/models/resource_sharing_share_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_recipient_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_resource_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_status.dart';import 'package:pub_cloudflare/models/resource_sharing_share_target_type.dart';import 'package:pub_cloudflare/models/resource_sharing_update_share_request.dart';import 'package:pub_cloudflare/models/resource_sharing_update_share_resource_request.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/shares_list_direction.dart';import 'package:pub_cloudflare/models/shares_list_order.dart';/// ResourceSharingApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/organization_shares_list_error.dart';import 'package:pub_cloudflare/models/organization_shares_list_direction.dart';import 'package:pub_cloudflare/models/organization_shares_list_order.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_recipient_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_resource_request.dart';import 'package:pub_cloudflare/models/resource_sharing_organization_id.dart';import 'package:pub_cloudflare/models/resource_sharing_recipient_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_status.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_type.dart';import 'package:pub_cloudflare/models/resource_sharing_share_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_kind.dart';import 'package:pub_cloudflare/models/resource_sharing_share_status.dart';import 'package:pub_cloudflare/models/resource_sharing_share_target_type.dart';import 'package:pub_cloudflare/models/resource_sharing_update_share_request.dart';import 'package:pub_cloudflare/models/resource_sharing_update_share_resource_request.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/shares_list_direction.dart';import 'package:pub_cloudflare/models/shares_list_order.dart';/// ResourceSharingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ResourceSharingApi with ApiExecutor {const ResourceSharingApi(this.a
 /// Lists all account shares.
 ///
 /// `GET /accounts/{account_id}/shares`
-Future<ApiResult<List<ResourceSharingShareObject>?, OrganizationSharesListError>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, OrganizationSharesListError>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -64,7 +64,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareObject.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: OrganizationSharesListError.fromResponse,
 );
@@ -181,7 +181,7 @@ return execute(
 /// List share recipients by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<List<ResourceSharingShareRecipientObject>?, OrganizationSharesListError>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, OrganizationSharesListError>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -208,7 +208,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareRecipientObject.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: OrganizationSharesListError.fromResponse,
 );
@@ -319,7 +319,7 @@ return execute(
 /// List share resources by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<List<ResourceSharingShareResourceObject>?, OrganizationSharesListError>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, OrganizationSharesListError>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -349,7 +349,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareResourceObject.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: OrganizationSharesListError.fromResponse,
 );
@@ -455,7 +455,7 @@ return execute(
 /// Lists all organization shares.
 ///
 /// `GET /organizations/{organization_id}/shares`
-Future<ApiResult<List<ResourceSharingShareObject>?, OrganizationSharesListError>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, OrganizationSharesListError>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -499,7 +499,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareObject.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: OrganizationSharesListError.fromResponse,
 );

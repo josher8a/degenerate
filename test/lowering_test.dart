@@ -1441,11 +1441,61 @@ void main() {
     );
 
     test(
+      'single-ref allOf chains keep inherited properties through every level',
+      () {
+        // Cat extends Pet with its own props (single $ref + inline), and Pet
+        // itself extends Grand. The surfaced-ref merge must see Pet's
+        // EXPANDED properties, or the chain's middle and top levels vanish.
+        final schemas = <String, dynamic>{
+          'Grand': {
+            'type': 'object',
+            'properties': {
+              'g': {'type': 'string'},
+            },
+            'required': ['g'],
+          },
+          'Pet': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Grand'},
+              {
+                'type': 'object',
+                'properties': {
+                  'name': {'type': 'string'},
+                },
+                'required': ['name'],
+              },
+            ],
+          },
+          'Cat': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Pet'},
+              {
+                'type': 'object',
+                'properties': {
+                  'meow': {'type': 'boolean'},
+                },
+                'required': ['meow'],
+              },
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final cat = mapper.typeRegistry['Cat'];
+        expect(cat, isA<IrObject>());
+        final names = (cat! as IrObject).fields.map((f) => f.name).toSet();
+        expect(names, containsAll(['g', 'name', 'meow']));
+      },
+    );
+
+    test(
       'multi-level allOf inheritance keeps all inherited properties',
       () {
         // Combined: allOf [Base1, Base2] where Base1 itself extends Grand.
-        // The pre-resolved Base1 contains a nested allOf that must be
-        // flattened, not skipped.
+        // The resolved Base1 contains a nested allOf that must be flattened,
+        // not skipped.
         final schemas = <String, dynamic>{
           'Grand': {
             'type': 'object',
@@ -1651,7 +1701,7 @@ void main() {
         expect(union.mapping, hasLength(3));
         // An explicitly mapped schema must not also appear under its
         // implicit key.
-        expect(union.mapping, isNot(contains('Deposit')));
+        expect(union.mapping, isNot(contains(const SpecString('Deposit'))));
       },
     );
 

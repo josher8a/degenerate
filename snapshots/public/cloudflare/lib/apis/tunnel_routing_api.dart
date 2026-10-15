@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TunnelRoutingApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_create_a_tunnel_route_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_delete_a_tunnel_route_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_get_tunnel_route_by_ip_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_get_tunnel_route_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_list_tunnel_routes_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_update_a_tunnel_route_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_existed_at.dart';import 'package:pub_cloudflare/models/tunnel_ip.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_page_number.dart';import 'package:pub_cloudflare/models/tunnel_per_page.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_route_create_a_tunnel_route_request.dart';import 'package:pub_cloudflare/models/tunnel_route_id.dart';import 'package:pub_cloudflare/models/tunnel_route_update_a_tunnel_route_request.dart';import 'package:pub_cloudflare/models/tunnel_teamnet.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';/// TunnelRoutingApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_create_a_tunnel_route_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_delete_a_tunnel_route_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_get_tunnel_route_by_ip_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_get_tunnel_route_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_list_tunnel_routes_error.dart';import 'package:pub_cloudflare/models/errors/tunnel_route_update_a_tunnel_route_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_existed_at.dart';import 'package:pub_cloudflare/models/tunnel_ip.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_page_number.dart';import 'package:pub_cloudflare/models/tunnel_per_page.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_route_create_a_tunnel_route_request.dart';import 'package:pub_cloudflare/models/tunnel_route_id.dart';import 'package:pub_cloudflare/models/tunnel_route_update_a_tunnel_route_request.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';/// TunnelRoutingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class TunnelRoutingApi with ApiExecutor {const TunnelRoutingApi(this.apiCo
 /// Lists and filters private network routes in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<List<TunnelTeamnet>?, TunnelRouteListTunnelRoutesError>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, TunnelRouteListTunnelRoutesError>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (comment != null) {
   queryParameters['comment'] = comment.toJson();
@@ -67,7 +67,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelTeamnet.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
   onError: TunnelRouteListTunnelRoutesError.fromResponse,
 );
