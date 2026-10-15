@@ -1146,7 +1146,15 @@ final class IrMapper {
               ) ??
               key;
         }
-        if (explicitKeys.contains(SpecString(key))) continue;
+        if (explicitKeys.contains(SpecString(key))) {
+          _warnings.add(
+            'Union $unionName: variant $dartRefName declares discriminator '
+            'value "$key", but an explicit mapping entry redirects that '
+            'value to another schema — the variant is unreachable and was '
+            'dropped from the union.',
+          );
+          continue;
+        }
         if (mapping.containsKey(SpecString(key))) {
           _warnings.add(
             'Union $unionName: duplicate discriminator value "$key" — '
@@ -1169,6 +1177,12 @@ final class IrMapper {
               propertyName,
             );
         if (enumKey != null && explicitKeys.contains(SpecString(enumKey))) {
+          _warnings.add(
+            'Union $unionName: inline variant "$hint" declares discriminator '
+            'value "$enumKey", but an explicit mapping entry redirects that '
+            'value to another schema — the variant is unreachable and was '
+            'dropped from the union.',
+          );
           continue;
         }
         final lowered = lowerInlineSchema(
@@ -1182,7 +1196,15 @@ final class IrMapper {
         );
         final key =
             enumKey ?? (lowered is IrObject ? lowered.name : hint);
-        if (explicitKeys.contains(SpecString(key))) continue;
+        if (explicitKeys.contains(SpecString(key))) {
+          _warnings.add(
+            'Union $unionName: inline variant "$hint" maps to discriminator '
+            'value "$key", but an explicit mapping entry redirects that '
+            'value to another schema — the variant is unreachable and was '
+            'dropped from the union.',
+          );
+          continue;
+        }
         if (mapping.containsKey(SpecString(key))) {
           _warnings.add(
             'Union $unionName: duplicate discriminator value "$key" — '
