@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Translation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Translation {const Translation({required this.targetLang, required this.text, this.sourceLang = 'en', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Translation {const Translation({required this.targetLang, required this.text, this.sourceLang, });
 
 factory Translation.fromJson(Map<String, dynamic> json) { return Translation(
-  sourceLang: json.containsKey('source_lang') ? json['source_lang'] as String : 'en',
+  sourceLang: json['source_lang'] as String?,
   targetLang: json['target_lang'] as String,
   text: json['text'] as String,
 ); }
 
 /// The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
-final String sourceLang;
+final String? sourceLang;
 
 /// The language code to translate the text into (e.g., 'es' for Spanish)
 final String targetLang;
@@ -18,8 +18,11 @@ final String targetLang;
 /// The text to be translated
 final String text;
 
+/// The value of `sourceLang`, or its schema default when absent.
+String get sourceLangOrDefault => sourceLang ?? 'en';
+
 Map<String, dynamic> toJson() { return {
-  'source_lang': sourceLang,
+  'source_lang': ?sourceLang,
   'target_lang': targetLang,
   'text': text,
 }; } 
@@ -29,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('targe
 List<String> validate() { final errors = <String>[];
 if (text.isEmpty) { errors.add('text: length must be >= 1'); }
 return errors; } 
-Translation copyWith({String Function()? sourceLang, String? targetLang, String? text, }) { return Translation(
+Translation copyWith({String? Function()? sourceLang, String? targetLang, String? text, }) { return Translation(
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,
   targetLang: targetLang ?? this.targetLang,
   text: text ?? this.text,

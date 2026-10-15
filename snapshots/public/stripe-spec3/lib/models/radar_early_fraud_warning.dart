@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarEarlyFraudWarning
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject();
 
 factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
@@ -62,13 +62,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarEar
 
 factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return RadarEarlyFraudWarning(
   actionable: json['actionable'] as bool,
-  charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
+  charge: ApplicationFeeCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
   fraudType: json['fraud_type'] as String,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: RadarEarlyFraudWarningObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null,
 ); }
 
 /// An EFW is actionable if it has not received a dispute and has not been fully refunded. You may wish to proactively refund a charge that receives an EFW, in order to avoid receiving a dispute later.

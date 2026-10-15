@@ -30,7 +30,7 @@ factory WebhookPullRequestReviewThreadResolvedPullRequest.fromJson(Map<String, d
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   patchUrl: Uri.parse(json['patch_url'] as String),
-  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => User12.fromJson(v as Map<String, dynamic>), fromB: (v) => Team10.fromJson(v as Map<String, dynamic>),)).toList(),
+  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => e == null ? null : OneOf2.parse(e, fromA: (v) => User12.fromJson(v as Map<String, dynamic>), fromB: (v) => Team10.fromJson(v as Map<String, dynamic>),)).toList(),
   requestedTeams: (json['requested_teams'] as List<dynamic>).map((e) => WebhooksPullRequest5RequestedTeams.fromJson(e as Map<String, dynamic>)).toList(),
   reviewCommentUrl: json['review_comment_url'] as String,
   reviewCommentsUrl: Uri.parse(json['review_comments_url'] as String),
@@ -97,7 +97,7 @@ final int number;
 
 final Uri patchUrl;
 
-final List<WebhookPullRequestAssignedPullRequestRequestedReviewers> requestedReviewers;
+final List<WebhookPullRequestAssignedPullRequestRequestedReviewers?> requestedReviewers;
 
 final List<WebhooksPullRequest5RequestedTeams> requestedTeams;
 
@@ -144,7 +144,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'number': number,
   'patch_url': patchUrl.toString(),
-  'requested_reviewers': requestedReviewers.map((e) => e.toJson()).toList(),
+  'requested_reviewers': requestedReviewers.map((e) => e?.toJson()).toList(),
   'requested_teams': requestedTeams.map((e) => e.toJson()).toList(),
   'review_comment_url': reviewCommentUrl,
   'review_comments_url': reviewCommentsUrl.toString(),
@@ -191,7 +191,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookPullRequestReviewThreadResolvedPullRequest copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, WebhooksIssue2Assignee? Function()? assignee, List<IssueAssignees?>? assignees, AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhookPullRequestReviewThreadResolvedPullRequestBase? base, String? Function()? body, String? Function()? closedAt, Uri? commentsUrl, Uri? commitsUrl, String? createdAt, Uri? diffUrl, bool? draft, WebhookPullRequestReviewThreadResolvedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, String? Function()? mergeCommitSha, String? Function()? mergedAt, WebhooksIssue2Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, List<WebhookPullRequestAssignedPullRequestRequestedReviewers>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, Uri? reviewCommentsUrl, IssuesUpdateRequestState? state, Uri? statusesUrl, String? title, String? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewThreadResolvedPullRequest(
+WebhookPullRequestReviewThreadResolvedPullRequest copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, WebhooksIssue2Assignee? Function()? assignee, List<IssueAssignees?>? assignees, AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhookPullRequestReviewThreadResolvedPullRequestBase? base, String? Function()? body, String? Function()? closedAt, Uri? commentsUrl, Uri? commitsUrl, String? createdAt, Uri? diffUrl, bool? draft, WebhookPullRequestReviewThreadResolvedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, String? Function()? mergeCommitSha, String? Function()? mergedAt, WebhooksIssue2Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, List<WebhookPullRequestAssignedPullRequestRequestedReviewers?>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, Uri? reviewCommentsUrl, IssuesUpdateRequestState? state, Uri? statusesUrl, String? title, String? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewThreadResolvedPullRequest(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,

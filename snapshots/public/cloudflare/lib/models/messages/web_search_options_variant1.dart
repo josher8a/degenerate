@@ -84,23 +84,26 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
  }
 /// Options for the web search tool (when using built-in web search).
-@immutable final class WebSearchOptionsVariant1 {const WebSearchOptionsVariant1({this.searchContextSize = SearchContextSize.medium, this.userLocation, });
+@immutable final class WebSearchOptionsVariant1 {const WebSearchOptionsVariant1({this.searchContextSize, this.userLocation, });
 
 factory WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return WebSearchOptionsVariant1(
-  searchContextSize: json.containsKey('search_context_size') ? SearchContextSize.fromJson(json['search_context_size'] as String) : SearchContextSize.medium,
+  searchContextSize: json['search_context_size'] != null ? SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   userLocation: json['user_location'] != null ? UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
 ); }
 
-final SearchContextSize searchContextSize;
+final SearchContextSize? searchContextSize;
 
 final UserLocation? userLocation;
 
+/// The value of `searchContextSize`, or its schema default when absent.
+SearchContextSize get searchContextSizeOrDefault => searchContextSize ?? SearchContextSize.fromJson('medium');
+
 Map<String, dynamic> toJson() { return {
-  'search_context_size': searchContextSize.toJson(),
+  if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (userLocation != null) 'user_location': userLocation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key)); } 
-WebSearchOptionsVariant1 copyWith({SearchContextSize Function()? searchContextSize, UserLocation? Function()? userLocation, }) { return WebSearchOptionsVariant1(
+WebSearchOptionsVariant1 copyWith({SearchContextSize? Function()? searchContextSize, UserLocation? Function()? userLocation, }) { return WebSearchOptionsVariant1(
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
 ); } 

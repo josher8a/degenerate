@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateCompletionRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_model.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_prompt.dart';import 'package:pub_openai/models/stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = 1, this.echo = false, this.frequencyPenalty = 0.0, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxTokens = 16, this.n = 1, this.presencePenalty = 0.0, this.seed = const Omittable.absent(), this.stop, this.stream = false, this.streamOptions, this.suffix = const Omittable.absent(), this.temperature = 1.0, this.topP = 1.0, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_model.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_prompt.dart';import 'package:pub_openai/models/stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = const Omittable.absent(), this.echo = const Omittable.absent(), this.frequencyPenalty = const Omittable.absent(), this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.n = const Omittable.absent(), this.presencePenalty = const Omittable.absent(), this.seed = const Omittable.absent(), this.stop = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions = const Omittable.absent(), this.suffix = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, });
 
 factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateCompletionRequest(
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateCompletionRequestModelVariant2.fromJson(v as String),),
+  model: CreateCompletionRequestModel.fromJson(json['model']),
   prompt: json['prompt'] != null ? OneOf4.parse(json['prompt'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList(),) : null,
-  bestOf: json.containsKey('best_of') ? json['best_of'] != null ? (json['best_of'] as num).toInt() : null : 1,
-  echo: json.containsKey('echo') ? json['echo'] as bool? : false,
-  frequencyPenalty: json.containsKey('frequency_penalty') ? json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null : 0.0,
+  bestOf: json.containsKey('best_of') ? Omittable(json['best_of'] != null ? (json['best_of'] as num).toInt() : null) : const Omittable.absent(),
+  echo: json.containsKey('echo') ? Omittable(json['echo'] as bool?) : const Omittable.absent(),
+  frequencyPenalty: json.containsKey('frequency_penalty') ? Omittable(json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null) : const Omittable.absent(),
   logitBias: json.containsKey('logit_bias') ? Omittable((json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt()))) : const Omittable.absent(),
   logprobs: json.containsKey('logprobs') ? Omittable(json['logprobs'] != null ? (json['logprobs'] as num).toInt() : null) : const Omittable.absent(),
-  maxTokens: json.containsKey('max_tokens') ? json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null : 16,
-  n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  presencePenalty: json.containsKey('presence_penalty') ? json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null : 0.0,
+  maxTokens: json.containsKey('max_tokens') ? Omittable(json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null) : const Omittable.absent(),
+  n: json.containsKey('n') ? Omittable(json['n'] != null ? (json['n'] as num).toInt() : null) : const Omittable.absent(),
+  presencePenalty: json.containsKey('presence_penalty') ? Omittable(json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null) : const Omittable.absent(),
   seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
-  stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
-  stream: json.containsKey('stream') ? json['stream'] as bool? : false,
-  streamOptions: json['stream_options'] != null ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
+  stop: json.containsKey('stop') ? Omittable(json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null) : const Omittable.absent(),
+  stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
+  streamOptions: json.containsKey('stream_options') ? Omittable(json['stream_options'] != null ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   suffix: json.containsKey('suffix') ? Omittable(json['suffix'] as String?) : const Omittable.absent(),
-  temperature: json.containsKey('temperature') ? json['temperature'] != null ? (json['temperature'] as num).toDouble() : null : 1.0,
-  topP: json.containsKey('top_p') ? json['top_p'] != null ? (json['top_p'] as num).toDouble() : null : 1.0,
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   user: json['user'] as String?,
 ); }
 
@@ -40,17 +40,17 @@ final CreateCompletionRequestPrompt? prompt;
 /// 
 /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.
 /// 
-final int? bestOf;
+final Omittable<int?> bestOf;
 
 /// Echo back the prompt in addition to the completion
 /// 
-final bool? echo;
+final Omittable<bool?> echo;
 
 /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 /// 
 /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)
 /// 
-final double? frequencyPenalty;
+final Omittable<double?> frequencyPenalty;
 
 /// Modify the likelihood of specified tokens appearing in the completion.
 /// 
@@ -72,7 +72,7 @@ final Omittable<int?> logprobs;
 /// 
 /// 
 /// Example: `16`
-final int? maxTokens;
+final Omittable<int?> maxTokens;
 
 /// How many completions to generate for each prompt.
 /// 
@@ -80,13 +80,13 @@ final int? maxTokens;
 /// 
 /// 
 /// Example: `1`
-final int? n;
+final Omittable<int?> n;
 
 /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 /// 
 /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)
 /// 
-final double? presencePenalty;
+final Omittable<double?> presencePenalty;
 
 /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.
 /// 
@@ -94,13 +94,13 @@ final double? presencePenalty;
 /// 
 final Omittable<int?> seed;
 
-final StopConfiguration? stop;
+final Omittable<StopConfiguration?> stop;
 
 /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).
 /// 
-final bool? stream;
+final Omittable<bool?> stream;
 
-final ChatCompletionStreamOptions? streamOptions;
+final Omittable<ChatCompletionStreamOptions?> streamOptions;
 
 /// The suffix that comes after a completion of inserted text.
 /// 
@@ -116,7 +116,7 @@ final Omittable<String?> suffix;
 /// 
 /// 
 /// Example: `1`
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 /// 
@@ -124,7 +124,7 @@ final double? temperature;
 /// 
 /// 
 /// Example: `1`
-final double? topP;
+final Omittable<double?> topP;
 
 /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
 /// 
@@ -132,36 +132,63 @@ final double? topP;
 /// Example: `'user-1234'`
 final String? user;
 
+/// The value of `bestOf`, or its schema default when absent.
+int? get bestOfOrDefault => bestOf.valueOr(1);
+
+/// The value of `echo`, or its schema default when absent.
+bool? get echoOrDefault => echo.valueOr(false);
+
+/// The value of `frequencyPenalty`, or its schema default when absent.
+double? get frequencyPenaltyOrDefault => frequencyPenalty.valueOr(0.0);
+
+/// The value of `maxTokens`, or its schema default when absent.
+int? get maxTokensOrDefault => maxTokens.valueOr(16);
+
+/// The value of `n`, or its schema default when absent.
+int? get nOrDefault => n.valueOr(1);
+
+/// The value of `presencePenalty`, or its schema default when absent.
+double? get presencePenaltyOrDefault => presencePenalty.valueOr(0.0);
+
+/// The value of `stream`, or its schema default when absent.
+bool? get streamOrDefault => stream.valueOr(false);
+
+/// The value of `temperature`, or its schema default when absent.
+double? get temperatureOrDefault => temperature.valueOr(1.0);
+
+/// The value of `topP`, or its schema default when absent.
+double? get topPOrDefault => topP.valueOr(1.0);
+
 Map<String, dynamic> toJson() { return {
   'model': model.toJson(),
   'prompt': prompt?.toJson(),
-  'best_of': ?bestOf,
-  'echo': ?echo,
-  'frequency_penalty': ?frequencyPenalty,
+  if (bestOf.isPresent) 'best_of': bestOf.value,
+  if (echo.isPresent) 'echo': echo.value,
+  if (frequencyPenalty.isPresent) 'frequency_penalty': frequencyPenalty.value,
   if (logitBias.isPresent) 'logit_bias': logitBias.value,
   if (logprobs.isPresent) 'logprobs': logprobs.value,
-  'max_tokens': ?maxTokens,
-  'n': ?n,
-  'presence_penalty': ?presencePenalty,
+  if (maxTokens.isPresent) 'max_tokens': maxTokens.value,
+  if (n.isPresent) 'n': n.value,
+  if (presencePenalty.isPresent) 'presence_penalty': presencePenalty.value,
   if (seed.isPresent) 'seed': seed.value,
-  if (stop != null) 'stop': stop?.toJson(),
-  'stream': ?stream,
-  if (streamOptions != null) 'stream_options': streamOptions?.toJson(),
+  if (stop.isPresent) 'stop': stop.value?.toJson(),
+  if (stream.isPresent) 'stream': stream.value,
+  if (streamOptions.isPresent) 'stream_options': streamOptions.value?.toJson(),
   if (suffix.isPresent) 'suffix': suffix.value,
-  'temperature': ?temperature,
-  'top_p': ?topP,
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (topP.isPresent) 'top_p': topP.value,
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('prompt'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final bestOf$ = bestOf;
+final bestOf$ = bestOf.value;
 if (bestOf$ != null) {
   if (bestOf$ < 0) { errors.add('bestOf: must be >= 0'); }
   if (bestOf$ > 20) { errors.add('bestOf: must be <= 20'); }
 }
-final frequencyPenalty$ = frequencyPenalty;
+final frequencyPenalty$ = frequencyPenalty.value;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < -2) { errors.add('frequencyPenalty: must be >= -2'); }
   if (frequencyPenalty$ > 2) { errors.add('frequencyPenalty: must be <= 2'); }
@@ -171,49 +198,49 @@ if (logprobs$ != null) {
   if (logprobs$ < 0) { errors.add('logprobs: must be >= 0'); }
   if (logprobs$ > 5) { errors.add('logprobs: must be <= 5'); }
 }
-final maxTokens$ = maxTokens;
+final maxTokens$ = maxTokens.value;
 if (maxTokens$ != null) {
   if (maxTokens$ < 0) { errors.add('maxTokens: must be >= 0'); }
 }
-final n$ = n;
+final n$ = n.value;
 if (n$ != null) {
   if (n$ < 1) { errors.add('n: must be >= 1'); }
   if (n$ > 128) { errors.add('n: must be <= 128'); }
 }
-final presencePenalty$ = presencePenalty;
+final presencePenalty$ = presencePenalty.value;
 if (presencePenalty$ != null) {
   if (presencePenalty$ < -2) { errors.add('presencePenalty: must be >= -2'); }
   if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
-final temperature$ = temperature;
+final temperature$ = temperature.value;
 if (temperature$ != null) {
   if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
   if (temperature$ > 2) { errors.add('temperature: must be <= 2'); }
 }
-final topP$ = topP;
+final topP$ = topP.value;
 if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
 return errors; } 
-CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, int? Function()? bestOf, bool? Function()? echo, double? Function()? frequencyPenalty, Omittable<Map<String,int>?>? logitBias, Omittable<int?>? logprobs, int? Function()? maxTokens, int? Function()? n, double? Function()? presencePenalty, Omittable<int?>? seed, StopConfiguration? Function()? stop, bool? Function()? stream, ChatCompletionStreamOptions? Function()? streamOptions, Omittable<String?>? suffix, double? Function()? temperature, double? Function()? topP, String? Function()? user, }) { return CreateCompletionRequest(
+CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, Omittable<int?>? bestOf, Omittable<bool?>? echo, Omittable<double?>? frequencyPenalty, Omittable<Map<String,int>?>? logitBias, Omittable<int?>? logprobs, Omittable<int?>? maxTokens, Omittable<int?>? n, Omittable<double?>? presencePenalty, Omittable<int?>? seed, Omittable<StopConfiguration?>? stop, Omittable<bool?>? stream, Omittable<ChatCompletionStreamOptions?>? streamOptions, Omittable<String?>? suffix, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, }) { return CreateCompletionRequest(
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
-  bestOf: bestOf != null ? bestOf() : this.bestOf,
-  echo: echo != null ? echo() : this.echo,
-  frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
+  bestOf: bestOf ?? this.bestOf,
+  echo: echo ?? this.echo,
+  frequencyPenalty: frequencyPenalty ?? this.frequencyPenalty,
   logitBias: logitBias ?? this.logitBias,
   logprobs: logprobs ?? this.logprobs,
-  maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
-  n: n != null ? n() : this.n,
-  presencePenalty: presencePenalty != null ? presencePenalty() : this.presencePenalty,
+  maxTokens: maxTokens ?? this.maxTokens,
+  n: n ?? this.n,
+  presencePenalty: presencePenalty ?? this.presencePenalty,
   seed: seed ?? this.seed,
-  stop: stop != null ? stop() : this.stop,
-  stream: stream != null ? stream() : this.stream,
-  streamOptions: streamOptions != null ? streamOptions() : this.streamOptions,
+  stop: stop ?? this.stop,
+  stream: stream ?? this.stream,
+  streamOptions: streamOptions ?? this.streamOptions,
   suffix: suffix ?? this.suffix,
-  temperature: temperature != null ? temperature() : this.temperature,
-  topP: topP != null ? topP() : this.topP,
+  temperature: temperature ?? this.temperature,
+  topP: topP ?? this.topP,
   user: user != null ? user() : this.user,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

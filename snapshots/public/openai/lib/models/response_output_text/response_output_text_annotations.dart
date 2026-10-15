@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseOutputText (inline: Annotations)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';sealed class ResponseOutputTextAnnotationsType {const ResponseOutputTextAnnotationsType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/file_annotation_source/file_annotation_source_type.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';import 'package:pub_openai/models/url_annotation_source/url_annotation_source_type.dart';sealed class ResponseOutputTextAnnotationsType {const ResponseOutputTextAnnotationsType();
 
 factory ResponseOutputTextAnnotationsType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -65,10 +65,10 @@ factory ResponseOutputTextAnnotations.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `file` variant.
-factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(source: source)); }
+factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(type: FileAnnotationSourceType.fromJson('file'), source: source)); }
 
 /// Build the `url` variant.
-factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(source: source)); }
+factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(type: UrlAnnotationSourceType.fromJson('url'), source: source)); }
 
 /// The discriminator value identifying this variant.
 ResponseOutputTextAnnotationsType get type;

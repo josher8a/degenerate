@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AppArmorProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AppArmorProfile defines a pod or container's AppArmor settings.
-@immutable final class AppArmorProfile {const AppArmorProfile({this.localhostProfile, this.type = '', });
+@immutable final class AppArmorProfile {const AppArmorProfile({required this.type, this.localhostProfile, });
 
 factory AppArmorProfile.fromJson(Map<String, dynamic> json) { return AppArmorProfile(
   localhostProfile: json['localhostProfile'] as String?,

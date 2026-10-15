@@ -1,39 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateZoneRulesetRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';@immutable final class UpdateZoneRulesetRequest {const UpdateZoneRulesetRequest({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, this.kind, this.phase, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';@immutable final class UpdateZoneRulesetRequest {const UpdateZoneRulesetRequest({this.description, this.name, this.kind, this.phase, this.rules, });
 
 factory UpdateZoneRulesetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneRulesetRequest(
-  description: json.containsKey('description') ? json['description'] as String : '',
-  id: RulesetsRulesetId.fromJson(json['id'] as String),
-  lastUpdated: DateTime.parse(json['last_updated'] as String),
+  description: json['description'] as String?,
   name: json['name'] as String?,
-  version: RulesetsRulesetVersion.fromJson(json['version'] as String),
   kind: json['kind'] != null ? RulesetsRulesetKind.fromJson(json['kind'] as String) : null,
   phase: json['phase'] != null ? RulesetsRulesetPhase.fromJson(json['phase'] as String) : null,
-  rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRule.fromJson(e as Map<String, dynamic>)).toList(),
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRuleRequest.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// An informative description of the ruleset.
 /// 
 /// Example: `'A description for my ruleset.'`
-final String description;
-
-/// The unique ID of the ruleset.
-final RulesetsRulesetId id;
-
-/// The timestamp of when the ruleset was last modified.
-/// 
-/// Example: `'2000-01-01T00:00:00.000000Z'`
-final DateTime lastUpdated;
+final String? description;
 
 /// The human-readable name of the ruleset.
 /// 
 /// Example: `'My ruleset'`
 final String? name;
-
-/// The version of the ruleset.
-final RulesetsRulesetVersion version;
 
 /// The kind of the ruleset.
 final RulesetsRulesetKind? kind;
@@ -42,21 +28,19 @@ final RulesetsRulesetKind? kind;
 final RulesetsRulesetPhase? phase;
 
 /// The list of rules in the ruleset.
-final List<RulesetsRequestRule>? rules;
+final List<RulesetsRequestRuleRequest>? rules;
+
+/// The value of `description`, or its schema default when absent.
+String get descriptionOrDefault => description ?? '';
 
 Map<String, dynamic> toJson() { return {
-  'description': description,
-  'id': id.toJson(),
-  'last_updated': lastUpdated.toIso8601String(),
+  'description': ?description,
   'name': ?name,
-  'version': version.toJson(),
   if (kind != null) 'kind': kind?.toJson(),
   if (phase != null) 'phase': phase?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('last_updated') && json['last_updated'] is String &&
-      json.containsKey('version'); } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'kind', 'phase', 'rules'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final name$ = name;
@@ -64,12 +48,9 @@ if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
 }
 return errors; } 
-UpdateZoneRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? Function()? kind, RulesetsRulesetPhase? Function()? phase, List<RulesetsRequestRule>? Function()? rules, }) { return UpdateZoneRulesetRequest(
+UpdateZoneRulesetRequest copyWith({String? Function()? description, String? Function()? name, RulesetsRulesetKind? Function()? kind, RulesetsRulesetPhase? Function()? phase, List<RulesetsRequestRuleRequest>? Function()? rules, }) { return UpdateZoneRulesetRequest(
   description: description != null ? description() : this.description,
-  id: id ?? this.id,
-  lastUpdated: lastUpdated ?? this.lastUpdated,
   name: name != null ? name() : this.name,
-  version: version ?? this.version,
   kind: kind != null ? kind() : this.kind,
   phase: phase != null ? phase() : this.phase,
   rules: rules != null ? rules() : this.rules,
@@ -77,16 +58,13 @@ UpdateZoneRulesetRequest copyWith({String Function()? description, RulesetsRules
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateZoneRulesetRequest &&
           description == other.description &&
-          id == other.id &&
-          lastUpdated == other.lastUpdated &&
           name == other.name &&
-          version == other.version &&
           kind == other.kind &&
           phase == other.phase &&
           listEquals(rules, other.rules);
 
-@override int get hashCode => Object.hash(description, id, lastUpdated, name, version, kind, phase, Object.hashAll(rules ?? const []));
+@override int get hashCode => Object.hash(description, name, kind, phase, Object.hashAll(rules ?? const []));
 
-@override String toString() => 'UpdateZoneRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase, rules: $rules)';
+@override String toString() => 'UpdateZoneRulesetRequest(description: $description, name: $name, kind: $kind, phase: $phase, rules: $rules)';
 
  }

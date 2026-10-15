@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ContainerStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_state.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_user.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_requirements.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_mount_status.dart';/// ContainerStatus contains details for the current status of this container.
-@immutable final class ContainerStatus {const ContainerStatus({this.allocatedResources, this.allocatedResourcesStatus, this.containerId, this.image = '', this.imageId = '', this.lastState, this.name = '', this.ready = false, this.resources, this.restartCount = 0, this.started, this.state, this.stopSignal, this.user, this.volumeMounts, });
+@immutable final class ContainerStatus {const ContainerStatus({required this.image, required this.imageId, required this.name, required this.ready, required this.restartCount, this.allocatedResources, this.allocatedResourcesStatus, this.containerId, this.lastState, this.resources, this.started, this.state, this.stopSignal, this.user, this.volumeMounts, });
 
 factory ContainerStatus.fromJson(Map<String, dynamic> json) { return ContainerStatus(
   allocatedResources: (json['allocatedResources'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),

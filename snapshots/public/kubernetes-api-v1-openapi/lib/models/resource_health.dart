@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ResourceHealth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ResourceHealth represents the health of a resource. It has the latest device health information. This is a part of KEP https://kep.k8s.io/4680.
-@immutable final class ResourceHealth {const ResourceHealth({this.health, this.message, this.resourceId = '', });
+@immutable final class ResourceHealth {const ResourceHealth({required this.resourceId, this.health, this.message, });
 
 factory ResourceHealth.fromJson(Map<String, dynamic> json) { return ResourceHealth(
   health: json['health'] as String?,

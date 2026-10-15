@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerBankAccountsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request/post_customers_customer_bank_accounts_request_bank_account.dart';@immutable final class PostCustomersCustomerBankAccountsRequest {const PostCustomersCustomerBankAccountsRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request/post_customers_customer_bank_accounts_request_bank_account.dart';@immutable final class PostCustomersCustomerBankAccountsRequest {const PostCustomersCustomerBankAccountsRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
 
 factory PostCustomersCustomerBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsRequest(
   alipayAccount: json['alipay_account'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => CustomerPaymentSourceBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? PostCustomersCustomerBankAccountsRequestBankAccount.fromJson(json['bank_account']) : null,
+  card: json['card'] != null ? PostChargesRequestCard.fromJson(json['card']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   source: json['source'] as String?,

@@ -69,12 +69,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? float, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = EncodingFormat.float, this.dimensions, this.user, });
+@immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat, this.dimensions, this.user, });
 
 factory CreateEmbeddingRequest.fromJson(Map<String, dynamic> json) { return CreateEmbeddingRequest(
   input: OneOf4.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList(),),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateEmbeddingRequestModelVariant2.fromJson(v as String),),
-  encodingFormat: json.containsKey('encoding_format') ? EncodingFormat.fromJson(json['encoding_format'] as String) : EncodingFormat.float,
+  model: CreateEmbeddingRequestModel.fromJson(json['model']),
+  encodingFormat: json['encoding_format'] != null ? EncodingFormat.fromJson(json['encoding_format'] as String) : null,
   dimensions: json['dimensions'] != null ? (json['dimensions'] as num).toInt() : null,
   user: json['user'] as String?,
 ); }
@@ -94,7 +94,7 @@ final CreateEmbeddingRequestModel model;
 /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 /// 
 /// Example: `'float'`
-final EncodingFormat encodingFormat;
+final EncodingFormat? encodingFormat;
 
 /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
 /// 
@@ -106,10 +106,13 @@ final int? dimensions;
 /// Example: `'user-1234'`
 final String? user;
 
+/// The value of `encodingFormat`, or its schema default when absent.
+EncodingFormat get encodingFormatOrDefault => encodingFormat ?? EncodingFormat.fromJson('float');
+
 Map<String, dynamic> toJson() { return {
   'input': input.toJson(),
   'model': model.toJson(),
-  'encoding_format': encodingFormat.toJson(),
+  if (encodingFormat != null) 'encoding_format': encodingFormat?.toJson(),
   'dimensions': ?dimensions,
   'user': ?user,
 }; } 
@@ -122,7 +125,7 @@ if (dimensions$ != null) {
   if (dimensions$ < 1) { errors.add('dimensions: must be >= 1'); }
 }
 return errors; } 
-CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, EncodingFormat Function()? encodingFormat, int? Function()? dimensions, String? Function()? user, }) { return CreateEmbeddingRequest(
+CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, EncodingFormat? Function()? encodingFormat, int? Function()? dimensions, String? Function()? user, }) { return CreateEmbeddingRequest(
   input: input ?? this.input,
   model: model ?? this.model,
   encodingFormat: encodingFormat != null ? encodingFormat() : this.encodingFormat,

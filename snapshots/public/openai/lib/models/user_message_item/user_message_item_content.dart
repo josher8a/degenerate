@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UserMessageItem (inline: Content)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/user_message_input_text.dart';import 'package:pub_openai/models/user_message_quoted_text.dart';sealed class UserMessageItemContentType {const UserMessageItemContentType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';import 'package:pub_openai/models/user_message_input_text.dart';import 'package:pub_openai/models/user_message_quoted_text.dart';sealed class UserMessageItemContentType {const UserMessageItemContentType();
 
 factory UserMessageItemContentType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
@@ -65,10 +65,10 @@ factory UserMessageItemContent.fromJson(Map<String, dynamic> json) { return swit
 }; }
 
 /// Build the `input_text` variant.
-factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(text: text)); }
+factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
 
 /// Build the `quoted_text` variant.
-factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(text: text)); }
+factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(type: UserMessageQuotedTextType.fromJson('quoted_text'), text: text)); }
 
 /// The discriminator value identifying this variant.
 UserMessageItemContentType get type;

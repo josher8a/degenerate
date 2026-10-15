@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeInterpreterToolCall (inline: Outputs)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image.dart';import 'package:pub_openai/models/code_interpreter_output_logs.dart';sealed class CodeInterpreterToolCallOutputsType {const CodeInterpreterToolCallOutputsType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image.dart';import 'package:pub_openai/models/code_interpreter_output_logs.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';sealed class CodeInterpreterToolCallOutputsType {const CodeInterpreterToolCallOutputsType();
 
 factory CodeInterpreterToolCallOutputsType.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -64,10 +64,10 @@ factory CodeInterpreterToolCallOutputs.fromJson(Map<String, dynamic> json) { ret
 }; }
 
 /// Build the `logs` variant.
-factory CodeInterpreterToolCallOutputs.logs({required String logs}) { return CodeInterpreterToolCallOutputsLogs(CodeInterpreterOutputLogs(logs: logs)); }
+factory CodeInterpreterToolCallOutputs.logs({required String logs}) { return CodeInterpreterToolCallOutputsLogs(CodeInterpreterOutputLogs(type: CodeInterpreterOutputLogsType.fromJson('logs'), logs: logs)); }
 
 /// Build the `image` variant.
-factory CodeInterpreterToolCallOutputs.image({required String url}) { return CodeInterpreterToolCallOutputsImage(CodeInterpreterOutputImage(url: url)); }
+factory CodeInterpreterToolCallOutputs.image({required String url}) { return CodeInterpreterToolCallOutputsImage(CodeInterpreterOutputImage(type: CodeInterpreterOutputImageType.fromJson('image'), url: url)); }
 
 /// The discriminator value identifying this variant.
 CodeInterpreterToolCallOutputsType get type;

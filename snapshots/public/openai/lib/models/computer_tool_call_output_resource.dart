@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ComputerToolCallOutputResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';@immutable final class ComputerToolCallOutputResource {const ComputerToolCallOutputResource({required this.id, required this.callId, required this.output, this.type = 'computer_call_output', this.acknowledgedSafetyChecks, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';@immutable final class ComputerToolCallOutputResource {const ComputerToolCallOutputResource({required this.type, required this.id, required this.callId, required this.output, this.acknowledgedSafetyChecks, this.status, });
 
 factory ComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ComputerToolCallOutputResource(
   type: json['type'] as String,

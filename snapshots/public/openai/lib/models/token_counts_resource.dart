@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 ///   "input_tokens": 123
 /// }
 /// ```
-@immutable final class TokenCountsResource {const TokenCountsResource({required this.inputTokens, this.object = TokenCountsResourceObject.responseInputTokens, });
+@immutable final class TokenCountsResource {const TokenCountsResource({required this.object, required this.inputTokens, });
 
 factory TokenCountsResource.fromJson(Map<String, dynamic> json) { return TokenCountsResource(
   object: TokenCountsResourceObject.fromJson(json['object'] as String),

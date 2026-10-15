@@ -248,7 +248,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [ModelIdsShared]
-/// - `.b` → [ResponsesOnlyModel]
-typedef ModelIdsResponses = OneOf2<ModelIdsShared,ResponsesOnlyModel>;
+@immutable final class ModelIdsResponses {/// A value built from one or more typed views (at least one must be present).
+const ModelIdsResponses({this.modelIdsShared = const Omittable.absent(), this.responsesOnlyModel = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const ModelIdsResponses._({required this.rawValue, required this.modelIdsShared, required this.responsesOnlyModel, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory ModelIdsResponses.fromJson(Object? json) { return ModelIdsResponses._(
+  rawValue: Omittable(json),
+  modelIdsShared: parseAnyOfVariant<ModelIdsShared>(json, ModelIdsShared.fromJson, isValid: (value) => value.isValid),
+  responsesOnlyModel: parseAnyOfVariant<ResponsesOnlyModel>(json, (value) => ResponsesOnlyModel.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `ModelIdsShared`, when it matches.
+final Omittable<ModelIdsShared> modelIdsShared;
+
+/// The payload decoded as `ResponsesOnlyModel`, when it matches.
+final Omittable<ResponsesOnlyModel> responsesOnlyModel;
+
+/// Whether at least one variant matched.
+bool get isValid => modelIdsShared.isPresent || responsesOnlyModel.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (modelIdsShared.isPresent) modelIdsShared.value?.toJson(),
+    if (responsesOnlyModel.isPresent) responsesOnlyModel.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is ModelIdsResponses && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'ModelIdsResponses(${toJson()})';
+
+ }

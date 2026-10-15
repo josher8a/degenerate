@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? videoDel
 
  }
 /// Confirmation payload returned after deleting a video.
-@immutable final class DeletedVideoResource {const DeletedVideoResource({required this.deleted, required this.id, this.object = DeletedVideoResourceObject.videoDeleted, });
+@immutable final class DeletedVideoResource {const DeletedVideoResource({required this.object, required this.deleted, required this.id, });
 
 factory DeletedVideoResource.fromJson(Map<String, dynamic> json) { return DeletedVideoResource(
   object: DeletedVideoResourceObject.fromJson(json['object'] as String),

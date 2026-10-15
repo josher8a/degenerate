@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory DeepObjectQueryParamsMapResponse.fromJson(Map<String, dynamic> json) { return DeepObjectQueryParamsMapResponse(
   url: json['url'] as String,
-  args: (json['args'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),))),
+  args: (json['args'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ArgsValue.fromJson(v))),
 ); }
 
 /// Example: `'http://localhost:35123/anything/queryParams/deepObject/map?mapArrParam[test2]=test3&mapArrParam[test2]=test4&mapArrParam[test]=test&mapArrParam[test]=test2&mapParam[test2]=value2&mapParam[test]=value'`

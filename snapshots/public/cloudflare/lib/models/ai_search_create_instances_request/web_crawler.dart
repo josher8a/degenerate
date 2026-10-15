@@ -83,12 +83,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sitemap,
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class WebCrawler {const WebCrawler({this.crawlOptions, this.parseOptions, this.parseType = ParseType.sitemap, this.storeOptions, });
+@immutable final class WebCrawler {const WebCrawler({this.crawlOptions, this.parseOptions, this.parseType, this.storeOptions, });
 
 factory WebCrawler.fromJson(Map<String, dynamic> json) { return WebCrawler(
   crawlOptions: json['crawl_options'] != null ? CrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
   parseOptions: json['parse_options'] != null ? ParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
-  parseType: json.containsKey('parse_type') ? ParseType.fromJson(json['parse_type'] as String) : ParseType.sitemap,
+  parseType: json['parse_type'] != null ? ParseType.fromJson(json['parse_type'] as String) : null,
   storeOptions: json['store_options'] != null ? StoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
 ); }
 
@@ -96,18 +96,21 @@ final CrawlOptions? crawlOptions;
 
 final ParseOptions? parseOptions;
 
-final ParseType parseType;
+final ParseType? parseType;
 
 final StoreOptions? storeOptions;
+
+/// The value of `parseType`, or its schema default when absent.
+ParseType get parseTypeOrDefault => parseType ?? ParseType.fromJson('sitemap');
 
 Map<String, dynamic> toJson() { return {
   if (crawlOptions != null) 'crawl_options': crawlOptions?.toJson(),
   if (parseOptions != null) 'parse_options': parseOptions?.toJson(),
-  'parse_type': parseType.toJson(),
+  if (parseType != null) 'parse_type': parseType?.toJson(),
   if (storeOptions != null) 'store_options': storeOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key)); } 
-WebCrawler copyWith({CrawlOptions? Function()? crawlOptions, ParseOptions? Function()? parseOptions, ParseType Function()? parseType, StoreOptions? Function()? storeOptions, }) { return WebCrawler(
+WebCrawler copyWith({CrawlOptions? Function()? crawlOptions, ParseOptions? Function()? parseOptions, ParseType? Function()? parseType, StoreOptions? Function()? storeOptions, }) { return WebCrawler(
   crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
   parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,
   parseType: parseType != null ? parseType() : this.parseType,

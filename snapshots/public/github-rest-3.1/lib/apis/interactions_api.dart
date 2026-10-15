@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "InteractionsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/interaction_limit.dart';import 'package:pub_github_rest_3_1/models/interaction_limit_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response/interactions_get_restrictions_for_authenticated_user_response_variant2.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_org_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_repo_response.dart';/// InteractionsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/interaction_limit.dart';import 'package:pub_github_rest_3_1/models/interaction_limit_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_org_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_repo_response.dart';/// InteractionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,10 +23,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => InteractionLimitResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.fromJson(v as Map<String, dynamic>),);
+    return InteractionsGetRestrictionsForOrgResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -87,10 +87,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => InteractionLimitResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.fromJson(v as Map<String, dynamic>),);
+    return InteractionsGetRestrictionsForRepoResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -110,7 +110,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -131,7 +131,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -150,10 +150,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => InteractionLimitResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.fromJson(v as Map<String, dynamic>),);
+    return InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -173,7 +173,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -195,7 +195,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

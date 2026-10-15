@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// The schema returned by this data source config is used to defined what variables are available in your evals.
 /// `item` and `sample` are both defined when using this data source config.
 /// 
-@immutable final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({required this.schema, this.type = CodeInterpreterOutputLogsType.logs, this.metadata = const Omittable.absent(), });
+@immutable final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({required this.type, required this.schema, this.metadata = const Omittable.absent(), });
 
 factory EvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalLogsDataSourceConfig(
   type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),

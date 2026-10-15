@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -72,7 +72,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -108,7 +108,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -182,7 +182,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -206,7 +206,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RuleSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -231,7 +231,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -255,7 +255,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -277,7 +277,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: OrgsGetOrgRulesetHistoryError.fromResponse,
@@ -301,7 +301,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -325,7 +325,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -352,7 +352,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ReposDeleteError.fromResponse,
@@ -404,7 +404,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -433,7 +433,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposCreateAttestationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -476,7 +476,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -499,7 +499,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -523,7 +523,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Autolink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -547,7 +547,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Autolink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -571,7 +571,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -591,7 +591,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CheckAutomatedSecurityFixes.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -612,7 +612,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -631,7 +631,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -664,7 +664,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -687,7 +687,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -709,7 +709,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BranchProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -741,7 +741,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -763,7 +763,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsReRunJobForWorkflowRunError.fromResponse,
@@ -783,7 +783,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -806,7 +806,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -829,7 +829,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -849,7 +849,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchPullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -877,7 +877,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchPullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -899,7 +899,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -924,7 +924,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -948,7 +948,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -972,7 +972,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -992,7 +992,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1018,7 +1018,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1040,7 +1040,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1059,7 +1059,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1084,7 +1084,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1109,7 +1109,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1134,7 +1134,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1162,7 +1162,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BranchRestrictionPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1186,7 +1186,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1198,7 +1198,7 @@ return execute(
 /// Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> reposGetAppsWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Integration?>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> reposGetAppsWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1207,11 +1207,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
+    return json.map((e) => e != null ? Integration.fromJson(e as Map<String, dynamic>) : null).toList();
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
@@ -1223,7 +1223,7 @@ return execute(
 /// Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ActivityListStargazersForRepoError>> reposAddAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposAddAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Integration?>, ActivityListStargazersForRepoError>> reposAddAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposAddAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1234,11 +1234,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
+    return json.map((e) => e != null ? Integration.fromJson(e as Map<String, dynamic>) : null).toList();
   },
   onError: ActivityListStargazersForRepoError.fromResponse,
 );
@@ -1250,7 +1250,7 @@ return execute(
 /// Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ActivityListStargazersForRepoError>> reposSetAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposSetAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Integration?>, ActivityListStargazersForRepoError>> reposSetAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposSetAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1261,11 +1261,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
+    return json.map((e) => e != null ? Integration.fromJson(e as Map<String, dynamic>) : null).toList();
   },
   onError: ActivityListStargazersForRepoError.fromResponse,
 );
@@ -1277,7 +1277,7 @@ return execute(
 /// Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ActivityListStargazersForRepoError>> reposRemoveAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposRemoveAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Integration?>, ActivityListStargazersForRepoError>> reposRemoveAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposRemoveAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1288,11 +1288,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
+    return json.map((e) => e != null ? Integration.fromJson(e as Map<String, dynamic>) : null).toList();
   },
   onError: ActivityListStargazersForRepoError.fromResponse,
 );
@@ -1313,7 +1313,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1340,7 +1340,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1367,7 +1367,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1394,7 +1394,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1419,7 +1419,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1450,7 +1450,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1481,7 +1481,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1512,7 +1512,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1544,7 +1544,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1578,7 +1578,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CodeownersErrors.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1623,7 +1623,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1652,7 +1652,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1697,7 +1697,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1740,7 +1740,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: GistsListPublicError.fromResponse,
@@ -1768,7 +1768,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryCollaboratorPermission.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1808,7 +1808,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1837,7 +1837,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1868,7 +1868,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1890,7 +1890,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -1967,7 +1967,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1992,7 +1992,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2033,7 +2033,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2066,7 +2066,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2101,7 +2101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2174,7 +2174,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2214,7 +2214,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CombinedCommitStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2249,7 +2249,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2281,7 +2281,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CommunityProfile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2363,7 +2363,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CommitComparison.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2417,7 +2417,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposGetContentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2446,7 +2446,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2479,7 +2479,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2517,7 +2517,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2563,7 +2563,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2634,7 +2634,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2656,7 +2656,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2687,7 +2687,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
@@ -2718,7 +2718,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2745,7 +2745,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2767,7 +2767,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2797,7 +2797,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -2832,7 +2832,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposGetAllEnvironmentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2858,7 +2858,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Environment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2889,7 +2889,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Environment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2911,7 +2911,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2945,7 +2945,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposListDeploymentBranchPoliciesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2970,7 +2970,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentBranchPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2995,7 +2995,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentBranchPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3020,7 +3020,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentBranchPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3043,7 +3043,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -3066,7 +3066,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposGetAllDeploymentProtectionRulesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3095,7 +3095,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentProtectionRule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3135,7 +3135,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3160,7 +3160,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeploymentProtectionRule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3185,7 +3185,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -3218,7 +3218,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3249,7 +3249,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3282,7 +3282,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3308,7 +3308,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3330,7 +3330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3354,7 +3354,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3378,7 +3378,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -3400,7 +3400,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WebhookConfig.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3425,7 +3425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WebhookConfig.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3457,7 +3457,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3480,7 +3480,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3502,7 +3502,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
@@ -3524,7 +3524,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -3547,7 +3547,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -3568,7 +3568,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CheckImmutableReleases.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3589,7 +3589,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsCancelWorkflowRunError.fromResponse,
@@ -3609,7 +3609,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsCancelWorkflowRunError.fromResponse,
@@ -3640,7 +3640,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3664,7 +3664,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3685,7 +3685,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -3715,7 +3715,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3739,7 +3739,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeployKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3761,7 +3761,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeployKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3783,7 +3783,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -3802,7 +3802,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
@@ -3825,7 +3825,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MergedUpstream.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3848,7 +3848,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3872,7 +3872,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3900,7 +3900,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3928,7 +3928,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ReposUpdateInformationAboutPagesSiteError.fromResponse,
@@ -3952,7 +3952,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: GitCreateCommitError.fromResponse,
@@ -3985,7 +3985,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4009,7 +4009,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PageBuildStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4032,7 +4032,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PageBuild.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4055,7 +4055,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PageBuild.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4080,7 +4080,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PageDeployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4104,7 +4104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PagesDeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4128,7 +4128,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -4154,7 +4154,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PagesHealthCheck.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4176,7 +4176,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReposCheckPrivateVulnerabilityReportingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4198,7 +4198,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ReposCheckPrivateVulnerabilityReportingError.fromResponse,
@@ -4218,7 +4218,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ReposCheckPrivateVulnerabilityReportingError.fromResponse,
@@ -4239,7 +4239,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4267,7 +4267,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
@@ -4300,7 +4300,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4335,7 +4335,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4370,7 +4370,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4397,7 +4397,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4425,7 +4425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4449,7 +4449,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4470,7 +4470,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -4491,7 +4491,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReleaseNotesContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4515,7 +4515,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4536,7 +4536,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4561,7 +4561,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4584,7 +4584,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4606,7 +4606,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -4636,7 +4636,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4687,7 +4687,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4722,7 +4722,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4761,7 +4761,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4786,7 +4786,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4832,7 +4832,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4856,7 +4856,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RuleSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4889,7 +4889,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4913,7 +4913,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4935,7 +4935,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: OrgsGetOrgRulesetHistoryError.fromResponse,
@@ -4966,7 +4966,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4989,7 +4989,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RulesetVersionWithState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5014,7 +5014,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5036,7 +5036,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5067,7 +5067,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5093,7 +5093,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ParticipationStats.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5121,7 +5121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5147,7 +5147,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5179,7 +5179,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5206,7 +5206,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -5240,7 +5240,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5274,7 +5274,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5298,7 +5298,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5328,7 +5328,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CloneTraffic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5350,7 +5350,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5373,7 +5373,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5404,7 +5404,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ViewTraffic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5428,7 +5428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MinimalRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5449,7 +5449,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -5468,7 +5468,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -5489,7 +5489,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -5513,7 +5513,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -5536,7 +5536,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5569,7 +5569,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5626,7 +5626,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5653,7 +5653,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5686,7 +5686,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5709,7 +5709,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: CodeSecurityAttachEnterpriseConfigurationError.fromResponse,
@@ -5729,7 +5729,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: CodeSecurityAttachEnterpriseConfigurationError.fromResponse,
@@ -5769,7 +5769,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;

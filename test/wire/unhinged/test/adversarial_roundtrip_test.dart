@@ -70,12 +70,13 @@ void main() {
         $0: New0.$0,
         $empty: 'empty-key-value',
         $false: false,
+        $null: NewNull.$null,
         $ref: '#/components/schemas/X',
         $id: 'id-42',
       );
       expect(self, isA<SelfType>());
-      // The factory sets $null to its default (NewNull.$null) and the
-      // discriminator to 'type'.
+      // `$null` is required by the spec, so the caller passes it even though
+      // it declares a default; the factory sets the discriminator to 'type'.
       expect(self.toJson(), equals(typePayload));
     });
   });

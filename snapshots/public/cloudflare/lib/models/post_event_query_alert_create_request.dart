@@ -69,12 +69,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? immediat
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class PostEventQueryAlertCreateRequest {const PostEventQueryAlertCreateRequest({required this.queryId, this.enabled, this.frequency = PostEventQueryAlertCreateRequestFrequency.daily, this.notificationType = 'ans', });
+@immutable final class PostEventQueryAlertCreateRequest {const PostEventQueryAlertCreateRequest({required this.queryId, this.enabled, this.frequency, this.notificationType, });
 
 factory PostEventQueryAlertCreateRequest.fromJson(Map<String, dynamic> json) { return PostEventQueryAlertCreateRequest(
   enabled: json['enabled'] as bool?,
-  frequency: json.containsKey('frequency') ? PostEventQueryAlertCreateRequestFrequency.fromJson(json['frequency'] as String) : PostEventQueryAlertCreateRequestFrequency.daily,
-  notificationType: json.containsKey('notification_type') ? json['notification_type'] as String : 'ans',
+  frequency: json['frequency'] != null ? PostEventQueryAlertCreateRequestFrequency.fromJson(json['frequency'] as String) : null,
+  notificationType: json['notification_type'] as String?,
   queryId: (json['query_id'] as num).toInt(),
 ); }
 
@@ -82,22 +82,28 @@ factory PostEventQueryAlertCreateRequest.fromJson(Map<String, dynamic> json) { r
 final bool? enabled;
 
 /// Alert frequency (immediate or daily)
-final PostEventQueryAlertCreateRequestFrequency frequency;
+final PostEventQueryAlertCreateRequestFrequency? frequency;
 
 /// Type of notification (e.g., ans)
-final String notificationType;
+final String? notificationType;
 
 /// ID of the event query to create an alert for
 final int queryId;
 
+/// The value of `frequency`, or its schema default when absent.
+PostEventQueryAlertCreateRequestFrequency get frequencyOrDefault => frequency ?? PostEventQueryAlertCreateRequestFrequency.fromJson('daily');
+
+/// The value of `notificationType`, or its schema default when absent.
+String get notificationTypeOrDefault => notificationType ?? 'ans';
+
 Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
-  'frequency': frequency.toJson(),
-  'notification_type': notificationType,
+  if (frequency != null) 'frequency': frequency?.toJson(),
+  'notification_type': ?notificationType,
   'query_id': queryId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query_id') && json['query_id'] is num; } 
-PostEventQueryAlertCreateRequest copyWith({bool? Function()? enabled, PostEventQueryAlertCreateRequestFrequency Function()? frequency, String Function()? notificationType, int? queryId, }) { return PostEventQueryAlertCreateRequest(
+PostEventQueryAlertCreateRequest copyWith({bool? Function()? enabled, PostEventQueryAlertCreateRequestFrequency? Function()? frequency, String? Function()? notificationType, int? queryId, }) { return PostEventQueryAlertCreateRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   frequency: frequency != null ? frequency() : this.frequency,
   notificationType: notificationType != null ? notificationType() : this.notificationType,

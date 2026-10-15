@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FunctionCallOutputItemParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_call_output_item_param/output_variant2.dart';/// The output of a function tool call.
-@immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.output, this.id = const Omittable.absent(), this.type = 'function_call_output', this.status = const Omittable.absent(), });
+@immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.type, required this.output, this.id = const Omittable.absent(), this.status = const Omittable.absent(), });
 
 factory FunctionCallOutputItemParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),

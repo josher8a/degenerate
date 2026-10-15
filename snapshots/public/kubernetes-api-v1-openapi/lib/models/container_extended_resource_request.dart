@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ContainerExtendedResourceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerExtendedResourceRequest has the mapping of container name, extended resource name to the device request name.
-@immutable final class ContainerExtendedResourceRequest {const ContainerExtendedResourceRequest({this.containerName = '', this.requestName = '', this.resourceName = '', });
+@immutable final class ContainerExtendedResourceRequest {const ContainerExtendedResourceRequest({required this.containerName, required this.requestName, required this.resourceName, });
 
 factory ContainerExtendedResourceRequest.fromJson(Map<String, dynamic> json) { return ContainerExtendedResourceRequest(
   containerName: json['containerName'] as String,

@@ -52,12 +52,13 @@ final request = ApiRequest(
   body: body == null ? null : <String>[
     if (body.enumFormStringArray case final enumFormStringArray$?)
       'enum_form_string_array=${Uri.encodeQueryComponent(enumFormStringArray$.toString())}',
-    'enum_form_string=${Uri.encodeQueryComponent(body.enumFormString.toJson())}',
+    if (body.enumFormString case final enumFormString$?)
+      'enum_form_string=${Uri.encodeQueryComponent(enumFormString$.toJson())}',
   ].join('&'),
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -105,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -124,7 +125,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Client.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -160,7 +161,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -179,7 +180,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OuterNumber.fromJson(jsonDecode(response.body) as num);
@@ -200,7 +201,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OuterObjectWithEnumProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -221,7 +222,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OuterString.fromJson(jsonDecode(response.body) as String);
@@ -242,7 +243,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OuterBoolean.fromJson(jsonDecode(response.body) as bool);
@@ -263,7 +264,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OuterComposite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -282,7 +283,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FakeBigDecimalMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -308,7 +309,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -329,7 +330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -350,7 +351,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -371,7 +372,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -392,7 +393,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -413,7 +414,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -436,7 +437,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -455,7 +456,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -474,7 +475,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -509,7 +510,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -526,7 +527,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HealthCheckResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -558,7 +559,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

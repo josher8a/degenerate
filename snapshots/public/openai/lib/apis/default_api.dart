@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContainerListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -63,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -84,7 +84,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -105,7 +105,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -138,7 +138,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContainerFileListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -165,7 +165,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -186,7 +186,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -207,7 +207,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -226,7 +226,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -259,7 +259,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -282,7 +282,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -303,7 +303,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -324,7 +324,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeysDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -347,7 +347,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TokenCountsResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -370,7 +370,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CompactResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -391,7 +391,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -412,7 +412,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -448,7 +448,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadItemListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -467,7 +467,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -486,7 +486,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -525,7 +525,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

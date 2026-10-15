@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsDnsRecordBatchPatch (inline: DnsRecordsDnsRecordWithData > DnsRecordsUriRecord)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_priority.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/dns_records_uri_record/dns_records_uri_record_data.dart';import 'package:pub_cloudflare/models/dns_records_uri_record/dns_records_uri_record_type.dart';@immutable final class DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord {const DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord({required this.id, this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.priority, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_priority.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_uri_record/dns_records_uri_record_data.dart';import 'package:pub_cloudflare/models/dns_records_uri_record_request/dns_records_uri_record_request_type.dart';@immutable final class DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord {const DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord({required this.id, this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.priority, this.type, });
 
 factory DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
@@ -9,11 +9,11 @@ factory DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRec
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
   settings: json['settings'] != null ? DnsRecordsSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => DnsRecordsTtlVariant2.fromJson((v as num).toDouble()),) : null,
+  ttl: json['ttl'] != null ? DnsRecordsTtl.fromJson(json['ttl']) : null,
   content: json['content'] as String?,
   data: json['data'] != null ? DnsRecordsUriRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
   priority: json['priority'] != null ? DnsRecordsPriority.fromJson(json['priority'] as num) : null,
-  type: json['type'] != null ? DnsRecordsUriRecordType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? DnsRecordsUriRecordRequestType.fromJson(json['type'] as String) : null,
   id: DnsRecordsIdentifier.fromJson(json['id'] as String),
 ); }
 
@@ -41,7 +41,7 @@ final DnsRecordsPriority? priority;
 /// Record type.
 /// 
 /// Example: `'URI'`
-final DnsRecordsUriRecordType? type;
+final DnsRecordsUriRecordRequestType? type;
 
 final DnsRecordsIdentifier id;
 
@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsUriRecordData? Function()? data, DnsRecordsPriority? Function()? priority, DnsRecordsUriRecordType? Function()? type, DnsRecordsIdentifier? id, }) { return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord(
+DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsUriRecordData? Function()? data, DnsRecordsPriority? Function()? priority, DnsRecordsUriRecordRequestType? Function()? type, DnsRecordsIdentifier? id, }) { return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsUriRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,

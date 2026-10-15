@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SubscriptionItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item/deleted_subscription_item_object.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/subscription_item_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Subscription items allow you to create customer subscriptions with more than
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item/deleted_subscription_item_object.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/subscription_item_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Subscription items allow you to create customer subscriptions with more than
 /// one plan, making it easy to represent complex billing relationships.
 @immutable final class SubscriptionItem {const SubscriptionItem({required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, required this.subscription, this.billingThresholds = const Omittable.absent(), this.quantity, this.taxRates = const Omittable.absent(), });
 
@@ -10,7 +10,7 @@ factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return Subscripti
   created: (json['created'] as num).toInt(),
   currentPeriodEnd: (json['current_period_end'] as num).toInt(),
   currentPeriodStart: (json['current_period_start'] as num).toInt(),
-  discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),
+  discounts: (json['discounts'] as List<dynamic>).map(InvoiceitemDiscounts.fromJson).toList(),
   id: json['id'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DeletedSubscriptionItemObject.fromJson(json['object'] as String),

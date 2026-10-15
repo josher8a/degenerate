@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
  }
 /// Indicates that a thread is active.
-@immutable final class ActiveStatus {const ActiveStatus({this.type = ActiveStatusType.active});
+@immutable final class ActiveStatus {const ActiveStatus({required this.type});
 
 factory ActiveStatus.fromJson(Map<String, dynamic> json) { return ActiveStatus(
   type: ActiveStatusType.fromJson(json['type'] as String),

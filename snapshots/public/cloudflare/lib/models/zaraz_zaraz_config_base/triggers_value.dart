@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazZarazConfigBase (inline: Triggers > Value)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule.dart';import 'package:pub_cloudflare/models/zaraz_load_rule.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/exclude_rules.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/load_rules.dart';sealed class ValueSystem {const ValueSystem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/exclude_rules.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/load_rules.dart';sealed class ValueSystem {const ValueSystem();
 
 factory ValueSystem.fromJson(String json) { return switch (json) {
   'pageload' => pageload,
@@ -57,8 +57,8 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pageload
 
 factory TriggersValue.fromJson(Map<String, dynamic> json) { return TriggersValue(
   description: json['description'] as String?,
-  excludeRules: (json['excludeRules'] as List<dynamic>).map((e) => OneOf7.parse(e, fromA: (v) => ZarazLoadRule.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazClickListenerRule.fromJson(v as Map<String, dynamic>), fromC: (v) => ZarazTimerRule.fromJson(v as Map<String, dynamic>), fromD: (v) => ZarazFormSubmissionRule.fromJson(v as Map<String, dynamic>), fromE: (v) => ZarazVariableMatchRule.fromJson(v as Map<String, dynamic>), fromF: (v) => ZarazScrollDepthRule.fromJson(v as Map<String, dynamic>), fromG: (v) => ZarazElementVisibilityRule.fromJson(v as Map<String, dynamic>),)).toList(),
-  loadRules: (json['loadRules'] as List<dynamic>).map((e) => OneOf7.parse(e, fromA: (v) => ZarazLoadRule.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazClickListenerRule.fromJson(v as Map<String, dynamic>), fromC: (v) => ZarazTimerRule.fromJson(v as Map<String, dynamic>), fromD: (v) => ZarazFormSubmissionRule.fromJson(v as Map<String, dynamic>), fromE: (v) => ZarazVariableMatchRule.fromJson(v as Map<String, dynamic>), fromF: (v) => ZarazScrollDepthRule.fromJson(v as Map<String, dynamic>), fromG: (v) => ZarazElementVisibilityRule.fromJson(v as Map<String, dynamic>),)).toList(),
+  excludeRules: (json['excludeRules'] as List<dynamic>).map(ExcludeRules.fromJson).toList(),
+  loadRules: (json['loadRules'] as List<dynamic>).map(LoadRules.fromJson).toList(),
   name: json['name'] as String,
   system: json['system'] != null ? ValueSystem.fromJson(json['system'] as String) : null,
 ); }

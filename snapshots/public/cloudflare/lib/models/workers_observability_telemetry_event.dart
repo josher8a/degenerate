@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersObservabilityTelemetryEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/metadata.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_observability_telemetry_event_source.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_variant1.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_variant2.dart';/// The data structure of a telemetry event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/metadata.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_observability_telemetry_event_source.dart';/// The data structure of a telemetry event
 @immutable final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTelemetryEvent({required this.$metadata, required this.dataset, required this.source, required this.timestamp, this.$containers, this.$workers, });
 
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
   $containers: json[r'$containers'] as Map<String, dynamic>?,
   $metadata: Metadata.fromJson(json[r'$metadata'] as Map<String, dynamic>),
-  $workers: json[r'$workers'] != null ? OneOf2.parse(json[r'$workers'], fromA: (v) => WorkersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  $workers: json[r'$workers'] != null ? Workers.fromJson(json[r'$workers']) : null,
   dataset: json['dataset'] as String,
-  source: OneOf2.parse(json['source'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},),
+  source: WorkersObservabilityTelemetryEventSource.fromJson(json['source']),
   timestamp: (json['timestamp'] as num).toInt(),
 ); }
 

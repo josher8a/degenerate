@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTreasuryOutboundPaymentsRequest (inline: DestinationPaymentMethodOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param112.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request/destination_payment_method_options_us_bank_account.dart';/// Payment method-specific configuration for this OutboundPayment.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request/destination_payment_method_options_us_bank_account.dart';/// Payment method-specific configuration for this OutboundPayment.
 @immutable final class DestinationPaymentMethodOptions {const DestinationPaymentMethodOptions({this.usBankAccount});
 
 factory DestinationPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return DestinationPaymentMethodOptions(
-  usBankAccount: json['us_bank_account'] != null ? OneOf2.parse(json['us_bank_account'], fromA: (v) => PaymentMethodOptionsParam112.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  usBankAccount: json['us_bank_account'] != null ? DestinationPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account']) : null,
 ); }
 
 final DestinationPaymentMethodOptionsUsBankAccount? usBankAccount;

@@ -89,7 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListAvailablePhoneNumberMobileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeSessionCreateResponse (inline: Audio > Input)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/pcm_audio_format.dart';import 'package:pub_openai/models/pcma_audio_format.dart';import 'package:pub_openai/models/pcmu_audio_format.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_turn_detection.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/noise_reduction.dart';@immutable final class RealtimeSessionCreateResponseAudioInput {const RealtimeSessionCreateResponseAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_turn_detection.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/noise_reduction.dart';@immutable final class RealtimeSessionCreateResponseAudioInput {const RealtimeSessionCreateResponseAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection, });
 
 factory RealtimeSessionCreateResponseAudioInput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudioInput(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => PcmAudioFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => PcmuAudioFormat.fromJson(v as Map<String, dynamic>), fromC: (v) => PcmaAudioFormat.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   transcription: json['transcription'] != null ? AudioTranscription.fromJson(json['transcription'] as Map<String, dynamic>) : null,
   noiseReduction: json['noise_reduction'] != null ? NoiseReduction.fromJson(json['noise_reduction'] as Map<String, dynamic>) : null,
   turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,

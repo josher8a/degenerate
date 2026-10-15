@@ -137,26 +137,39 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 /// - "standard-3": 2 vCPU, 8 GiB memory, 16 GB disk
 /// - "standard-4": 4 vCPU, 12 GiB memory, 20 GB disk
 /// 
-@immutable final class CcInstanceType {const CcInstanceType({this.ccInstanceTypeVariant1});
+@immutable final class CcInstanceType {/// A value built from one or more typed views (at least one must be present).
+const CcInstanceType({this.ccInstanceTypeVariant1 = const Omittable.absent()}) : rawValue = const Omittable.absent();
 
-factory CcInstanceType.fromJson(dynamic json) { return CcInstanceType(
-  ccInstanceTypeVariant1: json is String ? CcInstanceTypeVariant1.fromJson(json) : null,
+const CcInstanceType._({required this.rawValue, required this.ccInstanceTypeVariant1, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CcInstanceType.fromJson(Object? json) { return CcInstanceType._(
+  rawValue: Omittable(json),
+  ccInstanceTypeVariant1: parseAnyOfVariant<CcInstanceTypeVariant1>(json, (value) => CcInstanceTypeVariant1.fromJson(value! as String)),
 ); }
 
-final CcInstanceTypeVariant1? ccInstanceTypeVariant1;
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
 
-/// At least one variant must be present.
-bool get isValid { return ccInstanceTypeVariant1 != null; } 
-dynamic toJson() {   if (ccInstanceTypeVariant1 != null) return ccInstanceTypeVariant1!.toJson();
-return <String, dynamic>{
+/// The payload decoded as `CcInstanceTypeVariant1`, when it matches.
+final Omittable<CcInstanceTypeVariant1> ccInstanceTypeVariant1;
 
-}; } 
+/// Whether at least one variant matched.
+bool get isValid => ccInstanceTypeVariant1.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (ccInstanceTypeVariant1.isPresent) ccInstanceTypeVariant1.value?.toJson(),
+  ]);
+
 @override bool operator ==(Object other) => identical(this, other) ||
-      other is CcInstanceType &&
-          ccInstanceTypeVariant1 == other.ccInstanceTypeVariant1;
+      other is CcInstanceType && jsonValueEquals(toJson(), other.toJson());
 
-@override int get hashCode => ccInstanceTypeVariant1.hashCode;
+@override int get hashCode => jsonValueHash(toJson());
 
-@override String toString() => 'CcInstanceType(ccInstanceTypeVariant1: $ccInstanceTypeVariant1)';
+@override String toString() => 'CcInstanceType(${toJson()})';
 
  }

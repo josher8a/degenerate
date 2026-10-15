@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonl, W
  }
 /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval
 /// 
-@immutable final class CreateEvalJsonlRunDataSource {const CreateEvalJsonlRunDataSource({required this.source, this.type = CreateEvalJsonlRunDataSourceType.jsonl, });
+@immutable final class CreateEvalJsonlRunDataSource {const CreateEvalJsonlRunDataSource({required this.type, required this.source, });
 
 factory CreateEvalJsonlRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalJsonlRunDataSource(
   type: CreateEvalJsonlRunDataSourceType.fromJson(json['type'] as String),

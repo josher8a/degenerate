@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostProductsIdRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/package_dimensions_specs.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/marketing_features_variant1.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
 factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostProductsIdRequest(
   active: json['active'] as bool?,
   defaultPrice: json['default_price'] as String?,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostProductsIdRequestDescription.fromJson(json['description']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  images: json['images'] != null ? OneOf2.parse(json['images'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  marketingFeatures: json['marketing_features'] != null ? OneOf2.parse(json['marketing_features'], fromA: (v) => (v as List<dynamic>).map((e) => MarketingFeaturesVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  images: json['images'] != null ? Images.fromJson(json['images']) : null,
+  marketingFeatures: json['marketing_features'] != null ? PostProductsIdRequestMarketingFeatures.fromJson(json['marketing_features']) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-  packageDimensions: json['package_dimensions'] != null ? OneOf2.parse(json['package_dimensions'], fromA: (v) => PackageDimensionsSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  packageDimensions: json['package_dimensions'] != null ? PostProductsIdRequestPackageDimensions.fromJson(json['package_dimensions']) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  unitLabel: json['unit_label'] != null ? OneOf2.parse(json['unit_label'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  url: json['url'] != null ? OneOf2.parse(json['url'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  taxCode: json['tax_code'] != null ? PostInvoiceitemsInvoiceitemRequestTaxCode.fromJson(json['tax_code']) : null,
+  unitLabel: json['unit_label'] != null ? UnitLabel.fromJson(json['unit_label']) : null,
+  url: json['url'] != null ? Url.fromJson(json['url']) : null,
 ); }
 
 /// Whether the product is available for purchase.

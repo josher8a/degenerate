@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EditParticipantResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/add_participant_response/add_participant_response_data.dart';@immutable final class EditParticipantResponse {const EditParticipantResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/add_participant_response/add_participant_response_data.dart';@immutable final class EditParticipantResponse {const EditParticipantResponse({required this.success, this.data, });
 
 factory EditParticipantResponse.fromJson(Map<String, dynamic> json) { return EditParticipantResponse(
   data: json['data'] != null ? AddParticipantResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

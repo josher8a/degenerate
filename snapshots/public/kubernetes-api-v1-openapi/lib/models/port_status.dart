@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PortStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PortStatus represents the error condition of a service port
-@immutable final class PortStatus {const PortStatus({this.error, this.port = 0, this.protocol = '', });
+@immutable final class PortStatus {const PortStatus({required this.port, required this.protocol, this.error, });
 
 factory PortStatus.fromJson(Map<String, dynamic> json) { return PortStatus(
   error: json['error'] as String?,

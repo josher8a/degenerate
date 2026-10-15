@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChecksSetSuitesPreferencesRequest (inline: AutoTriggerChecks)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksSetSuitesPreferencesRequestAutoTriggerChecks {const ChecksSetSuitesPreferencesRequestAutoTriggerChecks({required this.appId, this.setting = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksSetSuitesPreferencesRequestAutoTriggerChecks {const ChecksSetSuitesPreferencesRequestAutoTriggerChecks({required this.appId, required this.setting, });
 
 factory ChecksSetSuitesPreferencesRequestAutoTriggerChecks.fromJson(Map<String, dynamic> json) { return ChecksSetSuitesPreferencesRequestAutoTriggerChecks(
   appId: (json['app_id'] as num).toInt(),

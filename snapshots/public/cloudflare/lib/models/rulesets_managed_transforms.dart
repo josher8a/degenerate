@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RulesetsManagedTransforms
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms/managed_request_headers.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms/managed_response_headers.dart';/// A Managed Transforms object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms/rulesets_managed_transforms_managed_request_headers.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms/rulesets_managed_transforms_managed_response_headers.dart';/// A Managed Transforms object.
 @immutable final class RulesetsManagedTransforms {const RulesetsManagedTransforms({required this.managedRequestHeaders, required this.managedResponseHeaders, });
 
 factory RulesetsManagedTransforms.fromJson(Map<String, dynamic> json) { return RulesetsManagedTransforms(
-  managedRequestHeaders: (json['managed_request_headers'] as List<dynamic>).map((e) => ManagedRequestHeaders.fromJson(e as Map<String, dynamic>)).toList(),
-  managedResponseHeaders: (json['managed_response_headers'] as List<dynamic>).map((e) => ManagedResponseHeaders.fromJson(e as Map<String, dynamic>)).toList(),
+  managedRequestHeaders: (json['managed_request_headers'] as List<dynamic>).map((e) => RulesetsManagedTransformsManagedRequestHeaders.fromJson(e as Map<String, dynamic>)).toList(),
+  managedResponseHeaders: (json['managed_response_headers'] as List<dynamic>).map((e) => RulesetsManagedTransformsManagedResponseHeaders.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The list of Managed Request Transforms.
-final List<ManagedRequestHeaders> managedRequestHeaders;
+final List<RulesetsManagedTransformsManagedRequestHeaders> managedRequestHeaders;
 
 /// The list of Managed Response Transforms.
-final List<ManagedResponseHeaders> managedResponseHeaders;
+final List<RulesetsManagedTransformsManagedResponseHeaders> managedResponseHeaders;
 
 Map<String, dynamic> toJson() { return {
   'managed_request_headers': managedRequestHeaders.map((e) => e.toJson()).toList(),
@@ -26,7 +26,7 @@ List<String> validate() { final errors = <String>[];
 if (managedRequestHeaders.toSet().length != managedRequestHeaders.length) { errors.add('managedRequestHeaders: items must be unique'); }
 if (managedResponseHeaders.toSet().length != managedResponseHeaders.length) { errors.add('managedResponseHeaders: items must be unique'); }
 return errors; } 
-RulesetsManagedTransforms copyWith({List<ManagedRequestHeaders>? managedRequestHeaders, List<ManagedResponseHeaders>? managedResponseHeaders, }) { return RulesetsManagedTransforms(
+RulesetsManagedTransforms copyWith({List<RulesetsManagedTransformsManagedRequestHeaders>? managedRequestHeaders, List<RulesetsManagedTransformsManagedResponseHeaders>? managedResponseHeaders, }) { return RulesetsManagedTransforms(
   managedRequestHeaders: managedRequestHeaders ?? this.managedRequestHeaders,
   managedResponseHeaders: managedResponseHeaders ?? this.managedResponseHeaders,
 ); } 

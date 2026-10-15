@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -100,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -140,7 +140,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -159,7 +159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -180,7 +180,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -199,7 +199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

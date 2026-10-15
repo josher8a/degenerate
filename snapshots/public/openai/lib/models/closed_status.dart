@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
  }
 /// Indicates that a thread has been closed.
-@immutable final class ClosedStatus {const ClosedStatus({required this.reason, this.type = ClosedStatusType.closed, });
+@immutable final class ClosedStatus {const ClosedStatus({required this.type, required this.reason, });
 
 factory ClosedStatus.fromJson(Map<String, dynamic> json) { return ClosedStatus(
   type: ClosedStatusType.fromJson(json['type'] as String),

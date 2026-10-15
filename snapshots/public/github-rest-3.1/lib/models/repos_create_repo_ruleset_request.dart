@@ -84,11 +84,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branch, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ReposCreateRepoRulesetRequest {const ReposCreateRepoRulesetRequest({required this.name, required this.enforcement, this.target = ReposCreateRepoRulesetRequestTarget.branch, this.bypassActors, this.conditions, this.rules, });
+@immutable final class ReposCreateRepoRulesetRequest {const ReposCreateRepoRulesetRequest({required this.name, required this.enforcement, this.target, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposCreateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposCreateRepoRulesetRequest(
   name: json['name'] as String,
-  target: json.containsKey('target') ? ReposCreateRepoRulesetRequestTarget.fromJson(json['target'] as String) : ReposCreateRepoRulesetRequestTarget.branch,
+  target: json['target'] != null ? ReposCreateRepoRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
@@ -99,7 +99,7 @@ factory ReposCreateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { retu
 final String name;
 
 /// The target of the ruleset
-final ReposCreateRepoRulesetRequestTarget target;
+final ReposCreateRepoRulesetRequestTarget? target;
 
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final RepositoryRuleEnforcement enforcement;
@@ -112,9 +112,12 @@ final RepositoryRulesetConditions? conditions;
 /// An array of rules within the ruleset.
 final List<RepositoryRule>? rules;
 
+/// The value of `target`, or its schema default when absent.
+ReposCreateRepoRulesetRequestTarget get targetOrDefault => target ?? ReposCreateRepoRulesetRequestTarget.fromJson('branch');
+
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'target': target.toJson(),
+  if (target != null) 'target': target?.toJson(),
   'enforcement': enforcement.toJson(),
   if (bypassActors != null) 'bypass_actors': bypassActors?.map((e) => e.toJson()).toList(),
   if (conditions != null) 'conditions': conditions?.toJson(),
@@ -122,7 +125,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('enforcement'); } 
-ReposCreateRepoRulesetRequest copyWith({String? name, ReposCreateRepoRulesetRequestTarget Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetConditions? Function()? conditions, List<RepositoryRule>? Function()? rules, }) { return ReposCreateRepoRulesetRequest(
+ReposCreateRepoRulesetRequest copyWith({String? name, ReposCreateRepoRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetConditions? Function()? conditions, List<RepositoryRule>? Function()? rules, }) { return ReposCreateRepoRulesetRequest(
   name: name ?? this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement ?? this.enforcement,

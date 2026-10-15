@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostBillingPortalConfigurationsConfigurationRequest (inline: Features > CustomerUpdate)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/customer_update_allowed_updates.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate({this.allowedUpdates, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/customer_update_allowed_updates.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate({this.allowedUpdates, this.enabled, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
-  allowedUpdates: json['allowed_updates'] != null ? OneOf2.parse(json['allowed_updates'], fromA: (v) => (v as List<dynamic>).map((e) => AllowedUpdatesVariant1.fromJson(e as String)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  allowedUpdates: json['allowed_updates'] != null ? CustomerUpdateAllowedUpdates.fromJson(json['allowed_updates']) : null,
   enabled: json['enabled'] as bool?,
 ); }
 

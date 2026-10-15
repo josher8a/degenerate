@@ -138,30 +138,39 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
  }
 /// Object containing configuration regarding the audio that is being recorded.
-@immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel = Channel.stereo, this.codec = RealtimekitAudioConfigCodec.aac, this.exportFile = true, });
+@immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel, this.codec, this.exportFile, });
 
 factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAudioConfig(
-  channel: json.containsKey('channel') ? Channel.fromJson(json['channel'] as String) : Channel.stereo,
-  codec: json.containsKey('codec') ? RealtimekitAudioConfigCodec.fromJson(json['codec'] as String) : RealtimekitAudioConfigCodec.aac,
-  exportFile: json.containsKey('export_file') ? json['export_file'] as bool : true,
+  channel: json['channel'] != null ? Channel.fromJson(json['channel'] as String) : null,
+  codec: json['codec'] != null ? RealtimekitAudioConfigCodec.fromJson(json['codec'] as String) : null,
+  exportFile: json['export_file'] as bool?,
 ); }
 
 /// Audio signal pathway within an audio file that carries a specific sound source.
-final Channel channel;
+final Channel? channel;
 
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
-final RealtimekitAudioConfigCodec codec;
+final RealtimekitAudioConfigCodec? codec;
 
 /// Controls whether to export audio file seperately
-final bool exportFile;
+final bool? exportFile;
+
+/// The value of `channel`, or its schema default when absent.
+Channel get channelOrDefault => channel ?? Channel.fromJson('stereo');
+
+/// The value of `codec`, or its schema default when absent.
+RealtimekitAudioConfigCodec get codecOrDefault => codec ?? RealtimekitAudioConfigCodec.fromJson('AAC');
+
+/// The value of `exportFile`, or its schema default when absent.
+bool get exportFileOrDefault => exportFile ?? true;
 
 Map<String, dynamic> toJson() { return {
-  'channel': channel.toJson(),
-  'codec': codec.toJson(),
-  'export_file': exportFile,
+  if (channel != null) 'channel': channel?.toJson(),
+  if (codec != null) 'codec': codec?.toJson(),
+  'export_file': ?exportFile,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key)); } 
-RealtimekitAudioConfig copyWith({Channel Function()? channel, RealtimekitAudioConfigCodec Function()? codec, bool Function()? exportFile, }) { return RealtimekitAudioConfig(
+RealtimekitAudioConfig copyWith({Channel? Function()? channel, RealtimekitAudioConfigCodec? Function()? codec, bool? Function()? exportFile, }) { return RealtimekitAudioConfig(
   channel: channel != null ? channel() : this.channel,
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,

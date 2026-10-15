@@ -26,7 +26,7 @@ ObjWithComplexNumbersAdditionalProperties copyWith({String? normalField, Map<Str
           normalField == other.normalField &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(normalField, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(normalField, mapHash(additionalProperties));
 
 @override String toString() => 'ObjWithComplexNumbersAdditionalProperties(normalField: $normalField, additionalProperties: $additionalProperties)';
 

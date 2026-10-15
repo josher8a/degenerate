@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
  }
 /// The output of a shell tool call that was emitted.
-@immutable final class FunctionShellCallOutput {const FunctionShellCallOutput({required this.id, required this.callId, required this.status, required this.output, required this.maxOutputLength, this.type = 'shell_call_output', this.createdBy, });
+@immutable final class FunctionShellCallOutput {const FunctionShellCallOutput({required this.type, required this.id, required this.callId, required this.status, required this.output, required this.maxOutputLength, this.createdBy, });
 
 factory FunctionShellCallOutput.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutput(
   type: json['type'] as String,

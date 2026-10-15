@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ComputerScreenshotContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';import 'package:pub_openai/models/image_detail.dart';/// A screenshot of a computer.
-@immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.imageUrl, required this.fileId, required this.detail, this.type = ComputerScreenshotContentType.computerScreenshot, });
+@immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.type, required this.imageUrl, required this.fileId, required this.detail, });
 
 factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return ComputerScreenshotContent(
   type: ComputerScreenshotContentType.fromJson(json['type'] as String),

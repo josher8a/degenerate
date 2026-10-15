@@ -292,16 +292,16 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $480, W Fun
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Theme {const Theme({this.color = ThemeColor.blue, this.icon, this.heroWidth, });
+@immutable final class Theme {const Theme({this.color, this.icon, this.heroWidth, });
 
 factory Theme.fromJson(Map<String, dynamic> json) { return Theme(
-  color: json.containsKey('color') ? ThemeColor.fromJson(json['color'] as String) : ThemeColor.blue,
+  color: json['color'] != null ? ThemeColor.fromJson(json['color'] as String) : null,
   icon: json['icon'] != null ? ThemeIcon.fromJson(json['icon'] as String) : null,
   heroWidth: json['heroWidth'] != null ? HeroWidth.fromJson((json['heroWidth'] as num).toInt()) : null,
 ); }
 
 /// Example: `'green'`
-final ThemeColor color;
+final ThemeColor? color;
 
 /// Example: `'tick'`
 final ThemeIcon? icon;
@@ -309,13 +309,16 @@ final ThemeIcon? icon;
 /// Example: `480`
 final HeroWidth? heroWidth;
 
+/// The value of `color`, or its schema default when absent.
+ThemeColor get colorOrDefault => color ?? ThemeColor.fromJson('blue');
+
 Map<String, dynamic> toJson() { return {
-  'color': color.toJson(),
+  if (color != null) 'color': color?.toJson(),
   if (icon != null) 'icon': icon?.toJson(),
   if (heroWidth != null) 'heroWidth': heroWidth?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'color', 'icon', 'heroWidth'}.contains(key)); } 
-Theme copyWith({ThemeColor Function()? color, ThemeIcon? Function()? icon, HeroWidth? Function()? heroWidth, }) { return Theme(
+Theme copyWith({ThemeColor? Function()? color, ThemeIcon? Function()? icon, HeroWidth? Function()? heroWidth, }) { return Theme(
   color: color != null ? color() : this.color,
   icon: icon != null ? icon() : this.icon,
   heroWidth: heroWidth != null ? heroWidth() : this.heroWidth,

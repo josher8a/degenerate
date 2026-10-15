@@ -2,7 +2,7 @@
 // Source: #/components/schemas/NodeAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeAddress contains information for the node's address.
-@immutable final class NodeAddress {const NodeAddress({this.address = '', this.type = '', });
+@immutable final class NodeAddress {const NodeAddress({required this.address, required this.type, });
 
 factory NodeAddress.fromJson(Map<String, dynamic> json) { return NodeAddress(
   address: json['address'] as String,

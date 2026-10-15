@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustAccountsApi" (11 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_create_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_delete_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_information_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_zero_trust_account_device_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_config/zero_trust_gateway_gateway_account_config_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_create_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_delete_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_information_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_zero_trust_account_device_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_config/zero_trust_gateway_gateway_account_config_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -73,7 +73,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -142,7 +142,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -165,7 +165,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -179,7 +179,7 @@ return execute(
 /// Update the current Zero Trust account configuration.
 ///
 /// `PUT /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsUpdateZeroTrustAccountConfigurationError>> zeroTrustAccountsUpdateZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsUpdateZeroTrustAccountConfigurationError>> zeroTrustAccountsUpdateZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -190,7 +190,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -204,7 +204,7 @@ return execute(
 /// Update (PATCH) a single subcollection of settings such as `antivirus`, `tls_decrypt`, `activity_log`, `block_page`, `browser_isolation`, `fips`, `body_scanning`, or `certificate` without updating the entire configuration object. This endpoint returns an error if any settings collection lacks proper configuration.
 ///
 /// `PATCH /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsPatchZeroTrustAccountConfigurationError>> zeroTrustAccountsPatchZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsPatchZeroTrustAccountConfigurationError>> zeroTrustAccountsPatchZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -238,7 +238,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -263,7 +263,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

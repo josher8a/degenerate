@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Product
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_product/deleted_product_object.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product/default_price.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/product_marketing_feature.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';/// Products describe the specific goods or services you offer to your customers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_product/deleted_product_object.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/product/default_price.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/product_marketing_feature.dart';/// Products describe the specific goods or services you offer to your customers.
 /// For example, you might offer a Standard and Premium version of your goods or service; each version would be a separate Product.
 /// They can be used in conjunction with [Prices](https://api.stripe.com#prices) to configure pricing in Payment Links, Checkout, and Subscriptions.
 /// 
@@ -14,7 +14,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory Product.fromJson(Map<String, dynamic> json) { return Product(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  defaultPrice: json.containsKey('default_price') ? Omittable(json['default_price'] != null ? OneOf2.parse(json['default_price'], fromA: (v) => v as String, fromB: (v) => Price.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  defaultPrice: json.containsKey('default_price') ? Omittable(json['default_price'] != null ? DefaultPrice.fromJson(json['default_price']) : null) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
@@ -26,7 +26,7 @@ factory Product.fromJson(Map<String, dynamic> json) { return Product(
   packageDimensions: json.containsKey('package_dimensions') ? Omittable(json['package_dimensions'] != null ? PackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   shippable: json.containsKey('shippable') ? Omittable(json['shippable'] as bool?) : const Omittable.absent(),
   statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
-  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? ProductTaxCode.fromJson(json['tax_code']) : null) : const Omittable.absent(),
   unitLabel: json.containsKey('unit_label') ? Omittable(json['unit_label'] as String?) : const Omittable.absent(),
   updated: (json['updated'] as num).toInt(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),

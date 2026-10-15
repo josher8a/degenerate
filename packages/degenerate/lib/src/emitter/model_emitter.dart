@@ -12,6 +12,8 @@ final class ModelEmitter {
   const ModelEmitter(
     this.model, {
     this.ctx = EmitContext.empty,
+    this.ignoredJsonKeys = const [],
+    this.trailingJsonEntries = const [],
   });
 
   /// The object IR to emit.
@@ -19,6 +21,14 @@ final class ModelEmitter {
 
   /// Shared emitter context (type registry for resolving refs).
   final EmitContext ctx;
+
+  /// Wire keys owned by an enclosing type (a union variant's discriminator),
+  /// excluded from this model's overflow map.
+  final List<SpecString> ignoredJsonKeys;
+
+  /// `key: value,` entries appended last to `toJson` (after the overflow
+  /// spread), so an enclosing union's discriminator always wins.
+  final List<String> trailingJsonEntries;
 
   /// Field name for the overflow map, avoiding collisions with fixed fields.
   String get _overflowFieldName {
@@ -50,6 +60,7 @@ final class ModelEmitter {
           ..constructors.add(_buildConstructor())
           ..constructors.add(_buildFromJson())
           ..fields.addAll(_buildFields())
+          ..methods.addAll(_buildDefaultGetters())
           ..methods.add(_buildToJson())
           ..methods.add(_buildCanParse())
           ..methods.addAll(_buildValidate())
@@ -83,10 +94,7 @@ final class ModelEmitter {
           ..modifier = FieldModifier.final$
           ..type = ctx.isOmittable(f)
               ? omittableTypeRef(f)
-              : irTypeToReference(
-                  f.type,
-                  forceNullable: !f.isRequired && !fieldHasDefault(f),
-                )
+              : irTypeToReference(f.type, forceNullable: !f.isRequired)
           ..docs.addAll(_fieldDocs(f)),
       ),
     );
@@ -102,6 +110,41 @@ final class ModelEmitter {
     ];
   }
 
+  /// `<field>OrDefault` getters applying each optional field's schema
+  /// default when the field is absent. Names dodge every member already
+  /// declared (a schema may itself have a `stateOrDefault` property).
+  Iterable<Method> _buildDefaultGetters() sync* {
+    final taken = {
+      ...model.fields.map((f) => f.name),
+      if (model.additionalProperties != null) _overflowFieldName,
+    };
+    for (final f in model.fields) {
+      final fallback = fieldDefaultCode(f);
+      if (f.isRequired || fallback == null) continue;
+      var name = '${f.name}OrDefault';
+      while (!taken.add(name)) {
+        name = '\$$name';
+      }
+      final omittable = ctx.isOmittable(f);
+      yield Method(
+        (b) => b
+          ..name = name
+          ..type = MethodType.getter
+          // A nullable spec type may legitimately hold an explicit null.
+          ..returns = irTypeToReference(f.type, forceNullable: omittable)
+          ..docs.add(
+            '/// The value of `${f.name}`, or its schema default when absent.',
+          )
+          ..lambda = true
+          ..body = Code(
+            omittable
+                ? '${f.name}.valueOr($fallback)'
+                : '${f.name} ?? $fallback',
+          ),
+      );
+    }
+  }
+
   Constructor _buildConstructor() {
     final fieldParams = model.fields.map((f) {
       return Parameter(
@@ -112,7 +155,7 @@ final class ModelEmitter {
           ..required = fieldIsRequiredInCtor(f)
           ..defaultTo = ctx.isOmittable(f)
               ? const Code('const Omittable.absent()')
-              : fieldDefaultCode(f),
+              : null,
       );
     }).toList();
     // Sort required named parameters before optional ones.
@@ -155,22 +198,16 @@ final class ModelEmitter {
             // to Omittable(null), preserving the three wire states.
             return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? Omittable($code) : const Omittable.absent(),';
           }
-          if (!f.isRequired && fieldHasDefault(f)) {
-            // Optional with default: use null-safe extraction or skip entirely.
-            // The constructor default handles missing values.
-            final defaultCode = fieldDefaultCode(f);
-            final defaultStr = defaultCode?.toString() ?? 'null';
-            return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? $code : $defaultStr,';
-          }
           return '  ${f.name}: $code,';
         })
         .join('\n');
 
     // Append overflow map extraction if additionalProperties is defined.
     if (model.additionalProperties case final valueType?) {
-      final knownKeysList = model.fields
-          .map((f) => f.originalName.literal)
-          .toList();
+      final knownKeysList = [
+        ...model.fields.map((f) => f.originalName.literal),
+        ...ignoredJsonKeys.map((key) => key.literal),
+      ];
       final knownKeys = knownKeysList.isEmpty
           ? '<String>{}'
           : '{${knownKeysList.join(', ')}}';
@@ -222,7 +259,10 @@ final class ModelEmitter {
       (m) => m
         ..name = 'toJson'
         ..returns = refer('Map<String, dynamic>')
-        ..body = Code('return {\n$entries\n$_overflowToJsonSpread};'),
+        ..body = Code(
+          'return {\n$entries\n$_overflowToJsonSpread'
+          '${trailingJsonEntries.join('\n')}};',
+        ),
     );
   }
 
@@ -561,7 +601,9 @@ final class ModelEmitter {
         )
         .toList();
     if (model.additionalProperties != null) {
-      fieldExprs.add('Object.hashAll($_overflowFieldName.entries)');
+      // Order-independent and keyed on entry values (MapEntry hashes are
+      // identity-based), matching mapEquals.
+      fieldExprs.add('mapHash($_overflowFieldName)');
     }
 
     final String body;

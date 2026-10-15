@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountQueue
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueue {const AccountQueue({this.dateUpdated = const Omittable.absent(), this.currentSize = 0, this.friendlyName = const Omittable.absent(), this.uri = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.averageWaitTime = 0, this.sid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.maxSize = 0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueue {const AccountQueue({this.dateUpdated = const Omittable.absent(), this.currentSize, this.friendlyName = const Omittable.absent(), this.uri = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.averageWaitTime, this.sid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.maxSize, });
 
 factory AccountQueue.fromJson(Map<String, dynamic> json) { return AccountQueue(
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
-  currentSize: json.containsKey('current_size') ? (json['current_size'] as num).toInt() : 0,
+  currentSize: json['current_size'] != null ? (json['current_size'] as num).toInt() : null,
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
-  averageWaitTime: json.containsKey('average_wait_time') ? (json['average_wait_time'] as num).toInt() : 0,
+  averageWaitTime: json['average_wait_time'] != null ? (json['average_wait_time'] as num).toInt() : null,
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
-  maxSize: json.containsKey('max_size') ? (json['max_size'] as num).toInt() : 0,
+  maxSize: json['max_size'] != null ? (json['max_size'] as num).toInt() : null,
 ); }
 
 /// The date and time in GMT that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
 final Omittable<String?> dateUpdated;
 
 /// The number of calls currently in the queue.
-final int currentSize;
+final int? currentSize;
 
 /// A string that you assigned to describe this resource.
 final Omittable<String?> friendlyName;
@@ -31,7 +31,7 @@ final Omittable<String?> uri;
 final Omittable<String?> accountSid;
 
 ///  The average wait time in seconds of the members in this queue. This is calculated at the time of the request.
-final int averageWaitTime;
+final int? averageWaitTime;
 
 /// The unique string that that we created to identify this Queue resource.
 final Omittable<String?> sid;
@@ -40,18 +40,27 @@ final Omittable<String?> sid;
 final Omittable<String?> dateCreated;
 
 ///  The maximum number of calls that can be in the queue. The default is 1000 and the maximum is 5000.
-final int maxSize;
+final int? maxSize;
+
+/// The value of `currentSize`, or its schema default when absent.
+int get currentSizeOrDefault => currentSize ?? 0;
+
+/// The value of `averageWaitTime`, or its schema default when absent.
+int get averageWaitTimeOrDefault => averageWaitTime ?? 0;
+
+/// The value of `maxSize`, or its schema default when absent.
+int get maxSizeOrDefault => maxSize ?? 0;
 
 Map<String, dynamic> toJson() { return {
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
-  'current_size': currentSize,
+  'current_size': ?currentSize,
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
   if (uri.isPresent) 'uri': uri.value,
   if (accountSid.isPresent) 'account_sid': accountSid.value,
-  'average_wait_time': averageWaitTime,
+  'average_wait_time': ?averageWaitTime,
   if (sid.isPresent) 'sid': sid.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
-  'max_size': maxSize,
+  'max_size': ?maxSize,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date_updated', 'current_size', 'friendly_name', 'uri', 'account_sid', 'average_wait_time', 'sid', 'date_created', 'max_size'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
@@ -69,7 +78,7 @@ if (sid$ != null) {
   if (!RegExp(r'^QU[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^QU[0-9a-fA-F]{32}$'); }
 }
 return errors; } 
-AccountQueue copyWith({Omittable<String?>? dateUpdated, int Function()? currentSize, Omittable<String?>? friendlyName, Omittable<String?>? uri, Omittable<String?>? accountSid, int Function()? averageWaitTime, Omittable<String?>? sid, Omittable<String?>? dateCreated, int Function()? maxSize, }) { return AccountQueue(
+AccountQueue copyWith({Omittable<String?>? dateUpdated, int? Function()? currentSize, Omittable<String?>? friendlyName, Omittable<String?>? uri, Omittable<String?>? accountSid, int? Function()? averageWaitTime, Omittable<String?>? sid, Omittable<String?>? dateCreated, int? Function()? maxSize, }) { return AccountQueue(
   dateUpdated: dateUpdated ?? this.dateUpdated,
   currentSize: currentSize != null ? currentSize() : this.currentSize,
   friendlyName: friendlyName ?? this.friendlyName,

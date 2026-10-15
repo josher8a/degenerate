@@ -1,7 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostIssuingDisputesDisputeRequest (inline: Evidence > NotReceived)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/not_received.dart';/// Variants:
-/// - `.a` → [NotReceived]
-/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
-typedef EvidenceNotReceived = OneOf2<NotReceived,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/not_received.dart';@immutable final class EvidenceNotReceived {/// A value built from one or more typed views (at least one must be present).
+const EvidenceNotReceived({this.notReceived = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const EvidenceNotReceived._({required this.rawValue, required this.notReceived, required this.getPaymentMethodConfigurationsApplicationVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory EvidenceNotReceived.fromJson(Object? json) { return EvidenceNotReceived._(
+  rawValue: Omittable(json),
+  notReceived: json is Map<String, dynamic> && NotReceived.canParse(json) ? parseAnyOfVariant<NotReceived>(json, (value) => NotReceived.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `NotReceived`, when it matches.
+final Omittable<NotReceived> notReceived;
+
+/// The payload decoded as `GetPaymentMethodConfigurationsApplicationVariant2`, when it matches.
+final Omittable<GetPaymentMethodConfigurationsApplicationVariant2> getPaymentMethodConfigurationsApplicationVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => notReceived.isPresent || getPaymentMethodConfigurationsApplicationVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (notReceived.isPresent) notReceived.value?.toJson(),
+    if (getPaymentMethodConfigurationsApplicationVariant2.isPresent) getPaymentMethodConfigurationsApplicationVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is EvidenceNotReceived && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'EvidenceNotReceived(${toJson()})';
+
+ }

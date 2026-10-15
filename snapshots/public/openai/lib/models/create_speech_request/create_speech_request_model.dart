@@ -100,8 +100,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tts1, W 
  }
 /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [CreateSpeechRequestModelVariant2]
-typedef CreateSpeechRequestModel = OneOf2<String,CreateSpeechRequestModelVariant2>;
+@immutable final class CreateSpeechRequestModel {/// A value built from one or more typed views (at least one must be present).
+const CreateSpeechRequestModel({this.string = const Omittable.absent(), this.createSpeechRequestModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const CreateSpeechRequestModel._({required this.rawValue, required this.string, required this.createSpeechRequestModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CreateSpeechRequestModel.fromJson(Object? json) { return CreateSpeechRequestModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  createSpeechRequestModelVariant2: parseAnyOfVariant<CreateSpeechRequestModelVariant2>(json, (value) => CreateSpeechRequestModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `CreateSpeechRequestModelVariant2`, when it matches.
+final Omittable<CreateSpeechRequestModelVariant2> createSpeechRequestModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || createSpeechRequestModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (createSpeechRequestModelVariant2.isPresent) createSpeechRequestModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CreateSpeechRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'CreateSpeechRequestModel(${toJson()})';
+
+ }

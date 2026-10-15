@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsFirewallDnsFirewallCluster
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_attack_mitigation.dart';import 'package:pub_cloudflare/models/dns_firewall_deprecate_any_requests.dart';import 'package:pub_cloudflare/models/dns_firewall_ecs_fallback.dart';import 'package:pub_cloudflare/models/dns_firewall_maximum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_minimum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_name.dart';import 'package:pub_cloudflare/models/dns_firewall_negative_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_ratelimit.dart';import 'package:pub_cloudflare/models/dns_firewall_retries.dart';@immutable final class DnsFirewallDnsFirewallCluster {const DnsFirewallDnsFirewallCluster({this.attackMitigation, this.deprecateAnyRequests, this.ecsFallback, this.maximumCacheTtl, this.minimumCacheTtl, this.name, this.negativeCacheTtl = const Omittable.absent(), this.ratelimit = const Omittable.absent(), this.retries, this.upstreamIps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_attack_mitigation.dart';import 'package:pub_cloudflare/models/dns_firewall_deprecate_any_requests.dart';import 'package:pub_cloudflare/models/dns_firewall_ecs_fallback.dart';import 'package:pub_cloudflare/models/dns_firewall_maximum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_minimum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_name.dart';import 'package:pub_cloudflare/models/dns_firewall_negative_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_ratelimit.dart';import 'package:pub_cloudflare/models/dns_firewall_retries.dart';@immutable final class DnsFirewallDnsFirewallCluster {const DnsFirewallDnsFirewallCluster({this.attackMitigation = const Omittable.absent(), this.deprecateAnyRequests, this.ecsFallback, this.maximumCacheTtl, this.minimumCacheTtl, this.name, this.negativeCacheTtl = const Omittable.absent(), this.ratelimit = const Omittable.absent(), this.retries, this.upstreamIps, });
 
 factory DnsFirewallDnsFirewallCluster.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallCluster(
-  attackMitigation: json['attack_mitigation'] != null ? DnsFirewallAttackMitigation.fromJson(json['attack_mitigation'] as Map<String, dynamic>) : null,
+  attackMitigation: json.containsKey('attack_mitigation') ? Omittable(json['attack_mitigation'] != null ? DnsFirewallAttackMitigation.fromJson(json['attack_mitigation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   deprecateAnyRequests: json['deprecate_any_requests'] != null ? DnsFirewallDeprecateAnyRequests.fromJson(json['deprecate_any_requests'] as bool) : null,
   ecsFallback: json['ecs_fallback'] != null ? DnsFirewallEcsFallback.fromJson(json['ecs_fallback'] as bool) : null,
   maximumCacheTtl: json['maximum_cache_ttl'] != null ? DnsFirewallMaximumCacheTtl.fromJson(json['maximum_cache_ttl'] as num) : null,
@@ -16,7 +16,7 @@ factory DnsFirewallDnsFirewallCluster.fromJson(Map<String, dynamic> json) { retu
   upstreamIps: (json['upstream_ips'] as List<dynamic>?)?.map((e) => e).toList(),
 ); }
 
-final DnsFirewallAttackMitigation? attackMitigation;
+final Omittable<DnsFirewallAttackMitigation?> attackMitigation;
 
 /// Whether to refuse to answer queries for the ANY type
 final DnsFirewallDeprecateAnyRequests? deprecateAnyRequests;
@@ -38,7 +38,7 @@ final DnsFirewallRetries? retries;
 final List<dynamic>? upstreamIps;
 
 Map<String, dynamic> toJson() { return {
-  if (attackMitigation != null) 'attack_mitigation': attackMitigation?.toJson(),
+  if (attackMitigation.isPresent) 'attack_mitigation': attackMitigation.value?.toJson(),
   if (deprecateAnyRequests != null) 'deprecate_any_requests': deprecateAnyRequests?.toJson(),
   if (ecsFallback != null) 'ecs_fallback': ecsFallback?.toJson(),
   if (maximumCacheTtl != null) 'maximum_cache_ttl': maximumCacheTtl?.toJson(),
@@ -56,8 +56,8 @@ final upstreamIps$ = upstreamIps;
 if (upstreamIps$ != null) {
 }
 return errors; } 
-DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation? Function()? attackMitigation, DnsFirewallDeprecateAnyRequests? Function()? deprecateAnyRequests, DnsFirewallEcsFallback? Function()? ecsFallback, DnsFirewallMaximumCacheTtl? Function()? maximumCacheTtl, DnsFirewallMinimumCacheTtl? Function()? minimumCacheTtl, DnsFirewallName? Function()? name, Omittable<DnsFirewallNegativeCacheTtl?>? negativeCacheTtl, Omittable<DnsFirewallRatelimit?>? ratelimit, DnsFirewallRetries? Function()? retries, List<dynamic>? Function()? upstreamIps, }) { return DnsFirewallDnsFirewallCluster(
-  attackMitigation: attackMitigation != null ? attackMitigation() : this.attackMitigation,
+DnsFirewallDnsFirewallCluster copyWith({Omittable<DnsFirewallAttackMitigation?>? attackMitigation, DnsFirewallDeprecateAnyRequests? Function()? deprecateAnyRequests, DnsFirewallEcsFallback? Function()? ecsFallback, DnsFirewallMaximumCacheTtl? Function()? maximumCacheTtl, DnsFirewallMinimumCacheTtl? Function()? minimumCacheTtl, DnsFirewallName? Function()? name, Omittable<DnsFirewallNegativeCacheTtl?>? negativeCacheTtl, Omittable<DnsFirewallRatelimit?>? ratelimit, DnsFirewallRetries? Function()? retries, List<dynamic>? Function()? upstreamIps, }) { return DnsFirewallDnsFirewallCluster(
+  attackMitigation: attackMitigation ?? this.attackMitigation,
   deprecateAnyRequests: deprecateAnyRequests != null ? deprecateAnyRequests() : this.deprecateAnyRequests,
   ecsFallback: ecsFallback != null ? ecsFallback() : this.ecsFallback,
   maximumCacheTtl: maximumCacheTtl != null ? maximumCacheTtl() : this.maximumCacheTtl,

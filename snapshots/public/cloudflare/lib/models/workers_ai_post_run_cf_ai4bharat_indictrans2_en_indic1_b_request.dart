@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/target_language.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request_text.dart';@immutable final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest({required this.text, this.targetLanguage = TargetLanguage.hinDeva, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/target_language.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request_text.dart';@immutable final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest({required this.targetLanguage, required this.text, });
 
 factory WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(
   targetLanguage: TargetLanguage.fromJson(json['target_language'] as String),

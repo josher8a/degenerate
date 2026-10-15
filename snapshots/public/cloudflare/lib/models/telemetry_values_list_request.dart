@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TelemetryValuesListRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/telemetry_values_list_request/telemetry_values_list_request_type.dart';@immutable final class TelemetryValuesListRequest {const TelemetryValuesListRequest({required this.datasets, required this.key, required this.timeframe, required this.type, this.filters = const [], this.limit = 50.0, this.needle, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/telemetry_values_list_request/telemetry_values_list_request_type.dart';@immutable final class TelemetryValuesListRequest {const TelemetryValuesListRequest({required this.datasets, required this.key, required this.timeframe, required this.type, this.filters, this.limit, this.needle, });
 
 factory TelemetryValuesListRequest.fromJson(Map<String, dynamic> json) { return TelemetryValuesListRequest(
   datasets: (json['datasets'] as List<dynamic>).map((e) => e as String).toList(),
-  filters: json.containsKey('filters') ? (json['filters'] as List<dynamic>).map((e) => TelemetryKeysListRequestFilters.fromJson(e as Map<String, dynamic>)).toList() : const [],
+  filters: (json['filters'] as List<dynamic>?)?.map((e) => TelemetryKeysListRequestFilters.fromJson(e as Map<String, dynamic>)).toList(),
   key: json['key'] as String,
-  limit: json.containsKey('limit') ? (json['limit'] as num).toDouble() : 50.0,
+  limit: json['limit'] != null ? (json['limit'] as num).toDouble() : null,
   needle: json['needle'] != null ? Needle.fromJson(json['needle'] as Map<String, dynamic>) : null,
   timeframe: Timeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
   type: TelemetryValuesListRequestType.fromJson(json['type'] as String),
@@ -15,11 +15,11 @@ factory TelemetryValuesListRequest.fromJson(Map<String, dynamic> json) { return 
 
 final List<String> datasets;
 
-final List<TelemetryKeysListRequestFilters> filters;
+final List<TelemetryKeysListRequestFilters>? filters;
 
 final String key;
 
-final double limit;
+final double? limit;
 
 /// Search for a specific substring in the event.
 final Needle? needle;
@@ -28,11 +28,17 @@ final Timeframe timeframe;
 
 final TelemetryValuesListRequestType type;
 
+/// The value of `filters`, or its schema default when absent.
+List<TelemetryKeysListRequestFilters> get filtersOrDefault => filters ?? const [];
+
+/// The value of `limit`, or its schema default when absent.
+double get limitOrDefault => limit ?? 50.0;
+
 Map<String, dynamic> toJson() { return {
   'datasets': datasets,
-  'filters': filters.map((e) => e.toJson()).toList(),
+  if (filters != null) 'filters': filters?.map((e) => e.toJson()).toList(),
   'key': key,
-  'limit': limit,
+  'limit': ?limit,
   if (needle != null) 'needle': needle?.toJson(),
   'timeframe': timeframe.toJson(),
   'type': type.toJson(),
@@ -41,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('timeframe') &&
       json.containsKey('type'); } 
-TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryKeysListRequestFilters> Function()? filters, String? key, double Function()? limit, Needle? Function()? needle, Timeframe? timeframe, TelemetryValuesListRequestType? type, }) { return TelemetryValuesListRequest(
+TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryKeysListRequestFilters>? Function()? filters, String? key, double? Function()? limit, Needle? Function()? needle, Timeframe? timeframe, TelemetryValuesListRequestType? type, }) { return TelemetryValuesListRequest(
   datasets: datasets ?? this.datasets,
   filters: filters != null ? filters() : this.filters,
   key: key ?? this.key,
@@ -60,7 +66,7 @@ TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryKeysL
           timeframe == other.timeframe &&
           type == other.type;
 
-@override int get hashCode => Object.hash(Object.hashAll(datasets), Object.hashAll(filters), key, limit, needle, timeframe, type);
+@override int get hashCode => Object.hash(Object.hashAll(datasets), Object.hashAll(filters ?? const []), key, limit, needle, timeframe, type);
 
 @override String toString() => 'TelemetryValuesListRequest(datasets: $datasets, filters: $filters, key: $key, limit: $limit, needle: $needle, timeframe: $timeframe, type: $type)';
 

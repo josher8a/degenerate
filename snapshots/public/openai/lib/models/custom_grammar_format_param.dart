@@ -122,7 +122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? grammar,
 
  }
 /// A grammar defined by the user.
-@immutable final class CustomGrammarFormatParam {const CustomGrammarFormatParam({required this.syntax, required this.definition, this.type = CustomGrammarFormatParamType.grammar, });
+@immutable final class CustomGrammarFormatParam {const CustomGrammarFormatParam({required this.type, required this.syntax, required this.definition, });
 
 factory CustomGrammarFormatParam.fromJson(Map<String, dynamic> json) { return CustomGrammarFormatParam(
   type: CustomGrammarFormatParamType.fromJson(json['type'] as String),

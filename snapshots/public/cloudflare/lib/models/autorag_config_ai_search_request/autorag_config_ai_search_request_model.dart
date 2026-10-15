@@ -413,7 +413,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [ModelVariant1]
-/// - `.b` → [AiSearchModelVariant2]
-typedef AutoragConfigAiSearchRequestModel = OneOf2<ModelVariant1,AiSearchModelVariant2>;
+@immutable final class AutoragConfigAiSearchRequestModel {/// A value built from one or more typed views (at least one must be present).
+const AutoragConfigAiSearchRequestModel({this.modelVariant1 = const Omittable.absent(), this.aiSearchModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const AutoragConfigAiSearchRequestModel._({required this.rawValue, required this.modelVariant1, required this.aiSearchModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory AutoragConfigAiSearchRequestModel.fromJson(Object? json) { return AutoragConfigAiSearchRequestModel._(
+  rawValue: Omittable(json),
+  modelVariant1: parseAnyOfVariant<ModelVariant1>(json, (value) => ModelVariant1.fromJson(value! as String)),
+  aiSearchModelVariant2: parseAnyOfVariant<AiSearchModelVariant2>(json, (value) => AiSearchModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `ModelVariant1`, when it matches.
+final Omittable<ModelVariant1> modelVariant1;
+
+/// The payload decoded as `AiSearchModelVariant2`, when it matches.
+final Omittable<AiSearchModelVariant2> aiSearchModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => modelVariant1.isPresent || aiSearchModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (modelVariant1.isPresent) modelVariant1.value?.toJson(),
+    if (aiSearchModelVariant2.isPresent) aiSearchModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AutoragConfigAiSearchRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'AutoragConfigAiSearchRequestModel(${toJson()})';
+
+ }

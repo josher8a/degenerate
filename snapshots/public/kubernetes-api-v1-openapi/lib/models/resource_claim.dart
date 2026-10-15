@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ResourceClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ResourceClaim references one entry in PodSpec.ResourceClaims.
-@immutable final class ResourceClaim {const ResourceClaim({this.name = '', this.request, });
+@immutable final class ResourceClaim {const ResourceClaim({required this.name, this.request, });
 
 factory ResourceClaim.fromJson(Map<String, dynamic> json) { return ResourceClaim(
   name: json['name'] as String,

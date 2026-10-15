@@ -2,6 +2,7 @@ import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
@@ -162,15 +163,29 @@ final class DiscriminatedUnionEmitter {
 
   /// Fields shared by every variant, hoisted onto the sealed base as nullable
   /// getters so common data can be read without pattern-matching.
-  List<IrField> get commonFields => _meta.commonFields;
+  ///
+  /// A field presence-wrapped in any variant is not hoisted: its Dart type
+  /// there is `Omittable<T?>`, which can't override a plain `T?` getter.
+  List<IrField> get commonFields => [
+    for (final f in _meta.commonFields)
+      if (!_meta.variants.values.any(
+        (v) => v.payloadFields.any((p) => p.name == f.name && ctx.isOmittable(p)),
+      ))
+        f,
+  ];
 
   /// Abstract getter on the base for a hoisted common field. Non-null when the
   /// field is required in every variant.
+  ///
+  /// Nullable as well when some variant's whole payload may be null.
   Method _baseCommonGetter(IrField f) => Method(
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
-      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..returns = irTypeToReference(
+        f.type,
+        forceNullable: !f.isRequired || _anyNullablePayload,
+      )
       ..docs.add('/// Shared by all variants of this union.'),
   );
 
@@ -224,17 +239,27 @@ final class DiscriminatedUnionEmitter {
     IrField f,
     String payloadField, {
     required bool payloadOmittable,
+    required bool payloadNullable,
   }) => Method(
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
       ..lambda = true
       ..annotations.add(refer('override'))
-      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..returns = irTypeToReference(
+        f.type,
+        forceNullable: !f.isRequired || _anyNullablePayload,
+      )
       ..body = Code(
-        '$payloadField.${f.name}${payloadOmittable ? '.value' : ''}',
+        '$payloadField${payloadNullable ? '?' : ''}.${f.name}'
+        '${payloadOmittable ? '.value' : ''}',
       ),
   );
+
+  /// Whether some `$ref` variant's payload type is nullable (a `nullable`
+  /// variant schema), so hoisted getters may have no payload to read.
+  bool get _anyNullablePayload =>
+      union.mapping.values.any((v) => v is IrTypeRef && v.isNullable);
 
   /// Class name for a variant, disambiguated when it would collide with an
   /// existing schema.
@@ -292,18 +317,6 @@ final class DiscriminatedUnionEmitter {
     };
   }
 
-  Method _buildObjectVariantCopyWith(String className, List<IrField> fields) {
-    final assignments = fields.map(copyWithAssignment).join('\n');
-    final constPrefix = fields.isEmpty ? 'const ' : '';
-    return Method(
-      (m) => m
-        ..name = 'copyWith'
-        ..returns = refer(className)
-        ..optionalParameters.addAll(fields.map(copyWithParam))
-        ..body = Code('return $constPrefix$className(\n$assignments\n);'),
-    );
-  }
-
   Method _buildRefVariantCopyWith(
     String className,
     String fieldName,
@@ -311,7 +324,9 @@ final class DiscriminatedUnionEmitter {
     IrType type,
   ) {
     final payloadFields = _variantPayloadFields(discValue);
-    if (payloadFields.isEmpty) {
+    // A nullable payload can't forward to its own copyWith (it may be null),
+    // so, like a field-less payload, it is replaced wholesale.
+    if (payloadFields.isEmpty || type.isNullable) {
       return Method(
         (m) => m
           ..name = 'copyWith'
@@ -372,10 +387,10 @@ final class DiscriminatedUnionEmitter {
       final discExpr = discField != null && ctx.isOmittable(discField)
           ? 'Omittable($rawDisc)'
           : rawDisc;
-      final discArg = info.discFieldType != null &&
-              !discValue.test((v) => v == info.discDefault)
-          ? '$_discDartName: $discExpr'
-          : null;
+      // Always pass the discriminator: a payload default is not serialized
+      // when absent, so omitting it would make the variant undispatchable.
+      final discArg =
+          info.discFieldType != null ? '$_discDartName: $discExpr' : null;
       final parts = [
         ?discArg,
         ...args,
@@ -407,13 +422,10 @@ final class DiscriminatedUnionEmitter {
                   ..required = fieldIsRequiredInCtor(f)
                   ..type = wrapped
                       ? omittableTypeRef(f)
-                      : irTypeToReference(
-                          f.type,
-                          forceNullable: !f.isRequired && !fieldHasDefault(f),
-                        )
+                      : irTypeToReference(f.type, forceNullable: !f.isRequired)
                   ..defaultTo = wrapped
                       ? const Code('const Omittable.absent()')
-                      : fieldDefaultCode(f),
+                      : null,
               );
             },
           ),
@@ -557,104 +569,49 @@ final class DiscriminatedUnionEmitter {
     return [_buildRefVariant(className, discriminatorValue, variantType)];
   }
 
+  /// An inline object variant: the variant's own model (via [ModelEmitter],
+  /// so presence, defaults, overflow, canParse and validate match standalone
+  /// models) re-parented under the union, with the discriminator getter and
+  /// wire key added.
   Class _buildObjectVariant(String className, SpecString discValue, IrObject obj) {
-    final fields = obj.fields
-        .where((f) => f.originalName != _discJsonKey)
-        .toList();
+    final model = IrObject(
+      className,
+      obj.fields.where((f) => f.originalName != _discJsonKey).toList(),
+      additionalProperties: obj.additionalProperties,
+      description: obj.description,
+    );
+    final declaration = ModelEmitter(
+      model,
+      ctx: ctx,
+      ignoredJsonKeys: [_discJsonKey],
+      trailingJsonEntries: [
+        '  ${_discJsonKey.literal}: $_discDartName.toJson(),',
+      ],
+    ).emit().single as Class;
 
     final commonNames = commonFields.map((f) => f.name).toSet();
-    final fieldDecls = fields.map(
-      (f) => Field(
-        (b) => b
-          ..name = f.name
-          ..modifier = FieldModifier.final$
-          ..annotations.addAll(
-            commonNames.contains(f.name) ? [refer('override')] : const [],
-          )
-          ..type = irTypeToReference(f.type, forceNullable: !f.isRequired),
-      ),
-    );
-
-    final ctorParams = fields.map(
-      (f) => Parameter(
-        (p) => p
-          ..name = f.name
-          ..named = true
-          ..toThis = true
-          ..required = f.isRequired,
-      ),
-    );
-
-    final fromJsonArgs = fields
-        .map((f) {
-          final accessor = 'json[${f.originalName.literal}]';
-          final isOptional = fieldIsNullableInDart(f);
-          return '  ${f.name}: ${ctx.fromJson(f.type, accessor, isOptional: isOptional)},';
-        })
-        .join('\n');
-
-    final discToJson = '$_discDartName.toJson()';
-    final toJsonEntries = <String>[
-      '  ${_discJsonKey.literal}: $discToJson,',
-      ...fields.map(
-        (f) => toJsonEntry(f, f.originalName.literal, isNullable: fieldIsNullableInDart(f)),
-      ),
-    ];
-
-    final eqComparisons = fields
-        .map(
-          (f) => equalsComparison(
-            f,
-            self: f.name == 'other' ? 'this.${f.name}' : null,
-          ),
-        )
-        .join(' && ');
-    final eqBody = eqComparisons.isEmpty
-        ? 'identical(this, other) || other is $className'
-        : 'identical(this, other) ||\n      other is $className && $eqComparisons';
-
-    final hashFields = fields
-        .map(
-          (f) =>
-              hashCodeExpr(f, isNullable: !f.isRequired || f.type.isNullable),
-        )
-        .join(', ');
-    final hashBody = hashFields.isEmpty
-        ? 'runtimeType.hashCode'
-        : 'Object.hash(runtimeType, $hashFields)';
-
-    final toStrFields = fields.map(toStringField).join(', ');
-
-    return Class(
+    final toStrFields = model.fields.map(toStringField).join(', ');
+    return declaration.rebuild(
       (b) => b
-        ..name = className
-        ..modifier = ClassModifier.final$
-        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..constructors.add(
-          Constructor(
-            (c) => c
-              ..constant = true
-              ..optionalParameters.addAll(ctorParams),
-          ),
-        )
-        ..constructors.add(
-          Constructor(
-            (c) => c
-              ..name = 'fromJson'
-              ..factory = true
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'json'
-                    ..type = refer('Map<String, dynamic>'),
-                ),
-              )
-              ..body = Code('return $className(\n$fromJsonArgs\n);'),
-          ),
-        )
-        ..fields.addAll(fieldDecls)
-        ..methods.add(
+        ..fields.clear()
+        ..fields.addAll([
+          for (final f in declaration.fields)
+            commonNames.contains(f.name)
+                ? f.rebuild((x) => x.annotations.add(refer('override')))
+                : f,
+        ])
+        ..methods.clear()
+        ..methods.addAll([
+          for (final m in declaration.methods)
+            switch (m.name) {
+              'toJson' => m.rebuild((x) => x.annotations.add(refer('override'))),
+              // Keep the union-qualified form (`Union.variant(...)`).
+              'toString' => buildToStringOverride(
+                "'${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)'",
+              ),
+              _ => m,
+            },
           Method(
             (m) => m
               ..name = _discDartName
@@ -664,37 +621,32 @@ final class DiscriminatedUnionEmitter {
               ..returns = _discReturnType
               ..body = Code(_discValueExpr(discValue)),
           ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'toJson'
-              ..annotations.add(refer('override'))
-              ..returns = refer('Map<String, dynamic>')
-              ..lambda = true
-              ..body = Code('{\n${toJsonEntries.join('\n')}\n}'),
-          ),
-        )
-        ..methods.add(_buildObjectVariantCopyWith(className, fields))
-        ..methods.add(buildEqualsOverride(eqBody))
-        ..methods.add(buildHashCodeOverride(hashBody))
-        ..methods.add(
-          buildToStringOverride(
-            "'${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)'",
-          ),
-        ),
+        ]),
     );
   }
+
 
   String _refVariantToJsonBody(
     SpecString discValue,
     IrType type,
     String fieldName,
   ) {
-    final toJsonExpr = buildToJsonCode(type, fieldName);
+    // A nullable payload (e.g. a `nullable: true` variant schema) must not be
+    // dereferenced; a null payload contributes only the discriminator.
+    final toJsonExpr = buildToJsonCode(
+      type,
+      fieldName,
+      nullable: type.isNullable,
+    );
     final discToJson = '$_discDartName.toJson()';
     if (_variantInfo(discValue).isSpreadable) {
-      return '{...$toJsonExpr, ${_discJsonKey.literal}: $discToJson}';
+      final spread = type.isNullable ? '...?' : '...';
+      // A lossless anyOf serializes to `Object?`; the discriminator says the
+      // payload is an object, so its map is spread.
+      final payload = ctx.resolve(type) is IrAnyOf
+          ? '($toJsonExpr as Map<String, dynamic>${type.isNullable ? '?' : ''})'
+          : toJsonExpr;
+      return '{$spread$payload, ${_discJsonKey.literal}: $discToJson}';
     }
     return '{${_discJsonKey.literal}: $discToJson, ${dartStringLiteral('data')}: $toJsonExpr}';
   }
@@ -798,6 +750,7 @@ final class DiscriminatedUnionEmitter {
               payloadOmittable: _variantPayloadFields(discValue).any(
                 (p) => p.name == f.name && ctx.isOmittable(p),
               ),
+              payloadNullable: type.isNullable,
             ),
           ),
         ),

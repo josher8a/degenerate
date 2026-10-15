@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PersistentVolumeClaimCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// PersistentVolumeClaimCondition contains details about state of pvc
-@immutable final class PersistentVolumeClaimCondition {const PersistentVolumeClaimCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
+@immutable final class PersistentVolumeClaimCondition {const PersistentVolumeClaimCondition({required this.status, required this.type, this.lastProbeTime, this.lastTransitionTime, this.message, this.reason, });
 
 factory PersistentVolumeClaimCondition.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimCondition(
   lastProbeTime: json['lastProbeTime'] != null ? Time.fromJson(json['lastProbeTime'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DeviceDexTestsApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_dex_test_details_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_delete_response_collection/digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_test_id.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_create_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_delete_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_details_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_get_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_update_device_dex_test_error.dart';/// DeviceDexTestsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_dex_test_details_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http_request.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_delete_response_collection/digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_test_id.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_create_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_delete_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_details_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_get_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_update_device_dex_test_error.dart';/// DeviceDexTestsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,7 +54,7 @@ return execute(
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestError>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestError>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -102,7 +102,7 @@ return execute(
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestError>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestError>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,7 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

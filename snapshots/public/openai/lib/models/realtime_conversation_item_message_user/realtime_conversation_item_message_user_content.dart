@@ -84,14 +84,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputTex
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail = Detail.auto, this.transcript, });
+@immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail, this.transcript, });
 
 factory RealtimeConversationItemMessageUserContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUserContent(
   type: json['type'] != null ? RealtimeConversationItemMessageUserContentType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
   audio: json['audio'] as String?,
   imageUrl: json['image_url'] as String?,
-  detail: json.containsKey('detail') ? Detail.fromJson(json['detail'] as String) : Detail.auto,
+  detail: json['detail'] != null ? Detail.fromJson(json['detail'] as String) : null,
   transcript: json['transcript'] as String?,
 ); }
 
@@ -108,21 +108,24 @@ final String? audio;
 final String? imageUrl;
 
 /// The detail level of the image (for `input_image`). `auto` will default to `high`.
-final Detail detail;
+final Detail? detail;
 
 /// Transcript of the audio (for `input_audio`). This is not sent to the model, but will be attached to the message item for reference.
 final String? transcript;
+
+/// The value of `detail`, or its schema default when absent.
+Detail get detailOrDefault => detail ?? Detail.fromJson('auto');
 
 Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
   'audio': ?audio,
   'image_url': ?imageUrl,
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
   'transcript': ?transcript,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'audio', 'image_url', 'detail', 'transcript'}.contains(key)); } 
-RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMessageUserContentType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? imageUrl, Detail Function()? detail, String? Function()? transcript, }) { return RealtimeConversationItemMessageUserContent(
+RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMessageUserContentType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? imageUrl, Detail? Function()? detail, String? Function()? transcript, }) { return RealtimeConversationItemMessageUserContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   audio: audio != null ? audio() : this.audio,

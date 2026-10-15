@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostChargesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_card.dart';import 'package:pub_stripe_spec3/models/destination_specs.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_destination.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_destination.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChargesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   capture: json['capture'] as bool?,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? PostChargesRequestCard.fromJson(json['card']) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   description: json['description'] as String?,
-  destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => DestinationSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  destination: json['destination'] != null ? PostChargesRequestDestination.fromJson(json['destination']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   radarOptions: json['radar_options'] != null ? RadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,

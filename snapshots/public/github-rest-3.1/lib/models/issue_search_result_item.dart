@@ -2,7 +2,7 @@
 // Source: #/components/schemas/IssueSearchResultItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/issue/issue_pull_request.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_search_result_item/issue_search_result_item_labels.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';/// Issue Search Result Item
-@immutable final class IssueSearchResultItem {const IssueSearchResultItem({required this.user, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.locked, required this.url, required this.labels, required this.state, required this.closedAt, required this.assignee, required this.milestone, required this.comments, required this.authorAssociation, required this.score, required this.updatedAt, required this.createdAt, this.issueFieldValues, this.issueDependenciesSummary, this.subIssuesSummary, this.reactions, this.textMatches, this.pullRequest, this.body, this.assignees = const Omittable.absent(), this.activeLockReason = const Omittable.absent(), this.draft, this.repository, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.performedViaGithubApp = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.stateReason = const Omittable.absent(), });
+@immutable final class IssueSearchResultItem {const IssueSearchResultItem({required this.user, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.locked, required this.url, required this.labels, required this.state, required this.closedAt, required this.assignee, required this.milestone, required this.comments, required this.authorAssociation, required this.score, required this.updatedAt, required this.createdAt, this.issueFieldValues, this.issueDependenciesSummary, this.subIssuesSummary, this.reactions, this.textMatches, this.pullRequest, this.body, this.assignees = const Omittable.absent(), this.activeLockReason = const Omittable.absent(), this.draft, this.repository, this.bodyHtml, this.bodyText, this.timelineUrl, this.type = const Omittable.absent(), this.performedViaGithubApp = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.stateReason = const Omittable.absent(), });
 
 factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return IssueSearchResultItem(
   url: Uri.parse(json['url'] as String),
@@ -41,7 +41,7 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
   timelineUrl: json['timeline_url'] != null ? Uri.parse(json['timeline_url'] as String) : null,
-  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   pinnedComment: json.containsKey('pinned_comment') ? Omittable(json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
@@ -120,7 +120,7 @@ final String? bodyText;
 
 final Uri? timelineUrl;
 
-final IssueType? type;
+final Omittable<IssueType?> type;
 
 final Omittable<Integration?> performedViaGithubApp;
 
@@ -165,7 +165,7 @@ Map<String, dynamic> toJson() { return {
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
   if (timelineUrl != null) 'timeline_url': timelineUrl?.toString(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (pinnedComment.isPresent) 'pinned_comment': pinnedComment.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
@@ -192,7 +192,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('author_association'); } 
-IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, Omittable<String?>? activeLockReason, Omittable<List<SimpleUser>?>? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, String? state, Omittable<String?>? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2>? Function()? textMatches, IssuePullRequest? Function()? pullRequest, String? Function()? body, double? score, AuthorAssociation? authorAssociation, bool? Function()? draft, Repository? Function()? repository, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, IssueType? Function()? type, Omittable<Integration?>? performedViaGithubApp, Omittable<IssueComment?>? pinnedComment, ReactionRollup? Function()? reactions, }) { return IssueSearchResultItem(
+IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, Omittable<String?>? activeLockReason, Omittable<List<SimpleUser>?>? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, String? state, Omittable<String?>? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2>? Function()? textMatches, IssuePullRequest? Function()? pullRequest, String? Function()? body, double? score, AuthorAssociation? authorAssociation, bool? Function()? draft, Repository? Function()? repository, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, Omittable<Integration?>? performedViaGithubApp, Omittable<IssueComment?>? pinnedComment, ReactionRollup? Function()? reactions, }) { return IssueSearchResultItem(
   url: url ?? this.url,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,
@@ -229,7 +229,7 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   timelineUrl: timelineUrl != null ? timelineUrl() : this.timelineUrl,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   pinnedComment: pinnedComment ?? this.pinnedComment,
   reactions: reactions != null ? reactions() : this.reactions,

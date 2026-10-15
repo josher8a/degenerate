@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DnsInternalViewsForAnAccountApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/dns_settings_direction.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';import 'package:pub_cloudflare/models/dns_settings_match.dart';import 'package:pub_cloudflare/models/dns_settings_order.dart';import 'package:pub_cloudflare/models/dns_settings_page.dart';import 'package:pub_cloudflare/models/dns_settings_per_page.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_create_internal_dns_views_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_delete_internal_dns_view_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_get_internal_dns_view_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_list_internal_dns_views_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_update_internal_dns_view_error.dart';/// DnsInternalViewsForAnAccountApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/dns_settings_direction.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_request.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';import 'package:pub_cloudflare/models/dns_settings_match.dart';import 'package:pub_cloudflare/models/dns_settings_order.dart';import 'package:pub_cloudflare/models/dns_settings_page.dart';import 'package:pub_cloudflare/models/dns_settings_per_page.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_create_internal_dns_views_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_delete_internal_dns_view_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_get_internal_dns_view_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_list_internal_dns_views_error.dart';import 'package:pub_cloudflare/models/errors/dns_views_for_an_account_update_internal_dns_view_error.dart';/// DnsInternalViewsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -64,7 +64,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -78,7 +78,7 @@ return execute(
 /// Create Internal DNS View for an account
 ///
 /// `POST /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountCreateInternalDnsViewsError>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountCreateInternalDnsViewsError>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsViewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,7 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -126,7 +126,7 @@ return execute(
 /// Update an existing Internal DNS View
 ///
 /// `PATCH /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountUpdateInternalDnsViewError>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountUpdateInternalDnsViewError>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsViewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,7 +137,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -160,7 +160,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

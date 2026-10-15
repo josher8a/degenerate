@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TerminalReaderReaderResourceCollectPaymentMethodAction
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_config.dart';/// Represents a reader action to collect a payment method
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_config.dart';/// Represents a reader action to collect a payment method
 @immutable final class TerminalReaderReaderResourceCollectPaymentMethodAction {const TerminalReaderReaderResourceCollectPaymentMethodAction({required this.paymentIntent, this.collectConfig, this.paymentMethod, });
 
 factory TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
   collectConfig: json['collect_config'] != null ? TerminalReaderReaderResourceCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
-  paymentIntent: OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),),
+  paymentIntent: ChargePaymentIntent.fromJson(json['payment_intent']),
   paymentMethod: json['payment_method'] != null ? PaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>) : null,
 ); }
 

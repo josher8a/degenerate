@@ -281,7 +281,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, 
 
  }
 /// The configuration for GitHub Pages for a repository.
-@immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.public, this.protectedDomainState = const Omittable.absent(), this.pendingDomainUnverifiedAt = const Omittable.absent(), this.custom404 = false, this.htmlUrl, this.buildType = const Omittable.absent(), this.source, this.httpsCertificate, this.httpsEnforced, });
+@immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.custom404, required this.public, this.protectedDomainState = const Omittable.absent(), this.pendingDomainUnverifiedAt = const Omittable.absent(), this.htmlUrl, this.buildType = const Omittable.absent(), this.source, this.httpsCertificate, this.httpsEnforced, });
 
 factory Page.fromJson(Map<String, dynamic> json) { return Page(
   url: Uri.parse(json['url'] as String),

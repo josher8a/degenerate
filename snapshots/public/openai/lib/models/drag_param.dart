@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DragParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/coord_param.dart';/// A drag action.
-@immutable final class DragParam {const DragParam({required this.path, this.type = 'drag', });
+@immutable final class DragParam {const DragParam({required this.type, required this.path, });
 
 factory DragParam.fromJson(Map<String, dynamic> json) { return DragParam(
   type: json['type'] as String,

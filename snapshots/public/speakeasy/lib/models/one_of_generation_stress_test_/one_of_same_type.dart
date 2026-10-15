@@ -56,5 +56,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? latest, 
 /// Variants:
 /// - `.a` → [String]
 /// - `.b` → [OneOfSameTypeVariant2]
-/// - `.c` → [dynamic]
-typedef OneOfSameType = OneOf3<String,OneOfSameTypeVariant2,dynamic>;
+typedef OneOfSameType = OneOf2<String,OneOfSameTypeVariant2>;

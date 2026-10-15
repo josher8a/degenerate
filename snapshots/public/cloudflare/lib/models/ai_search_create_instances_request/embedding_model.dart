@@ -143,7 +143,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfQwenQw
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [EmbeddingModelVariant1]
-/// - `.b` → [AiSearchModelVariant2]
-typedef EmbeddingModel = OneOf2<EmbeddingModelVariant1,AiSearchModelVariant2>;
+@immutable final class EmbeddingModel {/// A value built from one or more typed views (at least one must be present).
+const EmbeddingModel({this.embeddingModelVariant1 = const Omittable.absent(), this.aiSearchModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const EmbeddingModel._({required this.rawValue, required this.embeddingModelVariant1, required this.aiSearchModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory EmbeddingModel.fromJson(Object? json) { return EmbeddingModel._(
+  rawValue: Omittable(json),
+  embeddingModelVariant1: parseAnyOfVariant<EmbeddingModelVariant1>(json, (value) => EmbeddingModelVariant1.fromJson(value! as String)),
+  aiSearchModelVariant2: parseAnyOfVariant<AiSearchModelVariant2>(json, (value) => AiSearchModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `EmbeddingModelVariant1`, when it matches.
+final Omittable<EmbeddingModelVariant1> embeddingModelVariant1;
+
+/// The payload decoded as `AiSearchModelVariant2`, when it matches.
+final Omittable<AiSearchModelVariant2> aiSearchModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => embeddingModelVariant1.isPresent || aiSearchModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (embeddingModelVariant1.isPresent) embeddingModelVariant1.value?.toJson(),
+    if (aiSearchModelVariant2.isPresent) aiSearchModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is EmbeddingModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'EmbeddingModel(${toJson()})';
+
+ }

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EnterpriseTeamsUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/organization_selection_type.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/sync_to_organizations.dart';@immutable final class EnterpriseTeamsUpdateRequest {const EnterpriseTeamsUpdateRequest({this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.syncToOrganizations = SyncToOrganizations.disabled, this.organizationSelectionType = OrganizationSelectionType.disabled, this.groupId = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/organization_selection_type.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/sync_to_organizations.dart';@immutable final class EnterpriseTeamsUpdateRequest {const EnterpriseTeamsUpdateRequest({this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.syncToOrganizations, this.organizationSelectionType, this.groupId = const Omittable.absent(), });
 
 factory EnterpriseTeamsUpdateRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamsUpdateRequest(
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
-  syncToOrganizations: json.containsKey('sync_to_organizations') ? SyncToOrganizations.fromJson(json['sync_to_organizations'] as String) : SyncToOrganizations.disabled,
-  organizationSelectionType: json.containsKey('organization_selection_type') ? OrganizationSelectionType.fromJson(json['organization_selection_type'] as String) : OrganizationSelectionType.disabled,
+  syncToOrganizations: json['sync_to_organizations'] != null ? SyncToOrganizations.fromJson(json['sync_to_organizations'] as String) : null,
+  organizationSelectionType: json['organization_selection_type'] != null ? OrganizationSelectionType.fromJson(json['organization_selection_type'] as String) : null,
   groupId: json.containsKey('group_id') ? Omittable(json['group_id'] as String?) : const Omittable.absent(),
 ); }
 
@@ -21,27 +21,33 @@ final Omittable<String?> description;
 /// Whether the enterprise team should be reflected in each organization.
 /// This value cannot be changed.
 /// 
-final SyncToOrganizations syncToOrganizations;
+final SyncToOrganizations? syncToOrganizations;
 
 /// Specifies which organizations in the enterprise should have access to this team. Can be one of `disabled`, `selected`, or `all`.
 /// `disabled`: The team is not assigned to any organizations. This is the default when you create a new team.
 /// `selected`: The team is assigned to specific organizations. You can then use the [add organization assignments API](https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#add-organization-assignments).
 /// `all`: The team is assigned to all current and future organizations in the enterprise.
 /// 
-final OrganizationSelectionType organizationSelectionType;
+final OrganizationSelectionType? organizationSelectionType;
 
 /// The ID of the IdP group to assign team membership with. The new IdP group will replace the existing one, or replace existing direct members if the team isn't currently linked to an IdP group.
 final Omittable<String?> groupId;
 
+/// The value of `syncToOrganizations`, or its schema default when absent.
+SyncToOrganizations get syncToOrganizationsOrDefault => syncToOrganizations ?? SyncToOrganizations.fromJson('disabled');
+
+/// The value of `organizationSelectionType`, or its schema default when absent.
+OrganizationSelectionType get organizationSelectionTypeOrDefault => organizationSelectionType ?? OrganizationSelectionType.fromJson('disabled');
+
 Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   if (description.isPresent) 'description': description.value,
-  'sync_to_organizations': syncToOrganizations.toJson(),
-  'organization_selection_type': organizationSelectionType.toJson(),
+  if (syncToOrganizations != null) 'sync_to_organizations': syncToOrganizations?.toJson(),
+  if (organizationSelectionType != null) 'organization_selection_type': organizationSelectionType?.toJson(),
   if (groupId.isPresent) 'group_id': groupId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'sync_to_organizations', 'organization_selection_type', 'group_id'}.contains(key)); } 
-EnterpriseTeamsUpdateRequest copyWith({Omittable<String?>? name, Omittable<String?>? description, SyncToOrganizations Function()? syncToOrganizations, OrganizationSelectionType Function()? organizationSelectionType, Omittable<String?>? groupId, }) { return EnterpriseTeamsUpdateRequest(
+EnterpriseTeamsUpdateRequest copyWith({Omittable<String?>? name, Omittable<String?>? description, SyncToOrganizations? Function()? syncToOrganizations, OrganizationSelectionType? Function()? organizationSelectionType, Omittable<String?>? groupId, }) { return EnterpriseTeamsUpdateRequest(
   name: name ?? this.name,
   description: description ?? this.description,
   syncToOrganizations: syncToOrganizations != null ? syncToOrganizations() : this.syncToOrganizations,

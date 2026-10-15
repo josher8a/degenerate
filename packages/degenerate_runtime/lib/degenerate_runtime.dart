@@ -1,5 +1,6 @@
 export 'package:meta/meta.dart' show immutable;
 
+export 'src/any_of.dart';
 export 'src/api_client.dart';
 export 'src/api_config.dart';
 export 'src/api_executor.dart';
@@ -17,6 +18,7 @@ export 'src/omittable.dart';
 export 'src/one_of.dart';
 export 'src/paginate.dart';
 export 'src/request_options.dart';
+export 'src/response_media_type.dart';
 export 'src/security.dart';
 export 'src/sse.dart';
 export 'src/streamed_api_response.dart';

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Assistant)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/assistant_audio_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_content.dart';import 'package:pub_cloudflare/models/messages/assistant_content_variant2.dart';import 'package:pub_cloudflare/models/messages/assistant_function_call_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_tool_calls.dart';import 'package:pub_cloudflare/models/messages/tool_calls_custom.dart';import 'package:pub_cloudflare/models/messages/tool_calls_function.dart';sealed class AssistantRole {const AssistantRole();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/assistant_audio_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_content.dart';import 'package:pub_cloudflare/models/messages/assistant_function_call_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_tool_calls.dart';import 'package:pub_cloudflare/models/messages/tool_calls_custom.dart';import 'package:pub_cloudflare/models/messages/tool_calls_function.dart';sealed class AssistantRole {const AssistantRole();
 
 factory AssistantRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 factory Assistant.fromJson(Map<String, dynamic> json) { return Assistant(
   audio: json['audio'] != null ? AssistantAudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
-  content: json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => AssistantContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),) : null,
+  content: json['content'] != null ? AssistantContent.fromJson(json['content']) : null,
   functionCall: json['function_call'] != null ? AssistantFunctionCallVariant1.fromJson(json['function_call'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   refusal: json.containsKey('refusal') ? Omittable(json['refusal'] as String?) : const Omittable.absent(),

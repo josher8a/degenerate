@@ -83,35 +83,47 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Defaults {const Defaults({this.enabled = true, this.count = 10, this.label = 'unnamed', this.status, this.tags = const [], });
+@immutable final class Defaults {const Defaults({this.enabled, this.count, this.label, this.status, this.tags, });
 
 factory Defaults.fromJson(Map<String, dynamic> json) { return Defaults(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
-  count: json.containsKey('count') ? (json['count'] as num).toInt() : 10,
-  label: json.containsKey('label') ? json['label'] as String : 'unnamed',
+  enabled: json['enabled'] as bool?,
+  count: json['count'] != null ? (json['count'] as num).toInt() : null,
+  label: json['label'] as String?,
   status: json['status'] != null ? StringEnum.fromJson(json['status'] as String) : null,
-  tags: json.containsKey('tags') ? (json['tags'] as List<dynamic>).map((e) => e as String).toList() : const [],
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
-final bool enabled;
+final bool? enabled;
 
-final int count;
+final int? count;
 
-final String label;
+final String? label;
 
 final StringEnum? status;
 
-final List<String> tags;
+final List<String>? tags;
+
+/// The value of `enabled`, or its schema default when absent.
+bool get enabledOrDefault => enabled ?? true;
+
+/// The value of `count`, or its schema default when absent.
+int get countOrDefault => count ?? 10;
+
+/// The value of `label`, or its schema default when absent.
+String get labelOrDefault => label ?? 'unnamed';
+
+/// The value of `tags`, or its schema default when absent.
+List<String> get tagsOrDefault => tags ?? const [];
 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
-  'count': count,
-  'label': label,
+  'enabled': ?enabled,
+  'count': ?count,
+  'label': ?label,
   if (status != null) 'status': status?.toJson(),
-  'tags': tags,
+  'tags': ?tags,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'count', 'label', 'status', 'tags'}.contains(key)); } 
-Defaults copyWith({bool Function()? enabled, int Function()? count, String Function()? label, StringEnum? Function()? status, List<String> Function()? tags, }) { return Defaults(
+Defaults copyWith({bool? Function()? enabled, int? Function()? count, String? Function()? label, StringEnum? Function()? status, List<String>? Function()? tags, }) { return Defaults(
   enabled: enabled != null ? enabled() : this.enabled,
   count: count != null ? count() : this.count,
   label: label != null ? label() : this.label,
@@ -126,7 +138,7 @@ Defaults copyWith({bool Function()? enabled, int Function()? count, String Funct
           status == other.status &&
           listEquals(tags, other.tags);
 
-@override int get hashCode => Object.hash(enabled, count, label, status, Object.hashAll(tags));
+@override int get hashCode => Object.hash(enabled, count, label, status, Object.hashAll(tags ?? const []));
 
 @override String toString() => 'Defaults(enabled: $enabled, count: $count, label: $label, status: $status, tags: $tags)';
 

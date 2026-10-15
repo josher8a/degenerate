@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateAccountRulesetResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';@immutable final class CreateAccountRulesetResponseResult {const CreateAccountRulesetResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, required this.rules, this.description = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';@immutable final class CreateAccountRulesetResponseResult {const CreateAccountRulesetResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, required this.rules, this.description, });
 
 factory CreateAccountRulesetResponseResult.fromJson(Map<String, dynamic> json) { return CreateAccountRulesetResponseResult(
-  description: json.containsKey('description') ? json['description'] as String : '',
+  description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
   name: json['name'] as String,
@@ -17,7 +17,7 @@ factory CreateAccountRulesetResponseResult.fromJson(Map<String, dynamic> json) {
 /// An informative description of the ruleset.
 /// 
 /// Example: `'A description for my ruleset.'`
-final String description;
+final String? description;
 
 /// The unique ID of the ruleset.
 final RulesetsRulesetId id;
@@ -44,8 +44,11 @@ final RulesetsRulesetPhase phase;
 /// The list of rules in the ruleset.
 final List<RulesetsRequestRule> rules;
 
+/// The value of `description`, or its schema default when absent.
+String get descriptionOrDefault => description ?? '';
+
 Map<String, dynamic> toJson() { return {
-  'description': description,
+  'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
   'name': name,
@@ -65,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 List<String> validate() { final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 return errors; } 
-CreateAccountRulesetResponseResult copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule>? rules, }) { return CreateAccountRulesetResponseResult(
+CreateAccountRulesetResponseResult copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule>? rules, }) { return CreateAccountRulesetResponseResult(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,

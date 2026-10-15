@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentMethodOptionsParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/on_demand.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param17_preferred_locale.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_subscriptions.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_subscriptions_variant1.dart';@immutable final class PaymentMethodOptionsParam17 {const PaymentMethodOptionsParam17({this.captureMethod, this.onDemand, this.preferredLocale, this.setupFutureUsage, this.subscriptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/on_demand.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param17_preferred_locale.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_subscriptions.dart';@immutable final class PaymentMethodOptionsParam17 {const PaymentMethodOptionsParam17({this.captureMethod, this.onDemand, this.preferredLocale, this.setupFutureUsage, this.subscriptions, });
 
 factory PaymentMethodOptionsParam17.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam17(
   captureMethod: json['capture_method'] != null ? PaymentIntentParamCaptureMethod.fromJson(json['capture_method'] as String) : null,
   onDemand: json['on_demand'] != null ? OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam17PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => PaymentMethodOptionsParamSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  subscriptions: json['subscriptions'] != null ? PaymentMethodOptionsParamSubscriptions.fromJson(json['subscriptions']) : null,
 ); }
 
 final PaymentIntentParamCaptureMethod? captureMethod;

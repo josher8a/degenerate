@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeInterpreterOutputLogs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// The logs output from the code interpreter.
-@immutable final class CodeInterpreterOutputLogs {const CodeInterpreterOutputLogs({required this.logs, this.type = CodeInterpreterOutputLogsType.logs, });
+@immutable final class CodeInterpreterOutputLogs {const CodeInterpreterOutputLogs({required this.type, required this.logs, });
 
 factory CodeInterpreterOutputLogs.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputLogs(
   type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),

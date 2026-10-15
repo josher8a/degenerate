@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailDnsRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/email_dns_record/ttl.dart';/// DNS record type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_dns_record/ttl.dart';/// DNS record type.
 sealed class EmailDnsRecordType {const EmailDnsRecordType();
 
 factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
@@ -316,7 +316,7 @@ factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsReco
   content: json['content'] as String?,
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
-  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => DnsRecordsTtlVariant2.fromJson((v as num).toDouble()),) : null,
+  ttl: json['ttl'] != null ? Ttl.fromJson(json['ttl']) : null,
   type: json['type'] != null ? EmailDnsRecordType.fromJson(json['type'] as String) : null,
 ); }
 

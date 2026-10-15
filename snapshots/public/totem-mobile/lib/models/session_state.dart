@@ -282,18 +282,18 @@ final class SessionState {
   const SessionState({
     required this.keeperSlug,
     required this.speakingOrder,
-    this.status = SessionStatus.waiting,
+    this.status,
     this.speakingNow = const Omittable.absent(),
     this.nextSpeaker = const Omittable.absent(),
-    this.totemStatus = TotemStatus.none,
+    this.totemStatus,
   });
 
   factory SessionState.fromJson(Map<String, dynamic> json) {
     return SessionState(
       keeperSlug: json['keeper_slug'] as String,
-      status: json.containsKey('status')
+      status: json['status'] != null
           ? SessionStatus.fromJson(json['status'] as String)
-          : SessionStatus.waiting,
+          : null,
       speakingOrder: (json['speaking_order'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -303,15 +303,15 @@ final class SessionState {
       nextSpeaker: json.containsKey('next_speaker')
           ? Omittable(json['next_speaker'] as String?)
           : const Omittable.absent(),
-      totemStatus: json.containsKey('totem_status')
+      totemStatus: json['totem_status'] != null
           ? TotemStatus.fromJson(json['totem_status'] as String)
-          : TotemStatus.none,
+          : null,
     );
   }
 
   final String keeperSlug;
 
-  final SessionStatus status;
+  final SessionStatus? status;
 
   final List<String> speakingOrder;
 
@@ -319,16 +319,24 @@ final class SessionState {
 
   final Omittable<String?> nextSpeaker;
 
-  final TotemStatus totemStatus;
+  final TotemStatus? totemStatus;
+
+  /// The value of `status`, or its schema default when absent.
+  SessionStatus get statusOrDefault =>
+      status ?? SessionStatus.fromJson('waiting');
+
+  /// The value of `totemStatus`, or its schema default when absent.
+  TotemStatus get totemStatusOrDefault =>
+      totemStatus ?? TotemStatus.fromJson('none');
 
   Map<String, dynamic> toJson() {
     return {
       'keeper_slug': keeperSlug,
-      'status': status.toJson(),
+      if (status != null) 'status': status?.toJson(),
       'speaking_order': speakingOrder,
       if (speakingNow.isPresent) 'speaking_now': speakingNow.value,
       if (nextSpeaker.isPresent) 'next_speaker': nextSpeaker.value,
-      'totem_status': totemStatus.toJson(),
+      if (totemStatus != null) 'totem_status': totemStatus?.toJson(),
     };
   }
 
@@ -340,11 +348,11 @@ final class SessionState {
 
   SessionState copyWith({
     String? keeperSlug,
-    SessionStatus Function()? status,
+    SessionStatus? Function()? status,
     List<String>? speakingOrder,
     Omittable<String?>? speakingNow,
     Omittable<String?>? nextSpeaker,
-    TotemStatus Function()? totemStatus,
+    TotemStatus? Function()? totemStatus,
   }) {
     return SessionState(
       keeperSlug: keeperSlug ?? this.keeperSlug,

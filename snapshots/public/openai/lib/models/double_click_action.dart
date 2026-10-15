@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DoubleClickAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A double click action.
-@immutable final class DoubleClickAction {const DoubleClickAction({required this.x, required this.y, this.type = 'double_click', });
+@immutable final class DoubleClickAction {const DoubleClickAction({required this.type, required this.x, required this.y, });
 
 factory DoubleClickAction.fromJson(Map<String, dynamic> json) { return DoubleClickAction(
   type: json['type'] as String,

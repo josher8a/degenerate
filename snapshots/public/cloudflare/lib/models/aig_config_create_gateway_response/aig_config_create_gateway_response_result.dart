@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigCreateGatewayResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/log_management_strategy.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/rate_limiting_technique.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/workers_ai_billing_mode.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp_variant1.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp_variant2.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/otel.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/stripe.dart';@immutable final class AigConfigCreateGatewayResponseResult {const AigConfigCreateGatewayResponseResult({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.createdAt, required this.id, required this.modifiedAt, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.dlp, this.isDefault, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.otel = const Omittable.absent(), this.storeId = const Omittable.absent(), this.stripe = const Omittable.absent(), this.workersAiBillingMode = WorkersAiBillingMode.postpaid, this.zdr, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/log_management_strategy.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/rate_limiting_technique.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/workers_ai_billing_mode.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/otel.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/stripe.dart';@immutable final class AigConfigCreateGatewayResponseResult {const AigConfigCreateGatewayResponseResult({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.createdAt, required this.id, required this.modifiedAt, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.dlp, this.isDefault, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.otel = const Omittable.absent(), this.storeId = const Omittable.absent(), this.stripe = const Omittable.absent(), this.workersAiBillingMode, this.zdr, });
 
 factory AigConfigCreateGatewayResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayResponseResult(
   authentication: json['authentication'] as bool?,
@@ -9,7 +9,7 @@ factory AigConfigCreateGatewayResponseResult.fromJson(Map<String, dynamic> json)
   cacheTtl: json['cache_ttl'] != null ? (json['cache_ttl'] as num).toInt() : null,
   collectLogs: json['collect_logs'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),
-  dlp: json['dlp'] != null ? OneOf2.parse(json['dlp'], fromA: (v) => DlpVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  dlp: json['dlp'] != null ? Dlp.fromJson(json['dlp']) : null,
   id: json['id'] as String,
   isDefault: json['is_default'] as bool?,
   logManagement: json.containsKey('log_management') ? Omittable(json['log_management'] != null ? (json['log_management'] as num).toInt() : null) : const Omittable.absent(),
@@ -23,7 +23,7 @@ factory AigConfigCreateGatewayResponseResult.fromJson(Map<String, dynamic> json)
   rateLimitingTechnique: RateLimitingTechnique.fromJson(json['rate_limiting_technique'] as String),
   storeId: json.containsKey('store_id') ? Omittable(json['store_id'] as String?) : const Omittable.absent(),
   stripe: json.containsKey('stripe') ? Omittable(json['stripe'] != null ? Stripe.fromJson(json['stripe'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  workersAiBillingMode: json.containsKey('workers_ai_billing_mode') ? WorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : WorkersAiBillingMode.postpaid,
+  workersAiBillingMode: json['workers_ai_billing_mode'] != null ? WorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : null,
   zdr: json['zdr'] as bool?,
 ); }
 
@@ -69,9 +69,12 @@ final Omittable<String?> storeId;
 final Omittable<Stripe?> stripe;
 
 /// Controls how Workers AI inference calls routed through this gateway are billed
-final WorkersAiBillingMode workersAiBillingMode;
+final WorkersAiBillingMode? workersAiBillingMode;
 
 final bool? zdr;
+
+/// The value of `workersAiBillingMode`, or its schema default when absent.
+WorkersAiBillingMode get workersAiBillingModeOrDefault => workersAiBillingMode ?? WorkersAiBillingMode.fromJson('postpaid');
 
 Map<String, dynamic> toJson() { return {
   'authentication': ?authentication,
@@ -93,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   'rate_limiting_technique': rateLimitingTechnique.toJson(),
   if (storeId.isPresent) 'store_id': storeId.value,
   if (stripe.isPresent) 'stripe': stripe.value?.toJson(),
-  'workers_ai_billing_mode': workersAiBillingMode.toJson(),
+  if (workersAiBillingMode != null) 'workers_ai_billing_mode': workersAiBillingMode?.toJson(),
   'zdr': ?zdr,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
@@ -133,7 +136,7 @@ if (rateLimitingLimit$ != null) {
   if (rateLimitingLimit$ < 0) { errors.add('rateLimitingLimit: must be >= 0'); }
 }
 return errors; } 
-AigConfigCreateGatewayResponseResult copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, DateTime? createdAt, Dlp? Function()? dlp, String? id, bool? Function()? isDefault, Omittable<int?>? logManagement, Omittable<LogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, DateTime? modifiedAt, Omittable<List<Otel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<Stripe?>? stripe, WorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayResponseResult(
+AigConfigCreateGatewayResponseResult copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, DateTime? createdAt, Dlp? Function()? dlp, String? id, bool? Function()? isDefault, Omittable<int?>? logManagement, Omittable<LogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, DateTime? modifiedAt, Omittable<List<Otel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<Stripe?>? stripe, WorkersAiBillingMode? Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayResponseResult(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,
   cacheTtl: cacheTtl != null ? cacheTtl() : this.cacheTtl,

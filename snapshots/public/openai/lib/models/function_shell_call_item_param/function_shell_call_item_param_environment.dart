@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCallItemParam (inline: Environment)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_skill_param.dart';sealed class FunctionShellCallItemParamEnvironmentType {const FunctionShellCallItemParamEnvironmentType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';import 'package:pub_openai/models/local_skill_param.dart';sealed class FunctionShellCallItemParamEnvironmentType {const FunctionShellCallItemParamEnvironmentType();
 
 factory FunctionShellCallItemParamEnvironmentType.fromJson(String json) { return switch (json) {
   'local' => local,
@@ -65,10 +65,10 @@ factory FunctionShellCallItemParamEnvironment.fromJson(Map<String, dynamic> json
 }; }
 
 /// Build the `local` variant.
-factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam(skills: skills)); }
+factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam(type: LocalEnvironmentParamType.fromJson('local'), skills: skills)); }
 
 /// Build the `container_reference` variant.
-factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(containerId: containerId)); }
+factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(type: ContainerReferenceParamType.fromJson('container_reference'), containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
 FunctionShellCallItemParamEnvironmentType get type;

@@ -70,7 +70,7 @@ final class IncidentsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return True.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -95,7 +95,7 @@ final class IncidentsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return $3Incident.fromJson(

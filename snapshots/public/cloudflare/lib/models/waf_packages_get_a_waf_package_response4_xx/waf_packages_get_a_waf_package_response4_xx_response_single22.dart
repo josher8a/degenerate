@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory WafPackagesGetAWafPackageResponse4XxResponseSingle22.fromJson(Map<String, dynamic> json) { return WafPackagesGetAWafPackageResponse4XxResponseSingle22(
   errors: (json['errors'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},) : null,
+  result: json['result'] != null ? ResponseSingle22Result.fromJson(json['result']) : null,
   success: json['success'] as bool,
 ); }
 

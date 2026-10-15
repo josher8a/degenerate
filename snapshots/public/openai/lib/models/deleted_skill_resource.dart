@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillDel
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class DeletedSkillResource {const DeletedSkillResource({required this.deleted, required this.id, this.object = DeletedSkillResourceObject.skillDeleted, });
+@immutable final class DeletedSkillResource {const DeletedSkillResource({required this.object, required this.deleted, required this.id, });
 
 factory DeletedSkillResource.fromJson(Map<String, dynamic> json) { return DeletedSkillResource(
   object: DeletedSkillResourceObject.fromJson(json['object'] as String),

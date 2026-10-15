@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: BusinessProfile)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/annual_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_url.dart';/// Business information about the account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/annual_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_url.dart';/// Business information about the account.
 @immutable final class PostAccountsAccountRequestBusinessProfile {const PostAccountsAccountRequestBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
 factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestBusinessProfile(
@@ -15,7 +15,7 @@ factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> 
   supportAddress: json['support_address'] != null ? SupportAddress.fromJson(json['support_address'] as Map<String, dynamic>) : null,
   supportEmail: json['support_email'] as String?,
   supportPhone: json['support_phone'] as String?,
-  supportUrl: json['support_url'] != null ? OneOf2.parse(json['support_url'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  supportUrl: json['support_url'] != null ? SupportUrl.fromJson(json['support_url']) : null,
   url: json['url'] as String?,
 ); }
 

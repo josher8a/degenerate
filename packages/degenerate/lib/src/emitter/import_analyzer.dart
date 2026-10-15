@@ -172,7 +172,7 @@ void _collectTopLevelTypeName(
       names.add(name);
     case IrTypeRef(:final name):
       final target = ctx?.typeRegistry[name];
-      final targetVs = target?.unionVariants;
+      final targetVs = target?.oneOfVariants;
       final isInlinedOneOf =
           skipInlinedOneOfRefs &&
           targetVs != null &&
@@ -190,8 +190,10 @@ void _collectTopLevelTypeName(
       }
     case IrDiscriminatedUnion(:final name):
       names.add(name);
-    case IrUntaggedUnion(:final name, :final variants) ||
-         IrAnyOf(:final name, :final variants):
+    case IrAnyOf(:final name):
+      // A lossless anyOf class imports its own variant types.
+      names.add(name);
+    case IrUntaggedUnion(:final name, :final variants):
       final skip =
           skipInlinedOneOfRefs &&
           isOneOfEligible(variants) &&
@@ -244,16 +246,10 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
     IrMap(:final values) => hasBytesAnywhere(values),
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       variants.any(hasBytesAnywhere),
-    IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
-      hasBytesAnywhere,
-    ),
     IrTypeRef(:final name) when ctx != null && bytesVisited.add(name) =>
       switch (ctx.typeRegistry[name]) {
         IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
           variants.any(hasBytesAnywhere),
-        IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
-          hasBytesAnywhere,
-        ),
         _ => false,
       },
     _ => false,
@@ -309,7 +305,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
         if (variant is IrTypeRef) {
           final info = meta?.variants[key];
           final resolved = info?.resolvedType ?? variant;
-          final vs = resolved.unionVariants;
+          final vs = resolved.oneOfVariants;
           final oneOfVariants = vs != null && isOneOfEligible(vs) ? vs : null;
           if (oneOfVariants != null) {
             needsOneOf = true;
@@ -320,13 +316,12 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
         }
       }
       if (meta != null) {
-        for (final MapEntry(:key, value: info) in meta.variants.entries) {
+        for (final info in meta.variants.values) {
           if (info.resolvedType is IrObject) {
             final resolved = info.resolvedType as IrObject;
             for (final f in resolved.fields) {
               if (f.originalName == discriminatorProperty) {
-                if (key.test((k) => k == info.discDefault) ||
-                    info.payloadFields.isEmpty) {
+                if (info.payloadFields.isEmpty) {
                   continue;
                 }
               }
@@ -348,21 +343,12 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
       }
     case IrAnyOf(:final name, :final variants):
       names.add(name);
-      if (isOneOfTypedef(name, variants)) {
-        needsOneOf = true;
-        for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names);
-          if (isBytesType(variant)) needsTypedData = true;
-        }
-      } else {
-        for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names, ctx);
-          if (isOneOfTypeDeep(variant)) needsOneOf = true;
-          if (isListType(variant)) needsCollection = true;
-          if (isBytesType(variant)) {
-            needsTypedData = true;
-            needsConvert = true;
-          }
+      for (final variant in variants) {
+        _collectTopLevelTypeName(variant, names, ctx);
+        if (isOneOfTypeDeep(variant)) needsOneOf = true;
+        if (hasBytesAnywhere(variant)) {
+          needsTypedData = true;
+          needsConvert = true;
         }
       }
     case IrExtensionType(:final name, :final inner):

@@ -35,7 +35,7 @@ RequestBodyPostApplicationJsonAdditionalPropertiesRequest copyWith({String? name
           nestedInt64Str == other.nestedInt64Str &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(name, nestedInt64Str, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(name, nestedInt64Str, mapHash(additionalProperties));
 
 @override String toString() => 'RequestBodyPostApplicationJsonAdditionalPropertiesRequest(name: $name, nestedInt64Str: $nestedInt64Str, additionalProperties: $additionalProperties)';
 

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/KeyToPath
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maps a string key to a path within a volume.
-@immutable final class KeyToPath {const KeyToPath({this.key = '', this.mode, this.path = '', });
+@immutable final class KeyToPath {const KeyToPath({required this.key, required this.path, this.mode, });
 
 factory KeyToPath.fromJson(Map<String, dynamic> json) { return KeyToPath(
   key: json['key'] as String,

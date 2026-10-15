@@ -2,12 +2,12 @@
 // Source: #/components/schemas/RealtimeSessionCreateRequestGa
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_tool.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_response_create_params/output_modalities.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_audio.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_truncation.dart';import 'package:pub_openai/models/retention_ratio_truncation.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tracing_configuration.dart';/// Realtime session object configuration.
-@immutable final class RealtimeSessionCreateRequestGa {const RealtimeSessionCreateRequestGa({required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateRequestGa {const RealtimeSessionCreateRequestGa({required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt = const Omittable.absent(), });
 
 factory RealtimeSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGa(
   type: RealtimeSessionCreateRequestGaType.fromJson(json['type'] as String),
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => OutputModalities.fromJson(e as String)).toList(),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => RealtimeSessionCreateRequestGaModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? RealtimeSessionCreateRequestGaModel.fromJson(json['model']) : null,
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeSessionCreateRequestGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList(),
@@ -16,7 +16,7 @@ factory RealtimeSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { ret
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   truncation: json['truncation'] != null ? OneOf2.parse(json['truncation'], fromA: (v) => RealtimeTruncationVariant1.fromJson(v as String), fromB: (v) => RetentionRatioTruncation.fromJson(v as Map<String, dynamic>),) : null,
-  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The type of session to create. Always `realtime` for the Realtime API.
@@ -74,7 +74,7 @@ final MaxOutputTokens? maxOutputTokens;
 
 final RealtimeTruncation? truncation;
 
-final Prompt? prompt;
+final Omittable<Prompt?> prompt;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -88,10 +88,10 @@ Map<String, dynamic> toJson() { return {
   if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
   if (truncation != null) 'truncation': truncation?.toJson(),
-  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'realtime'; } 
-RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? type, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateRequestGaAudio? Function()? audio, List<Include>? Function()? include, Omittable<RealtimeSessionCreateRequestGaTracing?>? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequestGa(
+RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? type, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateRequestGaAudio? Function()? audio, List<Include>? Function()? include, Omittable<RealtimeSessionCreateRequestGaTracing?>? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Omittable<Prompt?>? prompt, }) { return RealtimeSessionCreateRequestGa(
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   model: model != null ? model() : this.model,
@@ -103,7 +103,7 @@ RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? typ
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
   truncation: truncation != null ? truncation() : this.truncation,
-  prompt: prompt != null ? prompt() : this.prompt,
+  prompt: prompt ?? this.prompt,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequestGa &&

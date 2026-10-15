@@ -4,21 +4,35 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_type2/error_type2_error.dart';import 'package:pub_speakeasy/models/tagged_error1.dart';import 'package:pub_speakeasy/models/tagged_error2.dart';sealed class ErrorUnionDiscriminatedPostResponse4XxTag {const ErrorUnionDiscriminatedPostResponse4XxTag();
 
 factory ErrorUnionDiscriminatedPostResponse4XxTag.fromJson(String json) { return switch (json) {
+  'tag0' => tag0,
   'tag1' => tag1,
   'tag2' => tag2,
   _ => ErrorUnionDiscriminatedPostResponse4XxTag$Unknown(json),
 }; }
 
+static const ErrorUnionDiscriminatedPostResponse4XxTag tag0 = ErrorUnionDiscriminatedPostResponse4XxTag$tag0._();
+
 static const ErrorUnionDiscriminatedPostResponse4XxTag tag1 = ErrorUnionDiscriminatedPostResponse4XxTag$tag1._();
 
 static const ErrorUnionDiscriminatedPostResponse4XxTag tag2 = ErrorUnionDiscriminatedPostResponse4XxTag$tag2._();
 
-static const List<ErrorUnionDiscriminatedPostResponse4XxTag> values = [tag1, tag2];
+static const List<ErrorUnionDiscriminatedPostResponse4XxTag> values = [tag0, tag1, tag2];
 
 String get value;
 String toJson() => value;
 
 bool get isUnknown => this is ErrorUnionDiscriminatedPostResponse4XxTag$Unknown;
+
+ }
+@immutable final class ErrorUnionDiscriminatedPostResponse4XxTag$tag0 extends ErrorUnionDiscriminatedPostResponse4XxTag {const ErrorUnionDiscriminatedPostResponse4XxTag$tag0._();
+
+@override String get value => 'tag0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorUnionDiscriminatedPostResponse4XxTag$tag0;
+
+@override int get hashCode => 'tag0'.hashCode;
+
+@override String toString() => 'ErrorUnionDiscriminatedPostResponse4XxTag(tag0)';
 
  }
 @immutable final class ErrorUnionDiscriminatedPostResponse4XxTag$tag1 extends ErrorUnionDiscriminatedPostResponse4XxTag {const ErrorUnionDiscriminatedPostResponse4XxTag$tag1._();
@@ -58,10 +72,14 @@ sealed class ErrorUnionDiscriminatedPostResponse4Xx {const ErrorUnionDiscriminat
 
 /// Deserialize from JSON, dispatching on the `tag` discriminator.
 factory ErrorUnionDiscriminatedPostResponse4Xx.fromJson(Map<String, dynamic> json) { return switch (json['tag']) {
+  'tag0' => ErrorUnionDiscriminatedPostResponse4XxTag0.fromJson(json),
   'tag1' => ErrorUnionDiscriminatedPostResponse4XxTag1.fromJson(json),
   'tag2' => ErrorUnionDiscriminatedPostResponse4XxTag2.fromJson(json),
   _ => ErrorUnionDiscriminatedPostResponse4Xx$Unknown(json),
 }; }
+
+/// Build the `tag0` variant.
+factory ErrorUnionDiscriminatedPostResponse4Xx.tag0({required String error}) { return ErrorUnionDiscriminatedPostResponse4XxTag0(TaggedError1(tag: Tag.fromJson('tag0'), error: error)); }
 
 /// Build the `tag1` variant.
 factory ErrorUnionDiscriminatedPostResponse4Xx.tag1({required String error}) { return ErrorUnionDiscriminatedPostResponse4XxTag1(TaggedError1(tag: Tag.fromJson('tag1'), error: error)); }
@@ -75,11 +93,33 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ErrorUnionDiscriminatedPostResponse4Xx$Unknown;
 
-R when<R>({required R Function(ErrorUnionDiscriminatedPostResponse4XxTag1) tag1, required R Function(ErrorUnionDiscriminatedPostResponse4XxTag2) tag2, required R Function(ErrorUnionDiscriminatedPostResponse4Xx$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ErrorUnionDiscriminatedPostResponse4XxTag0) tag0, required R Function(ErrorUnionDiscriminatedPostResponse4XxTag1) tag1, required R Function(ErrorUnionDiscriminatedPostResponse4XxTag2) tag2, required R Function(ErrorUnionDiscriminatedPostResponse4Xx$Unknown) unknown, }) { return switch (this) {
+  final ErrorUnionDiscriminatedPostResponse4XxTag0 v => tag0(v),
   final ErrorUnionDiscriminatedPostResponse4XxTag1 v => tag1(v),
   final ErrorUnionDiscriminatedPostResponse4XxTag2 v => tag2(v),
   final ErrorUnionDiscriminatedPostResponse4Xx$Unknown v => unknown(v),
 }; } 
+ }
+@immutable final class ErrorUnionDiscriminatedPostResponse4XxTag0 extends ErrorUnionDiscriminatedPostResponse4Xx {const ErrorUnionDiscriminatedPostResponse4XxTag0(this.taggedError1);
+
+factory ErrorUnionDiscriminatedPostResponse4XxTag0.fromJson(Map<String, dynamic> json) { return ErrorUnionDiscriminatedPostResponse4XxTag0(TaggedError1.fromJson(json)); }
+
+final TaggedError1 taggedError1;
+
+@override ErrorUnionDiscriminatedPostResponse4XxTag get tag => ErrorUnionDiscriminatedPostResponse4XxTag.fromJson('tag0');
+
+@override Map<String, dynamic> toJson() => {...taggedError1.toJson(), 'tag': tag.toJson()};
+
+ErrorUnionDiscriminatedPostResponse4XxTag0 copyWith({String? error}) { return ErrorUnionDiscriminatedPostResponse4XxTag0(taggedError1.copyWith(
+  error: error,
+)); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ErrorUnionDiscriminatedPostResponse4XxTag0 && taggedError1 == other.taggedError1;
+
+@override int get hashCode => taggedError1.hashCode;
+
+@override String toString() => 'ErrorUnionDiscriminatedPostResponse4Xx.tag0($taggedError1)';
+
  }
 @immutable final class ErrorUnionDiscriminatedPostResponse4XxTag1 extends ErrorUnionDiscriminatedPostResponse4Xx {const ErrorUnionDiscriminatedPostResponse4XxTag1(this.taggedError1);
 

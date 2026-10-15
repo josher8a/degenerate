@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateSpeechRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_speech_request/create_speech_request_model.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_speech_request/create_speech_request_model.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
 sealed class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat();
 
 factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch (json) {
@@ -197,16 +197,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W F
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = StreamFormat.audio, });
+@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat, this.speed, this.streamFormat, });
 
 factory CreateSpeechRequest.fromJson(Map<String, dynamic> json) { return CreateSpeechRequest(
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateSpeechRequestModelVariant2.fromJson(v as String),),
+  model: CreateSpeechRequestModel.fromJson(json['model']),
   input: json['input'] as String,
   instructions: json['instructions'] as String?,
-  voice: OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),),
-  responseFormat: json.containsKey('response_format') ? CreateSpeechRequestResponseFormat.fromJson(json['response_format'] as String) : CreateSpeechRequestResponseFormat.mp3,
-  speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  streamFormat: json.containsKey('stream_format') ? StreamFormat.fromJson(json['stream_format'] as String) : StreamFormat.audio,
+  voice: VoiceIdsOrCustomVoice.fromJson(json['voice']),
+  responseFormat: json['response_format'] != null ? CreateSpeechRequestResponseFormat.fromJson(json['response_format'] as String) : null,
+  speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
+  streamFormat: json['stream_format'] != null ? StreamFormat.fromJson(json['stream_format'] as String) : null,
 ); }
 
 /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
@@ -223,22 +223,31 @@ final String? instructions;
 final VoiceIdsOrCustomVoice voice;
 
 /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-final CreateSpeechRequestResponseFormat responseFormat;
+final CreateSpeechRequestResponseFormat? responseFormat;
 
 /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.
-final double speed;
+final double? speed;
 
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
-final StreamFormat streamFormat;
+final StreamFormat? streamFormat;
+
+/// The value of `responseFormat`, or its schema default when absent.
+CreateSpeechRequestResponseFormat get responseFormatOrDefault => responseFormat ?? CreateSpeechRequestResponseFormat.fromJson('mp3');
+
+/// The value of `speed`, or its schema default when absent.
+double get speedOrDefault => speed ?? 1.0;
+
+/// The value of `streamFormat`, or its schema default when absent.
+StreamFormat get streamFormatOrDefault => streamFormat ?? StreamFormat.fromJson('audio');
 
 Map<String, dynamic> toJson() { return {
   'model': model.toJson(),
   'input': input,
   'instructions': ?instructions,
   'voice': voice.toJson(),
-  'response_format': responseFormat.toJson(),
-  'speed': speed,
-  'stream_format': streamFormat.toJson(),
+  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  'speed': ?speed,
+  if (streamFormat != null) 'stream_format': streamFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('input') && json['input'] is String &&
@@ -250,10 +259,13 @@ final instructions$ = instructions;
 if (instructions$ != null) {
   if (instructions$.runes.length > 4096) { errors.add('instructions: length must be <= 4096'); }
 }
-if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
-if (speed > 4) { errors.add('speed: must be <= 4'); }
+final speed$ = speed;
+if (speed$ != null) {
+  if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
+  if (speed$ > 4) { errors.add('speed: must be <= 4'); }
+}
 return errors; } 
-CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String? Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, StreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
+CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String? Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat? Function()? responseFormat, double? Function()? speed, StreamFormat? Function()? streamFormat, }) { return CreateSpeechRequest(
   model: model ?? this.model,
   input: input ?? this.input,
   instructions: instructions != null ? instructions() : this.instructions,

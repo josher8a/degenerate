@@ -1,12 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_asn_configuration.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/firewall_configuration.dart';import 'package:pub_cloudflare/models/firewall_country_configuration.dart';import 'package:pub_cloudflare/models/firewall_description.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration.dart';import 'package:pub_cloudflare/models/firewall_ipv6_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_paused.dart';@immutable final class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest {const UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest({required this.configuration, required this.id, required this.mode, this.description, this.paused, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_asn_configuration.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_configuration.dart';import 'package:pub_cloudflare/models/firewall_country_configuration.dart';import 'package:pub_cloudflare/models/firewall_description.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration.dart';import 'package:pub_cloudflare/models/firewall_ipv6_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_paused.dart';@immutable final class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest {const UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest({required this.configuration, required this.mode, this.description, this.paused, });
 
 factory UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest.fromJson(Map<String, dynamic> json) { return UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(
   configuration: OneOf5.parse(json['configuration'], fromA: (v) => FirewallIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallIpv6Configuration.fromJson(v as Map<String, dynamic>), fromC: (v) => FirewallCidrConfiguration.fromJson(v as Map<String, dynamic>), fromD: (v) => FirewallAsnConfiguration.fromJson(v as Map<String, dynamic>), fromE: (v) => FirewallCountryConfiguration.fromJson(v as Map<String, dynamic>),),
   description: json['description'] != null ? FirewallDescription.fromJson(json['description'] as String) : null,
-  id: FirewallComponentsSchemasIdentifier.fromJson(json['id'] as String),
   mode: FirewallSchemasMode.fromJson(json['mode'] as String),
   paused: json['paused'] != null ? FirewallSchemasPaused.fromJson(json['paused'] as bool) : null,
 ); }
@@ -15,9 +14,6 @@ final FirewallConfiguration configuration;
 
 /// An informative summary of the rule. This value is sanitized and any tags will be removed.
 final FirewallDescription? description;
-
-/// The unique identifier of the resource.
-final FirewallComponentsSchemasIdentifier id;
 
 /// The action to apply to a matched request.
 final FirewallSchemasMode mode;
@@ -28,17 +24,14 @@ final FirewallSchemasPaused? paused;
 Map<String, dynamic> toJson() { return {
   'configuration': configuration.toJson(),
   if (description != null) 'description': description?.toJson(),
-  'id': id.toJson(),
   'mode': mode.toJson(),
   if (paused != null) 'paused': paused?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
-      json.containsKey('id') &&
       json.containsKey('mode'); } 
-UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest copyWith({FirewallConfiguration? configuration, FirewallDescription? Function()? description, FirewallComponentsSchemasIdentifier? id, FirewallSchemasMode? mode, FirewallSchemasPaused? Function()? paused, }) { return UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(
+UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest copyWith({FirewallConfiguration? configuration, FirewallDescription? Function()? description, FirewallSchemasMode? mode, FirewallSchemasPaused? Function()? paused, }) { return UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(
   configuration: configuration ?? this.configuration,
   description: description != null ? description() : this.description,
-  id: id ?? this.id,
   mode: mode ?? this.mode,
   paused: paused != null ? paused() : this.paused,
 ); } 
@@ -46,12 +39,11 @@ UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest copyWith({FirewallConf
       other is UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest &&
           configuration == other.configuration &&
           description == other.description &&
-          id == other.id &&
           mode == other.mode &&
           paused == other.paused;
 
-@override int get hashCode => Object.hash(configuration, description, id, mode, paused);
+@override int get hashCode => Object.hash(configuration, description, mode, paused);
 
-@override String toString() => 'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)';
+@override String toString() => 'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(configuration: $configuration, description: $description, mode: $mode, paused: $paused)';
 
  }

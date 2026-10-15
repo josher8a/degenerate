@@ -2,7 +2,7 @@
 // Source: #/components/schemas/HttpHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTPHeader describes a custom header to be used in HTTP probes
-@immutable final class HttpHeader {const HttpHeader({this.name = '', this.value = '', });
+@immutable final class HttpHeader {const HttpHeader({required this.name, required this.value, });
 
 factory HttpHeader.fromJson(Map<String, dynamic> json) { return HttpHeader(
   name: json['name'] as String,

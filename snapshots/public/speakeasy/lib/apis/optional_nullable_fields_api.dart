@@ -27,7 +27,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalTrueNullableTrueField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalFalseNullableTrueField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -77,7 +77,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalTrueNullableFalseField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -102,7 +102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalFalseNullableFalseField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OptionalNullableDiscriminatedUnionPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

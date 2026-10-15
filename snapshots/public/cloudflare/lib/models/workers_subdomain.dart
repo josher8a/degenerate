@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersSubdomain
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSubdomain {const WorkersSubdomain({required this.previewsEnabled, this.enabled = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSubdomain {const WorkersSubdomain({required this.enabled, required this.previewsEnabled, });
 
 factory WorkersSubdomain.fromJson(Map<String, dynamic> json) { return WorkersSubdomain(
   enabled: json['enabled'] as bool,

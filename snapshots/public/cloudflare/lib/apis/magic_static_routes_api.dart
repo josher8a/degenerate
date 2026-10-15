@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicStaticRoutesApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_create_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_delete_many_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_delete_route_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_list_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_route_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_update_many_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_update_route_error.dart';import 'package:pub_cloudflare/models/magic_create_route_request.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_multiple_route_delete_response/magic_multiple_route_delete_response_result.dart';import 'package:pub_cloudflare/models/magic_multiple_route_modified_response/magic_multiple_route_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_route.dart';import 'package:pub_cloudflare/models/magic_route_add_single_request.dart';import 'package:pub_cloudflare/models/magic_route_delete_many_request.dart';import 'package:pub_cloudflare/models/magic_route_deleted_response/magic_route_deleted_response_result.dart';import 'package:pub_cloudflare/models/magic_route_modified_response/magic_route_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_route_single_response/magic_route_single_response_result.dart';import 'package:pub_cloudflare/models/magic_route_update_many_request.dart';import 'package:pub_cloudflare/models/magic_routes_collection_response/magic_routes_collection_response_result.dart';/// MagicStaticRoutesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_create_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_delete_many_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_delete_route_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_list_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_route_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_update_many_routes_error.dart';import 'package:pub_cloudflare/models/errors/magic_static_routes_update_route_error.dart';import 'package:pub_cloudflare/models/magic_create_route_request.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_multiple_route_delete_response/magic_multiple_route_delete_response_result.dart';import 'package:pub_cloudflare/models/magic_multiple_route_modified_response/magic_multiple_route_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_route.dart';import 'package:pub_cloudflare/models/magic_route_add_single_request.dart';import 'package:pub_cloudflare/models/magic_route_delete_many_request_request.dart';import 'package:pub_cloudflare/models/magic_route_deleted_response/magic_route_deleted_response_result.dart';import 'package:pub_cloudflare/models/magic_route_modified_response/magic_route_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_route_single_response/magic_route_single_response_result.dart';import 'package:pub_cloudflare/models/magic_route_update_many_request_request.dart';import 'package:pub_cloudflare/models/magic_routes_collection_response/magic_routes_collection_response_result.dart';/// MagicStaticRoutesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -62,7 +62,7 @@ return execute(
 /// Update multiple Magic static routes. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes. Only fields for a route that need to be changed need be provided.
 ///
 /// `PUT /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicMultipleRouteModifiedResponseResult, MagicStaticRoutesUpdateManyRoutesError>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicMultipleRouteModifiedResponseResult, MagicStaticRoutesUpdateManyRoutesError>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,7 +73,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -87,7 +87,7 @@ return execute(
 /// Delete multiple Magic static routes.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicMultipleRouteDeleteResponseResult, MagicStaticRoutesDeleteManyRoutesError>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicMultipleRouteDeleteResponseResult, MagicStaticRoutesDeleteManyRoutesError>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,7 +98,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -146,7 +146,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -169,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

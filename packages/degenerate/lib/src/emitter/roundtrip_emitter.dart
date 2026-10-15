@@ -77,9 +77,33 @@ final class RoundtripEmitter {
         continue;
       }
 
+      if (type case IrAnyOf(:final variants)) {
+        // A decoded anyOf keeps its raw payload, so every variant's sample
+        // round-trips exactly — no proof that parsing reclaims it is needed.
+        final decode = '$name.fromJson(json)';
+        final encode = '(value! as $name).toJson()';
+        var any = false;
+        for (var k = 0; k < variants.length; k++) {
+          final sample = _sampleLiteral(variants[k], {});
+          if (sample == null) continue;
+          final variantLabel =
+              _overlap.resolve(variants[k]).emittableName ?? 'variant $k';
+          any = true;
+          fixtures.add(
+            _fixture(
+              _escapeName('$name [$variantLabel]'),
+              sample,
+              decode,
+              encode,
+            ),
+          );
+        }
+        if (!any) skippedUnion++;
+        continue;
+      }
+
       final unionVariants = switch (type) {
         IrUntaggedUnion(:final variants) => variants,
-        IrAnyOf(:final variants) => variants,
         _ => null,
       };
       if (unionVariants != null && isOneOfType(type)) {
@@ -102,13 +126,8 @@ final class RoundtripEmitter {
         final allPrimitive = unionVariants.every((v) => v is IrPrimitive);
         if (!allPrimitive) {
           // An untagged union's fromJson accepts any JSON value (Object?) so
-          // it can dispatch on wire type; an anyOf over object-like variants
-          // takes a map instead, and the fixture's json has to be cast.
-          final takesMap =
-              type is IrAnyOf && _ctx.anyOfFromJsonTakesMap(unionVariants);
-          final decode = takesMap
-              ? '$name.fromJson(json! as Map<String, dynamic>)'
-              : '$name.fromJson(json)';
+          // it can dispatch on wire type.
+          final decode = '$name.fromJson(json)';
           final encode = '(value! as $name).toJson()';
           var any = false;
           for (var k = 0; k < unionVariants.length; k++) {
@@ -264,8 +283,13 @@ final class RoundtripEmitter {
         );
       case IrUntaggedUnion(:final name, :final variants):
         return _unionLiteral(name, variants, visited);
-      case IrAnyOf(:final name, :final variants):
-        return _unionLiteral(name, variants, visited);
+      case IrAnyOf(:final variants):
+        // Lossless: any variant's form round-trips through the raw payload.
+        for (final v in variants) {
+          final sample = _sampleLiteral(v, visited);
+          if (sample != null) return sample;
+        }
+        return null;
     }
   }
 
@@ -519,9 +543,9 @@ final class RoundtripEmitter {
     final entries = <String>[];
     for (final f in fields) {
       if (f.originalName == skipKey) continue;
-      // toJson always emits required and defaulted fields; optional-without-
-      // default fields are null → omitted, so leave them out of the sample.
-      if (!f.isRequired && !fieldHasDefault(f)) continue;
+      // toJson always emits required fields; optional fields are absent →
+      // omitted (defaults don't imply presence), so leave them out.
+      if (!f.isRequired) continue;
       final lit = _sampleLiteral(f.type, visited);
       if (lit == null) return null;
       entries.add('${f.originalName.literal}: $lit');

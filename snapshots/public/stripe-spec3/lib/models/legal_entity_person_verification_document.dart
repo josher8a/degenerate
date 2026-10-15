@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LegalEntityPersonVerificationDocument
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
 @immutable final class LegalEntityPersonVerificationDocument {const LegalEntityPersonVerificationDocument({this.back = const Omittable.absent(), this.details = const Omittable.absent(), this.detailsCode = const Omittable.absent(), this.front = const Omittable.absent(), });
 
 factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerificationDocument(
-  back: json.containsKey('back') ? Omittable(json['back'] != null ? OneOf2.parse(json['back'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  back: json.containsKey('back') ? Omittable(json['back'] != null ? Back.fromJson(json['back']) : null) : const Omittable.absent(),
   details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
   detailsCode: json.containsKey('details_code') ? Omittable(json['details_code'] as String?) : const Omittable.absent(),
-  front: json.containsKey('front') ? Omittable(json['front'] != null ? OneOf2.parse(json['front'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  front: json.containsKey('front') ? Omittable(json['front'] != null ? Front.fromJson(json['front']) : null) : const Omittable.absent(),
 ); }
 
 /// The back of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.

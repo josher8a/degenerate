@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersVersionItemUploaded
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version_item_full/resources.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_metadata.dart';@immutable final class WorkersVersionItemUploaded {const WorkersVersionItemUploaded({required this.resources, this.id, this.metadata, this.number, this.startupTimeMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_metadata.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_resources.dart';@immutable final class WorkersVersionItemUploaded {const WorkersVersionItemUploaded({required this.resources, this.id, this.metadata, this.number, this.startupTimeMs, });
 
 factory WorkersVersionItemUploaded.fromJson(Map<String, dynamic> json) { return WorkersVersionItemUploaded(
   id: json['id'] as String?,
   metadata: json['metadata'] != null ? WorkersVersionItemFullMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,
-  resources: Resources.fromJson(json['resources'] as Map<String, dynamic>),
+  resources: WorkersVersionItemFullResources.fromJson(json['resources'] as Map<String, dynamic>),
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
 ); }
 
@@ -59,7 +59,7 @@ final double? number;
 /// ```
 /// 
 /// Example: `{bindings: [{json: example_binding, name: JSON_VAR, type: json}], script: {etag: 13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794, handlers: [fetch], last_deployed_from: api}, script_runtime: {usage_model: standard}}`
-final Resources resources;
+final WorkersVersionItemFullResources resources;
 
 /// Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).
 /// 
@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'startup_time_ms': ?startupTimeMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources'); } 
-WorkersVersionItemUploaded copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, Resources? resources, int? Function()? startupTimeMs, }) { return WorkersVersionItemUploaded(
+WorkersVersionItemUploaded copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, WorkersVersionItemFullResources? resources, int? Function()? startupTimeMs, }) { return WorkersVersionItemUploaded(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,

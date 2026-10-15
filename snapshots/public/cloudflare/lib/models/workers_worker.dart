@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersWorker
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn = const Omittable.absent(), this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker_request/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker_request/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.logpush, required this.name, required this.observability, required this.references, required this.subdomain, required this.tags, required this.tailConsumers, required this.updatedOn, this.deployedOn = const Omittable.absent(), });
 
 factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),

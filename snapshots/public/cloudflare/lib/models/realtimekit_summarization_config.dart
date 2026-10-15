@@ -243,35 +243,47 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plainTex
 
  }
 /// Summary Config
-@immutable final class RealtimekitSummarizationConfig {const RealtimekitSummarizationConfig({this.summaryType = SummaryType.general, this.textFormat = TextFormat.markdown, this.wordLimit = 500, });
+@immutable final class RealtimekitSummarizationConfig {const RealtimekitSummarizationConfig({this.summaryType, this.textFormat, this.wordLimit, });
 
 factory RealtimekitSummarizationConfig.fromJson(Map<String, dynamic> json) { return RealtimekitSummarizationConfig(
-  summaryType: json.containsKey('summary_type') ? SummaryType.fromJson(json['summary_type'] as String) : SummaryType.general,
-  textFormat: json.containsKey('text_format') ? TextFormat.fromJson(json['text_format'] as String) : TextFormat.markdown,
-  wordLimit: json.containsKey('word_limit') ? (json['word_limit'] as num).toInt() : 500,
+  summaryType: json['summary_type'] != null ? SummaryType.fromJson(json['summary_type'] as String) : null,
+  textFormat: json['text_format'] != null ? TextFormat.fromJson(json['text_format'] as String) : null,
+  wordLimit: json['word_limit'] != null ? (json['word_limit'] as num).toInt() : null,
 ); }
 
 /// Defines the style of the summary, such as general, team meeting, or sales call.
-final SummaryType summaryType;
+final SummaryType? summaryType;
 
 /// Determines the text format of the summary, such as plain text or markdown.
-final TextFormat textFormat;
+final TextFormat? textFormat;
 
 /// Sets the maximum number of words in the meeting summary.
-final int wordLimit;
+final int? wordLimit;
+
+/// The value of `summaryType`, or its schema default when absent.
+SummaryType get summaryTypeOrDefault => summaryType ?? SummaryType.fromJson('general');
+
+/// The value of `textFormat`, or its schema default when absent.
+TextFormat get textFormatOrDefault => textFormat ?? TextFormat.fromJson('markdown');
+
+/// The value of `wordLimit`, or its schema default when absent.
+int get wordLimitOrDefault => wordLimit ?? 500;
 
 Map<String, dynamic> toJson() { return {
-  'summary_type': summaryType.toJson(),
-  'text_format': textFormat.toJson(),
-  'word_limit': wordLimit,
+  if (summaryType != null) 'summary_type': summaryType?.toJson(),
+  if (textFormat != null) 'text_format': textFormat?.toJson(),
+  'word_limit': ?wordLimit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary_type', 'text_format', 'word_limit'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (wordLimit < 150) { errors.add('wordLimit: must be >= 150'); }
-if (wordLimit > 1000) { errors.add('wordLimit: must be <= 1000'); }
+final wordLimit$ = wordLimit;
+if (wordLimit$ != null) {
+  if (wordLimit$ < 150) { errors.add('wordLimit: must be >= 150'); }
+  if (wordLimit$ > 1000) { errors.add('wordLimit: must be <= 1000'); }
+}
 return errors; } 
-RealtimekitSummarizationConfig copyWith({SummaryType Function()? summaryType, TextFormat Function()? textFormat, int Function()? wordLimit, }) { return RealtimekitSummarizationConfig(
+RealtimekitSummarizationConfig copyWith({SummaryType? Function()? summaryType, TextFormat? Function()? textFormat, int? Function()? wordLimit, }) { return RealtimekitSummarizationConfig(
   summaryType: summaryType != null ? summaryType() : this.summaryType,
   textFormat: textFormat != null ? textFormat() : this.textFormat,
   wordLimit: wordLimit != null ? wordLimit() : this.wordLimit,

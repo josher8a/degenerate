@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Mandate
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/mandate_multi_use.dart';import 'package:pub_stripe_spec3/models/mandate_payment_method_details.dart';import 'package:pub_stripe_spec3/models/mandate_single_use.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/mandate_multi_use.dart';import 'package:pub_stripe_spec3/models/mandate_payment_method_details.dart';import 'package:pub_stripe_spec3/models/mandate_single_use.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class MandateObject {const MandateObject();
 
 factory MandateObject.fromJson(String json) { return switch (json) {
@@ -215,7 +215,7 @@ factory Mandate.fromJson(Map<String, dynamic> json) { return Mandate(
   multiUse: json['multi_use'] != null ? MandateMultiUse.fromJson(json['multi_use'] as Map<String, dynamic>) : null,
   object: MandateObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] as String?,
-  paymentMethod: OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),),
+  paymentMethod: InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod.fromJson(json['payment_method']),
   paymentMethodDetails: MandatePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
   singleUse: json['single_use'] != null ? MandateSingleUse.fromJson(json['single_use'] as Map<String, dynamic>) : null,
   status: MandateStatus.fromJson(json['status'] as String),

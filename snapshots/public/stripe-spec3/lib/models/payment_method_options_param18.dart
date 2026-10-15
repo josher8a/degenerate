@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentMethodOptionsParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/confirmation_number.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/expires_after_days.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_expires_at.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_product_description.dart';@immutable final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/confirmation_number.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/expires_after_days.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_expires_at.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_product_description.dart';@immutable final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam18.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam18(
-  confirmationNumber: json['confirmation_number'] != null ? OneOf2.parse(json['confirmation_number'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  expiresAfterDays: json['expires_after_days'] != null ? OneOf2.parse(json['expires_after_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  expiresAt: json['expires_at'] != null ? OneOf2.parse(json['expires_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  confirmationNumber: json['confirmation_number'] != null ? ConfirmationNumber.fromJson(json['confirmation_number']) : null,
+  expiresAfterDays: json['expires_after_days'] != null ? ExpiresAfterDays.fromJson(json['expires_after_days']) : null,
+  expiresAt: json['expires_at'] != null ? PaymentMethodOptionsParamExpiresAt.fromJson(json['expires_at']) : null,
+  productDescription: json['product_description'] != null ? PaymentMethodOptionsParamProductDescription.fromJson(json['product_description']) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 

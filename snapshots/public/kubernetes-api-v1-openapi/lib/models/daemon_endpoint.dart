@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DaemonEndpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DaemonEndpoint contains information about a single Daemon endpoint.
-@immutable final class DaemonEndpoint {const DaemonEndpoint({this.port = 0});
+@immutable final class DaemonEndpoint {const DaemonEndpoint({required this.port});
 
 factory DaemonEndpoint.fromJson(Map<String, dynamic> json) { return DaemonEndpoint(
   port: (json['Port'] as num).toInt(),

@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? image, W
 
  }
 /// The image output from the code interpreter.
-@immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.url, this.type = CodeInterpreterOutputImageType.image, });
+@immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.type, required this.url, });
 
 factory CodeInterpreterOutputImage.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputImage(
   type: CodeInterpreterOutputImageType.fromJson(json['type'] as String),

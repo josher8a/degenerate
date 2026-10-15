@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDeploymentStatusCreated
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_check_run.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment_status.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun = const Omittable.absent(), this.enterprise, this.installation, this.organization, this.workflow, this.workflowRun = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_check_run.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment_status.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun = const Omittable.absent(), this.enterprise, this.installation, this.organization, this.workflow = const Omittable.absent(), this.workflowRun = const Omittable.absent(), });
 
 factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
@@ -13,7 +13,7 @@ factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { ret
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
+  workflow: json.containsKey('workflow') ? Omittable(json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   workflowRun: json.containsKey('workflow_run') ? Omittable(json['workflow_run'] != null ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
@@ -37,7 +37,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-final WebhooksWorkflow? workflow;
+final Omittable<WebhooksWorkflow?> workflow;
 
 final Omittable<WebhookDeploymentStatusCreatedWorkflowRun?> workflowRun;
 
@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-  if (workflow != null) 'workflow': workflow?.toJson(),
+  if (workflow.isPresent) 'workflow': workflow.value?.toJson(),
   if (workflowRun.isPresent) 'workflow_run': workflowRun.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('deployment_status') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, Omittable<WebhookDeploymentStatusCreatedCheckRun?>? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, Omittable<WebhookDeploymentStatusCreatedWorkflowRun?>? workflowRun, }) { return WebhookDeploymentStatusCreated(
+WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, Omittable<WebhookDeploymentStatusCreatedCheckRun?>? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, Omittable<WebhooksWorkflow?>? workflow, Omittable<WebhookDeploymentStatusCreatedWorkflowRun?>? workflowRun, }) { return WebhookDeploymentStatusCreated(
   action: action ?? this.action,
   checkRun: checkRun ?? this.checkRun,
   deployment: deployment ?? this.deployment,
@@ -69,7 +69,7 @@ WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, Omittable<We
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-  workflow: workflow != null ? workflow() : this.workflow,
+  workflow: workflow ?? this.workflow,
   workflowRun: workflowRun ?? this.workflowRun,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

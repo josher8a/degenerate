@@ -122,13 +122,9 @@ String? get location;
 /// Shared by all variants of this union.
 String? get email;
 /// Shared by all variants of this union.
-String? get notificationEmail;
-/// Shared by all variants of this union.
 bool? get hireable;
 /// Shared by all variants of this union.
 String? get bio;
-/// Shared by all variants of this union.
-String? get twitterUsername;
 /// Shared by all variants of this union.
 int get publicRepos;
 /// Shared by all variants of this union.
@@ -263,13 +259,9 @@ UsersGetByUsernameResponsePublic copyWith({String? login, int? id, String? nodeI
 
 @override String? get email => publicUser.email;
 
-@override String? get notificationEmail => publicUser.notificationEmail.value;
-
 @override bool? get hireable => publicUser.hireable;
 
 @override String? get bio => publicUser.bio;
-
-@override String? get twitterUsername => publicUser.twitterUsername.value;
 
 @override int get publicRepos => publicUser.publicRepos;
 
@@ -403,13 +395,9 @@ UsersGetByUsernameResponsePrivate copyWith({String? login, int? id, String? node
 
 @override String? get email => privateUser.email;
 
-@override String? get notificationEmail => privateUser.notificationEmail.value;
-
 @override bool? get hireable => privateUser.hireable;
 
 @override String? get bio => privateUser.bio;
-
-@override String? get twitterUsername => privateUser.twitterUsername.value;
 
 @override int get publicRepos => privateUser.publicRepos;
 
@@ -488,13 +476,9 @@ late final String? _location = json['location'] as String?;
 
 late final String? _email = json['email'] as String?;
 
-late final String? _notificationEmail = json['notification_email'] as String?;
-
 late final bool? _hireable = json['hireable'] as bool?;
 
 late final String? _bio = json['bio'] as String?;
-
-late final String? _twitterUsername = json['twitter_username'] as String?;
 
 late final int _publicRepos = (json['public_repos'] as num).toInt();
 
@@ -577,13 +561,9 @@ late final int? _collaborators = json['collaborators'] != null ? (json['collabor
 
 @override String? get email => _email;
 
-@override String? get notificationEmail => _notificationEmail;
-
 @override bool? get hireable => _hireable;
 
 @override String? get bio => _bio;
-
-@override String? get twitterUsername => _twitterUsername;
 
 @override int get publicRepos => _publicRepos;
 

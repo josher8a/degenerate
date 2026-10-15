@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OpenEnumsResponseUsageRequestOnlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OpenEnumsResponseUsageExplicitlyOpenResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OpenEnumsResponseUsageBothRequestAndResponseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -86,7 +86,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OpenEnumsResponseUsageResponseOnlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

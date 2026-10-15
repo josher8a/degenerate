@@ -70,10 +70,10 @@ factory RealtimeTurnDetection.fromJson(Map<String, dynamic> json) { return switc
 }; }
 
 /// Build the `ServerVad` variant.
-factory RealtimeTurnDetection.serverVad({double? threshold, int? prefixPaddingMs, int? silenceDurationMs, bool createResponse = true, bool interruptResponse = true, Omittable<int?> idleTimeoutMs = const Omittable.absent(), }) { return RealtimeTurnDetectionServerVad(ServerVad(type: 'ServerVad', threshold: threshold, prefixPaddingMs: prefixPaddingMs, silenceDurationMs: silenceDurationMs, createResponse: createResponse, interruptResponse: interruptResponse, idleTimeoutMs: idleTimeoutMs)); }
+factory RealtimeTurnDetection.serverVad({double? threshold, int? prefixPaddingMs, int? silenceDurationMs, bool? createResponse, bool? interruptResponse, Omittable<int?> idleTimeoutMs = const Omittable.absent(), }) { return RealtimeTurnDetectionServerVad(ServerVad(type: 'ServerVad', threshold: threshold, prefixPaddingMs: prefixPaddingMs, silenceDurationMs: silenceDurationMs, createResponse: createResponse, interruptResponse: interruptResponse, idleTimeoutMs: idleTimeoutMs)); }
 
 /// Build the `SemanticVad` variant.
-factory RealtimeTurnDetection.semanticVad({Eagerness eagerness = Eagerness.auto, bool createResponse = true, bool interruptResponse = true, }) { return RealtimeTurnDetectionSemanticVad(SemanticVad(type: 'SemanticVad', eagerness: eagerness, createResponse: createResponse, interruptResponse: interruptResponse)); }
+factory RealtimeTurnDetection.semanticVad({Eagerness? eagerness, bool? createResponse, bool? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(SemanticVad(type: 'SemanticVad', eagerness: eagerness, createResponse: createResponse, interruptResponse: interruptResponse)); }
 
 /// The discriminator value identifying this variant.
 RealtimeTurnDetectionType get type;
@@ -101,7 +101,7 @@ final ServerVad serverVad;
 
 @override Map<String, dynamic> toJson() => {...serverVad.toJson(), 'type': type.toJson()};
 
-RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
+RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool? Function()? createResponse, bool? Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
   threshold: threshold,
   prefixPaddingMs: prefixPaddingMs,
   silenceDurationMs: silenceDurationMs,
@@ -131,7 +131,7 @@ final SemanticVad semanticVad;
 
 @override Map<String, dynamic> toJson() => {...semanticVad.toJson(), 'type': type.toJson()};
 
-RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(semanticVad.copyWith(
+RealtimeTurnDetectionSemanticVad copyWith({Eagerness? Function()? eagerness, bool? Function()? createResponse, bool? Function()? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(semanticVad.copyWith(
   eagerness: eagerness,
   createResponse: createResponse,
   interruptResponse: interruptResponse,

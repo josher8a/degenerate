@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IamAccount
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_account/iam_account_settings.dart';import 'package:pub_cloudflare/models/iam_account/managed_by.dart';import 'package:pub_cloudflare/models/iam_account_type.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';@immutable final class IamAccount {const IamAccount({required this.id, required this.name, required this.type, this.createdOn, this.managedBy, this.settings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_account/iam_account_managed_by.dart';import 'package:pub_cloudflare/models/iam_account_request/iam_account_request_settings.dart';import 'package:pub_cloudflare/models/iam_account_type.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';@immutable final class IamAccount {const IamAccount({required this.id, required this.name, required this.type, this.createdOn, this.managedBy, this.settings, });
 
 factory IamAccount.fromJson(Map<String, dynamic> json) { return IamAccount(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),
-  managedBy: json['managed_by'] != null ? ManagedBy.fromJson(json['managed_by'] as Map<String, dynamic>) : null,
+  managedBy: json['managed_by'] != null ? IamAccountManagedBy.fromJson(json['managed_by'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-  settings: json['settings'] != null ? IamAccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  settings: json['settings'] != null ? IamAccountRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? IamAccountType.fromJson(json['type'] as dynamic) : null,
 ); }
 
@@ -20,7 +20,7 @@ final DateTime? createdOn;
 final IamCommonComponentsSchemasIdentifier id;
 
 /// Parent container details
-final ManagedBy? managedBy;
+final IamAccountManagedBy? managedBy;
 
 /// Account name
 /// 
@@ -28,7 +28,7 @@ final ManagedBy? managedBy;
 final String name;
 
 /// Account settings
-final IamAccountSettings? settings;
+final IamAccountRequestSettings? settings;
 
 final IamAccountType? type;
 
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 List<String> validate() { final errors = <String>[];
 if (name.runes.length > 100) { errors.add('name: length must be <= 100'); }
 return errors; } 
-IamAccount copyWith({DateTime? Function()? createdOn, IamCommonComponentsSchemasIdentifier? id, ManagedBy? Function()? managedBy, String? name, IamAccountSettings? Function()? settings, IamAccountType? Function()? type, }) { return IamAccount(
+IamAccount copyWith({DateTime? Function()? createdOn, IamCommonComponentsSchemasIdentifier? id, IamAccountManagedBy? Function()? managedBy, String? name, IamAccountRequestSettings? Function()? settings, IamAccountType? Function()? type, }) { return IamAccount(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id ?? this.id,
   managedBy: managedBy != null ? managedBy() : this.managedBy,

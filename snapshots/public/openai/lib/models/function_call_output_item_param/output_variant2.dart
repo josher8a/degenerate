@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionCallOutputItemParam (inline: Output > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';sealed class OutputVariant2Type {const OutputVariant2Type();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';sealed class OutputVariant2Type {const OutputVariant2Type();
 
 factory OutputVariant2Type.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
@@ -80,13 +80,13 @@ factory OutputVariant2.fromJson(Map<String, dynamic> json) { return switch (json
 }; }
 
 /// Build the `input_text` variant.
-factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(text: text)); }
+factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
 
 /// Build the `input_image` variant.
-factory OutputVariant2.inputImage({Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), Omittable<DetailEnum?> detail = const Omittable.absent(), }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory OutputVariant2.inputImage({Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), Omittable<DetailEnum?> detail = const Omittable.absent(), }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(type: InputImageContentParamAutoParamType.fromJson('input_image'), imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory OutputVariant2.inputFile({Omittable<String?> fileId = const Omittable.absent(), Omittable<String?> filename = const Omittable.absent(), Omittable<String?> fileData = const Omittable.absent(), Omittable<String?> fileUrl = const Omittable.absent(), FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory OutputVariant2.inputFile({Omittable<String?> fileId = const Omittable.absent(), Omittable<String?> filename = const Omittable.absent(), Omittable<String?> fileData = const Omittable.absent(), Omittable<String?> fileUrl = const Omittable.absent(), FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(type: InputFileContentParamType.fromJson('input_file'), fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 OutputVariant2Type get type;

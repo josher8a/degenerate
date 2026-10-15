@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
@@ -55,7 +55,8 @@ final request = ApiRequest(
       ApiMultipartField.text('prompt', prompt$),
     if (body.responseFormat case final responseFormat$?)
       ApiMultipartField.text('response_format', responseFormat$.toJson()),
-    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.temperature case final temperature$?)
+      ApiMultipartField.text('temperature', temperature$.toString()),
     if (body.include case final include$?)
       ApiMultipartField.text('include', include$.toString()),
     if (body.timestampGranularities case final timestampGranularities$?)
@@ -73,7 +74,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
@@ -94,14 +95,16 @@ final request = ApiRequest(
     ApiMultipartField.text('model', body.model.toString()),
     if (body.prompt case final prompt$?)
       ApiMultipartField.text('prompt', prompt$),
-    ApiMultipartField.text('response_format', body.responseFormat.toJson()),
-    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.responseFormat case final responseFormat$?)
+      ApiMultipartField.text('response_format', responseFormat$.toJson()),
+    if (body.temperature case final temperature$?)
+      ApiMultipartField.text('temperature', temperature$.toString()),
   ],
   contentType: 'multipart/form-data',
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
@@ -136,7 +139,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return VoiceConsentListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -166,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -190,7 +193,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -216,7 +219,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -240,7 +243,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return VoiceConsentDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -270,7 +273,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return VoiceResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -323,7 +326,8 @@ final request = ApiRequest(
       ApiMultipartField.text('prompt', prompt$),
     if (body.responseFormat case final responseFormat$?)
       ApiMultipartField.text('response_format', responseFormat$.toJson()),
-    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.temperature case final temperature$?)
+      ApiMultipartField.text('temperature', temperature$.toString()),
     if (body.include case final include$?)
       ApiMultipartField.text('include', include$.toString()),
     if (body.timestampGranularities case final timestampGranularities$?)

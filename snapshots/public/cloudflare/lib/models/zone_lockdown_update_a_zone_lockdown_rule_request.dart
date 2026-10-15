@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZoneLockdownUpdateAZoneLockdownRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_configurations2.dart';import 'package:pub_cloudflare/models/firewall_schemas_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_ip_configuration.dart';@immutable final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_configurations2.dart';@immutable final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
 
 factory ZoneLockdownUpdateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic> json) { return ZoneLockdownUpdateAZoneLockdownRuleRequest(
-  configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),
+  configurations: (json['configurations'] as List<dynamic>).map(FirewallConfigurations2.fromJson).toList(),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 

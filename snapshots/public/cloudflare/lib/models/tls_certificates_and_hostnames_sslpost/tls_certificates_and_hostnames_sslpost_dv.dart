@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TlsCertificatesAndHostnamesSslpost (inline: Dv)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';@immutable final class TlsCertificatesAndHostnamesSslpostDv {const TlsCertificatesAndHostnamesSslpostDv({this.bundleMethod = BundleMethod.ubiquitous, this.certificateAuthority, this.cloudflareBranding, this.customCertBundle, this.customCertificate, this.customKey, this.method, this.settings, this.type, this.wildcard, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';@immutable final class TlsCertificatesAndHostnamesSslpostDv {const TlsCertificatesAndHostnamesSslpostDv({this.bundleMethod, this.certificateAuthority, this.cloudflareBranding, this.customCertBundle, this.customCertificate, this.customKey, this.method, this.settings, this.type, this.wildcard, });
 
 factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslpostDv(
-  bundleMethod: json.containsKey('bundle_method') ? BundleMethod.fromJson(json['bundle_method'] as String) : BundleMethod.ubiquitous,
+  bundleMethod: json['bundle_method'] != null ? BundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   cloudflareBranding: json['cloudflare_branding'] as bool?,
   customCertBundle: (json['custom_cert_bundle'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCustomCertAndKey.fromJson(e as Map<String, dynamic>)).toList(),
@@ -19,7 +19,7 @@ factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json)
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 /// 
 /// Example: `'ubiquitous'`
-final BundleMethod bundleMethod;
+final BundleMethod? bundleMethod;
 
 /// The Certificate Authority that will issue the certificate
 final TlsCertificatesAndHostnamesCertificateAuthority? certificateAuthority;
@@ -91,8 +91,11 @@ final DvType? type;
 /// Example: `false`
 final bool? wildcard;
 
+/// The value of `bundleMethod`, or its schema default when absent.
+BundleMethod get bundleMethodOrDefault => bundleMethod ?? BundleMethod.fromJson('ubiquitous');
+
 Map<String, dynamic> toJson() { return {
-  'bundle_method': bundleMethod.toJson(),
+  if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'cloudflare_branding': ?cloudflareBranding,
   if (customCertBundle != null) 'custom_cert_bundle': customCertBundle?.map((e) => e.toJson()).toList(),
@@ -112,7 +115,7 @@ if (customCertBundle$ != null) {
   if (customCertBundle$.length > 2) { errors.add('customCertBundle: must have <= 2 items'); }
 }
 return errors; } 
-TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, bool? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey>? Function()? customCertBundle, String? Function()? customCertificate, String? Function()? customKey, DvMethod? Function()? method, TlsCertificatesAndHostnamesSslsettings? Function()? settings, DvType? Function()? type, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(
+TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, bool? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey>? Function()? customCertBundle, String? Function()? customCertificate, String? Function()? customKey, DvMethod? Function()? method, TlsCertificatesAndHostnamesSslsettings? Function()? settings, DvType? Function()? type, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,

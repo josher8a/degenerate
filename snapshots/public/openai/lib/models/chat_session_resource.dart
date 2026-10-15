@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitS
 ///   }
 /// }
 /// ```
-@immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, this.object = ChatSessionResourceObject.chatkitSession, });
+@immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.object, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, });
 
 factory ChatSessionResource.fromJson(Map<String, dynamic> json) { return ChatSessionResource(
   id: json['id'] as String,

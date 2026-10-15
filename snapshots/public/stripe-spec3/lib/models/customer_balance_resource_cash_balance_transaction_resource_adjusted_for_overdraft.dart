@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft/linked_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft/linked_transaction.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {const CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft({required this.balanceTransaction, required this.linkedTransaction, });
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
-  balanceTransaction: OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),),
-  linkedTransaction: OneOf2.parse(json['linked_transaction'], fromA: (v) => v as String, fromB: (v) => CustomerCashBalanceTransaction.fromJson(v as Map<String, dynamic>),),
+  balanceTransaction: ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']),
+  linkedTransaction: LinkedTransaction.fromJson(json['linked_transaction']),
 ); }
 
 /// The [Balance Transaction](https://docs.stripe.com/api/balance_transactions/object) that corresponds to funds taken out of your Stripe balance.

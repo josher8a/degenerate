@@ -38,7 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListApplicationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -92,7 +92,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountApplication.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -111,7 +111,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountApplication.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -165,7 +165,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountApplication.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -184,7 +184,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

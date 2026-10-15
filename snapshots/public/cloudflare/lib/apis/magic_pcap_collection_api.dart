@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicPcapCollectionApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_add_buckets_for_full_packet_captures_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_create_pcap_request_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_get_pcap_request_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_list_packet_capture_requests_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_list_pca_ps_bucket_ownership_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_stop_full_pcap_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_validate_buckets_for_full_packet_captures_error.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_identifier.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_collection_response/magic_visibility_pcaps_pcaps_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_request.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_response.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_request_pcap.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_response_full.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_response_simple.dart';/// MagicPcapCollectionApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_add_buckets_for_full_packet_captures_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_create_pcap_request_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_get_pcap_request_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_list_packet_capture_requests_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_list_pca_ps_bucket_ownership_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_stop_full_pcap_error.dart';import 'package:pub_cloudflare/models/errors/magic_pcap_collection_validate_buckets_for_full_packet_captures_error.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_identifier.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_collection_response/magic_visibility_pcaps_pcaps_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_request.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_response.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_request_pcap.dart';/// MagicPcapCollectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,11 +23,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map(MagicVisibilityPcapsPcapsCollectionResponseResult.fromJson).toList();
   },
   onError: MagicPcapCollectionListPacketCaptureRequestsError.fromResponse,
 );
@@ -48,11 +48,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),);
+    return MagicVisibilityPcapsPcapsCollectionResponseResult.fromJson(json['result']);
   },
   onError: MagicPcapCollectionCreatePcapRequestError.fromResponse,
 );
@@ -71,11 +71,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),);
+    return MagicVisibilityPcapsPcapsCollectionResponseResult.fromJson(json['result']);
   },
   onError: MagicPcapCollectionGetPcapRequestError.fromResponse,
 );
@@ -94,7 +94,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -113,7 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: MagicPcapCollectionStopFullPcapError.fromResponse,
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -181,7 +181,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -202,7 +202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

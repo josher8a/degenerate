@@ -2,17 +2,17 @@
 // Source: #/components/schemas/ZonesMaxUpload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_max_upload_value.dart';/// Maximum size of an allowable upload.
-@immutable final class ZonesMaxUpload {const ZonesMaxUpload({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), });
+@immutable final class ZonesMaxUpload {const ZonesMaxUpload({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
 factory ZonesMaxUpload.fromJson(Map<String, dynamic> json) { return ZonesMaxUpload(
-  editable: json.containsKey('editable') ? json['editable'] as bool : true,
+  editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesMaxUploadValue.fromJson((json['value'] as num).toInt()),
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-final bool editable;
+final bool? editable;
 
 /// identifier of the zone setting.
 /// 
@@ -26,15 +26,18 @@ final Omittable<DateTime?> modifiedOn;
 
 final ZonesMaxUploadValue value;
 
+/// The value of `editable`, or its schema default when absent.
+bool get editableOrDefault => editable ?? true;
+
 Map<String, dynamic> toJson() { return {
-  'editable': editable,
+  'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZonesMaxUpload copyWith({bool Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesMaxUploadValue? value, }) { return ZonesMaxUpload(
+ZonesMaxUpload copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesMaxUploadValue? value, }) { return ZonesMaxUpload(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

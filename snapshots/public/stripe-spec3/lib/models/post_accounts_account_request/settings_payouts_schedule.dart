@@ -146,7 +146,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 @immutable final class SettingsPayoutsSchedule {const SettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
 factory SettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return SettingsPayoutsSchedule(
-  delayDays: json['delay_days'] != null ? OneOf2.parse(json['delay_days'], fromA: (v) => DelayDaysVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  delayDays: json['delay_days'] != null ? DelayDays.fromJson(json['delay_days']) : null,
   interval: json['interval'] != null ? ScheduleInterval.fromJson(json['interval'] as String) : null,
   monthlyAnchor: json['monthly_anchor'] != null ? (json['monthly_anchor'] as num).toInt() : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigCreateGatewayRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/log_management_strategy.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/rate_limiting_technique.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/workers_ai_billing_mode.dart';@immutable final class AigConfigCreateGatewayRequest {const AigConfigCreateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.id, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.workersAiBillingMode = WorkersAiBillingMode.postpaid, this.zdr, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/log_management_strategy.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/rate_limiting_technique.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/workers_ai_billing_mode.dart';@immutable final class AigConfigCreateGatewayRequest {const AigConfigCreateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.id, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.workersAiBillingMode, this.zdr, });
 
 factory AigConfigCreateGatewayRequest.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayRequest(
   authentication: json['authentication'] as bool?,
@@ -16,7 +16,7 @@ factory AigConfigCreateGatewayRequest.fromJson(Map<String, dynamic> json) { retu
   rateLimitingInterval: json['rate_limiting_interval'] != null ? (json['rate_limiting_interval'] as num).toInt() : null,
   rateLimitingLimit: json['rate_limiting_limit'] != null ? (json['rate_limiting_limit'] as num).toInt() : null,
   rateLimitingTechnique: RateLimitingTechnique.fromJson(json['rate_limiting_technique'] as String),
-  workersAiBillingMode: json.containsKey('workers_ai_billing_mode') ? WorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : WorkersAiBillingMode.postpaid,
+  workersAiBillingMode: json['workers_ai_billing_mode'] != null ? WorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : null,
   zdr: json['zdr'] as bool?,
 ); }
 
@@ -48,9 +48,12 @@ final int? rateLimitingLimit;
 final RateLimitingTechnique rateLimitingTechnique;
 
 /// Controls how Workers AI inference calls routed through this gateway are billed
-final WorkersAiBillingMode workersAiBillingMode;
+final WorkersAiBillingMode? workersAiBillingMode;
 
 final bool? zdr;
+
+/// The value of `workersAiBillingMode`, or its schema default when absent.
+WorkersAiBillingMode get workersAiBillingModeOrDefault => workersAiBillingMode ?? WorkersAiBillingMode.fromJson('postpaid');
 
 Map<String, dynamic> toJson() { return {
   'authentication': ?authentication,
@@ -65,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'rate_limiting_interval': rateLimitingInterval,
   'rate_limiting_limit': rateLimitingLimit,
   'rate_limiting_technique': rateLimitingTechnique.toJson(),
-  'workers_ai_billing_mode': workersAiBillingMode.toJson(),
+  if (workersAiBillingMode != null) 'workers_ai_billing_mode': workersAiBillingMode?.toJson(),
   'zdr': ?zdr,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
@@ -103,7 +106,7 @@ if (rateLimitingLimit$ != null) {
   if (rateLimitingLimit$ < 0) { errors.add('rateLimitingLimit: must be >= 0'); }
 }
 return errors; } 
-AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, Omittable<int?>? logManagement, Omittable<LogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, WorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayRequest(
+AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, Omittable<int?>? logManagement, Omittable<LogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, WorkersAiBillingMode? Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayRequest(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,
   cacheTtl: cacheTtl != null ? cacheTtl() : this.cacheTtl,

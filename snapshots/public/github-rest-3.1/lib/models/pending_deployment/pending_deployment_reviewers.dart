@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PendingDeployment (inline: Reviewers)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_reviewer_type.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers_reviewer.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_reviewer_type.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers_reviewer.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
 
 factory PendingDeploymentReviewers.fromJson(Map<String, dynamic> json) { return PendingDeploymentReviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,
-  reviewer: json['reviewer'] != null ? OneOf2.parse(json['reviewer'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Team.fromJson(v as Map<String, dynamic>),) : null,
+  reviewer: json['reviewer'] != null ? PendingDeploymentReviewersReviewer.fromJson(json['reviewer']) : null,
 ); }
 
 /// The type of reviewer.

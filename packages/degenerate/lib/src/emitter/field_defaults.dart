@@ -5,7 +5,6 @@
 library;
 
 import 'package:code_builder/code_builder.dart';
-import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/escaping.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
@@ -21,7 +20,14 @@ Code? fieldDefaultCode(IrField f) {
   if (f.defaultValue == null) return null;
   return switch ((f.defaultValue, f.type)) {
     (Map(isEmpty: true), _) when _isObjectLikeType(f.type) => null,
-    (final String v, IrEnum(:final name)) => Code('$name.${enumValueName(v)}'),
+    // Decode the exact wire value rather than reconstructing a member name:
+    // different values can normalize to the same Dart identifier.
+    (final String v, IrEnum(:final name, valueKind: PrimitiveKind.string)) =>
+      Code('$name.fromJson(${dartStringLiteral(v)})'),
+    (final num v, IrEnum(:final name, valueKind: PrimitiveKind.int)) =>
+      Code('$name.fromJson(${v.toInt()})'),
+    (final num v, IrEnum(:final name, valueKind: PrimitiveKind.double)) =>
+      Code('$name.fromJson(${v.toDouble()})'),
     (final String v, IrPrimitive(kind: PrimitiveKind.string)) => Code(
       dartStringLiteral(v),
     ),
@@ -40,14 +46,18 @@ Code? fieldDefaultCode(IrField f) {
   };
 }
 
-/// Whether [f] has a representable Dart constructor default.
+/// Whether [f] declares a default representable as a Dart constant (its
+/// `<field>OrDefault` getter falls back to it).
+///
+/// Defaults are a reading convenience only: they never change a field's Dart
+/// type, constructor requiredness, or wire presence. An absent defaulted
+/// field stays absent, so a client never sends values the caller didn't set.
 bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;
 
-/// Whether [f] must be a `required` named parameter in the Dart constructor
-/// (required in the spec and no default value to fall back on).
-bool fieldIsRequiredInCtor(IrField f) => f.isRequired && !fieldHasDefault(f);
+/// Whether [f] must be a `required` named parameter in the Dart constructor:
+/// exactly when the spec requires it, default or not.
+bool fieldIsRequiredInCtor(IrField f) => f.isRequired;
 
-/// Whether [f]'s Dart declaration type is nullable (optional without default,
-/// or explicitly nullable in the spec).
-bool fieldIsNullableInDart(IrField f) =>
-    (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
+/// Whether [f]'s Dart declaration type is nullable (optional, or explicitly
+/// nullable in the spec).
+bool fieldIsNullableInDart(IrField f) => !f.isRequired || f.type.isNullable;

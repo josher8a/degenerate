@@ -35,7 +35,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// `GET /incidents/{inc%69dent-id}`
@@ -52,7 +52,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// `HAUNT /animals/{animalId}`
@@ -71,7 +71,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// `PURGE /animals/{animalId}`
@@ -88,7 +88,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// `QUERY /incidents/search`
@@ -107,7 +107,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return ListModel.fromJson(
@@ -131,7 +131,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TypeModel
@@ -171,7 +171,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         // TODO: Unsupported non-JSON response schema Cannot decode application/jsonl response into StringModel

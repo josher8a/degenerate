@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostIssuingCardsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request/post_issuing_cards_request_second_line.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request/post_issuing_cards_request_second_line.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
 sealed class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason();
 
 factory PostIssuingCardsRequestReplacementReason.fromJson(String json) { return switch (json) {
@@ -113,7 +113,7 @@ factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return Pos
   pin: json['pin'] != null ? Pin.fromJson(json['pin'] as Map<String, dynamic>) : null,
   replacementFor: json['replacement_for'] as String?,
   replacementReason: json['replacement_reason'] != null ? PostIssuingCardsRequestReplacementReason.fromJson(json['replacement_reason'] as String) : null,
-  secondLine: json['second_line'] != null ? OneOf2.parse(json['second_line'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  secondLine: json['second_line'] != null ? PostIssuingCardsRequestSecondLine.fromJson(json['second_line']) : null,
   shipping: json['shipping'] != null ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   spendingControls: json['spending_controls'] != null ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? BillingMeterStatus.fromJson(json['status'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomerBalanceTransaction
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject();
 
 factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -282,16 +282,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),
-  checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? OneOf2.parse(json['checkout_session'], fromA: (v) => v as String, fromB: (v) => CheckoutSession.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? CustomerBalanceTransactionCheckoutSession.fromJson(json['checkout_session']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  creditNote: json.containsKey('credit_note') ? Omittable(json['credit_note'] != null ? OneOf2.parse(json['credit_note'], fromA: (v) => v as String, fromB: (v) => CreditNote.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  creditNote: json.containsKey('credit_note') ? Omittable(json['credit_note'] != null ? CustomerBalanceTransactionCreditNote.fromJson(json['credit_note']) : null) : const Omittable.absent(),
   currency: json['currency'] as String,
-  customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
+  customer: BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   endingBalance: (json['ending_balance'] as num).toInt(),
   id: json['id'] as String,
-  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice.fromJson(json['invoice']) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),

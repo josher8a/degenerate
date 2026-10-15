@@ -53,7 +53,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? minimum,
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [DelayDaysVariant1]
-/// - `.b` → [int]
-typedef DelayDays = OneOf2<DelayDaysVariant1,int>;
+@immutable final class DelayDays {/// A value built from one or more typed views (at least one must be present).
+const DelayDays({this.delayDaysVariant1 = const Omittable.absent(), this.$int = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const DelayDays._({required this.rawValue, required this.delayDaysVariant1, required this.$int, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory DelayDays.fromJson(Object? json) { return DelayDays._(
+  rawValue: Omittable(json),
+  delayDaysVariant1: parseAnyOfVariant<DelayDaysVariant1>(json, (value) => DelayDaysVariant1.fromJson(value! as String)),
+  $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `DelayDaysVariant1`, when it matches.
+final Omittable<DelayDaysVariant1> delayDaysVariant1;
+
+/// The payload decoded as `int`, when it matches.
+final Omittable<int> $int;
+
+/// Whether at least one variant matched.
+bool get isValid => delayDaysVariant1.isPresent || $int.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (delayDaysVariant1.isPresent) delayDaysVariant1.value?.toJson(),
+    if ($int.isPresent) $int.value,
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is DelayDays && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'DelayDays(${toJson()})';
+
+ }

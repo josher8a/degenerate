@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';/// A tool call to a computer use tool. See the
 /// [computer use guide](/docs/guides/tools-computer-use) for more information.
 /// 
-@immutable final class ComputerToolCall {const ComputerToolCall({required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.type = 'computer_call', this.action, this.actions, });
+@immutable final class ComputerToolCall {const ComputerToolCall({required this.type, required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.action, this.actions, });
 
 factory ComputerToolCall.fromJson(Map<String, dynamic> json) { return ComputerToolCall(
   type: json['type'] as String,

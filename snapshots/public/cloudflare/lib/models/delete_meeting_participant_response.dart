@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeleteMeetingParticipantResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_meeting_participant_response/delete_meeting_participant_response_data.dart';@immutable final class DeleteMeetingParticipantResponse {const DeleteMeetingParticipantResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_meeting_participant_response/delete_meeting_participant_response_data.dart';@immutable final class DeleteMeetingParticipantResponse {const DeleteMeetingParticipantResponse({required this.success, this.data, });
 
 factory DeleteMeetingParticipantResponse.fromJson(Map<String, dynamic> json) { return DeleteMeetingParticipantResponse(
   data: json['data'] != null ? DeleteMeetingParticipantResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

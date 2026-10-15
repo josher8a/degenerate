@@ -2,7 +2,7 @@
 // Source: #/components/schemas/InputTextContentParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';/// A text input to the model.
-@immutable final class InputTextContentParam {const InputTextContentParam({required this.text, this.type = InputTextContentParamType.inputText, });
+@immutable final class InputTextContentParam {const InputTextContentParam({required this.type, required this.text, });
 
 factory InputTextContentParam.fromJson(Map<String, dynamic> json) { return InputTextContentParam(
   type: InputTextContentParamType.fromJson(json['type'] as String),

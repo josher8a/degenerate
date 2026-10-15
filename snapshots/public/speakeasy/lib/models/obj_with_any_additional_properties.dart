@@ -26,7 +26,7 @@ ObjWithAnyAdditionalProperties copyWith({String? Function()? normalField, Map<St
           normalField == other.normalField &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(normalField, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(normalField, mapHash(additionalProperties));
 
 @override String toString() => 'ObjWithAnyAdditionalProperties(normalField: $normalField, additionalProperties: $additionalProperties)';
 

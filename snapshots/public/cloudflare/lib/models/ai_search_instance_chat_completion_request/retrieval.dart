@@ -150,18 +150,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vector, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Retrieval {const Retrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = KeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
+@immutable final class Retrieval {const Retrieval({this.boostBy, this.contextExpansion, this.filters, this.fusionMethod, this.keywordMatchMode, this.matchThreshold, this.maxNumResults, this.retrievalType, this.returnOnFailure, });
 
 factory Retrieval.fromJson(Map<String, dynamic> json) { return Retrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => BoostBy.fromJson(e as Map<String, dynamic>)).toList(),
-  contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
+  contextExpansion: json['context_expansion'] != null ? (json['context_expansion'] as num).toInt() : null,
   filters: json['filters'] as Map<String, dynamic>?,
   fusionMethod: json['fusion_method'] != null ? RetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
-  keywordMatchMode: json.containsKey('keyword_match_mode') ? KeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : KeywordMatchMode.exactMatch,
-  matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
-  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
+  keywordMatchMode: json['keyword_match_mode'] != null ? KeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : null,
+  matchThreshold: json['match_threshold'] != null ? (json['match_threshold'] as num).toDouble() : null,
+  maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   retrievalType: json['retrieval_type'] != null ? RetrievalType.fromJson(json['retrieval_type'] as String) : null,
-  returnOnFailure: json.containsKey('return_on_failure') ? json['return_on_failure'] as bool : true,
+  returnOnFailure: json['return_on_failure'] as bool?,
 ); }
 
 /// Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to 'asc' for numeric fields, 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
@@ -169,33 +169,48 @@ factory Retrieval.fromJson(Map<String, dynamic> json) { return Retrieval(
 /// Example: `[{direction: desc, field: timestamp}]`
 final List<BoostBy>? boostBy;
 
-final int contextExpansion;
+final int? contextExpansion;
 
 final Map<String,dynamic>? filters;
 
 final RetrievalFusionMethod? fusionMethod;
 
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
-final KeywordMatchMode keywordMatchMode;
+final KeywordMatchMode? keywordMatchMode;
 
-final double matchThreshold;
+final double? matchThreshold;
 
-final int maxNumResults;
+final int? maxNumResults;
 
 final RetrievalType? retrievalType;
 
-final bool returnOnFailure;
+final bool? returnOnFailure;
+
+/// The value of `contextExpansion`, or its schema default when absent.
+int get contextExpansionOrDefault => contextExpansion ?? 0;
+
+/// The value of `keywordMatchMode`, or its schema default when absent.
+KeywordMatchMode get keywordMatchModeOrDefault => keywordMatchMode ?? KeywordMatchMode.fromJson('exact_match');
+
+/// The value of `matchThreshold`, or its schema default when absent.
+double get matchThresholdOrDefault => matchThreshold ?? 0.4;
+
+/// The value of `maxNumResults`, or its schema default when absent.
+int get maxNumResultsOrDefault => maxNumResults ?? 10;
+
+/// The value of `returnOnFailure`, or its schema default when absent.
+bool get returnOnFailureOrDefault => returnOnFailure ?? true;
 
 Map<String, dynamic> toJson() { return {
   if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
-  'context_expansion': contextExpansion,
+  'context_expansion': ?contextExpansion,
   'filters': ?filters,
   if (fusionMethod != null) 'fusion_method': fusionMethod?.toJson(),
-  'keyword_match_mode': keywordMatchMode.toJson(),
-  'match_threshold': matchThreshold,
-  'max_num_results': maxNumResults,
+  if (keywordMatchMode != null) 'keyword_match_mode': keywordMatchMode?.toJson(),
+  'match_threshold': ?matchThreshold,
+  'max_num_results': ?maxNumResults,
   if (retrievalType != null) 'retrieval_type': retrievalType?.toJson(),
-  'return_on_failure': returnOnFailure,
+  'return_on_failure': ?returnOnFailure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
@@ -204,14 +219,23 @@ final boostBy$ = boostBy;
 if (boostBy$ != null) {
   if (boostBy$.length > 3) { errors.add('boostBy: must have <= 3 items'); }
 }
-if (contextExpansion < 0) { errors.add('contextExpansion: must be >= 0'); }
-if (contextExpansion > 3) { errors.add('contextExpansion: must be <= 3'); }
-if (matchThreshold < 0) { errors.add('matchThreshold: must be >= 0'); }
-if (matchThreshold > 1) { errors.add('matchThreshold: must be <= 1'); }
-if (maxNumResults < 1) { errors.add('maxNumResults: must be >= 1'); }
-if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }
+final contextExpansion$ = contextExpansion;
+if (contextExpansion$ != null) {
+  if (contextExpansion$ < 0) { errors.add('contextExpansion: must be >= 0'); }
+  if (contextExpansion$ > 3) { errors.add('contextExpansion: must be <= 3'); }
+}
+final matchThreshold$ = matchThreshold;
+if (matchThreshold$ != null) {
+  if (matchThreshold$ < 0) { errors.add('matchThreshold: must be >= 0'); }
+  if (matchThreshold$ > 1) { errors.add('matchThreshold: must be <= 1'); }
+}
+final maxNumResults$ = maxNumResults;
+if (maxNumResults$ != null) {
+  if (maxNumResults$ < 1) { errors.add('maxNumResults: must be >= 1'); }
+  if (maxNumResults$ > 50) { errors.add('maxNumResults: must be <= 50'); }
+}
 return errors; } 
-Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic>? Function()? filters, RetrievalFusionMethod? Function()? fusionMethod, KeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, RetrievalType? Function()? retrievalType, bool Function()? returnOnFailure, }) { return Retrieval(
+Retrieval copyWith({List<BoostBy>? Function()? boostBy, int? Function()? contextExpansion, Map<String, dynamic>? Function()? filters, RetrievalFusionMethod? Function()? fusionMethod, KeywordMatchMode? Function()? keywordMatchMode, double? Function()? matchThreshold, int? Function()? maxNumResults, RetrievalType? Function()? retrievalType, bool? Function()? returnOnFailure, }) { return Retrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
   filters: filters != null ? filters() : this.filters,

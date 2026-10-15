@@ -261,16 +261,16 @@ factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
 }; }
 
 /// Build the `function` variant.
-factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, Omittable<String?> description = const Omittable.absent(), bool? deferLoading, }) { return ToolFunction(FunctionTool(name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
+factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, Omittable<String?> description = const Omittable.absent(), bool? deferLoading, }) { return ToolFunction(FunctionTool(type: 'function', name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
 
 /// Build the `file_search` variant.
-factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Omittable<Filters?> filters = const Omittable.absent(), }) { return ToolFileSearch(FileSearchTool(vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters)); }
+factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Omittable<Filters?> filters = const Omittable.absent(), }) { return ToolFileSearch(FileSearchTool(type: 'file_search', vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters)); }
 
 /// Build the `computer_use_preview` variant.
-factory Tool.computerUsePreview({required ComputerEnvironment environment, required int displayWidth, required int displayHeight, }) { return ToolComputerUsePreview(ComputerUsePreviewTool(environment: environment, displayWidth: displayWidth, displayHeight: displayHeight)); }
+factory Tool.computerUsePreview({required ComputerEnvironment environment, required int displayWidth, required int displayHeight, }) { return ToolComputerUsePreview(ComputerUsePreviewTool(type: 'computer_use_preview', environment: environment, displayWidth: displayWidth, displayHeight: displayHeight)); }
 
 /// Build the `web_search` variant.
-factory Tool.webSearch({Omittable<WebSearchToolFilters?> filters = const Omittable.absent(), WebSearchApproximateLocation? userLocation, WebSearchToolSearchContextSize searchContextSize = WebSearchToolSearchContextSize.medium, }) { return ToolWebSearch(WebSearchTool(filters: filters, userLocation: userLocation, searchContextSize: searchContextSize)); }
+factory Tool.webSearch({Omittable<WebSearchToolFilters?> filters = const Omittable.absent(), Omittable<WebSearchApproximateLocation?> userLocation = const Omittable.absent(), WebSearchToolSearchContextSize? searchContextSize, }) { return ToolWebSearch(WebSearchTool(type: 'web_search', filters: filters, userLocation: userLocation, searchContextSize: searchContextSize)); }
 
 /// Build the `mcp` variant.
 factory Tool.mcp({required String serverLabel, String? serverUrl, ConnectorId? connectorId, String? authorization, String? serverDescription, Omittable<Map<String,String>?> headers = const Omittable.absent(), Omittable<AllowedTools?> allowedTools = const Omittable.absent(), Omittable<RequireApproval?> requireApproval = const Omittable.absent(), bool? deferLoading, }) { return ToolMcp(McpTool(type: 'mcp', serverLabel: serverLabel, serverUrl: serverUrl, connectorId: connectorId, authorization: authorization, serverDescription: serverDescription, headers: headers, allowedTools: allowedTools, requireApproval: requireApproval, deferLoading: deferLoading)); }
@@ -279,22 +279,22 @@ factory Tool.mcp({required String serverLabel, String? serverUrl, ConnectorId? c
 factory Tool.codeInterpreter({required CodeInterpreterToolContainer container}) { return ToolCodeInterpreter(CodeInterpreterTool(type: 'code_interpreter', container: container)); }
 
 /// Build the `image_generation` variant.
-factory Tool.imageGeneration({ImageGenToolModel? model, ImageGenToolQuality quality = ImageGenToolQuality.auto, ImageGenToolSize size = ImageGenToolSize.auto, ImageGenToolOutputFormat outputFormat = ImageGenToolOutputFormat.png, int outputCompression = 100, ImageGenToolModeration moderation = ImageGenToolModeration.auto, ImageGenToolBackground background = ImageGenToolBackground.auto, Omittable<InputFidelity?> inputFidelity = const Omittable.absent(), InputImageMask? inputImageMask, int partialImages = 0, ImageGenActionEnum? action, }) { return ToolImageGeneration(ImageGenTool(type: 'image_generation', model: model, quality: quality, size: size, outputFormat: outputFormat, outputCompression: outputCompression, moderation: moderation, background: background, inputFidelity: inputFidelity, inputImageMask: inputImageMask, partialImages: partialImages, action: action)); }
+factory Tool.imageGeneration({ImageGenToolModel? model, ImageGenToolQuality? quality, ImageGenToolSize? size, ImageGenToolOutputFormat? outputFormat, int? outputCompression, ImageGenToolModeration? moderation, ImageGenToolBackground? background, Omittable<InputFidelity?> inputFidelity = const Omittable.absent(), InputImageMask? inputImageMask, int? partialImages, ImageGenActionEnum? action, }) { return ToolImageGeneration(ImageGenTool(type: 'image_generation', model: model, quality: quality, size: size, outputFormat: outputFormat, outputCompression: outputCompression, moderation: moderation, background: background, inputFidelity: inputFidelity, inputImageMask: inputImageMask, partialImages: partialImages, action: action)); }
 
 /// Build the `shell` variant.
-factory Tool.shell({Omittable<FunctionShellToolParamEnvironment?> environment = const Omittable.absent()}) { return ToolShell(FunctionShellToolParam(environment: environment)); }
+factory Tool.shell({Omittable<FunctionShellToolParamEnvironment?> environment = const Omittable.absent()}) { return ToolShell(FunctionShellToolParam(type: 'shell', environment: environment)); }
 
 /// Build the `custom` variant.
-factory Tool.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return ToolCustom(CustomToolParam(name: name, description: description, format: format, deferLoading: deferLoading)); }
+factory Tool.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return ToolCustom(CustomToolParam(type: 'custom', name: name, description: description, format: format, deferLoading: deferLoading)); }
 
 /// Build the `namespace` variant.
-factory Tool.namespace({required String name, required String description, required List<NamespaceToolParamTools> tools, }) { return ToolNamespace(NamespaceToolParam(name: name, description: description, tools: tools)); }
+factory Tool.namespace({required String name, required String description, required List<NamespaceToolParamTools> tools, }) { return ToolNamespace(NamespaceToolParam(type: 'namespace', name: name, description: description, tools: tools)); }
 
 /// Build the `tool_search` variant.
-factory Tool.toolSearch({ToolSearchExecutionType? execution, Omittable<String?> description = const Omittable.absent(), Omittable<EmptyModelParam?> parameters = const Omittable.absent(), }) { return ToolToolSearch(ToolSearchToolParam(execution: execution, description: description, parameters: parameters)); }
+factory Tool.toolSearch({ToolSearchExecutionType? execution, Omittable<String?> description = const Omittable.absent(), Omittable<EmptyModelParam?> parameters = const Omittable.absent(), }) { return ToolToolSearch(ToolSearchToolParam(type: 'tool_search', execution: execution, description: description, parameters: parameters)); }
 
 /// Build the `web_search_preview` variant.
-factory Tool.webSearchPreview({Omittable<ApproximateLocation?> userLocation = const Omittable.absent(), SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) { return ToolWebSearchPreview(WebSearchPreviewTool(userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes)); }
+factory Tool.webSearchPreview({Omittable<ApproximateLocation?> userLocation = const Omittable.absent(), SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) { return ToolWebSearchPreview(WebSearchPreviewTool(type: 'web_search_preview', userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes)); }
 
 /// The discriminator value identifying this variant.
 ToolType get type;
@@ -422,7 +422,7 @@ final WebSearchTool webSearchTool;
 
 @override Map<String, dynamic> toJson() => {...webSearchTool.toJson(), 'type': type.toJson()};
 
-ToolWebSearch copyWith({Omittable<WebSearchToolFilters?>? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
+ToolWebSearch copyWith({Omittable<WebSearchToolFilters?>? filters, Omittable<WebSearchApproximateLocation?>? userLocation, WebSearchToolSearchContextSize? Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
   filters: filters,
   userLocation: userLocation,
   searchContextSize: searchContextSize,
@@ -495,7 +495,7 @@ final ImageGenTool imageGenTool;
 
 @override Map<String, dynamic> toJson() => {...imageGenTool.toJson(), 'type': type.toJson()};
 
-ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageGenToolQuality Function()? quality, ImageGenToolSize Function()? size, ImageGenToolOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageGenToolBackground Function()? background, Omittable<InputFidelity?>? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
+ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageGenToolQuality? Function()? quality, ImageGenToolSize? Function()? size, ImageGenToolOutputFormat? Function()? outputFormat, int? Function()? outputCompression, ImageGenToolModeration? Function()? moderation, ImageGenToolBackground? Function()? background, Omittable<InputFidelity?>? inputFidelity, InputImageMask? Function()? inputImageMask, int? Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
   model: model,
   quality: quality,
   size: size,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SchemaValidationApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/discovery_retrieve_discovered_operations_on_a_zone_error.dart';import 'package:pub_cloudflare/models/errors/schema_validation_create_schema_error.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_delete_schema_response/schema_validation_delete_schema_response_result.dart';import 'package:pub_cloudflare/models/schema_validation_edit_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_feature.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_operation_status.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_basic_operation.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_operation.dart';import 'package:pub_cloudflare/models/shield_public_schema.dart';import 'package:pub_cloudflare/models/shield_schema_hosts.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// SchemaValidationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/discovery_retrieve_discovered_operations_on_a_zone_error.dart';import 'package:pub_cloudflare/models/errors/schema_validation_create_schema_error.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_delete_schema_response/schema_validation_delete_schema_response_result.dart';import 'package:pub_cloudflare/models/schema_validation_edit_schema_request.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_feature.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_operation_status.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_public_schema.dart';import 'package:pub_cloudflare/models/shield_schema_hosts.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// SchemaValidationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -158,7 +158,7 @@ return execute(
 /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}/operations`
-Future<ApiResult<List<SchemaValidationExtractOperationsFromSchemaResponseResult>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationExtractOperationsFromSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SchemaValidationExtractOperationsFromSchemaResponseResult?>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationExtractOperationsFromSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (feature != null) {
 for (final item in feature) {
@@ -199,11 +199,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldOperation.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldBasicOperation.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => e == null ? null : SchemaValidationExtractOperationsFromSchemaResponseResult.fromJson(e)).toList();
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
@@ -233,7 +233,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

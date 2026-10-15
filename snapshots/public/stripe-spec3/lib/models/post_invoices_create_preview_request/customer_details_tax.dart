@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesCreatePreviewRequest (inline: CustomerDetails > Tax)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/ip_address.dart';@immutable final class CustomerDetailsTax {const CustomerDetailsTax({this.ipAddress});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/ip_address.dart';@immutable final class CustomerDetailsTax {const CustomerDetailsTax({this.ipAddress});
 
 factory CustomerDetailsTax.fromJson(Map<String, dynamic> json) { return CustomerDetailsTax(
-  ipAddress: json['ip_address'] != null ? OneOf2.parse(json['ip_address'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  ipAddress: json['ip_address'] != null ? IpAddress.fromJson(json['ip_address']) : null,
 ); }
 
 final IpAddress? ipAddress;

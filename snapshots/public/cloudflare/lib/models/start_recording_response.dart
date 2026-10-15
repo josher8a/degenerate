@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StartRecordingResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_one_recording_response/get_one_recording_response_data.dart';@immutable final class StartRecordingResponse {const StartRecordingResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_one_recording_response/get_one_recording_response_data.dart';@immutable final class StartRecordingResponse {const StartRecordingResponse({required this.success, this.data, });
 
 factory StartRecordingResponse.fromJson(Map<String, dynamic> json) { return StartRecordingResponse(
   data: json['data'] != null ? GetOneRecordingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

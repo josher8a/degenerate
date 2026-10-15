@@ -337,31 +337,31 @@ factory RulesetsRequestRule.fromJson(Map<String, dynamic> json) { return switch 
 factory RulesetsRequestRule.block({required DateTime lastUpdated, required String version, RulesetsBlockRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleBlock(RulesetsBlockRule(action: Omittable('block'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `challenge` variant.
-factory RulesetsRequestRule.challenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleChallenge(RulesetsChallengeRule(action: Omittable('challenge'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
+factory RulesetsRequestRule.challenge({required DateTime lastUpdated, required String version, Map<String,dynamic>? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleChallenge(RulesetsChallengeRule(action: Omittable('challenge'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `compress_response` variant.
 factory RulesetsRequestRule.compressResponse({required DateTime lastUpdated, required String version, RulesetsCompressResponseRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleCompressResponse(RulesetsCompressResponseRule(action: Omittable('compress_response'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `ddos_dynamic` variant.
-factory RulesetsRequestRule.ddosDynamic({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleDdosDynamic(RulesetsDDoSDynamicRule(action: Omittable('ddos_dynamic'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
+factory RulesetsRequestRule.ddosDynamic({required DateTime lastUpdated, required String version, Map<String,dynamic>? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleDdosDynamic(RulesetsDDoSDynamicRule(action: Omittable('ddos_dynamic'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `execute` variant.
 factory RulesetsRequestRule.execute({required DateTime lastUpdated, required String version, RulesetsExecuteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleExecute(RulesetsExecuteRule(action: Omittable('execute'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `force_connection_close` variant.
-factory RulesetsRequestRule.forceConnectionClose({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleForceConnectionClose(RulesetsForceConnectionCloseRule(action: Omittable('force_connection_close'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
+factory RulesetsRequestRule.forceConnectionClose({required DateTime lastUpdated, required String version, Map<String,dynamic>? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleForceConnectionClose(RulesetsForceConnectionCloseRule(action: Omittable('force_connection_close'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `js_challenge` variant.
-factory RulesetsRequestRule.jsChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleJsChallenge(RulesetsJsChallengeRule(action: Omittable('js_challenge'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
+factory RulesetsRequestRule.jsChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic>? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleJsChallenge(RulesetsJsChallengeRule(action: Omittable('js_challenge'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `log` variant.
-factory RulesetsRequestRule.log({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleLog(RulesetsLogRule(action: Omittable('log'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
+factory RulesetsRequestRule.log({required DateTime lastUpdated, required String version, Map<String,dynamic>? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleLog(RulesetsLogRule(action: Omittable('log'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `log_custom_field` variant.
 factory RulesetsRequestRule.logCustomField({required DateTime lastUpdated, required String version, RulesetsLogCustomFieldRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleLogCustomField(RulesetsLogCustomFieldRule(action: Omittable('log_custom_field'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `managed_challenge` variant.
-factory RulesetsRequestRule.managedChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleManagedChallenge(RulesetsManagedChallengeRule(action: Omittable('managed_challenge'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
+factory RulesetsRequestRule.managedChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic>? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleManagedChallenge(RulesetsManagedChallengeRule(action: Omittable('managed_challenge'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// Build the `redirect` variant.
 factory RulesetsRequestRule.redirect({required DateTime lastUpdated, required String version, RulesetsRedirectRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRedirect(RulesetsRedirectRule(action: Omittable('redirect'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
@@ -401,8 +401,6 @@ bool get isUnknown => this is RulesetsRequestRule$Unknown;
 
 /// Shared by all variants of this union.
 List<RulesetsRuleCategory>? get categories;
-/// Shared by all variants of this union.
-dynamic get description;
 /// Shared by all variants of this union.
 RulesetsRuleEnabled? get enabled;
 /// Shared by all variants of this union.
@@ -478,8 +476,6 @@ RulesetsRequestRuleBlock copyWith({RulesetsBlockRuleActionParameters? Function()
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsBlockRule.categories;
 
-@override dynamic get description => rulesetsBlockRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsBlockRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsBlockRule.exposedCredentialCheck;
@@ -509,7 +505,7 @@ final RulesetsChallengeRule rulesetsChallengeRule;
 
 @override Map<String, dynamic> toJson() => {...rulesetsChallengeRule.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleChallenge(rulesetsChallengeRule.copyWith(
+RulesetsRequestRuleChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleChallenge(rulesetsChallengeRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
   description: description,
@@ -531,8 +527,6 @@ RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionPa
 @override String toString() => 'RulesetsRequestRule.challenge($rulesetsChallengeRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsChallengeRule.categories;
-
-@override dynamic get description => rulesetsChallengeRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsChallengeRule.enabled;
 
@@ -586,8 +580,6 @@ RulesetsRequestRuleCompressResponse copyWith({RulesetsCompressResponseRuleAction
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsCompressResponseRule.categories;
 
-@override dynamic get description => rulesetsCompressResponseRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsCompressResponseRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsCompressResponseRule.exposedCredentialCheck;
@@ -617,7 +609,7 @@ final RulesetsDDoSDynamicRule rulesetsDDoSDynamicRule;
 
 @override Map<String, dynamic> toJson() => {...rulesetsDDoSDynamicRule.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleDdosDynamic(rulesetsDDoSDynamicRule.copyWith(
+RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleDdosDynamic(rulesetsDDoSDynamicRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
   description: description,
@@ -639,8 +631,6 @@ RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? action
 @override String toString() => 'RulesetsRequestRule.ddosDynamic($rulesetsDDoSDynamicRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsDDoSDynamicRule.categories;
-
-@override dynamic get description => rulesetsDDoSDynamicRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsDDoSDynamicRule.enabled;
 
@@ -694,8 +684,6 @@ RulesetsRequestRuleExecute copyWith({RulesetsExecuteRuleActionParameters? Functi
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsExecuteRule.categories;
 
-@override dynamic get description => rulesetsExecuteRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsExecuteRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsExecuteRule.exposedCredentialCheck;
@@ -725,7 +713,7 @@ final RulesetsForceConnectionCloseRule rulesetsForceConnectionCloseRule;
 
 @override Map<String, dynamic> toJson() => {...rulesetsForceConnectionCloseRule.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleForceConnectionClose(rulesetsForceConnectionCloseRule.copyWith(
+RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleForceConnectionClose(rulesetsForceConnectionCloseRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
   description: description,
@@ -747,8 +735,6 @@ RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function(
 @override String toString() => 'RulesetsRequestRule.forceConnectionClose($rulesetsForceConnectionCloseRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsForceConnectionCloseRule.categories;
-
-@override dynamic get description => rulesetsForceConnectionCloseRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsForceConnectionCloseRule.enabled;
 
@@ -779,7 +765,7 @@ final RulesetsJsChallengeRule rulesetsJsChallengeRule;
 
 @override Map<String, dynamic> toJson() => {...rulesetsJsChallengeRule.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleJsChallenge(rulesetsJsChallengeRule.copyWith(
+RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleJsChallenge(rulesetsJsChallengeRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
   description: description,
@@ -801,8 +787,6 @@ RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? action
 @override String toString() => 'RulesetsRequestRule.jsChallenge($rulesetsJsChallengeRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsJsChallengeRule.categories;
-
-@override dynamic get description => rulesetsJsChallengeRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsJsChallengeRule.enabled;
 
@@ -833,7 +817,7 @@ final RulesetsLogRule rulesetsLogRule;
 
 @override Map<String, dynamic> toJson() => {...rulesetsLogRule.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLog(rulesetsLogRule.copyWith(
+RulesetsRequestRuleLog copyWith({Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLog(rulesetsLogRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
   description: description,
@@ -855,8 +839,6 @@ RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParamete
 @override String toString() => 'RulesetsRequestRule.log($rulesetsLogRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsLogRule.categories;
-
-@override dynamic get description => rulesetsLogRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsLogRule.enabled;
 
@@ -910,8 +892,6 @@ RulesetsRequestRuleLogCustomField copyWith({RulesetsLogCustomFieldRuleActionPara
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsLogCustomFieldRule.categories;
 
-@override dynamic get description => rulesetsLogCustomFieldRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsLogCustomFieldRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsLogCustomFieldRule.exposedCredentialCheck;
@@ -941,7 +921,7 @@ final RulesetsManagedChallengeRule rulesetsManagedChallengeRule;
 
 @override Map<String, dynamic> toJson() => {...rulesetsManagedChallengeRule.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleManagedChallenge(rulesetsManagedChallengeRule.copyWith(
+RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleManagedChallenge(rulesetsManagedChallengeRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
   description: description,
@@ -963,8 +943,6 @@ RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? a
 @override String toString() => 'RulesetsRequestRule.managedChallenge($rulesetsManagedChallengeRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsManagedChallengeRule.categories;
-
-@override dynamic get description => rulesetsManagedChallengeRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsManagedChallengeRule.enabled;
 
@@ -1018,8 +996,6 @@ RulesetsRequestRuleRedirect copyWith({RulesetsRedirectRuleActionParameters? Func
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRedirectRule.categories;
 
-@override dynamic get description => rulesetsRedirectRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsRedirectRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRedirectRule.exposedCredentialCheck;
@@ -1071,8 +1047,6 @@ RulesetsRequestRuleRewrite copyWith({RulesetsRewriteRuleActionParameters? Functi
 @override String toString() => 'RulesetsRequestRule.rewrite($rulesetsRewriteRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRewriteRule.categories;
-
-@override dynamic get description => rulesetsRewriteRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsRewriteRule.enabled;
 
@@ -1126,8 +1100,6 @@ RulesetsRequestRuleRoute copyWith({RulesetsRouteRuleActionParameters? Function()
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRouteRule.categories;
 
-@override dynamic get description => rulesetsRouteRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsRouteRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRouteRule.exposedCredentialCheck;
@@ -1179,8 +1151,6 @@ RulesetsRequestRuleScore copyWith({RulesetsScoreRuleActionParameters? Function()
 @override String toString() => 'RulesetsRequestRule.score($rulesetsScoreRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsScoreRule.categories;
-
-@override dynamic get description => rulesetsScoreRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsScoreRule.enabled;
 
@@ -1234,8 +1204,6 @@ RulesetsRequestRuleServeError copyWith({RulesetsServeErrorRuleActionParameters? 
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsServeErrorRule.categories;
 
-@override dynamic get description => rulesetsServeErrorRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsServeErrorRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsServeErrorRule.exposedCredentialCheck;
@@ -1287,8 +1255,6 @@ RulesetsRequestRuleSetCacheControl copyWith({RulesetsSetCacheControlRuleActionPa
 @override String toString() => 'RulesetsRequestRule.setCacheControl($rulesetsSetCacheControlRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsSetCacheControlRule.categories;
-
-@override dynamic get description => rulesetsSetCacheControlRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsSetCacheControlRule.enabled;
 
@@ -1342,8 +1308,6 @@ RulesetsRequestRuleSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleAction
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsSetCacheSettingsRule.categories;
 
-@override dynamic get description => rulesetsSetCacheSettingsRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsSetCacheSettingsRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsSetCacheSettingsRule.exposedCredentialCheck;
@@ -1395,8 +1359,6 @@ RulesetsRequestRuleSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParamete
 @override String toString() => 'RulesetsRequestRule.setCacheTags($rulesetsSetCacheTagsRule)';
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsSetCacheTagsRule.categories;
-
-@override dynamic get description => rulesetsSetCacheTagsRule.description.value;
 
 @override RulesetsRuleEnabled? get enabled => rulesetsSetCacheTagsRule.enabled;
 
@@ -1450,8 +1412,6 @@ RulesetsRequestRuleSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Fu
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsSetConfigRule.categories;
 
-@override dynamic get description => rulesetsSetConfigRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsSetConfigRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsSetConfigRule.exposedCredentialCheck;
@@ -1504,8 +1464,6 @@ RulesetsRequestRuleSkip copyWith({RulesetsSkipRuleActionParameters? Function()? 
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsSkipRule.categories;
 
-@override dynamic get description => rulesetsSkipRule.description.value;
-
 @override RulesetsRuleEnabled? get enabled => rulesetsSkipRule.enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsSkipRule.exposedCredentialCheck;
@@ -1532,8 +1490,6 @@ RulesetsRequestRuleSkip copyWith({RulesetsSkipRuleActionParameters? Function()? 
 final Map<String, dynamic> json;
 
 late final List<RulesetsRuleCategory>? _categories = (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList();
-
-late final dynamic _description = json['description'];
 
 late final RulesetsRuleEnabled? _enabled = json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null;
 
@@ -1565,8 +1521,6 @@ late final String _version = json['version'] as String;
 @override String toString() => 'RulesetsRequestRule.unknown($json)';
 
 @override List<RulesetsRuleCategory>? get categories => _categories;
-
-@override dynamic get description => _description;
 
 @override RulesetsRuleEnabled? get enabled => _enabled;
 

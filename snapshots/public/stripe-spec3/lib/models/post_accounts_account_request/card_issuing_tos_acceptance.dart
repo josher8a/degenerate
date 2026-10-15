@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > CardIssuing > TosAcceptance)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/user_agent.dart';@immutable final class CardIssuingTosAcceptance {const CardIssuingTosAcceptance({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/user_agent.dart';@immutable final class CardIssuingTosAcceptance {const CardIssuingTosAcceptance({this.date, this.ip, this.userAgent, });
 
 factory CardIssuingTosAcceptance.fromJson(Map<String, dynamic> json) { return CardIssuingTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null ? OneOf2.parse(json['user_agent'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  userAgent: json['user_agent'] != null ? UserAgent.fromJson(json['user_agent']) : null,
 ); }
 
 final int? date;

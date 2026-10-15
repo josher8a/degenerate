@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TeamMembership
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_state.dart';import 'package:pub_github_rest_3_1/models/team_membership/team_membership_role.dart';/// Team Membership
-@immutable final class TeamMembership {const TeamMembership({required this.url, required this.state, this.role = TeamMembershipRole.member, });
+@immutable final class TeamMembership {const TeamMembership({required this.url, required this.role, required this.state, });
 
 factory TeamMembership.fromJson(Map<String, dynamic> json) { return TeamMembership(
   url: Uri.parse(json['url'] as String),

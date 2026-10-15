@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SubscriptionsResourceSubscriptionInvoiceSettings
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';/// 
 @immutable final class SubscriptionsResourceSubscriptionInvoiceSettings {const SubscriptionsResourceSubscriptionInvoiceSettings({required this.issuer, this.accountTaxIds = const Omittable.absent(), });
 
 factory SubscriptionsResourceSubscriptionInvoiceSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceSubscriptionInvoiceSettings(
-  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(InvoiceAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   issuer: ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>),
 ); }
 

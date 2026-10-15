@@ -68,33 +68,36 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Otel {const Otel({required this.authorization, required this.headers, required this.url, this.contentType = OtelContentType.$json, });
+@immutable final class Otel {const Otel({required this.authorization, required this.headers, required this.url, this.contentType, });
 
 factory Otel.fromJson(Map<String, dynamic> json) { return Otel(
   authorization: json['authorization'] as String,
-  contentType: json.containsKey('content_type') ? OtelContentType.fromJson(json['content_type'] as String) : OtelContentType.$json,
+  contentType: json['content_type'] != null ? OtelContentType.fromJson(json['content_type'] as String) : null,
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String,
 ); }
 
 final String authorization;
 
-final OtelContentType contentType;
+final OtelContentType? contentType;
 
 final Map<String,String> headers;
 
 final String url;
 
+/// The value of `contentType`, or its schema default when absent.
+OtelContentType get contentTypeOrDefault => contentType ?? OtelContentType.fromJson('json');
+
 Map<String, dynamic> toJson() { return {
   'authorization': authorization,
-  'content_type': contentType.toJson(),
+  if (contentType != null) 'content_type': contentType?.toJson(),
   'headers': headers,
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
       json.containsKey('headers') &&
       json.containsKey('url') && json['url'] is String; } 
-Otel copyWith({String? authorization, OtelContentType Function()? contentType, Map<String,String>? headers, String? url, }) { return Otel(
+Otel copyWith({String? authorization, OtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) { return Otel(
   authorization: authorization ?? this.authorization,
   contentType: contentType != null ? contentType() : this.contentType,
   headers: headers ?? this.headers,

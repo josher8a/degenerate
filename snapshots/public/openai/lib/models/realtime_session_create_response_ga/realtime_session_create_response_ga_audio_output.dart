@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeSessionCreateResponseGa (inline: Audio > Output)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/pcm_audio_format.dart';import 'package:pub_openai/models/pcma_audio_format.dart';import 'package:pub_openai/models/pcmu_audio_format.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_shared.dart';@immutable final class RealtimeSessionCreateResponseGaAudioOutput {const RealtimeSessionCreateResponseGaAudioOutput({this.format, this.voice, this.speed = 1.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_shared.dart';@immutable final class RealtimeSessionCreateResponseGaAudioOutput {const RealtimeSessionCreateResponseGaAudioOutput({this.format, this.voice, this.speed, });
 
 factory RealtimeSessionCreateResponseGaAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseGaAudioOutput(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => PcmAudioFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => PcmuAudioFormat.fromJson(v as Map<String, dynamic>), fromC: (v) => PcmaAudioFormat.fromJson(v as Map<String, dynamic>),) : null,
-  voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
-  speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
+  speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
 ); }
 
 /// The format of the output audio.
@@ -26,20 +26,26 @@ final VoiceIdsShared? voice;
 /// This parameter is a post-processing adjustment to the audio after it is generated, it's
 /// also possible to prompt the model to speak faster or slower.
 /// 
-final double speed;
+final double? speed;
+
+/// The value of `speed`, or its schema default when absent.
+double get speedOrDefault => speed ?? 1.0;
 
 Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
-  'speed': speed,
+  'speed': ?speed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
-if (speed > 1.5) { errors.add('speed: must be <= 1.5'); }
+final speed$ = speed;
+if (speed$ != null) {
+  if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
+  if (speed$ > 1.5) { errors.add('speed: must be <= 1.5'); }
+}
 return errors; } 
-RealtimeSessionCreateResponseGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, double Function()? speed, }) { return RealtimeSessionCreateResponseGaAudioOutput(
+RealtimeSessionCreateResponseGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, double? Function()? speed, }) { return RealtimeSessionCreateResponseGaAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
   speed: speed != null ? speed() : this.speed,

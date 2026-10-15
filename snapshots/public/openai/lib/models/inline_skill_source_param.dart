@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicat
 
  }
 /// Inline skill payload
-@immutable final class InlineSkillSourceParam {const InlineSkillSourceParam({required this.data, this.type = InlineSkillSourceParamType.base64, this.mediaType = MediaType.applicationZip, });
+@immutable final class InlineSkillSourceParam {const InlineSkillSourceParam({required this.type, required this.mediaType, required this.data, });
 
 factory InlineSkillSourceParam.fromJson(Map<String, dynamic> json) { return InlineSkillSourceParam(
   type: InlineSkillSourceParamType.fromJson(json['type'] as String),

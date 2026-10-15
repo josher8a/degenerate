@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_stored_completions_data_source_config/create_eval_stored_completions_data_source_config_type.dart';/// Deprecated in favor of LogsDataSourceConfig.
 /// 
-@immutable final class CreateEvalStoredCompletionsDataSourceConfig {const CreateEvalStoredCompletionsDataSourceConfig({this.type = CreateEvalStoredCompletionsDataSourceConfigType.storedCompletions, this.metadata, });
+@immutable final class CreateEvalStoredCompletionsDataSourceConfig {const CreateEvalStoredCompletionsDataSourceConfig({required this.type, this.metadata, });
 
 factory CreateEvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LocalEnvironmentParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';import 'package:pub_openai/models/local_skill_param.dart';@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({this.type = LocalEnvironmentParamType.local, this.skills, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';import 'package:pub_openai/models/local_skill_param.dart';@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({required this.type, this.skills, });
 
 factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) { return LocalEnvironmentParam(
   type: LocalEnvironmentParamType.fromJson(json['type'] as String),

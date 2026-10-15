@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BeneficiaryParams
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/beneficiary_params/public_name.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class BeneficiaryParams {const BeneficiaryParams({required this.publicName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/beneficiary_params/public_name.dart';@immutable final class BeneficiaryParams {const BeneficiaryParams({required this.publicName});
 
 factory BeneficiaryParams.fromJson(Map<String, dynamic> json) { return BeneficiaryParams(
-  publicName: OneOf2.parse(json['public_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),),
+  publicName: PublicName.fromJson(json['public_name']),
 ); }
 
 final PublicName publicName;

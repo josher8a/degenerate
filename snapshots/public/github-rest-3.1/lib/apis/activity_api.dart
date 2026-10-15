@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ActivityApi" (32 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_authenticated_user_direction.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_authenticated_user_sort.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_user_direction.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_user_response.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_user_sort.dart';import 'package:pub_github_rest_3_1/models/activity_list_stargazers_for_repo_response.dart';import 'package:pub_github_rest_3_1/models/activity_mark_notifications_as_read_request.dart';import 'package:pub_github_rest_3_1/models/activity_mark_notifications_as_read_response202.dart';import 'package:pub_github_rest_3_1/models/activity_mark_repo_notifications_as_read_request.dart';import 'package:pub_github_rest_3_1/models/activity_mark_repo_notifications_as_read_response202.dart';import 'package:pub_github_rest_3_1/models/activity_set_repo_subscription_request.dart';import 'package:pub_github_rest_3_1/models/activity_set_thread_subscription_request.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_re_run_job_for_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_check_repo_is_starred_by_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_delete_thread_subscription_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_notifications_for_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_public_events_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/event.dart';import 'package:pub_github_rest_3_1/models/feed.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_subscription.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/stargazer.dart';import 'package:pub_github_rest_3_1/models/starred_repository.dart';import 'package:pub_github_rest_3_1/models/thread.dart';import 'package:pub_github_rest_3_1/models/thread_subscription.dart';/// ActivityApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_authenticated_user_direction.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_authenticated_user_sort.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_user_direction.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_user_response.dart';import 'package:pub_github_rest_3_1/models/activity_list_repos_starred_by_user_sort.dart';import 'package:pub_github_rest_3_1/models/activity_list_stargazers_for_repo_response.dart';import 'package:pub_github_rest_3_1/models/activity_mark_notifications_as_read_request.dart';import 'package:pub_github_rest_3_1/models/activity_mark_notifications_as_read_response202.dart';import 'package:pub_github_rest_3_1/models/activity_mark_repo_notifications_as_read_request.dart';import 'package:pub_github_rest_3_1/models/activity_mark_repo_notifications_as_read_response202.dart';import 'package:pub_github_rest_3_1/models/activity_set_repo_subscription_request.dart';import 'package:pub_github_rest_3_1/models/activity_set_thread_subscription_request.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_re_run_job_for_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_check_repo_is_starred_by_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_delete_thread_subscription_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_notifications_for_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_public_events_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/event.dart';import 'package:pub_github_rest_3_1/models/feed.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_subscription.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/thread.dart';import 'package:pub_github_rest_3_1/models/thread_subscription.dart';/// ActivityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Feed.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -150,7 +150,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ActivityMarkNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -197,7 +197,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Thread.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -219,7 +219,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsReRunJobForWorkflowRunError.fromResponse,
@@ -239,7 +239,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -260,7 +260,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -288,7 +288,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -310,7 +310,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
@@ -342,7 +342,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -376,7 +376,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -421,7 +421,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -445,7 +445,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -481,10 +481,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => Stargazer.fromJson(e as Map<String, dynamic>)).toList(),);
+    return ActivityListStargazersForRepoResponse.fromJson(jsonDecode(response.body));
   },
   onError: ActivityListStargazersForRepoError.fromResponse,
 );
@@ -514,7 +514,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -536,7 +536,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositorySubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -560,7 +560,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RepositorySubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -581,7 +581,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -621,7 +621,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -644,7 +644,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
@@ -664,7 +664,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
@@ -684,7 +684,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
@@ -715,7 +715,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -752,7 +752,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -788,7 +788,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -822,7 +822,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -859,7 +859,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -893,7 +893,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -936,10 +936,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),);
+    return ActivityListReposStarredByUserResponse.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -968,7 +968,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;

@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:degenerate/src/generator.dart';
 import 'package:test/test.dart';
 
+import 'support/generated_client.dart';
+
 /// Compile and run freshly generated code so field type errors cannot hide
 /// behind syntactically valid emitter output or stale snapshots.
 Future<dynamic> _runClient(
@@ -46,24 +48,8 @@ Future<void> main() async {
 $program
 }
 ''');
-  // Generated files import each other as `package:generated/...`; resolve
-  // that package to the temp directory alongside the workspace packages.
-  final config =
-      jsonDecode(File('.dart_tool/package_config.json').readAsStringSync())
-          as Map<String, dynamic>;
-  final workspaceRoot = File('.dart_tool/package_config.json').absolute.parent.uri;
-  final packages = [
-    for (final pkg in config['packages'] as List)
-      {
-        ...pkg as Map<String, dynamic>,
-        'rootUri': workspaceRoot.resolve(pkg['rootUri'] as String).toString(),
-      },
-    {'name': 'generated', 'rootUri': dir.absolute.uri.toString(), 'packageUri': ''},
-  ];
-  final packageConfig = File('${dir.path}/package_config.json')
-    ..writeAsStringSync(jsonEncode({...config, 'packages': packages}));
   final result = await Process.run(Platform.resolvedExecutable, [
-    '--packages=${packageConfig.absolute.path}',
+    '--packages=${generatedPackageConfig(dir).path}',
     runner.path,
   ]);
   expect(result.exitCode, 0, reason: '${result.stdout}\n${result.stderr}');
@@ -183,7 +169,7 @@ void main() {
   for (final json in <Map<String, dynamic>>[
     {'requiredTerm': null},
     {'requiredTerm': null, 'term': null, 'count': null, 'plain': null},
-    {'requiredTerm': null, 'term': 'a/b', 'count': 3, 'plain': 'x y'},
+    {'requiredTerm': null, 'term': 'a/b', 'count': 3, 'plain': 'x y', 'enabled': true},
   ]) {
     final filter = Filter.fromJson(json);
     for (final call in [api.deep, api.form, api.joined, api.reserved]) {
@@ -223,12 +209,12 @@ void main() {
             },
           );
           const empty = [
-            {'filter[enabled]': 'true'},
-            {'enabled': 'true'},
-            {'filter': 'enabled,true'},
-            {'filter': 'enabled,true'},
-            '/path/enabled,true',
-            '/exploded/enabled=true',
+            <String, String>{},
+            <String, String>{},
+            {'filter': ''},
+            {'filter': ''},
+            '/path/',
+            '/exploded/',
           ];
           expect(result, [
             ...empty,

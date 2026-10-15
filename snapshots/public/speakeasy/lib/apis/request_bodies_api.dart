@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "RequestBodiesApi" (103 operations)
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/arr_obj_value.dart';import 'package:pub_speakeasy/models/arr_obj_value_camel_case.dart';import 'package:pub_speakeasy/models/complex_number_arrays.dart';import 'package:pub_speakeasy/models/complex_number_maps.dart';import 'package:pub_speakeasy/models/complex_number_types.dart';import 'package:pub_speakeasy/models/deep_object.dart';import 'package:pub_speakeasy/models/deep_object_camel_case.dart';import 'package:pub_speakeasy/models/defaults_and_consts.dart';import 'package:pub_speakeasy/models/deprecated_object_with_example.dart';import 'package:pub_speakeasy/models/form_request_body_string_array_request.dart';import 'package:pub_speakeasy/models/form_request_body_string_array_response.dart';import 'package:pub_speakeasy/models/map_obj_value.dart';import 'package:pub_speakeasy/models/map_obj_value_camel_case.dart';import 'package:pub_speakeasy/models/null_enum_post_response.dart';import 'package:pub_speakeasy/models/nullable_complex_number_types.dart';import 'package:pub_speakeasy/models/nullable_object.dart';import 'package:pub_speakeasy/models/nullable_object_post_response.dart';import 'package:pub_speakeasy/models/nullable_optional_fields_post_request.dart';import 'package:pub_speakeasy/models/nullable_optional_fields_post_response.dart';import 'package:pub_speakeasy/models/nullable_required_empty_object_post_request.dart';import 'package:pub_speakeasy/models/nullable_required_empty_object_post_response.dart';import 'package:pub_speakeasy/models/nullable_required_property_post_request.dart';import 'package:pub_speakeasy/models/nullable_required_property_post_response.dart';import 'package:pub_speakeasy/models/nullable_required_shared_object_post_request.dart';import 'package:pub_speakeasy/models/nullable_required_shared_object_post_response.dart';import 'package:pub_speakeasy/models/object_with_null_enums.dart';import 'package:pub_speakeasy/models/optional_complex_number_types.dart';import 'package:pub_speakeasy/models/optional_request_body_post_request.dart';import 'package:pub_speakeasy/models/optional_request_body_post_response.dart';import 'package:pub_speakeasy/models/read_only_object.dart';import 'package:pub_speakeasy/models/read_write_object.dart';import 'package:pub_speakeasy/models/request_body_deprecated_request_body_ref_post_response.dart';import 'package:pub_speakeasy/models/request_body_get_inferred_optional_request_wrapper_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_additional_properties_request.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_additional_properties_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_array_of_unions_request.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_deep_camel_case_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_deep_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_multiple_json_filtered_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_simple_camel_case_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_simple_response.dart';import 'package:pub_speakeasy/models/request_body_post_complex_number_types_nullable_response.dart';import 'package:pub_speakeasy/models/request_body_post_complex_number_types_optional_response.dart';import 'package:pub_speakeasy/models/request_body_post_complex_number_types_response.dart';import 'package:pub_speakeasy/models/request_body_post_default_empty_string_request.dart';import 'package:pub_speakeasy/models/request_body_post_default_empty_string_response.dart';import 'package:pub_speakeasy/models/request_body_post_defaults_and_consts_response.dart';import 'package:pub_speakeasy/models/request_body_post_empty_body_retained_with_all_optional_fields_request.dart';import 'package:pub_speakeasy/models/request_body_post_empty_body_retained_with_all_optional_fields_response.dart';import 'package:pub_speakeasy/models/request_body_post_empty_object_request.dart';import 'package:pub_speakeasy/models/request_body_post_empty_object_response.dart';import 'package:pub_speakeasy/models/request_body_post_form_deep_response.dart';import 'package:pub_speakeasy/models/request_body_post_form_map_primitive_response.dart';import 'package:pub_speakeasy/models/request_body_post_form_simple_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_array_big_int_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_array_date_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_array_decimal_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_big_int_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_big_int_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_boolean_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_complex_number_arrays_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_complex_number_maps_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_date_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_date_time_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_decimal_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_decimal_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_float32_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_int32_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_integer_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_map_big_int_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_map_date_time_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_map_decimal_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_number_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_string_response.dart';import 'package:pub_speakeasy/models/request_body_post_multipart_nullable_array_with_encoding_request.dart';import 'package:pub_speakeasy/models/request_body_post_multipart_nullable_array_with_encoding_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_component_filtered_default_test_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_component_filtered_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_inline_filtered_request.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_inline_filtered_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_param_request.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_param_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_request.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_response.dart';import 'package:pub_speakeasy/models/request_body_post_not_nullable_not_required_string_body_response.dart';import 'package:pub_speakeasy/models/request_body_post_null_array_response.dart';import 'package:pub_speakeasy/models/request_body_post_null_dictionary_response.dart';import 'package:pub_speakeasy/models/request_body_post_nullable_not_required_string_body_response.dart';import 'package:pub_speakeasy/models/request_body_post_nullable_required_string_body_response.dart';import 'package:pub_speakeasy/models/request_body_post_optional_containers_request.dart';import 'package:pub_speakeasy/models/request_body_post_optional_containers_response.dart';import 'package:pub_speakeasy/models/request_body_post_wildcard_response.dart';import 'package:pub_speakeasy/models/request_body_put_bytes_response.dart';import 'package:pub_speakeasy/models/request_body_put_bytes_with_params_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_deep_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_different_file_name_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_different_file_name_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_ref_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_ref_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_files_array_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_files_array_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_optional_request_body_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_optional_request_body_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_simple_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_deep_union_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_deep_union_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_union_of_primitive_type_and_object_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_union_of_primitive_type_and_object_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_with_encoding_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_with_encoding_response.dart';import 'package:pub_speakeasy/models/request_body_put_string_response.dart';import 'package:pub_speakeasy/models/request_body_put_string_with_params_response.dart';import 'package:pub_speakeasy/models/restore_gen_request_composed.dart';import 'package:pub_speakeasy/models/simple_object.dart';import 'package:pub_speakeasy/models/simple_object_camel_case.dart';import 'package:pub_speakeasy/models/upload_multipart_additional_props_response.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_read_only_object.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_read_write_object.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_write_only_object.dart';import 'package:pub_speakeasy/models/write_only_object.dart';/// RequestBodiesApi operations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/arr_obj_value.dart';import 'package:pub_speakeasy/models/arr_obj_value_camel_case.dart';import 'package:pub_speakeasy/models/complex_number_arrays.dart';import 'package:pub_speakeasy/models/complex_number_maps.dart';import 'package:pub_speakeasy/models/complex_number_types.dart';import 'package:pub_speakeasy/models/deep_object.dart';import 'package:pub_speakeasy/models/deep_object_camel_case.dart';import 'package:pub_speakeasy/models/defaults_and_consts.dart';import 'package:pub_speakeasy/models/deprecated_object_with_example.dart';import 'package:pub_speakeasy/models/form_request_body_string_array_request.dart';import 'package:pub_speakeasy/models/form_request_body_string_array_response.dart';import 'package:pub_speakeasy/models/map_obj_value.dart';import 'package:pub_speakeasy/models/map_obj_value_camel_case.dart';import 'package:pub_speakeasy/models/null_enum_post_response.dart';import 'package:pub_speakeasy/models/nullable_complex_number_types.dart';import 'package:pub_speakeasy/models/nullable_object.dart';import 'package:pub_speakeasy/models/nullable_object_post_response.dart';import 'package:pub_speakeasy/models/nullable_optional_fields_post_request.dart';import 'package:pub_speakeasy/models/nullable_optional_fields_post_response.dart';import 'package:pub_speakeasy/models/nullable_required_empty_object_post_request.dart';import 'package:pub_speakeasy/models/nullable_required_empty_object_post_response.dart';import 'package:pub_speakeasy/models/nullable_required_property_post_request.dart';import 'package:pub_speakeasy/models/nullable_required_property_post_response.dart';import 'package:pub_speakeasy/models/nullable_required_shared_object_post_request.dart';import 'package:pub_speakeasy/models/nullable_required_shared_object_post_response.dart';import 'package:pub_speakeasy/models/object_with_null_enums.dart';import 'package:pub_speakeasy/models/optional_complex_number_types.dart';import 'package:pub_speakeasy/models/optional_request_body_post_request.dart';import 'package:pub_speakeasy/models/optional_request_body_post_response.dart';import 'package:pub_speakeasy/models/read_only_object.dart';import 'package:pub_speakeasy/models/read_only_object_request.dart';import 'package:pub_speakeasy/models/read_write_object_request.dart';import 'package:pub_speakeasy/models/read_write_object_response.dart';import 'package:pub_speakeasy/models/request_body_deprecated_request_body_ref_post_response.dart';import 'package:pub_speakeasy/models/request_body_get_inferred_optional_request_wrapper_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_additional_properties_request.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_additional_properties_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_array_of_unions_request.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_deep_camel_case_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_deep_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_multiple_json_filtered_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_simple_camel_case_response.dart';import 'package:pub_speakeasy/models/request_body_post_application_json_simple_response.dart';import 'package:pub_speakeasy/models/request_body_post_complex_number_types_nullable_response.dart';import 'package:pub_speakeasy/models/request_body_post_complex_number_types_optional_response.dart';import 'package:pub_speakeasy/models/request_body_post_complex_number_types_response.dart';import 'package:pub_speakeasy/models/request_body_post_default_empty_string_request.dart';import 'package:pub_speakeasy/models/request_body_post_default_empty_string_response.dart';import 'package:pub_speakeasy/models/request_body_post_defaults_and_consts_response.dart';import 'package:pub_speakeasy/models/request_body_post_empty_body_retained_with_all_optional_fields_request.dart';import 'package:pub_speakeasy/models/request_body_post_empty_body_retained_with_all_optional_fields_response.dart';import 'package:pub_speakeasy/models/request_body_post_empty_object_request.dart';import 'package:pub_speakeasy/models/request_body_post_empty_object_response.dart';import 'package:pub_speakeasy/models/request_body_post_form_deep_response.dart';import 'package:pub_speakeasy/models/request_body_post_form_map_primitive_response.dart';import 'package:pub_speakeasy/models/request_body_post_form_simple_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_array_big_int_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_array_date_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_array_decimal_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_big_int_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_big_int_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_boolean_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_complex_number_arrays_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_complex_number_maps_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_date_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_date_time_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_decimal_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_decimal_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_float32_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_int32_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_integer_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_map_big_int_str_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_map_date_time_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_map_decimal_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_number_response.dart';import 'package:pub_speakeasy/models/request_body_post_json_data_types_string_response.dart';import 'package:pub_speakeasy/models/request_body_post_multipart_nullable_array_with_encoding_request.dart';import 'package:pub_speakeasy/models/request_body_post_multipart_nullable_array_with_encoding_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_component_filtered_default_test_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_component_filtered_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_inline_filtered_request.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_inline_filtered_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_param_request.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_param_response.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_request.dart';import 'package:pub_speakeasy/models/request_body_post_multiple_content_types_split_response.dart';import 'package:pub_speakeasy/models/request_body_post_not_nullable_not_required_string_body_response.dart';import 'package:pub_speakeasy/models/request_body_post_null_array_response.dart';import 'package:pub_speakeasy/models/request_body_post_null_dictionary_response.dart';import 'package:pub_speakeasy/models/request_body_post_nullable_not_required_string_body_response.dart';import 'package:pub_speakeasy/models/request_body_post_nullable_required_string_body_response.dart';import 'package:pub_speakeasy/models/request_body_post_optional_containers_request.dart';import 'package:pub_speakeasy/models/request_body_post_optional_containers_response.dart';import 'package:pub_speakeasy/models/request_body_post_wildcard_response.dart';import 'package:pub_speakeasy/models/request_body_put_bytes_response.dart';import 'package:pub_speakeasy/models/request_body_put_bytes_with_params_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_deep_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_different_file_name_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_different_file_name_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_ref_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_ref_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_file_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_files_array_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_files_array_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_optional_request_body_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_optional_request_body_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_simple_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_deep_union_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_deep_union_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_union_of_primitive_type_and_object_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_using_union_of_primitive_type_and_object_response.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_with_encoding_request.dart';import 'package:pub_speakeasy/models/request_body_put_multipart_with_encoding_response.dart';import 'package:pub_speakeasy/models/request_body_put_string_response.dart';import 'package:pub_speakeasy/models/request_body_put_string_with_params_response.dart';import 'package:pub_speakeasy/models/restore_gen_request_composed.dart';import 'package:pub_speakeasy/models/simple_object.dart';import 'package:pub_speakeasy/models/simple_object_camel_case.dart';import 'package:pub_speakeasy/models/upload_multipart_additional_props_response.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_read_only_object.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_read_only_object_request.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_read_write_object_request.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_read_write_object_response.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_write_only_object.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_write_only_object_response.dart';import 'package:pub_speakeasy/models/write_only_object.dart';import 'package:pub_speakeasy/models/write_only_object_response.dart';/// RequestBodiesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -28,7 +28,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return UploadMultipartAdditionalPropsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -59,7 +59,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyGetInferredOptionalRequestWrapperResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,7 +67,7 @@ return execute(
 );
  } 
 /// `POST /readonlyorwriteonly#readOnlyInput`
-Future<ApiResult<ReadOnlyObject, Never>> requestBodyReadOnlyInput({required ReadOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReadOnlyObject, Never>> requestBodyReadOnlyInput({required ReadOnlyObjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -78,7 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReadOnlyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -86,7 +86,7 @@ return execute(
 );
  } 
 /// `POST /writeonlyoutput#writeOnlyOutput`
-Future<ApiResult<WriteOnlyObject, Never>> requestBodyWriteOnlyOutput({required WriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WriteOnlyObjectResponse, Never>> requestBodyWriteOnlyOutput({required WriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,10 +97,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return WriteOnlyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WriteOnlyObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -116,7 +116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReadOnlyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -124,7 +124,7 @@ return execute(
 );
  } 
 /// `POST /readonlyandwriteonly`
-Future<ApiResult<ReadWriteObject, Never>> requestBodyReadAndWrite({required ReadWriteObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReadWriteObjectResponse, Never>> requestBodyReadAndWrite({required ReadWriteObjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,15 +135,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ReadWriteObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReadWriteObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// `POST /readonlyorwriteonly#readOnlyUnion`
-Future<ApiResult<WeaklyTypedOneOfReadOnlyObject, Never>> requestBodyReadOnlyUnion({required WeaklyTypedOneOfReadOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WeaklyTypedOneOfReadOnlyObject, Never>> requestBodyReadOnlyUnion({required WeaklyTypedOneOfReadOnlyObjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,7 +154,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => ReadOnlyObject.fromJson(v as Map<String, dynamic>),);
@@ -162,7 +162,7 @@ return execute(
 );
  } 
 /// `POST /writeonlyoutput#writeOnlyUnion`
-Future<ApiResult<WeaklyTypedOneOfWriteOnlyObject, Never>> requestBodyWriteOnlyUnion({required WeaklyTypedOneOfWriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WeaklyTypedOneOfWriteOnlyObjectResponse, Never>> requestBodyWriteOnlyUnion({required WeaklyTypedOneOfWriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -173,15 +173,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => WriteOnlyObject.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => WriteOnlyObjectResponse.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
 /// `POST /readonlyandwriteonly#readWriteOnlyUnion`
-Future<ApiResult<WeaklyTypedOneOfReadWriteObject, Never>> requestBodyReadWriteOnlyUnion({required WeaklyTypedOneOfReadWriteObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WeaklyTypedOneOfReadWriteObjectResponse, Never>> requestBodyReadWriteOnlyUnion({required WeaklyTypedOneOfReadWriteObjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -192,10 +192,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => ReadWriteObject.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => ReadWriteObjectResponse.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
@@ -214,7 +214,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormRequestBodyStringArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -233,7 +233,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostApplicationJsonAdditionalPropertiesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -252,7 +252,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostApplicationJsonSimpleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -271,7 +271,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostApplicationJsonSimpleCamelCaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -290,7 +290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyDeprecatedRequestBodyRefPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -309,7 +309,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostWildcardResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -328,7 +328,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -348,7 +348,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -368,7 +368,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -388,7 +388,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -408,7 +408,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -425,7 +425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObject.fromJson(v as Map<String, dynamic>)));
@@ -444,7 +444,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObjectCamelCase.fromJson(v as Map<String, dynamic>)));
@@ -463,7 +463,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObject.fromJson(v as Map<String, dynamic>)))));
@@ -482,7 +482,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObjectCamelCase.fromJson(v as Map<String, dynamic>)))));
@@ -501,7 +501,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
@@ -520,7 +520,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => SimpleObject.fromJson(e as Map<String, dynamic>)).toList()));
@@ -539,7 +539,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => SimpleObjectCamelCase.fromJson(e as Map<String, dynamic>)).toList()));
@@ -558,7 +558,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -578,7 +578,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -598,7 +598,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
@@ -617,7 +617,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -637,7 +637,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -659,7 +659,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))));
@@ -678,7 +678,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ArrObjValue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -697,7 +697,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ArrObjValueCamelCase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -716,7 +716,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MapObjValue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -735,7 +735,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MapObjValueCamelCase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -754,7 +754,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostApplicationJsonDeepResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -773,7 +773,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostApplicationJsonDeepCamelCaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -792,7 +792,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostApplicationJsonMultipleJsonFilteredResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -811,7 +811,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostMultipleContentTypesComponentFilteredResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -830,7 +830,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostMultipleContentTypesComponentFilteredDefaultTestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -849,7 +849,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostMultipleContentTypesInlineFilteredResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -868,7 +868,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostMultipleContentTypesSplitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -893,7 +893,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostMultipleContentTypesSplitParamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -948,7 +948,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartSimpleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -978,7 +978,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartDeepResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1002,7 +1002,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartUsingUnionOfPrimitiveTypeAndObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1026,7 +1026,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartUsingDeepUnionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1048,7 +1048,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartFileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1069,7 +1069,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartFilesArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1091,7 +1091,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartFileRefResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1113,7 +1113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartDifferentFileNameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1140,7 +1140,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartWithEncodingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1168,7 +1168,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostMultipartNullableArrayWithEncodingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1192,7 +1192,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutMultipartOptionalRequestBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1247,7 +1247,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostFormSimpleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1277,7 +1277,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostFormDeepResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1299,7 +1299,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutStringResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1318,7 +1318,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutBytesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1343,7 +1343,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutStringWithParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1368,7 +1368,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPutBytesWithParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1387,7 +1387,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostEmptyObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1406,7 +1406,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostNullDictionaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1425,7 +1425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostNullArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1433,18 +1433,18 @@ return execute(
 );
  } 
 /// `POST /anything/requestBodies/post/nullableRequiredObject`
-Future<ApiResult<NullableObjectPostResponse, Never>> nullableObjectPost({required NullableObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NullableObjectPostResponse, Never>> nullableObjectPost({required NullableObject? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/anything/requestBodies/post/nullableRequiredObject',
   headers: headers,
-  body: jsonEncode(body.toJson()),
+  body: jsonEncode(body?.toJson()),
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NullableObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1463,7 +1463,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NullableRequiredPropertyPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1482,7 +1482,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NullableRequiredSharedObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1501,7 +1501,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NullableRequiredEmptyObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1520,7 +1520,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NullableOptionalFieldsPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1539,7 +1539,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostEmptyBodyRetainedWithAllOptionalFieldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1563,7 +1563,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostOptionalContainersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1593,7 +1593,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostComplexNumberTypesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1612,7 +1612,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostComplexNumberTypesOptionalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1631,7 +1631,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostComplexNumberTypesNullableResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1650,7 +1650,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostDefaultsAndConstsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1673,7 +1673,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostDefaultEmptyStringResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1692,7 +1692,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NullEnumPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1711,7 +1711,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesStringResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1730,7 +1730,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesIntegerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1749,7 +1749,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesInt32Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1768,7 +1768,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesBigIntResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1787,7 +1787,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesBigIntStrResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1806,7 +1806,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesNumberResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1825,7 +1825,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesFloat32Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1844,7 +1844,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesDecimalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1863,7 +1863,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesDecimalStrResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1882,7 +1882,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesBooleanResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1901,7 +1901,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesDateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1920,7 +1920,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesDateTimeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1939,7 +1939,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesMapDateTimeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1958,7 +1958,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesMapBigIntStrResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1977,7 +1977,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesMapDecimalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1996,7 +1996,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesArrayDateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2015,7 +2015,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesArrayBigIntResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2034,7 +2034,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesArrayDecimalStrResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2053,7 +2053,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesComplexNumberArraysResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2072,7 +2072,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostJsonDataTypesComplexNumberMapsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2091,7 +2091,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostNullableRequiredStringBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2110,7 +2110,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostNullableNotRequiredStringBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2129,7 +2129,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequestBodyPostNotNullableNotRequiredStringBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2156,7 +2156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OptionalRequestBodyPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

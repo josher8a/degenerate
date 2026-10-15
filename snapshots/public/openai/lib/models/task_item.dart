@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TaskItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/task_type.dart';/// Task emitted by the workflow to show progress and status updates.
-@immutable final class TaskItem {const TaskItem({required this.id, required this.createdAt, required this.threadId, required this.taskType, required this.heading, required this.summary, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.task', });
+@immutable final class TaskItem {const TaskItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.taskType, required this.heading, required this.summary, });
 
 factory TaskItem.fromJson(Map<String, dynamic> json) { return TaskItem(
   id: json['id'] as String,

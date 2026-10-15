@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTokensRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_card_specs.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/cvc_update.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/pii.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_card.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_person.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/cvc_update.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/pii.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_card.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_person.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
 
 factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostTokensRequest(
   account: json['account'] != null ? PostTokensRequestAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   bankAccount: json['bank_account'] != null ? PostTokensRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CreditCardSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? PostTokensRequestCard.fromJson(json['card']) : null,
   customer: json['customer'] as String?,
   cvcUpdate: json['cvc_update'] != null ? CvcUpdate.fromJson(json['cvc_update'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

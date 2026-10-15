@@ -33,7 +33,7 @@ ObjWithObjAdditionalProperties copyWith({DateTime? datetime, List<int>? addition
           listEquals(additionalProperties, other.additionalProperties) &&
           mapEquals($additionalProperties, other.$additionalProperties);
 
-@override int get hashCode => Object.hash(datetime, Object.hashAll(additionalProperties), Object.hashAll($additionalProperties.entries));
+@override int get hashCode => Object.hash(datetime, Object.hashAll(additionalProperties), mapHash($additionalProperties));
 
 @override String toString() => 'ObjWithObjAdditionalProperties(datetime: $datetime, additionalProperties: $additionalProperties, \$additionalProperties: ${$additionalProperties})';
 

@@ -85,8 +85,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gpt35Tur
  }
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [CreateCompletionRequestModelVariant2]
-typedef CreateCompletionRequestModel = OneOf2<String,CreateCompletionRequestModelVariant2>;
+@immutable final class CreateCompletionRequestModel {/// A value built from one or more typed views (at least one must be present).
+const CreateCompletionRequestModel({this.string = const Omittable.absent(), this.createCompletionRequestModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const CreateCompletionRequestModel._({required this.rawValue, required this.string, required this.createCompletionRequestModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CreateCompletionRequestModel.fromJson(Object? json) { return CreateCompletionRequestModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  createCompletionRequestModelVariant2: parseAnyOfVariant<CreateCompletionRequestModelVariant2>(json, (value) => CreateCompletionRequestModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `CreateCompletionRequestModelVariant2`, when it matches.
+final Omittable<CreateCompletionRequestModelVariant2> createCompletionRequestModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || createCompletionRequestModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (createCompletionRequestModelVariant2.isPresent) createCompletionRequestModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CreateCompletionRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'CreateCompletionRequestModel(${toJson()})';
+
+ }

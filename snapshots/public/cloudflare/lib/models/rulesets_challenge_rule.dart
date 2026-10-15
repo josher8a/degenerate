@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RulesetsChallengeRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';@immutable final class RulesetsChallengeRule {const RulesetsChallengeRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters = const {}, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';@immutable final class RulesetsChallengeRule {const RulesetsChallengeRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
 factory RulesetsChallengeRule.fromJson(Map<String, dynamic> json) { return RulesetsChallengeRule(
   action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
-  actionParameters: json.containsKey('action_parameters') ? json['action_parameters'] as Map<String, dynamic> : const {},
+  actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
   description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
@@ -22,7 +22,7 @@ factory RulesetsChallengeRule.fromJson(Map<String, dynamic> json) { return Rules
 final Omittable<dynamic> action;
 
 /// The parameters configuring the rule's action.
-final Map<String,dynamic> actionParameters;
+final Map<String,dynamic>? actionParameters;
 
 final List<RulesetsRuleCategory>? categories;
 
@@ -59,9 +59,12 @@ final String? ref;
 /// Example: `'1'`
 final String version;
 
+/// The value of `actionParameters`, or its schema default when absent.
+Map<String,dynamic> get actionParametersOrDefault => actionParameters ?? const {};
+
 Map<String, dynamic> toJson() { return {
   if (action.isPresent) 'action': action.value,
-  'action_parameters': actionParameters,
+  'action_parameters': ?actionParameters,
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
   if (description.isPresent) 'description': description.value,
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -93,7 +96,7 @@ if (ref$ != null) {
 }
 if (!RegExp(r'^[0-9]+$').hasMatch(version)) { errors.add(r'version: must match pattern ^[0-9]+$'); }
 return errors; } 
-RulesetsChallengeRule copyWith({Omittable<dynamic>? action, Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsChallengeRule(
+RulesetsChallengeRule copyWith({Omittable<dynamic>? action, Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsChallengeRule(
   action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,

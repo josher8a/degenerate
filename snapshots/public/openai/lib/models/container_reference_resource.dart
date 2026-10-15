@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ContainerReferenceResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';/// Represents a container created with /v1/containers.
-@immutable final class ContainerReferenceResource {const ContainerReferenceResource({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });
+@immutable final class ContainerReferenceResource {const ContainerReferenceResource({required this.type, required this.containerId, });
 
 factory ContainerReferenceResource.fromJson(Map<String, dynamic> json) { return ContainerReferenceResource(
   type: ContainerReferenceParamType.fromJson(json['type'] as String),

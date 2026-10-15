@@ -38,7 +38,7 @@ ErrorModel copyWith({String? Function()? code, String? Function()? message, Erro
           type == other.type &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(code, message, type, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(code, message, type, mapHash(additionalProperties));
 
 @override String toString() => 'ErrorModel(code: $code, message: $message, type: $type, additionalProperties: $additionalProperties)';
 

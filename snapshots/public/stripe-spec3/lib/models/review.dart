@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Review
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 sealed class ClosedReason {const ClosedReason();
 
 factory ClosedReason.fromJson(String json) { return switch (json) {
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, 
 
 factory Review.fromJson(Map<String, dynamic> json) { return Review(
   billingZip: json.containsKey('billing_zip') ? Omittable(json['billing_zip'] as String?) : const Omittable.absent(),
-  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? ApplicationFeeCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
   closedReason: json.containsKey('closed_reason') ? Omittable(json['closed_reason'] != null ? ClosedReason.fromJson(json['closed_reason'] as String) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
@@ -298,7 +298,7 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
   object: ReviewObject.fromJson(json['object'] as String),
   open: json['open'] as bool,
   openedReason: OpenedReason.fromJson(json['opened_reason'] as String),
-  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null,
   reason: json['reason'] as String,
   session: json.containsKey('session') ? Omittable(json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }

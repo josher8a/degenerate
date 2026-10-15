@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCall (inline: Environment)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_resource.dart';import 'package:pub_openai/models/local_environment_resource.dart';sealed class FunctionShellCallEnvironmentType {const FunctionShellCallEnvironmentType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';import 'package:pub_openai/models/container_reference_resource.dart';import 'package:pub_openai/models/local_environment_resource.dart';sealed class FunctionShellCallEnvironmentType {const FunctionShellCallEnvironmentType();
 
 factory FunctionShellCallEnvironmentType.fromJson(String json) { return switch (json) {
   'local' => local,
@@ -64,7 +64,7 @@ factory FunctionShellCallEnvironment.fromJson(Map<String, dynamic> json) { retur
 }; }
 
 /// Build the `container_reference` variant.
-factory FunctionShellCallEnvironment.containerReference({required String containerId}) { return FunctionShellCallEnvironmentContainerReference(ContainerReferenceResource(containerId: containerId)); }
+factory FunctionShellCallEnvironment.containerReference({required String containerId}) { return FunctionShellCallEnvironmentContainerReference(ContainerReferenceResource(type: ContainerReferenceParamType.fromJson('container_reference'), containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
 FunctionShellCallEnvironmentType get type;

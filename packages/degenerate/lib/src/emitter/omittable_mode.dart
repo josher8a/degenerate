@@ -4,7 +4,6 @@
 /// depending on `emit_utils.dart` (which depends on the context).
 library;
 
-import 'package:degenerate/src/emitter/field_defaults.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// How generated models represent "field omitted" vs "field set to null".
@@ -26,12 +25,12 @@ enum OmittableMode {
 /// Whether [f] is emitted as an `Omittable<...>` presence-wrapped field.
 ///
 /// Required fields always serialize their key, so they have no third state.
-/// Fields with usable Dart defaults deliberately collapse "absent" into the
-/// default value. Every emitter that declares, constructs, serializes or
+/// Defaults don't count: an absent defaulted field stays absent. Every
+/// emitter that declares, constructs, serializes or
 /// reads a model field must agree on this predicate — drift produces
 /// uncompilable code (variant factories, form bodies, unwrapped results).
 bool isOmittableField(IrField f, OmittableMode mode) {
   if (mode == OmittableMode.off) return false;
-  if (f.isRequired || fieldHasDefault(f)) return false;
+  if (f.isRequired) return false;
   return mode == OmittableMode.all || f.type.isNullable;
 }

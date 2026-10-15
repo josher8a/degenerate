@@ -60,7 +60,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchCodeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -107,7 +107,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchCommitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -161,7 +161,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchIssuesAndPullRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -210,7 +210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchLabelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -258,7 +258,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchReposResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -300,7 +300,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchTopicsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -349,7 +349,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SearchUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deleteFi
 
  }
 /// Instruction describing how to delete a file via the apply_patch tool.
-@immutable final class ApplyPatchDeleteFileOperation {const ApplyPatchDeleteFileOperation({required this.path, this.type = ApplyPatchDeleteFileOperationType.deleteFile, });
+@immutable final class ApplyPatchDeleteFileOperation {const ApplyPatchDeleteFileOperation({required this.type, required this.path, });
 
 factory ApplyPatchDeleteFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchDeleteFileOperation(
   type: ApplyPatchDeleteFileOperationType.fromJson(json['type'] as String),

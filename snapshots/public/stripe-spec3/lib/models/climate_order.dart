@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ClimateOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_order/climate_order_product.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_removals_beneficiary.dart';import 'package:pub_stripe_spec3/models/climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_order/climate_order_product.dart';import 'package:pub_stripe_spec3/models/climate_removals_beneficiary.dart';import 'package:pub_stripe_spec3/models/climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
 sealed class ClimateOrderCancellationReason {const ClimateOrderCancellationReason();
 
 factory ClimateOrderCancellationReason.fromJson(String json) { return switch (json) {
@@ -274,7 +274,7 @@ factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   metricTons: json['metric_tons'] as String,
   object: ClimateOrderObject.fromJson(json['object'] as String),
-  product: OneOf2.parse(json['product'], fromA: (v) => v as String, fromB: (v) => ClimateProduct.fromJson(v as Map<String, dynamic>),),
+  product: ClimateOrderProduct.fromJson(json['product']),
   productSubstitutedAt: json.containsKey('product_substituted_at') ? Omittable(json['product_substituted_at'] != null ? (json['product_substituted_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ClimateOrderStatus.fromJson(json['status'] as String),
 ); }

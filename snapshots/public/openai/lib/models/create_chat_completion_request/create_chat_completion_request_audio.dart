@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateChatCompletionRequest (inline: Audio)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';/// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,
 /// `opus`, or `pcm16`.
 /// 
 sealed class AudioFormat {const AudioFormat();
@@ -137,7 +137,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W F
 @immutable final class CreateChatCompletionRequestAudio {const CreateChatCompletionRequestAudio({required this.voice, required this.format, });
 
 factory CreateChatCompletionRequestAudio.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestAudio(
-  voice: OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),),
+  voice: VoiceIdsOrCustomVoice.fromJson(json['voice']),
   format: AudioFormat.fromJson(json['format'] as String),
 ); }
 

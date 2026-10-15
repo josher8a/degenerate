@@ -493,8 +493,7 @@ final class FileEmitter {
         type,
         ctx: ctx,
       ).emit(),
-      IrUntaggedUnion(:final name, :final variants) ||
-      IrAnyOf(:final name, :final variants)
+      IrUntaggedUnion(:final name, :final variants)
           when isOneOfTypedef(name, variants) =>
         _emitOneOfTypedef(name, variants, type.description, ctx),
       IrUntaggedUnion() => UntaggedUnionEmitter(type, ctx: ctx).emit(),

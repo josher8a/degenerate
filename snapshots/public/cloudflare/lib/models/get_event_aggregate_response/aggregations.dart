@@ -34,7 +34,7 @@ Aggregations copyWith({double? count, String? Function()? date, Map<String, Stri
           date == other.date &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(count, date, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(count, date, mapHash(additionalProperties));
 
 @override String toString() => 'Aggregations(count: $count, date: $date, additionalProperties: $additionalProperties)';
 

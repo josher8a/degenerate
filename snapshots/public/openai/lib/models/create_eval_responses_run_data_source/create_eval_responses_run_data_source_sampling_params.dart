@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateEvalResponsesRunDataSource (inline: SamplingParams)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/sampling_params_text.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/tool.dart';@immutable final class CreateEvalResponsesRunDataSourceSamplingParams {const CreateEvalResponsesRunDataSourceSamplingParams({this.reasoningEffort = const Omittable.absent(), this.temperature = 1.0, this.maxCompletionTokens, this.topP = 1.0, this.seed = 42, this.tools, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/sampling_params_text.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/tool.dart';@immutable final class CreateEvalResponsesRunDataSourceSamplingParams {const CreateEvalResponsesRunDataSourceSamplingParams({this.reasoningEffort = const Omittable.absent(), this.temperature, this.maxCompletionTokens, this.topP, this.seed, this.tools, this.text, });
 
 factory CreateEvalResponsesRunDataSourceSamplingParams.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSourceSamplingParams(
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 1.0,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
-  topP: json.containsKey('top_p') ? (json['top_p'] as num).toDouble() : 1.0,
-  seed: json.containsKey('seed') ? (json['seed'] as num).toInt() : 42,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   text: json['text'] != null ? SamplingParamsText.fromJson(json['text'] as Map<String, dynamic>) : null,
 ); }
@@ -16,16 +16,16 @@ factory CreateEvalResponsesRunDataSourceSamplingParams.fromJson(Map<String, dyna
 final Omittable<ReasoningEffort?> reasoningEffort;
 
 /// A higher temperature increases randomness in the outputs.
-final double temperature;
+final double? temperature;
 
 /// The maximum number of tokens in the generated output.
 final int? maxCompletionTokens;
 
 /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.
-final double topP;
+final double? topP;
 
 /// A seed value to initialize the randomness, during sampling.
-final int seed;
+final int? seed;
 
 /// An array of tools the model may call while generating a response. You
 /// can specify which tool to use by setting the `tool_choice` parameter.
@@ -49,17 +49,26 @@ final List<Tool>? tools;
 /// 
 final SamplingParamsText? text;
 
+/// The value of `temperature`, or its schema default when absent.
+double get temperatureOrDefault => temperature ?? 1.0;
+
+/// The value of `topP`, or its schema default when absent.
+double get topPOrDefault => topP ?? 1.0;
+
+/// The value of `seed`, or its schema default when absent.
+int get seedOrDefault => seed ?? 42;
+
 Map<String, dynamic> toJson() { return {
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
-  'temperature': temperature,
+  'temperature': ?temperature,
   'max_completion_tokens': ?maxCompletionTokens,
-  'top_p': topP,
-  'seed': seed,
+  'top_p': ?topP,
+  'seed': ?seed,
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (text != null) 'text': text?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reasoning_effort', 'temperature', 'max_completion_tokens', 'top_p', 'seed', 'tools', 'text'}.contains(key)); } 
-CreateEvalResponsesRunDataSourceSamplingParams copyWith({Omittable<ReasoningEffort?>? reasoningEffort, double Function()? temperature, int? Function()? maxCompletionTokens, double Function()? topP, int Function()? seed, List<Tool>? Function()? tools, SamplingParamsText? Function()? text, }) { return CreateEvalResponsesRunDataSourceSamplingParams(
+CreateEvalResponsesRunDataSourceSamplingParams copyWith({Omittable<ReasoningEffort?>? reasoningEffort, double? Function()? temperature, int? Function()? maxCompletionTokens, double? Function()? topP, int? Function()? seed, List<Tool>? Function()? tools, SamplingParamsText? Function()? text, }) { return CreateEvalResponsesRunDataSourceSamplingParams(
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
   temperature: temperature != null ? temperature() : this.temperature,
   maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,

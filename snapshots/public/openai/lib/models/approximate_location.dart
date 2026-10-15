@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ApproximateLocation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location/approximate_location_type.dart';@immutable final class ApproximateLocation {const ApproximateLocation({this.type = ApproximateLocationType.approximate, this.country = const Omittable.absent(), this.region = const Omittable.absent(), this.city = const Omittable.absent(), this.timezone = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location/approximate_location_type.dart';@immutable final class ApproximateLocation {const ApproximateLocation({required this.type, this.country = const Omittable.absent(), this.region = const Omittable.absent(), this.city = const Omittable.absent(), this.timezone = const Omittable.absent(), });
 
 factory ApproximateLocation.fromJson(Map<String, dynamic> json) { return ApproximateLocation(
   type: ApproximateLocationType.fromJson(json['type'] as String),

@@ -53,27 +53,33 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? r2, W Fu
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class StoreOptions {const StoreOptions({required this.storageId, this.r2Jurisdiction = 'default', this.storageType = StorageType.r2, });
+@immutable final class StoreOptions {const StoreOptions({required this.storageId, this.r2Jurisdiction, this.storageType, });
 
 factory StoreOptions.fromJson(Map<String, dynamic> json) { return StoreOptions(
-  r2Jurisdiction: json.containsKey('r2_jurisdiction') ? json['r2_jurisdiction'] as String : 'default',
+  r2Jurisdiction: json['r2_jurisdiction'] as String?,
   storageId: json['storage_id'] as String,
-  storageType: json.containsKey('storage_type') ? StorageType.fromJson(json['storage_type'] as String) : StorageType.r2,
+  storageType: json['storage_type'] != null ? StorageType.fromJson(json['storage_type'] as String) : null,
 ); }
 
-final String r2Jurisdiction;
+final String? r2Jurisdiction;
 
 final String storageId;
 
-final StorageType storageType;
+final StorageType? storageType;
+
+/// The value of `r2Jurisdiction`, or its schema default when absent.
+String get r2JurisdictionOrDefault => r2Jurisdiction ?? 'default';
+
+/// The value of `storageType`, or its schema default when absent.
+StorageType get storageTypeOrDefault => storageType ?? StorageType.fromJson('r2');
 
 Map<String, dynamic> toJson() { return {
-  'r2_jurisdiction': r2Jurisdiction,
+  'r2_jurisdiction': ?r2Jurisdiction,
   'storage_id': storageId,
-  'storage_type': storageType.toJson(),
+  if (storageType != null) 'storage_type': storageType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('storage_id') && json['storage_id'] is String; } 
-StoreOptions copyWith({String Function()? r2Jurisdiction, String? storageId, StorageType Function()? storageType, }) { return StoreOptions(
+StoreOptions copyWith({String? Function()? r2Jurisdiction, String? storageId, StorageType? Function()? storageType, }) { return StoreOptions(
   r2Jurisdiction: r2Jurisdiction != null ? r2Jurisdiction() : this.r2Jurisdiction,
   storageId: storageId ?? this.storageId,
   storageType: storageType != null ? storageType() : this.storageType,

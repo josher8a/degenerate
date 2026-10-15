@@ -65,7 +65,7 @@ factory FunctionShellCallOutputOutcomeParam.fromJson(Map<String, dynamic> json) 
 }; }
 
 /// Build the `exit` variant.
-factory FunctionShellCallOutputOutcomeParam.exit({required int exitCode}) { return FunctionShellCallOutputOutcomeParamExit(FunctionShellCallOutputExitOutcomeParam(exitCode: exitCode)); }
+factory FunctionShellCallOutputOutcomeParam.exit({required int exitCode}) { return FunctionShellCallOutputOutcomeParamExit(FunctionShellCallOutputExitOutcomeParam(type: 'exit', exitCode: exitCode)); }
 
 /// The discriminator value identifying this variant.
 FunctionShellCallOutputOutcomeParamType get type;

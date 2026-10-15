@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AutoragConfigSearchResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/result_data.dart';@immutable final class AutoragConfigSearchResponseResult {const AutoragConfigSearchResponseResult({required this.searchQuery, this.data, this.hasMore = false, this.nextPage = const Omittable.absent(), this.object, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/result_data.dart';@immutable final class AutoragConfigSearchResponseResult {const AutoragConfigSearchResponseResult({required this.searchQuery, this.data, this.hasMore, this.nextPage = const Omittable.absent(), this.object, });
 
 factory AutoragConfigSearchResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchResponseResult(
   data: (json['data'] as List<dynamic>?)?.map((e) => ResultData.fromJson(e as Map<String, dynamic>)).toList(),
-  hasMore: json.containsKey('has_more') ? json['has_more'] as bool : false,
+  hasMore: json['has_more'] as bool?,
   nextPage: json.containsKey('next_page') ? Omittable(json['next_page'] as String?) : const Omittable.absent(),
   object: json['object'] as String?,
   searchQuery: json['search_query'] as String,
@@ -13,7 +13,7 @@ factory AutoragConfigSearchResponseResult.fromJson(Map<String, dynamic> json) { 
 
 final List<ResultData>? data;
 
-final bool hasMore;
+final bool? hasMore;
 
 final Omittable<String?> nextPage;
 
@@ -21,15 +21,18 @@ final String? object;
 
 final String searchQuery;
 
+/// The value of `hasMore`, or its schema default when absent.
+bool get hasMoreOrDefault => hasMore ?? false;
+
 Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
-  'has_more': hasMore,
+  'has_more': ?hasMore,
   if (nextPage.isPresent) 'next_page': nextPage.value,
   'object': ?object,
   'search_query': searchQuery,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('search_query') && json['search_query'] is String; } 
-AutoragConfigSearchResponseResult copyWith({List<ResultData>? Function()? data, bool Function()? hasMore, Omittable<String?>? nextPage, String? Function()? object, String? searchQuery, }) { return AutoragConfigSearchResponseResult(
+AutoragConfigSearchResponseResult copyWith({List<ResultData>? Function()? data, bool? Function()? hasMore, Omittable<String?>? nextPage, String? Function()? object, String? searchQuery, }) { return AutoragConfigSearchResponseResult(
   data: data != null ? data() : this.data,
   hasMore: hasMore != null ? hasMore() : this.hasMore,
   nextPage: nextPage ?? this.nextPage,

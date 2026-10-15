@@ -26,7 +26,7 @@ PostAdditionalPropertiesWithNullableFieldsRequest copyWith({Omittable<String?>? 
           someCamelCase == other.someCamelCase &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(someCamelCase, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(someCamelCase, mapHash(additionalProperties));
 
 @override String toString() => 'PostAdditionalPropertiesWithNullableFieldsRequest(someCamelCase: $someCamelCase, additionalProperties: $additionalProperties)';
 

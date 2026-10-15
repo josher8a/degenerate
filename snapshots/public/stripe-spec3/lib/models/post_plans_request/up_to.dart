@@ -53,7 +53,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inf, W F
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [UpToVariant1]
-/// - `.b` → [int]
-typedef UpTo = OneOf2<UpToVariant1,int>;
+@immutable final class UpTo {/// A value built from one or more typed views (at least one must be present).
+const UpTo({this.upToVariant1 = const Omittable.absent(), this.$int = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const UpTo._({required this.rawValue, required this.upToVariant1, required this.$int, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory UpTo.fromJson(Object? json) { return UpTo._(
+  rawValue: Omittable(json),
+  upToVariant1: parseAnyOfVariant<UpToVariant1>(json, (value) => UpToVariant1.fromJson(value! as String)),
+  $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `UpToVariant1`, when it matches.
+final Omittable<UpToVariant1> upToVariant1;
+
+/// The payload decoded as `int`, when it matches.
+final Omittable<int> $int;
+
+/// Whether at least one variant matched.
+bool get isValid => upToVariant1.isPresent || $int.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (upToVariant1.isPresent) upToVariant1.value?.toJson(),
+    if ($int.isPresent) $int.value,
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is UpTo && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'UpTo(${toJson()})';
+
+ }

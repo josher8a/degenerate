@@ -26,7 +26,7 @@ ChecksUpdateRequestCompleted copyWith({Omittable<dynamic>? status, Map<String, d
           status == other.status &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(status, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(status, mapHash(additionalProperties));
 
 @override String toString() => 'ChecksUpdateRequestCompleted(status: $status, additionalProperties: $additionalProperties)';
 

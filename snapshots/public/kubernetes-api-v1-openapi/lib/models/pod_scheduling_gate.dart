@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PodSchedulingGate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodSchedulingGate is associated to a Pod to guard its scheduling.
-@immutable final class PodSchedulingGate {const PodSchedulingGate({this.name = ''});
+@immutable final class PodSchedulingGate {const PodSchedulingGate({required this.name});
 
 factory PodSchedulingGate.fromJson(Map<String, dynamic> json) { return PodSchedulingGate(
   name: json['name'] as String,

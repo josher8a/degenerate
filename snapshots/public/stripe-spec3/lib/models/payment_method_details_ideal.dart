@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentMethodDetailsIdeal
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit_mandate.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/bic.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/payment_method_details_ideal_bank.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit_mandate.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/bic.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/payment_method_details_ideal_bank.dart';/// 
 @immutable final class PaymentMethodDetailsIdeal {const PaymentMethodDetailsIdeal({this.bank = const Omittable.absent(), this.bic = const Omittable.absent(), this.generatedSepaDebit = const Omittable.absent(), this.generatedSepaDebitMandate = const Omittable.absent(), this.ibanLast4 = const Omittable.absent(), this.transactionId = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
 factory PaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsIdeal(
   bank: json.containsKey('bank') ? Omittable(json['bank'] != null ? PaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] != null ? Bic.fromJson(json['bic'] as String) : null) : const Omittable.absent(),
-  generatedSepaDebit: json.containsKey('generated_sepa_debit') ? Omittable(json['generated_sepa_debit'] != null ? OneOf2.parse(json['generated_sepa_debit'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  generatedSepaDebitMandate: json.containsKey('generated_sepa_debit_mandate') ? Omittable(json['generated_sepa_debit_mandate'] != null ? OneOf2.parse(json['generated_sepa_debit_mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  generatedSepaDebit: json.containsKey('generated_sepa_debit') ? Omittable(json['generated_sepa_debit'] != null ? GeneratedSepaDebit.fromJson(json['generated_sepa_debit']) : null) : const Omittable.absent(),
+  generatedSepaDebitMandate: json.containsKey('generated_sepa_debit_mandate') ? Omittable(json['generated_sepa_debit_mandate'] != null ? GeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate']) : null) : const Omittable.absent(),
   ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),

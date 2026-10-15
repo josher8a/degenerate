@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ApplicationFee
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_refunds.dart';import 'package:pub_stripe_spec3/models/application_fee/originating_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_refunds.dart';import 'package:pub_stripe_spec3/models/application_fee/originating_transaction.dart';import 'package:pub_stripe_spec3/models/platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ApplicationFeeObject {const ApplicationFeeObject();
 
 factory ApplicationFeeObject.fromJson(String json) { return switch (json) {
@@ -58,19 +58,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicat
 @immutable final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, required this.charge, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.refunded, required this.refunds, this.balanceTransaction = const Omittable.absent(), this.feeSource = const Omittable.absent(), this.originatingTransaction = const Omittable.absent(), });
 
 factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationFee(
-  account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  account: ApplicationFeeAccount.fromJson(json['account']),
   amount: (json['amount'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
-  application: OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),),
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
+  application: ApplicationFeeApplication.fromJson(json['application']),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
+  charge: ApplicationFeeCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   feeSource: json.containsKey('fee_source') ? Omittable(json['fee_source'] != null ? PlatformEarningFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ApplicationFeeObject.fromJson(json['object'] as String),
-  originatingTransaction: json.containsKey('originating_transaction') ? Omittable(json['originating_transaction'] != null ? OneOf2.parse(json['originating_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  originatingTransaction: json.containsKey('originating_transaction') ? Omittable(json['originating_transaction'] != null ? OriginatingTransaction.fromJson(json['originating_transaction']) : null) : const Omittable.absent(),
   refunded: json['refunded'] as bool,
   refunds: ApplicationFeeRefunds.fromJson(json['refunds'] as Map<String, dynamic>),
 ); }

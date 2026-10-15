@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
  }
 /// A tool call that executes one or more shell commands in a managed environment.
-@immutable final class FunctionShellCall {const FunctionShellCall({required this.id, required this.callId, required this.action, required this.status, required this.environment, this.type = 'shell_call', this.createdBy, });
+@immutable final class FunctionShellCall {const FunctionShellCall({required this.type, required this.id, required this.callId, required this.action, required this.status, required this.environment, this.createdBy, });
 
 factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionShellCall(
   type: json['type'] as String,

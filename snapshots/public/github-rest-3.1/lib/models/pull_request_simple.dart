@@ -39,7 +39,7 @@ factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullReque
   base: PullRequestSimpleBase.fromJson(json['base'] as Map<String, dynamic>),
   links: PullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-  autoMerge: AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>),
+  autoMerge: json['auto_merge'] != null ? AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   draft: json['draft'] as bool?,
 ); }
 
@@ -112,7 +112,7 @@ final PullRequestLinks links;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-final AutoMerge autoMerge;
+final AutoMerge? autoMerge;
 
 /// Indicates whether or not the pull request is a draft.
 final bool? draft;
@@ -152,7 +152,7 @@ Map<String, dynamic> toJson() { return {
   'base': base.toJson(),
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
-  'auto_merge': autoMerge.toJson(),
+  'auto_merge': autoMerge?.toJson(),
   'draft': ?draft,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
@@ -186,7 +186,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('auto_merge'); } 
-PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<Team>? Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool? Function()? draft, }) { return PullRequestSimple(
+PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<Team>? Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, }) { return PullRequestSimple(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -221,7 +221,7 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
   base: base ?? this.base,
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-  autoMerge: autoMerge ?? this.autoMerge,
+  autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
   draft: draft != null ? draft() : this.draft,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

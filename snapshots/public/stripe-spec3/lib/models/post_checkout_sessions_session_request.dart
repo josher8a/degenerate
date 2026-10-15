@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsSessionRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/collected_information.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/collected_information.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_shipping_options.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 
 factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequest(
   collectedInformation: json['collected_information'] != null ? CollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsSessionRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
-  shippingOptions: json['shipping_options'] != null ? OneOf2.parse(json['shipping_options'], fromA: (v) => (v as List<dynamic>).map((e) => ShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
+  shippingOptions: json['shipping_options'] != null ? PostCheckoutSessionsSessionRequestShippingOptions.fromJson(json['shipping_options']) : null,
 ); }
 
 /// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.

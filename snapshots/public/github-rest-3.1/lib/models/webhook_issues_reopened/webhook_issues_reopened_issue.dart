@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WebhookIssuesReopened (inline: Issue)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_demilestoned/webhook_issues_demilestoned_issue_labels.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_milestoned/webhook_issues_milestoned_issue_assignee.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_reopened/webhook_issues_reopened_issue_performed_via_github_app.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_milestone.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/active_lock_reason.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_assignees.dart';/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-@immutable final class WebhookIssuesReopenedIssue {const WebhookIssuesReopenedIssue({required this.id, required this.user, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.url, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.updatedAt, required this.labelsUrl, required this.title, required this.milestone, required this.nodeId, required this.number, required this.state, required this.reactions, required this.repositoryUrl, this.type, this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.performedViaGithubApp = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.timelineUrl, this.locked, this.labels, this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
+@immutable final class WebhookIssuesReopenedIssue {const WebhookIssuesReopenedIssue({required this.id, required this.user, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.url, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.updatedAt, required this.labelsUrl, required this.title, required this.milestone, required this.nodeId, required this.number, required this.state, required this.reactions, required this.repositoryUrl, this.type = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.performedViaGithubApp = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.timelineUrl, this.locked, this.labels, this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
 
 factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesReopenedIssue(
   activeLockReason: json['active_lock_reason'] != null ? ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
@@ -39,7 +39,7 @@ factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return 
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final ActiveLockReason? activeLockReason;
@@ -117,7 +117,7 @@ final Uri url;
 
 final WebhooksIssueCommentUser? user;
 
-final IssueType? type;
+final Omittable<IssueType?> type;
 
 Map<String, dynamic> toJson() { return {
   'active_lock_reason': activeLockReason?.toJson(),
@@ -154,7 +154,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') &&
       json.containsKey('assignees') &&
@@ -178,7 +178,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssuesReopenedIssue copyWith({ActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesMilestonedIssueAssignee?>? assignee, List<WebhooksPullRequest5Assignees?>? assignees, AuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesDemilestonedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesReopenedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, DiscussionReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, IssuesUpdateRequestState? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, IssueType? Function()? type, }) { return WebhookIssuesReopenedIssue(
+WebhookIssuesReopenedIssue copyWith({ActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesMilestonedIssueAssignee?>? assignee, List<WebhooksPullRequest5Assignees?>? assignees, AuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesDemilestonedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesReopenedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, DiscussionReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, IssuesUpdateRequestState? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, Omittable<IssueType?>? type, }) { return WebhookIssuesReopenedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee ?? this.assignee,
   assignees: assignees ?? this.assignees,
@@ -213,7 +213,7 @@ WebhookIssuesReopenedIssue copyWith({ActiveLockReason? Function()? activeLockRea
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesReopenedIssue &&

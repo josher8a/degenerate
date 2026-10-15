@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
  }
 /// Record of a client side tool invocation initiated by the assistant.
-@immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.createdAt, required this.threadId, required this.status, required this.callId, required this.name, required this.arguments, required this.output, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.client_tool_call', });
+@immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.status, required this.callId, required this.name, required this.arguments, required this.output, });
 
 factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientToolCallItem(
   id: json['id'] as String,

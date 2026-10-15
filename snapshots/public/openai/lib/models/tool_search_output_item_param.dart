@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ToolSearchOutputItemParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class ToolSearchOutputItemParam {const ToolSearchOutputItemParam({required this.tools, this.id = const Omittable.absent(), this.callId = const Omittable.absent(), this.type = 'tool_search_output', this.execution, this.status = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class ToolSearchOutputItemParam {const ToolSearchOutputItemParam({required this.type, required this.tools, this.id = const Omittable.absent(), this.callId = const Omittable.absent(), this.execution, this.status = const Omittable.absent(), });
 
 factory ToolSearchOutputItemParam.fromJson(Map<String, dynamic> json) { return ToolSearchOutputItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),

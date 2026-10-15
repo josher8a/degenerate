@@ -1,42 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FirewallRulesUpdateAFirewallRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/firewall_filter.dart';@immutable final class FirewallRulesUpdateAFirewallRuleRequest {const FirewallRulesUpdateAFirewallRuleRequest({required this.action, required this.filter, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_filter_request.dart';@immutable final class FirewallRulesUpdateAFirewallRuleRequest {const FirewallRulesUpdateAFirewallRuleRequest({required this.action, required this.filter, });
 
 factory FirewallRulesUpdateAFirewallRuleRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesUpdateAFirewallRuleRequest(
-  action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),
-  filter: FirewallFilter.fromJson(json['filter'] as Map<String, dynamic>),
-  id: FirewallComponentsSchemasIdentifier.fromJson(json['id'] as String),
+  action: FirewallAction.fromJson(json['action']),
+  filter: FirewallFilterRequest.fromJson(json['filter'] as Map<String, dynamic>),
 ); }
 
 final FirewallAction action;
 
-final FirewallFilter filter;
-
-/// The unique identifier of the resource.
-final FirewallComponentsSchemasIdentifier id;
+final FirewallFilterRequest filter;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'filter': filter.toJson(),
-  'id': id.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('filter') &&
-      json.containsKey('id'); } 
-FirewallRulesUpdateAFirewallRuleRequest copyWith({FirewallAction? action, FirewallFilter? filter, FirewallComponentsSchemasIdentifier? id, }) { return FirewallRulesUpdateAFirewallRuleRequest(
+      json.containsKey('filter'); } 
+FirewallRulesUpdateAFirewallRuleRequest copyWith({FirewallAction? action, FirewallFilterRequest? filter, }) { return FirewallRulesUpdateAFirewallRuleRequest(
   action: action ?? this.action,
   filter: filter ?? this.filter,
-  id: id ?? this.id,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRulesUpdateAFirewallRuleRequest &&
           action == other.action &&
-          filter == other.filter &&
-          id == other.id;
+          filter == other.filter;
 
-@override int get hashCode => Object.hash(action, filter, id);
+@override int get hashCode => Object.hash(action, filter);
 
-@override String toString() => 'FirewallRulesUpdateAFirewallRuleRequest(action: $action, filter: $filter, id: $id)';
+@override String toString() => 'FirewallRulesUpdateAFirewallRuleRequest(action: $action, filter: $filter)';
 
  }

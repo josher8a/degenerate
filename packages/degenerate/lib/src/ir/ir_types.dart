@@ -211,6 +211,14 @@ sealed class IrType {
     _ => null,
   };
 
+  /// The variants of a union that may be emitted as a `OneOfN` typedef:
+  /// only [IrUntaggedUnion]. An [IrAnyOf] is always a lossless class (every
+  /// matching view is kept), never a single-value `OneOf`.
+  List<IrType>? get oneOfVariants => switch (this) {
+    IrUntaggedUnion(:final variants) => variants,
+    _ => null,
+  };
+
   /// Whether this type emits a Dart class declaration (with `@immutable`,
   /// `==`, `hashCode`). True for objects, enums, and all union kinds.
   bool get isClassType => switch (this) {
@@ -1079,7 +1087,6 @@ final class VariantInfo {
     required this.isSpreadable,
     this.payloadFields = const [],
     this.discFieldType,
-    this.discDefault,
   });
 
   /// The variant type after resolving any [IrTypeRef] through the registry.
@@ -1097,9 +1104,6 @@ final class VariantInfo {
   /// The type of the discriminator field within the variant's payload object,
   /// or `null` if the variant is not an object or has no such field.
   final IrType? discFieldType;
-
-  /// The default value of the discriminator field, or `null` if none.
-  final String? discDefault;
 }
 
 /// Pre-computed metadata for a discriminated union, replacing the analysis

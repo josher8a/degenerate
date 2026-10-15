@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ResourceFieldSelector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// ResourceFieldSelector represents container resources (cpu, memory) and their output format
-@immutable final class ResourceFieldSelector {const ResourceFieldSelector({this.containerName, this.divisor, this.resource = '', });
+@immutable final class ResourceFieldSelector {const ResourceFieldSelector({required this.resource, this.containerName, this.divisor, });
 
 factory ResourceFieldSelector.fromJson(Map<String, dynamic> json) { return ResourceFieldSelector(
   containerName: json['containerName'] as String?,

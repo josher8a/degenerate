@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Round-trip fixtures: 8 synthesized, 0 skipped (0 union, 0 other).
+// Round-trip fixtures: 17 synthesized, 0 skipped (0 union, 0 other).
 import 'package:spec_08_schema_json_schema_2020_12/spec_08_schema_json_schema_2020_12.dart';
 
 /// A synthesized round-trip fixture. A correct codec makes
@@ -60,6 +60,42 @@ final List<RoundtripFixture> roundtripFixtures = [
     (value) => (value! as Container).toJson(),
   ),
   RoundtripFixture(
+    'BaseEntityRequest',
+    {'id': 'string'},
+    (json) => BaseEntityRequest.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as BaseEntityRequest).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeRequest [circle]',
+    {'kind': 'circle', 'radius': 1.5, 'id': 'string'},
+    (json) => ShapeRequest.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeRequest).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeRequest [rectangle]',
+    {'kind': 'rectangle', 'width': 1.5, 'height': 1.5, 'id': 'string'},
+    (json) => ShapeRequest.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeRequest).toJson(),
+  ),
+  RoundtripFixture(
+    'CircleResponse',
+    {'kind': 'dynamic', 'radius': 1.5},
+    (json) => CircleResponse.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as CircleResponse).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeResponse [circle]',
+    {'kind': 'circle', 'radius': 1.5, 'id': 'string'},
+    (json) => ShapeResponse.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeResponse).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeResponse [rectangle]',
+    {'kind': 'rectangle', 'width': 1.5, 'height': 1.5, 'id': 'string'},
+    (json) => ShapeResponse.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeResponse).toJson(),
+  ),
+  RoundtripFixture(
     'ShapeCircle',
     {'kind': 'dynamic', 'radius': 1.5, 'id': 'string'},
     (json) => ShapeCircle.fromJson(json! as Map<String, dynamic>),
@@ -70,5 +106,23 @@ final List<RoundtripFixture> roundtripFixtures = [
     {'kind': 'dynamic', 'width': 1.5, 'height': 1.5, 'id': 'string'},
     (json) => ShapeRectangle.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as ShapeRectangle).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeRequestCircle',
+    {'kind': 'dynamic', 'radius': 1.5, 'id': 'string'},
+    (json) => ShapeRequestCircle.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeRequestCircle).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeRequestRectangle',
+    {'kind': 'dynamic', 'width': 1.5, 'height': 1.5, 'id': 'string'},
+    (json) => ShapeRequestRectangle.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeRequestRectangle).toJson(),
+  ),
+  RoundtripFixture(
+    'ShapeResponseCircleResponse',
+    {'kind': 'dynamic', 'radius': 1.5, 'id': 'string'},
+    (json) => ShapeResponseCircleResponse.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeResponseCircleResponse).toJson(),
   ),
 ];

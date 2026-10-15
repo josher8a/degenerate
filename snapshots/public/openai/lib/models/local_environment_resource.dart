@@ -2,7 +2,7 @@
 // Source: #/components/schemas/LocalEnvironmentResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';/// Represents the use of a local environment to perform shell actions.
-@immutable final class LocalEnvironmentResource {const LocalEnvironmentResource({this.type = LocalEnvironmentParamType.local});
+@immutable final class LocalEnvironmentResource {const LocalEnvironmentResource({required this.type});
 
 factory LocalEnvironmentResource.fromJson(Map<String, dynamic> json) { return LocalEnvironmentResource(
   type: LocalEnvironmentParamType.fromJson(json['type'] as String),

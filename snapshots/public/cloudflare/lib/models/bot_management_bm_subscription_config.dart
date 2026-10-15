@@ -1,28 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BotManagementBmSubscriptionConfig
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_ai_bots_protection.dart';import 'package:pub_cloudflare/models/bot_management_bm_subscription_config/bot_management_bm_subscription_config_stale_zone_configuration.dart';import 'package:pub_cloudflare/models/bot_management_cf_robots_variant.dart';import 'package:pub_cloudflare/models/bot_management_crawler_protection.dart';import 'package:pub_cloudflare/models/bot_management_enable_js.dart';import 'package:pub_cloudflare/models/bot_management_is_robots_txt_managed.dart';import 'package:pub_cloudflare/models/bot_management_using_latest_model.dart';/// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
-extension type const BotManagementAutoUpdateModel(bool value) {
-factory BotManagementAutoUpdateModel.fromJson(bool json) => BotManagementAutoUpdateModel(json);
-
-bool toJson() => value;
-
-}
-/// Indicates that the bot management cookie can be placed on end user devices accessing the site. Defaults to true
-extension type const BotManagementBmCookieEnabled(bool value) {
-factory BotManagementBmCookieEnabled.fromJson(bool json) => BotManagementBmCookieEnabled(json);
-
-bool toJson() => value;
-
-}
-/// Whether to disable tracking the highest bot score for a session in the Bot Management cookie.
-extension type const BotManagementSuppressSessionScore(bool value) {
-factory BotManagementSuppressSessionScore.fromJson(bool json) => BotManagementSuppressSessionScore(json);
-
-bool toJson() => value;
-
-}
-@immutable final class BotManagementBmSubscriptionConfig {const BotManagementBmSubscriptionConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.autoUpdateModel, this.bmCookieEnabled, this.staleZoneConfiguration, this.suppressSessionScore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_ai_bots_protection.dart';import 'package:pub_cloudflare/models/bot_management_auto_update_model.dart';import 'package:pub_cloudflare/models/bot_management_bm_cookie_enabled.dart';import 'package:pub_cloudflare/models/bot_management_bm_subscription_config/bot_management_bm_subscription_config_stale_zone_configuration.dart';import 'package:pub_cloudflare/models/bot_management_cf_robots_variant.dart';import 'package:pub_cloudflare/models/bot_management_crawler_protection.dart';import 'package:pub_cloudflare/models/bot_management_enable_js.dart';import 'package:pub_cloudflare/models/bot_management_is_robots_txt_managed.dart';import 'package:pub_cloudflare/models/bot_management_suppress_session_score.dart';import 'package:pub_cloudflare/models/bot_management_using_latest_model.dart';@immutable final class BotManagementBmSubscriptionConfig {const BotManagementBmSubscriptionConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.autoUpdateModel, this.bmCookieEnabled, this.staleZoneConfiguration, this.suppressSessionScore, });
 
 factory BotManagementBmSubscriptionConfig.fromJson(Map<String, dynamic> json) { return BotManagementBmSubscriptionConfig(
   aiBotsProtection: json['ai_bots_protection'] != null ? BotManagementAiBotsProtection.fromJson(json['ai_bots_protection'] as String) : null,

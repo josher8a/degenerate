@@ -12,10 +12,10 @@ final class KeeperProfileSchema {
     required this.monthJoined,
     this.bioHtml = const Omittable.absent(),
     this.username = const Omittable.absent(),
-    this.title = 'Keeper',
+    this.title,
     this.bio = const Omittable.absent(),
-    this.location = 'Earth',
-    this.languages = 'English',
+    this.location,
+    this.languages,
     this.instagramUsername = const Omittable.absent(),
     this.website = const Omittable.absent(),
     this.xUsername = const Omittable.absent(),
@@ -33,16 +33,12 @@ final class KeeperProfileSchema {
       username: json.containsKey('username')
           ? Omittable(json['username'] as String?)
           : const Omittable.absent(),
-      title: json.containsKey('title') ? json['title'] as String : 'Keeper',
+      title: json['title'] as String?,
       bio: json.containsKey('bio')
           ? Omittable(json['bio'] as String?)
           : const Omittable.absent(),
-      location: json.containsKey('location')
-          ? json['location'] as String
-          : 'Earth',
-      languages: json.containsKey('languages')
-          ? json['languages'] as String
-          : 'English',
+      location: json['location'] as String?,
+      languages: json['languages'] as String?,
       instagramUsername: json.containsKey('instagram_username')
           ? Omittable(json['instagram_username'] as String?)
           : const Omittable.absent(),
@@ -69,15 +65,15 @@ final class KeeperProfileSchema {
   /// Your unique username.
   final Omittable<String?> username;
 
-  final String title;
+  final String? title;
 
   final Omittable<String?> bio;
 
   /// Where are you located? (City, State, Country)
-  final String location;
+  final String? location;
 
   /// What languages do you speak? (English, Spanish, etc.)
-  final String languages;
+  final String? languages;
 
   /// Your Instagram username, no @ symbol
   final Omittable<String?> instagramUsername;
@@ -91,6 +87,15 @@ final class KeeperProfileSchema {
   /// Your Bluesky username, no @ symbol
   final Omittable<String?> blueskyUsername;
 
+  /// The value of `title`, or its schema default when absent.
+  String get titleOrDefault => title ?? 'Keeper';
+
+  /// The value of `location`, or its schema default when absent.
+  String get locationOrDefault => location ?? 'Earth';
+
+  /// The value of `languages`, or its schema default when absent.
+  String get languagesOrDefault => languages ?? 'English';
+
   Map<String, dynamic> toJson() {
     return {
       'user': user.toJson(),
@@ -98,10 +103,10 @@ final class KeeperProfileSchema {
       'month_joined': monthJoined,
       if (bioHtml.isPresent) 'bio_html': bioHtml.value,
       if (username.isPresent) 'username': username.value,
-      'title': title,
+      'title': ?title,
       if (bio.isPresent) 'bio': bio.value,
-      'location': location,
-      'languages': languages,
+      'location': ?location,
+      'languages': ?languages,
       if (instagramUsername.isPresent)
         'instagram_username': instagramUsername.value,
       if (website.isPresent) 'website': website.value,
@@ -127,8 +132,11 @@ final class KeeperProfileSchema {
         errors.add('username: length must be <= 30');
       }
     }
-    if (title.runes.length > 255) {
-      errors.add('title: length must be <= 255');
+    final title$ = title;
+    if (title$ != null) {
+      if (title$.runes.length > 255) {
+        errors.add('title: length must be <= 255');
+      }
     }
     final bio$ = bio.value;
     if (bio$ != null) {
@@ -136,11 +144,17 @@ final class KeeperProfileSchema {
         errors.add('bio: length must be <= 10000');
       }
     }
-    if (location.runes.length > 255) {
-      errors.add('location: length must be <= 255');
+    final location$ = location;
+    if (location$ != null) {
+      if (location$.runes.length > 255) {
+        errors.add('location: length must be <= 255');
+      }
     }
-    if (languages.runes.length > 255) {
-      errors.add('languages: length must be <= 255');
+    final languages$ = languages;
+    if (languages$ != null) {
+      if (languages$.runes.length > 255) {
+        errors.add('languages: length must be <= 255');
+      }
     }
     final instagramUsername$ = instagramUsername.value;
     if (instagramUsername$ != null) {
@@ -175,10 +189,10 @@ final class KeeperProfileSchema {
     String? monthJoined,
     Omittable<String?>? bioHtml,
     Omittable<String?>? username,
-    String Function()? title,
+    String? Function()? title,
     Omittable<String?>? bio,
-    String Function()? location,
-    String Function()? languages,
+    String? Function()? location,
+    String? Function()? languages,
     Omittable<String?>? instagramUsername,
     Omittable<String?>? website,
     Omittable<String?>? xUsername,

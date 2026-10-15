@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory MagicVisibilityMnmMnmRulesCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRulesCollectionResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityMnmMnmRule.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => e == null ? null : MagicVisibilityMnmMnmRule.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? MagicVisibilityMnmResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
@@ -15,7 +15,7 @@ final List<MagicVisibilityMnmMessages2> errors;
 
 final List<MagicVisibilityMnmMessages2> messages;
 
-final List<MagicVisibilityMnmMnmRule>? result;
+final List<MagicVisibilityMnmMnmRule?>? result;
 
 /// Whether the API call was successful
 /// 
@@ -27,7 +27,7 @@ final MagicVisibilityMnmResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result?.map((e) => e.toJson()).toList(),
+  'result': result?.map((e) => e?.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-MagicVisibilityMnmMnmRulesCollectionResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, List<MagicVisibilityMnmMnmRule>? Function()? result, bool? success, MagicVisibilityMnmResultInfo? Function()? resultInfo, }) { return MagicVisibilityMnmMnmRulesCollectionResponse(
+MagicVisibilityMnmMnmRulesCollectionResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, List<MagicVisibilityMnmMnmRule?>? Function()? result, bool? success, MagicVisibilityMnmResultInfo? Function()? resultInfo, }) { return MagicVisibilityMnmMnmRulesCollectionResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

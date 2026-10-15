@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostBalanceSettingsRequest (inline: Payments > SettlementTiming)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/delay_days_override.dart';@immutable final class SettlementTiming {const SettlementTiming({this.delayDaysOverride});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/delay_days_override.dart';@immutable final class SettlementTiming {const SettlementTiming({this.delayDaysOverride});
 
 factory SettlementTiming.fromJson(Map<String, dynamic> json) { return SettlementTiming(
-  delayDaysOverride: json['delay_days_override'] != null ? OneOf2.parse(json['delay_days_override'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  delayDaysOverride: json['delay_days_override'] != null ? DelayDaysOverride.fromJson(json['delay_days_override']) : null,
 ); }
 
 final DelayDaysOverride? delayDaysOverride;

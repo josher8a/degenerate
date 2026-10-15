@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? timeout,
 
  }
 /// Indicates that the shell call exceeded its configured time limit.
-@immutable final class FunctionShellCallOutputTimeoutOutcome {const FunctionShellCallOutputTimeoutOutcome({this.type = FunctionShellCallOutputTimeoutOutcomeType.timeout});
+@immutable final class FunctionShellCallOutputTimeoutOutcome {const FunctionShellCallOutputTimeoutOutcome({required this.type});
 
 factory FunctionShellCallOutputTimeoutOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputTimeoutOutcome(
   type: FunctionShellCallOutputTimeoutOutcomeType.fromJson(json['type'] as String),

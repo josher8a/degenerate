@@ -103,12 +103,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role = OrgsCreateInvitationRequestRole.directMember, this.teamIds, });
+@immutable final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role, this.teamIds, });
 
 factory OrgsCreateInvitationRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateInvitationRequest(
   inviteeId: json['invitee_id'] != null ? (json['invitee_id'] as num).toInt() : null,
   email: json['email'] as String?,
-  role: json.containsKey('role') ? OrgsCreateInvitationRequestRole.fromJson(json['role'] as String) : OrgsCreateInvitationRequestRole.directMember,
+  role: json['role'] != null ? OrgsCreateInvitationRequestRole.fromJson(json['role'] as String) : null,
   teamIds: (json['team_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
 ); }
 
@@ -123,19 +123,22 @@ final String? email;
 ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.
 ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
 ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
-final OrgsCreateInvitationRequestRole role;
+final OrgsCreateInvitationRequestRole? role;
 
 /// Specify IDs for the teams you want to invite new members to.
 final List<int>? teamIds;
 
+/// The value of `role`, or its schema default when absent.
+OrgsCreateInvitationRequestRole get roleOrDefault => role ?? OrgsCreateInvitationRequestRole.fromJson('direct_member');
+
 Map<String, dynamic> toJson() { return {
   'invitee_id': ?inviteeId,
   'email': ?email,
-  'role': role.toJson(),
+  if (role != null) 'role': role?.toJson(),
   'team_ids': ?teamIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invitee_id', 'email', 'role', 'team_ids'}.contains(key)); } 
-OrgsCreateInvitationRequest copyWith({int? Function()? inviteeId, String? Function()? email, OrgsCreateInvitationRequestRole Function()? role, List<int>? Function()? teamIds, }) { return OrgsCreateInvitationRequest(
+OrgsCreateInvitationRequest copyWith({int? Function()? inviteeId, String? Function()? email, OrgsCreateInvitationRequestRole? Function()? role, List<int>? Function()? teamIds, }) { return OrgsCreateInvitationRequest(
   inviteeId: inviteeId != null ? inviteeId() : this.inviteeId,
   email: email != null ? email() : this.email,
   role: role != null ? role() : this.role,

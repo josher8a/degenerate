@@ -1,20 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TeamsAddOrUpdateMembershipForUserInOrgRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_membership/team_membership_role.dart';@immutable final class TeamsAddOrUpdateMembershipForUserInOrgRequest {const TeamsAddOrUpdateMembershipForUserInOrgRequest({this.role = TeamMembershipRole.member});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_membership/team_membership_role.dart';@immutable final class TeamsAddOrUpdateMembershipForUserInOrgRequest {const TeamsAddOrUpdateMembershipForUserInOrgRequest({this.role});
 
 factory TeamsAddOrUpdateMembershipForUserInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
-  role: json.containsKey('role') ? TeamMembershipRole.fromJson(json['role'] as String) : TeamMembershipRole.member,
+  role: json['role'] != null ? TeamMembershipRole.fromJson(json['role'] as String) : null,
 ); }
 
 /// The role that this user should have in the team.
-final TeamMembershipRole role;
+final TeamMembershipRole? role;
+
+/// The value of `role`, or its schema default when absent.
+TeamMembershipRole get roleOrDefault => role ?? TeamMembershipRole.fromJson('member');
 
 Map<String, dynamic> toJson() { return {
-  'role': role.toJson(),
+  if (role != null) 'role': role?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-TeamsAddOrUpdateMembershipForUserInOrgRequest copyWith({TeamMembershipRole Function()? role}) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
+TeamsAddOrUpdateMembershipForUserInOrgRequest copyWith({TeamMembershipRole? Function()? role}) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
   role: role != null ? role() : this.role,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

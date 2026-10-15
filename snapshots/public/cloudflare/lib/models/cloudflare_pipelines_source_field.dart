@@ -238,8 +238,6 @@ Map<String, dynamic> toJson();
 bool get isUnknown => this is CloudflarePipelinesSourceField$Unknown;
 
 /// Shared by all variants of this union.
-String? get metadataKey;
-/// Shared by all variants of this union.
 String? get name;
 /// Shared by all variants of this union.
 bool? get $required;
@@ -283,8 +281,6 @@ CloudflarePipelinesSourceFieldInt32$Variant copyWith({Omittable<String?>? metada
 
 @override String toString() => 'CloudflarePipelinesSourceField.int32($cloudflarePipelinesSourceFieldInt32)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldInt32.metadataKey.value;
-
 @override String? get name => cloudflarePipelinesSourceFieldInt32.name;
 
 @override bool? get $required => cloudflarePipelinesSourceFieldInt32.$required;
@@ -314,8 +310,6 @@ CloudflarePipelinesSourceFieldInt64$Variant copyWith({Omittable<String?>? metada
 @override int get hashCode => cloudflarePipelinesSourceFieldInt64.hashCode;
 
 @override String toString() => 'CloudflarePipelinesSourceField.int64($cloudflarePipelinesSourceFieldInt64)';
-
-@override String? get metadataKey => cloudflarePipelinesSourceFieldInt64.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldInt64.name;
 
@@ -347,8 +341,6 @@ CloudflarePipelinesSourceFieldFloat32$Variant copyWith({Omittable<String?>? meta
 
 @override String toString() => 'CloudflarePipelinesSourceField.float32($cloudflarePipelinesSourceFieldFloat32)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldFloat32.metadataKey.value;
-
 @override String? get name => cloudflarePipelinesSourceFieldFloat32.name;
 
 @override bool? get $required => cloudflarePipelinesSourceFieldFloat32.$required;
@@ -378,8 +370,6 @@ CloudflarePipelinesSourceFieldFloat64$Variant copyWith({Omittable<String?>? meta
 @override int get hashCode => cloudflarePipelinesSourceFieldFloat64.hashCode;
 
 @override String toString() => 'CloudflarePipelinesSourceField.float64($cloudflarePipelinesSourceFieldFloat64)';
-
-@override String? get metadataKey => cloudflarePipelinesSourceFieldFloat64.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldFloat64.name;
 
@@ -411,8 +401,6 @@ CloudflarePipelinesSourceFieldBool$Variant copyWith({Omittable<String?>? metadat
 
 @override String toString() => 'CloudflarePipelinesSourceField.\$bool($cloudflarePipelinesSourceFieldBool)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldBool.metadataKey.value;
-
 @override String? get name => cloudflarePipelinesSourceFieldBool.name;
 
 @override bool? get $required => cloudflarePipelinesSourceFieldBool.$required;
@@ -443,8 +431,6 @@ CloudflarePipelinesSourceFieldString$Variant copyWith({Omittable<String?>? metad
 
 @override String toString() => 'CloudflarePipelinesSourceField.string($cloudflarePipelinesSourceFieldString)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldString.metadataKey.value;
-
 @override String? get name => cloudflarePipelinesSourceFieldString.name;
 
 @override bool? get $required => cloudflarePipelinesSourceFieldString.$required;
@@ -474,8 +460,6 @@ CloudflarePipelinesSourceFieldBinary$Variant copyWith({Omittable<String?>? metad
 @override int get hashCode => cloudflarePipelinesSourceFieldBinary.hashCode;
 
 @override String toString() => 'CloudflarePipelinesSourceField.binary($cloudflarePipelinesSourceFieldBinary)';
-
-@override String? get metadataKey => cloudflarePipelinesSourceFieldBinary.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldBinary.name;
 
@@ -508,8 +492,6 @@ CloudflarePipelinesSourceFieldTimestamp copyWith({CloudflarePipelinesTimestampUn
 
 @override String toString() => 'CloudflarePipelinesSourceField.timestamp($timestamp)';
 
-@override String? get metadataKey => timestamp.metadataKey.value;
-
 @override String? get name => timestamp.name;
 
 @override bool? get $required => timestamp.$required;
@@ -539,8 +521,6 @@ CloudflarePipelinesSourceFieldJson$Variant copyWith({Omittable<String?>? metadat
 @override int get hashCode => cloudflarePipelinesSourceFieldJson.hashCode;
 
 @override String toString() => 'CloudflarePipelinesSourceField.json($cloudflarePipelinesSourceFieldJson)';
-
-@override String? get metadataKey => cloudflarePipelinesSourceFieldJson.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldJson.name;
 
@@ -573,8 +553,6 @@ CloudflarePipelinesSourceFieldStruct copyWith({List<CloudflarePipelinesSourceFie
 
 @override String toString() => 'CloudflarePipelinesSourceField.struct($struct)';
 
-@override String? get metadataKey => struct.metadataKey.value;
-
 @override String? get name => struct.name;
 
 @override bool? get $required => struct.$required;
@@ -606,8 +584,6 @@ CloudflarePipelinesSourceFieldList$Variant copyWith({CloudflarePipelinesSourceFi
 
 @override String toString() => 'CloudflarePipelinesSourceField.list($cloudflarePipelinesSourceFieldList)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldList.metadataKey.value;
-
 @override String? get name => cloudflarePipelinesSourceFieldList.name;
 
 @override bool? get $required => cloudflarePipelinesSourceFieldList.$required;
@@ -620,8 +596,6 @@ CloudflarePipelinesSourceFieldList$Variant copyWith({CloudflarePipelinesSourceFi
 @immutable final class CloudflarePipelinesSourceField$Unknown extends CloudflarePipelinesSourceField {CloudflarePipelinesSourceField$Unknown(this.json);
 
 final Map<String, dynamic> json;
-
-late final String? _metadataKey = json['metadata_key'] as String?;
 
 late final String? _name = json['name'] as String?;
 
@@ -639,8 +613,6 @@ late final String? _sqlName = json['sql_name'] as String?;
 @override int get hashCode => json.hashCode;
 
 @override String toString() => 'CloudflarePipelinesSourceField.unknown($json)';
-
-@override String? get metadataKey => _metadataKey;
 
 @override String? get name => _name;
 

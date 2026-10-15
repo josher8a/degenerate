@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TunnelTunnelResponseCollection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_cfd_tunnel.dart';import 'package:pub_cloudflare/models/tunnel_messages2.dart';import 'package:pub_cloudflare/models/tunnel_result_info.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_response_collection/tunnel_tunnel_response_collection_result.dart';import 'package:pub_cloudflare/models/tunnel_warp_connector_tunnel.dart';@immutable final class TunnelTunnelResponseCollection {const TunnelTunnelResponseCollection({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_messages2.dart';import 'package:pub_cloudflare/models/tunnel_result_info.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_response_collection/tunnel_tunnel_response_collection_result.dart';@immutable final class TunnelTunnelResponseCollection {const TunnelTunnelResponseCollection({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory TunnelTunnelResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelTunnelResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => TunnelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TunnelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TunnelCfdTunnel.fromJson(v as Map<String, dynamic>), fromB: (v) => TunnelWarpConnectorTunnel.fromJson(v as Map<String, dynamic>),)).toList(),
+  result: (json['result'] as List<dynamic>).map(TunnelTunnelResponseCollectionResult.fromJson).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? TunnelResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }

@@ -1,4 +1,3 @@
-import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 enum OverlapContainer { object, list, scalar, other }
@@ -53,7 +52,7 @@ final class VariantOverlapAnalyzer {
     if (present == null) return false;
     for (final f in vj.fields) {
       final mandatory =
-          f.isRequired && !f.type.isNullable && !fieldHasDefault(f);
+          f.isRequired && !f.type.isNullable;
       if (mandatory && !present.contains(f.originalName)) return true;
     }
     return false;
@@ -66,7 +65,7 @@ final class VariantOverlapAnalyzer {
         ? null
         : {
             for (final f in t.fields)
-              if (f.isRequired || fieldHasDefault(f)) f.originalName,
+              if (f.isRequired) f.originalName,
           };
     _presentKeysCache[type] = result;
     return result;

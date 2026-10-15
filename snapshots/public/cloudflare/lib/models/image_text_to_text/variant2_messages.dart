@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageTextToText (inline: Variant2 > Messages)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages_content.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages_content_variant2.dart';@immutable final class Variant2Messages {const Variant2Messages({required this.content, required this.role, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages_content.dart';@immutable final class Variant2Messages {const Variant2Messages({required this.content, required this.role, });
 
 factory Variant2Messages.fromJson(Map<String, dynamic> json) { return Variant2Messages(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Variant2MessagesContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: Variant2MessagesContent.fromJson(json['content']),
   role: json['role'] as String,
 ); }
 

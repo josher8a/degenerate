@@ -2,7 +2,7 @@
 // Source: #/components/schemas/UrlAnnotationSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/url_annotation_source/url_annotation_source_type.dart';/// URL backing an annotation entry.
-@immutable final class UrlAnnotationSource {const UrlAnnotationSource({required this.url, this.type = UrlAnnotationSourceType.url, });
+@immutable final class UrlAnnotationSource {const UrlAnnotationSource({required this.type, required this.url, });
 
 factory UrlAnnotationSource.fromJson(Map<String, dynamic> json) { return UrlAnnotationSource(
   type: UrlAnnotationSourceType.fromJson(json['type'] as String),

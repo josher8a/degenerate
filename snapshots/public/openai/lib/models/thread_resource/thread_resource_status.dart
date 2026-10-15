@@ -80,10 +80,10 @@ factory ThreadResourceStatus.fromJson(Map<String, dynamic> json) { return switch
 }; }
 
 /// Build the `locked` variant.
-factory ThreadResourceStatus.locked({required String? reason}) { return ThreadResourceStatusLocked(LockedStatus(reason: reason)); }
+factory ThreadResourceStatus.locked({required String? reason}) { return ThreadResourceStatusLocked(LockedStatus(type: LockedStatusType.fromJson('locked'), reason: reason)); }
 
 /// Build the `closed` variant.
-factory ThreadResourceStatus.closed({required String? reason}) { return ThreadResourceStatusClosed(ClosedStatus(reason: reason)); }
+factory ThreadResourceStatus.closed({required String? reason}) { return ThreadResourceStatusClosed(ClosedStatus(type: ClosedStatusType.fromJson('closed'), reason: reason)); }
 
 /// The discriminator value identifying this variant.
 ThreadResourceStatusType get type;

@@ -569,7 +569,7 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
           planType == other.planType &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, mapHash(additionalProperties));
 
 @override String toString() => 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType, additionalProperties: $additionalProperties)';
 

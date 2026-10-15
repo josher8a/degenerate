@@ -8,11 +8,11 @@ import 'package:pub_unhinged/models/new/new_null.dart';
 @immutable
 final class True {
   const True({
+    required this.$false,
     required this.none,
+    required this.$null,
     required this.$0,
     required this.$empty,
-    this.$false = true,
-    this.$null = NewNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,
@@ -189,7 +189,7 @@ final class True {
     $ref,
     $id,
     xExtensionLookalike,
-    Object.hashAll(additionalProperties.entries),
+    mapHash(additionalProperties),
   );
 
   @override

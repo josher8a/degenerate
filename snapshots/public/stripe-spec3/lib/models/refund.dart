@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Refund
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/refund/refund_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund/source_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details.dart';import 'package:pub_stripe_spec3/models/refund_next_action.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/refund/refund_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund/source_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details.dart';import 'package:pub_stripe_spec3/models/refund_next_action.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class RefundObject {const RefundObject();
 
 factory RefundObject.fromJson(String json) { return switch (json) {
@@ -244,27 +244,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 factory Refund.fromJson(Map<String, dynamic> json) { return Refund(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
+  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? ApplicationFeeCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
   destinationDetails: json['destination_details'] != null ? RefundDestinationDetails.fromJson(json['destination_details'] as Map<String, dynamic>) : null,
-  failureBalanceTransaction: json['failure_balance_transaction'] != null ? OneOf2.parse(json['failure_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  failureBalanceTransaction: json['failure_balance_transaction'] != null ? FailureBalanceTransaction.fromJson(json['failure_balance_transaction']) : null,
   failureReason: json['failure_reason'] as String?,
   id: json['id'] as String,
   instructionsEmail: json['instructions_email'] as String?,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   nextAction: json['next_action'] != null ? RefundNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null,
   object: RefundObject.fromJson(json['object'] as String),
-  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null) : const Omittable.absent(),
   pendingReason: json['pending_reason'] != null ? PendingReason.fromJson(json['pending_reason'] as String) : null,
   presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
   reason: json.containsKey('reason') ? Omittable(json['reason'] != null ? RefundReason.fromJson(json['reason'] as String) : null) : const Omittable.absent(),
   receiptNumber: json.containsKey('receipt_number') ? Omittable(json['receipt_number'] as String?) : const Omittable.absent(),
-  sourceTransferReversal: json.containsKey('source_transfer_reversal') ? Omittable(json['source_transfer_reversal'] != null ? OneOf2.parse(json['source_transfer_reversal'], fromA: (v) => v as String, fromB: (v) => TransferReversal.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  sourceTransferReversal: json.containsKey('source_transfer_reversal') ? Omittable(json['source_transfer_reversal'] != null ? SourceTransferReversal.fromJson(json['source_transfer_reversal']) : null) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
-  transferReversal: json.containsKey('transfer_reversal') ? Omittable(json['transfer_reversal'] != null ? OneOf2.parse(json['transfer_reversal'], fromA: (v) => v as String, fromB: (v) => TransferReversal.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  transferReversal: json.containsKey('transfer_reversal') ? Omittable(json['transfer_reversal'] != null ? RefundTransferReversal.fromJson(json['transfer_reversal']) : null) : const Omittable.absent(),
 ); }
 
 /// Amount, in cents (or local equivalent).

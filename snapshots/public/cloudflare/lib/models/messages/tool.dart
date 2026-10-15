@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Tool)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class ToolRole {const ToolRole();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';sealed class ToolRole {const ToolRole();
 
 factory ToolRole.fromJson(String json) { return switch (json) {
   'tool' => tool,
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tool, W 
 @immutable final class Tool {const Tool({required this.content, required this.role, required this.toolCallId, });
 
 factory Tool.fromJson(Map<String, dynamic> json) { return Tool(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => DeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: DeveloperContent.fromJson(json['content']),
   role: ToolRole.fromJson(json['role'] as String),
   toolCallId: json['tool_call_id'] as String,
 ); }

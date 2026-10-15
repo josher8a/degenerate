@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TerminalReader
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_reader/location.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_reader_action.dart';/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';import 'package:pub_stripe_spec3/models/terminal_reader/location.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_reader_action.dart';/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 sealed class TerminalReaderStatus {const TerminalReaderStatus();
 
 factory TerminalReaderStatus.fromJson(String json) { return switch (json) {
@@ -83,7 +83,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
   label: json['label'] as String,
   lastSeenAt: json.containsKey('last_seen_at') ? Omittable(json['last_seen_at'] != null ? (json['last_seen_at'] as num).toInt() : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
-  location: json.containsKey('location') ? Omittable(json['location'] != null ? OneOf2.parse(json['location'], fromA: (v) => v as String, fromB: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  location: json.containsKey('location') ? Omittable(json['location'] != null ? Location.fromJson(json['location']) : null) : const Omittable.absent(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DeletedTerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,

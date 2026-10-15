@@ -151,25 +151,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W F
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class TestEnumParametersRequest {const TestEnumParametersRequest({this.enumFormStringArray, this.enumFormString = EnumFormString.efg, });
+@immutable final class TestEnumParametersRequest {const TestEnumParametersRequest({this.enumFormStringArray, this.enumFormString, });
 
 factory TestEnumParametersRequest.fromJson(Map<String, dynamic> json) { return TestEnumParametersRequest(
   enumFormStringArray: (json['enum_form_string_array'] as List<dynamic>?)?.map((e) => EnumFormStringArray.fromJson(e as String)).toList(),
-  enumFormString: json.containsKey('enum_form_string') ? EnumFormString.fromJson(json['enum_form_string'] as String) : EnumFormString.efg,
+  enumFormString: json['enum_form_string'] != null ? EnumFormString.fromJson(json['enum_form_string'] as String) : null,
 ); }
 
 /// Form parameter enum test (string array)
 final List<EnumFormStringArray>? enumFormStringArray;
 
 /// Form parameter enum test (string)
-final EnumFormString enumFormString;
+final EnumFormString? enumFormString;
+
+/// The value of `enumFormString`, or its schema default when absent.
+EnumFormString get enumFormStringOrDefault => enumFormString ?? EnumFormString.fromJson('-efg');
 
 Map<String, dynamic> toJson() { return {
   if (enumFormStringArray != null) 'enum_form_string_array': enumFormStringArray?.map((e) => e.toJson()).toList(),
-  'enum_form_string': enumFormString.toJson(),
+  if (enumFormString != null) 'enum_form_string': enumFormString?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enum_form_string_array', 'enum_form_string'}.contains(key)); } 
-TestEnumParametersRequest copyWith({List<EnumFormStringArray>? Function()? enumFormStringArray, EnumFormString Function()? enumFormString, }) { return TestEnumParametersRequest(
+TestEnumParametersRequest copyWith({List<EnumFormStringArray>? Function()? enumFormStringArray, EnumFormString? Function()? enumFormString, }) { return TestEnumParametersRequest(
   enumFormStringArray: enumFormStringArray != null ? enumFormStringArray() : this.enumFormStringArray,
   enumFormString: enumFormString != null ? enumFormString() : this.enumFormString,
 ); } 

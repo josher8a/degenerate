@@ -65,7 +65,7 @@ factory Outcome.fromJson(Map<String, dynamic> json) { return switch (json['type'
 }; }
 
 /// Build the `exit` variant.
-factory Outcome.exit({required int exitCode}) { return OutcomeExit(FunctionShellCallOutputExitOutcome(exitCode: exitCode)); }
+factory Outcome.exit({required int exitCode}) { return OutcomeExit(FunctionShellCallOutputExitOutcome(type: FunctionShellCallOutputExitOutcomeType.fromJson('exit'), exitCode: exitCode)); }
 
 /// The discriminator value identifying this variant.
 OutcomeType get type;

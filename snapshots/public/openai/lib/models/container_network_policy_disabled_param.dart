@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({this.type = ContainerNetworkPolicyDisabledParamType.disabled});
+@immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({required this.type});
 
 factory ContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return ContainerNetworkPolicyDisabledParam(
   type: ContainerNetworkPolicyDisabledParamType.fromJson(json['type'] as String),

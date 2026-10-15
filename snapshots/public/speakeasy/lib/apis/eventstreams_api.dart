@@ -19,7 +19,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into JsonEvent
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TextEvent
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TextEvent
@@ -74,7 +74,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into RichStream
@@ -92,7 +92,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into DifferentDataSchemas
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -157,7 +157,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ChatCompletionEvent
@@ -177,7 +177,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ChatCompletionEvent
@@ -195,7 +195,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TextEvent
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into UnionWithCommentsStream
@@ -235,7 +235,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into PartialWithCommentsEvent
@@ -255,7 +255,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into OptionalDataEvent
@@ -275,7 +275,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into SseEvent
@@ -295,7 +295,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into MixedDataEvent
@@ -315,7 +315,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into NullableIdEvent

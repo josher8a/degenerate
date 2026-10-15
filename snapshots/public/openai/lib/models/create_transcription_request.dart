@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateTranscriptionRequest
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';import 'package:pub_openai/models/vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
 /// 
 sealed class AudioResponseFormat {const AudioResponseFormat();
 
@@ -249,19 +249,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream = const Omittable.absent(), this.chunkingStrategy = const Omittable.absent(), this.knownSpeakerNames, this.knownSpeakerReferences, });
+@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature, this.include, this.timestampGranularities, this.stream = const Omittable.absent(), this.chunkingStrategy = const Omittable.absent(), this.knownSpeakerNames, this.knownSpeakerReferences, });
 
 factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateTranscriptionRequest(
   file: base64Decode(json['file'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AudioTranscriptionModelVariant2.fromJson(v as String),),
+  model: AudioTranscriptionModel.fromJson(json['model']),
   language: json['language'] as String?,
   prompt: json['prompt'] as String?,
   responseFormat: json['response_format'] != null ? AudioResponseFormat.fromJson(json['response_format'] as String) : null,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.0,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => TranscriptionInclude.fromJson(e as String)).toList(),
   timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => TimestampGranularities.fromJson(e as String)).toList(),
   stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
-  chunkingStrategy: json.containsKey('chunking_strategy') ? Omittable(json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  chunkingStrategy: json.containsKey('chunking_strategy') ? Omittable(json['chunking_strategy'] != null ? CreateTranscriptionRequestChunkingStrategy.fromJson(json['chunking_strategy']) : null) : const Omittable.absent(),
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
@@ -290,7 +290,7 @@ final AudioResponseFormat? responseFormat;
 
 /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
 /// 
-final double temperature;
+final double? temperature;
 
 /// Additional information to include in the transcription response.
 /// `logprobs` will return the log probabilities of the tokens in the
@@ -325,13 +325,16 @@ final List<String>? knownSpeakerNames;
 /// 
 final List<String>? knownSpeakerReferences;
 
+/// The value of `temperature`, or its schema default when absent.
+double get temperatureOrDefault => temperature ?? 0.0;
+
 Map<String, dynamic> toJson() { return {
   'file': base64Encode(file),
   'model': model.toJson(),
   'language': ?language,
   'prompt': ?prompt,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
-  'temperature': temperature,
+  'temperature': ?temperature,
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
   if (timestampGranularities != null) 'timestamp_granularities': timestampGranularities?.map((e) => e.toJson()).toList(),
   if (stream.isPresent) 'stream': stream.value,
@@ -352,7 +355,7 @@ if (knownSpeakerReferences$ != null) {
   if (knownSpeakerReferences$.length > 4) { errors.add('knownSpeakerReferences: must have <= 4 items'); }
 }
 return errors; } 
-CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, Omittable<bool?>? stream, Omittable<CreateTranscriptionRequestChunkingStrategy?>? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
+CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double? Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, Omittable<bool?>? stream, Omittable<CreateTranscriptionRequestChunkingStrategy?>? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   language: language != null ? language() : this.language,

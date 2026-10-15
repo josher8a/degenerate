@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryAdvisoryCreate
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_vulnerabilities.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_create/repository_advisory_create_credits.dart';@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId = const Omittable.absent(), this.cweIds = const Omittable.absent(), this.credits = const Omittable.absent(), this.severity = const Omittable.absent(), this.cvssVectorString = const Omittable.absent(), this.startPrivateFork = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_vulnerabilities.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_create/repository_advisory_create_credits.dart';@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId = const Omittable.absent(), this.cweIds = const Omittable.absent(), this.credits = const Omittable.absent(), this.severity = const Omittable.absent(), this.cvssVectorString = const Omittable.absent(), this.startPrivateFork, });
 
 factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreate(
   summary: json['summary'] as String,
@@ -12,7 +12,7 @@ factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return Re
   credits: json.containsKey('credits') ? Omittable((json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCreateCredits.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   severity: json.containsKey('severity') ? Omittable(json['severity'] != null ? PrivateVulnerabilityReportCreateSeverity.fromJson(json['severity'] as String) : null) : const Omittable.absent(),
   cvssVectorString: json.containsKey('cvss_vector_string') ? Omittable(json['cvss_vector_string'] as String?) : const Omittable.absent(),
-  startPrivateFork: json.containsKey('start_private_fork') ? json['start_private_fork'] as bool : false,
+  startPrivateFork: json['start_private_fork'] as bool?,
 ); }
 
 /// A short summary of the advisory.
@@ -40,7 +40,10 @@ final Omittable<PrivateVulnerabilityReportCreateSeverity?> severity;
 final Omittable<String?> cvssVectorString;
 
 /// Whether to create a temporary private fork of the repository to collaborate on a fix.
-final bool startPrivateFork;
+final bool? startPrivateFork;
+
+/// The value of `startPrivateFork`, or its schema default when absent.
+bool get startPrivateForkOrDefault => startPrivateFork ?? false;
 
 Map<String, dynamic> toJson() { return {
   'summary': summary,
@@ -51,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (credits.isPresent) 'credits': credits.value?.map((e) => e.toJson()).toList(),
   if (severity.isPresent) 'severity': severity.value?.toJson(),
   if (cvssVectorString.isPresent) 'cvss_vector_string': cvssVectorString.value,
-  'start_private_fork': startPrivateFork,
+  'start_private_fork': ?startPrivateFork,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -61,7 +64,7 @@ List<String> validate() { final errors = <String>[];
 if (summary.runes.length > 1024) { errors.add('summary: length must be <= 1024'); }
 if (description.runes.length > 65535) { errors.add('description: length must be <= 65535'); }
 return errors; } 
-RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittable<String?>? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryCreateCredits>?>? credits, Omittable<PrivateVulnerabilityReportCreateSeverity?>? severity, Omittable<String?>? cvssVectorString, bool Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
+RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittable<String?>? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryCreateCredits>?>? credits, Omittable<PrivateVulnerabilityReportCreateSeverity?>? severity, Omittable<String?>? cvssVectorString, bool? Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
   summary: summary ?? this.summary,
   description: description ?? this.description,
   cveId: cveId ?? this.cveId,

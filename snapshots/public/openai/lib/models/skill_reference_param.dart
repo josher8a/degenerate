@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillRef
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.skillId, this.type = SkillReferenceParamType.skillReference, this.version, });
+@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.type, required this.skillId, this.version, });
 
 factory SkillReferenceParam.fromJson(Map<String, dynamic> json) { return SkillReferenceParam(
   type: SkillReferenceParamType.fromJson(json['type'] as String),

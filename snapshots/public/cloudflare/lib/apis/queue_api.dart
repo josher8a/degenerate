@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "QueueApi" (22 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/queues_ack_messages_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_create_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_get_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_patch_error.dart';import 'package:pub_cloudflare/models/mq_consumer_request.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';import 'package:pub_cloudflare/models/mq_event_subscription.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue.dart';import 'package:pub_cloudflare/models/mq_queue_batch.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/queues_ack_messages_request.dart';import 'package:pub_cloudflare/models/queues_ack_messages_response/queues_ack_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_create_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_response/queues_pull_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_get_response/queues_purge_get_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_request.dart';import 'package:pub_cloudflare/models/subscriptions_create_request.dart';import 'package:pub_cloudflare/models/subscriptions_list_direction.dart';import 'package:pub_cloudflare/models/subscriptions_list_order.dart';import 'package:pub_cloudflare/models/subscriptions_patch_request.dart';import 'package:pub_cloudflare/models/success.dart';/// QueueApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/queues_ack_messages_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_create_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_get_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_patch_error.dart';import 'package:pub_cloudflare/models/mq_consumer_request.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';import 'package:pub_cloudflare/models/mq_event_subscription.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue.dart';import 'package:pub_cloudflare/models/mq_queue_batch.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/mq_queue_request.dart';import 'package:pub_cloudflare/models/queues_ack_messages_request.dart';import 'package:pub_cloudflare/models/queues_ack_messages_response/queues_ack_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_create_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_response/queues_pull_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_get_response/queues_purge_get_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_request.dart';import 'package:pub_cloudflare/models/subscriptions_create_request.dart';import 'package:pub_cloudflare/models/subscriptions_list_direction.dart';import 'package:pub_cloudflare/models/subscriptions_list_order.dart';import 'package:pub_cloudflare/models/subscriptions_patch_request.dart';import 'package:pub_cloudflare/models/success.dart';/// QueueApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -113,7 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -183,7 +183,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -206,7 +206,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -220,7 +220,7 @@ return execute(
 /// Updates a Queue. Note that this endpoint does not support partial updates. If successful, the Queue's configuration is overwritten with the supplied configuration.
 ///
 /// `PUT /accounts/{account_id}/queues/{queue_id}`
-Future<ApiResult<MqQueue?, QueuesAckMessagesError>> queuesUpdate({required MqIdentifier queueId, required MqIdentifier accountId, MqQueue? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MqQueue?, QueuesAckMessagesError>> queuesUpdate({required MqIdentifier queueId, required MqIdentifier accountId, MqQueueRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -231,7 +231,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -245,7 +245,7 @@ return execute(
 /// Updates a Queue.
 ///
 /// `PATCH /accounts/{account_id}/queues/{queue_id}`
-Future<ApiResult<MqQueue?, QueuesAckMessagesError>> queuesUpdatePartial({required MqIdentifier queueId, required MqIdentifier accountId, MqQueue? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MqQueue?, QueuesAckMessagesError>> queuesUpdatePartial({required MqIdentifier queueId, required MqIdentifier accountId, MqQueueRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -256,7 +256,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -279,7 +279,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -301,7 +301,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -326,7 +326,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -349,7 +349,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -374,7 +374,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -397,7 +397,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -421,7 +421,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -445,7 +445,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -470,7 +470,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -494,7 +494,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -517,7 +517,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -542,7 +542,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

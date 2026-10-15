@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Issue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/issue/issue_labels.dart';import 'package:pub_github_rest_3_1/models/issue/issue_labels_variant2.dart';import 'package:pub_github_rest_3_1/models/issue/issue_pull_request.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';/// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-@immutable final class Issue {const Issue({required this.user, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, required this.title, required this.id, required this.labels, required this.assignee, required this.milestone, required this.locked, required this.closedAt, required this.createdAt, required this.updatedAt, required this.comments, this.activeLockReason = const Omittable.absent(), this.pullRequest, this.assignees, this.body = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.issueFieldValues, this.closedBy = const Omittable.absent(), this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.repository, this.performedViaGithubApp = const Omittable.absent(), this.authorAssociation, this.reactions, this.subIssuesSummary, this.parentIssueUrl = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.issueDependenciesSummary, this.draft, });
+@immutable final class Issue {const Issue({required this.user, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, required this.title, required this.id, required this.labels, required this.assignee, required this.milestone, required this.locked, required this.closedAt, required this.createdAt, required this.updatedAt, required this.comments, this.activeLockReason = const Omittable.absent(), this.pullRequest, this.assignees, this.body = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.issueFieldValues, this.closedBy = const Omittable.absent(), this.bodyHtml, this.bodyText, this.timelineUrl, this.type = const Omittable.absent(), this.repository, this.performedViaGithubApp = const Omittable.absent(), this.authorAssociation, this.reactions, this.subIssuesSummary, this.parentIssueUrl = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.issueDependenciesSummary, this.draft, });
 
 factory Issue.fromJson(Map<String, dynamic> json) { return Issue(
   id: (json['id'] as num).toInt(),
@@ -35,7 +35,7 @@ factory Issue.fromJson(Map<String, dynamic> json) { return Issue(
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
   timelineUrl: json['timeline_url'] != null ? Uri.parse(json['timeline_url'] as String) : null,
-  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   repository: json['repository'] != null ? Repository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
@@ -114,7 +114,7 @@ final String? bodyText;
 
 final Uri? timelineUrl;
 
-final IssueType? type;
+final Omittable<IssueType?> type;
 
 final Repository? repository;
 
@@ -167,7 +167,7 @@ Map<String, dynamic> toJson() { return {
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
   if (timelineUrl != null) 'timeline_url': timelineUrl?.toString(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
@@ -198,7 +198,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? number, String? state, Omittable<IssueStateReason?>? stateReason, String? title, Omittable<String?>? body, SimpleUser? Function()? user, List<IssueLabels>? labels, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Milestone? Function()? milestone, bool? locked, Omittable<String?>? activeLockReason, int? comments, IssuePullRequest? Function()? pullRequest, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, bool? Function()? draft, Omittable<SimpleUser?>? closedBy, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, IssueType? Function()? type, Repository? Function()? repository, Omittable<Integration?>? performedViaGithubApp, AuthorAssociation? Function()? authorAssociation, ReactionRollup? Function()? reactions, SubIssuesSummary? Function()? subIssuesSummary, Omittable<Uri?>? parentIssueUrl, Omittable<IssueComment?>? pinnedComment, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, }) { return Issue(
+Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? number, String? state, Omittable<IssueStateReason?>? stateReason, String? title, Omittable<String?>? body, SimpleUser? Function()? user, List<IssueLabels>? labels, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Milestone? Function()? milestone, bool? locked, Omittable<String?>? activeLockReason, int? comments, IssuePullRequest? Function()? pullRequest, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, bool? Function()? draft, Omittable<SimpleUser?>? closedBy, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, Repository? Function()? repository, Omittable<Integration?>? performedViaGithubApp, AuthorAssociation? Function()? authorAssociation, ReactionRollup? Function()? reactions, SubIssuesSummary? Function()? subIssuesSummary, Omittable<Uri?>? parentIssueUrl, Omittable<IssueComment?>? pinnedComment, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, }) { return Issue(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -229,7 +229,7 @@ Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? l
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   timelineUrl: timelineUrl != null ? timelineUrl() : this.timelineUrl,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
   repository: repository != null ? repository() : this.repository,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   authorAssociation: authorAssociation != null ? authorAssociation() : this.authorAssociation,

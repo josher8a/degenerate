@@ -36,7 +36,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return UserSchema.fromJson(
@@ -63,7 +63,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return PublicUserSchema.fromJson(
@@ -91,7 +91,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return UserSchema.fromJson(
@@ -119,7 +119,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return jsonDecode(response.body) as bool;
@@ -142,7 +142,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return jsonDecode(response.body) as bool;
@@ -166,7 +166,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return KeeperProfileSchema.fromJson(
@@ -194,7 +194,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return jsonDecode(response.body) as bool;

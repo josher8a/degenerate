@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? containe
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, this.skills, });
+@immutable final class ContainerAutoParam {const ContainerAutoParam({required this.type, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, this.skills, });
 
 factory ContainerAutoParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParam(
   type: ContainerAutoParamType.fromJson(json['type'] as String),

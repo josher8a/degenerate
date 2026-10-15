@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "FeedbackApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_feedback_report.dart';import 'package:pub_cloudflare/models/bot_management_identifier.dart';import 'package:pub_cloudflare/models/errors/bot_management_zone_feedback_create_error.dart';/// FeedbackApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_feedback_report.dart';import 'package:pub_cloudflare/models/bot_management_feedback_report_request.dart';import 'package:pub_cloudflare/models/bot_management_identifier.dart';import 'package:pub_cloudflare/models/errors/bot_management_zone_feedback_create_error.dart';/// FeedbackApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -24,7 +24,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -41,7 +41,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<void, BotManagementZoneFeedbackCreateError>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReport body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BotManagementZoneFeedbackCreateError>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: BotManagementZoneFeedbackCreateError.fromResponse,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NamespaceWorkerPatchScriptSettingsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item.dart';@immutable final class NamespaceWorkerPatchScriptSettingsResponse {const NamespaceWorkerPatchScriptSettingsResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item_response.dart';@immutable final class NamespaceWorkerPatchScriptSettingsResponse {const NamespaceWorkerPatchScriptSettingsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory NamespaceWorkerPatchScriptSettingsResponse.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPatchScriptSettingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItem.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItemResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<WorkersMessages2> errors;
@@ -19,7 +19,7 @@ final List<WorkersMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final WorkersNamespaceScriptAndVersionSettingsItem? result;
+final WorkersNamespaceScriptAndVersionSettingsItemResponse? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-NamespaceWorkerPatchScriptSettingsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkersNamespaceScriptAndVersionSettingsItem? Function()? result, }) { return NamespaceWorkerPatchScriptSettingsResponse(
+NamespaceWorkerPatchScriptSettingsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkersNamespaceScriptAndVersionSettingsItemResponse? Function()? result, }) { return NamespaceWorkerPatchScriptSettingsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

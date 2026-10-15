@@ -1264,6 +1264,9 @@ final class IrMapper {
     _recordPath(unionName, unionPath);
 
     final items = schema[schemaKey] as List;
+    final hasNullVariant = items.any(
+      (variant) => variant is Map<String, dynamic> && variant['type'] == 'null',
+    );
 
     // Collapse anyOf/oneOf of single-value string enums into one enum.
     final collapsed = _trySingleValueEnumCollapse(items);
@@ -1280,6 +1283,9 @@ final class IrMapper {
     for (var i = 0; i < items.length; i++) {
       final variant = items[i];
       if (variant is Map<String, dynamic>) {
+        // A null-only alternative contributes nullability, not a dynamic
+        // variant that would accept every JSON value.
+        if (variant['type'] == 'null') continue;
         final hint = _variantHint(unionName, variant, i);
         variants.add(
           lowerInlineSchema(
@@ -1312,7 +1318,8 @@ final class IrMapper {
       unionName,
       deduped.length >= 2 ? deduped : variants,
       description: description,
-      isNullable: nullable,
+      isNullable:
+          nullable || hasNullVariant || variants.any((v) => v.isNullable),
     );
   }
 

@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesBase
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesBase {const ZonesBase({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesBase {const ZonesBase({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
 factory ZonesBase.fromJson(Map<String, dynamic> json) { return ZonesBase(
-  editable: json.containsKey('editable') ? json['editable'] as bool : true,
+  editable: json['editable'] as bool?,
   id: json['id'] as String,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'],
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-final bool editable;
+final bool? editable;
 
 /// Identifier of the zone setting.
 /// 
@@ -28,15 +28,18 @@ final Omittable<DateTime?> modifiedOn;
 /// Example: `'on'`
 final dynamic value;
 
+/// The value of `editable`, or its schema default when absent.
+bool get editableOrDefault => editable ?? true;
+
 Map<String, dynamic> toJson() { return {
-  'editable': editable,
+  'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('value'); } 
-ZonesBase copyWith({bool Function()? editable, String? id, Omittable<DateTime?>? modifiedOn, dynamic Function()? value, }) { return ZonesBase(
+ZonesBase copyWith({bool? Function()? editable, String? id, Omittable<DateTime?>? modifiedOn, dynamic Function()? value, }) { return ZonesBase(
   editable: editable != null ? editable() : this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

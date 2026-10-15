@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? locked, 
 
  }
 /// Indicates that a thread is locked and cannot accept new input.
-@immutable final class LockedStatus {const LockedStatus({required this.reason, this.type = LockedStatusType.locked, });
+@immutable final class LockedStatus {const LockedStatus({required this.type, required this.reason, });
 
 factory LockedStatus.fromJson(Map<String, dynamic> json) { return LockedStatus(
   type: LockedStatusType.fromJson(json['type'] as String),

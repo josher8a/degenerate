@@ -53,8 +53,49 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? currentP
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [EffectiveDateVariant1]
-/// - `.b` → [int]
-/// - `.c` → [ExpiresAtVariant3]
-typedef EffectiveDate = OneOf3<EffectiveDateVariant1,int,ExpiresAtVariant3>;
+@immutable final class EffectiveDate {/// A value built from one or more typed views (at least one must be present).
+const EffectiveDate({this.effectiveDateVariant1 = const Omittable.absent(), this.$int = const Omittable.absent(), this.expiresAtVariant3 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const EffectiveDate._({required this.rawValue, required this.effectiveDateVariant1, required this.$int, required this.expiresAtVariant3, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory EffectiveDate.fromJson(Object? json) { return EffectiveDate._(
+  rawValue: Omittable(json),
+  effectiveDateVariant1: parseAnyOfVariant<EffectiveDateVariant1>(json, (value) => EffectiveDateVariant1.fromJson(value! as String)),
+  $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+  expiresAtVariant3: parseAnyOfVariant<ExpiresAtVariant3>(json, (value) => ExpiresAtVariant3.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `EffectiveDateVariant1`, when it matches.
+final Omittable<EffectiveDateVariant1> effectiveDateVariant1;
+
+/// The payload decoded as `int`, when it matches.
+final Omittable<int> $int;
+
+/// The payload decoded as `ExpiresAtVariant3`, when it matches.
+final Omittable<ExpiresAtVariant3> expiresAtVariant3;
+
+/// Whether at least one variant matched.
+bool get isValid => effectiveDateVariant1.isPresent || $int.isPresent || expiresAtVariant3.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (effectiveDateVariant1.isPresent) effectiveDateVariant1.value?.toJson(),
+    if ($int.isPresent) $int.value,
+    if (expiresAtVariant3.isPresent) expiresAtVariant3.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is EffectiveDate && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'EffectiveDate(${toJson()})';
+
+ }

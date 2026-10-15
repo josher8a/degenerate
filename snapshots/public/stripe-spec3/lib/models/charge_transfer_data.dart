@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChargeTransferData
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// 
 @immutable final class ChargeTransferData {const ChargeTransferData({required this.destination, this.amount = const Omittable.absent(), });
 
 factory ChargeTransferData.fromJson(Map<String, dynamic> json) { return ChargeTransferData(
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
-  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  destination: ChargeTransferDataDestination.fromJson(json['destination']),
 ); }
 
 /// The amount transferred to the destination account, if specified. By default, the entire charge amount is transferred to the destination account.

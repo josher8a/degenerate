@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GroupListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -77,7 +77,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GroupResourceWithSuccess.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GroupDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

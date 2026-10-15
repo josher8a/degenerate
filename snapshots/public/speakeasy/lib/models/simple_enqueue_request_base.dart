@@ -32,7 +32,7 @@ SimpleEnqueueRequestBase copyWith({Uint8List? Function()? image, String? Functio
           sourceId == other.sourceId &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(Object.hashAll(image ?? const []), sourceId, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(Object.hashAll(image ?? const []), sourceId, mapHash(additionalProperties));
 
 @override String toString() => 'SimpleEnqueueRequestBase(image: $image, sourceId: $sourceId, additionalProperties: $additionalProperties)';
 

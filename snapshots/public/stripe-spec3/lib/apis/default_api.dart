@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DefaultApi" (581 operations)
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_link.dart';import 'package:pub_stripe_spec3/models/account_session.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/apps_secret.dart';import 'package:pub_stripe_spec3/models/balance.dart';import 'package:pub_stripe_spec3/models/balance_settings.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/billing_alert.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/billing_meter_event.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session.dart';import 'package:pub_stripe_spec3/models/capability.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/cash_balance.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/climate_order.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';import 'package:pub_stripe_spec3/models/confirmation_token.dart';import 'package:pub_stripe_spec3/models/country_spec.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_session.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/delete_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/delete_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_ephemeral_keys_key_request.dart';import 'package:pub_stripe_spec3/models/delete_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/delete_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/delete_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/delete_products_id_request.dart';import 'package:pub_stripe_spec3/models/delete_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/delete_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/delete_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/deleted_account.dart';import 'package:pub_stripe_spec3/models/deleted_apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/deleted_coupon.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/deleted_external_account.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/deleted_invoiceitem.dart';import 'package:pub_stripe_spec3/models/deleted_person.dart';import 'package:pub_stripe_spec3/models/deleted_plan.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/deleted_product_feature.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_location.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/dispute.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';import 'package:pub_stripe_spec3/models/ephemeral_key.dart';import 'package:pub_stripe_spec3/models/errors/delete_accounts_account_error.dart';import 'package:pub_stripe_spec3/models/event.dart';import 'package:pub_stripe_spec3/models/exchange_rate.dart';import 'package:pub_stripe_spec3/models/external_account.dart';import 'package:pub_stripe_spec3/models/fee_refund.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/file_link.dart';import 'package:pub_stripe_spec3/models/financial_connections_account.dart';import 'package:pub_stripe_spec3/models/financial_connections_session.dart';import 'package:pub_stripe_spec3/models/financial_connections_transaction.dart';import 'package:pub_stripe_spec3/models/forwarding_request.dart';import 'package:pub_stripe_spec3/models/funding_instructions.dart';import 'package:pub_stripe_spec3/models/get_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_created.dart';import 'package:pub_stripe_spec3/models/get_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_scope.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_scope.dart';import 'package:pub_stripe_spec3/models/get_balance_history_created.dart';import 'package:pub_stripe_spec3/models/get_balance_history_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_response.dart';import 'package:pub_stripe_spec3/models/get_balance_request.dart';import 'package:pub_stripe_spec3/models/get_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_alert_type.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_value_grouping_window.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_status.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/get_charges_created.dart';import 'package:pub_stripe_spec3/models/get_charges_request.dart';import 'package:pub_stripe_spec3/models/get_charges_response.dart';import 'package:pub_stripe_spec3/models/get_charges_search_request.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_customer_details.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_response.dart';import 'package:pub_stripe_spec3/models/get_climate_products_product_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_request.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_supplier_request.dart';import 'package:pub_stripe_spec3/models/get_confirmation_tokens_confirmation_token_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_country_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_response.dart';import 'package:pub_stripe_spec3/models/get_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_created.dart';import 'package:pub_stripe_spec3/models/get_coupons_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_created.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_response.dart';import 'package:pub_stripe_spec3/models/get_customers_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_customers_request.dart';import 'package:pub_stripe_spec3/models/get_customers_response.dart';import 'package:pub_stripe_spec3/models/get_customers_search_request.dart';import 'package:pub_stripe_spec3/models/get_customers_search_response.dart';import 'package:pub_stripe_spec3/models/get_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_response.dart';import 'package:pub_stripe_spec3/models/get_events_created.dart';import 'package:pub_stripe_spec3/models/get_events_id_request.dart';import 'package:pub_stripe_spec3/models/get_events_request.dart';import 'package:pub_stripe_spec3/models/get_events_response.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_rate_id_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_response.dart';import 'package:pub_stripe_spec3/models/get_file_links_created.dart';import 'package:pub_stripe_spec3/models/get_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_response.dart';import 'package:pub_stripe_spec3/models/get_files_created.dart';import 'package:pub_stripe_spec3/models/get_files_file_request.dart';import 'package:pub_stripe_spec3/models/get_files_purpose.dart';import 'package:pub_stripe_spec3/models/get_files_request.dart';import 'package:pub_stripe_spec3/models/get_files_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transacted_at.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_created.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_id_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_report_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_type.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_created.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_invoice_payment_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_payment.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_template_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_created.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_collection_method.dart';import 'package:pub_stripe_spec3/models/get_invoices_created.dart';import 'package:pub_stripe_spec3/models/get_invoices_due_date.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_preferences.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_physical_bundle_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_type.dart';import 'package:pub_stripe_spec3/models/get_link_account_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_mandates_mandate_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_created.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_payment_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_arrival_date.dart';import 'package:pub_stripe_spec3/models/get_payouts_created.dart';import 'package:pub_stripe_spec3/models/get_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_response.dart';import 'package:pub_stripe_spec3/models/get_plans_created.dart';import 'package:pub_stripe_spec3/models/get_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/get_plans_request.dart';import 'package:pub_stripe_spec3/models/get_plans_response.dart';import 'package:pub_stripe_spec3/models/get_prices_created.dart';import 'package:pub_stripe_spec3/models/get_prices_price_request.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring.dart';import 'package:pub_stripe_spec3/models/get_prices_request.dart';import 'package:pub_stripe_spec3/models/get_prices_response.dart';import 'package:pub_stripe_spec3/models/get_prices_search_request.dart';import 'package:pub_stripe_spec3/models/get_prices_search_response.dart';import 'package:pub_stripe_spec3/models/get_prices_type.dart';import 'package:pub_stripe_spec3/models/get_products_created.dart';import 'package:pub_stripe_spec3/models/get_products_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_response.dart';import 'package:pub_stripe_spec3/models/get_products_request.dart';import 'package:pub_stripe_spec3/models/get_products_response.dart';import 'package:pub_stripe_spec3/models/get_products_search_request.dart';import 'package:pub_stripe_spec3/models/get_products_search_response.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_created.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_pdf_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_status.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_created.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_early_fraud_warning_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_created.dart';import 'package:pub_stripe_spec3/models/get_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_created.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_report_run_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_report_type_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_created.dart';import 'package:pub_stripe_spec3/models/get_reviews_request.dart';import 'package:pub_stripe_spec3/models/get_reviews_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_review_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_created.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_response.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_created.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_created.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_response.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_scheduled_query_run_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_mandate_notifications_mandate_notification_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_source_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_canceled_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_completed_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_created.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_released_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_automatic_tax.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_collection_method.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_created.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_end.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_start.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_status.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_associations_find_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_response.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_created.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_response.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_status.dart';import 'package:pub_stripe_spec3/models/get_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_device_type.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_status.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_response.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/get_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_topups_amount.dart';import 'package:pub_stripe_spec3/models/get_topups_created.dart';import 'package:pub_stripe_spec3/models/get_topups_request.dart';import 'package:pub_stripe_spec3/models/get_topups_response.dart';import 'package:pub_stripe_spec3/models/get_topups_status.dart';import 'package:pub_stripe_spec3/models/get_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_created.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_credit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_debit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_resolution.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_linked_flows.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_effective_at.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status_transitions.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_response.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_session.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment.dart';import 'package:pub_stripe_spec3/models/invoice_rendering_template.dart';import 'package:pub_stripe_spec3/models/invoiceitem.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_settlement.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';import 'package:pub_stripe_spec3/models/line_item.dart';import 'package:pub_stripe_spec3/models/login_link.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_link.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_configuration.dart';import 'package:pub_stripe_spec3/models/payment_method_domain.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';import 'package:pub_stripe_spec3/models/payment_source.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/person.dart';import 'package:pub_stripe_spec3/models/plan.dart';import 'package:pub_stripe_spec3/models/post_account_links_request.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_login_links_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_reject_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refund_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_activate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_archive_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_expire_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_event_adjustments_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_events_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_reactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/post_charges_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_expire_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_funding_instructions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_customers_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/post_ephemeral_keys_request.dart';import 'package:pub_stripe_spec3/models/post_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_request.dart';import 'package:pub_stripe_spec3/models/post_files_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_subscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_unsubscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_redact_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_archive_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_unarchive_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_attach_payment_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_mark_uncollectible_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_send_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_update_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_void_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_submit_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_link_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_apply_customer_balance_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_increment_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_validate_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_attach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_detach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_canceled_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_failed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_guaranteed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_request.dart';import 'package:pub_stripe_spec3/models/post_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/post_plans_request.dart';import 'package:pub_stripe_spec3/models/post_prices_price_request.dart';import 'package:pub_stripe_spec3/models/post_prices_request.dart';import 'package:pub_stripe_spec3/models/post_products_id_request.dart';import 'package:pub_stripe_spec3/models/post_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/post_products_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_accept_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_request.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/post_reviews_review_approve_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/post_sigma_saved_queries_id_request.dart';import 'package:pub_stripe_spec3/models/post_sources_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_verify_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_release_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_migrate_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_resume_request.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_from_calculation_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_connection_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_cancel_action_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_confirm_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_setup_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_refund_payment_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_customers_customer_fund_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_fraud_challenges_respond_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_increment_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_deliver_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_ship_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_submit_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_activate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_reject_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_settlement_complete_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_force_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_unlinked_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_transaction_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_refunds_refund_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_succeed_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_timeout_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_test_clock_advance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_succeed_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/post_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_topups_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_inbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_id_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_outbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/product_feature.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';import 'package:pub_stripe_spec3/models/query.dart';import 'package:pub_stripe_spec3/models/quote.dart';import 'package:pub_stripe_spec3/models/radar_early_fraud_warning.dart';import 'package:pub_stripe_spec3/models/radar_payment_evaluation.dart';import 'package:pub_stripe_spec3/models/radar_value_list.dart';import 'package:pub_stripe_spec3/models/radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/reporting_report_run.dart';import 'package:pub_stripe_spec3/models/reporting_report_type.dart';import 'package:pub_stripe_spec3/models/review.dart';import 'package:pub_stripe_spec3/models/scheduled_query_run.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification.dart';import 'package:pub_stripe_spec3/models/source_transaction.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/tax_association.dart';import 'package:pub_stripe_spec3/models/tax_calculation.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/tax_registration.dart';import 'package:pub_stripe_spec3/models/tax_settings.dart';import 'package:pub_stripe_spec3/models/tax_transaction.dart';import 'package:pub_stripe_spec3/models/terminal_configuration.dart';import 'package:pub_stripe_spec3/models/terminal_connection_token.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link.dart';import 'package:pub_stripe_spec3/models/terminal_reader.dart';import 'package:pub_stripe_spec3/models/terminal_refund.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/token.dart';import 'package:pub_stripe_spec3/models/topup.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit.dart';import 'package:pub_stripe_spec3/models/treasury_received_debit.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry.dart';import 'package:pub_stripe_spec3/models/webhook_endpoint.dart';/// DefaultApi operations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_link.dart';import 'package:pub_stripe_spec3/models/account_session.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/apps_secret.dart';import 'package:pub_stripe_spec3/models/balance.dart';import 'package:pub_stripe_spec3/models/balance_settings.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/billing_alert.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/billing_meter_event.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session.dart';import 'package:pub_stripe_spec3/models/capability.dart';import 'package:pub_stripe_spec3/models/cash_balance.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/climate_order.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';import 'package:pub_stripe_spec3/models/confirmation_token.dart';import 'package:pub_stripe_spec3/models/country_spec.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_session.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/delete_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/delete_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_ephemeral_keys_key_request.dart';import 'package:pub_stripe_spec3/models/delete_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/delete_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/delete_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/delete_products_id_request.dart';import 'package:pub_stripe_spec3/models/delete_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/delete_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/delete_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/deleted_account.dart';import 'package:pub_stripe_spec3/models/deleted_apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/deleted_coupon.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/deleted_external_account.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/deleted_invoiceitem.dart';import 'package:pub_stripe_spec3/models/deleted_person.dart';import 'package:pub_stripe_spec3/models/deleted_plan.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/deleted_product_feature.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_location.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/dispute.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';import 'package:pub_stripe_spec3/models/ephemeral_key.dart';import 'package:pub_stripe_spec3/models/errors/delete_accounts_account_error.dart';import 'package:pub_stripe_spec3/models/event.dart';import 'package:pub_stripe_spec3/models/exchange_rate.dart';import 'package:pub_stripe_spec3/models/external_account.dart';import 'package:pub_stripe_spec3/models/fee_refund.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/file_link.dart';import 'package:pub_stripe_spec3/models/financial_connections_account.dart';import 'package:pub_stripe_spec3/models/financial_connections_session.dart';import 'package:pub_stripe_spec3/models/financial_connections_transaction.dart';import 'package:pub_stripe_spec3/models/forwarding_request.dart';import 'package:pub_stripe_spec3/models/funding_instructions.dart';import 'package:pub_stripe_spec3/models/get_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_created.dart';import 'package:pub_stripe_spec3/models/get_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_scope.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_scope.dart';import 'package:pub_stripe_spec3/models/get_balance_history_created.dart';import 'package:pub_stripe_spec3/models/get_balance_history_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_response.dart';import 'package:pub_stripe_spec3/models/get_balance_request.dart';import 'package:pub_stripe_spec3/models/get_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_alert_type.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_value_grouping_window.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_status.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/get_charges_created.dart';import 'package:pub_stripe_spec3/models/get_charges_request.dart';import 'package:pub_stripe_spec3/models/get_charges_response.dart';import 'package:pub_stripe_spec3/models/get_charges_search_request.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_customer_details.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_response.dart';import 'package:pub_stripe_spec3/models/get_climate_products_product_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_request.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_supplier_request.dart';import 'package:pub_stripe_spec3/models/get_confirmation_tokens_confirmation_token_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_country_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_response.dart';import 'package:pub_stripe_spec3/models/get_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_created.dart';import 'package:pub_stripe_spec3/models/get_coupons_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_created.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_response.dart';import 'package:pub_stripe_spec3/models/get_customers_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_customers_request.dart';import 'package:pub_stripe_spec3/models/get_customers_response.dart';import 'package:pub_stripe_spec3/models/get_customers_search_request.dart';import 'package:pub_stripe_spec3/models/get_customers_search_response.dart';import 'package:pub_stripe_spec3/models/get_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_response.dart';import 'package:pub_stripe_spec3/models/get_events_created.dart';import 'package:pub_stripe_spec3/models/get_events_id_request.dart';import 'package:pub_stripe_spec3/models/get_events_request.dart';import 'package:pub_stripe_spec3/models/get_events_response.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_rate_id_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_response.dart';import 'package:pub_stripe_spec3/models/get_file_links_created.dart';import 'package:pub_stripe_spec3/models/get_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_response.dart';import 'package:pub_stripe_spec3/models/get_files_created.dart';import 'package:pub_stripe_spec3/models/get_files_file_request.dart';import 'package:pub_stripe_spec3/models/get_files_purpose.dart';import 'package:pub_stripe_spec3/models/get_files_request.dart';import 'package:pub_stripe_spec3/models/get_files_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transacted_at.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_created.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_id_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_report_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_type.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_created.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_invoice_payment_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_payment.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_template_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_created.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_collection_method.dart';import 'package:pub_stripe_spec3/models/get_invoices_created.dart';import 'package:pub_stripe_spec3/models/get_invoices_due_date.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_preferences.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_physical_bundle_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_type.dart';import 'package:pub_stripe_spec3/models/get_link_account_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_mandates_mandate_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_created.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_payment_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_arrival_date.dart';import 'package:pub_stripe_spec3/models/get_payouts_created.dart';import 'package:pub_stripe_spec3/models/get_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_response.dart';import 'package:pub_stripe_spec3/models/get_plans_created.dart';import 'package:pub_stripe_spec3/models/get_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/get_plans_request.dart';import 'package:pub_stripe_spec3/models/get_plans_response.dart';import 'package:pub_stripe_spec3/models/get_prices_created.dart';import 'package:pub_stripe_spec3/models/get_prices_price_request.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring.dart';import 'package:pub_stripe_spec3/models/get_prices_request.dart';import 'package:pub_stripe_spec3/models/get_prices_response.dart';import 'package:pub_stripe_spec3/models/get_prices_search_request.dart';import 'package:pub_stripe_spec3/models/get_prices_search_response.dart';import 'package:pub_stripe_spec3/models/get_prices_type.dart';import 'package:pub_stripe_spec3/models/get_products_created.dart';import 'package:pub_stripe_spec3/models/get_products_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_response.dart';import 'package:pub_stripe_spec3/models/get_products_request.dart';import 'package:pub_stripe_spec3/models/get_products_response.dart';import 'package:pub_stripe_spec3/models/get_products_search_request.dart';import 'package:pub_stripe_spec3/models/get_products_search_response.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_created.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_pdf_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_status.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_created.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_early_fraud_warning_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_created.dart';import 'package:pub_stripe_spec3/models/get_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_created.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_report_run_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_report_type_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_created.dart';import 'package:pub_stripe_spec3/models/get_reviews_request.dart';import 'package:pub_stripe_spec3/models/get_reviews_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_review_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_created.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_response.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_created.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_created.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_response.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_scheduled_query_run_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_mandate_notifications_mandate_notification_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_source_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_canceled_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_completed_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_created.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_released_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_automatic_tax.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_collection_method.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_created.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_end.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_start.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_status.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_associations_find_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_response.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_created.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_response.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_status.dart';import 'package:pub_stripe_spec3/models/get_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_device_type.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_status.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_response.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/get_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_topups_amount.dart';import 'package:pub_stripe_spec3/models/get_topups_created.dart';import 'package:pub_stripe_spec3/models/get_topups_request.dart';import 'package:pub_stripe_spec3/models/get_topups_response.dart';import 'package:pub_stripe_spec3/models/get_topups_status.dart';import 'package:pub_stripe_spec3/models/get_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_created.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_credit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_debit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_resolution.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_linked_flows.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_effective_at.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status_transitions.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_response.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_session.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment.dart';import 'package:pub_stripe_spec3/models/invoice_rendering_template.dart';import 'package:pub_stripe_spec3/models/invoiceitem.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_settlement.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';import 'package:pub_stripe_spec3/models/line_item.dart';import 'package:pub_stripe_spec3/models/login_link.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_link.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_configuration.dart';import 'package:pub_stripe_spec3/models/payment_method_domain.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';import 'package:pub_stripe_spec3/models/payment_source.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/person.dart';import 'package:pub_stripe_spec3/models/plan.dart';import 'package:pub_stripe_spec3/models/post_account_links_request.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_login_links_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_reject_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refund_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_activate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_archive_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_expire_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_event_adjustments_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_events_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_reactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/post_charges_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_expire_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_funding_instructions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_customers_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/post_ephemeral_keys_request.dart';import 'package:pub_stripe_spec3/models/post_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_request.dart';import 'package:pub_stripe_spec3/models/post_files_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_subscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_unsubscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_redact_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_archive_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_unarchive_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_attach_payment_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_mark_uncollectible_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_send_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_update_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_void_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_submit_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_link_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_apply_customer_balance_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_increment_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_validate_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_attach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_detach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_canceled_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_failed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_guaranteed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_request.dart';import 'package:pub_stripe_spec3/models/post_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/post_plans_request.dart';import 'package:pub_stripe_spec3/models/post_prices_price_request.dart';import 'package:pub_stripe_spec3/models/post_prices_request.dart';import 'package:pub_stripe_spec3/models/post_products_id_request.dart';import 'package:pub_stripe_spec3/models/post_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/post_products_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_accept_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_request.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/post_reviews_review_approve_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/post_sigma_saved_queries_id_request.dart';import 'package:pub_stripe_spec3/models/post_sources_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_verify_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_release_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_migrate_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_resume_request.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_from_calculation_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_connection_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_cancel_action_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_confirm_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_setup_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_refund_payment_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_customers_customer_fund_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_fraud_challenges_respond_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_increment_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_deliver_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_ship_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_submit_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_activate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_reject_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_settlement_complete_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_force_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_unlinked_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_transaction_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_refunds_refund_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_succeed_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_timeout_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_test_clock_advance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_succeed_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/post_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_topups_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_inbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_id_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_outbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/product_feature.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';import 'package:pub_stripe_spec3/models/query.dart';import 'package:pub_stripe_spec3/models/quote.dart';import 'package:pub_stripe_spec3/models/radar_early_fraud_warning.dart';import 'package:pub_stripe_spec3/models/radar_payment_evaluation.dart';import 'package:pub_stripe_spec3/models/radar_value_list.dart';import 'package:pub_stripe_spec3/models/radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/reporting_report_run.dart';import 'package:pub_stripe_spec3/models/reporting_report_type.dart';import 'package:pub_stripe_spec3/models/review.dart';import 'package:pub_stripe_spec3/models/scheduled_query_run.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification.dart';import 'package:pub_stripe_spec3/models/source_transaction.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/tax_association.dart';import 'package:pub_stripe_spec3/models/tax_calculation.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/tax_registration.dart';import 'package:pub_stripe_spec3/models/tax_settings.dart';import 'package:pub_stripe_spec3/models/tax_transaction.dart';import 'package:pub_stripe_spec3/models/terminal_configuration.dart';import 'package:pub_stripe_spec3/models/terminal_connection_token.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link.dart';import 'package:pub_stripe_spec3/models/terminal_reader.dart';import 'package:pub_stripe_spec3/models/terminal_refund.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/token.dart';import 'package:pub_stripe_spec3/models/topup.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit.dart';import 'package:pub_stripe_spec3/models/treasury_received_debit.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry.dart';import 'package:pub_stripe_spec3/models/webhook_endpoint.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -36,7 +36,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -73,7 +73,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -102,7 +102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -149,7 +149,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -250,7 +250,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -317,7 +317,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -348,7 +348,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -383,10 +383,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -418,10 +418,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -480,10 +480,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -505,10 +505,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
+    return DeletedExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -540,7 +540,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAccountsAccountCapabilitiesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -575,7 +575,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Capability.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -604,7 +604,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Capability.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -651,7 +651,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAccountsAccountExternalAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -686,10 +686,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -721,10 +721,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -783,10 +783,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -808,10 +808,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
+    return DeletedExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -837,7 +837,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LoginLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -889,7 +889,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAccountsAccountPeopleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -972,7 +972,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1007,7 +1007,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1090,7 +1090,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1115,7 +1115,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedPerson.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1167,7 +1167,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAccountsAccountPersonsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1250,7 +1250,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1285,7 +1285,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1368,7 +1368,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1393,7 +1393,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedPerson.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1423,7 +1423,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1468,7 +1468,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetApplePayDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1494,7 +1494,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1527,7 +1527,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1550,7 +1550,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1600,7 +1600,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetApplicationFeesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1635,7 +1635,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1666,7 +1666,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1701,7 +1701,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ApplicationFee.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1730,7 +1730,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ApplicationFee.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1774,7 +1774,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetApplicationFeesIdRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1813,7 +1813,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1859,7 +1859,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAppsSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1891,7 +1891,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1920,7 +1920,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1958,7 +1958,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1994,7 +1994,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Balance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2055,7 +2055,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBalanceHistoryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2092,7 +2092,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2128,7 +2128,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BalanceSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2158,7 +2158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BalanceSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2219,7 +2219,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2256,7 +2256,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2306,7 +2306,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBillingAlertsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2337,7 +2337,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2372,7 +2372,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2399,7 +2399,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2426,7 +2426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2453,7 +2453,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2497,7 +2497,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditBalanceSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2550,7 +2550,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBillingCreditBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2585,7 +2585,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2635,7 +2635,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBillingCreditGrantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2680,7 +2680,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2715,7 +2715,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2746,7 +2746,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2773,7 +2773,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2800,7 +2800,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2831,7 +2831,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeterEventAdjustment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2864,7 +2864,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeterEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2911,7 +2911,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBillingMetersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2947,7 +2947,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2982,7 +2982,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3011,7 +3011,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3038,7 +3038,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3088,7 +3088,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBillingMetersIdEventSummariesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3115,7 +3115,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3165,7 +3165,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetBillingPortalConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3203,7 +3203,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3238,7 +3238,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3279,7 +3279,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3320,7 +3320,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BillingPortalSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3376,7 +3376,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetChargesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3441,7 +3441,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3486,7 +3486,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetChargesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3521,7 +3521,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3562,7 +3562,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3609,7 +3609,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3642,7 +3642,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3673,7 +3673,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3698,7 +3698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3749,7 +3749,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3793,7 +3793,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetChargesChargeRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3850,7 +3850,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3883,7 +3883,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3910,7 +3910,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3978,7 +3978,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCheckoutSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4101,7 +4101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4136,7 +4136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4173,7 +4173,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4202,7 +4202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4246,7 +4246,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCheckoutSessionsSessionLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4291,7 +4291,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetClimateOrdersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4330,7 +4330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4365,7 +4365,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4396,7 +4396,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4426,7 +4426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4470,7 +4470,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetClimateProductsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4505,7 +4505,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClimateProduct.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4549,7 +4549,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetClimateSuppliersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4584,7 +4584,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClimateSupplier.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4619,7 +4619,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfirmationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4663,7 +4663,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCountrySpecsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4698,7 +4698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CountrySpec.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4745,7 +4745,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCouponsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4798,7 +4798,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4833,7 +4833,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4866,7 +4866,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4891,7 +4891,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedCoupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4947,7 +4947,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCreditNotesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5011,7 +5011,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5089,7 +5089,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5176,7 +5176,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCreditNotesPreviewLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5220,7 +5220,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCreditNotesCreditNoteLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5255,7 +5255,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5286,7 +5286,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5313,7 +5313,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5345,7 +5345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomerSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5398,7 +5398,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5467,7 +5467,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Customer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5512,7 +5512,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5547,10 +5547,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Customer.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),);
+    return GetCustomersCustomerResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5624,7 +5624,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Customer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5649,7 +5649,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedCustomer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5699,7 +5699,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersCustomerBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5732,7 +5732,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5767,7 +5767,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5798,7 +5798,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5839,10 +5839,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PaymentSource.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5890,10 +5890,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PostCustomersCustomerBankAccountsIdResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5917,10 +5917,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return DeleteCustomersCustomerBankAccountsIdResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5946,7 +5946,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BankAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5987,10 +5987,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PaymentSource.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6038,10 +6038,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PostCustomersCustomerCardsIdResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6065,10 +6065,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return DeleteCustomersCustomerCardsIdResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6100,7 +6100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CashBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6129,7 +6129,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CashBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6173,7 +6173,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersCustomerCashBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6208,7 +6208,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomerCashBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6241,7 +6241,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Discount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6266,7 +6266,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6298,7 +6298,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FundingInstructions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6348,7 +6348,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersCustomerPaymentMethodsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6383,7 +6383,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6428,7 +6428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersCustomerSourcesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6469,10 +6469,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PaymentSource.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6502,10 +6502,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PaymentSource.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6553,10 +6553,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return PostCustomersCustomerSourcesIdResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6580,10 +6580,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return DeleteCustomersCustomerSourcesIdResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6609,7 +6609,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BankAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6653,7 +6653,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersCustomerSubscriptionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6736,7 +6736,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6771,7 +6771,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6854,7 +6854,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6889,7 +6889,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6922,7 +6922,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Discount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6947,7 +6947,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6991,7 +6991,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCustomersCustomerTaxIdsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7020,7 +7020,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7055,7 +7055,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7080,7 +7080,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedTaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7133,7 +7133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetDisputesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7168,7 +7168,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7203,7 +7203,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7232,7 +7232,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7277,7 +7277,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetEntitlementsActiveEntitlementsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7312,7 +7312,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EntitlementsActiveEntitlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7362,7 +7362,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetEntitlementsFeaturesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7393,7 +7393,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7428,7 +7428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7461,7 +7461,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7496,7 +7496,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EphemeralKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7523,7 +7523,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EphemeralKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7581,7 +7581,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetEventsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7616,7 +7616,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7662,7 +7662,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetExchangeRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7699,7 +7699,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ExchangeRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7761,10 +7761,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return ExternalAccount.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -7814,7 +7814,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetFileLinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7846,7 +7846,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7881,7 +7881,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7912,7 +7912,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7962,7 +7962,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7995,7 +7995,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return File.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8030,7 +8030,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return File.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8082,7 +8082,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetFinancialConnectionsAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8117,7 +8117,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8144,7 +8144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8189,7 +8189,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetFinancialConnectionsAccountsAccountOwnersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8217,7 +8217,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8245,7 +8245,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8273,7 +8273,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8308,7 +8308,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8343,7 +8343,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8394,7 +8394,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetFinancialConnectionsTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8429,7 +8429,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8479,7 +8479,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetForwardingRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8513,7 +8513,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ForwardingRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8548,7 +8548,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ForwardingRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8604,7 +8604,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIdentityVerificationReportsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8639,7 +8639,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IdentityVerificationReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8698,7 +8698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIdentityVerificationSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8751,7 +8751,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8789,7 +8789,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8827,7 +8827,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8856,7 +8856,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8901,7 +8901,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8959,7 +8959,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetInvoicePaymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8994,7 +8994,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InvoicePayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9041,7 +9041,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetInvoiceRenderingTemplatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9079,7 +9079,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9106,7 +9106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9133,7 +9133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9192,7 +9192,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetInvoiceitemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9255,7 +9255,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9290,7 +9290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9343,7 +9343,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9368,7 +9368,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedInvoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9433,7 +9433,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetInvoicesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9524,7 +9524,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9587,7 +9587,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9632,7 +9632,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetInvoicesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9667,7 +9667,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9751,7 +9751,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9776,7 +9776,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedInvoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9806,7 +9806,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9846,7 +9846,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9875,7 +9875,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9919,7 +9919,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetInvoicesInvoiceLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9971,7 +9971,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LineItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9998,7 +9998,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10037,7 +10037,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10067,7 +10067,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10096,7 +10096,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10126,7 +10126,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10155,7 +10155,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10211,7 +10211,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingAuthorizationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10246,7 +10246,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10275,7 +10275,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10334,7 +10334,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingCardholdersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10381,7 +10381,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10416,7 +10416,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10461,7 +10461,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10529,7 +10529,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingCardsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10584,7 +10584,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10619,7 +10619,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10660,7 +10660,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10713,7 +10713,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingDisputesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10750,7 +10750,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10785,7 +10785,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10818,7 +10818,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10847,7 +10847,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10903,7 +10903,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingPersonalizationDesignsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10945,7 +10945,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10980,7 +10980,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11023,7 +11023,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11073,7 +11073,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingPhysicalBundlesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11108,7 +11108,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPhysicalBundle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11143,7 +11143,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11172,7 +11172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11223,7 +11223,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11258,7 +11258,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11286,7 +11286,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11342,7 +11342,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetIssuingTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11377,7 +11377,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11406,7 +11406,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11441,7 +11441,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11476,7 +11476,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11528,7 +11528,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetLinkedAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11563,7 +11563,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11590,7 +11590,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11635,7 +11635,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetLinkedAccountsAccountOwnersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11663,7 +11663,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11698,7 +11698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Mandate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11740,7 +11740,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentAttemptRecordsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11775,7 +11775,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentAttemptRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11828,7 +11828,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentIntentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11934,7 +11934,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -11979,7 +11979,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentIntentsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12021,7 +12021,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12102,7 +12102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12146,7 +12146,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentIntentsIntentAmountDetailsLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12177,7 +12177,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12210,7 +12210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12261,7 +12261,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12359,7 +12359,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12426,7 +12426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12459,7 +12459,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12506,7 +12506,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentLinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12590,7 +12590,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12625,7 +12625,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12698,7 +12698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12742,7 +12742,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentLinksPaymentLinkLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12789,7 +12789,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentMethodConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12932,7 +12932,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -12967,7 +12967,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13110,7 +13110,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13160,7 +13160,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentMethodDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13190,7 +13190,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13225,7 +13225,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13254,7 +13254,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13286,7 +13286,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13342,7 +13342,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPaymentMethodsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13489,7 +13489,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13524,7 +13524,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13563,7 +13563,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13606,7 +13606,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13633,7 +13633,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13683,7 +13683,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13718,7 +13718,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13761,7 +13761,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13792,7 +13792,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13823,7 +13823,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13854,7 +13854,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13889,7 +13889,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13926,7 +13926,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13982,7 +13982,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPayoutsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14029,7 +14029,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14064,7 +14064,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14093,7 +14093,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14120,7 +14120,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14151,7 +14151,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14204,7 +14204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPlansResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14263,7 +14263,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14298,7 +14298,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14335,7 +14335,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14360,7 +14360,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedPlan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14429,7 +14429,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPricesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14491,7 +14491,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14536,7 +14536,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPricesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14571,7 +14571,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14612,7 +14612,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14673,7 +14673,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetProductsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14727,7 +14727,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14772,7 +14772,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetProductsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14807,7 +14807,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14860,7 +14860,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14885,7 +14885,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedProduct.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14929,7 +14929,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetProductsProductFeaturesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14957,7 +14957,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -14992,7 +14992,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15017,7 +15017,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15079,7 +15079,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetPromotionCodesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15123,7 +15123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15158,7 +15158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15191,7 +15191,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15247,7 +15247,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetQuotesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15314,7 +15314,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15349,7 +15349,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15412,7 +15412,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15439,7 +15439,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15466,7 +15466,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15510,7 +15510,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetQuotesQuoteComputedUpfrontLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15539,7 +15539,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15583,7 +15583,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetQuotesQuoteLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15618,7 +15618,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
@@ -15671,7 +15671,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetRadarEarlyFraudWarningsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15708,7 +15708,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarEarlyFraudWarning.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15741,7 +15741,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarPaymentEvaluation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15792,7 +15792,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetRadarValueListItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15821,7 +15821,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15856,7 +15856,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15881,7 +15881,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedRadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15934,7 +15934,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetRadarValueListsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -15967,7 +15967,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16002,7 +16002,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16035,7 +16035,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16060,7 +16060,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedRadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16113,7 +16113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16172,7 +16172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16207,7 +16207,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16238,7 +16238,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16267,7 +16267,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16314,7 +16314,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetReportingReportRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16344,7 +16344,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReportingReportRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16379,7 +16379,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReportingReportRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16414,7 +16414,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetReportingReportTypesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16449,7 +16449,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReportingReportType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16496,7 +16496,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetReviewsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16531,7 +16531,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Review.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16558,7 +16558,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Review.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16606,7 +16606,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSetupAttemptsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16665,7 +16665,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSetupIntentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16737,7 +16737,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16779,7 +16779,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16830,7 +16830,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16861,7 +16861,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16917,7 +16917,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -16950,7 +16950,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17003,7 +17003,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetShippingRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17043,7 +17043,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17078,7 +17078,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17113,7 +17113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17144,7 +17144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Query.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17188,7 +17188,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSigmaScheduledQueryRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17223,7 +17223,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ScheduledQueryRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17280,7 +17280,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17318,7 +17318,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17357,7 +17357,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17392,7 +17392,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SourceMandateNotification.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17434,7 +17434,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSourcesSourceSourceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17469,7 +17469,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SourceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17495,7 +17495,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17540,7 +17540,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSubscriptionItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17588,7 +17588,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17623,7 +17623,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17672,7 +17672,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17705,7 +17705,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedSubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17770,7 +17770,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSubscriptionSchedulesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17815,7 +17815,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17850,7 +17850,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17887,7 +17887,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17918,7 +17918,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -17947,7 +17947,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18021,7 +18021,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSubscriptionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18122,7 +18122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18167,7 +18167,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSubscriptionsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18202,7 +18202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18309,7 +18309,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18346,7 +18346,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18371,7 +18371,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18399,7 +18399,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18432,7 +18432,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18468,7 +18468,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxAssociation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18507,7 +18507,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxCalculation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18542,7 +18542,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxCalculation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18586,7 +18586,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTaxCalculationsCalculationLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18633,7 +18633,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTaxRegistrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18665,7 +18665,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18700,7 +18700,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18733,7 +18733,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18768,7 +18768,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18799,7 +18799,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18832,7 +18832,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18870,7 +18870,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18905,7 +18905,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18949,7 +18949,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTaxTransactionsTransactionLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -18993,7 +18993,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTaxCodesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19028,7 +19028,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19078,7 +19078,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTaxIdsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19109,7 +19109,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19144,7 +19144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19169,7 +19169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedTaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19222,7 +19222,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTaxRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19266,7 +19266,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19301,7 +19301,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19344,7 +19344,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19391,7 +19391,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTerminalConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19440,7 +19440,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19475,10 +19475,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalConfiguration.fromJson(v as Map<String, dynamic>),);
+    return GetTerminalConfigurationsConfigurationResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -19524,10 +19524,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalConfiguration.fromJson(v as Map<String, dynamic>),);
+    return PostTerminalConfigurationsConfigurationResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -19549,7 +19549,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedTerminalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19578,7 +19578,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalConnectionToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19622,7 +19622,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTerminalLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19668,7 +19668,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalLocation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19703,10 +19703,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalLocation.fromJson(v as Map<String, dynamic>),);
+    return GetTerminalLocationsLocationResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -19748,10 +19748,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalLocation.fromJson(v as Map<String, dynamic>),);
+    return PostTerminalLocationsLocationResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -19773,7 +19773,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedTerminalLocation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19804,7 +19804,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalOnboardingLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19860,7 +19860,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTerminalReadersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19894,7 +19894,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -19929,10 +19929,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalReader.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalReader.fromJson(v as Map<String, dynamic>),);
+    return GetTerminalReadersReaderResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -19960,10 +19960,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalReader.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalReader.fromJson(v as Map<String, dynamic>),);
+    return PostTerminalReadersReaderResponse.fromJson(jsonDecode(response.body));
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -19985,7 +19985,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedTerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20012,7 +20012,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20042,7 +20042,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20072,7 +20072,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20102,7 +20102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20132,7 +20132,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20163,7 +20163,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20204,7 +20204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20234,7 +20234,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20278,7 +20278,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20317,7 +20317,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfirmationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20348,7 +20348,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomerCashBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20406,7 +20406,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20439,7 +20439,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20466,7 +20466,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20498,7 +20498,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20526,7 +20526,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20556,7 +20556,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20585,7 +20585,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20612,7 +20612,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20639,7 +20639,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20666,7 +20666,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20693,7 +20693,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20720,7 +20720,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20747,7 +20747,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20774,7 +20774,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20802,7 +20802,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20843,7 +20843,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20870,7 +20870,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20905,7 +20905,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20940,7 +20940,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20969,7 +20969,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -20996,7 +20996,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21033,7 +21033,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21062,7 +21062,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21089,7 +21089,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21133,7 +21133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTestHelpersTestClocksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21163,7 +21163,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21198,7 +21198,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21223,7 +21223,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedTestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21251,7 +21251,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21280,7 +21280,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21307,7 +21307,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21334,7 +21334,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21362,7 +21362,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21389,7 +21389,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21416,7 +21416,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21445,7 +21445,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21473,7 +21473,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21500,7 +21500,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21527,7 +21527,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21556,7 +21556,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21591,7 +21591,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryReceivedCredit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21626,7 +21626,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryReceivedDebit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21668,7 +21668,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Token.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21703,7 +21703,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Token.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21756,7 +21756,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTopupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21795,7 +21795,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21830,7 +21830,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21861,7 +21861,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21888,7 +21888,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21941,7 +21941,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -21982,7 +21982,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22026,7 +22026,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTransfersIdReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22065,7 +22065,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22100,7 +22100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22133,7 +22133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22168,7 +22168,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22199,7 +22199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22250,7 +22250,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryCreditReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22280,7 +22280,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryCreditReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22315,7 +22315,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryCreditReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22369,7 +22369,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryDebitReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22399,7 +22399,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryDebitReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22434,7 +22434,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryDebitReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22484,7 +22484,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryFinancialAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22520,7 +22520,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22555,7 +22555,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22592,7 +22592,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22621,7 +22621,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22656,7 +22656,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryFinancialAccountFeatures.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22697,7 +22697,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryFinancialAccountFeatures.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22745,7 +22745,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryInboundTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22782,7 +22782,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22817,7 +22817,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22844,7 +22844,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22898,7 +22898,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryOutboundPaymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22944,7 +22944,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -22979,7 +22979,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23006,7 +23006,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23054,7 +23054,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryOutboundTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23096,7 +23096,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23131,7 +23131,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23158,7 +23158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23209,7 +23209,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryReceivedCreditsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23244,7 +23244,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryReceivedCredit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23292,7 +23292,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryReceivedDebitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23327,7 +23327,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryReceivedDebit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23384,7 +23384,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryTransactionEntriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23419,7 +23419,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryTransactionEntry.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23476,7 +23476,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTreasuryTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23511,7 +23511,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TreasuryTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23555,7 +23555,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetWebhookEndpointsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23592,7 +23592,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23627,7 +23627,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23664,7 +23664,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -23689,7 +23689,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeletedWebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

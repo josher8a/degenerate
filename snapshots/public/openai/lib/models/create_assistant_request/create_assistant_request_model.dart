@@ -670,8 +670,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gpt5, W 
  }
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [AssistantSupportedModels]
-typedef CreateAssistantRequestModel = OneOf2<String,AssistantSupportedModels>;
+@immutable final class CreateAssistantRequestModel {/// A value built from one or more typed views (at least one must be present).
+const CreateAssistantRequestModel({this.string = const Omittable.absent(), this.assistantSupportedModels = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const CreateAssistantRequestModel._({required this.rawValue, required this.string, required this.assistantSupportedModels, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CreateAssistantRequestModel.fromJson(Object? json) { return CreateAssistantRequestModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  assistantSupportedModels: parseAnyOfVariant<AssistantSupportedModels>(json, (value) => AssistantSupportedModels.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `AssistantSupportedModels`, when it matches.
+final Omittable<AssistantSupportedModels> assistantSupportedModels;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || assistantSupportedModels.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (assistantSupportedModels.isPresent) assistantSupportedModels.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CreateAssistantRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'CreateAssistantRequestModel(${toJson()})';
+
+ }

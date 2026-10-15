@@ -13,7 +13,7 @@ factory ConvertedNoteToIssueIssueEvent.fromJson(Map<String, dynamic> json) { ret
   commitId: json['commit_id'] as String?,
   commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
-  performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   projectCard: json['project_card'] != null ? AddedToProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
 ); }
 
@@ -33,7 +33,7 @@ final String? commitUrl;
 
 final String createdAt;
 
-final Integration performedViaGithubApp;
+final Integration? performedViaGithubApp;
 
 final AddedToProjectIssueEventProjectCard? projectCard;
 
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp.toJson(),
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   if (projectCard != null) 'project_card': projectCard?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app'); } 
-ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
+ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -67,7 +67,7 @@ ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, S
   commitId: commitId != null ? commitId() : this.commitId,
   commitUrl: commitUrl != null ? commitUrl() : this.commitUrl,
   createdAt: createdAt ?? this.createdAt,
-  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   projectCard: projectCard != null ? projectCard() : this.projectCard,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

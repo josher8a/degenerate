@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest (inline: BrandingSettings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/background_color.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_logo.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/button_color.dart';sealed class BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/background_color.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_logo.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/button_color.dart';sealed class BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle();
 
 factory BrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -544,9 +544,9 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 @immutable final class BrandingSettings {const BrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
 
 factory BrandingSettings.fromJson(Map<String, dynamic> json) { return BrandingSettings(
-  backgroundColor: json['background_color'] != null ? OneOf2.parse(json['background_color'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  backgroundColor: json['background_color'] != null ? BackgroundColor.fromJson(json['background_color']) : null,
   borderStyle: json['border_style'] != null ? BrandingSettingsBorderStyle.fromJson(json['border_style'] as String) : null,
-  buttonColor: json['button_color'] != null ? OneOf2.parse(json['button_color'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  buttonColor: json['button_color'] != null ? ButtonColor.fromJson(json['button_color']) : null,
   displayName: json['display_name'] as String?,
   fontFamily: json['font_family'] != null ? FontFamily.fromJson(json['font_family'] as String) : null,
   icon: json['icon'] != null ? BrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,

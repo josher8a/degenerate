@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Card
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
 /// later. You can also store multiple debit cards on a recipient in order to
 /// transfer to those cards later.
 /// 
@@ -9,7 +9,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class Card {const Card({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.id, required this.last4, required this.object, this.account = const Omittable.absent(), this.addressCity = const Omittable.absent(), this.addressCountry = const Omittable.absent(), this.addressLine1 = const Omittable.absent(), this.addressLine1Check = const Omittable.absent(), this.addressLine2 = const Omittable.absent(), this.addressState = const Omittable.absent(), this.addressZip = const Omittable.absent(), this.addressZipCheck = const Omittable.absent(), this.allowRedisplay = const Omittable.absent(), this.availablePayoutMethods = const Omittable.absent(), this.country = const Omittable.absent(), this.currency = const Omittable.absent(), this.customer = const Omittable.absent(), this.cvcCheck = const Omittable.absent(), this.defaultForCurrency = const Omittable.absent(), this.dynamicLast4 = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.iin, this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), this.networks, this.regulatedStatus = const Omittable.absent(), this.status = const Omittable.absent(), this.tokenizationMethod = const Omittable.absent(), });
 
 factory Card.fromJson(Map<String, dynamic> json) { return Card(
-  account: json.containsKey('account') ? Omittable(json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  account: json.containsKey('account') ? Omittable(json['account'] != null ? ApplicationFeeAccount.fromJson(json['account']) : null) : const Omittable.absent(),
   addressCity: json.containsKey('address_city') ? Omittable(json['address_city'] as String?) : const Omittable.absent(),
   addressCountry: json.containsKey('address_country') ? Omittable(json['address_country'] as String?) : const Omittable.absent(),
   addressLine1: json.containsKey('address_line1') ? Omittable(json['address_line1'] as String?) : const Omittable.absent(),
@@ -23,7 +23,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   brand: json['brand'] as String,
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankAccountCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   cvcCheck: json.containsKey('cvc_check') ? Omittable(json['cvc_check'] as String?) : const Omittable.absent(),
   defaultForCurrency: json.containsKey('default_for_currency') ? Omittable(json['default_for_currency'] as bool?) : const Omittable.absent(),
   dynamicLast4: json.containsKey('dynamic_last4') ? Omittable(json['dynamic_last4'] as String?) : const Omittable.absent(),

@@ -31,7 +31,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -53,7 +53,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -73,11 +73,11 @@ final request = ApiRequest(
     ApiMultipartField.file('image', body.image),
     if (body.model.value case final model$?)
       ApiMultipartField.text('model', model$.toString()),
-    if (body.n case final n$?)
+    if (body.n.value case final n$?)
       ApiMultipartField.text('n', n$.toString()),
-    if (body.responseFormat case final responseFormat$?)
+    if (body.responseFormat.value case final responseFormat$?)
       ApiMultipartField.text('response_format', responseFormat$.toJson()),
-    if (body.size case final size$?)
+    if (body.size.value case final size$?)
       ApiMultipartField.text('size', size$.toJson()),
     if (body.user case final user$?)
       ApiMultipartField.text('user', user$),
@@ -86,7 +86,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

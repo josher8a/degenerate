@@ -38,7 +38,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return LivekitTokenResponseSchema.fromJson(
@@ -67,7 +67,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -92,7 +92,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -117,7 +117,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -142,7 +142,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -168,7 +168,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -193,7 +193,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -219,7 +219,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: AcceptTotemEndpointError.fromResponse,
@@ -247,7 +247,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return LivekitOrderSchema.fromJson(
@@ -281,7 +281,7 @@ final class MeetingsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return SessionState.fromJson(

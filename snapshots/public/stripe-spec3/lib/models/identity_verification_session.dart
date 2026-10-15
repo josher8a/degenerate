@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IdentityVerificationSession
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_provided_details.dart';import 'package:pub_stripe_spec3/models/gelato_related_person.dart';import 'package:pub_stripe_spec3/models/gelato_session_last_error.dart';import 'package:pub_stripe_spec3/models/gelato_verification_session_options.dart';import 'package:pub_stripe_spec3/models/gelato_verified_outputs.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';import 'package:pub_stripe_spec3/models/identity_verification_session/last_verification_report.dart';import 'package:pub_stripe_spec3/models/verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_provided_details.dart';import 'package:pub_stripe_spec3/models/gelato_related_person.dart';import 'package:pub_stripe_spec3/models/gelato_session_last_error.dart';import 'package:pub_stripe_spec3/models/gelato_verification_session_options.dart';import 'package:pub_stripe_spec3/models/gelato_verified_outputs.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';import 'package:pub_stripe_spec3/models/identity_verification_session/last_verification_report.dart';import 'package:pub_stripe_spec3/models/verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class IdentityVerificationSessionObject {const IdentityVerificationSessionObject();
 
 factory IdentityVerificationSessionObject.fromJson(String json) { return switch (json) {
@@ -171,7 +171,7 @@ factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   lastError: json.containsKey('last_error') ? Omittable(json['last_error'] != null ? GelatoSessionLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  lastVerificationReport: json.containsKey('last_verification_report') ? Omittable(json['last_verification_report'] != null ? OneOf2.parse(json['last_verification_report'], fromA: (v) => v as String, fromB: (v) => IdentityVerificationReport.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  lastVerificationReport: json.containsKey('last_verification_report') ? Omittable(json['last_verification_report'] != null ? LastVerificationReport.fromJson(json['last_verification_report']) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: IdentityVerificationSessionObject.fromJson(json['object'] as String),

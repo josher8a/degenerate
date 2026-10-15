@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: Relationship)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/percent_ownership.dart';/// The relationship that this person has with the account's legal entity.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/percent_ownership.dart';/// The relationship that this person has with the account's legal entity.
 @immutable final class PostAccountsAccountPeoplePersonRequestRelationship {const PostAccountsAccountPeoplePersonRequestRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
 
 factory PostAccountsAccountPeoplePersonRequestRelationship.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestRelationship(
@@ -10,7 +10,7 @@ factory PostAccountsAccountPeoplePersonRequestRelationship.fromJson(Map<String, 
   executive: json['executive'] as bool?,
   legalGuardian: json['legal_guardian'] as bool?,
   owner: json['owner'] as bool?,
-  percentOwnership: json['percent_ownership'] != null ? OneOf2.parse(json['percent_ownership'], fromA: (v) => (v as num).toDouble(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  percentOwnership: json['percent_ownership'] != null ? PercentOwnership.fromJson(json['percent_ownership']) : null,
   representative: json['representative'] as bool?,
   title: json['title'] as String?,
 ); }

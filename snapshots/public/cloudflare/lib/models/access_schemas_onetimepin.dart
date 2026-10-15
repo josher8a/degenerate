@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessSchemasOnetimepin
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/scim_config.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_onetimepin/access_onetimepin_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasOnetimepin {const AccessSchemasOnetimepin({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/access_azure_ad_scim_config.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_onetimepin/access_onetimepin_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasOnetimepin {const AccessSchemasOnetimepin({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
 factory AccessSchemasOnetimepin.fromJson(Map<String, dynamic> json) { return AccessSchemasOnetimepin(
   config: AccessOnetimepinConfig.fromJson(json['config'] as Map<String, dynamic>),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
-  scimConfig: json['scim_config'] != null ? ScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  scimConfig: json['scim_config'] != null ? AccessAzureAdScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   type: json['type'],
 ); }
 
@@ -19,7 +19,7 @@ final AccessUuid? id;
 final AccessComponentsSchemasName name;
 
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
-final ScimConfig? scimConfig;
+final AccessAzureAdScimConfig? scimConfig;
 
 final dynamic type;
 
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasOnetimepin copyWith({AccessOnetimepinConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, ScimConfig? Function()? scimConfig, dynamic Function()? type, }) { return AccessSchemasOnetimepin(
+AccessSchemasOnetimepin copyWith({AccessOnetimepinConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig? Function()? scimConfig, dynamic Function()? type, }) { return AccessSchemasOnetimepin(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

@@ -99,9 +99,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage
 
  }
 /// The model to use for image editing.
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [EditImageBodyJsonParamModelVariant2]
-/// - `.c` → [dynamic]
-typedef EditImageBodyJsonParamModel = OneOf3<String,EditImageBodyJsonParamModelVariant2,dynamic>;
+@immutable final class EditImageBodyJsonParamModel {/// A value built from one or more typed views (at least one must be present).
+const EditImageBodyJsonParamModel({this.string = const Omittable.absent(), this.editImageBodyJsonParamModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const EditImageBodyJsonParamModel._({required this.rawValue, required this.string, required this.editImageBodyJsonParamModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory EditImageBodyJsonParamModel.fromJson(Object? json) { return EditImageBodyJsonParamModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  editImageBodyJsonParamModelVariant2: parseAnyOfVariant<EditImageBodyJsonParamModelVariant2>(json, (value) => EditImageBodyJsonParamModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `EditImageBodyJsonParamModelVariant2`, when it matches.
+final Omittable<EditImageBodyJsonParamModelVariant2> editImageBodyJsonParamModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || editImageBodyJsonParamModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (editImageBodyJsonParamModelVariant2.isPresent) editImageBodyJsonParamModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is EditImageBodyJsonParamModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'EditImageBodyJsonParamModel(${toJson()})';
+
+ }

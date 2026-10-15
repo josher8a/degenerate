@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreatePortalsRequest (inline: Servers)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request/updated_prompts.dart';import 'package:pub_cloudflare/models/create_portals_request/updated_tools.dart';@immutable final class CreatePortalsRequestServers {const CreatePortalsRequestServers({required this.serverId, this.defaultDisabled = false, this.onBehalf = true, this.updatedPrompts, this.updatedTools, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request/updated_prompts.dart';import 'package:pub_cloudflare/models/create_portals_request/updated_tools.dart';@immutable final class CreatePortalsRequestServers {const CreatePortalsRequestServers({required this.serverId, this.defaultDisabled, this.onBehalf, this.updatedPrompts, this.updatedTools, });
 
 factory CreatePortalsRequestServers.fromJson(Map<String, dynamic> json) { return CreatePortalsRequestServers(
-  defaultDisabled: json.containsKey('default_disabled') ? json['default_disabled'] as bool : false,
-  onBehalf: json.containsKey('on_behalf') ? json['on_behalf'] as bool : true,
+  defaultDisabled: json['default_disabled'] as bool?,
+  onBehalf: json['on_behalf'] as bool?,
   serverId: json['server_id'] as String,
   updatedPrompts: (json['updated_prompts'] as List<dynamic>?)?.map((e) => UpdatedPrompts.fromJson(e as Map<String, dynamic>)).toList(),
   updatedTools: (json['updated_tools'] as List<dynamic>?)?.map((e) => UpdatedTools.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final bool defaultDisabled;
+final bool? defaultDisabled;
 
-final bool onBehalf;
+final bool? onBehalf;
 
 /// server id
 /// 
@@ -24,9 +24,15 @@ final List<UpdatedPrompts>? updatedPrompts;
 
 final List<UpdatedTools>? updatedTools;
 
+/// The value of `defaultDisabled`, or its schema default when absent.
+bool get defaultDisabledOrDefault => defaultDisabled ?? false;
+
+/// The value of `onBehalf`, or its schema default when absent.
+bool get onBehalfOrDefault => onBehalf ?? true;
+
 Map<String, dynamic> toJson() { return {
-  'default_disabled': defaultDisabled,
-  'on_behalf': onBehalf,
+  'default_disabled': ?defaultDisabled,
+  'on_behalf': ?onBehalf,
   'server_id': serverId,
   if (updatedPrompts != null) 'updated_prompts': updatedPrompts?.map((e) => e.toJson()).toList(),
   if (updatedTools != null) 'updated_tools': updatedTools?.map((e) => e.toJson()).toList(),
@@ -38,7 +44,7 @@ if (serverId.isEmpty) { errors.add('serverId: length must be >= 1'); }
 if (serverId.runes.length > 32) { errors.add('serverId: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(serverId)) { errors.add(r'serverId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 return errors; } 
-CreatePortalsRequestServers copyWith({bool Function()? defaultDisabled, bool Function()? onBehalf, String? serverId, List<UpdatedPrompts>? Function()? updatedPrompts, List<UpdatedTools>? Function()? updatedTools, }) { return CreatePortalsRequestServers(
+CreatePortalsRequestServers copyWith({bool? Function()? defaultDisabled, bool? Function()? onBehalf, String? serverId, List<UpdatedPrompts>? Function()? updatedPrompts, List<UpdatedTools>? Function()? updatedTools, }) { return CreatePortalsRequestServers(
   defaultDisabled: defaultDisabled != null ? defaultDisabled() : this.defaultDisabled,
   onBehalf: onBehalf != null ? onBehalf() : this.onBehalf,
   serverId: serverId ?? this.serverId,

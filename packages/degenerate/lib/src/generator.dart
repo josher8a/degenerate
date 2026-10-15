@@ -23,6 +23,7 @@ import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/naming/name_resolution.dart';
+import 'package:degenerate/src/normalizer/directional_schemas.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/parser/ref_inliner.dart';
@@ -281,7 +282,8 @@ final class Generator {
         ? Directory.current.path
         : p.dirname(p.absolute(config.inputPath));
     final inliner = RefInliner(baseDir);
-    return OpenApiDocument(inliner.inline(doc.root));
+    // Project readOnly/writeOnly schemas into request/response models.
+    return DirectionalSchemas(OpenApiDocument(inliner.inline(doc.root))).project();
   }
 
   (List<IrType>, List<IrApi>, IrMapper) _lowerToIr(OpenApiDocument doc) {

@@ -47,31 +47,8 @@ extension EmitContextX on EmitContext {
 
   bool isOneOfType(IrType type) {
     final resolved = type.resolveRef(typeRegistry);
-    final vs = resolved.unionVariants;
+    final vs = resolved.oneOfVariants;
     return vs != null && isOneOfTypedef(resolved.name!, vs);
-  }
-
-  /// Whether the `fromJson` emitted for an anyOf over [variants] takes a
-  /// `Map<String, dynamic>` rather than the raw wire value.
-  ///
-  /// Every caller that writes a call to that `fromJson` has to agree with the
-  /// anyOf emitter on this, or it passes an `Object?` to a map parameter.
-  bool anyOfFromJsonTakesMap(List<IrType> variants) {
-    // Deduped by `irTypeName` because `AnyOfEmitter` dedupes before it decides
-    // the parameter type. A caller holding the raw variant list would compute
-    // a different answer than the signature it is calling, which is the
-    // divergence this predicate exists to prevent.
-    final seen = <String>{};
-    return variants
-        .where((v) => seen.add(irTypeName(v)))
-        .every(
-          (v) =>
-              v is IrObject ||
-              v is IrTypeRef ||
-              v is IrDiscriminatedUnion ||
-              v is IrUntaggedUnion ||
-              v is IrAnyOf,
-        );
   }
 
   bool isUnionType(IrType type) {
@@ -224,7 +201,7 @@ IrType _resolveOneOfRef(
   if (!resolving.add(type.name)) return type; // cycle detected
   final target = ctx.typeRegistry[type.name];
   if (target == null) return type;
-  final vs = target.unionVariants;
+  final vs = target.oneOfVariants;
   if (vs != null && isOneOfTypedef(type.name, vs)) return target;
   return type;
 }
@@ -355,8 +332,7 @@ String _buildFromJsonNonNull(
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>'
           : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', ctx: ctx, resolving: resolving)}))',
-    IrUntaggedUnion(:final variants) || IrAnyOf(:final variants)
-        when isOneOfEligible(variants) =>
+    IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
     // Sealed untagged unions accept any JSON value (Object?) — both the
     // all-primitive and mixed fromJson constructors dispatch on wire type.
@@ -371,20 +347,15 @@ String _buildFromJsonNonNull(
     IrTypeRef(:final name)
         when ctx.typeRegistry[name] is IrUntaggedUnion =>
       '$name.fromJson($accessor)',
-    // A sealed anyOf whose `fromJson` takes `dynamic` — because some variant
-    // is not object-like — must be passed the payload uncast. Its body
-    // branches on `json is String` and friends, and a map cast throws before
-    // the branch it was written for can run.
-    IrAnyOf(:final name, :final variants)
-        when !ctx.anyOfFromJsonTakesMap(variants) =>
+    // An anyOf class decodes any wire value (`Object?`): every typed view is
+    // attempted and the raw payload is retained.
+    IrAnyOf(:final name) => '$name.fromJson($accessor)',
+    IrTypeRef(:final name) when ctx.typeRegistry[name] is IrAnyOf =>
       '$name.fromJson($accessor)',
-    IrTypeRef(:final name) when _refIsNonMapAnyOf(name, ctx) =>
-      '$name.fromJson($accessor)',
-    // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
+    // Object, TypeRef and DiscriminatedUnion use .fromJson(map)
     IrObject(:final name) ||
     IrTypeRef(:final name) ||
-    IrDiscriminatedUnion(:final name) ||
-    IrAnyOf(:final name) =>
+    IrDiscriminatedUnion(:final name) =>
       '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
   };
 }
@@ -460,16 +431,10 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
 
 /// Whether a name in the type registry maps to a OneOf-eligible union
 /// (excluding self-referencing types which can't be Dart typedefs).
-/// Whether [name] refers to a sealed anyOf whose `fromJson` takes `dynamic`.
-bool _refIsNonMapAnyOf(String name, EmitContext ctx) {
-  final target = ctx.typeRegistry[name];
-  return target is IrAnyOf && !ctx.anyOfFromJsonTakesMap(target.variants);
-}
-
 bool _isOneOfInRegistry(String name, EmitContext ctx) {
   final target = ctx.typeRegistry[name];
   if (target == null) return false;
-  final vs = target.unionVariants;
+  final vs = target.oneOfVariants;
   return vs != null && isOneOfTypedef(name, vs);
 }
 
@@ -554,7 +519,7 @@ bool isOneOfTypedef(String name, List<IrType> variants) =>
 /// [IrTypeRef] through [ctx].
 bool isOneOfType(IrType type, [EmitContext? ctx]) {
   final resolved = ctx != null ? type.resolveRef(ctx.typeRegistry) : type;
-  final vs = resolved.unionVariants;
+  final vs = resolved.oneOfVariants;
   return vs != null && isOneOfTypedef(resolved.name!, vs);
 }
 

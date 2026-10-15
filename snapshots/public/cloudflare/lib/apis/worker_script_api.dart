@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkerScriptApi" (22 operations)
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/errors/worker_script_update_create_assets_upload_session_error.dart';import 'package:pub_cloudflare/models/worker_script_patch_settings_request.dart';import 'package:pub_cloudflare/models/worker_script_post_subdomain_request.dart';import 'package:pub_cloudflare/models/worker_script_put_content_request.dart';import 'package:pub_cloudflare/models/worker_script_search_workers_order_by.dart';import 'package:pub_cloudflare/models/worker_script_search_workers_response/worker_script_search_workers_response_result.dart';import 'package:pub_cloudflare/models/worker_script_update_usage_model_request.dart';import 'package:pub_cloudflare/models/worker_script_upload_worker_module_bindings_inherit.dart';import 'package:pub_cloudflare/models/worker_script_upload_worker_module_request.dart';import 'package:pub_cloudflare/models/workers_completed_upload_assets_response/workers_completed_upload_assets_response_result.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_object.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_response/workers_create_assets_upload_session_response_result.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';import 'package:pub_cloudflare/models/workers_script_response_collection/workers_script_response_collection_result.dart';import 'package:pub_cloudflare/models/workers_script_response_upload.dart';import 'package:pub_cloudflare/models/workers_script_settings_item.dart';import 'package:pub_cloudflare/models/workers_secret.dart';import 'package:pub_cloudflare/models/workers_secret_name.dart';import 'package:pub_cloudflare/models/workers_secret_name_url_encoded.dart';import 'package:pub_cloudflare/models/workers_subdomain.dart';import 'package:pub_cloudflare/models/workers_usage_model_response/workers_usage_model_response_result.dart';/// WorkerScriptApi operations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/errors/worker_script_update_create_assets_upload_session_error.dart';import 'package:pub_cloudflare/models/worker_script_patch_settings_request.dart';import 'package:pub_cloudflare/models/worker_script_post_subdomain_request.dart';import 'package:pub_cloudflare/models/worker_script_put_content_request.dart';import 'package:pub_cloudflare/models/worker_script_search_workers_order_by.dart';import 'package:pub_cloudflare/models/worker_script_search_workers_response/worker_script_search_workers_response_result.dart';import 'package:pub_cloudflare/models/worker_script_update_usage_model_request.dart';import 'package:pub_cloudflare/models/worker_script_upload_worker_module_bindings_inherit.dart';import 'package:pub_cloudflare/models/worker_script_upload_worker_module_request.dart';import 'package:pub_cloudflare/models/workers_completed_upload_assets_response/workers_completed_upload_assets_response_result.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_object.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_response/workers_create_assets_upload_session_response_result.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item_response.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';import 'package:pub_cloudflare/models/workers_script_response_collection/workers_script_response_collection_result.dart';import 'package:pub_cloudflare/models/workers_script_response_upload.dart';import 'package:pub_cloudflare/models/workers_script_settings_item.dart';import 'package:pub_cloudflare/models/workers_secret.dart';import 'package:pub_cloudflare/models/workers_secret_name.dart';import 'package:pub_cloudflare/models/workers_secret_name_url_encoded.dart';import 'package:pub_cloudflare/models/workers_secret_response.dart';import 'package:pub_cloudflare/models/workers_subdomain.dart';import 'package:pub_cloudflare/models/workers_usage_model_response/workers_usage_model_response_result.dart';/// WorkerScriptApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -38,7 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -81,7 +81,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, Uint8List>
@@ -141,7 +141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -172,7 +172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -197,7 +197,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -232,7 +232,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -255,7 +255,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -277,7 +277,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -302,7 +302,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -316,7 +316,7 @@ return execute(
 /// List secrets bound to a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<List<WorkersSecret>?, CreateWorkerVersionError>> workerListScriptSecrets({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorkersSecretResponse>?, CreateWorkerVersionError>> workerListScriptSecrets({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -325,11 +325,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => WorkersSecret.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => WorkersSecretResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -339,7 +339,7 @@ return execute(
 /// Add a secret to a script.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<WorkersSecret?, CreateWorkerVersionError>> workerPutScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecret body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersSecretResponse?, CreateWorkerVersionError>> workerPutScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecret body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -350,11 +350,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersSecret.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? WorkersSecretResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -364,7 +364,7 @@ return execute(
 /// Get a given secret binding (value omitted) on a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<WorkersSecret?, CreateWorkerVersionError>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersSecretResponse?, CreateWorkerVersionError>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (urlEncoded != null) {
   queryParameters['url_encoded'] = urlEncoded.toJson().toString();
@@ -381,11 +381,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersSecret.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? WorkersSecretResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -412,7 +412,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -426,7 +426,7 @@ return execute(
 /// Get metadata and config, such as bindings or usage model.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<WorkersScriptAndVersionSettingsItem, CreateWorkerVersionError>> workerScriptGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptAndVersionSettingsItemResponse, CreateWorkerVersionError>> workerScriptGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -435,11 +435,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorkersScriptAndVersionSettingsItem.fromJson(json['result'] as Map<String, dynamic>);
+    return WorkersScriptAndVersionSettingsItemResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -449,7 +449,7 @@ return execute(
 /// Patch metadata or config, such as bindings or usage model.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<WorkersScriptAndVersionSettingsItem, CreateWorkerVersionError>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptAndVersionSettingsItemResponse, CreateWorkerVersionError>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -463,11 +463,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorkersScriptAndVersionSettingsItem.fromJson(json['result'] as Map<String, dynamic>);
+    return WorkersScriptAndVersionSettingsItemResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -486,7 +486,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -511,7 +511,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -534,7 +534,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -557,7 +557,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -582,7 +582,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

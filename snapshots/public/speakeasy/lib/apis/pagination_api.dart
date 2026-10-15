@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -69,7 +69,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorNonNumericResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorNonNumericWithLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorNonNumericNullableResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -148,7 +148,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorNonNumericEmptyStringResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -179,7 +179,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationWithRetriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -204,7 +204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorResponseEnvelopeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -227,7 +227,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetPageParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -246,7 +246,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetPageBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -274,7 +274,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetPageParamsConstResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -299,7 +299,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetOptionalPageParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -324,7 +324,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => ResultObject.fromJson(v as Map<String, dynamic>),);
@@ -343,7 +343,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetDeepOutputsPageBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -371,7 +371,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetOffsetParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -390,7 +390,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetOffsetBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -418,7 +418,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetDefaultOffsetParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -437,7 +437,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationLimitOffsetDefaultOffsetBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -463,7 +463,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationUrlParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -486,7 +486,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -505,7 +505,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -524,7 +524,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationCursorBodyShadowedFieldResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -548,7 +548,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationBodyFlattenedWithSecurityResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -572,7 +572,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationBodyFlattenedOptionalSecurityResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -604,7 +604,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationBodyWrappedRequestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -638,7 +638,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationParamsWrappedRequestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -671,7 +671,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationAmbiguousInputResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -704,7 +704,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationEncapsulatedParameterResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -729,7 +729,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PaginationWrappedOptionalBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -754,7 +754,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListBalancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

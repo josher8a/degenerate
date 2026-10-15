@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InvoicePaymentMethodOptionsParam (inline: Installments)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/installment_plan.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_installments_plan.dart';@immutable final class InvoicePaymentMethodOptionsParamInstallments {const InvoicePaymentMethodOptionsParamInstallments({this.enabled, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_installments_plan.dart';@immutable final class InvoicePaymentMethodOptionsParamInstallments {const InvoicePaymentMethodOptionsParamInstallments({this.enabled, this.plan, });
 
 factory InvoicePaymentMethodOptionsParamInstallments.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParamInstallments(
   enabled: json['enabled'] as bool?,
-  plan: json['plan'] != null ? OneOf2.parse(json['plan'], fromA: (v) => InstallmentPlan.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  plan: json['plan'] != null ? InvoicePaymentMethodOptionsParamInstallmentsPlan.fromJson(json['plan']) : null,
 ); }
 
 final bool? enabled;

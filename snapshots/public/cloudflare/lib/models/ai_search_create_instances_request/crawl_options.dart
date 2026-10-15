@@ -83,32 +83,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CrawlOptions {const CrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = CrawlOptionsSource.all, });
+@immutable final class CrawlOptions {const CrawlOptions({this.depth, this.includeExternalLinks, this.includeSubdomains, this.maxAge, this.source, });
 
 factory CrawlOptions.fromJson(Map<String, dynamic> json) { return CrawlOptions(
   depth: json['depth'] != null ? (json['depth'] as num).toDouble() : null,
-  includeExternalLinks: json.containsKey('include_external_links') ? json['include_external_links'] as bool : false,
-  includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,
+  includeExternalLinks: json['include_external_links'] as bool?,
+  includeSubdomains: json['include_subdomains'] as bool?,
   maxAge: json['max_age'] != null ? (json['max_age'] as num).toDouble() : null,
-  source: json.containsKey('source') ? CrawlOptionsSource.fromJson(json['source'] as String) : CrawlOptionsSource.all,
+  source: json['source'] != null ? CrawlOptionsSource.fromJson(json['source'] as String) : null,
 ); }
 
 final double? depth;
 
-final bool includeExternalLinks;
+final bool? includeExternalLinks;
 
-final bool includeSubdomains;
+final bool? includeSubdomains;
 
 final double? maxAge;
 
-final CrawlOptionsSource source;
+final CrawlOptionsSource? source;
+
+/// The value of `includeExternalLinks`, or its schema default when absent.
+bool get includeExternalLinksOrDefault => includeExternalLinks ?? false;
+
+/// The value of `includeSubdomains`, or its schema default when absent.
+bool get includeSubdomainsOrDefault => includeSubdomains ?? false;
+
+/// The value of `source`, or its schema default when absent.
+CrawlOptionsSource get sourceOrDefault => source ?? CrawlOptionsSource.fromJson('all');
 
 Map<String, dynamic> toJson() { return {
   'depth': ?depth,
-  'include_external_links': includeExternalLinks,
-  'include_subdomains': includeSubdomains,
+  'include_external_links': ?includeExternalLinks,
+  'include_subdomains': ?includeSubdomains,
   'max_age': ?maxAge,
-  'source': source.toJson(),
+  if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'depth', 'include_external_links', 'include_subdomains', 'max_age', 'source'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
@@ -124,7 +133,7 @@ if (maxAge$ != null) {
   if (maxAge$ > 604800) { errors.add('maxAge: must be <= 604800'); }
 }
 return errors; } 
-CrawlOptions copyWith({double? Function()? depth, bool Function()? includeExternalLinks, bool Function()? includeSubdomains, double? Function()? maxAge, CrawlOptionsSource Function()? source, }) { return CrawlOptions(
+CrawlOptions copyWith({double? Function()? depth, bool? Function()? includeExternalLinks, bool? Function()? includeSubdomains, double? Function()? maxAge, CrawlOptionsSource? Function()? source, }) { return CrawlOptions(
   depth: depth != null ? depth() : this.depth,
   includeExternalLinks: includeExternalLinks != null ? includeExternalLinks() : this.includeExternalLinks,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,

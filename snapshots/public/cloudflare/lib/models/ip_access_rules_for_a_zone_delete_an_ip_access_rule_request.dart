@@ -84,20 +84,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest({this.cascade = Cascade.none});
+@immutable final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest({this.cascade});
 
 factory IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
-  cascade: json.containsKey('cascade') ? Cascade.fromJson(json['cascade'] as String) : Cascade.none,
+  cascade: json['cascade'] != null ? Cascade.fromJson(json['cascade'] as String) : null,
 ); }
 
 /// The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.
-final Cascade cascade;
+final Cascade? cascade;
+
+/// The value of `cascade`, or its schema default when absent.
+Cascade get cascadeOrDefault => cascade ?? Cascade.fromJson('none');
 
 Map<String, dynamic> toJson() { return {
-  'cascade': cascade.toJson(),
+  if (cascade != null) 'cascade': cascade?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cascade'}.contains(key)); } 
-IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest copyWith({Cascade Function()? cascade}) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
+IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest copyWith({Cascade? Function()? cascade}) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
   cascade: cascade != null ? cascade() : this.cascade,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

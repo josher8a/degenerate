@@ -27,7 +27,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InlineBodyAndParamNoConflictResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ComponentBodyAndParamNoConflictResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -77,7 +77,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return InlineBodyAndParamConflictResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -102,7 +102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ComponentBodyAndParamConflictResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -125,7 +125,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConflictingParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RequiredBodyAllOptionalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -169,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BodyUnderDataKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

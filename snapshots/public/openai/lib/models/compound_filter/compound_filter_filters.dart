@@ -10,7 +10,7 @@ factory CompoundFilterFilters.fromJson(Map<String, dynamic> json) { return switc
 }; }
 
 /// Build the `eq` variant.
-factory CompoundFilterFilters.eq({required String key, required ComparisonFilterValue value, }) { return CompoundFilterFiltersEq(ComparisonFilter(key: key, value: value)); }
+factory CompoundFilterFilters.eq({required String key, required ComparisonFilterValue value, }) { return CompoundFilterFiltersEq(ComparisonFilter(type: ComparisonFilterType.fromJson('eq'), key: key, value: value)); }
 
 /// The discriminator value identifying this variant.
 ComparisonFilterType get type;

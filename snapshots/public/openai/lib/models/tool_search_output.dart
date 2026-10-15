@@ -83,7 +83,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ToolSearchOutput {const ToolSearchOutput({required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.type = 'tool_search_output', this.createdBy, });
+@immutable final class ToolSearchOutput {const ToolSearchOutput({required this.type, required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.createdBy, });
 
 factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearchOutput(
   type: json['type'] as String,

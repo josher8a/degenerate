@@ -157,8 +157,49 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $1, W Fu
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [AigConfigListGatewayLogsFeedbackVariant1]
-/// - `.b` → [AigConfigListGatewayLogsFeedbackVariant2]
-/// - `.c` → [AigConfigListGatewayLogsFeedbackVariant3]
-typedef AigConfigListGatewayLogsFeedback = OneOf3<AigConfigListGatewayLogsFeedbackVariant1,AigConfigListGatewayLogsFeedbackVariant2,AigConfigListGatewayLogsFeedbackVariant3>;
+@immutable final class AigConfigListGatewayLogsFeedback {/// A value built from one or more typed views (at least one must be present).
+const AigConfigListGatewayLogsFeedback({this.aigConfigListGatewayLogsFeedbackVariant1 = const Omittable.absent(), this.aigConfigListGatewayLogsFeedbackVariant2 = const Omittable.absent(), this.aigConfigListGatewayLogsFeedbackVariant3 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const AigConfigListGatewayLogsFeedback._({required this.rawValue, required this.aigConfigListGatewayLogsFeedbackVariant1, required this.aigConfigListGatewayLogsFeedbackVariant2, required this.aigConfigListGatewayLogsFeedbackVariant3, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory AigConfigListGatewayLogsFeedback.fromJson(Object? json) { return AigConfigListGatewayLogsFeedback._(
+  rawValue: Omittable(json),
+  aigConfigListGatewayLogsFeedbackVariant1: parseAnyOfVariant<AigConfigListGatewayLogsFeedbackVariant1>(json, (value) => AigConfigListGatewayLogsFeedbackVariant1.fromJson((value! as num).toDouble())),
+  aigConfigListGatewayLogsFeedbackVariant2: parseAnyOfVariant<AigConfigListGatewayLogsFeedbackVariant2>(json, (value) => AigConfigListGatewayLogsFeedbackVariant2.fromJson((value! as num).toDouble())),
+  aigConfigListGatewayLogsFeedbackVariant3: parseAnyOfVariant<AigConfigListGatewayLogsFeedbackVariant3>(json, (value) => AigConfigListGatewayLogsFeedbackVariant3.fromJson((value! as num).toDouble())),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `AigConfigListGatewayLogsFeedbackVariant1`, when it matches.
+final Omittable<AigConfigListGatewayLogsFeedbackVariant1> aigConfigListGatewayLogsFeedbackVariant1;
+
+/// The payload decoded as `AigConfigListGatewayLogsFeedbackVariant2`, when it matches.
+final Omittable<AigConfigListGatewayLogsFeedbackVariant2> aigConfigListGatewayLogsFeedbackVariant2;
+
+/// The payload decoded as `AigConfigListGatewayLogsFeedbackVariant3`, when it matches.
+final Omittable<AigConfigListGatewayLogsFeedbackVariant3> aigConfigListGatewayLogsFeedbackVariant3;
+
+/// Whether at least one variant matched.
+bool get isValid => aigConfigListGatewayLogsFeedbackVariant1.isPresent || aigConfigListGatewayLogsFeedbackVariant2.isPresent || aigConfigListGatewayLogsFeedbackVariant3.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aigConfigListGatewayLogsFeedbackVariant1.isPresent) aigConfigListGatewayLogsFeedbackVariant1.value?.toJson(),
+    if (aigConfigListGatewayLogsFeedbackVariant2.isPresent) aigConfigListGatewayLogsFeedbackVariant2.value?.toJson(),
+    if (aigConfigListGatewayLogsFeedbackVariant3.isPresent) aigConfigListGatewayLogsFeedbackVariant3.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AigConfigListGatewayLogsFeedback && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'AigConfigListGatewayLogsFeedback(${toJson()})';
+
+ }

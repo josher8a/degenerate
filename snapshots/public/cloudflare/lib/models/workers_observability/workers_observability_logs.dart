@@ -2,14 +2,14 @@
 // Source: #/components/schemas/WorkersObservability (inline: Logs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Log settings for the Worker.
-@immutable final class WorkersObservabilityLogs {const WorkersObservabilityLogs({required this.enabled, required this.invocationLogs, this.destinations, this.headSamplingRate = const Omittable.absent(), this.persist = true, });
+@immutable final class WorkersObservabilityLogs {const WorkersObservabilityLogs({required this.enabled, required this.invocationLogs, this.destinations, this.headSamplingRate = const Omittable.absent(), this.persist, });
 
 factory WorkersObservabilityLogs.fromJson(Map<String, dynamic> json) { return WorkersObservabilityLogs(
   destinations: (json['destinations'] as List<dynamic>?)?.map((e) => e as String).toList(),
   enabled: json['enabled'] as bool,
   headSamplingRate: json.containsKey('head_sampling_rate') ? Omittable(json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null) : const Omittable.absent(),
   invocationLogs: json['invocation_logs'] as bool,
-  persist: json.containsKey('persist') ? json['persist'] as bool : true,
+  persist: json['persist'] as bool?,
 ); }
 
 /// A list of destinations where logs will be exported to.
@@ -35,18 +35,21 @@ final bool invocationLogs;
 /// Whether log persistence is enabled for the Worker.
 /// 
 /// Example: `true`
-final bool persist;
+final bool? persist;
+
+/// The value of `persist`, or its schema default when absent.
+bool get persistOrDefault => persist ?? true;
 
 Map<String, dynamic> toJson() { return {
   'destinations': ?destinations,
   'enabled': enabled,
   if (headSamplingRate.isPresent) 'head_sampling_rate': headSamplingRate.value,
   'invocation_logs': invocationLogs,
-  'persist': persist,
+  'persist': ?persist,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('invocation_logs') && json['invocation_logs'] is bool; } 
-WorkersObservabilityLogs copyWith({List<String>? Function()? destinations, bool? enabled, Omittable<double?>? headSamplingRate, bool? invocationLogs, bool Function()? persist, }) { return WorkersObservabilityLogs(
+WorkersObservabilityLogs copyWith({List<String>? Function()? destinations, bool? enabled, Omittable<double?>? headSamplingRate, bool? invocationLogs, bool? Function()? persist, }) { return WorkersObservabilityLogs(
   destinations: destinations != null ? destinations() : this.destinations,
   enabled: enabled ?? this.enabled,
   headSamplingRate: headSamplingRate ?? this.headSamplingRate,

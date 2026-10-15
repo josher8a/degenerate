@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ApplyPatchToolCallOutput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';/// The output emitted by an apply patch tool call.
-@immutable final class ApplyPatchToolCallOutput {const ApplyPatchToolCallOutput({required this.id, required this.callId, required this.status, this.type = 'apply_patch_call_output', this.output = const Omittable.absent(), this.createdBy, });
+@immutable final class ApplyPatchToolCallOutput {const ApplyPatchToolCallOutput({required this.type, required this.id, required this.callId, required this.status, this.output = const Omittable.absent(), this.createdBy, });
 
 factory ApplyPatchToolCallOutput.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallOutput(
   type: json['type'] as String,

@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? completi
  }
 /// A CompletionsRunDataSource object describing a model sampling configuration.
 /// 
-@immutable final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({required this.source, this.type = CreateEvalCompletionsRunDataSourceType.completions, this.inputMessages, this.samplingParams, this.model, });
+@immutable final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({required this.type, required this.source, this.inputMessages, this.samplingParams, this.model, });
 
 factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalCompletionsRunDataSource(
   type: CreateEvalCompletionsRunDataSourceType.fromJson(json['type'] as String),

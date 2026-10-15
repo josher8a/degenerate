@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Condition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// Condition contains details for one aspect of the current state of this API Resource.
-@immutable final class Condition {const Condition({required this.lastTransitionTime, this.message = '', this.observedGeneration, this.reason = '', this.status = '', this.type = '', });
+@immutable final class Condition {const Condition({required this.lastTransitionTime, required this.message, required this.reason, required this.status, required this.type, this.observedGeneration, });
 
 factory Condition.fromJson(Map<String, dynamic> json) { return Condition(
   lastTransitionTime: Time.fromJson(json['lastTransitionTime'] as String),

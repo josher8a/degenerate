@@ -76,7 +76,7 @@ Map<String, dynamic> toJson();
 bool get isUnknown => this is PagesEnvVarsValue$Unknown;
 
 /// Shared by all variants of this union.
-String get value;
+String? get value;
 R when<R>({required R Function(PagesEnvVarsValuePlainText) plainText, required R Function(PagesEnvVarsValueSecretText) secretText, required R Function(PagesEnvVarsValue$Unknown) unknown, }) { return switch (this) {
   final PagesEnvVarsValuePlainText v => plainText(v),
   final PagesEnvVarsValueSecretText v => secretText(v),
@@ -87,15 +87,13 @@ R when<R>({required R Function(PagesEnvVarsValuePlainText) plainText, required R
 
 factory PagesEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar.fromJson(json)); }
 
-final PagesPlainTextEnvVar pagesPlainTextEnvVar;
+final PagesPlainTextEnvVar? pagesPlainTextEnvVar;
 
 @override PagesEnvVarsValueType get type => PagesEnvVarsValueType.fromJson('plain_text');
 
-@override Map<String, dynamic> toJson() => {...pagesPlainTextEnvVar.toJson(), 'type': type.toJson()};
+@override Map<String, dynamic> toJson() => {...?pagesPlainTextEnvVar?.toJson(), 'type': type.toJson()};
 
-PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar.copyWith(
-  value: value,
-)); } 
+PagesEnvVarsValuePlainText copyWith({PagesPlainTextEnvVar? pagesPlainTextEnvVar}) { return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar ?? this.pagesPlainTextEnvVar); } 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar;
 
@@ -103,22 +101,20 @@ PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValueP
 
 @override String toString() => 'PagesEnvVarsValue.plainText($pagesPlainTextEnvVar)';
 
-@override String get value => pagesPlainTextEnvVar.value;
+@override String? get value => pagesPlainTextEnvVar?.value;
 
  }
 @immutable final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
 factory PagesEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar.fromJson(json)); }
 
-final PagesSecretTextEnvVar pagesSecretTextEnvVar;
+final PagesSecretTextEnvVar? pagesSecretTextEnvVar;
 
 @override PagesEnvVarsValueType get type => PagesEnvVarsValueType.fromJson('secret_text');
 
-@override Map<String, dynamic> toJson() => {...pagesSecretTextEnvVar.toJson(), 'type': type.toJson()};
+@override Map<String, dynamic> toJson() => {...?pagesSecretTextEnvVar?.toJson(), 'type': type.toJson()};
 
-PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar.copyWith(
-  value: value,
-)); } 
+PagesEnvVarsValueSecretText copyWith({PagesSecretTextEnvVar? pagesSecretTextEnvVar}) { return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar ?? this.pagesSecretTextEnvVar); } 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar;
 
@@ -126,7 +122,7 @@ PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValue
 
 @override String toString() => 'PagesEnvVarsValue.secretText($pagesSecretTextEnvVar)';
 
-@override String get value => pagesSecretTextEnvVar.value;
+@override String? get value => pagesSecretTextEnvVar?.value;
 
  }
 /// An unknown variant not defined in the OpenAPI spec.

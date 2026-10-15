@@ -1,7 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptions (inline: Crypto)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_crypto.dart';/// Variants:
-/// - `.a` → [PaymentMethodOptionsCrypto]
-/// - `.b` → [PaymentIntentTypeSpecificPaymentMethodOptionsClient]
-typedef PaymentIntentPaymentMethodOptionsCrypto = OneOf2<PaymentMethodOptionsCrypto,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_crypto.dart';@immutable final class PaymentIntentPaymentMethodOptionsCrypto {/// A value built from one or more typed views (at least one must be present).
+const PaymentIntentPaymentMethodOptionsCrypto({this.paymentMethodOptionsCrypto = const Omittable.absent(), this.paymentIntentTypeSpecificPaymentMethodOptionsClient = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const PaymentIntentPaymentMethodOptionsCrypto._({required this.rawValue, required this.paymentMethodOptionsCrypto, required this.paymentIntentTypeSpecificPaymentMethodOptionsClient, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory PaymentIntentPaymentMethodOptionsCrypto.fromJson(Object? json) { return PaymentIntentPaymentMethodOptionsCrypto._(
+  rawValue: Omittable(json),
+  paymentMethodOptionsCrypto: json is Map<String, dynamic> && PaymentMethodOptionsCrypto.canParse(json) ? parseAnyOfVariant<PaymentMethodOptionsCrypto>(json, (value) => PaymentMethodOptionsCrypto.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  paymentIntentTypeSpecificPaymentMethodOptionsClient: json is Map<String, dynamic> && PaymentIntentTypeSpecificPaymentMethodOptionsClient.canParse(json) ? parseAnyOfVariant<PaymentIntentTypeSpecificPaymentMethodOptionsClient>(json, (value) => PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `PaymentMethodOptionsCrypto`, when it matches.
+final Omittable<PaymentMethodOptionsCrypto> paymentMethodOptionsCrypto;
+
+/// The payload decoded as `PaymentIntentTypeSpecificPaymentMethodOptionsClient`, when it matches.
+final Omittable<PaymentIntentTypeSpecificPaymentMethodOptionsClient> paymentIntentTypeSpecificPaymentMethodOptionsClient;
+
+/// Whether at least one variant matched.
+bool get isValid => paymentMethodOptionsCrypto.isPresent || paymentIntentTypeSpecificPaymentMethodOptionsClient.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsCrypto.isPresent) paymentMethodOptionsCrypto.value?.toJson(),
+    if (paymentIntentTypeSpecificPaymentMethodOptionsClient.isPresent) paymentIntentTypeSpecificPaymentMethodOptionsClient.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsCrypto && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsCrypto(${toJson()})';
+
+ }

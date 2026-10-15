@@ -298,7 +298,7 @@ final class RoomState {
     required this.keeper,
     this.currentSpeaker = const Omittable.absent(),
     this.nextSpeaker = const Omittable.absent(),
-    this.bannedParticipants = const [],
+    this.bannedParticipants,
   });
 
   factory RoomState.fromJson(Map<String, dynamic> json) {
@@ -320,11 +320,9 @@ final class RoomState {
           .map((e) => e as String)
           .toList(),
       keeper: json['keeper'] as String,
-      bannedParticipants: json.containsKey('banned_participants')
-          ? (json['banned_participants'] as List<dynamic>)
-                .map((e) => e as String)
-                .toList()
-          : const [],
+      bannedParticipants: (json['banned_participants'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
   }
 
@@ -346,7 +344,11 @@ final class RoomState {
 
   final String keeper;
 
-  final List<String> bannedParticipants;
+  final List<String>? bannedParticipants;
+
+  /// The value of `bannedParticipants`, or its schema default when absent.
+  List<String> get bannedParticipantsOrDefault =>
+      bannedParticipants ?? const [];
 
   Map<String, dynamic> toJson() {
     return {
@@ -359,7 +361,7 @@ final class RoomState {
       if (nextSpeaker.isPresent) 'next_speaker': nextSpeaker.value,
       'talking_order': talkingOrder,
       'keeper': keeper,
-      'banned_participants': bannedParticipants,
+      'banned_participants': ?bannedParticipants,
     };
   }
 
@@ -386,7 +388,7 @@ final class RoomState {
     Omittable<String?>? nextSpeaker,
     List<String>? talkingOrder,
     String? keeper,
-    List<String> Function()? bannedParticipants,
+    List<String>? Function()? bannedParticipants,
   }) {
     return RoomState(
       sessionSlug: sessionSlug ?? this.sessionSlug,
@@ -430,7 +432,7 @@ final class RoomState {
     nextSpeaker,
     Object.hashAll(talkingOrder),
     keeper,
-    Object.hashAll(bannedParticipants),
+    Object.hashAll(bannedParticipants ?? const []),
   );
 
   @override

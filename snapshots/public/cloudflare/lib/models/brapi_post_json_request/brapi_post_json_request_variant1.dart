@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BrapiPostJsonRequest (inline: Variant1)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/add_script_tag.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/add_style_tag.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/allow_resource_types.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/authenticate.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/goto_options.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/reject_resource_types.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/variant1_cookies.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/viewport.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/wait_for_selector.dart';import 'package:pub_cloudflare/models/brapi_post_json_request/custom_ai.dart';import 'package:pub_cloudflare/models/brapi_post_json_request/variant1_response_format.dart';@immutable final class BrapiPostJsonRequestVariant1 {const BrapiPostJsonRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.customAi, this.emulateMediaType, this.gotoOptions, this.prompt, this.rejectRequestPattern, this.rejectResourceTypes, this.responseFormat, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/add_script_tag.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/add_style_tag.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/allow_resource_types.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/authenticate.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/goto_options.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/reject_resource_types.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/variant1_cookies.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/viewport.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/wait_for_selector.dart';import 'package:pub_cloudflare/models/brapi_post_json_request/custom_ai.dart';import 'package:pub_cloudflare/models/brapi_post_json_request/variant1_response_format.dart';@immutable final class BrapiPostJsonRequestVariant1 {const BrapiPostJsonRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.customAi, this.emulateMediaType, this.gotoOptions, this.prompt, this.rejectRequestPattern, this.rejectResourceTypes, this.responseFormat, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostJsonRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
@@ -22,7 +22,7 @@ factory BrapiPostJsonRequestVariant1.fromJson(Map<String, dynamic> json) { retur
   responseFormat: json['response_format'] != null ? Variant1ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   setExtraHttpHeaders: (json['setExtraHTTPHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   setJavaScriptEnabled: json['setJavaScriptEnabled'] as bool?,
-  userAgent: json.containsKey('userAgent') ? json['userAgent'] as String : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+  userAgent: json['userAgent'] as String?,
   viewport: json['viewport'] != null ? Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
   waitForSelector: json['waitForSelector'] != null ? WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
@@ -79,7 +79,7 @@ final Map<String,String>? setExtraHttpHeaders;
 
 final bool? setJavaScriptEnabled;
 
-final String userAgent;
+final String? userAgent;
 
 /// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
 final Viewport? viewport;
@@ -89,6 +89,9 @@ final WaitForSelector? waitForSelector;
 
 /// Waits for a specified timeout before continuing.
 final double? waitForTimeout;
+
+/// The value of `userAgent`, or its schema default when absent.
+String get userAgentOrDefault => userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36';
 
 Map<String, dynamic> toJson() { return {
   'actionTimeout': ?actionTimeout,
@@ -109,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'setExtraHTTPHeaders': ?setExtraHttpHeaders,
   'setJavaScriptEnabled': ?setJavaScriptEnabled,
-  'userAgent': userAgent,
+  'userAgent': ?userAgent,
   if (viewport != null) 'viewport': viewport?.toJson(),
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
@@ -127,7 +130,7 @@ if (waitForTimeout$ != null) {
   if (waitForTimeout$ > 120000) { errors.add('waitForTimeout: must be <= 120000'); }
 }
 return errors; } 
-BrapiPostJsonRequestVariant1 copyWith({double? Function()? actionTimeout, List<AddScriptTag>? Function()? addScriptTag, List<AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<AllowResourceTypes>? Function()? allowResourceTypes, Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<Variant1Cookies>? Function()? cookies, List<CustomAi>? Function()? customAi, String? Function()? emulateMediaType, GotoOptions? Function()? gotoOptions, String? html, String? Function()? prompt, List<String>? Function()? rejectRequestPattern, List<RejectResourceTypes>? Function()? rejectResourceTypes, Variant1ResponseFormat? Function()? responseFormat, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String Function()? userAgent, Viewport? Function()? viewport, WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostJsonRequestVariant1(
+BrapiPostJsonRequestVariant1 copyWith({double? Function()? actionTimeout, List<AddScriptTag>? Function()? addScriptTag, List<AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<AllowResourceTypes>? Function()? allowResourceTypes, Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<Variant1Cookies>? Function()? cookies, List<CustomAi>? Function()? customAi, String? Function()? emulateMediaType, GotoOptions? Function()? gotoOptions, String? html, String? Function()? prompt, List<String>? Function()? rejectRequestPattern, List<RejectResourceTypes>? Function()? rejectResourceTypes, Variant1ResponseFormat? Function()? responseFormat, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String? Function()? userAgent, Viewport? Function()? viewport, WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostJsonRequestVariant1(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CustomTextFormatParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';/// Unconstrained free-form text.
-@immutable final class CustomTextFormatParam {const CustomTextFormatParam({this.type = CustomTextFormatParamType.text});
+@immutable final class CustomTextFormatParam {const CustomTextFormatParam({required this.type});
 
 factory CustomTextFormatParam.fromJson(Map<String, dynamic> json) { return CustomTextFormatParam(
   type: CustomTextFormatParamType.fromJson(json['type'] as String),

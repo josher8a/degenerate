@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UrlscannerCreateScanBulkRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/screenshots_resolutions.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/urlscanner_create_scan_bulk_request_visibility.dart';@immutable final class UrlscannerCreateScanBulkRequest {const UrlscannerCreateScanBulkRequest({required this.url, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility = UrlscannerCreateScanBulkRequestVisibility.public, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/screenshots_resolutions.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/urlscanner_create_scan_bulk_request_visibility.dart';@immutable final class UrlscannerCreateScanBulkRequest {const UrlscannerCreateScanBulkRequest({required this.url, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility, });
 
 factory UrlscannerCreateScanBulkRequest.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkRequest(
   customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -9,7 +9,7 @@ factory UrlscannerCreateScanBulkRequest.fromJson(Map<String, dynamic> json) { re
   referer: json['referer'] as String?,
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => ScreenshotsResolutions.fromJson(e as String)).toList(),
   url: json['url'] as String,
-  visibility: json.containsKey('visibility') ? UrlscannerCreateScanBulkRequestVisibility.fromJson(json['visibility'] as String) : UrlscannerCreateScanBulkRequestVisibility.public,
+  visibility: json['visibility'] != null ? UrlscannerCreateScanBulkRequestVisibility.fromJson(json['visibility'] as String) : null,
 ); }
 
 /// Set custom headers.
@@ -26,7 +26,10 @@ final List<ScreenshotsResolutions>? screenshotsResolutions;
 final String url;
 
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
-final UrlscannerCreateScanBulkRequestVisibility visibility;
+final UrlscannerCreateScanBulkRequestVisibility? visibility;
+
+/// The value of `visibility`, or its schema default when absent.
+UrlscannerCreateScanBulkRequestVisibility get visibilityOrDefault => visibility ?? UrlscannerCreateScanBulkRequestVisibility.fromJson('Public');
 
 Map<String, dynamic> toJson() { return {
   'customHeaders': ?customHeaders,
@@ -34,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'referer': ?referer,
   if (screenshotsResolutions != null) 'screenshotsResolutions': screenshotsResolutions?.map((e) => e.toJson()).toList(),
   'url': url,
-  'visibility': visibility.toJson(),
+  if (visibility != null) 'visibility': visibility?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
@@ -48,7 +51,7 @@ if (referer$ != null) {
   if (referer$.runes.length > 4096) { errors.add('referer: length must be <= 4096'); }
 }
 return errors; } 
-UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility Function()? visibility, }) { return UrlscannerCreateScanBulkRequest(
+UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility? Function()? visibility, }) { return UrlscannerCreateScanBulkRequest(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   customagent: customagent != null ? customagent() : this.customagent,
   referer: referer != null ? referer() : this.referer,

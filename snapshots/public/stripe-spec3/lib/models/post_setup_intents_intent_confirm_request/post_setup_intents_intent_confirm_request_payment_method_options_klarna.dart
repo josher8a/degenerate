@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSetupIntentsIntentConfirmRequest (inline: PaymentMethodOptions > Klarna)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/on_demand.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param17_preferred_locale.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions_variant1.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/on_demand.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param17_preferred_locale.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna(
   currency: json['currency'] as String?,
   onDemand: json['on_demand'] != null ? OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam17PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
-  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => KlarnaSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  subscriptions: json['subscriptions'] != null ? KlarnaSubscriptions.fromJson(json['subscriptions']) : null,
 ); }
 
 final String? currency;

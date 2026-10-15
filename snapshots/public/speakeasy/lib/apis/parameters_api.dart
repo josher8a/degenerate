@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MixedParametersPrimitivesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,7 +67,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AllowEmptyValueQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -101,7 +101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlatParametersOrderingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -135,7 +135,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlatParametersOrderingUsingOptionalRequestBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicateParamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -169,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicatePathParamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -193,7 +193,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MixedParametersCamelCaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -210,7 +210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterPrimitivesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -227,7 +227,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterObjectsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -244,7 +244,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterArraysResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -261,7 +261,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterMapsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -278,7 +278,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PathParameterJsonResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -302,7 +302,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ParameterOpenEnumResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -319,7 +319,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicatePathParameterAtOperationLevelDoesNotErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -336,7 +336,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -359,7 +359,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -382,7 +382,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -400,7 +400,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -418,7 +418,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -444,7 +444,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsPrimitiveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -470,7 +470,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsUnionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -518,7 +518,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -545,7 +545,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsCamelObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -576,7 +576,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsRefParamObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -606,7 +606,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -647,7 +647,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PipeDelimitedQueryParamsArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -682,7 +682,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -730,7 +730,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeepObjectQueryParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -761,7 +761,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeepObjectQueryParamsDeepObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -791,7 +791,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeepObjectQueryParamsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -845,7 +845,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return JsonQueryParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -899,7 +899,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return JsonQueryParamsObjectSmallerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -925,7 +925,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConstQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -953,7 +953,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DefaultQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1044,7 +1044,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MixedQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1065,7 +1065,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsPrimitiveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1084,7 +1084,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1103,7 +1103,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1121,7 +1121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1147,7 +1147,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsNilResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1164,7 +1164,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1185,7 +1185,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1211,7 +1211,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BuiltinShadowQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

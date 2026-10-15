@@ -101,13 +101,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $default
 
  }
 /// The hyperparameters used for the reinforcement fine-tuning job.
-@immutable final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort = FineTuneReinforcementHyperparametersReasoningEffort.$default, this.computeMultiplier, this.evalInterval, this.evalSamples, });
+@immutable final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort, this.computeMultiplier, this.evalInterval, this.evalSamples, });
 
 factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementHyperparameters(
   batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
   nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-  reasoningEffort: json.containsKey('reasoning_effort') ? FineTuneReinforcementHyperparametersReasoningEffort.fromJson(json['reasoning_effort'] as String) : FineTuneReinforcementHyperparametersReasoningEffort.$default,
+  reasoningEffort: json['reasoning_effort'] != null ? FineTuneReinforcementHyperparametersReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
   computeMultiplier: json['compute_multiplier'] != null ? OneOf2.parse(json['compute_multiplier'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
   evalInterval: json['eval_interval'] != null ? OneOf2.parse(json['eval_interval'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   evalSamples: json['eval_samples'] != null ? OneOf2.parse(json['eval_samples'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
@@ -127,7 +127,7 @@ final NEpochs? nEpochs;
 
 /// Level of reasoning effort.
 /// 
-final FineTuneReinforcementHyperparametersReasoningEffort reasoningEffort;
+final FineTuneReinforcementHyperparametersReasoningEffort? reasoningEffort;
 
 /// Multiplier on amount of compute used for exploring search space during training.
 /// 
@@ -141,17 +141,20 @@ final EvalInterval? evalInterval;
 /// 
 final EvalSamples? evalSamples;
 
+/// The value of `reasoningEffort`, or its schema default when absent.
+FineTuneReinforcementHyperparametersReasoningEffort get reasoningEffortOrDefault => reasoningEffort ?? FineTuneReinforcementHyperparametersReasoningEffort.fromJson('default');
+
 Map<String, dynamic> toJson() { return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (learningRateMultiplier != null) 'learning_rate_multiplier': learningRateMultiplier?.toJson(),
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
-  'reasoning_effort': reasoningEffort.toJson(),
+  if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
   if (computeMultiplier != null) 'compute_multiplier': computeMultiplier?.toJson(),
   if (evalInterval != null) 'eval_interval': evalInterval?.toJson(),
   if (evalSamples != null) 'eval_samples': evalSamples?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs', 'reasoning_effort', 'compute_multiplier', 'eval_interval', 'eval_samples'}.contains(key)); } 
-FineTuneReinforcementHyperparameters copyWith({BatchSize? Function()? batchSize, LearningRateMultiplier? Function()? learningRateMultiplier, NEpochs? Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort Function()? reasoningEffort, ComputeMultiplier? Function()? computeMultiplier, EvalInterval? Function()? evalInterval, EvalSamples? Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
+FineTuneReinforcementHyperparameters copyWith({BatchSize? Function()? batchSize, LearningRateMultiplier? Function()? learningRateMultiplier, NEpochs? Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort? Function()? reasoningEffort, ComputeMultiplier? Function()? computeMultiplier, EvalInterval? Function()? evalInterval, EvalSamples? Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,

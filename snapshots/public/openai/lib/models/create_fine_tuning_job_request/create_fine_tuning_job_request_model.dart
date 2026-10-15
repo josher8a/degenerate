@@ -101,8 +101,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? babbage0
 /// The name of the model to fine-tune. You can select one of the
 /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [CreateFineTuningJobRequestModelVariant2]
-typedef CreateFineTuningJobRequestModel = OneOf2<String,CreateFineTuningJobRequestModelVariant2>;
+@immutable final class CreateFineTuningJobRequestModel {/// A value built from one or more typed views (at least one must be present).
+const CreateFineTuningJobRequestModel({this.string = const Omittable.absent(), this.createFineTuningJobRequestModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const CreateFineTuningJobRequestModel._({required this.rawValue, required this.string, required this.createFineTuningJobRequestModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CreateFineTuningJobRequestModel.fromJson(Object? json) { return CreateFineTuningJobRequestModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  createFineTuningJobRequestModelVariant2: parseAnyOfVariant<CreateFineTuningJobRequestModelVariant2>(json, (value) => CreateFineTuningJobRequestModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `CreateFineTuningJobRequestModelVariant2`, when it matches.
+final Omittable<CreateFineTuningJobRequestModelVariant2> createFineTuningJobRequestModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || createFineTuningJobRequestModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (createFineTuningJobRequestModelVariant2.isPresent) createFineTuningJobRequestModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CreateFineTuningJobRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'CreateFineTuningJobRequestModel(${toJson()})';
+
+ }

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkerVersionsUploadVersionRequest (inline: Metadata)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request/worker_versions_upload_version_request_metadata_annotations.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request/metadata_annotations.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
 @immutable final class WorkerVersionsUploadVersionRequestMetadata {const WorkerVersionsUploadVersionRequestMetadata({required this.mainModule, this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.keepBindings, this.usageModel, });
 
 factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic> json) { return WorkerVersionsUploadVersionRequestMetadata(
-  annotations: json['annotations'] != null ? WorkerVersionsUploadVersionRequestMetadataAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
+  annotations: json['annotations'] != null ? MetadataAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
@@ -14,7 +14,7 @@ factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic>
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
 ); }
 
-final WorkerVersionsUploadVersionRequestMetadataAnnotations? annotations;
+final MetadataAnnotations? annotations;
 
 /// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItem>? bindings;
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('main_module') && json['main_module'] is String; } 
-WorkerVersionsUploadVersionRequestMetadata copyWith({WorkerVersionsUploadVersionRequestMetadataAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, List<String>? Function()? keepBindings, String? mainModule, WorkersUsageModel? Function()? usageModel, }) { return WorkerVersionsUploadVersionRequestMetadata(
+WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, List<String>? Function()? keepBindings, String? mainModule, WorkersUsageModel? Function()? usageModel, }) { return WorkerVersionsUploadVersionRequestMetadata(
   annotations: annotations != null ? annotations() : this.annotations,
   bindings: bindings != null ? bindings() : this.bindings,
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,

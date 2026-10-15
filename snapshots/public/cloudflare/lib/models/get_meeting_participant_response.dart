@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetMeetingParticipantResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant.dart';@immutable final class GetMeetingParticipantResponse {const GetMeetingParticipantResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant.dart';@immutable final class GetMeetingParticipantResponse {const GetMeetingParticipantResponse({required this.data, required this.success, });
 
 factory GetMeetingParticipantResponse.fromJson(Map<String, dynamic> json) { return GetMeetingParticipantResponse(
   data: RealtimekitParticipant.fromJson(json['data'] as Map<String, dynamic>),

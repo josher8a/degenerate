@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > User)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_content.dart';import 'package:pub_cloudflare/models/messages/user_content_variant2.dart';sealed class UserRole {const UserRole();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_content.dart';sealed class UserRole {const UserRole();
 
 factory UserRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 @immutable final class MessagesUser {const MessagesUser({required this.content, required this.role, this.name, });
 
 factory MessagesUser.fromJson(Map<String, dynamic> json) { return MessagesUser(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => UserContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: UserContent.fromJson(json['content']),
   name: json['name'] as String?,
   role: UserRole.fromJson(json['role'] as String),
 ); }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreditNote
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_lines.dart';import 'package:pub_stripe_spec3/models/credit_note_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_lines.dart';import 'package:pub_stripe_spec3/models/credit_note_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CreditNoteObject {const CreditNoteObject();
 
 factory CreditNoteObject.fromJson(String json) { return switch (json) {
@@ -313,14 +313,14 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   amountShipping: (json['amount_shipping'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
+  customer: BankAccountCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
-  customerBalanceTransaction: json.containsKey('customer_balance_transaction') ? Omittable(json['customer_balance_transaction'] != null ? OneOf2.parse(json['customer_balance_transaction'], fromA: (v) => v as String, fromB: (v) => CustomerBalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerBalanceTransaction: json.containsKey('customer_balance_transaction') ? Omittable(json['customer_balance_transaction'] != null ? CreditNoteCustomerBalanceTransaction.fromJson(json['customer_balance_transaction']) : null) : const Omittable.absent(),
   discountAmount: (json['discount_amount'] as num).toInt(),
   discountAmounts: (json['discount_amounts'] as List<dynamic>).map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
   effectiveAt: json.containsKey('effective_at') ? Omittable(json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
-  invoice: OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),),
+  invoice: BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice.fromJson(json['invoice']),
   lines: CreditNoteLines.fromJson(json['lines'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   memo: json.containsKey('memo') ? Omittable(json['memo'] as String?) : const Omittable.absent(),

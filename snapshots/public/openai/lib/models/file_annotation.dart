@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FileAnnotation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/file_annotation_source/file_annotation_source_type.dart';/// Annotation that references an uploaded file.
-@immutable final class FileAnnotation {const FileAnnotation({required this.source, this.type = FileAnnotationSourceType.file, });
+@immutable final class FileAnnotation {const FileAnnotation({required this.type, required this.source, });
 
 factory FileAnnotation.fromJson(Map<String, dynamic> json) { return FileAnnotation(
   type: FileAnnotationSourceType.fromJson(json['type'] as String),

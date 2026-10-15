@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ConnectCollectionTransfer
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ConnectCollectionTransferObject {const ConnectCollectionTransferObject();
 
 factory ConnectCollectionTransferObject.fromJson(String json) { return switch (json) {
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectC
 factory ConnectCollectionTransfer.fromJson(Map<String, dynamic> json) { return ConnectCollectionTransfer(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  destination: ChargeTransferDataDestination.fromJson(json['destination']),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ConnectCollectionTransferObject.fromJson(json['object'] as String),

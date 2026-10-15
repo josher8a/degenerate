@@ -2,15 +2,15 @@
 // Source: #/components/schemas/LoadBalancingRules
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_rules/fixed_response.dart';import 'package:pub_cloudflare/models/load_balancing_rules/overrides.dart';/// A rule object containing conditions and overrides for this load balancer to evaluate.
-@immutable final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this.disabled = false, this.fixedResponse, this.name, this.overrides, this.priority = 0, this.terminates, });
+@immutable final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this.disabled, this.fixedResponse, this.name, this.overrides, this.priority, this.terminates, });
 
 factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2(
   condition: json['condition'] as String?,
-  disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,
+  disabled: json['disabled'] as bool?,
   fixedResponse: json['fixed_response'] != null ? FixedResponse.fromJson(json['fixed_response'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   overrides: json['overrides'] != null ? Overrides.fromJson(json['overrides'] as Map<String, dynamic>) : null,
-  priority: json.containsKey('priority') ? (json['priority'] as num).toInt() : 0,
+  priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
   terminates: json['terminates'] as bool?,
 ); }
 
@@ -20,7 +20,7 @@ factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBal
 final String? condition;
 
 /// Disable this specific rule. It will no longer be evaluated by this load balancer.
-final bool disabled;
+final bool? disabled;
 
 /// A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.
 final FixedResponse? fixedResponse;
@@ -34,18 +34,24 @@ final String? name;
 final Overrides? overrides;
 
 /// The order in which rules should be executed in relation to each other. Lower values are executed first. Values do not need to be sequential. If no value is provided for any rule the array order of the rules field will be used to assign a priority.
-final int priority;
+final int? priority;
 
 /// If this rule's condition is true, this causes rule evaluation to stop after processing this rule.
 final bool? terminates;
 
+/// The value of `disabled`, or its schema default when absent.
+bool get disabledOrDefault => disabled ?? false;
+
+/// The value of `priority`, or its schema default when absent.
+int get priorityOrDefault => priority ?? 0;
+
 Map<String, dynamic> toJson() { return {
   'condition': ?condition,
-  'disabled': disabled,
+  'disabled': ?disabled,
   if (fixedResponse != null) 'fixed_response': fixedResponse?.toJson(),
   'name': ?name,
   if (overrides != null) 'overrides': overrides?.toJson(),
-  'priority': priority,
+  'priority': ?priority,
   'terminates': ?terminates,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'disabled', 'fixed_response', 'name', 'overrides', 'priority', 'terminates'}.contains(key)); } 
@@ -55,9 +61,12 @@ final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 200) { errors.add('name: length must be <= 200'); }
 }
-if (priority < 0) { errors.add('priority: must be >= 0'); }
+final priority$ = priority;
+if (priority$ != null) {
+  if (priority$ < 0) { errors.add('priority: must be >= 0'); }
+}
 return errors; } 
-LoadBalancingRules2 copyWith({String? Function()? condition, bool Function()? disabled, FixedResponse? Function()? fixedResponse, String? Function()? name, Overrides? Function()? overrides, int Function()? priority, bool? Function()? terminates, }) { return LoadBalancingRules2(
+LoadBalancingRules2 copyWith({String? Function()? condition, bool? Function()? disabled, FixedResponse? Function()? fixedResponse, String? Function()? name, Overrides? Function()? overrides, int? Function()? priority, bool? Function()? terminates, }) { return LoadBalancingRules2(
   condition: condition != null ? condition() : this.condition,
   disabled: disabled != null ? disabled() : this.disabled,
   fixedResponse: fixedResponse != null ? fixedResponse() : this.fixedResponse,

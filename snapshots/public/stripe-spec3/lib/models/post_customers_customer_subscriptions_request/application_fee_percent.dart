@@ -2,8 +2,44 @@
 // Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: ApplicationFeePercent)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';/// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account. The request must be made by a platform account on a connected account in order to set an application fee percentage. For more information, see the application fees [documentation](https://stripe.com/docs/connect/subscriptions#collecting-fees-on-subscriptions).
-///
-/// Variants:
-/// - `.a` → [double]
-/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
-typedef ApplicationFeePercent = OneOf2<double,GetPaymentMethodConfigurationsApplicationVariant2>;
+@immutable final class ApplicationFeePercent {/// A value built from one or more typed views (at least one must be present).
+const ApplicationFeePercent({this.$double = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const ApplicationFeePercent._({required this.rawValue, required this.$double, required this.getPaymentMethodConfigurationsApplicationVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory ApplicationFeePercent.fromJson(Object? json) { return ApplicationFeePercent._(
+  rawValue: Omittable(json),
+  $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
+  getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `double`, when it matches.
+final Omittable<double> $double;
+
+/// The payload decoded as `GetPaymentMethodConfigurationsApplicationVariant2`, when it matches.
+final Omittable<GetPaymentMethodConfigurationsApplicationVariant2> getPaymentMethodConfigurationsApplicationVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => $double.isPresent || getPaymentMethodConfigurationsApplicationVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($double.isPresent) $double.value,
+    if (getPaymentMethodConfigurationsApplicationVariant2.isPresent) getPaymentMethodConfigurationsApplicationVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is ApplicationFeePercent && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'ApplicationFeePercent(${toJson()})';
+
+ }

@@ -1,17 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WafOverridesUpdateWafOverrideRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/firewall_rewrite_action.dart';import 'package:pub_cloudflare/models/firewall_waf_action.dart';@immutable final class WafOverridesUpdateWafOverrideRequest {const WafOverridesUpdateWafOverrideRequest({required this.id, required this.rewriteAction, required this.rules, required this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_rewrite_action.dart';import 'package:pub_cloudflare/models/firewall_waf_action.dart';@immutable final class WafOverridesUpdateWafOverrideRequest {const WafOverridesUpdateWafOverrideRequest({required this.rewriteAction, required this.rules, required this.urls, });
 
 factory WafOverridesUpdateWafOverrideRequest.fromJson(Map<String, dynamic> json) { return WafOverridesUpdateWafOverrideRequest(
-  id: FirewallIdentifier.fromJson(json['id'] as String),
   rewriteAction: FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>),
   rules: (json['rules'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : FirewallWafAction.fromJson(v as dynamic))),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
-
-/// Defines an identifier.
-final FirewallIdentifier id;
 
 final FirewallRewriteAction rewriteAction;
 
@@ -22,30 +18,26 @@ final Map<String,FirewallWafAction?> rules;
 final List<String> urls;
 
 Map<String, dynamic> toJson() { return {
-  'id': id.toJson(),
   'rewrite_action': rewriteAction.toJson(),
   'rules': rules.map((k, v) => MapEntry(k, v?.toJson())),
   'urls': urls,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('rewrite_action') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('rewrite_action') &&
       json.containsKey('rules') &&
       json.containsKey('urls'); } 
-WafOverridesUpdateWafOverrideRequest copyWith({FirewallIdentifier? id, FirewallRewriteAction? rewriteAction, Map<String,FirewallWafAction?>? rules, List<String>? urls, }) { return WafOverridesUpdateWafOverrideRequest(
-  id: id ?? this.id,
+WafOverridesUpdateWafOverrideRequest copyWith({FirewallRewriteAction? rewriteAction, Map<String,FirewallWafAction?>? rules, List<String>? urls, }) { return WafOverridesUpdateWafOverrideRequest(
   rewriteAction: rewriteAction ?? this.rewriteAction,
   rules: rules ?? this.rules,
   urls: urls ?? this.urls,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WafOverridesUpdateWafOverrideRequest &&
-          id == other.id &&
           rewriteAction == other.rewriteAction &&
           rules == other.rules &&
           listEquals(urls, other.urls);
 
-@override int get hashCode => Object.hash(id, rewriteAction, rules, Object.hashAll(urls));
+@override int get hashCode => Object.hash(rewriteAction, rules, Object.hashAll(urls));
 
-@override String toString() => 'WafOverridesUpdateWafOverrideRequest(id: $id, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)';
+@override String toString() => 'WafOverridesUpdateWafOverrideRequest(rewriteAction: $rewriteAction, rules: $rules, urls: $urls)';
 
  }

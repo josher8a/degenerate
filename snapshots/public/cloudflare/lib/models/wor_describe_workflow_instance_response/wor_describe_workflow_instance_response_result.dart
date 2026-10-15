@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_trigger.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/sleep.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps_step.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/termination.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wait_for_event.dart';@immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_trigger.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps.dart';@immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
 
 factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
@@ -12,7 +12,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorBatchCreateWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
   stepCount: (json['step_count'] as num).toInt(),
-  steps: (json['steps'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => StepsStep.fromJson(v as Map<String, dynamic>), fromB: (v) => Sleep.fromJson(v as Map<String, dynamic>), fromC: (v) => Termination.fromJson(v as Map<String, dynamic>), fromD: (v) => WaitForEvent.fromJson(v as Map<String, dynamic>),)).toList(),
+  steps: (json['steps'] as List<dynamic>).map(Steps.fromJson).toList(),
   success: json['success'] as bool?,
   trigger: ResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,

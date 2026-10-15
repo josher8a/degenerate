@@ -33,7 +33,7 @@ ChoicesMessage copyWith({String? Function()? content, MessagesRole? role, Map<St
           role == other.role &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(content, role, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(content, role, mapHash(additionalProperties));
 
 @override String toString() => 'ChoicesMessage(content: $content, role: $role, additionalProperties: $additionalProperties)';
 

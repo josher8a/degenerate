@@ -12,10 +12,10 @@ factory NullableOneOfTypeInObject.fromJson(Map<String, dynamic> json) { return N
 /// One of: bool
 final dynamic oneOfOne;
 
-/// One of: bool, dynamic
+/// One of: bool
 final dynamic nullableOneOfOne;
 
-/// One of: bool, int, dynamic
+/// One of: bool, int
 final dynamic nullableOneOfTwo;
 
 Map<String, dynamic> toJson() { return {

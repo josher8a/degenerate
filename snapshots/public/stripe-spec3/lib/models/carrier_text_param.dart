@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CarrierTextParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/footer_body.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/footer_title.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/header_body.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/header_title.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class CarrierTextParam {const CarrierTextParam({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/footer_body.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/footer_title.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/header_body.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/header_title.dart';@immutable final class CarrierTextParam {const CarrierTextParam({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory CarrierTextParam.fromJson(Map<String, dynamic> json) { return CarrierTextParam(
-  footerBody: json['footer_body'] != null ? OneOf2.parse(json['footer_body'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  footerTitle: json['footer_title'] != null ? OneOf2.parse(json['footer_title'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  headerBody: json['header_body'] != null ? OneOf2.parse(json['header_body'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  headerTitle: json['header_title'] != null ? OneOf2.parse(json['header_title'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  footerBody: json['footer_body'] != null ? FooterBody.fromJson(json['footer_body']) : null,
+  footerTitle: json['footer_title'] != null ? FooterTitle.fromJson(json['footer_title']) : null,
+  headerBody: json['header_body'] != null ? HeaderBody.fromJson(json['header_body']) : null,
+  headerTitle: json['header_title'] != null ? HeaderTitle.fromJson(json['header_title']) : null,
 ); }
 
 final FooterBody? footerBody;

@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W
 
  }
 /// A Github-hosted hosted runner.
-@immutable final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, required this.publicIpEnabled, this.runnerGroupId, this.maximumRunners = 10, this.publicIps, this.lastActiveOn = const Omittable.absent(), this.imageGen, });
+@immutable final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, required this.publicIpEnabled, this.runnerGroupId, this.maximumRunners, this.publicIps, this.lastActiveOn = const Omittable.absent(), this.imageGen, });
 
 factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return ActionsHostedRunner(
   id: (json['id'] as num).toInt(),
@@ -125,7 +125,7 @@ factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return Actions
   machineSizeDetails: ActionsHostedRunnerMachineSpec.fromJson(json['machine_size_details'] as Map<String, dynamic>),
   status: ActionsHostedRunnerStatus.fromJson(json['status'] as String),
   platform: json['platform'] as String,
-  maximumRunners: json.containsKey('maximum_runners') ? (json['maximum_runners'] as num).toInt() : 10,
+  maximumRunners: json['maximum_runners'] != null ? (json['maximum_runners'] as num).toInt() : null,
   publicIpEnabled: json['public_ip_enabled'] as bool,
   publicIps: (json['public_ips'] as List<dynamic>?)?.map((e) => PublicIp.fromJson(e as Map<String, dynamic>)).toList(),
   lastActiveOn: json.containsKey('last_active_on') ? Omittable(json['last_active_on'] != null ? DateTime.parse(json['last_active_on'] as String) : null) : const Omittable.absent(),
@@ -152,7 +152,7 @@ final ActionsHostedRunnerStatus status;
 final String platform;
 
 /// The maximum amount of hosted runners. Runners will not scale automatically above this number. Use this setting to limit your cost.
-final int maximumRunners;
+final int? maximumRunners;
 
 /// Whether public IP is enabled for the hosted runners.
 final bool publicIpEnabled;
@@ -166,6 +166,9 @@ final Omittable<DateTime?> lastActiveOn;
 /// Whether custom image generation is enabled for the hosted runners.
 final bool? imageGen;
 
+/// The value of `maximumRunners`, or its schema default when absent.
+int get maximumRunnersOrDefault => maximumRunners ?? 10;
+
 Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
@@ -174,7 +177,7 @@ Map<String, dynamic> toJson() { return {
   'machine_size_details': machineSizeDetails.toJson(),
   'status': status.toJson(),
   'platform': platform,
-  'maximum_runners': maximumRunners,
+  'maximum_runners': ?maximumRunners,
   'public_ip_enabled': publicIpEnabled,
   if (publicIps != null) 'public_ips': publicIps?.map((e) => e.toJson()).toList(),
   if (lastActiveOn.isPresent) 'last_active_on': lastActiveOn.value?.toIso8601String(),
@@ -187,7 +190,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('platform') && json['platform'] is String &&
       json.containsKey('public_ip_enabled') && json['public_ip_enabled'] is bool; } 
-ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp>? Function()? publicIps, Omittable<DateTime?>? lastActiveOn, bool? Function()? imageGen, }) { return ActionsHostedRunner(
+ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int? Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp>? Function()? publicIps, Omittable<DateTime?>? lastActiveOn, bool? Function()? imageGen, }) { return ActionsHostedRunner(
   id: id ?? this.id,
   name: name ?? this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,

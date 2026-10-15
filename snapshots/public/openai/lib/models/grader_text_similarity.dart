@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_text_similarity/eval_grader_text_similarity_type.dart';import 'package:pub_openai/models/eval_grader_text_similarity/evaluation_metric.dart';/// A TextSimilarityGrader object which grades text based on similarity metrics.
 /// 
-@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, this.type = EvalGraderTextSimilarityType.textSimilarity, });
+@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.type, required this.name, required this.input, required this.reference, required this.evaluationMetric, });
 
 factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) { return GraderTextSimilarity(
   type: EvalGraderTextSimilarityType.fromJson(json['type'] as String),

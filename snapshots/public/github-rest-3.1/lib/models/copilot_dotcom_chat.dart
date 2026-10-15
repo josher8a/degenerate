@@ -35,7 +35,7 @@ CopilotDotcomChat copyWith({int? Function()? totalEngagedUsers, List<CopilotDotc
           listEquals(models, other.models) &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(models ?? const []), Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(models ?? const []), mapHash(additionalProperties));
 
 @override String toString() => 'CopilotDotcomChat(totalEngagedUsers: $totalEngagedUsers, models: $models, additionalProperties: $additionalProperties)';
 

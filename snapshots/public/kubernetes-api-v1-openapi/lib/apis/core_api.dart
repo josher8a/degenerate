@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -78,7 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ComponentStatusList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -105,7 +105,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ComponentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -162,7 +162,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfigMapList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -219,7 +219,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EndpointsList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -276,7 +276,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EventList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -333,7 +333,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LimitRangeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -390,7 +390,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NamespaceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -428,7 +428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -466,7 +466,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Binding.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -523,7 +523,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfigMapList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -561,7 +561,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -629,7 +629,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -656,7 +656,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -694,7 +694,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -735,7 +735,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -779,7 +779,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -836,7 +836,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EndpointsList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -874,7 +874,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -942,7 +942,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -969,7 +969,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1007,7 +1007,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1048,7 +1048,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1092,7 +1092,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1149,7 +1149,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EventList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1187,7 +1187,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1255,7 +1255,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1282,7 +1282,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1320,7 +1320,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1361,7 +1361,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1405,7 +1405,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1462,7 +1462,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LimitRangeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1500,7 +1500,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1568,7 +1568,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1595,7 +1595,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1633,7 +1633,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1674,7 +1674,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1718,7 +1718,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1775,7 +1775,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaimList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1813,7 +1813,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1881,7 +1881,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1908,7 +1908,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1946,7 +1946,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1987,7 +1987,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2031,7 +2031,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2058,7 +2058,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2096,7 +2096,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2137,7 +2137,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2194,7 +2194,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2232,7 +2232,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2300,7 +2300,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2327,7 +2327,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2365,7 +2365,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2406,7 +2406,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2450,7 +2450,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2489,7 +2489,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2528,7 +2528,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2566,7 +2566,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Binding.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2593,7 +2593,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2631,7 +2631,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2672,7 +2672,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2710,7 +2710,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Eviction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2752,7 +2752,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2794,7 +2794,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2848,7 +2848,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2875,7 +2875,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2902,7 +2902,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2929,7 +2929,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2956,7 +2956,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -2983,7 +2983,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3010,7 +3010,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3037,7 +3037,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3064,7 +3064,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3091,7 +3091,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3118,7 +3118,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3145,7 +3145,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3172,7 +3172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3199,7 +3199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3226,7 +3226,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3253,7 +3253,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3280,7 +3280,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -3307,7 +3307,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3345,7 +3345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3386,7 +3386,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3413,7 +3413,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3451,7 +3451,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3492,7 +3492,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3549,7 +3549,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplateList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3587,7 +3587,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3655,7 +3655,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3682,7 +3682,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3720,7 +3720,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3761,7 +3761,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3805,7 +3805,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3862,7 +3862,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationControllerList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3900,7 +3900,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3968,7 +3968,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3995,7 +3995,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4033,7 +4033,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4074,7 +4074,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4118,7 +4118,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4145,7 +4145,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Scale.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4183,7 +4183,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Scale.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4224,7 +4224,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Scale.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4251,7 +4251,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4289,7 +4289,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4330,7 +4330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4387,7 +4387,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuotaList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4425,7 +4425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4493,7 +4493,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4520,7 +4520,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4558,7 +4558,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4599,7 +4599,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4643,7 +4643,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4670,7 +4670,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4708,7 +4708,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4749,7 +4749,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4806,7 +4806,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SecretList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4844,7 +4844,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4912,7 +4912,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4939,7 +4939,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4977,7 +4977,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5018,7 +5018,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5062,7 +5062,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5119,7 +5119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccountList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5157,7 +5157,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5225,7 +5225,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5252,7 +5252,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5290,7 +5290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5331,7 +5331,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5375,7 +5375,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5413,7 +5413,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TokenRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5470,7 +5470,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5508,7 +5508,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5576,7 +5576,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5603,7 +5603,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5641,7 +5641,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5682,7 +5682,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5726,7 +5726,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5753,7 +5753,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5780,7 +5780,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5807,7 +5807,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5834,7 +5834,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5861,7 +5861,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5888,7 +5888,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5915,7 +5915,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5942,7 +5942,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5969,7 +5969,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -5996,7 +5996,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6023,7 +6023,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6050,7 +6050,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6077,7 +6077,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6104,7 +6104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6131,7 +6131,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6169,7 +6169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6210,7 +6210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6237,7 +6237,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6275,7 +6275,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6316,7 +6316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6360,7 +6360,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6398,7 +6398,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6425,7 +6425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6463,7 +6463,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6504,7 +6504,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6561,7 +6561,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NodeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6599,7 +6599,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6667,7 +6667,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6694,7 +6694,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6732,7 +6732,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6773,7 +6773,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6817,7 +6817,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6844,7 +6844,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6871,7 +6871,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6898,7 +6898,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6925,7 +6925,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6952,7 +6952,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -6979,7 +6979,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7006,7 +7006,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7033,7 +7033,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7060,7 +7060,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7087,7 +7087,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7114,7 +7114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7141,7 +7141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7168,7 +7168,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7195,7 +7195,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -7222,7 +7222,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7260,7 +7260,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7301,7 +7301,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7358,7 +7358,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeClaimList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7415,7 +7415,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolumeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7453,7 +7453,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7521,7 +7521,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7548,7 +7548,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7586,7 +7586,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7627,7 +7627,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7671,7 +7671,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7698,7 +7698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7736,7 +7736,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7777,7 +7777,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7834,7 +7834,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7891,7 +7891,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PodTemplateList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7948,7 +7948,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReplicationControllerList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8005,7 +8005,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResourceQuotaList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8062,7 +8062,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SecretList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8119,7 +8119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceAccountList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8176,7 +8176,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ServiceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8233,7 +8233,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8290,7 +8290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8347,7 +8347,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8404,7 +8404,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8461,7 +8461,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8518,7 +8518,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8575,7 +8575,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8632,7 +8632,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8689,7 +8689,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8746,7 +8746,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8803,7 +8803,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8860,7 +8860,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8917,7 +8917,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -8974,7 +8974,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9031,7 +9031,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9088,7 +9088,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9145,7 +9145,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9202,7 +9202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9259,7 +9259,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9316,7 +9316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9373,7 +9373,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9430,7 +9430,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9487,7 +9487,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9544,7 +9544,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9601,7 +9601,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9658,7 +9658,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9715,7 +9715,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9772,7 +9772,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9829,7 +9829,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9886,7 +9886,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -9943,7 +9943,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10000,7 +10000,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10057,7 +10057,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10114,7 +10114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10171,7 +10171,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10228,7 +10228,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10285,7 +10285,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10342,7 +10342,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10399,7 +10399,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10456,7 +10456,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10513,7 +10513,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -10570,7 +10570,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

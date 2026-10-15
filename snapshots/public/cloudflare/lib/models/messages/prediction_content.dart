@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Prediction > Content)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class ContentType {const ContentType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';sealed class ContentType {const ContentType();
 
 factory ContentType.fromJson(String json) { return switch (json) {
   'content' => content,
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? content,
 @immutable final class PredictionContent {const PredictionContent({required this.content, required this.type, });
 
 factory PredictionContent.fromJson(Map<String, dynamic> json) { return PredictionContent(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => DeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: DeveloperContent.fromJson(json['content']),
   type: ContentType.fromJson(json['type'] as String),
 ); }
 

@@ -94,7 +94,7 @@ NullableClass copyWith({Omittable<int?>? integerProp, Omittable<double?>? number
           objectItemsNullable == other.objectItemsNullable &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(integerProp, numberProp, booleanProp, stringProp, dateProp, datetimeProp, Object.hashAll(arrayNullableProp.value ?? const []), Object.hashAll(arrayAndItemsNullableProp.value ?? const []), Object.hashAll(arrayItemsNullable ?? const []), objectNullableProp, objectAndItemsNullableProp, objectItemsNullable, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(integerProp, numberProp, booleanProp, stringProp, dateProp, datetimeProp, Object.hashAll(arrayNullableProp.value ?? const []), Object.hashAll(arrayAndItemsNullableProp.value ?? const []), Object.hashAll(arrayItemsNullable ?? const []), objectNullableProp, objectAndItemsNullableProp, objectItemsNullable, mapHash(additionalProperties));
 
 @override String toString() => 'NullableClass(\n  integerProp: $integerProp,\n  numberProp: $numberProp,\n  booleanProp: $booleanProp,\n  stringProp: $stringProp,\n  dateProp: $dateProp,\n  datetimeProp: $datetimeProp,\n  arrayNullableProp: $arrayNullableProp,\n  arrayAndItemsNullableProp: $arrayAndItemsNullableProp,\n  arrayItemsNullable: $arrayItemsNullable,\n  objectNullableProp: $objectNullableProp,\n  objectAndItemsNullableProp: $objectAndItemsNullableProp,\n  objectItemsNullable: $objectItemsNullable,\n  additionalProperties: $additionalProperties,\n)';
 

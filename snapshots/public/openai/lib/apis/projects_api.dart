@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -75,7 +75,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -127,7 +127,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -146,7 +146,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Key3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -169,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -189,7 +189,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -222,7 +222,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectRateLimitListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -243,7 +243,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectRateLimit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -274,7 +274,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccountListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -296,7 +296,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccountCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -316,7 +316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -339,7 +339,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccountDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -369,7 +369,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectUserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -391,7 +391,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -411,7 +411,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -432,7 +432,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -456,7 +456,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ProjectUserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

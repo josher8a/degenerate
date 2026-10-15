@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';/// A computer screenshot image used with the computer use tool.
 /// 
-@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({this.type = ComputerScreenshotContentType.computerScreenshot, this.imageUrl, this.fileId, });
+@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({required this.type, this.imageUrl, this.fileId, });
 
 factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) { return ComputerScreenshotImage(
   type: ComputerScreenshotContentType.fromJson(json['type'] as String),

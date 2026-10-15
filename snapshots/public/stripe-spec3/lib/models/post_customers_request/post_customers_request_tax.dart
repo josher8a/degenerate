@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersRequest (inline: Tax)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/ip_address.dart';sealed class PostCustomersRequestTaxValidateLocation {const PostCustomersRequestTaxValidateLocation();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/ip_address.dart';sealed class PostCustomersRequestTaxValidateLocation {const PostCustomersRequestTaxValidateLocation();
 
 factory PostCustomersRequestTaxValidateLocation.fromJson(String json) { return switch (json) {
   'deferred' => $deferred,
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $deferre
 @immutable final class PostCustomersRequestTax {const PostCustomersRequestTax({this.ipAddress, this.validateLocation, });
 
 factory PostCustomersRequestTax.fromJson(Map<String, dynamic> json) { return PostCustomersRequestTax(
-  ipAddress: json['ip_address'] != null ? OneOf2.parse(json['ip_address'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  ipAddress: json['ip_address'] != null ? IpAddress.fromJson(json['ip_address']) : null,
   validateLocation: json['validate_location'] != null ? PostCustomersRequestTaxValidateLocation.fromJson(json['validate_location'] as String) : null,
 ); }
 

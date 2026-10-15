@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/chat_completion_message_list/chat_completion_message_list_data.dart';/// An object representing a list of chat completion messages.
 /// 
-@immutable final class ChatCompletionMessageList {const ChatCompletionMessageList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
+@immutable final class ChatCompletionMessageList {const ChatCompletionMessageList({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ChatCompletionMessageList.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageList(
   object: ChatCompletionListObject.fromJson(json['object'] as String),

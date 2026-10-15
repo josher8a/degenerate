@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCouponsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_coupons_request/applies_to.dart';@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_coupons_request/applies_to.dart';@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
 
 factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCouponsRequest(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,
@@ -13,7 +13,7 @@ factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCoup
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   percentOff: json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null,
   redeemBy: json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null,

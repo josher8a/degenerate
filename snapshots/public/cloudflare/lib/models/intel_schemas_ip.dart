@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory IntelSchemasIp.fromJson(Map<String, dynamic> json) { return IntelSchemasIp(
   belongsToRef: json['belongs_to_ref'] != null ? BelongsToRef.fromJson(json['belongs_to_ref'] as Map<String, dynamic>) : null,
-  ip: json['ip'] != null ? OneOf2.parse(json['ip'], fromA: (v) => IntelIpv4.fromJson(v as String), fromB: (v) => IntelIpv6.fromJson(v as String),) : null,
+  ip: json['ip'] != null ? IntelIp.fromJson(json['ip']) : null,
   riskTypes: (json['risk_types'] as List<dynamic>?)?.map((e) => RiskTypes.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

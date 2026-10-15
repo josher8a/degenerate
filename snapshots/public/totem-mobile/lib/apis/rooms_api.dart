@@ -43,7 +43,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return RoomState.fromJson(
@@ -73,7 +73,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return RoomState.fromJson(
@@ -103,7 +103,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return JoinResponse.fromJson(
@@ -134,7 +134,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: GetStateError.fromResponse,
@@ -160,7 +160,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: GetStateError.fromResponse,
@@ -199,7 +199,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return RemoveParticipantPayload.fromJson(

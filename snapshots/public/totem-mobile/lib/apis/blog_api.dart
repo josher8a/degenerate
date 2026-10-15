@@ -50,7 +50,7 @@ final class BlogApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return PagedBlogPostListSchema.fromJson(
@@ -76,7 +76,7 @@ final class BlogApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return BlogPostSchema.fromJson(

@@ -26,7 +26,7 @@ ObjWithDateAdditionalProperties copyWith({String? normalField, Map<String, Strin
           normalField == other.normalField &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(normalField, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(normalField, mapHash(additionalProperties));
 
 @override String toString() => 'ObjWithDateAdditionalProperties(normalField: $normalField, additionalProperties: $additionalProperties)';
 

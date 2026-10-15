@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';@immutable final class AudioTranscription {const AudioTranscription({this.model, this.language, this.prompt, });
 
 factory AudioTranscription.fromJson(Map<String, dynamic> json) { return AudioTranscription(
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AudioTranscriptionModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? AudioTranscriptionModel.fromJson(json['model']) : null,
   language: json['language'] as String?,
   prompt: json['prompt'] as String?,
 ); }

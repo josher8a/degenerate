@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetActiveRecordingResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_recording.dart';@immutable final class GetActiveRecordingResponse {const GetActiveRecordingResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_recording.dart';@immutable final class GetActiveRecordingResponse {const GetActiveRecordingResponse({required this.data, required this.success, });
 
 factory GetActiveRecordingResponse.fromJson(Map<String, dynamic> json) { return GetActiveRecordingResponse(
   data: RealtimekitRecording.fromJson(json['data'] as Map<String, dynamic>),

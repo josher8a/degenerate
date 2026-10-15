@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Sysctl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sysctl defines a kernel parameter to be set
-@immutable final class Sysctl {const Sysctl({this.name = '', this.value = '', });
+@immutable final class Sysctl {const Sysctl({required this.name, required this.value, });
 
 factory Sysctl.fromJson(Map<String, dynamic> json) { return Sysctl(
   name: json['name'] as String,

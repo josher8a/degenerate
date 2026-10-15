@@ -62,7 +62,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -98,7 +98,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -148,7 +148,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -177,7 +177,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -208,7 +208,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -229,7 +229,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
@@ -271,7 +271,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -304,7 +304,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -354,7 +354,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -392,7 +392,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -426,7 +426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -468,7 +468,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -511,7 +511,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -534,7 +534,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -556,7 +556,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestMergeResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -578,7 +578,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReviewRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -602,7 +602,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -626,7 +626,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -666,7 +666,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -706,7 +706,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -735,7 +735,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -766,7 +766,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -795,7 +795,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -835,7 +835,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -870,7 +870,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -901,7 +901,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -926,7 +926,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PullsUpdateBranchResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

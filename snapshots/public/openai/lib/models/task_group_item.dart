@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TaskGroupItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/task_group_task.dart';/// Collection of workflow tasks grouped together in the thread.
-@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.createdAt, required this.threadId, required this.tasks, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.task_group', });
+@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.tasks, });
 
 factory TaskGroupItem.fromJson(Map<String, dynamic> json) { return TaskGroupItem(
   id: json['id'] as String,

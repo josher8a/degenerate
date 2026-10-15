@@ -79,13 +79,13 @@ factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { re
 }; }
 
 /// Build the `input_text` variant.
-factory FunctionAndCustomToolCallOutput.inputText({required String text}) { return FunctionAndCustomToolCallOutputInputText(InputTextContent(text: text)); }
+factory FunctionAndCustomToolCallOutput.inputText({required String text}) { return FunctionAndCustomToolCallOutputInputText(InputTextContent(type: 'input_text', text: text)); }
 
 /// Build the `input_image` variant.
-factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory FunctionAndCustomToolCallOutput.inputFile({Omittable<String?> fileId = const Omittable.absent(), String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputFile({Omittable<String?> fileId = const Omittable.absent(), String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 FunctionAndCustomToolCallOutputType get type;

@@ -1,23 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Animal
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Animal {const Animal({required this.className, this.color = 'red', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Animal {const Animal({required this.className, this.color, });
 
 factory Animal.fromJson(Map<String, dynamic> json) { return Animal(
   className: json['className'] as String,
-  color: json.containsKey('color') ? json['color'] as String : 'red',
+  color: json['color'] as String?,
 ); }
 
 final String className;
 
-final String color;
+final String? color;
+
+/// The value of `color`, or its schema default when absent.
+String get colorOrDefault => color ?? 'red';
 
 Map<String, dynamic> toJson() { return {
   'className': className,
-  'color': color,
+  'color': ?color,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('className') && json['className'] is String; } 
-Animal copyWith({String? className, String Function()? color, }) { return Animal(
+Animal copyWith({String? className, String? Function()? color, }) { return Animal(
   className: className ?? this.className,
   color: color != null ? color() : this.color,
 ); } 

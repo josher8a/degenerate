@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSourcesRequest (inline: Mandate)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_shipping_param/amount_details_shipping_param_amount.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance.dart';sealed class MandateInterval {const MandateInterval();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_shipping_param/amount_details_shipping_param_amount.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance.dart';sealed class MandateInterval {const MandateInterval();
 
 factory MandateInterval.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
@@ -200,7 +200,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandate(
   acceptance: json['acceptance'] != null ? Acceptance.fromJson(json['acceptance'] as Map<String, dynamic>) : null,
-  amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  amount: json['amount'] != null ? AmountDetailsShippingParamAmount.fromJson(json['amount']) : null,
   currency: json['currency'] as String?,
   interval: json['interval'] != null ? MandateInterval.fromJson(json['interval'] as String) : null,
   notificationMethod: json['notification_method'] != null ? NotificationMethod.fromJson(json['notification_method'] as String) : null,

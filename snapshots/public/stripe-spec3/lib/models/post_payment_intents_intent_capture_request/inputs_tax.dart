@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentIntentsIntentCaptureRequest (inline: Hooks > Inputs > Tax)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/calculation.dart';@immutable final class InputsTax {const InputsTax({required this.calculation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/calculation.dart';@immutable final class InputsTax {const InputsTax({required this.calculation});
 
 factory InputsTax.fromJson(Map<String, dynamic> json) { return InputsTax(
-  calculation: OneOf2.parse(json['calculation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),),
+  calculation: Calculation.fromJson(json['calculation']),
 ); }
 
 final Calculation calculation;

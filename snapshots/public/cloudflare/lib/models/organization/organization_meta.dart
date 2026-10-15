@@ -32,7 +32,7 @@ OrganizationMeta copyWith({OrganizationFlags? Function()? flags, String? Functio
           managedBy == other.managedBy &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(flags, managedBy, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(flags, managedBy, mapHash(additionalProperties));
 
 @override String toString() => 'OrganizationMeta(flags: $flags, managedBy: $managedBy, additionalProperties: $additionalProperties)';
 

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostDisputesDisputeRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request/post_charges_charge_dispute_request_evidence.dart';@immutable final class PostDisputesDisputeRequest {const PostDisputesDisputeRequest({this.evidence, this.expand, this.metadata, this.submit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request/post_charges_charge_dispute_request_evidence.dart';@immutable final class PostDisputesDisputeRequest {const PostDisputesDisputeRequest({this.evidence, this.expand, this.metadata, this.submit, });
 
 factory PostDisputesDisputeRequest.fromJson(Map<String, dynamic> json) { return PostDisputesDisputeRequest(
   evidence: json['evidence'] != null ? PostChargesChargeDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   submit: json['submit'] as bool?,
 ); }
 

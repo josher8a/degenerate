@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPlansRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/usage_type.dart';import 'package:pub_stripe_spec3/models/inline_product_params.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_product.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_transform_usage.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';@immutable final class PostPlansRequest {const PostPlansRequest({required this.currency, required this.interval, this.active, this.amount, this.amountDecimal, this.billingScheme, this.expand, this.id, this.intervalCount, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, this.usageType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/usage_type.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_product.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_transform_usage.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';@immutable final class PostPlansRequest {const PostPlansRequest({required this.currency, required this.interval, this.active, this.amount, this.amountDecimal, this.billingScheme, this.expand, this.id, this.intervalCount, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, this.usageType, });
 
 factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansRequest(
   active: json['active'] as bool?,
@@ -13,10 +13,10 @@ factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansR
   id: json['id'] as String?,
   interval: GetPricesRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
-  product: json['product'] != null ? OneOf2.parse(json['product'], fromA: (v) => InlineProductParams.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  product: json['product'] != null ? PostPlansRequestProduct.fromJson(json['product']) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => Tiers.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PostPlansRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transformUsage: json['transform_usage'] != null ? PostPlansRequestTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,

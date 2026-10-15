@@ -6,32 +6,41 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// continue after that time once started. A secret can be used to create multiple sessions
 /// until it expires.
 /// 
-@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = ExpiresAfterParamAnchor.createdAt, this.seconds = 600, });
+@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor, this.seconds, });
 
 factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
-  anchor: json.containsKey('anchor') ? ExpiresAfterParamAnchor.fromJson(json['anchor'] as String) : ExpiresAfterParamAnchor.createdAt,
-  seconds: json.containsKey('seconds') ? (json['seconds'] as num).toInt() : 600,
+  anchor: json['anchor'] != null ? ExpiresAfterParamAnchor.fromJson(json['anchor'] as String) : null,
+  seconds: json['seconds'] != null ? (json['seconds'] as num).toInt() : null,
 ); }
 
 /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
 /// 
-final ExpiresAfterParamAnchor anchor;
+final ExpiresAfterParamAnchor? anchor;
 
 /// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200` (2 hours). This default to 600 seconds (10 minutes) if not specified.
 /// 
-final int seconds;
+final int? seconds;
+
+/// The value of `anchor`, or its schema default when absent.
+ExpiresAfterParamAnchor get anchorOrDefault => anchor ?? ExpiresAfterParamAnchor.fromJson('created_at');
+
+/// The value of `seconds`, or its schema default when absent.
+int get secondsOrDefault => seconds ?? 600;
 
 Map<String, dynamic> toJson() { return {
-  'anchor': anchor.toJson(),
-  'seconds': seconds,
+  if (anchor != null) 'anchor': anchor?.toJson(),
+  'seconds': ?seconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (seconds < 10) { errors.add('seconds: must be >= 10'); }
-if (seconds > 7200) { errors.add('seconds: must be <= 7200'); }
+final seconds$ = seconds;
+if (seconds$ != null) {
+  if (seconds$ < 10) { errors.add('seconds: must be >= 10'); }
+  if (seconds$ > 7200) { errors.add('seconds: must be <= 7200'); }
+}
 return errors; } 
-RealtimeCreateClientSecretRequestExpiresAfter copyWith({ExpiresAfterParamAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
+RealtimeCreateClientSecretRequestExpiresAfter copyWith({ExpiresAfterParamAnchor? Function()? anchor, int? Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,
 ); } 

@@ -392,7 +392,7 @@ void main() {
       });
 
       test('uses escaped field name', () {
-        expect(source, contains(r'final String $toString'));
+        expect(source, contains(r'final String? $toString'));
       });
 
       test('is valid Dart (no conflicting_field_and_method)', () {
@@ -1176,14 +1176,18 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('dynamic toJson()'));
-      expect(source, contains('if (string != null) return string!;'));
-      expect(source, contains(r'if ($double != null) return $double!;'));
+      // A decoded value returns its raw payload; a constructed one merges
+      // its views — scalars as themselves, objects as their maps.
+      expect(
+        source,
+        contains('Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf(['),
+      );
+      expect(source, contains('if (string.isPresent) string.value,'));
+      expect(source, contains(r'if ($double.isPresent) $double.value,'));
       // No invented object keys for scalar variants.
       expect(source, isNot(contains(r"r'$double': ")));
       expect(source, isNot(contains("'string': ?string")));
-      // Object variants still merge into one map.
-      expect(source, contains('...?widget?.toJson()'));
+      expect(source, contains('if (widget.isPresent) widget.value?.toJson(),'));
     });
 
     test('int-valued enum variants parse from numeric wire values', () {
@@ -1198,13 +1202,13 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      // An int enum's fromJson takes an int — `json is String` never
-      // matches and the String-typed argument does not compile.
-      expect(source, contains('json is num'));
-      expect(source, isNot(contains('json is String ? Code.fromJson')));
+      // An int enum's fromJson takes an int — a String argument would not
+      // compile.
+      expect(source, contains('Code.fromJson((value! as num).toInt())'));
+      expect(source, isNot(contains('Code.fromJson(value! as String)')));
     });
 
-    test('emits final class with nullable variant fields', () {
+    test('emits final class with presence-wrapped variant views', () {
       const anyOf = IrAnyOf('PetOrOwner', [
         IrObject('Pet', [
           IrField('name', SpecString('name'), IrPrimitive(PrimitiveKind.string),
@@ -1221,11 +1225,13 @@ void main() {
 
       expect(source, contains('final class PetOrOwner'));
       expect(source, contains('@immutable'));
-      expect(source, contains('final Pet? pet;'));
-      expect(source, contains('final Owner? owner;'));
+      expect(source, contains('final Omittable<Pet> pet;'));
+      expect(source, contains('final Omittable<Owner> owner;'));
+      expect(source, contains('final Omittable<Object?> rawValue;'));
       expect(source, contains('const PetOrOwner({'));
       expect(source, contains('bool get isValid'));
-      expect(source, contains('pet != null || owner != null'));
+      expect(source, contains('pet.isPresent || owner.isPresent'));
+      expect(source, contains('bool get isUnknown'));
     });
 
     test('two-object anyOf is valid Dart', () {
@@ -1261,12 +1267,20 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('Pet.canParse(json) ? Pet.fromJson(json) : null'));
+      // A model whose fields are all optional would decode from any object;
+      // canParse keeps the view to payloads carrying its required keys.
       expect(
-          source, contains('Owner.canParse(json) ? Owner.fromJson(json) : null'));
+        source,
+        contains(
+          'json is Map<String, dynamic> && Pet.canParse(json) ? '
+          'parseAnyOfVariant<Pet>(json, (value) => Pet.fromJson(value! as Map<String, dynamic>)) '
+          ': const Omittable.absent()',
+        ),
+      );
+      expect(source, contains('json is Map<String, dynamic> && Owner.canParse(json)'));
     });
 
-    test('primitive variants use type-check guards', () {
+    test('primitive variants decode independently', () {
       const anyOf = IrAnyOf('StringOrInt', [
         IrPrimitive(PrimitiveKind.string),
         IrPrimitive(PrimitiveKind.int),
@@ -1275,12 +1289,18 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('json is String ? json : null'));
-      expect(source, contains('json is num ? json.toInt() : null'));
-      expect(source, contains('factory StringOrInt.fromJson(dynamic json)'));
+      expect(
+        source,
+        contains('parseAnyOfVariant<String>(json, (value) => value! as String)'),
+      );
+      expect(
+        source,
+        contains('parseAnyOfVariant<int>(json, (value) => (value! as num).toInt())'),
+      );
+      expect(source, contains('factory StringOrInt.fromJson(Object? json)'));
     });
 
-    test('mixed object + primitive uses map guard', () {
+    test('mixed object + primitive guards the object view by canParse', () {
       const anyOf = IrAnyOf('Result', [
         IrObject('Data', [
           IrField('value', SpecString('value'), IrPrimitive(PrimitiveKind.string),
@@ -1292,13 +1312,15 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('final map = json is Map<String, dynamic>'));
-      expect(source, contains('map != null && Data.canParse(map)'));
-      expect(source, contains('json is String ? json : null'));
+      expect(source, contains('json is Map<String, dynamic> && Data.canParse(json)'));
+      expect(
+        source,
+        contains('parseAnyOfVariant<String>(json, (value) => value! as String)'),
+      );
       expect(() => _formatOrFail(source), returnsNormally);
     });
 
-    test('enum variant uses String type check', () {
+    test('enum variant decodes through its fromJson', () {
       const anyOf = IrAnyOf('StatusOrName', [
         IrEnum('Status', ['active', 'inactive']),
         IrPrimitive(PrimitiveKind.string),
@@ -1307,11 +1329,14 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('json is String ? Status.fromJson(json) : null'));
+      expect(
+        source,
+        contains('parseAnyOfVariant<Status>(json, (value) => Status.fromJson(value! as String))'),
+      );
       expect(() => _formatOrFail(source), returnsNormally);
     });
 
-    test('collection type variants are skipped with comment', () {
+    test('collection type variants are decoded as views', () {
       const anyOf = IrAnyOf('Mixed', [
         IrObject('Data', [
           IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.int),
@@ -1323,7 +1348,12 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('// listString: skipped'));
+      // Collection variants are real views now (they were skipped before).
+      expect(source, contains('final Omittable<List<String>> listString;'));
+      expect(
+        source,
+        contains("(value! as List<dynamic>).map((e) => e as String).toList()"),
+      );
       expect(() => _formatOrFail(source), returnsNormally);
     });
 
@@ -1337,7 +1367,7 @@ void main() {
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
       // Second String variant should be deduped away, not emitted twice.
-      expect('String?'.allMatches(source).length, equals(1));
+      expect('final Omittable<String> '.allMatches(source).length, equals(1));
     });
 
     test('description propagates as doc comment', () {
@@ -1352,7 +1382,7 @@ void main() {
       expect(source, contains('/// A string or integer value.'));
     });
 
-    test('toJson spreads object variants, wraps enums', () {
+    test('toJson merges object and enum views', () {
       const anyOf = IrAnyOf('PetOrStatus', [
         IrObject('Pet', [
           IrField('name', SpecString('name'), IrPrimitive(PrimitiveKind.string),
@@ -1364,12 +1394,12 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('...?pet?.toJson()'));
+      expect(source, contains('if (pet.isPresent) pet.value?.toJson(),'));
       // Enums are scalar wire values — returned, not wrapped under a key.
-      expect(source, contains('if (status != null) return status!.toJson();'));
+      expect(source, contains('if (status.isPresent) status.value?.toJson(),'));
     });
 
-    test('equals uses list-aware comparison for list fields', () {
+    test('equality compares list views by JSON value', () {
       const anyOf = IrAnyOf('WithList', [
         IrPrimitive(PrimitiveKind.string),
         IrList(IrPrimitive(PrimitiveKind.int)),
@@ -1378,11 +1408,12 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('listEquals(listint, other.listint)'));
-      expect(source, contains('Object.hashAll(listint ?? const [])'));
+      // Equality is by JSON value, so list views compare element-wise.
+      expect(source, contains('jsonValueEquals(toJson(), other.toJson())'));
+      expect(source, contains('jsonValueHash(toJson())'));
     });
 
-    test('extension type variant uses wire type check', () {
+    test('extension type variant decodes through its fromJson', () {
       const anyOf = IrAnyOf('IdOrName', [
         IrExtensionType('UserId', IrPrimitive(PrimitiveKind.string)),
         IrPrimitive(PrimitiveKind.int),
@@ -1391,9 +1422,14 @@ void main() {
       final specs = const AnyOfEmitter(anyOf).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('json is String ? UserId.fromJson(json) : null'));
-      expect(source,
-          contains('if (userId != null) return userId!.toJson();'));
+      expect(
+        source,
+        contains('parseAnyOfVariant<UserId>(json, (value) => UserId.fromJson(value! as String))'),
+      );
+      expect(
+        source,
+        contains('if (userId.isPresent) userId.value?.toJson(),'),
+      );
       expect(() => _formatOrFail(source), returnsNormally);
     });
   });
@@ -3492,8 +3528,8 @@ void main() {
       // The typedef file should contain both the enum class and the typedef
       final typedefFile = files['models/container_value.dart'];
       expect(typedefFile, isNotNull);
-      expect(typedefFile, contains('typedef ContainerValue'));
-      expect(typedefFile, contains('OneOf2'));
+      expect(typedefFile, contains('final class ContainerValue'));
+      expect(typedefFile, contains('parseAnyOfVariant'));
       expect(typedefFile, contains('final class ContainerValueVariant2'));
     });
 
@@ -3583,9 +3619,9 @@ void main() {
       expect(file, contains("import 'dart:typed_data'"));
     });
 
-    test('IrAnyOf typedef file does not import dart:convert', () {
+    test('IrAnyOf class imports dart:convert for byte codecs', () {
       final file = files['models/bytes_or_string_any_of.dart']!;
-      expect(file, isNot(contains("import 'dart:convert'")));
+      expect(file, contains("import 'dart:convert'"));
       expect(file, contains("import 'dart:typed_data'"));
     });
   });
@@ -4389,6 +4425,43 @@ void main() {
 
     test('is valid Dart', () {
       _formatOrFail(source);
+    });
+  });
+
+  group('hoisted common getters over a nullable payload', () {
+    test('forward null-safely and are nullable on the base', () {
+      // A `nullable: true` variant schema makes that variant's payload
+      // nullable; a getter hoisted from it must not dereference null.
+      final plain = IrObject('PlainText', [
+        IrField('type', const SpecString('type'),
+            const IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('value', const SpecString('value'),
+            const IrPrimitive(PrimitiveKind.string), isRequired: true),
+      ], requiredFields: const ['type', 'value']);
+      final secret = IrObject('Secret', [
+        IrField('type', const SpecString('type'),
+            const IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('value', const SpecString('value'),
+            const IrPrimitive(PrimitiveKind.string), isRequired: true),
+      ], requiredFields: const ['type', 'value']);
+      final union = IrDiscriminatedUnion('EnvVar', const SpecString('type'), {
+        const SpecString('plain'): const IrTypeRef('PlainText', isNullable: true),
+        const SpecString('secret'): const IrTypeRef('Secret'),
+      });
+      final registry = <String, IrType>{'PlainText': plain, 'Secret': secret};
+      final ctx = EmitContext(
+        registry,
+        unionMetadata: analyzeDiscriminatedUnions([union, plain, secret], registry),
+      );
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..body.addAll(DiscriminatedUnionEmitter(union, ctx: ctx).emit()),
+        ),
+      );
+      expect(source, contains('String? get value'));
+      expect(source, contains('plainText?.value'));
+      expect(source, isNot(contains('plainText.value')));
     });
   });
 
@@ -6226,11 +6299,9 @@ void main() {
       expect(source, contains('1 synthesized'));
     });
 
-    test('sealed anyOf fixture casts json to the map its fromJson takes', () {
-      // Past the OneOfN arity, so this lowers to a sealed class instead of a
-      // typedef. Every variant is object-like, so AnyOfEmitter gives its
-      // fromJson a `Map<String, dynamic>` parameter — the fixture's `json` is
-      // `Object?` and has to be cast to match.
+    test('anyOf fixture passes json uncast to the lossless class', () {
+      // An anyOf is always a class whose fromJson takes the raw wire value
+      // (Object?) and keeps it, so every variant sample round-trips.
       final variants = <IrType>[
         for (var i = 0; i < 10; i++)
           IrObject('Variant$i', [
@@ -6242,67 +6313,33 @@ void main() {
 
       final source = RoundtripEmitter(types, 'test_pkg').emit();
 
-      expect(
-        source,
-        contains('Payload.fromJson(json! as Map<String, dynamic>)'),
-      );
+      expect(source, contains('Payload.fromJson(json)'));
+      expect(source, isNot(contains('Payload.fromJson(json! as')));
+      expect(source, contains('10 synthesized'));
     });
 
-    test('a ref to a scalar-bearing sealed anyOf is passed uncast', () {
-      // The shape that ships. `WorkersKvAny` is a self-referencing anyOf over
-      // string/num/bool/object, so it is not a OneOfN typedef and AnyOfEmitter
-      // gives its `fromJson` a `dynamic` parameter, whose body branches on
-      // `json is String`. `WorkersKvKey` casts the payload to a map before
-      // calling it, so the branch it was written for can never run.
-      const anyOf = IrAnyOf('AnyValue', [
-        IrPrimitive(PrimitiveKind.string),
-        IrObject('Boxed', [
-          IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string),
-              isRequired: true),
-        ], requiredFields: ['id']),
-        IrTypeRef('AnyValue'),
-      ]);
-      final ctx = EmitContext(<String, IrType>{'AnyValue': anyOf});
-
-      expect(ctx.anyOfFromJsonTakesMap(anyOf.variants), isFalse);
-      expect(
-        ctx.fromJson(const IrTypeRef('AnyValue'), 'v'),
-        equals('AnyValue.fromJson(v)'),
-      );
-    });
-
-    test('a ref to an all-object-like sealed anyOf keeps the map cast', () {
-      // The other direction: its `fromJson` does take a map, so the cast is
-      // right and removing it would be the mirror bug.
-      const anyOf = IrAnyOf('Pair', [
+    test('every anyOf call site passes the payload uncast', () {
+      // Object-only and scalar-bearing anyOfs alike: a map cast would throw
+      // on a scalar payload before any view is attempted.
+      const objectOnly = IrAnyOf('Pair', [
         IrObject('A', [
           IrField('a', SpecString('a'), IrPrimitive(PrimitiveKind.string),
               isRequired: true),
         ], requiredFields: ['a']),
         IrTypeRef('Pair'),
       ]);
-      final ctx = EmitContext(<String, IrType>{'Pair': anyOf});
+      const scalarBearing = IrAnyOf('AnyValue', [
+        IrPrimitive(PrimitiveKind.string),
+        IrTypeRef('AnyValue'),
+      ]);
+      final ctx = EmitContext(<String, IrType>{
+        'Pair': objectOnly,
+        'AnyValue': scalarBearing,
+      });
 
-      expect(ctx.anyOfFromJsonTakesMap(anyOf.variants), isTrue);
-      expect(
-        ctx.fromJson(const IrTypeRef('Pair'), 'v'),
-        equals('Pair.fromJson(v as Map<String, dynamic>)'),
-      );
-    });
-
-    test('the map predicate dedupes as the anyOf emitter does', () {
-      // AnyOfEmitter dedupes variants by `irTypeName` before deciding the
-      // parameter type. A caller passing the raw list computes a different
-      // answer and emits a call the signature refuses -- the divergence the
-      // shared predicate exists to prevent.
-      const colour = IrEnum('Colour', ['red'], valueKind: PrimitiveKind.string);
-      final ctx = EmitContext(<String, IrType>{'Colour': colour});
-
-      expect(
-        ctx.anyOfFromJsonTakesMap(const [IrTypeRef('Colour'), colour]),
-        isTrue,
-        reason: 'the enum dedupes away, so the emitted parameter is a map',
-      );
+      expect(ctx.fromJson(const IrTypeRef('Pair'), 'v'), 'Pair.fromJson(v)');
+      expect(ctx.fromJson(const IrTypeRef('AnyValue'), 'v'), 'AnyValue.fromJson(v)');
+      expect(ctx.fromJson(objectOnly, 'v'), 'Pair.fromJson(v)');
     });
 
     test('sealed untagged union fixture passes json uncast', () {
@@ -6479,10 +6516,11 @@ void main() {
       expect(fieldIsRequiredInCtor(f), isTrue);
     });
 
-    test('fieldIsRequiredInCtor: required with default → false', () {
+    test('fieldIsRequiredInCtor: required with default → true', () {
+      // Defaults never relax a spec requirement.
       const f = IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.string),
           isRequired: true, defaultValue: 'hello');
-      expect(fieldIsRequiredInCtor(f), isFalse);
+      expect(fieldIsRequiredInCtor(f), isTrue);
     });
 
     test('fieldIsRequiredInCtor: optional → false', () {
@@ -7715,9 +7753,8 @@ void main() {
         expect(source, contains('String? Function()? email'));
       });
 
-      test('copyWith thunk for defaulted field stays non-nullable', () {
-        expect(source, contains('String Function()? role'));
-        expect(source, isNot(contains('String? Function()? role')));
+      test('copyWith thunk can unset a defaulted optional field', () {
+        expect(source, contains('String? Function()? role'));
       });
 
       test('required nullable field stays plain and always serializes', () {
@@ -7725,8 +7762,9 @@ void main() {
         expect(source, contains("'mode': mode,"));
       });
 
-      test('defaulted field stays plain', () {
-        expect(source, contains('final String role;'));
+      test('defaulted optional non-nullable field stays plain and nullable', () {
+        expect(source, contains('final String? role;'));
+        expect(source, contains('String get roleOrDefault'));
         expect(source, isNot(contains('Omittable<String?> role')));
       });
 
@@ -7745,9 +7783,9 @@ void main() {
         expect(source, contains("if (email.isPresent) 'email': email.value,"));
       });
 
-      test('required and defaulted fields still stay plain', () {
+      test('required fields stay plain and defaulted optional fields wrap', () {
         expect(source, contains('final String? mode;'));
-        expect(source, contains('final String role;'));
+        expect(source, contains('final Omittable<String?> role;'));
       });
 
       test('is valid Dart', () {

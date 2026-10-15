@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? memberIn
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInvited({required this.action, required this.invitation, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, this.user, });
+@immutable final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInvited({required this.action, required this.invitation, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, this.user = const Omittable.absent(), });
 
 factory WebhookOrganizationMemberInvited.fromJson(Map<String, dynamic> json) { return WebhookOrganizationMemberInvited(
   action: WebhookOrganizationMemberInvitedAction.fromJson(json['action'] as String),
@@ -63,7 +63,7 @@ factory WebhookOrganizationMemberInvited.fromJson(Map<String, dynamic> json) { r
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  user: json['user'] != null ? WebhooksUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json.containsKey('user') ? Omittable(json['user'] != null ? WebhooksUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final WebhookOrganizationMemberInvitedAction action;
@@ -81,7 +81,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-final WebhooksUser? user;
+final Omittable<WebhooksUser?> user;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
@@ -91,13 +91,13 @@ Map<String, dynamic> toJson() { return {
   'organization': organization.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-  if (user != null) 'user': user?.toJson(),
+  if (user.isPresent) 'user': user.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('invitation') &&
       json.containsKey('organization') &&
       json.containsKey('sender'); } 
-WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, Invitation? invitation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksUser? Function()? user, }) { return WebhookOrganizationMemberInvited(
+WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, Invitation? invitation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, Omittable<WebhooksUser?>? user, }) { return WebhookOrganizationMemberInvited(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -105,7 +105,7 @@ WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedActio
   organization: organization ?? this.organization,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-  user: user != null ? user() : this.user,
+  user: user ?? this.user,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookOrganizationMemberInvited &&

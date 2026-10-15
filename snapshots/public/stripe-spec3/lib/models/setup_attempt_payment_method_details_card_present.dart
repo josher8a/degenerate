@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SetupAttemptPaymentMethodDetailsCardPresent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_present/generated_card.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_present/generated_card.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsCardPresent {const SetupAttemptPaymentMethodDetailsCardPresent({this.generatedCard = const Omittable.absent(), this.offline = const Omittable.absent(), });
 
 factory SetupAttemptPaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCardPresent(
-  generatedCard: json.containsKey('generated_card') ? Omittable(json['generated_card'] != null ? OneOf2.parse(json['generated_card'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  generatedCard: json.containsKey('generated_card') ? Omittable(json['generated_card'] != null ? GeneratedCard.fromJson(json['generated_card']) : null) : const Omittable.absent(),
   offline: json.containsKey('offline') ? Omittable(json['offline'] != null ? PaymentMethodDetailsCardPresentOffline.fromJson(json['offline'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 

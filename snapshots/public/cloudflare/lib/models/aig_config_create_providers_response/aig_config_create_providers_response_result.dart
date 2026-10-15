@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigCreateProvidersResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersResponseResult {const AigConfigCreateProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod = 60.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersResponseResult {const AigConfigCreateProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod, });
 
 factory AigConfigCreateProvidersResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersResponseResult(
   alias: json['alias'] as String,
@@ -11,7 +11,7 @@ factory AigConfigCreateProvidersResponseResult.fromJson(Map<String, dynamic> jso
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   providerSlug: json['provider_slug'] as String,
   rateLimit: json['rate_limit'] != null ? (json['rate_limit'] as num).toDouble() : null,
-  rateLimitPeriod: json.containsKey('rate_limit_period') ? (json['rate_limit_period'] as num).toDouble() : 60.0,
+  rateLimitPeriod: json['rate_limit_period'] != null ? (json['rate_limit_period'] as num).toDouble() : null,
   secretId: json['secret_id'] as String,
   secretPreview: json['secret_preview'] as String,
 ); }
@@ -33,11 +33,14 @@ final String providerSlug;
 
 final double? rateLimit;
 
-final double rateLimitPeriod;
+final double? rateLimitPeriod;
 
 final String secretId;
 
 final String secretPreview;
+
+/// The value of `rateLimitPeriod`, or its schema default when absent.
+double get rateLimitPeriodOrDefault => rateLimitPeriod ?? 60.0;
 
 Map<String, dynamic> toJson() { return {
   'alias': alias,
@@ -47,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'provider_slug': providerSlug,
   'rate_limit': ?rateLimit,
-  'rate_limit_period': rateLimitPeriod,
+  'rate_limit_period': ?rateLimitPeriod,
   'secret_id': secretId,
   'secret_preview': secretPreview,
 }; } 
@@ -65,7 +68,7 @@ if (gatewayId.isEmpty) { errors.add('gatewayId: length must be >= 1'); }
 if (gatewayId.runes.length > 64) { errors.add('gatewayId: length must be <= 64'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(gatewayId)) { errors.add(r'gatewayId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 return errors; } 
-AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigCreateProvidersResponseResult(
+AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigCreateProvidersResponseResult(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   gatewayId: gatewayId ?? this.gatewayId,

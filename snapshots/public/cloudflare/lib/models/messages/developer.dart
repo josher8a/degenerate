@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Developer)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class DeveloperRole {const DeveloperRole();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';sealed class DeveloperRole {const DeveloperRole();
 
 factory DeveloperRole.fromJson(String json) { return switch (json) {
   'developer' => developer,
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? develope
 @immutable final class Developer {const Developer({required this.content, required this.role, this.name, });
 
 factory Developer.fromJson(Map<String, dynamic> json) { return Developer(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => DeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: DeveloperContent.fromJson(json['content']),
   name: json['name'] as String?,
   role: DeveloperRole.fromJson(json['role'] as String),
 ); }

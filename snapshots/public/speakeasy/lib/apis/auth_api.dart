@@ -19,7 +19,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BasicAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -51,7 +51,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyAuthGlobalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -85,7 +85,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Oauth2AuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -102,7 +102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicateScopeAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GlobalBearerAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OpenIdConnectAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -153,7 +153,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BearerAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -170,7 +170,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Oauth2OverrideResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -187,7 +187,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyFirstResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -204,7 +204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HoistedSecurityAccessTokenFirstResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -221,7 +221,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HoistedSecurityAccessTokenOnlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -238,7 +238,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HoistedSecurityBasicHttpOnlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -261,7 +261,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GlobalSecurityBasicHttpResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

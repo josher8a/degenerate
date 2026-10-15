@@ -123,11 +123,11 @@ sealed class Self {
 
   /// Build the `type` variant.
   factory Self.type({
+    required bool $false,
     required dynamic none,
+    required NewNull $null,
     required New0 $0,
     required String $empty,
-    bool $false = true,
-    NewNull $null = NewNull.$null,
     String? constructor,
     String? proto,
     String? hasOwnProperty,
@@ -156,7 +156,7 @@ sealed class Self {
   /// Build the `__proto__` variant.
   factory Self.proto({
     New? constructor,
-    String $toString = '[object Object]',
+    String? $toString,
     int? valueOf,
     Proto? prototype,
   }) {
@@ -279,7 +279,7 @@ final class SelfProto extends Self {
 
   SelfProto copyWith({
     New? Function()? constructor,
-    String Function()? $toString,
+    String? Function()? $toString,
     int? Function()? valueOf,
     Proto? Function()? prototype,
   }) {

@@ -115,8 +115,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? whisper1
  }
 /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [AudioTranscriptionModelVariant2]
-typedef AudioTranscriptionModel = OneOf2<String,AudioTranscriptionModelVariant2>;
+@immutable final class AudioTranscriptionModel {/// A value built from one or more typed views (at least one must be present).
+const AudioTranscriptionModel({this.string = const Omittable.absent(), this.audioTranscriptionModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const AudioTranscriptionModel._({required this.rawValue, required this.string, required this.audioTranscriptionModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory AudioTranscriptionModel.fromJson(Object? json) { return AudioTranscriptionModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  audioTranscriptionModelVariant2: parseAnyOfVariant<AudioTranscriptionModelVariant2>(json, (value) => AudioTranscriptionModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `AudioTranscriptionModelVariant2`, when it matches.
+final Omittable<AudioTranscriptionModelVariant2> audioTranscriptionModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || audioTranscriptionModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (audioTranscriptionModelVariant2.isPresent) audioTranscriptionModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AudioTranscriptionModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'AudioTranscriptionModel(${toJson()})';
+
+ }

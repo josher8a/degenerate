@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -63,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -84,7 +84,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -103,7 +103,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeleteThreadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -142,7 +142,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -163,7 +163,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -182,7 +182,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -203,7 +203,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -222,7 +222,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeleteMessageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -258,7 +258,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -289,7 +289,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -308,7 +308,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -329,7 +329,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -348,7 +348,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -389,7 +389,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListRunStepsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -418,7 +418,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunStepObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -440,7 +440,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

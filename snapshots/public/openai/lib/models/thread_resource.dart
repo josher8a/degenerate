@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitT
 ///   "user": "user_456"
 /// }
 /// ```
-@immutable final class ThreadResource {const ThreadResource({required this.id, required this.createdAt, required this.title, required this.status, required this.user, this.object = ThreadResourceObject.chatkitThread, });
+@immutable final class ThreadResource {const ThreadResource({required this.id, required this.object, required this.createdAt, required this.title, required this.status, required this.user, });
 
 factory ThreadResource.fromJson(Map<String, dynamic> json) { return ThreadResource(
   id: json['id'] as String,

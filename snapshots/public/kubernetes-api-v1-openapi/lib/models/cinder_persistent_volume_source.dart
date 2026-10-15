@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CinderPersistentVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
-@immutable final class CinderPersistentVolumeSource {const CinderPersistentVolumeSource({this.fsType, this.readOnly, this.secretRef, this.volumeId = '', });
+@immutable final class CinderPersistentVolumeSource {const CinderPersistentVolumeSource({required this.volumeId, this.fsType, this.readOnly, this.secretRef, });
 
 factory CinderPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return CinderPersistentVolumeSource(
   fsType: json['fsType'] as String?,

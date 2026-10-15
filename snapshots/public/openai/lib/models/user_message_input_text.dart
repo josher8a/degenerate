@@ -2,7 +2,7 @@
 // Source: #/components/schemas/UserMessageInputText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';/// Text block that a user contributed to the thread.
-@immutable final class UserMessageInputText {const UserMessageInputText({required this.text, this.type = InputTextContentParamType.inputText, });
+@immutable final class UserMessageInputText {const UserMessageInputText({required this.type, required this.text, });
 
 factory UserMessageInputText.fromJson(Map<String, dynamic> json) { return UserMessageInputText(
   type: InputTextContentParamType.fromJson(json['type'] as String),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Source: #/components/schemas/CreateAccountRulesetRuleRequest (inline: RulesetsBlockRule > Position > Variant3)
+// Source: #/components/schemas/CreateAccountRulesetRuleRequest (inline: RulesetsBlockRuleRequest > Position > Variant3)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PositionVariant3 {const PositionVariant3({this.index});
 

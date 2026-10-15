@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetAllRecordingsResponse (inline: Data)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_meeting.dart';import 'package:pub_cloudflare/models/realtimekit_recording/realtimekit_recording_status.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';@immutable final class GetAllRecordingsResponseData {const GetAllRecordingsResponseData({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, this.storageConfig, this.meeting, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_meeting.dart';import 'package:pub_cloudflare/models/realtimekit_recording/realtimekit_recording_status.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config_response.dart';@immutable final class GetAllRecordingsResponseData {const GetAllRecordingsResponseData({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, this.storageConfig = const Omittable.absent(), this.meeting, });
 
 factory GetAllRecordingsResponseData.fromJson(Map<String, dynamic> json) { return GetAllRecordingsResponseData(
   audioDownloadUrl: json['audio_download_url'] != null ? Uri.parse(json['audio_download_url'] as String) : null,
@@ -16,7 +16,7 @@ factory GetAllRecordingsResponseData.fromJson(Map<String, dynamic> json) { retur
   startedTime: json['started_time'] != null ? DateTime.parse(json['started_time'] as String) : null,
   status: RealtimekitRecordingStatus.fromJson(json['status'] as String),
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
-  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
+  storageConfig: json.containsKey('storage_config') ? Omittable(json['storage_config'] != null ? RealtimekitStorageConfigResponse.fromJson(json['storage_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   meeting: json['meeting'] != null ? RealtimekitMeeting.fromJson(json['meeting'] as Map<String, dynamic>) : null,
 ); }
 
@@ -56,7 +56,7 @@ final RealtimekitRecordingStatus status;
 /// Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
 final DateTime? stoppedTime;
 
-final RealtimekitStorageConfig? storageConfig;
+final Omittable<RealtimekitStorageConfigResponse?> storageConfig;
 
 final RealtimekitMeeting? meeting;
 
@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'started_time': startedTime?.toIso8601String(),
   'status': status.toJson(),
   'stopped_time': stoppedTime?.toIso8601String(),
-  if (storageConfig != null) 'storage_config': storageConfig?.toJson(),
+  if (storageConfig.isPresent) 'storage_config': storageConfig.value?.toJson(),
   if (meeting != null) 'meeting': meeting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && (json['audio_download_url'] == null || json['audio_download_url'] is String) &&
@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio
       json.containsKey('started_time') && (json['started_time'] == null || json['started_time'] is String) &&
       json.containsKey('status') &&
       json.containsKey('stopped_time') && (json['stopped_time'] == null || json['stopped_time'] is String); } 
-GetAllRecordingsResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, RealtimekitStorageConfig? Function()? storageConfig, RealtimekitMeeting? Function()? meeting, }) { return GetAllRecordingsResponseData(
+GetAllRecordingsResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, Omittable<RealtimekitStorageConfigResponse?>? storageConfig, RealtimekitMeeting? Function()? meeting, }) { return GetAllRecordingsResponseData(
   audioDownloadUrl: audioDownloadUrl != null ? audioDownloadUrl() : this.audioDownloadUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   downloadUrlExpiry: downloadUrlExpiry != null ? downloadUrlExpiry() : this.downloadUrlExpiry,
@@ -100,7 +100,7 @@ GetAllRecordingsResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? F
   startedTime: startedTime != null ? startedTime() : this.startedTime,
   status: status ?? this.status,
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
-  storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
+  storageConfig: storageConfig ?? this.storageConfig,
   meeting: meeting != null ? meeting() : this.meeting,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

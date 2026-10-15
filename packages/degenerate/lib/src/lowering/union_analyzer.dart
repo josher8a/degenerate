@@ -32,7 +32,6 @@ DiscUnionMetadata _analyze(
       isSpreadable: _isSpreadable(resolved),
       payloadFields: _payloadFields(resolved, discKey),
       discFieldType: _discFieldType(resolved, discKey),
-      discDefault: _discDefault(resolved, discKey),
     );
   }
 
@@ -48,7 +47,10 @@ IrType _resolve(IrType type, Map<String, IrType> registry) {
 }
 
 bool _isSpreadable(IrType resolved) {
-  final vs = resolved.unionVariants;
+  // A lossless anyOf serializes its raw/merged value (`Object?`); callers
+  // cast it to a map when the discriminator identifies an object payload.
+  if (resolved is IrAnyOf) return true;
+  final vs = resolved.oneOfVariants;
   if (vs != null) return !isOneOfEligible(vs);
   return resolved is IrObject ||
       resolved is IrDiscriminatedUnion ||
@@ -64,14 +66,6 @@ IrType? _discFieldType(IrType resolved, SpecString discKey) {
   if (resolved is! IrObject) return null;
   for (final f in resolved.fields) {
     if (f.originalName == discKey) return f.type;
-  }
-  return null;
-}
-
-String? _discDefault(IrType resolved, SpecString discKey) {
-  if (resolved is! IrObject) return null;
-  for (final f in resolved.fields) {
-    if (f.originalName == discKey) return f.defaultValue as String?;
   }
   return null;
 }
@@ -101,7 +95,7 @@ List<IrField> _computeCommonFields(
 
   bool isUnionField(IrType type) {
     final t = _resolve(type, typeRegistry);
-    final vs = t.unionVariants;
+    final vs = t.oneOfVariants;
     return vs != null && isOneOfEligible(vs);
   }
 

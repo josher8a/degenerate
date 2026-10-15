@@ -43,7 +43,7 @@ RadarGetCrawlersTimeseriesGroupResponseResultSerie0 copyWith({List<DateTime>? ti
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties));
 
 @override String toString() => 'RadarGetCrawlersTimeseriesGroupResponseResultSerie0(timestamps: $timestamps, additionalProperties: $additionalProperties)';
 

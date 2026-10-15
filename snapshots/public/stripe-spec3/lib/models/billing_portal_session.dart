@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BillingPortalSession
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session/configuration.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_session/configuration.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 sealed class BillingPortalSessionLocale {const BillingPortalSessionLocale();
 
 factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
@@ -814,7 +814,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingP
 @immutable final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, required this.id, required this.livemode, required this.object, required this.url, this.customerAccount = const Omittable.absent(), this.flow = const Omittable.absent(), this.locale = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.returnUrl = const Omittable.absent(), });
 
 factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return BillingPortalSession(
-  configuration: OneOf2.parse(json['configuration'], fromA: (v) => v as String, fromB: (v) => BillingPortalConfiguration.fromJson(v as Map<String, dynamic>),),
+  configuration: Configuration.fromJson(json['configuration']),
   created: (json['created'] as num).toInt(),
   customer: json['customer'] as String,
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),

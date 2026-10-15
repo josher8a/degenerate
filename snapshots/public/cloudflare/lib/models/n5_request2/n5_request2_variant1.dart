@@ -1,24 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/$5Request2 (inline: Variant1)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';import 'package:pub_cloudflare/models/n5_request2/pooling.dart';@immutable final class $5Request2Variant1 {const $5Request2Variant1({required this.text, this.pooling = Pooling.mean, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';import 'package:pub_cloudflare/models/n5_request2/pooling.dart';@immutable final class $5Request2Variant1 {const $5Request2Variant1({required this.text, this.pooling, });
 
 factory $5Request2Variant1.fromJson(Map<String, dynamic> json) { return $5Request2Variant1(
-  pooling: json.containsKey('pooling') ? Pooling.fromJson(json['pooling'] as String) : Pooling.mean,
+  pooling: json['pooling'] != null ? Pooling.fromJson(json['pooling'] as String) : null,
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
-final Pooling pooling;
+final Pooling? pooling;
 
 final InputEmbeddingText text;
 
+/// The value of `pooling`, or its schema default when absent.
+Pooling get poolingOrDefault => pooling ?? Pooling.fromJson('mean');
+
 Map<String, dynamic> toJson() { return {
-  'pooling': pooling.toJson(),
+  if (pooling != null) 'pooling': pooling?.toJson(),
   'text': text.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-$5Request2Variant1 copyWith({Pooling Function()? pooling, InputEmbeddingText? text, }) { return $5Request2Variant1(
+$5Request2Variant1 copyWith({Pooling? Function()? pooling, InputEmbeddingText? text, }) { return $5Request2Variant1(
   pooling: pooling != null ? pooling() : this.pooling,
   text: text ?? this.text,
 ); } 

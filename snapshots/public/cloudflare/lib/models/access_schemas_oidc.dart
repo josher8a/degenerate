@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessSchemasOidc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/access_azure_ad_type.dart';import 'package:pub_cloudflare/models/access_azure_ad/scim_config.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_schemas_oidc/access_schemas_oidc_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasOidc {const AccessSchemasOidc({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/access_azure_ad_scim_config.dart';import 'package:pub_cloudflare/models/access_azure_ad_request/access_azure_ad_request_type.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_schemas_oidc/access_schemas_oidc_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasOidc {const AccessSchemasOidc({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
 factory AccessSchemasOidc.fromJson(Map<String, dynamic> json) { return AccessSchemasOidc(
   config: AccessSchemasOidcConfig.fromJson(json['config'] as Map<String, dynamic>),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
-  scimConfig: json['scim_config'] != null ? ScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
-  type: AccessAzureAdType.fromJson(json['type'] as String),
+  scimConfig: json['scim_config'] != null ? AccessAzureAdScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  type: AccessAzureAdRequestType.fromJson(json['type'] as String),
 ); }
 
 final AccessSchemasOidcConfig config;
@@ -19,12 +19,12 @@ final AccessUuid? id;
 final AccessComponentsSchemasName name;
 
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
-final ScimConfig? scimConfig;
+final AccessAzureAdScimConfig? scimConfig;
 
 /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 /// 
 /// Example: `'onetimepin'`
-final AccessAzureAdType type;
+final AccessAzureAdRequestType type;
 
 Map<String, dynamic> toJson() { return {
   'config': config.toJson(),
@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasOidc copyWith({AccessSchemasOidcConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, ScimConfig? Function()? scimConfig, AccessAzureAdType? type, }) { return AccessSchemasOidc(
+AccessSchemasOidc copyWith({AccessSchemasOidcConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig? Function()? scimConfig, AccessAzureAdRequestType? type, }) { return AccessSchemasOidc(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

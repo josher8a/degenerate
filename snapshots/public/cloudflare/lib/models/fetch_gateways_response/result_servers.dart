@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FetchGatewaysResponse (inline: Result > Servers)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class ResultServers {const ResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled = false, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf = true, this.status = 'waiting', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class ResultServers {const ResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf, this.status, });
 
 factory ResultServers.fromJson(Map<String, dynamic> json) { return ResultServers(
   authType: CreateServersRequestAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
-  defaultDisabled: json.containsKey('default_disabled') ? json['default_disabled'] as bool : false,
+  defaultDisabled: json['default_disabled'] as bool?,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   error: json['error'] as String?,
   hostname: Uri.parse(json['hostname'] as String),
@@ -17,9 +17,9 @@ factory ResultServers.fromJson(Map<String, dynamic> json) { return ResultServers
   modifiedAt: json['modified_at'] != null ? DateTime.parse(json['modified_at'] as String) : null,
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
-  onBehalf: json.containsKey('on_behalf') ? json['on_behalf'] as bool : true,
+  onBehalf: json['on_behalf'] as bool?,
   prompts: (json['prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-  status: json.containsKey('status') ? json['status'] as String : 'waiting',
+  status: json['status'] as String?,
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
@@ -32,7 +32,7 @@ final DateTime? createdAt;
 
 final String? createdBy;
 
-final bool defaultDisabled;
+final bool? defaultDisabled;
 
 /// Example: `'This is one remote mcp server'`
 final Omittable<String?> description;
@@ -58,11 +58,11 @@ final String? modifiedBy;
 /// Example: `'My MCP Server'`
 final String name;
 
-final bool onBehalf;
+final bool? onBehalf;
 
 final List<Map<String,dynamic>> prompts;
 
-final String status;
+final String? status;
 
 final List<Map<String,dynamic>> tools;
 
@@ -70,11 +70,20 @@ final List<Map<String,dynamic>> updatedPrompts;
 
 final List<Map<String,dynamic>> updatedTools;
 
+/// The value of `defaultDisabled`, or its schema default when absent.
+bool get defaultDisabledOrDefault => defaultDisabled ?? false;
+
+/// The value of `onBehalf`, or its schema default when absent.
+bool get onBehalfOrDefault => onBehalf ?? true;
+
+/// The value of `status`, or its schema default when absent.
+String get statusOrDefault => status ?? 'waiting';
+
 Map<String, dynamic> toJson() { return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
-  'default_disabled': defaultDisabled,
+  'default_disabled': ?defaultDisabled,
   if (description.isPresent) 'description': description.value,
   'error': ?error,
   'hostname': hostname.toString(),
@@ -84,9 +93,9 @@ Map<String, dynamic> toJson() { return {
   if (modifiedAt != null) 'modified_at': modifiedAt?.toIso8601String(),
   'modified_by': ?modifiedBy,
   'name': name,
-  'on_behalf': onBehalf,
+  'on_behalf': ?onBehalf,
   'prompts': prompts.map((e) => e).toList(),
-  'status': status,
+  'status': ?status,
   'tools': tools.map((e) => e).toList(),
   'updated_prompts': updatedPrompts.map((e) => e).toList(),
   'updated_tools': updatedTools.map((e) => e).toList(),
@@ -110,7 +119,7 @@ if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (name.runes.length > 350) { errors.add('name: length must be <= 350'); }
 return errors; } 
-ResultServers copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, bool Function()? defaultDisabled, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return ResultServers(
+ResultServers copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, bool? Function()? defaultDisabled, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? onBehalf, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return ResultServers(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

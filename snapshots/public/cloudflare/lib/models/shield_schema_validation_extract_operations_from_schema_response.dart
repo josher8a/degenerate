@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ShieldSchemaValidationExtractOperationsFromSchemaResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_basic_operation.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_operation.dart';@immutable final class ShieldSchemaValidationExtractOperationsFromSchemaResponse {const ShieldSchemaValidationExtractOperationsFromSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';@immutable final class ShieldSchemaValidationExtractOperationsFromSchemaResponse {const ShieldSchemaValidationExtractOperationsFromSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
 
 factory ShieldSchemaValidationExtractOperationsFromSchemaResponse.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationExtractOperationsFromSchemaResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldOperation.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldBasicOperation.fromJson(v as Map<String, dynamic>),)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e == null ? null : SchemaValidationExtractOperationsFromSchemaResponseResult.fromJson(e)).toList(),
 ); }
 
 final List<ShieldMessages2> errors;
@@ -22,20 +22,20 @@ final bool success;
 
 final AccessActiveSessionsResponseResultInfo? resultInfo;
 
-final List<SchemaValidationExtractOperationsFromSchemaResponseResult> result;
+final List<SchemaValidationExtractOperationsFromSchemaResponseResult?> result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': result.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-ShieldSchemaValidationExtractOperationsFromSchemaResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<SchemaValidationExtractOperationsFromSchemaResponseResult>? result, }) { return ShieldSchemaValidationExtractOperationsFromSchemaResponse(
+ShieldSchemaValidationExtractOperationsFromSchemaResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<SchemaValidationExtractOperationsFromSchemaResponseResult?>? result, }) { return ShieldSchemaValidationExtractOperationsFromSchemaResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -8,7 +8,7 @@ factory AccessResponseCollection.fromJson(Map<String, dynamic> json) { return Ac
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>?)?.map((e) => AccessResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map(AccessResponseCollectionResult.fromJson).toList(),
 ); }
 
 final List<AccessMessages2> errors;

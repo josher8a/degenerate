@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FileAnnotationSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation_source/file_annotation_source_type.dart';/// Attachment source referenced by an annotation.
-@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.filename, this.type = FileAnnotationSourceType.file, });
+@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.type, required this.filename, });
 
 factory FileAnnotationSource.fromJson(Map<String, dynamic> json) { return FileAnnotationSource(
   type: FileAnnotationSourceType.fromJson(json['type'] as String),

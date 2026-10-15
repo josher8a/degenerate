@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimekitPreset (inline: Ui > DesignTokens > Colors > Brand)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetUiDesignTokensColorsBrand {const RealtimekitPresetUiDesignTokensColorsBrand({this.$300 = '#844d1c', this.$400 = '#9d5b22', this.$500 = '#b56927', this.$600 = '#d37c30', this.$700 = '#d9904f', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetUiDesignTokensColorsBrand {const RealtimekitPresetUiDesignTokensColorsBrand({required this.$300, required this.$400, required this.$500, required this.$600, required this.$700, });
 
 factory RealtimekitPresetUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUiDesignTokensColorsBrand(
   $300: json['300'] as String,

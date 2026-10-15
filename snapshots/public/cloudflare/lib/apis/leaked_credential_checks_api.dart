@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "LeakedCredentialChecksApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_detection.dart';import 'package:pub_cloudflare/models/bundle_identifier.dart';import 'package:pub_cloudflare/models/bundle_status.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_create_detection_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_delete_detection_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_get_detection_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_get_status_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_list_detections_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_set_status_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_update_detection_error.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';/// LeakedCredentialChecksApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_detection.dart';import 'package:pub_cloudflare/models/bundle_custom_detection_request.dart';import 'package:pub_cloudflare/models/bundle_identifier.dart';import 'package:pub_cloudflare/models/bundle_status.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_create_detection_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_delete_detection_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_get_detection_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_get_status_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_list_detections_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_set_status_error.dart';import 'package:pub_cloudflare/models/errors/leaked_credentials_update_detection_error.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';/// LeakedCredentialChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -85,7 +85,7 @@ return execute(
 /// Create user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionError>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetection body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionError>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -133,7 +133,7 @@ return execute(
 /// Update user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `PUT /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionError>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetection body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionError>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -167,11 +167,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return ResponseCommon31Result.fromJson(json['result']);
   },
   onError: LeakedCredentialsDeleteDetectionError.fromResponse,
 );

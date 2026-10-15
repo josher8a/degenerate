@@ -468,7 +468,7 @@ final class ApiEmitter {
 
     // Build onSuccess callback
     if (returnType != null) {
-      buf.writeln('return execute(');
+      buf.writeln('return await execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
       if (unwrappedField != null) {
@@ -488,7 +488,7 @@ final class ApiEmitter {
       }
       buf.writeln('  },');
     } else {
-      buf.writeln('return execute(');
+      buf.writeln('return await execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }

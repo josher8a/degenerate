@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InvoicePayment
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment/invoice_payment_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment/invoice_payment_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class InvoicePaymentObject {const InvoicePaymentObject();
 
 factory InvoicePaymentObject.fromJson(String json) { return switch (json) {
@@ -70,7 +70,7 @@ factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayme
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   id: json['id'] as String,
-  invoice: OneOf3.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedInvoice.fromJson(v as Map<String, dynamic>),),
+  invoice: InvoicePaymentInvoice.fromJson(json['invoice']),
   isDefault: json['is_default'] as bool,
   livemode: json['livemode'] as bool,
   object: InvoicePaymentObject.fromJson(json['object'] as String),

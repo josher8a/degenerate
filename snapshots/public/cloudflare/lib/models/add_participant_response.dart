@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AddParticipantResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/add_participant_response/add_participant_response_data.dart';@immutable final class AddParticipantResponse {const AddParticipantResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/add_participant_response/add_participant_response_data.dart';@immutable final class AddParticipantResponse {const AddParticipantResponse({required this.success, this.data, });
 
 factory AddParticipantResponse.fromJson(Map<String, dynamic> json) { return AddParticipantResponse(
   data: json['data'] != null ? AddParticipantResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

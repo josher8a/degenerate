@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_action.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_device_posture.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_enabled.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_expiration.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_filters2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identity.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_precedence.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schedule.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_traffic.dart';@immutable final class ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest {const ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest({required this.action, required this.name, this.description, this.devicePosture, this.enabled, this.expiration, this.filters, this.identity, this.precedence, this.ruleSettings, this.schedule, this.traffic, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_action.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_device_posture.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_enabled.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_expiration_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_filters2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identity.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_precedence.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schedule.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_traffic.dart';@immutable final class ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest {const ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest({required this.action, required this.name, this.description, this.devicePosture, this.enabled, this.expiration = const Omittable.absent(), this.filters, this.identity, this.precedence, this.ruleSettings, this.schedule = const Omittable.absent(), this.traffic, });
 
 factory ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
   action: ZeroTrustGatewayAction.fromJson(json['action'] as String),
   description: json['description'] != null ? ZeroTrustGatewaySchemasDescription.fromJson(json['description'] as String) : null,
   devicePosture: json['device_posture'] != null ? ZeroTrustGatewayDevicePosture.fromJson(json['device_posture'] as String) : null,
   enabled: json['enabled'] != null ? ZeroTrustGatewayEnabled.fromJson(json['enabled'] as bool) : null,
-  expiration: json['expiration'] != null ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>) : null,
+  expiration: json.containsKey('expiration') ? Omittable(json['expiration'] != null ? ZeroTrustGatewayExpirationRequest.fromJson(json['expiration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   filters: (json['filters'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayFilters2.fromJson(e as String)).toList(),
   identity: json['identity'] != null ? ZeroTrustGatewayIdentity.fromJson(json['identity'] as String) : null,
   name: ZeroTrustGatewayComponentsSchemasName.fromJson(json['name'] as String),
   precedence: json['precedence'] != null ? ZeroTrustGatewayPrecedence.fromJson(json['precedence'] as num) : null,
   ruleSettings: json['rule_settings'] != null ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>) : null,
-  schedule: json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
+  schedule: json.containsKey('schedule') ? Omittable(json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   traffic: json['traffic'] != null ? ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String) : null,
 ); }
 
@@ -30,7 +30,7 @@ final ZeroTrustGatewayDevicePosture? devicePosture;
 /// Specify whether the rule is enabled.
 final ZeroTrustGatewayEnabled? enabled;
 
-final ZeroTrustGatewayExpiration? expiration;
+final Omittable<ZeroTrustGatewayExpirationRequest?> expiration;
 
 /// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
 final List<ZeroTrustGatewayFilters2>? filters;
@@ -46,7 +46,7 @@ final ZeroTrustGatewayPrecedence? precedence;
 
 final ZeroTrustGatewayRuleSettings? ruleSettings;
 
-final ZeroTrustGatewaySchedule? schedule;
+final Omittable<ZeroTrustGatewaySchedule?> schedule;
 
 /// Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 final ZeroTrustGatewayTraffic? traffic;
@@ -56,13 +56,13 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
   if (devicePosture != null) 'device_posture': devicePosture?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
-  if (expiration != null) 'expiration': expiration?.toJson(),
+  if (expiration.isPresent) 'expiration': expiration.value?.toJson(),
   if (filters != null) 'filters': filters?.map((e) => e.toJson()).toList(),
   if (identity != null) 'identity': identity?.toJson(),
   'name': name.toJson(),
   if (precedence != null) 'precedence': precedence?.toJson(),
   if (ruleSettings != null) 'rule_settings': ruleSettings?.toJson(),
-  if (schedule != null) 'schedule': schedule?.toJson(),
+  if (schedule.isPresent) 'schedule': schedule.value?.toJson(),
   if (traffic != null) 'traffic': traffic?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -75,18 +75,18 @@ if (filters$ != null) {
   if (filters$.length > 1) { errors.add('filters: must have <= 1 items'); }
 }
 return errors; } 
-ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? Function()? enabled, ZeroTrustGatewayExpiration? Function()? expiration, List<ZeroTrustGatewayFilters2>? Function()? filters, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? Function()? precedence, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, ZeroTrustGatewaySchedule? Function()? schedule, ZeroTrustGatewayTraffic? Function()? traffic, }) { return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
+ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? Function()? enabled, Omittable<ZeroTrustGatewayExpirationRequest?>? expiration, List<ZeroTrustGatewayFilters2>? Function()? filters, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? Function()? precedence, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, Omittable<ZeroTrustGatewaySchedule?>? schedule, ZeroTrustGatewayTraffic? Function()? traffic, }) { return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
   action: action ?? this.action,
   description: description != null ? description() : this.description,
   devicePosture: devicePosture != null ? devicePosture() : this.devicePosture,
   enabled: enabled != null ? enabled() : this.enabled,
-  expiration: expiration != null ? expiration() : this.expiration,
+  expiration: expiration ?? this.expiration,
   filters: filters != null ? filters() : this.filters,
   identity: identity != null ? identity() : this.identity,
   name: name ?? this.name,
   precedence: precedence != null ? precedence() : this.precedence,
   ruleSettings: ruleSettings != null ? ruleSettings() : this.ruleSettings,
-  schedule: schedule != null ? schedule() : this.schedule,
+  schedule: schedule ?? this.schedule,
   traffic: traffic != null ? traffic() : this.traffic,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

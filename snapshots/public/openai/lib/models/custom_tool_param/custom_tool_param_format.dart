@@ -65,7 +65,7 @@ factory CustomToolParamFormat.fromJson(Map<String, dynamic> json) { return switc
 }; }
 
 /// Build the `grammar` variant.
-factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required String definition, }) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam(syntax: syntax, definition: definition)); }
+factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required String definition, }) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam(type: CustomGrammarFormatParamType.fromJson('grammar'), syntax: syntax, definition: definition)); }
 
 /// The discriminator value identifying this variant.
 CustomToolParamFormatType get type;

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BillingPortalConfiguration
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/portal_business_profile.dart';import 'package:pub_stripe_spec3/models/portal_features.dart';import 'package:pub_stripe_spec3/models/portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/portal_business_profile.dart';import 'package:pub_stripe_spec3/models/portal_features.dart';import 'package:pub_stripe_spec3/models/portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class BillingPortalConfigurationObject {const BillingPortalConfigurationObject();
 
 factory BillingPortalConfigurationObject.fromJson(String json) { return switch (json) {
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingP
 
 factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
   active: json['active'] as bool,
-  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   businessProfile: PortalBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   defaultReturnUrl: json.containsKey('default_return_url') ? Omittable(json['default_return_url'] as String?) : const Omittable.absent(),

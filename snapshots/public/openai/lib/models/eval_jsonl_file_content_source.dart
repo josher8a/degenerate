@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileCont
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class EvalJsonlFileContentSource {const EvalJsonlFileContentSource({required this.content, this.type = EvalJsonlFileContentSourceType.fileContent, });
+@immutable final class EvalJsonlFileContentSource {const EvalJsonlFileContentSource({required this.type, required this.content, });
 
 factory EvalJsonlFileContentSource.fromJson(Map<String, dynamic> json) { return EvalJsonlFileContentSource(
   type: EvalJsonlFileContentSourceType.fromJson(json['type'] as String),

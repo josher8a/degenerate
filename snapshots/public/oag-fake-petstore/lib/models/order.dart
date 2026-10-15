@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? placed, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Order {const Order({this.id, this.petId, this.quantity, this.shipDate, this.status, this.complete = false, });
+@immutable final class Order {const Order({this.id, this.petId, this.quantity, this.shipDate, this.status, this.complete, });
 
 factory Order.fromJson(Map<String, dynamic> json) { return Order(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
@@ -92,7 +92,7 @@ factory Order.fromJson(Map<String, dynamic> json) { return Order(
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   shipDate: json['shipDate'] != null ? DateTime.parse(json['shipDate'] as String) : null,
   status: json['status'] != null ? OrderStatus.fromJson(json['status'] as String) : null,
-  complete: json.containsKey('complete') ? json['complete'] as bool : false,
+  complete: json['complete'] as bool?,
 ); }
 
 final int? id;
@@ -106,7 +106,10 @@ final DateTime? shipDate;
 /// Order Status
 final OrderStatus? status;
 
-final bool complete;
+final bool? complete;
+
+/// The value of `complete`, or its schema default when absent.
+bool get completeOrDefault => complete ?? false;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -114,10 +117,10 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (shipDate != null) 'shipDate': shipDate?.toIso8601String(),
   if (status != null) 'status': status?.toJson(),
-  'complete': complete,
+  'complete': ?complete,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'petId', 'quantity', 'shipDate', 'status', 'complete'}.contains(key)); } 
-Order copyWith({int? Function()? id, int? Function()? petId, int? Function()? quantity, DateTime? Function()? shipDate, OrderStatus? Function()? status, bool Function()? complete, }) { return Order(
+Order copyWith({int? Function()? id, int? Function()? petId, int? Function()? quantity, DateTime? Function()? shipDate, OrderStatus? Function()? status, bool? Function()? complete, }) { return Order(
   id: id != null ? id() : this.id,
   petId: petId != null ? petId() : this.petId,
   quantity: quantity != null ? quantity() : this.quantity,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Individual > CardIssuing > UserTermsAcceptance)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/user_agent.dart';@immutable final class UserTermsAcceptance {const UserTermsAcceptance({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/user_agent.dart';@immutable final class UserTermsAcceptance {const UserTermsAcceptance({this.date, this.ip, this.userAgent, });
 
 factory UserTermsAcceptance.fromJson(Map<String, dynamic> json) { return UserTermsAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null ? OneOf2.parse(json['user_agent'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  userAgent: json['user_agent'] != null ? UserAgent.fromJson(json['user_agent']) : null,
 ); }
 
 final int? date;

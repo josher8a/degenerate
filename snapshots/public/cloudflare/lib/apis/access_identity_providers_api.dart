@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccessIdentityProvidersApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_email.dart';import 'package:pub_cloudflare/models/access_groups.dart';import 'package:pub_cloudflare/models/access_groups_name.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_identity_providers.dart';import 'package:pub_cloudflare/models/access_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';import 'package:pub_cloudflare/models/access_username.dart';import 'package:pub_cloudflare/models/access_users.dart';import 'package:pub_cloudflare/models/access_users_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_users_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_users_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessIdentityProvidersApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_email.dart';import 'package:pub_cloudflare/models/access_groups.dart';import 'package:pub_cloudflare/models/access_groups_name.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_identity_providers.dart';import 'package:pub_cloudflare/models/access_identity_providers_request.dart';import 'package:pub_cloudflare/models/access_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';import 'package:pub_cloudflare/models/access_username.dart';import 'package:pub_cloudflare/models/access_users.dart';import 'package:pub_cloudflare/models/access_users_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_users_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_users_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessIdentityProvidersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -37,11 +37,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => AccessResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map(AccessResponseCollectionResult.fromJson).toList();
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -51,7 +51,7 @@ return execute(
 /// Adds a new identity provider to Access.
 ///
 /// `POST /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<AccessIdentityProviders?, AccessApplicationsAddAnApplicationError>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProviders body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, AccessApplicationsAddAnApplicationError>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProvidersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,11 +62,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -85,11 +85,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -99,7 +99,7 @@ return execute(
 /// Updates a configured identity provider.
 ///
 /// `PUT /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessIdentityProviders?, AccessApplicationsAddAnApplicationError>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProviders body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, AccessApplicationsAddAnApplicationError>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProvidersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -110,11 +110,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -176,7 +176,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -225,7 +225,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

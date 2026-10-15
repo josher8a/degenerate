@@ -417,10 +417,10 @@ factory Item.message({required String id, required ChatCompletionResponseMessage
 factory Item.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, Omittable<List<FileSearchToolCallResults>?> results = const Omittable.absent(), }) { return ItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
 
 /// Build the `computer_call` variant.
-factory Item.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputResourceStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemComputerCall(ComputerToolCall(id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory Item.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputResourceStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
 
 /// Build the `computer_call_output` variant.
-factory Item.computerCallOutput({required String callId, required ComputerScreenshotImage output, Omittable<String?> id = const Omittable.absent(), Omittable<List<ComputerCallSafetyCheckParam>?> acknowledgedSafetyChecks = const Omittable.absent(), Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemComputerCallOutput(ComputerCallOutputItemParam(id: id, callId: callId, output: output, acknowledgedSafetyChecks: acknowledgedSafetyChecks, status: status)); }
+factory Item.computerCallOutput({required String callId, required ComputerScreenshotImage output, Omittable<String?> id = const Omittable.absent(), Omittable<List<ComputerCallSafetyCheckParam>?> acknowledgedSafetyChecks = const Omittable.absent(), Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemComputerCallOutput(ComputerCallOutputItemParam(type: 'computer_call_output', id: id, callId: callId, output: output, acknowledgedSafetyChecks: acknowledgedSafetyChecks, status: status)); }
 
 /// Build the `web_search_call` variant.
 factory Item.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ItemWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
@@ -429,25 +429,25 @@ factory Item.webSearchCall({required String id, required WebSearchToolCallStatus
 factory Item.functionCall({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputResourceStatus? status, }) { return ItemFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
 
 /// Build the `function_call_output` variant.
-factory Item.functionCallOutput({required String callId, required FunctionCallOutputItemParamOutput output, Omittable<String?> id = const Omittable.absent(), Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemFunctionCallOutput(FunctionCallOutputItemParam(id: id, callId: callId, output: output, status: status)); }
+factory Item.functionCallOutput({required String callId, required FunctionCallOutputItemParamOutput output, Omittable<String?> id = const Omittable.absent(), Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemFunctionCallOutput(FunctionCallOutputItemParam(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
 
 /// Build the `tool_search_call` variant.
-factory Item.toolSearchCall({required EmptyModelParam arguments, Omittable<String?> id = const Omittable.absent(), Omittable<String?> callId = const Omittable.absent(), ToolSearchExecutionType? execution, Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemToolSearchCall(ToolSearchCallItemParam(id: id, callId: callId, execution: execution, arguments: arguments, status: status)); }
+factory Item.toolSearchCall({required EmptyModelParam arguments, Omittable<String?> id = const Omittable.absent(), Omittable<String?> callId = const Omittable.absent(), ToolSearchExecutionType? execution, Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemToolSearchCall(ToolSearchCallItemParam(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status)); }
 
 /// Build the `tool_search_output` variant.
-factory Item.toolSearchOutput({required List<Tool> tools, Omittable<String?> id = const Omittable.absent(), Omittable<String?> callId = const Omittable.absent(), ToolSearchExecutionType? execution, Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemToolSearchOutput(ToolSearchOutputItemParam(id: id, callId: callId, execution: execution, tools: tools, status: status)); }
+factory Item.toolSearchOutput({required List<Tool> tools, Omittable<String?> id = const Omittable.absent(), Omittable<String?> callId = const Omittable.absent(), ToolSearchExecutionType? execution, Omittable<FunctionCallItemStatus?> status = const Omittable.absent(), }) { return ItemToolSearchOutput(ToolSearchOutputItemParam(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status)); }
 
 /// Build the `reasoning` variant.
 factory Item.reasoning({required String id, required List<SummaryTextContent> summary, Omittable<String?> encryptedContent = const Omittable.absent(), List<ReasoningTextContent>? content, ComputerToolCallOutputResourceStatus? status, }) { return ItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
 
 /// Build the `compaction` variant.
-factory Item.compaction({required String encryptedContent, Omittable<String?> id = const Omittable.absent(), }) { return ItemCompaction(CompactionSummaryItemParam(id: id, encryptedContent: encryptedContent)); }
+factory Item.compaction({required String encryptedContent, Omittable<String?> id = const Omittable.absent(), }) { return ItemCompaction(CompactionSummaryItemParam(type: 'compaction', id: id, encryptedContent: encryptedContent)); }
 
 /// Build the `image_generation_call` variant.
 factory Item.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ItemImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
 
 /// Build the `code_interpreter_call` variant.
-factory Item.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs>? outputs, }) { return ItemCodeInterpreterCall(CodeInterpreterToolCall(id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
+factory Item.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs>? outputs, }) { return ItemCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
 
 /// Build the `local_shell_call` variant.
 factory Item.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputResourceStatus status, }) { return ItemLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
@@ -456,16 +456,16 @@ factory Item.localShellCall({required String id, required String callId, require
 factory Item.localShellCallOutput({required String id, required String output, Omittable<LocalShellToolCallOutputStatus?> status = const Omittable.absent(), }) { return ItemLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
 
 /// Build the `shell_call` variant.
-factory Item.shellCall({required String callId, required FunctionShellActionParam action, Omittable<String?> id = const Omittable.absent(), Omittable<FunctionShellCallItemStatus?> status = const Omittable.absent(), Omittable<FunctionShellCallItemParamEnvironment?> environment = const Omittable.absent(), }) { return ItemShellCall(FunctionShellCallItemParam(id: id, callId: callId, action: action, status: status, environment: environment)); }
+factory Item.shellCall({required String callId, required FunctionShellActionParam action, Omittable<String?> id = const Omittable.absent(), Omittable<FunctionShellCallItemStatus?> status = const Omittable.absent(), Omittable<FunctionShellCallItemParamEnvironment?> environment = const Omittable.absent(), }) { return ItemShellCall(FunctionShellCallItemParam(type: 'shell_call', id: id, callId: callId, action: action, status: status, environment: environment)); }
 
 /// Build the `shell_call_output` variant.
-factory Item.shellCallOutput({required String callId, required List<FunctionShellCallOutputContentParam> output, Omittable<String?> id = const Omittable.absent(), Omittable<FunctionShellCallItemStatus?> status = const Omittable.absent(), Omittable<int?> maxOutputLength = const Omittable.absent(), }) { return ItemShellCallOutput(FunctionShellCallOutputItemParam(id: id, callId: callId, output: output, status: status, maxOutputLength: maxOutputLength)); }
+factory Item.shellCallOutput({required String callId, required List<FunctionShellCallOutputContentParam> output, Omittable<String?> id = const Omittable.absent(), Omittable<FunctionShellCallItemStatus?> status = const Omittable.absent(), Omittable<int?> maxOutputLength = const Omittable.absent(), }) { return ItemShellCallOutput(FunctionShellCallOutputItemParam(type: 'shell_call_output', id: id, callId: callId, output: output, status: status, maxOutputLength: maxOutputLength)); }
 
 /// Build the `apply_patch_call` variant.
-factory Item.applyPatchCall({required String callId, required ApplyPatchCallStatus status, required ApplyPatchOperationParam operation, Omittable<String?> id = const Omittable.absent(), }) { return ItemApplyPatchCall(ApplyPatchToolCallItemParam(id: id, callId: callId, status: status, operation: operation)); }
+factory Item.applyPatchCall({required String callId, required ApplyPatchCallStatus status, required ApplyPatchOperationParam operation, Omittable<String?> id = const Omittable.absent(), }) { return ItemApplyPatchCall(ApplyPatchToolCallItemParam(type: 'apply_patch_call', id: id, callId: callId, status: status, operation: operation)); }
 
 /// Build the `apply_patch_call_output` variant.
-factory Item.applyPatchCallOutput({required String callId, required ApplyPatchCallOutputStatus status, Omittable<String?> id = const Omittable.absent(), Omittable<String?> output = const Omittable.absent(), }) { return ItemApplyPatchCallOutput(ApplyPatchToolCallOutputItemParam(id: id, callId: callId, status: status, output: output)); }
+factory Item.applyPatchCallOutput({required String callId, required ApplyPatchCallOutputStatus status, Omittable<String?> id = const Omittable.absent(), Omittable<String?> output = const Omittable.absent(), }) { return ItemApplyPatchCallOutput(ApplyPatchToolCallOutputItemParam(type: 'apply_patch_call_output', id: id, callId: callId, status: status, output: output)); }
 
 /// Build the `mcp_list_tools` variant.
 factory Item.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, Omittable<String?> error = const Omittable.absent(), }) { return ItemMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
@@ -491,8 +491,6 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Item$Unknown;
 
-/// Shared by all variants of this union.
-String? get id;
 R when<R>({required R Function(ItemMessage) message, required R Function(ItemFileSearchCall) fileSearchCall, required R Function(ItemComputerCall) computerCall, required R Function(ItemComputerCallOutput) computerCallOutput, required R Function(ItemWebSearchCall) webSearchCall, required R Function(ItemFunctionCall) functionCall, required R Function(ItemFunctionCallOutput) functionCallOutput, required R Function(ItemToolSearchCall) toolSearchCall, required R Function(ItemToolSearchOutput) toolSearchOutput, required R Function(ItemReasoning) reasoning, required R Function(ItemCompaction) compaction, required R Function(ItemImageGenerationCall) imageGenerationCall, required R Function(ItemCodeInterpreterCall) codeInterpreterCall, required R Function(ItemLocalShellCall) localShellCall, required R Function(ItemLocalShellCallOutput) localShellCallOutput, required R Function(ItemShellCall) shellCall, required R Function(ItemShellCallOutput) shellCallOutput, required R Function(ItemApplyPatchCall) applyPatchCall, required R Function(ItemApplyPatchCallOutput) applyPatchCallOutput, required R Function(ItemMcpListTools) mcpListTools, required R Function(ItemMcpApprovalRequest) mcpApprovalRequest, required R Function(ItemMcpApprovalResponse) mcpApprovalResponse, required R Function(ItemMcpCall) mcpCall, required R Function(ItemCustomToolCallOutput) customToolCallOutput, required R Function(ItemCustomToolCall) customToolCall, required R Function(Item$Unknown) unknown, }) { return switch (this) {
   final ItemMessage v => message(v),
   final ItemFileSearchCall v => fileSearchCall(v),
@@ -546,8 +544,6 @@ ItemMessage copyWith({String? id, ChatCompletionResponseMessageRole? role, List<
 
 @override String toString() => 'Item.message($outputMessage)';
 
-@override String? get id => outputMessage.id;
-
  }
 @immutable final class ItemFileSearchCall extends Item {const ItemFileSearchCall(this.fileSearchToolCall);
 
@@ -571,8 +567,6 @@ ItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<
 @override int get hashCode => fileSearchToolCall.hashCode;
 
 @override String toString() => 'Item.fileSearchCall($fileSearchToolCall)';
-
-@override String? get id => fileSearchToolCall.id;
 
  }
 @immutable final class ItemComputerCall extends Item {const ItemComputerCall(this.computerToolCall);
@@ -600,8 +594,6 @@ ItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function(
 
 @override String toString() => 'Item.computerCall($computerToolCall)';
 
-@override String? get id => computerToolCall.id;
-
  }
 @immutable final class ItemComputerCallOutput extends Item {const ItemComputerCallOutput(this.computerCallOutputItemParam);
 
@@ -627,8 +619,6 @@ ItemComputerCallOutput copyWith({Omittable<String?>? id, String? callId, Compute
 
 @override String toString() => 'Item.computerCallOutput($computerCallOutputItemParam)';
 
-@override String? get id => computerCallOutputItemParam.id.value;
-
  }
 @immutable final class ItemWebSearchCall extends Item {const ItemWebSearchCall(this.webSearchToolCall);
 
@@ -651,8 +641,6 @@ ItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSear
 @override int get hashCode => webSearchToolCall.hashCode;
 
 @override String toString() => 'Item.webSearchCall($webSearchToolCall)';
-
-@override String? get id => webSearchToolCall.id;
 
  }
 @immutable final class ItemFunctionCall extends Item {const ItemFunctionCall(this.functionToolCall);
@@ -680,8 +668,6 @@ ItemFunctionCall copyWith({String? Function()? id, String? callId, String? Funct
 
 @override String toString() => 'Item.functionCall($functionToolCall)';
 
-@override String? get id => functionToolCall.id;
-
  }
 @immutable final class ItemFunctionCallOutput extends Item {const ItemFunctionCallOutput(this.functionCallOutputItemParam);
 
@@ -705,8 +691,6 @@ ItemFunctionCallOutput copyWith({Omittable<String?>? id, String? callId, Functio
 @override int get hashCode => functionCallOutputItemParam.hashCode;
 
 @override String toString() => 'Item.functionCallOutput($functionCallOutputItemParam)';
-
-@override String? get id => functionCallOutputItemParam.id.value;
 
  }
 @immutable final class ItemToolSearchCall extends Item {const ItemToolSearchCall(this.toolSearchCallItemParam);
@@ -733,8 +717,6 @@ ItemToolSearchCall copyWith({Omittable<String?>? id, Omittable<String?>? callId,
 
 @override String toString() => 'Item.toolSearchCall($toolSearchCallItemParam)';
 
-@override String? get id => toolSearchCallItemParam.id.value;
-
  }
 @immutable final class ItemToolSearchOutput extends Item {const ItemToolSearchOutput(this.toolSearchOutputItemParam);
 
@@ -759,8 +741,6 @@ ItemToolSearchOutput copyWith({Omittable<String?>? id, Omittable<String?>? callI
 @override int get hashCode => toolSearchOutputItemParam.hashCode;
 
 @override String toString() => 'Item.toolSearchOutput($toolSearchOutputItemParam)';
-
-@override String? get id => toolSearchOutputItemParam.id.value;
 
  }
 @immutable final class ItemReasoning extends Item {const ItemReasoning(this.reasoningItem);
@@ -787,8 +767,6 @@ ItemReasoning copyWith({String? id, Omittable<String?>? encryptedContent, List<S
 
 @override String toString() => 'Item.reasoning($reasoningItem)';
 
-@override String? get id => reasoningItem.id;
-
  }
 @immutable final class ItemCompaction extends Item {const ItemCompaction(this.compactionSummaryItemParam);
 
@@ -810,8 +788,6 @@ ItemCompaction copyWith({Omittable<String?>? id, String? encryptedContent, }) { 
 @override int get hashCode => compactionSummaryItemParam.hashCode;
 
 @override String toString() => 'Item.compaction($compactionSummaryItemParam)';
-
-@override String? get id => compactionSummaryItemParam.id.value;
 
  }
 @immutable final class ItemImageGenerationCall extends Item {const ItemImageGenerationCall(this.imageGenToolCall);
@@ -835,8 +811,6 @@ ItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, St
 @override int get hashCode => imageGenToolCall.hashCode;
 
 @override String toString() => 'Item.imageGenerationCall($imageGenToolCall)';
-
-@override String? get id => imageGenToolCall.id;
 
  }
 @immutable final class ItemCodeInterpreterCall extends Item {const ItemCodeInterpreterCall(this.codeInterpreterToolCall);
@@ -863,8 +837,6 @@ ItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? sta
 
 @override String toString() => 'Item.codeInterpreterCall($codeInterpreterToolCall)';
 
-@override String? get id => codeInterpreterToolCall.id;
-
  }
 @immutable final class ItemLocalShellCall extends Item {const ItemLocalShellCall(this.localShellToolCall);
 
@@ -889,8 +861,6 @@ ItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? a
 
 @override String toString() => 'Item.localShellCall($localShellToolCall)';
 
-@override String? get id => localShellToolCall.id;
-
  }
 @immutable final class ItemLocalShellCallOutput extends Item {const ItemLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -913,8 +883,6 @@ ItemLocalShellCallOutput copyWith({String? id, String? output, Omittable<LocalSh
 @override int get hashCode => localShellToolCallOutput.hashCode;
 
 @override String toString() => 'Item.localShellCallOutput($localShellToolCallOutput)';
-
-@override String? get id => localShellToolCallOutput.id;
 
  }
 @immutable final class ItemShellCall extends Item {const ItemShellCall(this.functionShellCallItemParam);
@@ -941,8 +909,6 @@ ItemShellCall copyWith({Omittable<String?>? id, String? callId, FunctionShellAct
 
 @override String toString() => 'Item.shellCall($functionShellCallItemParam)';
 
-@override String? get id => functionShellCallItemParam.id.value;
-
  }
 @immutable final class ItemShellCallOutput extends Item {const ItemShellCallOutput(this.functionShellCallOutputItemParam);
 
@@ -968,8 +934,6 @@ ItemShellCallOutput copyWith({Omittable<String?>? id, String? callId, List<Funct
 
 @override String toString() => 'Item.shellCallOutput($functionShellCallOutputItemParam)';
 
-@override String? get id => functionShellCallOutputItemParam.id.value;
-
  }
 @immutable final class ItemApplyPatchCall extends Item {const ItemApplyPatchCall(this.applyPatchToolCallItemParam);
 
@@ -993,8 +957,6 @@ ItemApplyPatchCall copyWith({Omittable<String?>? id, String? callId, ApplyPatchC
 @override int get hashCode => applyPatchToolCallItemParam.hashCode;
 
 @override String toString() => 'Item.applyPatchCall($applyPatchToolCallItemParam)';
-
-@override String? get id => applyPatchToolCallItemParam.id.value;
 
  }
 @immutable final class ItemApplyPatchCallOutput extends Item {const ItemApplyPatchCallOutput(this.applyPatchToolCallOutputItemParam);
@@ -1020,8 +982,6 @@ ItemApplyPatchCallOutput copyWith({Omittable<String?>? id, String? callId, Apply
 
 @override String toString() => 'Item.applyPatchCallOutput($applyPatchToolCallOutputItemParam)';
 
-@override String? get id => applyPatchToolCallOutputItemParam.id.value;
-
  }
 @immutable final class ItemMcpListTools extends Item {const ItemMcpListTools(this.mcpListTools);
 
@@ -1045,8 +1005,6 @@ ItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsToo
 @override int get hashCode => mcpListTools.hashCode;
 
 @override String toString() => 'Item.mcpListTools($mcpListTools)';
-
-@override String? get id => mcpListTools.id;
 
  }
 @immutable final class ItemMcpApprovalRequest extends Item {const ItemMcpApprovalRequest(this.mcpApprovalRequest);
@@ -1072,8 +1030,6 @@ ItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, 
 
 @override String toString() => 'Item.mcpApprovalRequest($mcpApprovalRequest)';
 
-@override String? get id => mcpApprovalRequest.id;
-
  }
 @immutable final class ItemMcpApprovalResponse extends Item {const ItemMcpApprovalResponse(this.mcpApprovalResponse);
 
@@ -1097,8 +1053,6 @@ ItemMcpApprovalResponse copyWith({Omittable<String?>? id, String? approvalReques
 @override int get hashCode => mcpApprovalResponse.hashCode;
 
 @override String toString() => 'Item.mcpApprovalResponse($mcpApprovalResponse)';
-
-@override String? get id => mcpApprovalResponse.id.value;
 
  }
 @immutable final class ItemMcpCall extends Item {const ItemMcpCall(this.mcpToolCall);
@@ -1128,8 +1082,6 @@ ItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arg
 
 @override String toString() => 'Item.mcpCall($mcpToolCall)';
 
-@override String? get id => mcpToolCall.id;
-
  }
 @immutable final class ItemCustomToolCallOutput extends Item {const ItemCustomToolCallOutput(this.customToolCallOutput);
 
@@ -1152,8 +1104,6 @@ ItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, Custo
 @override int get hashCode => customToolCallOutput.hashCode;
 
 @override String toString() => 'Item.customToolCallOutput($customToolCallOutput)';
-
-@override String? get id => customToolCallOutput.id;
 
  }
 @immutable final class ItemCustomToolCall extends Item {const ItemCustomToolCall(this.customToolCall);
@@ -1180,16 +1130,12 @@ ItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Fun
 
 @override String toString() => 'Item.customToolCall($customToolCall)';
 
-@override String? get id => customToolCall.id;
-
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class Item$Unknown extends Item {Item$Unknown(this.json);
+@immutable final class Item$Unknown extends Item {const Item$Unknown(this.json);
 
 final Map<String, dynamic> json;
-
-late final String? _id = json['id'] as String?;
 
 @override ItemType get type => ItemType.fromJson(json['type'] as String? ?? '');
 
@@ -1201,7 +1147,5 @@ late final String? _id = json['id'] as String?;
 @override int get hashCode => json.hashCode;
 
 @override String toString() => 'Item.unknown($json)';
-
-@override String? get id => _id;
 
  }

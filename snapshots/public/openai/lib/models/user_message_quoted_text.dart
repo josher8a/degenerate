@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? quotedTe
 
  }
 /// Quoted snippet that the user referenced in their message.
-@immutable final class UserMessageQuotedText {const UserMessageQuotedText({required this.text, this.type = UserMessageQuotedTextType.quotedText, });
+@immutable final class UserMessageQuotedText {const UserMessageQuotedText({required this.type, required this.text, });
 
 factory UserMessageQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageQuotedText(
   type: UserMessageQuotedTextType.fromJson(json['type'] as String),

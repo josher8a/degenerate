@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesPipeline (inline: Destination > Compression)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request/compression_type.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression({this.type = CompressionType.gzip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request/compression_type.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression({required this.type});
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression(
   type: CompressionType.fromJson(json['type'] as String),

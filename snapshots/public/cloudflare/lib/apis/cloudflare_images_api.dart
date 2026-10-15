@@ -31,7 +31,8 @@ final request = ApiRequest(
       ApiMultipartField.text('id', id$),
     if (body.metadata case final metadata$?)
       ApiMultipartField.text('metadata', metadata$.toString()),
-    ApiMultipartField.text('requireSignedURLs', body.requireSignedUrLs.toString()),
+    if (body.requireSignedUrLs case final requireSignedUrLs$?)
+      ApiMultipartField.text('requireSignedURLs', requireSignedUrLs$.toString()),
     if (body.url case final url$?)
       ApiMultipartField.text('url', url$),
   ],
@@ -39,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -62,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -87,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -110,7 +111,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -133,7 +134,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
@@ -155,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -238,7 +239,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -267,13 +268,14 @@ final request = ApiRequest(
       ApiMultipartField.text('id', id$),
     if (body.metadata case final metadata$?)
       ApiMultipartField.text('metadata', metadata$.toString()),
-    ApiMultipartField.text('requireSignedURLs', body.requireSignedUrLs.toString()),
+    if (body.requireSignedUrLs case final requireSignedUrLs$?)
+      ApiMultipartField.text('requireSignedURLs', requireSignedUrLs$.toString()),
   ],
   contentType: 'multipart/form-data',
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

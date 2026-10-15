@@ -122,15 +122,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = MipOptOut.$false, this.tag, });
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold, this.eotTimeoutMs, this.keyterm, this.mipOptOut, this.tag, });
 
 factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: json['eager_eot_threshold'] as String?,
   encoding: WorkersAiPostRunCfDeepgramFluxRequestEncoding.fromJson(json['encoding'] as String),
-  eotThreshold: json.containsKey('eot_threshold') ? json['eot_threshold'] as String : '0.7',
-  eotTimeoutMs: json.containsKey('eot_timeout_ms') ? json['eot_timeout_ms'] as String : '5000',
+  eotThreshold: json['eot_threshold'] as String?,
+  eotTimeoutMs: json['eot_timeout_ms'] as String?,
   keyterm: json['keyterm'] as String?,
-  mipOptOut: json.containsKey('mip_opt_out') ? MipOptOut.fromJson(json['mip_opt_out'] as String) : MipOptOut.$false,
+  mipOptOut: json['mip_opt_out'] != null ? MipOptOut.fromJson(json['mip_opt_out'] as String) : null,
   sampleRate: json['sample_rate'] as String,
   tag: json['tag'] as String?,
 ); }
@@ -142,16 +142,16 @@ final String? eagerEotThreshold;
 final WorkersAiPostRunCfDeepgramFluxRequestEncoding encoding;
 
 /// End-of-turn confidence required to finish a turn. Valid Values 0.5 - 0.9.
-final String eotThreshold;
+final String? eotThreshold;
 
 /// A turn will be finished when this much time has passed after speech, regardless of EOT confidence.
-final String eotTimeoutMs;
+final String? eotTimeoutMs;
 
 /// Keyterm prompting can improve recognition of specialized terminology. Pass multiple keyterm query parameters to boost multiple keyterms.
 final String? keyterm;
 
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
-final MipOptOut mipOptOut;
+final MipOptOut? mipOptOut;
 
 /// Sample rate of the audio stream in Hz.
 final String sampleRate;
@@ -159,13 +159,22 @@ final String sampleRate;
 /// Label your requests for the purpose of identification during usage reporting
 final String? tag;
 
+/// The value of `eotThreshold`, or its schema default when absent.
+String get eotThresholdOrDefault => eotThreshold ?? '0.7';
+
+/// The value of `eotTimeoutMs`, or its schema default when absent.
+String get eotTimeoutMsOrDefault => eotTimeoutMs ?? '5000';
+
+/// The value of `mipOptOut`, or its schema default when absent.
+MipOptOut get mipOptOutOrDefault => mipOptOut ?? MipOptOut.fromJson('false');
+
 Map<String, dynamic> toJson() { return {
   'eager_eot_threshold': ?eagerEotThreshold,
   'encoding': encoding.toJson(),
-  'eot_threshold': eotThreshold,
-  'eot_timeout_ms': eotTimeoutMs,
+  'eot_threshold': ?eotThreshold,
+  'eot_timeout_ms': ?eotTimeoutMs,
   'keyterm': ?keyterm,
-  'mip_opt_out': mipOptOut.toJson(),
+  if (mipOptOut != null) 'mip_opt_out': mipOptOut?.toJson(),
   'sample_rate': sampleRate,
   'tag': ?tag,
 }; } 
@@ -173,10 +182,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('encod
       json.containsKey('sample_rate') && json['sample_rate'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^[0-9]+$').hasMatch(eotTimeoutMs)) { errors.add(r'eotTimeoutMs: must match pattern ^[0-9]+$'); }
+final eotTimeoutMs$ = eotTimeoutMs;
+if (eotTimeoutMs$ != null) {
+  if (!RegExp(r'^[0-9]+$').hasMatch(eotTimeoutMs$)) { errors.add(r'eotTimeoutMs: must match pattern ^[0-9]+$'); }
+}
 if (!RegExp(r'^[0-9]+$').hasMatch(sampleRate)) { errors.add(r'sampleRate: must match pattern ^[0-9]+$'); }
 return errors; } 
-WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String Function()? eotThreshold, String Function()? eotTimeoutMs, String? Function()? keyterm, MipOptOut Function()? mipOptOut, String? sampleRate, String? Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
+WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String? Function()? eotThreshold, String? Function()? eotTimeoutMs, String? Function()? keyterm, MipOptOut? Function()? mipOptOut, String? sampleRate, String? Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: eagerEotThreshold != null ? eagerEotThreshold() : this.eagerEotThreshold,
   encoding: encoding ?? this.encoding,
   eotThreshold: eotThreshold != null ? eotThreshold() : this.eotThreshold,

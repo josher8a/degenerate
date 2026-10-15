@@ -55,8 +55,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? whisper1
  }
 /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [CreateTranslationRequestModelVariant2]
-typedef CreateTranslationRequestModel = OneOf2<String,CreateTranslationRequestModelVariant2>;
+@immutable final class CreateTranslationRequestModel {/// A value built from one or more typed views (at least one must be present).
+const CreateTranslationRequestModel({this.string = const Omittable.absent(), this.createTranslationRequestModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const CreateTranslationRequestModel._({required this.rawValue, required this.string, required this.createTranslationRequestModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CreateTranslationRequestModel.fromJson(Object? json) { return CreateTranslationRequestModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  createTranslationRequestModelVariant2: parseAnyOfVariant<CreateTranslationRequestModelVariant2>(json, (value) => CreateTranslationRequestModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `CreateTranslationRequestModelVariant2`, when it matches.
+final Omittable<CreateTranslationRequestModelVariant2> createTranslationRequestModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || createTranslationRequestModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (createTranslationRequestModelVariant2.isPresent) createTranslationRequestModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CreateTranslationRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'CreateTranslationRequestModel(${toJson()})';
+
+ }

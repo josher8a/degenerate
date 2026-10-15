@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentDetails
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details/customer_reference.dart';import 'package:pub_stripe_spec3/models/payment_details/order_reference.dart';/// Provides industry-specific information about the charge.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_details/customer_reference.dart';import 'package:pub_stripe_spec3/models/payment_details/order_reference.dart';/// Provides industry-specific information about the charge.
 @immutable final class PaymentDetails {const PaymentDetails({this.customerReference, this.orderReference, });
 
 factory PaymentDetails.fromJson(Map<String, dynamic> json) { return PaymentDetails(
-  customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  orderReference: json['order_reference'] != null ? OneOf2.parse(json['order_reference'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  customerReference: json['customer_reference'] != null ? CustomerReference.fromJson(json['customer_reference']) : null,
+  orderReference: json['order_reference'] != null ? OrderReference.fromJson(json['order_reference']) : null,
 ); }
 
 final CustomerReference? customerReference;

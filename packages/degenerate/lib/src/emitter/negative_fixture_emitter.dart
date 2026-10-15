@@ -230,7 +230,7 @@ final class NegativeFixtureEmitter {
   Map<SpecString, String>? _validFieldEntries(List<IrField> fields) {
     final entries = <SpecString, String>{};
     for (final f in fields) {
-      if (!f.isRequired && !fieldHasDefault(f)) continue;
+      if (!f.isRequired) continue;
       final lit = _sampleLiteral(f.type);
       if (lit == null) return null;
       entries[f.originalName] = lit;

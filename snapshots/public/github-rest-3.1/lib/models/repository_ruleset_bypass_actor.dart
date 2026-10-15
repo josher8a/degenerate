@@ -198,12 +198,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
  }
 /// An actor that can bypass rules in a ruleset
-@immutable final class RepositoryRulesetBypassActor {const RepositoryRulesetBypassActor({required this.actorType, this.actorId = const Omittable.absent(), this.bypassMode = BypassMode.always, });
+@immutable final class RepositoryRulesetBypassActor {const RepositoryRulesetBypassActor({required this.actorType, this.actorId = const Omittable.absent(), this.bypassMode, });
 
 factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) { return RepositoryRulesetBypassActor(
   actorId: json.containsKey('actor_id') ? Omittable(json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null) : const Omittable.absent(),
   actorType: ActorType.fromJson(json['actor_type'] as String),
-  bypassMode: json.containsKey('bypass_mode') ? BypassMode.fromJson(json['bypass_mode'] as String) : BypassMode.always,
+  bypassMode: json['bypass_mode'] != null ? BypassMode.fromJson(json['bypass_mode'] as String) : null,
 ); }
 
 /// The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, and `Team` actor types. If `actor_type` is `OrganizationAdmin`, `actor_id` is ignored. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
@@ -213,15 +213,18 @@ final Omittable<int?> actorId;
 final ActorType actorType;
 
 /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
-final BypassMode bypassMode;
+final BypassMode? bypassMode;
+
+/// The value of `bypassMode`, or its schema default when absent.
+BypassMode get bypassModeOrDefault => bypassMode ?? BypassMode.fromJson('always');
 
 Map<String, dynamic> toJson() { return {
   if (actorId.isPresent) 'actor_id': actorId.value,
   'actor_type': actorType.toJson(),
-  'bypass_mode': bypassMode.toJson(),
+  if (bypassMode != null) 'bypass_mode': bypassMode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor_type'); } 
-RepositoryRulesetBypassActor copyWith({Omittable<int?>? actorId, ActorType? actorType, BypassMode Function()? bypassMode, }) { return RepositoryRulesetBypassActor(
+RepositoryRulesetBypassActor copyWith({Omittable<int?>? actorId, ActorType? actorType, BypassMode? Function()? bypassMode, }) { return RepositoryRulesetBypassActor(
   actorId: actorId ?? this.actorId,
   actorType: actorType ?? this.actorType,
   bypassMode: bypassMode != null ? bypassMode() : this.bypassMode,

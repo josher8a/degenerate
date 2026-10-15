@@ -1,91 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZeroTrustGatewayBlockPageSettings
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
-sealed class ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode();
-
-factory ZeroTrustGatewayBlockPageSettingsMode.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'customized_block_page' => customizedBlockPage,
-  'redirect_uri' => redirectUri,
-  _ => ZeroTrustGatewayBlockPageSettingsMode$Unknown(json),
-}; }
-
-static const ZeroTrustGatewayBlockPageSettingsMode $empty = ZeroTrustGatewayBlockPageSettingsMode$$empty._();
-
-static const ZeroTrustGatewayBlockPageSettingsMode customizedBlockPage = ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage._();
-
-static const ZeroTrustGatewayBlockPageSettingsMode redirectUri = ZeroTrustGatewayBlockPageSettingsMode$redirectUri._();
-
-static const List<ZeroTrustGatewayBlockPageSettingsMode> values = [$empty, customizedBlockPage, redirectUri];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  '' => r'$empty',
-  'customized_block_page' => 'customizedBlockPage',
-  'redirect_uri' => 'redirectUri',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayBlockPageSettingsMode$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() customizedBlockPage, required W Function() redirectUri, required W Function(String value) $unknown, }) { return switch (this) {
-      ZeroTrustGatewayBlockPageSettingsMode$$empty() => $empty(),
-      ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage() => customizedBlockPage(),
-      ZeroTrustGatewayBlockPageSettingsMode$redirectUri() => redirectUri(),
-      ZeroTrustGatewayBlockPageSettingsMode$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? customizedBlockPage, W Function()? redirectUri, W Function(String value)? $unknown, }) { return switch (this) {
-      ZeroTrustGatewayBlockPageSettingsMode$$empty() => $empty != null ? $empty() : orElse(value),
-      ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage() => customizedBlockPage != null ? customizedBlockPage() : orElse(value),
-      ZeroTrustGatewayBlockPageSettingsMode$redirectUri() => redirectUri != null ? redirectUri() : orElse(value),
-      ZeroTrustGatewayBlockPageSettingsMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'ZeroTrustGatewayBlockPageSettingsMode($value)';
-
- }
-@immutable final class ZeroTrustGatewayBlockPageSettingsMode$$empty extends ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode$$empty._();
-
-@override String get value => '';
-
-@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBlockPageSettingsMode$$empty;
-
-@override int get hashCode => ''.hashCode;
-
- }
-@immutable final class ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage extends ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage._();
-
-@override String get value => 'customized_block_page';
-
-@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage;
-
-@override int get hashCode => 'customized_block_page'.hashCode;
-
- }
-@immutable final class ZeroTrustGatewayBlockPageSettingsMode$redirectUri extends ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode$redirectUri._();
-
-@override String get value => 'redirect_uri';
-
-@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBlockPageSettingsMode$redirectUri;
-
-@override int get hashCode => 'redirect_uri'.hashCode;
-
- }
-@immutable final class ZeroTrustGatewayBlockPageSettingsMode$Unknown extends ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ZeroTrustGatewayBlockPageSettingsMode$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
-/// Specify block page layout settings.
-@immutable final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled = const Omittable.absent(), this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode = ZeroTrustGatewayBlockPageSettingsMode.$empty, this.name, this.readOnly = const Omittable.absent(), this.sourceAccount = const Omittable.absent(), this.suppressFooter, this.targetUri, this.version = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_block_page_settings/zero_trust_gateway_block_page_settings_mode.dart';/// Specify block page layout settings.
+@immutable final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled = const Omittable.absent(), this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode, this.name, this.readOnly = const Omittable.absent(), this.sourceAccount = const Omittable.absent(), this.suppressFooter, this.targetUri, this.version = const Omittable.absent(), });
 
 factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBlockPageSettings(
   backgroundColor: json['background_color'] as String?,
@@ -96,7 +13,7 @@ factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { 
   logoPath: json['logo_path'] as String?,
   mailtoAddress: json['mailto_address'] as String?,
   mailtoSubject: json['mailto_subject'] as String?,
-  mode: json.containsKey('mode') ? ZeroTrustGatewayBlockPageSettingsMode.fromJson(json['mode'] as String) : ZeroTrustGatewayBlockPageSettingsMode.$empty,
+  mode: json['mode'] != null ? ZeroTrustGatewayBlockPageSettingsMode.fromJson(json['mode'] as String) : null,
   name: json['name'] as String?,
   readOnly: json.containsKey('read_only') ? Omittable(json['read_only'] as bool?) : const Omittable.absent(),
   sourceAccount: json.containsKey('source_account') ? Omittable(json['source_account'] as String?) : const Omittable.absent(),
@@ -142,7 +59,7 @@ final String? mailtoAddress;
 final String? mailtoSubject;
 
 /// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
-final ZeroTrustGatewayBlockPageSettingsMode mode;
+final ZeroTrustGatewayBlockPageSettingsMode? mode;
 
 /// Specify the block page title when the mode is customized_block_page.
 /// 
@@ -168,6 +85,9 @@ final Uri? targetUri;
 /// Example: `1`
 final Omittable<int?> version;
 
+/// The value of `mode`, or its schema default when absent.
+ZeroTrustGatewayBlockPageSettingsMode get modeOrDefault => mode ?? ZeroTrustGatewayBlockPageSettingsMode.fromJson('');
+
 Map<String, dynamic> toJson() { return {
   'background_color': ?backgroundColor,
   if (enabled.isPresent) 'enabled': enabled.value,
@@ -177,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'logo_path': ?logoPath,
   'mailto_address': ?mailtoAddress,
   'mailto_subject': ?mailtoSubject,
-  'mode': mode.toJson(),
+  if (mode != null) 'mode': mode?.toJson(),
   'name': ?name,
   if (readOnly.isPresent) 'read_only': readOnly.value,
   if (sourceAccount.isPresent) 'source_account': sourceAccount.value,
@@ -186,7 +106,7 @@ Map<String, dynamic> toJson() { return {
   if (version.isPresent) 'version': version.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'enabled', 'footer_text', 'header_text', 'include_context', 'logo_path', 'mailto_address', 'mailto_subject', 'mode', 'name', 'read_only', 'source_account', 'suppress_footer', 'target_uri', 'version'}.contains(key)); } 
-ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor, Omittable<bool?>? enabled, String? Function()? footerText, String? Function()? headerText, bool? Function()? includeContext, String? Function()? logoPath, String? Function()? mailtoAddress, String? Function()? mailtoSubject, ZeroTrustGatewayBlockPageSettingsMode Function()? mode, String? Function()? name, Omittable<bool?>? readOnly, Omittable<String?>? sourceAccount, bool? Function()? suppressFooter, Uri? Function()? targetUri, Omittable<int?>? version, }) { return ZeroTrustGatewayBlockPageSettings(
+ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor, Omittable<bool?>? enabled, String? Function()? footerText, String? Function()? headerText, bool? Function()? includeContext, String? Function()? logoPath, String? Function()? mailtoAddress, String? Function()? mailtoSubject, ZeroTrustGatewayBlockPageSettingsMode? Function()? mode, String? Function()? name, Omittable<bool?>? readOnly, Omittable<String?>? sourceAccount, bool? Function()? suppressFooter, Uri? Function()? targetUri, Omittable<int?>? version, }) { return ZeroTrustGatewayBlockPageSettings(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   enabled: enabled ?? this.enabled,
   footerText: footerText != null ? footerText() : this.footerText,

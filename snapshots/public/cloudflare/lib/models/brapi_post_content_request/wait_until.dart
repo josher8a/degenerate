@@ -306,10 +306,59 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? load, W 
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [WaitUntilVariant1]
-/// - `.b` → [WaitUntilVariant2]
-/// - `.c` → [WaitUntilVariant3]
-/// - `.d` → [WaitUntilVariant4]
-/// - `.e` → [List<WaitUntilVariant5>]
-typedef WaitUntil = OneOf5<WaitUntilVariant1,WaitUntilVariant2,WaitUntilVariant3,WaitUntilVariant4,List<WaitUntilVariant5>>;
+@immutable final class WaitUntil {/// A value built from one or more typed views (at least one must be present).
+const WaitUntil({this.waitUntilVariant1 = const Omittable.absent(), this.waitUntilVariant2 = const Omittable.absent(), this.waitUntilVariant3 = const Omittable.absent(), this.waitUntilVariant4 = const Omittable.absent(), this.listWaitUntilVariant5 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const WaitUntil._({required this.rawValue, required this.waitUntilVariant1, required this.waitUntilVariant2, required this.waitUntilVariant3, required this.waitUntilVariant4, required this.listWaitUntilVariant5, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory WaitUntil.fromJson(Object? json) { return WaitUntil._(
+  rawValue: Omittable(json),
+  waitUntilVariant1: parseAnyOfVariant<WaitUntilVariant1>(json, (value) => WaitUntilVariant1.fromJson(value! as String)),
+  waitUntilVariant2: parseAnyOfVariant<WaitUntilVariant2>(json, (value) => WaitUntilVariant2.fromJson(value! as String)),
+  waitUntilVariant3: parseAnyOfVariant<WaitUntilVariant3>(json, (value) => WaitUntilVariant3.fromJson(value! as String)),
+  waitUntilVariant4: parseAnyOfVariant<WaitUntilVariant4>(json, (value) => WaitUntilVariant4.fromJson(value! as String)),
+  listWaitUntilVariant5: parseAnyOfVariant<List<WaitUntilVariant5>>(json, (value) => (value! as List<dynamic>).map((e) => WaitUntilVariant5.fromJson(e as String)).toList()),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `WaitUntilVariant1`, when it matches.
+final Omittable<WaitUntilVariant1> waitUntilVariant1;
+
+/// The payload decoded as `WaitUntilVariant2`, when it matches.
+final Omittable<WaitUntilVariant2> waitUntilVariant2;
+
+/// The payload decoded as `WaitUntilVariant3`, when it matches.
+final Omittable<WaitUntilVariant3> waitUntilVariant3;
+
+/// The payload decoded as `WaitUntilVariant4`, when it matches.
+final Omittable<WaitUntilVariant4> waitUntilVariant4;
+
+/// The payload decoded as `List<WaitUntilVariant5>`, when it matches.
+final Omittable<List<WaitUntilVariant5>> listWaitUntilVariant5;
+
+/// Whether at least one variant matched.
+bool get isValid => waitUntilVariant1.isPresent || waitUntilVariant2.isPresent || waitUntilVariant3.isPresent || waitUntilVariant4.isPresent || listWaitUntilVariant5.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (waitUntilVariant1.isPresent) waitUntilVariant1.value?.toJson(),
+    if (waitUntilVariant2.isPresent) waitUntilVariant2.value?.toJson(),
+    if (waitUntilVariant3.isPresent) waitUntilVariant3.value?.toJson(),
+    if (waitUntilVariant4.isPresent) waitUntilVariant4.value?.toJson(),
+    if (listWaitUntilVariant5.isPresent) listWaitUntilVariant5.value?.map((e) => e.toJson()).toList(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is WaitUntil && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'WaitUntil(${toJson()})';
+
+ }

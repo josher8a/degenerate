@@ -100,16 +100,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? leftTop,
 
  }
 /// Watermark to be added to the recording
-@immutable final class Watermark {const Watermark({this.position = Position.leftTop, this.size, this.url, });
+@immutable final class Watermark {const Watermark({this.position, this.size, this.url, });
 
 factory Watermark.fromJson(Map<String, dynamic> json) { return Watermark(
-  position: json.containsKey('position') ? Position.fromJson(json['position'] as String) : Position.leftTop,
+  position: json['position'] != null ? Position.fromJson(json['position'] as String) : null,
   size: json['size'] != null ? WatermarkSize.fromJson(json['size'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
 /// Position of the watermark
-final Position position;
+final Position? position;
 
 /// Size of the watermark
 final WatermarkSize? size;
@@ -117,13 +117,16 @@ final WatermarkSize? size;
 /// URL of the watermark image
 final Uri? url;
 
+/// The value of `position`, or its schema default when absent.
+Position get positionOrDefault => position ?? Position.fromJson('left top');
+
 Map<String, dynamic> toJson() { return {
-  'position': position.toJson(),
+  if (position != null) 'position': position?.toJson(),
   if (size != null) 'size': size?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key)); } 
-Watermark copyWith({Position Function()? position, WatermarkSize? Function()? size, Uri? Function()? url, }) { return Watermark(
+Watermark copyWith({Position? Function()? position, WatermarkSize? Function()? size, Uri? Function()? url, }) { return Watermark(
   position: position != null ? position() : this.position,
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImagesImageDirectUploadRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageDirectUploadRequest {const ImagesImageDirectUploadRequest({this.creator, this.expiry, this.id, this.metadata, this.requireSignedUrLs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageDirectUploadRequest {const ImagesImageDirectUploadRequest({this.creator, this.expiry, this.id, this.metadata, this.requireSignedUrLs, });
 
 factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) { return ImagesImageDirectUploadRequest(
   creator: json['creator'] as String?,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   id: json['id'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-  requireSignedUrLs: json.containsKey('requireSignedURLs') ? json['requireSignedURLs'] as bool : false,
+  requireSignedUrLs: json['requireSignedURLs'] as bool?,
 ); }
 
 /// Can set the creator field with an internal user ID.
@@ -30,14 +30,17 @@ final Map<String,dynamic>? metadata;
 /// Indicates whether the image requires a signature token to be accessed.
 /// 
 /// Example: `true`
-final bool requireSignedUrLs;
+final bool? requireSignedUrLs;
+
+/// The value of `requireSignedUrLs`, or its schema default when absent.
+bool get requireSignedUrLsOrDefault => requireSignedUrLs ?? false;
 
 Map<String, dynamic> toJson() { return {
   'creator': ?creator,
   if (expiry != null) 'expiry': expiry?.toIso8601String(),
   'id': ?id,
   'metadata': ?metadata,
-  'requireSignedURLs': requireSignedUrLs,
+  'requireSignedURLs': ?requireSignedUrLs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'expiry', 'id', 'metadata', 'requireSignedURLs'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
@@ -47,7 +50,7 @@ if (id$ != null) {
   if (id$.runes.length > 1024) { errors.add('id: length must be <= 1024'); }
 }
 return errors; } 
-ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? Function()? expiry, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
+ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? Function()? expiry, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,
   id: id != null ? id() : this.id,

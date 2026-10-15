@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsUpdateSelfHostedRunnerGroupForOrgRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsUpdateSelfHostedRunnerGroupForOrgRequest {const ActionsUpdateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility, this.allowsPublicRepositories = false, this.restrictedToWorkflows = false, this.selectedWorkflows, this.networkConfigurationId = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsUpdateSelfHostedRunnerGroupForOrgRequest {const ActionsUpdateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility, this.allowsPublicRepositories, this.restrictedToWorkflows, this.selectedWorkflows, this.networkConfigurationId = const Omittable.absent(), });
 
 factory ActionsUpdateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateSelfHostedRunnerGroupForOrgRequest(
   name: json['name'] as String,
   visibility: json['visibility'] != null ? ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String) : null,
-  allowsPublicRepositories: json.containsKey('allows_public_repositories') ? json['allows_public_repositories'] as bool : false,
-  restrictedToWorkflows: json.containsKey('restricted_to_workflows') ? json['restricted_to_workflows'] as bool : false,
+  allowsPublicRepositories: json['allows_public_repositories'] as bool?,
+  restrictedToWorkflows: json['restricted_to_workflows'] as bool?,
   selectedWorkflows: (json['selected_workflows'] as List<dynamic>?)?.map((e) => e as String).toList(),
   networkConfigurationId: json.containsKey('network_configuration_id') ? Omittable(json['network_configuration_id'] as String?) : const Omittable.absent(),
 ); }
@@ -19,10 +19,10 @@ final String name;
 final ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility;
 
 /// Whether the runner group can be used by `public` repositories.
-final bool allowsPublicRepositories;
+final bool? allowsPublicRepositories;
 
 /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
-final bool restrictedToWorkflows;
+final bool? restrictedToWorkflows;
 
 /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
 final List<String>? selectedWorkflows;
@@ -30,16 +30,22 @@ final List<String>? selectedWorkflows;
 /// The identifier of a hosted compute network configuration.
 final Omittable<String?> networkConfigurationId;
 
+/// The value of `allowsPublicRepositories`, or its schema default when absent.
+bool get allowsPublicRepositoriesOrDefault => allowsPublicRepositories ?? false;
+
+/// The value of `restrictedToWorkflows`, or its schema default when absent.
+bool get restrictedToWorkflowsOrDefault => restrictedToWorkflows ?? false;
+
 Map<String, dynamic> toJson() { return {
   'name': name,
   if (visibility != null) 'visibility': visibility?.toJson(),
-  'allows_public_repositories': allowsPublicRepositories,
-  'restricted_to_workflows': restrictedToWorkflows,
+  'allows_public_repositories': ?allowsPublicRepositories,
+  'restricted_to_workflows': ?restrictedToWorkflows,
   'selected_workflows': ?selectedWorkflows,
   if (networkConfigurationId.isPresent) 'network_configuration_id': networkConfigurationId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ActionsUpdateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateOrUpdateOrgSecretRequestVisibility? Function()? visibility, bool Function()? allowsPublicRepositories, bool Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, Omittable<String?>? networkConfigurationId, }) { return ActionsUpdateSelfHostedRunnerGroupForOrgRequest(
+ActionsUpdateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateOrUpdateOrgSecretRequestVisibility? Function()? visibility, bool? Function()? allowsPublicRepositories, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, Omittable<String?>? networkConfigurationId, }) { return ActionsUpdateSelfHostedRunnerGroupForOrgRequest(
   name: name ?? this.name,
   visibility: visibility != null ? visibility() : this.visibility,
   allowsPublicRepositories: allowsPublicRepositories != null ? allowsPublicRepositories() : this.allowsPublicRepositories,

@@ -7,7 +7,7 @@ factory UnionDateNullResponse.fromJson(Map<String, dynamic> json) { return Union
   json: json['json'],
 ); }
 
-/// One of: String, dynamic
+/// One of: String
 final dynamic json;
 
 Map<String, dynamic> toJson() { return {

@@ -219,14 +219,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class WorkersAiPostRunCfDeepgramAura1Request {const WorkersAiPostRunCfDeepgramAura1Request({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker = WorkersAiPostRunCfDeepgramAura1RequestSpeaker.angus, });
+@immutable final class WorkersAiPostRunCfDeepgramAura1Request {const WorkersAiPostRunCfDeepgramAura1Request({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker, });
 
 factory WorkersAiPostRunCfDeepgramAura1Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: json['bit_rate'] != null ? (json['bit_rate'] as num).toDouble() : null,
   container: json['container'] != null ? WorkersAiPostRunCfDeepgramAura1RequestContainer.fromJson(json['container'] as String) : null,
   encoding: json['encoding'] != null ? WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(json['encoding'] as String) : null,
   sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
-  speaker: json.containsKey('speaker') ? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(json['speaker'] as String) : WorkersAiPostRunCfDeepgramAura1RequestSpeaker.angus,
+  speaker: json['speaker'] != null ? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(json['speaker'] as String) : null,
   text: json['text'] as String,
 ); }
 
@@ -243,21 +243,24 @@ final WorkersAiPostRunCfDeepgramAura1RequestEncoding? encoding;
 final double? sampleRate;
 
 /// Speaker used to produce the audio.
-final WorkersAiPostRunCfDeepgramAura1RequestSpeaker speaker;
+final WorkersAiPostRunCfDeepgramAura1RequestSpeaker? speaker;
 
 /// The text content to be converted to speech
 final String text;
+
+/// The value of `speaker`, or its schema default when absent.
+WorkersAiPostRunCfDeepgramAura1RequestSpeaker get speakerOrDefault => speaker ?? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson('angus');
 
 Map<String, dynamic> toJson() { return {
   'bit_rate': ?bitRate,
   if (container != null) 'container': container?.toJson(),
   if (encoding != null) 'encoding': encoding?.toJson(),
   'sample_rate': ?sampleRate,
-  'speaker': speaker.toJson(),
+  if (speaker != null) 'speaker': speaker?.toJson(),
   'text': text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura1Request(
+WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker? Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: bitRate != null ? bitRate() : this.bitRate,
   container: container != null ? container() : this.container,
   encoding: encoding != null ? encoding() : this.encoding,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TransferReversal
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TransferReversalObject {const TransferReversalObject();
 
 factory TransferReversalObject.fromJson(String json) { return switch (json) {
@@ -71,15 +71,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transfer
 
 factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferReversal(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  destinationPaymentRefund: json.containsKey('destination_payment_refund') ? Omittable(json['destination_payment_refund'] != null ? OneOf2.parse(json['destination_payment_refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  destinationPaymentRefund: json.containsKey('destination_payment_refund') ? Omittable(json['destination_payment_refund'] != null ? DestinationPaymentRefund.fromJson(json['destination_payment_refund']) : null) : const Omittable.absent(),
   id: json['id'] as String,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: TransferReversalObject.fromJson(json['object'] as String),
-  sourceRefund: json.containsKey('source_refund') ? Omittable(json['source_refund'] != null ? OneOf2.parse(json['source_refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  transfer: OneOf2.parse(json['transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),),
+  sourceRefund: json.containsKey('source_refund') ? Omittable(json['source_refund'] != null ? SourceRefund.fromJson(json['source_refund']) : null) : const Omittable.absent(),
+  transfer: ChargeTransfer.fromJson(json['transfer']),
 ); }
 
 /// Amount, in cents (or local equivalent).

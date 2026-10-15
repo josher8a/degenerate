@@ -26,7 +26,7 @@ EntityWithId copyWith({String? id, Map<String, dynamic>? additionalProperties, }
           id == other.id &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(id, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(id, mapHash(additionalProperties));
 
 @override String toString() => 'EntityWithId(id: $id, additionalProperties: $additionalProperties)';
 

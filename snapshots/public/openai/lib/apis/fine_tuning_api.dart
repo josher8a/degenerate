@@ -24,7 +24,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RunGraderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ValidateGraderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -85,7 +85,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListFineTuningCheckpointPermissionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -109,7 +109,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListFineTuningCheckpointPermissionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -131,7 +131,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeleteFineTuningCheckpointPermissionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -167,7 +167,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListPaginatedFineTuningJobsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -193,7 +193,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -235,7 +235,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -266,7 +266,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListFineTuningJobCheckpointsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -297,7 +297,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListFineTuningJobEventsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -317,7 +317,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -337,7 +337,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoiceRemoveLinesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request/post_invoices_invoice_remove_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequest {const PostInvoicesInvoiceRemoveLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request/post_invoices_invoice_remove_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequest {const PostInvoicesInvoiceRemoveLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
 factory PostInvoicesInvoiceRemoveLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRemoveLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceMetadata: json['invoice_metadata'] != null ? OneOf2.parse(json['invoice_metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  invoiceMetadata: json['invoice_metadata'] != null ? InvoiceMetadata.fromJson(json['invoice_metadata']) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceRemoveLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

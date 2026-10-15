@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomerSession
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CustomerSessionObject {const CustomerSessionObject();
 
 factory CustomerSessionObject.fromJson(String json) { return switch (json) {
@@ -66,7 +66,7 @@ factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSes
   clientSecret: json['client_secret'] as String,
   components: json['components'] != null ? CustomerSessionResourceComponents.fromJson(json['components'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
-  customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
+  customer: BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   expiresAt: (json['expires_at'] as num).toInt(),
   livemode: json['livemode'] as bool,

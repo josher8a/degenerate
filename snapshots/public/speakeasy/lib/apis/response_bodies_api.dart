@@ -19,7 +19,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -36,7 +36,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -61,7 +61,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
@@ -78,7 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TypedObject1.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -95,7 +95,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ReadOnlyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -114,7 +114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyAdditionalPropertiesPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyAdditionalPropertiesAnyPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyAdditionalPropertiesComplexNumbersPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -171,7 +171,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyAdditionalPropertiesDatePostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -190,7 +190,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyAdditionalPropertiesObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -212,7 +212,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
@@ -235,7 +235,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyDefaultEmptyStringResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -254,7 +254,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodyMultilineStringPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -271,7 +271,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -286,7 +286,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseBodies2xxJsonObjectAllOptionalPropertiesResponse2Xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -303,7 +303,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -320,7 +320,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BaseModelOverrideModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -337,7 +337,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ModelConfigCollisionModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -356,7 +356,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -375,7 +375,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OverriddenFieldNamesPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -392,7 +392,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlattenedUnionResponseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -409,7 +409,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlattenedEnvelopeResponseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -426,7 +426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlattenedEnvelopeUnionResponseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -451,7 +451,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlattenedEnvelopePaginationResponseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -476,7 +476,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlattenedEnvelopeUnionPaginationResponseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -493,7 +493,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NoneDefaultModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -510,7 +510,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MappingConsumer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -527,7 +527,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BaseModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -68,7 +68,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [MessagesFunctionCallVariant1]
-/// - `.b` → [FunctionCallVariant2]
-typedef FunctionCall = OneOf2<MessagesFunctionCallVariant1,FunctionCallVariant2>;
+@immutable final class FunctionCall {/// A value built from one or more typed views (at least one must be present).
+const FunctionCall({this.messagesFunctionCallVariant1 = const Omittable.absent(), this.functionCallVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const FunctionCall._({required this.rawValue, required this.messagesFunctionCallVariant1, required this.functionCallVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory FunctionCall.fromJson(Object? json) { return FunctionCall._(
+  rawValue: Omittable(json),
+  messagesFunctionCallVariant1: parseAnyOfVariant<MessagesFunctionCallVariant1>(json, (value) => MessagesFunctionCallVariant1.fromJson(value! as String)),
+  functionCallVariant2: json is Map<String, dynamic> && FunctionCallVariant2.canParse(json) ? parseAnyOfVariant<FunctionCallVariant2>(json, (value) => FunctionCallVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `MessagesFunctionCallVariant1`, when it matches.
+final Omittable<MessagesFunctionCallVariant1> messagesFunctionCallVariant1;
+
+/// The payload decoded as `FunctionCallVariant2`, when it matches.
+final Omittable<FunctionCallVariant2> functionCallVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => messagesFunctionCallVariant1.isPresent || functionCallVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (messagesFunctionCallVariant1.isPresent) messagesFunctionCallVariant1.value?.toJson(),
+    if (functionCallVariant2.isPresent) functionCallVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is FunctionCall && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'FunctionCall(${toJson()})';
+
+ }

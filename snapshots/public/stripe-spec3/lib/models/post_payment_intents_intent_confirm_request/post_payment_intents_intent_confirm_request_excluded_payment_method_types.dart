@@ -774,8 +774,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
  }
 /// The list of payment method types to exclude from use with this payment.
-///
-/// Variants:
-/// - `.a` → [List<ExcludedPaymentMethodTypesVariant1>]
-/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
-typedef PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes = OneOf2<List<ExcludedPaymentMethodTypesVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;
+@immutable final class PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes {/// A value built from one or more typed views (at least one must be present).
+const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes({this.listExcludedPaymentMethodTypesVariant1 = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._({required this.rawValue, required this.listExcludedPaymentMethodTypesVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(Object? json) { return PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._(
+  rawValue: Omittable(json),
+  listExcludedPaymentMethodTypesVariant1: parseAnyOfVariant<List<ExcludedPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => ExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
+  getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `List<ExcludedPaymentMethodTypesVariant1>`, when it matches.
+final Omittable<List<ExcludedPaymentMethodTypesVariant1>> listExcludedPaymentMethodTypesVariant1;
+
+/// The payload decoded as `GetPaymentMethodConfigurationsApplicationVariant2`, when it matches.
+final Omittable<GetPaymentMethodConfigurationsApplicationVariant2> getPaymentMethodConfigurationsApplicationVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => listExcludedPaymentMethodTypesVariant1.isPresent || getPaymentMethodConfigurationsApplicationVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listExcludedPaymentMethodTypesVariant1.isPresent) listExcludedPaymentMethodTypesVariant1.value?.map((e) => e.toJson()).toList(),
+    if (getPaymentMethodConfigurationsApplicationVariant2.isPresent) getPaymentMethodConfigurationsApplicationVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes(${toJson()})';
+
+ }

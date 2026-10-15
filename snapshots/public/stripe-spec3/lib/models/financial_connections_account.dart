@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FinancialConnectionsAccount
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_account_number_details.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_ownership_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/ownership.dart';import 'package:pub_stripe_spec3/models/financial_connections_account_ownership.dart';/// The type of the account. Account category is further divided in `subcategory`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_account_number_details.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_ownership_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/ownership.dart';/// The type of the account. Account category is further divided in `subcategory`.
 sealed class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory();
 
 factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
@@ -511,7 +511,7 @@ factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: FinancialConnectionsAccountObject.fromJson(json['object'] as String),
-  ownership: json.containsKey('ownership') ? Omittable(json['ownership'] != null ? OneOf2.parse(json['ownership'], fromA: (v) => v as String, fromB: (v) => FinancialConnectionsAccountOwnership.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  ownership: json.containsKey('ownership') ? Omittable(json['ownership'] != null ? Ownership.fromJson(json['ownership']) : null) : const Omittable.absent(),
   ownershipRefresh: json.containsKey('ownership_refresh') ? Omittable(json['ownership_refresh'] != null ? BankConnectionsResourceOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permissions: json.containsKey('permissions') ? Omittable((json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList()) : const Omittable.absent(),
   status: FinancialConnectionsAccountStatus.fromJson(json['status'] as String),

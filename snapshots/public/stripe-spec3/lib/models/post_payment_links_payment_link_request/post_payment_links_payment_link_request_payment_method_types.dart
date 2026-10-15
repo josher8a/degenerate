@@ -624,8 +624,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
  }
 /// The list of payment method types that customers can use. Pass an empty string to enable dynamic payment methods that use your [payment method settings](https://dashboard.stripe.com/settings/payment_methods).
-///
-/// Variants:
-/// - `.a` → [List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>]
-/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
-typedef PostPaymentLinksPaymentLinkRequestPaymentMethodTypes = OneOf2<List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;
+@immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypes {/// A value built from one or more typed views (at least one must be present).
+const PostPaymentLinksPaymentLinkRequestPaymentMethodTypes({this.listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const PostPaymentLinksPaymentLinkRequestPaymentMethodTypes._({required this.rawValue, required this.listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypes.fromJson(Object? json) { return PostPaymentLinksPaymentLinkRequestPaymentMethodTypes._(
+  rawValue: Omittable(json),
+  listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1: parseAnyOfVariant<List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
+  getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>`, when it matches.
+final Omittable<List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>> listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1;
+
+/// The payload decoded as `GetPaymentMethodConfigurationsApplicationVariant2`, when it matches.
+final Omittable<GetPaymentMethodConfigurationsApplicationVariant2> getPaymentMethodConfigurationsApplicationVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.isPresent || getPaymentMethodConfigurationsApplicationVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.isPresent) listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.value?.map((e) => e.toJson()).toList(),
+    if (getPaymentMethodConfigurationsApplicationVariant2.isPresent) getPaymentMethodConfigurationsApplicationVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestPaymentMethodTypes && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypes(${toJson()})';
+
+ }

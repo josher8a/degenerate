@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse,
@@ -43,7 +43,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError2.fromResponse,
@@ -63,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfTestHelloWorldCogError.fromResponse,

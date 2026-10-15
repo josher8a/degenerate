@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inline, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class InlineSkillParam {const InlineSkillParam({required this.name, required this.description, required this.source, this.type = InlineSkillParamType.inline, });
+@immutable final class InlineSkillParam {const InlineSkillParam({required this.type, required this.name, required this.description, required this.source, });
 
 factory InlineSkillParam.fromJson(Map<String, dynamic> json) { return InlineSkillParam(
   type: InlineSkillParamType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountInvoicesSettings
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_invoices_settings/account_invoices_settings_default_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_invoices_settings/account_invoices_settings_default_account_tax_ids.dart';/// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
 sealed class AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave();
 
 factory AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(String json) { return switch (json) {
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 @immutable final class AccountInvoicesSettings {const AccountInvoicesSettings({this.defaultAccountTaxIds = const Omittable.absent(), this.hostedPaymentMethodSave = const Omittable.absent(), });
 
 factory AccountInvoicesSettings.fromJson(Map<String, dynamic> json) { return AccountInvoicesSettings(
-  defaultAccountTaxIds: json.containsKey('default_account_tax_ids') ? Omittable((json['default_account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  defaultAccountTaxIds: json.containsKey('default_account_tax_ids') ? Omittable((json['default_account_tax_ids'] as List<dynamic>?)?.map(AccountInvoicesSettingsDefaultAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   hostedPaymentMethodSave: json.containsKey('hosted_payment_method_save') ? Omittable(json['hosted_payment_method_save'] != null ? AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(json['hosted_payment_method_save'] as String) : null) : const Omittable.absent(),
 ); }
 

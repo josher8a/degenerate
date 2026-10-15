@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 ///   }
 /// }
 /// ```
-@immutable final class CompactResource {const CompactResource({required this.id, required this.output, required this.createdAt, required this.usage, this.object = CompactResourceObject.responseCompaction, });
+@immutable final class CompactResource {const CompactResource({required this.id, required this.object, required this.output, required this.createdAt, required this.usage, });
 
 factory CompactResource.fromJson(Map<String, dynamic> json) { return CompactResource(
   id: json['id'] as String,

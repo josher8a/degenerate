@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > System)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class SystemRole {const SystemRole();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';sealed class SystemRole {const SystemRole();
 
 factory SystemRole.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, 
 @immutable final class MessagesSystem {const MessagesSystem({required this.content, required this.role, this.name, });
 
 factory MessagesSystem.fromJson(Map<String, dynamic> json) { return MessagesSystem(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => DeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: DeveloperContent.fromJson(json['content']),
   name: json['name'] as String?,
   role: SystemRole.fromJson(json['role'] as String),
 ); }

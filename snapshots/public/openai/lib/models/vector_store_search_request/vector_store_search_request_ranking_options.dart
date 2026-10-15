@@ -85,29 +85,38 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
  }
 /// Ranking options for search.
-@immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker = Ranker.auto, this.scoreThreshold = 0.0, });
+@immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker, this.scoreThreshold, });
 
 factory VectorStoreSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequestRankingOptions(
-  ranker: json.containsKey('ranker') ? Ranker.fromJson(json['ranker'] as String) : Ranker.auto,
-  scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.0,
+  ranker: json['ranker'] != null ? Ranker.fromJson(json['ranker'] as String) : null,
+  scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
 ); }
 
 /// Enable re-ranking; set to `none` to disable, which can help reduce latency.
-final Ranker ranker;
+final Ranker? ranker;
 
-final double scoreThreshold;
+final double? scoreThreshold;
+
+/// The value of `ranker`, or its schema default when absent.
+Ranker get rankerOrDefault => ranker ?? Ranker.fromJson('auto');
+
+/// The value of `scoreThreshold`, or its schema default when absent.
+double get scoreThresholdOrDefault => scoreThreshold ?? 0.0;
 
 Map<String, dynamic> toJson() { return {
-  'ranker': ranker.toJson(),
-  'score_threshold': scoreThreshold,
+  if (ranker != null) 'ranker': ranker?.toJson(),
+  'score_threshold': ?scoreThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (scoreThreshold < 0) { errors.add('scoreThreshold: must be >= 0'); }
-if (scoreThreshold > 1) { errors.add('scoreThreshold: must be <= 1'); }
+final scoreThreshold$ = scoreThreshold;
+if (scoreThreshold$ != null) {
+  if (scoreThreshold$ < 0) { errors.add('scoreThreshold: must be >= 0'); }
+  if (scoreThreshold$ > 1) { errors.add('scoreThreshold: must be <= 1'); }
+}
 return errors; } 
-VectorStoreSearchRequestRankingOptions copyWith({Ranker Function()? ranker, double Function()? scoreThreshold, }) { return VectorStoreSearchRequestRankingOptions(
+VectorStoreSearchRequestRankingOptions copyWith({Ranker? Function()? ranker, double? Function()? scoreThreshold, }) { return VectorStoreSearchRequestRankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
 ); } 

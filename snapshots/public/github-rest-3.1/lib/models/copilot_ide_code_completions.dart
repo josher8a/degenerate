@@ -41,7 +41,7 @@ CopilotIdeCodeCompletions copyWith({int? Function()? totalEngagedUsers, List<Cop
           listEquals(editors, other.editors) &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(languages ?? const []), Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(languages ?? const []), Object.hashAll(editors ?? const []), mapHash(additionalProperties));
 
 @override String toString() => 'CopilotIdeCodeCompletions(totalEngagedUsers: $totalEngagedUsers, languages: $languages, editors: $editors, additionalProperties: $additionalProperties)';
 

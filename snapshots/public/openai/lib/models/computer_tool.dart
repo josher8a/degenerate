@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ComputerTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
-@immutable final class ComputerTool {const ComputerTool({this.type = 'computer'});
+@immutable final class ComputerTool {const ComputerTool({required this.type});
 
 factory ComputerTool.fromJson(Map<String, dynamic> json) { return ComputerTool(
   type: json['type'] as String,

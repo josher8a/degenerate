@@ -14,7 +14,7 @@ final class InstantLogsJobsForAZoneApi with ApiExecutor {const InstantLogsJobsFo
 /// Lists Instant Logs jobs for a zone.
 ///
 /// `GET /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<List<LogpushInstantLogsJob>?, GetZonesZoneIdLogpushEdgeJobsError>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LogpushInstantLogsJob?>?, GetZonesZoneIdLogpushEdgeJobsError>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,11 +23,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => LogpushInstantLogsJob.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e == null ? null : LogpushInstantLogsJob.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: GetZonesZoneIdLogpushEdgeJobsError.fromResponse,
 );
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

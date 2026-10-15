@@ -41,7 +41,7 @@ factory WebhookPullRequestAssignedPullRequest.fromJson(Map<String, dynamic> json
   number: (json['number'] as num).toInt(),
   patchUrl: Uri.parse(json['patch_url'] as String),
   rebaseable: json.containsKey('rebaseable') ? Omittable(json['rebaseable'] as bool?) : const Omittable.absent(),
-  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => User12.fromJson(v as Map<String, dynamic>), fromB: (v) => Team10.fromJson(v as Map<String, dynamic>),)).toList(),
+  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => e == null ? null : OneOf2.parse(e, fromA: (v) => User12.fromJson(v as Map<String, dynamic>), fromB: (v) => Team10.fromJson(v as Map<String, dynamic>),)).toList(),
   requestedTeams: (json['requested_teams'] as List<dynamic>).map((e) => WebhooksPullRequest5RequestedTeams.fromJson(e as Map<String, dynamic>)).toList(),
   reviewCommentUrl: json['review_comment_url'] as String,
   reviewComments: json['review_comments'] != null ? (json['review_comments'] as num).toInt() : null,
@@ -134,7 +134,7 @@ final Uri patchUrl;
 
 final Omittable<bool?> rebaseable;
 
-final List<WebhookPullRequestAssignedPullRequestRequestedReviewers> requestedReviewers;
+final List<WebhookPullRequestAssignedPullRequestRequestedReviewers?> requestedReviewers;
 
 final List<WebhooksPullRequest5RequestedTeams> requestedTeams;
 
@@ -196,7 +196,7 @@ Map<String, dynamic> toJson() { return {
   'number': number,
   'patch_url': patchUrl.toString(),
   if (rebaseable.isPresent) 'rebaseable': rebaseable.value,
-  'requested_reviewers': requestedReviewers.map((e) => e.toJson()).toList(),
+  'requested_reviewers': requestedReviewers.map((e) => e?.toJson()).toList(),
   'requested_teams': requestedTeams.map((e) => e.toJson()).toList(),
   'review_comment_url': reviewCommentUrl,
   'review_comments': ?reviewComments,
@@ -244,7 +244,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookPullRequestAssignedPullRequest copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, int? Function()? additions, WebhooksIssueAssignee? Function()? assignee, List<WebhooksIssueAssignees?>? assignees, AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int? Function()? changedFiles, DateTime? Function()? closedAt, int? Function()? comments, Uri? commentsUrl, int? Function()? commits, Uri? commitsUrl, DateTime? createdAt, int? Function()? deletions, Uri? diffUrl, bool? draft, WebhookPullRequestAssignedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, bool? Function()? maintainerCanModify, String? Function()? mergeCommitSha, Omittable<bool?>? mergeable, String? Function()? mergeableState, Omittable<bool?>? merged, DateTime? Function()? mergedAt, Omittable<PullRequestMergedBy?>? mergedBy, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, Omittable<bool?>? rebaseable, List<WebhookPullRequestAssignedPullRequestRequestedReviewers>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int? Function()? reviewComments, Uri? reviewCommentsUrl, IssuesUpdateRequestState? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestAssignedPullRequest(
+WebhookPullRequestAssignedPullRequest copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, int? Function()? additions, WebhooksIssueAssignee? Function()? assignee, List<WebhooksIssueAssignees?>? assignees, AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int? Function()? changedFiles, DateTime? Function()? closedAt, int? Function()? comments, Uri? commentsUrl, int? Function()? commits, Uri? commitsUrl, DateTime? createdAt, int? Function()? deletions, Uri? diffUrl, bool? draft, WebhookPullRequestAssignedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, bool? Function()? maintainerCanModify, String? Function()? mergeCommitSha, Omittable<bool?>? mergeable, String? Function()? mergeableState, Omittable<bool?>? merged, DateTime? Function()? mergedAt, Omittable<PullRequestMergedBy?>? mergedBy, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, Omittable<bool?>? rebaseable, List<WebhookPullRequestAssignedPullRequestRequestedReviewers?>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int? Function()? reviewComments, Uri? reviewCommentsUrl, IssuesUpdateRequestState? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestAssignedPullRequest(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   additions: additions != null ? additions() : this.additions,

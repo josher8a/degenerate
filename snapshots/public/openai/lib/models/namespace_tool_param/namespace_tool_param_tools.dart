@@ -65,10 +65,10 @@ factory NamespaceToolParamTools.fromJson(Map<String, dynamic> json) { return swi
 }; }
 
 /// Build the `function` variant.
-factory NamespaceToolParamTools.function({required String name, Omittable<String?> description = const Omittable.absent(), Omittable<EmptyModelParam?> parameters = const Omittable.absent(), Omittable<bool?> strict = const Omittable.absent(), }) { return NamespaceToolParamToolsFunction(FunctionToolParam(name: name, description: description, parameters: parameters, strict: strict)); }
+factory NamespaceToolParamTools.function({required String name, Omittable<String?> description = const Omittable.absent(), Omittable<EmptyModelParam?> parameters = const Omittable.absent(), Omittable<bool?> strict = const Omittable.absent(), }) { return NamespaceToolParamToolsFunction(FunctionToolParam(type: FunctionToolParamType.fromJson('function'), name: name, description: description, parameters: parameters, strict: strict)); }
 
 /// Build the `custom` variant.
-factory NamespaceToolParamTools.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return NamespaceToolParamToolsCustom(CustomToolParam(name: name, description: description, format: format, deferLoading: deferLoading)); }
+factory NamespaceToolParamTools.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return NamespaceToolParamToolsCustom(CustomToolParam(type: 'custom', name: name, description: description, format: format, deferLoading: deferLoading)); }
 
 /// The discriminator value identifying this variant.
 NamespaceToolParamToolsType get type;
@@ -78,8 +78,6 @@ bool get isUnknown => this is NamespaceToolParamTools$Unknown;
 
 /// Shared by all variants of this union.
 String get name;
-/// Shared by all variants of this union.
-String? get description;
 R when<R>({required R Function(NamespaceToolParamToolsFunction) function, required R Function(NamespaceToolParamToolsCustom) custom, required R Function(NamespaceToolParamTools$Unknown) unknown, }) { return switch (this) {
   final NamespaceToolParamToolsFunction v => function(v),
   final NamespaceToolParamToolsCustom v => custom(v),
@@ -111,8 +109,6 @@ NamespaceToolParamToolsFunction copyWith({String? name, Omittable<String?>? desc
 
 @override String get name => functionToolParam.name;
 
-@override String? get description => functionToolParam.description.value;
-
  }
 @immutable final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);
 
@@ -139,8 +135,6 @@ NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? descri
 
 @override String get name => customToolParam.name;
 
-@override String? get description => customToolParam.description;
-
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -149,8 +143,6 @@ NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? descri
 final Map<String, dynamic> json;
 
 late final String _name = json['name'] as String;
-
-late final String? _description = json['description'] as String?;
 
 @override NamespaceToolParamToolsType get type => NamespaceToolParamToolsType.fromJson(json['type'] as String? ?? '');
 
@@ -164,7 +156,5 @@ late final String? _description = json['description'] as String?;
 @override String toString() => 'NamespaceToolParamTools.unknown($json)';
 
 @override String get name => _name;
-
-@override String? get description => _description;
 
  }

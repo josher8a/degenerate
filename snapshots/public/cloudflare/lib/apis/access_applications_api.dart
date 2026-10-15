@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccessApplicationsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_id.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_request.dart';import 'package:pub_cloudflare/models/access_app_response.dart';import 'package:pub_cloudflare/models/access_app_settings_request.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_policy_check_response/access_policy_check_response_result.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessApplicationsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_id.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_request_request.dart';import 'package:pub_cloudflare/models/access_app_response.dart';import 'package:pub_cloudflare/models/access_app_settings_request.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_policy_check_response/access_policy_check_response_result.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -52,11 +52,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => AccessAppResponse.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map(AccessAppResponse.fromJson).toList();
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -66,7 +66,7 @@ return execute(
 /// Adds a new application to Access.
 ///
 /// `POST /accounts/{account_id}/access/apps`
-Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,11 +77,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessAppResponse.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -100,11 +100,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessAppResponse.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -114,7 +114,7 @@ return execute(
 /// Updates an Access application.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -125,11 +125,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessAppResponse.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -148,7 +148,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -171,7 +171,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -196,7 +196,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -221,7 +221,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -244,7 +244,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

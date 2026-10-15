@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DependabotAlertWithRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_auto_dismissed_at.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_dismissed_at.dart';import 'package:pub_github_rest_3_1/models/alert_fixed_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_dependency.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_state.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_dismissal_request_simple.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_vulnerability.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A Dependabot alert.
-@immutable final class DependabotAlertWithRepository {const DependabotAlertWithRepository({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, required this.repository, this.autoDismissedAt = const Omittable.absent(), this.dismissalRequest, this.assignees, });
+@immutable final class DependabotAlertWithRepository {const DependabotAlertWithRepository({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, required this.repository, this.autoDismissedAt = const Omittable.absent(), this.dismissalRequest = const Omittable.absent(), this.assignees, });
 
 factory DependabotAlertWithRepository.fromJson(Map<String, dynamic> json) { return DependabotAlertWithRepository(
   number: AlertNumber.fromJson(json['number'] as num),
@@ -20,7 +20,7 @@ factory DependabotAlertWithRepository.fromJson(Map<String, dynamic> json) { retu
   dismissedComment: json['dismissed_comment'] as String?,
   fixedAt: json['fixed_at'] != null ? AlertFixedAt.fromJson(json['fixed_at'] as String) : null,
   autoDismissedAt: json.containsKey('auto_dismissed_at') ? Omittable(json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null) : const Omittable.absent(),
-  dismissalRequest: json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null,
+  dismissalRequest: json.containsKey('dismissal_request') ? Omittable(json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   repository: SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>),
 ); }
@@ -67,7 +67,7 @@ final AlertFixedAt? fixedAt;
 /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final Omittable<AlertAutoDismissedAt?> autoDismissedAt;
 
-final DependabotAlertDismissalRequestSimple? dismissalRequest;
+final Omittable<DependabotAlertDismissalRequestSimple?> dismissalRequest;
 
 /// The users assigned to this alert.
 final List<SimpleUser>? assignees;
@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   'dismissed_comment': dismissedComment,
   'fixed_at': fixedAt?.toJson(),
   if (autoDismissedAt.isPresent) 'auto_dismissed_at': autoDismissedAt.value?.toJson(),
-  if (dismissalRequest != null) 'dismissal_request': dismissalRequest?.toJson(),
+  if (dismissalRequest.isPresent) 'dismissal_request': dismissalRequest.value?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'repository': repository.toJson(),
 }; } 
@@ -116,7 +116,7 @@ if (dismissedComment$ != null) {
   if (dismissedComment$.runes.length > 280) { errors.add('dismissedComment: length must be <= 280'); }
 }
 return errors; } 
-DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, DependabotAlertDismissalRequestSimple? Function()? dismissalRequest, List<SimpleUser>? Function()? assignees, SimpleRepository? repository, }) { return DependabotAlertWithRepository(
+DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, Omittable<DependabotAlertDismissalRequestSimple?>? dismissalRequest, List<SimpleUser>? Function()? assignees, SimpleRepository? repository, }) { return DependabotAlertWithRepository(
   number: number ?? this.number,
   state: state ?? this.state,
   dependency: dependency ?? this.dependency,
@@ -132,7 +132,7 @@ DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertStat
   dismissedComment: dismissedComment != null ? dismissedComment() : this.dismissedComment,
   fixedAt: fixedAt != null ? fixedAt() : this.fixedAt,
   autoDismissedAt: autoDismissedAt ?? this.autoDismissedAt,
-  dismissalRequest: dismissalRequest != null ? dismissalRequest() : this.dismissalRequest,
+  dismissalRequest: dismissalRequest ?? this.dismissalRequest,
   assignees: assignees != null ? assignees() : this.assignees,
   repository: repository ?? this.repository,
 ); } 

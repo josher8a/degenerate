@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicInterconnectsApi" (4 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_list_interconnect_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_list_interconnects_error.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_update_interconnect_error.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_update_multiple_interconnects_error.dart';import 'package:pub_cloudflare/models/magic_components_schemas_modified_tunnels_collection_response/magic_components_schemas_modified_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_modified_response/magic_components_schemas_tunnel_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_single_response/magic_components_schemas_tunnel_single_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnels_collection_response/magic_components_schemas_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_interconnect_tunnel_update_request.dart';/// MagicInterconnectsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_list_interconnect_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_list_interconnects_error.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_update_interconnect_error.dart';import 'package:pub_cloudflare/models/errors/magic_interconnects_update_multiple_interconnects_error.dart';import 'package:pub_cloudflare/models/magic_components_schemas_modified_tunnels_collection_response/magic_components_schemas_modified_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_modified_response/magic_components_schemas_tunnel_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_single_response/magic_components_schemas_tunnel_single_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnels_collection_response/magic_components_schemas_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_interconnect_tunnel_update_request_request.dart';/// MagicInterconnectsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,7 +54,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -80,7 +80,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -94,7 +94,7 @@ return execute(
 /// Updates a specific interconnect associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult, MagicInterconnectsUpdateInterconnectError>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult, MagicInterconnectsUpdateInterconnectError>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -108,7 +108,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoicePayRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request/post_invoices_invoice_pay_request_mandate.dart';@immutable final class PostInvoicesInvoicePayRequest {const PostInvoicesInvoicePayRequest({this.expand, this.forgive, this.mandate, this.offSession, this.paidOutOfBand, this.paymentMethod, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request/post_invoices_invoice_pay_request_mandate.dart';@immutable final class PostInvoicesInvoicePayRequest {const PostInvoicesInvoicePayRequest({this.expand, this.forgive, this.mandate, this.offSession, this.paidOutOfBand, this.paymentMethod, this.source, });
 
 factory PostInvoicesInvoicePayRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoicePayRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   forgive: json['forgive'] as bool?,
-  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  mandate: json['mandate'] != null ? PostInvoicesInvoicePayRequestMandate.fromJson(json['mandate']) : null,
   offSession: json['off_session'] as bool?,
   paidOutOfBand: json['paid_out_of_band'] as bool?,
   paymentMethod: json['payment_method'] as String?,

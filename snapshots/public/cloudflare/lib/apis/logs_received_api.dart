@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -37,18 +37,18 @@ return execute(
 /// Updates log retention flag for Logpull API.
 ///
 /// `POST /zones/{zone_id}/logs/control/retention/flag`
-Future<ApiResult<LogcontrolRetentionFlag?, DeleteAccountsAccountIdLogsControlCmbConfigError>> postZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, required LogcontrolRetentionFlag body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolRetentionFlag?, DeleteAccountsAccountIdLogsControlCmbConfigError>> postZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, required LogcontrolRetentionFlag? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logs/control/retention/flag',
   headers: headers,
-  body: jsonEncode(body.toJson()),
+  body: jsonEncode(body?.toJson()),
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -82,10 +82,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},);
+    return LogshareLogsResponseJsonLines.fromJson(jsonDecode(response.body));
   },
   onError: GetZonesZoneIdLogsRayidsRayIdError.fromResponse,
 );
@@ -125,10 +125,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},);
+    return LogshareLogsResponseJsonLines.fromJson(jsonDecode(response.body));
   },
   onError: GetZonesZoneIdLogsRayidsRayIdError.fromResponse,
 );
@@ -147,7 +147,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LogshareFieldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

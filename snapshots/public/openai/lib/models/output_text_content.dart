@@ -2,7 +2,7 @@
 // Source: #/components/schemas/OutputTextContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/log_prob.dart';/// A text output from the model.
-@immutable final class OutputTextContent {const OutputTextContent({required this.text, required this.annotations, required this.logprobs, this.type = 'output_text', });
+@immutable final class OutputTextContent {const OutputTextContent({required this.type, required this.text, required this.annotations, required this.logprobs, });
 
 factory OutputTextContent.fromJson(Map<String, dynamic> json) { return OutputTextContent(
   type: json['type'] as String,

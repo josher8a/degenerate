@@ -26,7 +26,7 @@ Metadata copyWith({String? Function()? name, Map<String, String>? additionalProp
           name == other.name &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(name, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(name, mapHash(additionalProperties));
 
 @override String toString() => 'Metadata(name: $name, additionalProperties: $additionalProperties)';
 

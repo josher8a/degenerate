@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SecondaryDnsSecondaryZoneApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_create_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_delete_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_force_axfr_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_secondary_zone_configuration_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_update_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/secondary_dns_dns_secondary_secondary_zone.dart';import 'package:pub_cloudflare/models/secondary_dns_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_incoming/secondary_dns_single_response_incoming_result.dart';/// SecondaryDnsSecondaryZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_create_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_delete_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_force_axfr_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_secondary_zone_configuration_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_update_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/secondary_dns_dns_secondary_secondary_zone_request.dart';import 'package:pub_cloudflare/models/secondary_dns_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_incoming/secondary_dns_single_response_incoming_result.dart';/// SecondaryDnsSecondaryZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -60,7 +60,7 @@ return execute(
 /// Create secondary zone configuration for incoming zone transfers.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<SecondaryDnsSingleResponseIncomingResult?, SecondaryDnsSecondaryZoneCreateSecondaryZoneConfigurationError>> secondaryDnsSecondaryZoneCreateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZone body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSingleResponseIncomingResult?, SecondaryDnsSecondaryZoneCreateSecondaryZoneConfigurationError>> secondaryDnsSecondaryZoneCreateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -85,7 +85,7 @@ return execute(
 /// Update secondary zone configuration for incoming zone transfers.
 ///
 /// `PUT /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<SecondaryDnsSingleResponseIncomingResult?, SecondaryDnsSecondaryZoneUpdateSecondaryZoneConfigurationError>> secondaryDnsSecondaryZoneUpdateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZone body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSingleResponseIncomingResult?, SecondaryDnsSecondaryZoneUpdateSecondaryZoneConfigurationError>> secondaryDnsSecondaryZoneUpdateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

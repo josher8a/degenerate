@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SessionSpaceSchema
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content, });
 
 factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionSpaceSchema(
   author: PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>),
@@ -14,7 +14,7 @@ factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionS
   shortDescription: json.containsKey('short_description') ? Omittable(json['short_description'] as String?) : const Omittable.absent(),
   recurring: json['recurring'] as String,
   image: json.containsKey('image') ? Omittable(json['image'] as String?) : const Omittable.absent(),
-  content: json.containsKey('content') ? json['content'] as String : '',
+  content: json['content'] as String?,
 ); }
 
 final PublicUserSchema author;
@@ -40,7 +40,10 @@ final String recurring;
 /// Image for the Space header, must be under 5mb
 final Omittable<String?> image;
 
-final String content;
+final String? content;
+
+/// The value of `content`, or its schema default when absent.
+String get contentOrDefault => content ?? '';
 
 Map<String, dynamic> toJson() { return {
   'author': author.toJson(),
@@ -53,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (shortDescription.isPresent) 'short_description': shortDescription.value,
   'recurring': recurring,
   if (image.isPresent) 'image': image.value,
-  'content': content,
+  'content': ?content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
       json.containsKey('title') && json['title'] is String &&
@@ -71,9 +74,12 @@ if (shortDescription$ != null) {
   if (shortDescription$.runes.length > 255) { errors.add('shortDescription: length must be <= 255'); }
 }
 if (recurring.runes.length > 255) { errors.add('recurring: length must be <= 255'); }
-if (content.runes.length > 10000) { errors.add('content: length must be <= 10000'); }
+final content$ = content;
+if (content$ != null) {
+  if (content$.runes.length > 10000) { errors.add('content: length must be <= 10000'); }
+}
 return errors; } 
-SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String Function()? content, }) { return SessionSpaceSchema(
+SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String? Function()? content, }) { return SessionSpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,
   slug: slug ?? this.slug,

@@ -1,43 +1,61 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RubyNumericLiteralsTest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RubyNumericLiteralsTest {const RubyNumericLiteralsTest({this.speed = 64512, this.asn = 5143232, this.smallNum = 1234, this.sixDigit = 100000, this.fiveDigit = 10000, this.sevenDigit = 1234567, this.constLargeNum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RubyNumericLiteralsTest {const RubyNumericLiteralsTest({this.speed, this.asn, this.smallNum, this.sixDigit, this.fiveDigit, this.sevenDigit, this.constLargeNum, });
 
 factory RubyNumericLiteralsTest.fromJson(Map<String, dynamic> json) { return RubyNumericLiteralsTest(
-  speed: json.containsKey('speed') ? (json['speed'] as num).toInt() : 64512,
-  asn: json.containsKey('asn') ? (json['asn'] as num).toInt() : 5143232,
-  smallNum: json.containsKey('smallNum') ? (json['smallNum'] as num).toInt() : 1234,
-  sixDigit: json.containsKey('sixDigit') ? (json['sixDigit'] as num).toInt() : 100000,
-  fiveDigit: json.containsKey('fiveDigit') ? (json['fiveDigit'] as num).toInt() : 10000,
-  sevenDigit: json.containsKey('sevenDigit') ? (json['sevenDigit'] as num).toInt() : 1234567,
+  speed: json['speed'] != null ? (json['speed'] as num).toInt() : null,
+  asn: json['asn'] != null ? (json['asn'] as num).toInt() : null,
+  smallNum: json['smallNum'] != null ? (json['smallNum'] as num).toInt() : null,
+  sixDigit: json['sixDigit'] != null ? (json['sixDigit'] as num).toInt() : null,
+  fiveDigit: json['fiveDigit'] != null ? (json['fiveDigit'] as num).toInt() : null,
+  sevenDigit: json['sevenDigit'] != null ? (json['sevenDigit'] as num).toInt() : null,
   constLargeNum: json['constLargeNum'] != null ? (json['constLargeNum'] as num).toInt() : null,
 ); }
 
-final int speed;
+final int? speed;
 
-final int asn;
+final int? asn;
 
-final int smallNum;
+final int? smallNum;
 
-final int sixDigit;
+final int? sixDigit;
 
-final int fiveDigit;
+final int? fiveDigit;
 
-final int sevenDigit;
+final int? sevenDigit;
 
 final int? constLargeNum;
 
+/// The value of `speed`, or its schema default when absent.
+int get speedOrDefault => speed ?? 64512;
+
+/// The value of `asn`, or its schema default when absent.
+int get asnOrDefault => asn ?? 5143232;
+
+/// The value of `smallNum`, or its schema default when absent.
+int get smallNumOrDefault => smallNum ?? 1234;
+
+/// The value of `sixDigit`, or its schema default when absent.
+int get sixDigitOrDefault => sixDigit ?? 100000;
+
+/// The value of `fiveDigit`, or its schema default when absent.
+int get fiveDigitOrDefault => fiveDigit ?? 10000;
+
+/// The value of `sevenDigit`, or its schema default when absent.
+int get sevenDigitOrDefault => sevenDigit ?? 1234567;
+
 Map<String, dynamic> toJson() { return {
-  'speed': speed,
-  'asn': asn,
-  'smallNum': smallNum,
-  'sixDigit': sixDigit,
-  'fiveDigit': fiveDigit,
-  'sevenDigit': sevenDigit,
+  'speed': ?speed,
+  'asn': ?asn,
+  'smallNum': ?smallNum,
+  'sixDigit': ?sixDigit,
+  'fiveDigit': ?fiveDigit,
+  'sevenDigit': ?sevenDigit,
   'constLargeNum': ?constLargeNum,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'speed', 'asn', 'smallNum', 'sixDigit', 'fiveDigit', 'sevenDigit', 'constLargeNum'}.contains(key)); } 
-RubyNumericLiteralsTest copyWith({int Function()? speed, int Function()? asn, int Function()? smallNum, int Function()? sixDigit, int Function()? fiveDigit, int Function()? sevenDigit, int? Function()? constLargeNum, }) { return RubyNumericLiteralsTest(
+RubyNumericLiteralsTest copyWith({int? Function()? speed, int? Function()? asn, int? Function()? smallNum, int? Function()? sixDigit, int? Function()? fiveDigit, int? Function()? sevenDigit, int? Function()? constLargeNum, }) { return RubyNumericLiteralsTest(
   speed: speed != null ? speed() : this.speed,
   asn: asn != null ? asn() : this.asn,
   smallNum: smallNum != null ? smallNum() : this.smallNum,

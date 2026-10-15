@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsSrvRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_srv_record/dns_records_srv_record_data.dart';import 'package:pub_cloudflare/models/dns_records_srv_record/dns_records_srv_record_type.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';@immutable final class DnsRecordsSrvRecord {const DnsRecordsSrvRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_srv_record/dns_records_srv_record_data.dart';import 'package:pub_cloudflare/models/dns_records_srv_record_request/dns_records_srv_record_request_type.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';@immutable final class DnsRecordsSrvRecord {const DnsRecordsSrvRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsSrvRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsSrvRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
@@ -9,10 +9,10 @@ factory DnsRecordsSrvRecord.fromJson(Map<String, dynamic> json) { return DnsReco
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
   settings: json['settings'] != null ? DnsRecordsSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => DnsRecordsTtlVariant2.fromJson((v as num).toDouble()),) : null,
+  ttl: json['ttl'] != null ? DnsRecordsTtl.fromJson(json['ttl']) : null,
   content: json['content'] as String?,
   data: json['data'] != null ? DnsRecordsSrvRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
-  type: json['type'] != null ? DnsRecordsSrvRecordType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? DnsRecordsSrvRecordRequestType.fromJson(json['type'] as String) : null,
 ); }
 
 final DnsRecordsComment? comment;
@@ -38,7 +38,7 @@ final DnsRecordsSrvRecordData? data;
 /// Record type.
 /// 
 /// Example: `'SRV'`
-final DnsRecordsSrvRecordType? type;
+final DnsRecordsSrvRecordRequestType? type;
 
 Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key)); } 
-DnsRecordsSrvRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSrvRecordData? Function()? data, DnsRecordsSrvRecordType? Function()? type, }) { return DnsRecordsSrvRecord(
+DnsRecordsSrvRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSrvRecordData? Function()? data, DnsRecordsSrvRecordRequestType? Function()? type, }) { return DnsRecordsSrvRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,

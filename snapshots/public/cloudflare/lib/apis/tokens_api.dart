@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TokensApi" (8 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tokens_create_token_error.dart';import 'package:pub_cloudflare/models/iam_create_payload.dart';import 'package:pub_cloudflare/models/iam_permissions_group_response_collection/iam_permissions_group_response_collection_result.dart';import 'package:pub_cloudflare/models/iam_token_base.dart';import 'package:pub_cloudflare/models/iam_token_identifier.dart';import 'package:pub_cloudflare/models/iam_token_verify_response_single_segment/iam_token_verify_response_single_segment_result.dart';import 'package:pub_cloudflare/models/iam_token_with_value.dart';import 'package:pub_cloudflare/models/iam_value.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/tokens_list_tokens_direction2.dart';/// TokensApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tokens_create_token_error.dart';import 'package:pub_cloudflare/models/iam_create_payload_request.dart';import 'package:pub_cloudflare/models/iam_permissions_group_response_collection/iam_permissions_group_response_collection_result.dart';import 'package:pub_cloudflare/models/iam_token_base.dart';import 'package:pub_cloudflare/models/iam_token_base_request.dart';import 'package:pub_cloudflare/models/iam_token_identifier.dart';import 'package:pub_cloudflare/models/iam_token_verify_response_single_segment/iam_token_verify_response_single_segment_result.dart';import 'package:pub_cloudflare/models/iam_token_with_value.dart';import 'package:pub_cloudflare/models/iam_value.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/tokens_list_tokens_direction2.dart';/// TokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -51,7 +51,7 @@ return execute(
 /// Create a new access token.
 ///
 /// `POST /user/tokens`
-Future<ApiResult<IamTokenWithValue?, TokensCreateTokenError>> userApiTokensCreateToken({required IamCreatePayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenWithValue?, TokensCreateTokenError>> userApiTokensCreateToken({required IamCreatePayloadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,7 +62,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -85,7 +85,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -99,7 +99,7 @@ return execute(
 /// Update an existing token.
 ///
 /// `PUT /user/tokens/{token_id}`
-Future<ApiResult<IamTokenBase?, TokensCreateTokenError>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenBase?, TokensCreateTokenError>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -110,7 +110,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -192,7 +192,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

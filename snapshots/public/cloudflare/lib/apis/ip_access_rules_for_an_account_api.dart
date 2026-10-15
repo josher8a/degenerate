@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "IpAccessRulesForAnAccountApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_create_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_delete_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_get_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_list_ip_access_rules_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_update_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/firewall_account_identifier.dart';import 'package:pub_cloudflare/models/firewall_rule_identifier.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_rule.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_create_an_ip_access_rule_request.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_configuration_target.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_direction.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_match.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_order.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';/// IpAccessRulesForAnAccountApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_create_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_delete_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_get_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_list_ip_access_rules_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_update_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/firewall_account_identifier.dart';import 'package:pub_cloudflare/models/firewall_rule_identifier.dart';import 'package:pub_cloudflare/models/firewall_rule_request.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_rule.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_create_an_ip_access_rule_request.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_configuration_target.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_direction.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_match.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_order.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';/// IpAccessRulesForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -55,7 +55,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -82,7 +82,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -105,7 +105,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,7 +121,7 @@ return execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `PATCH /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleError>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallSchemasRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleError>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -157,7 +157,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

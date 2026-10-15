@@ -26,7 +26,7 @@ TestInlineFreeformAdditionalPropertiesRequest copyWith({String? Function()? some
           someProperty == other.someProperty &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(someProperty, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(someProperty, mapHash(additionalProperties));
 
 @override String toString() => 'TestInlineFreeformAdditionalPropertiesRequest(someProperty: $someProperty, additionalProperties: $additionalProperties)';
 

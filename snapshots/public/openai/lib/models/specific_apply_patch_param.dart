@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applyPat
 
  }
 /// Forces the model to call the apply_patch tool when executing a tool call.
-@immutable final class SpecificApplyPatchParam {const SpecificApplyPatchParam({this.type = SpecificApplyPatchParamType.applyPatch});
+@immutable final class SpecificApplyPatchParam {const SpecificApplyPatchParam({required this.type});
 
 factory SpecificApplyPatchParam.fromJson(Map<String, dynamic> json) { return SpecificApplyPatchParam(
   type: SpecificApplyPatchParamType.fromJson(json['type'] as String),

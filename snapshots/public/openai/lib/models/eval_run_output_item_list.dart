@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/eval_run_output_item.dart';/// An object representing a list of output items for an evaluation run.
 /// 
-@immutable final class EvalRunOutputItemList {const EvalRunOutputItemList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
+@immutable final class EvalRunOutputItemList {const EvalRunOutputItemList({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory EvalRunOutputItemList.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemList(
   object: ChatCompletionListObject.fromJson(json['object'] as String),

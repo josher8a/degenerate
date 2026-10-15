@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// - Used to define your testing criteria and
 /// - What data is required when creating a run
 /// 
-@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.schema, this.type = CreateEvalCustomDataSourceConfigType.custom, });
+@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.type, required this.schema, });
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),

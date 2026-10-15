@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > CardPayments)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/decline_on.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/statement_descriptor_prefix_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/statement_descriptor_prefix_kanji.dart';@immutable final class SettingsCardPayments {const SettingsCardPayments({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/decline_on.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/statement_descriptor_prefix_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/statement_descriptor_prefix_kanji.dart';@immutable final class SettingsCardPayments {const SettingsCardPayments({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
 
 factory SettingsCardPayments.fromJson(Map<String, dynamic> json) { return SettingsCardPayments(
   declineOn: json['decline_on'] != null ? DeclineOn.fromJson(json['decline_on'] as Map<String, dynamic>) : null,
   statementDescriptorPrefix: json['statement_descriptor_prefix'] as String?,
-  statementDescriptorPrefixKana: json['statement_descriptor_prefix_kana'] != null ? OneOf2.parse(json['statement_descriptor_prefix_kana'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  statementDescriptorPrefixKanji: json['statement_descriptor_prefix_kanji'] != null ? OneOf2.parse(json['statement_descriptor_prefix_kanji'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  statementDescriptorPrefixKana: json['statement_descriptor_prefix_kana'] != null ? StatementDescriptorPrefixKana.fromJson(json['statement_descriptor_prefix_kana']) : null,
+  statementDescriptorPrefixKanji: json['statement_descriptor_prefix_kanji'] != null ? StatementDescriptorPrefixKanji.fromJson(json['statement_descriptor_prefix_kanji']) : null,
 ); }
 
 final DeclineOn? declineOn;

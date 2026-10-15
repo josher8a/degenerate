@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DeploymentStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_status/deployment_status_state.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of a deployment.
-@immutable final class DeploymentStatus {const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.description = '', this.environment = '', this.environmentUrl, this.logUrl, this.performedViaGithubApp = const Omittable.absent(), });
+@immutable final class DeploymentStatus {const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, required this.description, required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.environment, this.environmentUrl, this.logUrl, this.performedViaGithubApp = const Omittable.absent(), });
 
 factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return DeploymentStatus(
   url: Uri.parse(json['url'] as String),
@@ -11,7 +11,7 @@ factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return Deployment
   state: DeploymentStatusState.fromJson(json['state'] as String),
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   description: json['description'] as String,
-  environment: json.containsKey('environment') ? json['environment'] as String : '',
+  environment: json['environment'] as String?,
   targetUrl: Uri.parse(json['target_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
@@ -37,7 +37,7 @@ final SimpleUser? creator;
 final String description;
 
 /// The environment of the deployment that the status is for.
-final String environment;
+final String? environment;
 
 /// Closing down notice: the URL to associate with this status.
 final Uri targetUrl;
@@ -58,6 +58,9 @@ final Uri? logUrl;
 
 final Omittable<Integration?> performedViaGithubApp;
 
+/// The value of `environment`, or its schema default when absent.
+String get environmentOrDefault => environment ?? '';
+
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'id': id,
@@ -65,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'creator': creator?.toJson(),
   'description': description,
-  'environment': environment,
+  'environment': ?environment,
   'target_url': targetUrl.toString(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -90,7 +93,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
 List<String> validate() { final errors = <String>[];
 if (description.runes.length > 140) { errors.add('description: length must be <= 140'); }
 return errors; } 
-DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Omittable<Integration?>? performedViaGithubApp, }) { return DeploymentStatus(
+DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String? Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Omittable<Integration?>? performedViaGithubApp, }) { return DeploymentStatus(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

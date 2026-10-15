@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentLinksPaymentLinkRequest (inline: SubscriptionData)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/subscription_data_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/subscription_data_trial_settings.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/trial_period_days.dart';import 'package:pub_stripe_spec3/models/trial_settings_config.dart';/// When creating a subscription, the specified configuration data will be used. There must be at least one line item with a recurring price to use `subscription_data`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/subscription_data_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/subscription_data_trial_settings.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/trial_period_days.dart';/// When creating a subscription, the specified configuration data will be used. There must be at least one line item with a recurring price to use `subscription_data`.
 @immutable final class PostPaymentLinksPaymentLinkRequestSubscriptionData {const PostPaymentLinksPaymentLinkRequestSubscriptionData({this.invoiceSettings, this.metadata, this.trialPeriodDays, this.trialSettings, });
 
 factory PostPaymentLinksPaymentLinkRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestSubscriptionData(
   invoiceSettings: json['invoice_settings'] != null ? SubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
-  trialPeriodDays: json['trial_period_days'] != null ? OneOf2.parse(json['trial_period_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  trialSettings: json['trial_settings'] != null ? OneOf2.parse(json['trial_settings'], fromA: (v) => TrialSettingsConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
+  trialPeriodDays: json['trial_period_days'] != null ? TrialPeriodDays.fromJson(json['trial_period_days']) : null,
+  trialSettings: json['trial_settings'] != null ? SubscriptionDataTrialSettings.fromJson(json['trial_settings']) : null,
 ); }
 
 final SubscriptionDataInvoiceSettings? invoiceSettings;

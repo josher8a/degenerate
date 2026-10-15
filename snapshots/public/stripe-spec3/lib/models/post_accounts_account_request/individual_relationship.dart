@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: Individual > Relationship)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/percent_ownership.dart';@immutable final class IndividualRelationship {const IndividualRelationship({this.director, this.executive, this.owner, this.percentOwnership, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/percent_ownership.dart';@immutable final class IndividualRelationship {const IndividualRelationship({this.director, this.executive, this.owner, this.percentOwnership, this.title, });
 
 factory IndividualRelationship.fromJson(Map<String, dynamic> json) { return IndividualRelationship(
   director: json['director'] as bool?,
   executive: json['executive'] as bool?,
   owner: json['owner'] as bool?,
-  percentOwnership: json['percent_ownership'] != null ? OneOf2.parse(json['percent_ownership'], fromA: (v) => (v as num).toDouble(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  percentOwnership: json['percent_ownership'] != null ? PercentOwnership.fromJson(json['percent_ownership']) : null,
   title: json['title'] as String?,
 ); }
 

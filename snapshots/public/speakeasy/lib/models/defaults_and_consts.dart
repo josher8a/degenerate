@@ -329,7 +329,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class DefaultsAndConsts {const DefaultsAndConsts({required this.constDateTime, required this.constStr, required this.constStrDQuotes, required this.constStrSQuotes, required this.constStrBackticks, required this.constStrBrackets, required this.constStrNull, required this.constInt, required this.constNum, required this.constBool, required this.constDate, required this.normalField, required this.constEnumStr, required this.constEnumInt, required this.constBigInt, required this.constBigIntStr, required this.constDecimal, required this.constDecimalStr, required this.defaultEnumInt, required this.defaultStrNullable, required this.defaultDateTime, this.defaultStrBackticks = 'default with `backticks`', this.defaultStrBrackets = r'default with ${<brackets>}', this.defaultDecimalStr = '3.141592653589793238462643383279', this.defaultStrOptional = 'default', this.defaultInt = 123, this.defaultNum = 123.456, this.defaultBool = true, this.defaultDate = '2020-01-01', this.defaultStrDQuotes = 'default with "double quotes"', this.defaultEnumStr = DefaultEnumStr.two, this.defaultStr = 'default', this.defaultBigInt = 9007199254740991, this.defaultBigIntStr = '9223372036854775807', this.defaultDecimal = 3.141592653589793, this.defaultStrSQuotes = "default with 'single quotes'", });
+@immutable final class DefaultsAndConsts {const DefaultsAndConsts({required this.constDateTime, required this.constStr, required this.constStrDQuotes, required this.constStrSQuotes, required this.constStrBackticks, required this.constStrBrackets, required this.constStrNull, required this.constInt, required this.constNum, required this.constBool, required this.constDate, required this.normalField, required this.constEnumStr, required this.constEnumInt, required this.constBigInt, required this.constBigIntStr, required this.constDecimal, required this.constDecimalStr, required this.defaultStr, required this.defaultStrDQuotes, required this.defaultStrSQuotes, required this.defaultDecimal, required this.defaultBigIntStr, required this.defaultDecimalStr, required this.defaultBigInt, required this.defaultInt, required this.defaultNum, required this.defaultBool, required this.defaultDate, required this.defaultDateTime, required this.defaultEnumStr, required this.defaultEnumInt, required this.defaultStrNullable, this.defaultStrBrackets, this.defaultStrBackticks, this.defaultStrOptional, });
 
 factory DefaultsAndConsts.fromJson(Map<String, dynamic> json) { return DefaultsAndConsts(
   normalField: json['normalField'] as String,
@@ -353,10 +353,10 @@ factory DefaultsAndConsts.fromJson(Map<String, dynamic> json) { return DefaultsA
   defaultStr: json['defaultStr'] as String,
   defaultStrDQuotes: json['defaultStrDQuotes'] as String,
   defaultStrSQuotes: json['defaultStrSQuotes'] as String,
-  defaultStrBackticks: json.containsKey('defaultStrBackticks') ? json['defaultStrBackticks'] as String : 'default with `backticks`',
-  defaultStrBrackets: json.containsKey('defaultStrBrackets') ? json['defaultStrBrackets'] as String : r'default with ${<brackets>}',
+  defaultStrBackticks: json['defaultStrBackticks'] as String?,
+  defaultStrBrackets: json['defaultStrBrackets'] as String?,
   defaultStrNullable: json['defaultStrNullable'] as String?,
-  defaultStrOptional: json.containsKey('defaultStrOptional') ? json['defaultStrOptional'] as String : 'default',
+  defaultStrOptional: json['defaultStrOptional'] as String?,
   defaultInt: (json['defaultInt'] as num).toInt(),
   defaultNum: (json['defaultNum'] as num).toDouble(),
   defaultBool: json['defaultBool'] as bool,
@@ -413,13 +413,13 @@ final String defaultStrDQuotes;
 
 final String defaultStrSQuotes;
 
-final String defaultStrBackticks;
+final String? defaultStrBackticks;
 
-final String defaultStrBrackets;
+final String? defaultStrBrackets;
 
 final String? defaultStrNullable;
 
-final String defaultStrOptional;
+final String? defaultStrOptional;
 
 final int defaultInt;
 
@@ -443,6 +443,15 @@ final double defaultDecimal;
 
 final String defaultDecimalStr;
 
+/// The value of `defaultStrBackticks`, or its schema default when absent.
+String get defaultStrBackticksOrDefault => defaultStrBackticks ?? 'default with `backticks`';
+
+/// The value of `defaultStrBrackets`, or its schema default when absent.
+String get defaultStrBracketsOrDefault => defaultStrBrackets ?? r'default with ${<brackets>}';
+
+/// The value of `defaultStrOptional`, or its schema default when absent.
+String get defaultStrOptionalOrDefault => defaultStrOptional ?? 'default';
+
 Map<String, dynamic> toJson() { return {
   'normalField': normalField,
   'constStr': constStr,
@@ -465,10 +474,10 @@ Map<String, dynamic> toJson() { return {
   'defaultStr': defaultStr,
   'defaultStrDQuotes': defaultStrDQuotes,
   'defaultStrSQuotes': defaultStrSQuotes,
-  'defaultStrBackticks': defaultStrBackticks,
-  'defaultStrBrackets': defaultStrBrackets,
+  'defaultStrBackticks': ?defaultStrBackticks,
+  'defaultStrBrackets': ?defaultStrBrackets,
   'defaultStrNullable': defaultStrNullable,
-  'defaultStrOptional': defaultStrOptional,
+  'defaultStrOptional': ?defaultStrOptional,
   'defaultInt': defaultInt,
   'defaultNum': defaultNum,
   'defaultBool': defaultBool,
@@ -514,7 +523,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('norma
       json.containsKey('defaultBigIntStr') && json['defaultBigIntStr'] is String &&
       json.containsKey('defaultDecimal') && json['defaultDecimal'] is num &&
       json.containsKey('defaultDecimalStr') && json['defaultDecimalStr'] is String; } 
-DefaultsAndConsts copyWith({String? normalField, String? constStr, String? constStrDQuotes, String? constStrSQuotes, String? constStrBackticks, String? constStrBrackets, String? Function()? constStrNull, int? constInt, double? constNum, bool? constBool, String? constDate, DateTime? constDateTime, ConstEnumStr? constEnumStr, ConstEnumInt? constEnumInt, int? constBigInt, String? constBigIntStr, double? constDecimal, String? constDecimalStr, String? defaultStr, String? defaultStrDQuotes, String? defaultStrSQuotes, String Function()? defaultStrBackticks, String Function()? defaultStrBrackets, String? Function()? defaultStrNullable, String Function()? defaultStrOptional, int? defaultInt, double? defaultNum, bool? defaultBool, String? defaultDate, DateTime? defaultDateTime, DefaultEnumStr? defaultEnumStr, DefaultEnumInt? defaultEnumInt, int? defaultBigInt, String? defaultBigIntStr, double? defaultDecimal, String? defaultDecimalStr, }) { return DefaultsAndConsts(
+DefaultsAndConsts copyWith({String? normalField, String? constStr, String? constStrDQuotes, String? constStrSQuotes, String? constStrBackticks, String? constStrBrackets, String? Function()? constStrNull, int? constInt, double? constNum, bool? constBool, String? constDate, DateTime? constDateTime, ConstEnumStr? constEnumStr, ConstEnumInt? constEnumInt, int? constBigInt, String? constBigIntStr, double? constDecimal, String? constDecimalStr, String? defaultStr, String? defaultStrDQuotes, String? defaultStrSQuotes, String? Function()? defaultStrBackticks, String? Function()? defaultStrBrackets, String? Function()? defaultStrNullable, String? Function()? defaultStrOptional, int? defaultInt, double? defaultNum, bool? defaultBool, String? defaultDate, DateTime? defaultDateTime, DefaultEnumStr? defaultEnumStr, DefaultEnumInt? defaultEnumInt, int? defaultBigInt, String? defaultBigIntStr, double? defaultDecimal, String? defaultDecimalStr, }) { return DefaultsAndConsts(
   normalField: normalField ?? this.normalField,
   constStr: constStr ?? this.constStr,
   constStrDQuotes: constStrDQuotes ?? this.constStrDQuotes,

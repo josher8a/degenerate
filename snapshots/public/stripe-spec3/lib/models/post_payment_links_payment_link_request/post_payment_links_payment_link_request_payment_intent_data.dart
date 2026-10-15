@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentLinksPaymentLinkRequest (inline: PaymentIntentData)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/payment_intent_data_description.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/statement_descriptor.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/statement_descriptor_suffix.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/transfer_group.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/payment_intent_data_description.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/statement_descriptor.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/statement_descriptor_suffix.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/transfer_group.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentIntentData {const PostPaymentLinksPaymentLinkRequestPaymentIntentData({this.description, this.metadata, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
 factory PostPaymentLinksPaymentLinkRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
-  statementDescriptor: json['statement_descriptor'] != null ? OneOf2.parse(json['statement_descriptor'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null ? OneOf2.parse(json['statement_descriptor_suffix'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  transferGroup: json['transfer_group'] != null ? OneOf2.parse(json['transfer_group'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PaymentIntentDataDescription.fromJson(json['description']) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
+  statementDescriptor: json['statement_descriptor'] != null ? StatementDescriptor.fromJson(json['statement_descriptor']) : null,
+  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null ? StatementDescriptorSuffix.fromJson(json['statement_descriptor_suffix']) : null,
+  transferGroup: json['transfer_group'] != null ? TransferGroup.fromJson(json['transfer_group']) : null,
 ); }
 
 final PaymentIntentDataDescription? description;

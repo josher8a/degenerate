@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ModifyAssistantRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_model.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';@immutable final class ModifyAssistantRequest {const ModifyAssistantRequest({this.model, this.reasoningEffort = const Omittable.absent(), this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.tools = const [], this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_model.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';@immutable final class ModifyAssistantRequest {const ModifyAssistantRequest({this.model, this.reasoningEffort = const Omittable.absent(), this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.tools, this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
 factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequest(
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AssistantSupportedModels.fromJson(v as String),) : null,
+  model: json['model'] != null ? CreateAssistantRequestModel.fromJson(json['model']) : null,
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
-  tools: json.containsKey('tools') ? (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList() : const [],
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
   toolResources: json.containsKey('tool_resources') ? Omittable(json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -37,7 +37,7 @@ final Omittable<String?> instructions;
 
 /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
 /// 
-final List<AssistantObjectTools> tools;
+final List<AssistantObjectTools>? tools;
 
 /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
@@ -64,13 +64,16 @@ final Omittable<double?> topP;
 
 final Omittable<ResponseFormatOption?> responseFormat;
 
+/// The value of `tools`, or its schema default when absent.
+List<AssistantObjectTools> get toolsOrDefault => tools ?? const [];
+
 Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
   if (name.isPresent) 'name': name.value,
   if (description.isPresent) 'description': description.value,
   if (instructions.isPresent) 'instructions': instructions.value,
-  'tools': tools.map((e) => e.toJson()).toList(),
+  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolResources.isPresent) 'tool_resources': toolResources.value?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   if (temperature.isPresent) 'temperature': temperature.value,
@@ -92,7 +95,10 @@ final instructions$ = instructions.value;
 if (instructions$ != null) {
   if (instructions$.runes.length > 256000) { errors.add('instructions: length must be <= 256000'); }
 }
-if (tools.length > 128) { errors.add('tools: must have <= 128 items'); }
+final tools$ = tools;
+if (tools$ != null) {
+  if (tools$.length > 128) { errors.add('tools: must have <= 128 items'); }
+}
 final temperature$ = temperature.value;
 if (temperature$ != null) {
   if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
@@ -104,7 +110,7 @@ if (topP$ != null) {
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
 return errors; } 
-ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, List<AssistantObjectTools> Function()? tools, Omittable<AssistantObjectToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return ModifyAssistantRequest(
+ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, List<AssistantObjectTools>? Function()? tools, Omittable<AssistantObjectToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return ModifyAssistantRequest(
   model: model != null ? model() : this.model,
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
   name: name ?? this.name,
@@ -131,7 +137,7 @@ ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model,
           topP == other.topP &&
           responseFormat == other.responseFormat;
 
-@override int get hashCode => Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat);
+@override int get hashCode => Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, responseFormat);
 
 @override String toString() => 'ModifyAssistantRequest(\n  model: $model,\n  reasoningEffort: $reasoningEffort,\n  name: $name,\n  description: $description,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 

@@ -11,7 +11,7 @@ factory DeepObjectCamelCase.fromJson(Map<String, dynamic> json) { return DeepObj
   objVal: SimpleObjectCamelCase.fromJson(json['obj_val'] as Map<String, dynamic>),
   mapVal: (json['map_val'] as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObjectCamelCase.fromJson(v as Map<String, dynamic>))),
   arrVal: (json['arr_val'] as List<dynamic>).map((e) => SimpleObjectCamelCase.fromJson(e as Map<String, dynamic>)).toList(),
-  anyVal: OneOf2.parse(json['any_val'], fromA: (v) => SimpleObjectCamelCase.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,),
+  anyVal: AnyVal.fromJson(json['any_val']),
   type: json['type'] as String?,
 ); }
 

@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unblocke
 
 factory WebhookOrgBlockUnblocked.fromJson(Map<String, dynamic> json) { return WebhookOrgBlockUnblocked(
   action: WebhookOrgBlockUnblockedAction.fromJson(json['action'] as String),
-  blockedUser: WebhooksUser.fromJson(json['blocked_user'] as Map<String, dynamic>),
+  blockedUser: json['blocked_user'] != null ? WebhooksUser.fromJson(json['blocked_user'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
@@ -67,7 +67,7 @@ factory WebhookOrgBlockUnblocked.fromJson(Map<String, dynamic> json) { return We
 
 final WebhookOrgBlockUnblockedAction action;
 
-final WebhooksUser blockedUser;
+final WebhooksUser? blockedUser;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -81,7 +81,7 @@ final SimpleUser sender;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
-  'blocked_user': blockedUser.toJson(),
+  'blocked_user': blockedUser?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
@@ -92,9 +92,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('blocked_user') &&
       json.containsKey('organization') &&
       json.containsKey('sender'); } 
-WebhookOrgBlockUnblocked copyWith({WebhookOrgBlockUnblockedAction? action, WebhooksUser? blockedUser, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookOrgBlockUnblocked(
+WebhookOrgBlockUnblocked copyWith({WebhookOrgBlockUnblockedAction? action, WebhooksUser? Function()? blockedUser, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookOrgBlockUnblocked(
   action: action ?? this.action,
-  blockedUser: blockedUser ?? this.blockedUser,
+  blockedUser: blockedUser != null ? blockedUser() : this.blockedUser,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,

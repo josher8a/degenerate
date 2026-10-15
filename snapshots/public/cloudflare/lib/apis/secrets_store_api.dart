@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SecretsStoreApi" (23 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secrets_store_create_error.dart';import 'package:pub_cloudflare/models/secrets_store_account_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_account_tag.dart';import 'package:pub_cloudflare/models/secrets_store_create_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object_system.dart';import 'package:pub_cloudflare/models/secrets_store_delete_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_duplicate_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_patch_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_usage_object.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_order.dart';/// SecretsStoreApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secrets_store_create_error.dart';import 'package:pub_cloudflare/models/secrets_store_account_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_account_tag.dart';import 'package:pub_cloudflare/models/secrets_store_create_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object_system.dart';import 'package:pub_cloudflare/models/secrets_store_delete_secret_object_request.dart';import 'package:pub_cloudflare/models/secrets_store_duplicate_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_patch_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_usage_object.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_order.dart';/// SecretsStoreApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -63,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -111,7 +111,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -134,7 +134,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -180,7 +180,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -205,7 +205,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -219,7 +219,7 @@ return execute(
 /// Deletes one or more secrets
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreDeleteBulk({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreDeleteBulk({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObjectRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -230,7 +230,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -253,7 +253,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -278,7 +278,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -301,7 +301,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -326,7 +326,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -368,7 +368,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -396,7 +396,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -421,7 +421,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -446,7 +446,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -494,7 +494,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -521,7 +521,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -537,7 +537,7 @@ return execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSystemDeleteBulk({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSystemDeleteBulk({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObjectRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -548,7 +548,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -573,7 +573,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -600,7 +600,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -625,7 +625,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -652,7 +652,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

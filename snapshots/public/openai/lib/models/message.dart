@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
  }
 /// A message to or from the model.
-@immutable final class Message {const Message({required this.id, required this.status, required this.role, required this.content, this.type = 'message', });
+@immutable final class Message {const Message({required this.type, required this.id, required this.status, required this.role, required this.content, });
 
 factory Message.fromJson(Map<String, dynamic> json) { return Message(
   type: json['type'] as String,

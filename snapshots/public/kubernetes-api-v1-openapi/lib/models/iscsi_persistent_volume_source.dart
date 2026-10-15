@@ -2,7 +2,7 @@
 // Source: #/components/schemas/IscsiPersistentVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
-@immutable final class IscsiPersistentVolumeSource {const IscsiPersistentVolumeSource({this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iqn = '', this.iscsiInterface = 'default', this.lun = 0, this.portals, this.readOnly, this.secretRef, this.targetPortal = '', });
+@immutable final class IscsiPersistentVolumeSource {const IscsiPersistentVolumeSource({required this.iqn, required this.lun, required this.targetPortal, this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iscsiInterface, this.portals, this.readOnly, this.secretRef, });
 
 factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return IscsiPersistentVolumeSource(
   chapAuthDiscovery: json['chapAuthDiscovery'] as bool?,
@@ -10,7 +10,7 @@ factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return
   fsType: json['fsType'] as String?,
   initiatorName: json['initiatorName'] as String?,
   iqn: json['iqn'] as String,
-  iscsiInterface: json.containsKey('iscsiInterface') ? json['iscsiInterface'] as String : 'default',
+  iscsiInterface: json['iscsiInterface'] as String?,
   lun: (json['lun'] as num).toInt(),
   portals: (json['portals'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readOnly: json['readOnly'] as bool?,
@@ -34,7 +34,7 @@ final String? initiatorName;
 final String iqn;
 
 /// iscsiInterface is the interface Name that uses an iSCSI transport. Defaults to 'default' (tcp).
-final String iscsiInterface;
+final String? iscsiInterface;
 
 /// lun is iSCSI Target Lun number.
 final int lun;
@@ -51,13 +51,16 @@ final SecretReference? secretRef;
 /// targetPortal is iSCSI Target Portal. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
 final String targetPortal;
 
+/// The value of `iscsiInterface`, or its schema default when absent.
+String get iscsiInterfaceOrDefault => iscsiInterface ?? 'default';
+
 Map<String, dynamic> toJson() { return {
   'chapAuthDiscovery': ?chapAuthDiscovery,
   'chapAuthSession': ?chapAuthSession,
   'fsType': ?fsType,
   'initiatorName': ?initiatorName,
   'iqn': iqn,
-  'iscsiInterface': iscsiInterface,
+  'iscsiInterface': ?iscsiInterface,
   'lun': lun,
   'portals': ?portals,
   'readOnly': ?readOnly,
@@ -67,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('iqn') && json['iqn'] is String &&
       json.containsKey('lun') && json['lun'] is num &&
       json.containsKey('targetPortal') && json['targetPortal'] is String; } 
-IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool? Function()? chapAuthSession, String? Function()? fsType, String? Function()? initiatorName, String? iqn, String Function()? iscsiInterface, int? lun, List<String>? Function()? portals, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? targetPortal, }) { return IscsiPersistentVolumeSource(
+IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool? Function()? chapAuthSession, String? Function()? fsType, String? Function()? initiatorName, String? iqn, String? Function()? iscsiInterface, int? lun, List<String>? Function()? portals, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? targetPortal, }) { return IscsiPersistentVolumeSource(
   chapAuthDiscovery: chapAuthDiscovery != null ? chapAuthDiscovery() : this.chapAuthDiscovery,
   chapAuthSession: chapAuthSession != null ? chapAuthSession() : this.chapAuthSession,
   fsType: fsType != null ? fsType() : this.fsType,

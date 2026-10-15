@@ -47,7 +47,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListIncomingPhoneNumberLocalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -114,7 +114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountIncomingPhoneNumberIncomingPhoneNumberLocal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

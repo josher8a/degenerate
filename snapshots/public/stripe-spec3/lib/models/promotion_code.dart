@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PromotionCode
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PromotionCodeObject {const PromotionCodeObject();
 
 factory PromotionCodeObject.fromJson(String json) { return switch (json) {
@@ -65,7 +65,7 @@ factory PromotionCode.fromJson(Map<String, dynamic> json) { return PromotionCode
   active: json['active'] as bool,
   code: json['code'] as String,
   created: (json['created'] as num).toInt(),
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankAccountCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,

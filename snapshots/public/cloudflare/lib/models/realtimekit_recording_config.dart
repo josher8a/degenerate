@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_audio_config.dart';import 'package:pub_cloudflare/models/realtimekit_livestreaming_config.dart';import 'package:pub_cloudflare/models/realtimekit_realtimekit_bucket_config.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';import 'package:pub_cloudflare/models/realtimekit_video_config.dart';/// Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.
 /// 
-@immutable final class RealtimekitRecordingConfig {const RealtimekitRecordingConfig({this.audioConfig, this.fileNamePrefix, this.liveStreamingConfig, this.maxSeconds, this.realtimekitBucketConfig, this.storageConfig, this.videoConfig, });
+@immutable final class RealtimekitRecordingConfig {const RealtimekitRecordingConfig({this.audioConfig, this.fileNamePrefix, this.liveStreamingConfig, this.maxSeconds, this.realtimekitBucketConfig, this.storageConfig = const Omittable.absent(), this.videoConfig, });
 
 factory RealtimekitRecordingConfig.fromJson(Map<String, dynamic> json) { return RealtimekitRecordingConfig(
   audioConfig: json['audio_config'] != null ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory RealtimekitRecordingConfig.fromJson(Map<String, dynamic> json) { return 
   liveStreamingConfig: json['live_streaming_config'] != null ? RealtimekitLivestreamingConfig.fromJson(json['live_streaming_config'] as Map<String, dynamic>) : null,
   maxSeconds: json['max_seconds'] != null ? (json['max_seconds'] as num).toDouble() : null,
   realtimekitBucketConfig: json['realtimekit_bucket_config'] != null ? RealtimekitRealtimekitBucketConfig.fromJson(json['realtimekit_bucket_config'] as Map<String, dynamic>) : null,
-  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
+  storageConfig: json.containsKey('storage_config') ? Omittable(json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   videoConfig: json['video_config'] != null ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
 ); }
 
@@ -27,7 +27,7 @@ final double? maxSeconds;
 
 final RealtimekitRealtimekitBucketConfig? realtimekitBucketConfig;
 
-final RealtimekitStorageConfig? storageConfig;
+final Omittable<RealtimekitStorageConfig?> storageConfig;
 
 final RealtimekitVideoConfig? videoConfig;
 
@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (liveStreamingConfig != null) 'live_streaming_config': liveStreamingConfig?.toJson(),
   'max_seconds': ?maxSeconds,
   if (realtimekitBucketConfig != null) 'realtimekit_bucket_config': realtimekitBucketConfig?.toJson(),
-  if (storageConfig != null) 'storage_config': storageConfig?.toJson(),
+  if (storageConfig.isPresent) 'storage_config': storageConfig.value?.toJson(),
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_config', 'file_name_prefix', 'live_streaming_config', 'max_seconds', 'realtimekit_bucket_config', 'storage_config', 'video_config'}.contains(key)); } 
@@ -49,13 +49,13 @@ if (maxSeconds$ != null) {
   if (maxSeconds$ > 86400) { errors.add('maxSeconds: must be <= 86400'); }
 }
 return errors; } 
-RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitLivestreamingConfig? Function()? liveStreamingConfig, double? Function()? maxSeconds, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitStorageConfig? Function()? storageConfig, RealtimekitVideoConfig? Function()? videoConfig, }) { return RealtimekitRecordingConfig(
+RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitLivestreamingConfig? Function()? liveStreamingConfig, double? Function()? maxSeconds, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, Omittable<RealtimekitStorageConfig?>? storageConfig, RealtimekitVideoConfig? Function()? videoConfig, }) { return RealtimekitRecordingConfig(
   audioConfig: audioConfig != null ? audioConfig() : this.audioConfig,
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,
   liveStreamingConfig: liveStreamingConfig != null ? liveStreamingConfig() : this.liveStreamingConfig,
   maxSeconds: maxSeconds != null ? maxSeconds() : this.maxSeconds,
   realtimekitBucketConfig: realtimekitBucketConfig != null ? realtimekitBucketConfig() : this.realtimekitBucketConfig,
-  storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
+  storageConfig: storageConfig ?? this.storageConfig,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

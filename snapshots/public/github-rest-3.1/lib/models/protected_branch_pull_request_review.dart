@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ProtectedBranchPullRequestReview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch_pull_request_review/protected_branch_pull_request_review_bypass_pull_request_allowances.dart';import 'package:pub_github_rest_3_1/models/protected_branch_pull_request_review/protected_branch_pull_request_review_dismissal_restrictions.dart';/// Protected Branch Pull Request Review
-@immutable final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestReview({required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.url, this.dismissalRestrictions, this.bypassPullRequestAllowances, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, });
+@immutable final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestReview({required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.url, this.dismissalRestrictions, this.bypassPullRequestAllowances, this.requiredApprovingReviewCount, this.requireLastPushApproval, });
 
 factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReview(
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
@@ -11,7 +11,7 @@ factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) { r
   dismissStaleReviews: json['dismiss_stale_reviews'] as bool,
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
-  requireLastPushApproval: json.containsKey('require_last_push_approval') ? json['require_last_push_approval'] as bool : false,
+  requireLastPushApproval: json['require_last_push_approval'] as bool?,
 ); }
 
 final Uri? url;
@@ -28,7 +28,10 @@ final bool requireCodeOwnerReviews;
 final int? requiredApprovingReviewCount;
 
 /// Whether the most recent push must be approved by someone other than the person who pushed it.
-final bool requireLastPushApproval;
+final bool? requireLastPushApproval;
+
+/// The value of `requireLastPushApproval`, or its schema default when absent.
+bool get requireLastPushApprovalOrDefault => requireLastPushApproval ?? false;
 
 Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
@@ -37,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'dismiss_stale_reviews': dismissStaleReviews,
   'require_code_owner_reviews': requireCodeOwnerReviews,
   'required_approving_review_count': ?requiredApprovingReviewCount,
-  'require_last_push_approval': requireLastPushApproval,
+  'require_last_push_approval': ?requireLastPushApproval,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismiss_stale_reviews') && json['dismiss_stale_reviews'] is bool &&
       json.containsKey('require_code_owner_reviews') && json['require_code_owner_reviews'] is bool; } 
@@ -49,7 +52,7 @@ if (requiredApprovingReviewCount$ != null) {
   if (requiredApprovingReviewCount$ > 6) { errors.add('requiredApprovingReviewCount: must be <= 6'); }
 }
 return errors; } 
-ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranchPullRequestReviewDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, bool? dismissStaleReviews, bool? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, }) { return ProtectedBranchPullRequestReview(
+ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranchPullRequestReviewDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, bool? dismissStaleReviews, bool? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, }) { return ProtectedBranchPullRequestReview(
   url: url != null ? url() : this.url,
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   bypassPullRequestAllowances: bypassPullRequestAllowances != null ? bypassPullRequestAllowances() : this.bypassPullRequestAllowances,

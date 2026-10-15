@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({required this.guaranteedAt, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({required this.guaranteedAt, this.expand, this.metadata, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   guaranteedAt: (json['guaranteed_at'] as num).toInt(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

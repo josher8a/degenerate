@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreditNoteRefund
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_payment_record_refund.dart';import 'package:pub_stripe_spec3/models/refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_payment_record_refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
 sealed class CreditNoteRefundType {const CreditNoteRefundType();
 
 factory CreditNoteRefundType.fromJson(String json) { return switch (json) {
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentR
 factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),
   paymentRecordRefund: json.containsKey('payment_record_refund') ? Omittable(json['payment_record_refund'] != null ? CreditNotesPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  refund: OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),),
+  refund: CreditNoteRefundRefund.fromJson(json['refund']),
   type: json.containsKey('type') ? Omittable(json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 

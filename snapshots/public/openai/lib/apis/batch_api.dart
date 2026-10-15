@@ -32,7 +32,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListBatchesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -53,7 +53,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Batch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -72,7 +72,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Batch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +91,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Batch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -58,7 +58,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -87,7 +87,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -109,7 +109,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSessionChatResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -156,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSessionParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -188,7 +188,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetParticipantDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -209,7 +209,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSessionSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -230,7 +230,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostSessionsSessionIdSummaryResponse2Xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -251,7 +251,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetSessionTranscriptResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -280,7 +280,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetParticipantDataFromPeerIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

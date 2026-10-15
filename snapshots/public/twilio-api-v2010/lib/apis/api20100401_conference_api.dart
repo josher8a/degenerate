@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountConference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -49,7 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountConference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListConferenceResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

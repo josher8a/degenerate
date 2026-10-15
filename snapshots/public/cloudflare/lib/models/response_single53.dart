@@ -7,7 +7,7 @@ factory ResponseSingle53.fromJson(Map<String, dynamic> json) { return ResponseSi
   errors: (json['errors'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},),
+  result: json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},) : null,
 ); }
 
 final List<WafManagedRulesMessages2> errors;
@@ -19,23 +19,23 @@ final List<WafManagedRulesMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final ResponseSingle53Result result;
+final ResponseSingle53Result? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': result.toJson(),
+  'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-ResponseSingle53 copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, ResponseSingle53Result? result, }) { return ResponseSingle53(
+ResponseSingle53 copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, ResponseSingle53Result? Function()? result, }) { return ResponseSingle53(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseSingle53 &&

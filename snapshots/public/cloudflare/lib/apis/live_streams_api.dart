@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetLivestreamAnalyticsCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -81,7 +81,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FetchAllLivestreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LivestreamSessionLivestreamIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -157,7 +157,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ActiveLivestreamSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -178,7 +178,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LivestreamsLivestreamSessionIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -199,7 +199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MeetingsMeetingIdActiveLivestreamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -220,7 +220,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return StopLivestreamingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -252,7 +252,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LivestreamSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -275,7 +275,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return StartLivestreamingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -307,7 +307,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

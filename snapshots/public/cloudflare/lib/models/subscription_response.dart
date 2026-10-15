@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SubscriptionResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/component_value2.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/current_period_end.dart';import 'package:pub_cloudflare/models/current_period_start.dart';import 'package:pub_cloudflare/models/frequency.dart';import 'package:pub_cloudflare/models/price.dart';import 'package:pub_cloudflare/models/rate_plan2.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';import 'package:pub_cloudflare/models/state.dart';import 'package:pub_cloudflare/models/subscription2/subscription2_app.dart';import 'package:pub_cloudflare/models/zone.dart';@immutable final class SubscriptionResponse {const SubscriptionResponse({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/component_value2.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/current_period_end.dart';import 'package:pub_cloudflare/models/current_period_start.dart';import 'package:pub_cloudflare/models/frequency.dart';import 'package:pub_cloudflare/models/price.dart';import 'package:pub_cloudflare/models/rate_plan2.dart';import 'package:pub_cloudflare/models/request2/request2_app.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';import 'package:pub_cloudflare/models/state.dart';import 'package:pub_cloudflare/models/zone.dart';@immutable final class SubscriptionResponse {const SubscriptionResponse({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });
 
 factory SubscriptionResponse.fromJson(Map<String, dynamic> json) { return SubscriptionResponse(
-  app: json['app'] != null ? Subscription2App.fromJson(json['app'] as Map<String, dynamic>) : null,
+  app: json['app'] != null ? Request2App.fromJson(json['app'] as Map<String, dynamic>) : null,
   componentValues: (json['component_values'] as List<dynamic>?)?.map((e) => ComponentValue2.fromJson(e as Map<String, dynamic>)).toList(),
   currency: json['currency'] != null ? Currency.fromJson(json['currency'] as String) : null,
   currentPeriodEnd: json['current_period_end'] != null ? CurrentPeriodEnd.fromJson(json['current_period_end'] as String) : null,
@@ -17,7 +17,7 @@ factory SubscriptionResponse.fromJson(Map<String, dynamic> json) { return Subscr
   zone: json['zone'] != null ? Zone.fromJson(json['zone'] as Map<String, dynamic>) : null,
 ); }
 
-final Subscription2App? app;
+final Request2App? app;
 
 /// The list of add-ons subscribed to.
 final List<ComponentValue2>? componentValues;
@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (zone != null) 'zone': zone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app', 'component_values', 'currency', 'current_period_end', 'current_period_start', 'frequency', 'id', 'price', 'rate_plan', 'state', 'zone'}.contains(key)); } 
-SubscriptionResponse copyWith({Subscription2App? Function()? app, List<ComponentValue2>? Function()? componentValues, Currency? Function()? currency, CurrentPeriodEnd? Function()? currentPeriodEnd, CurrentPeriodStart? Function()? currentPeriodStart, Frequency? Function()? frequency, SchemasIdentifier? Function()? id, Price? Function()? price, RatePlan2? Function()? ratePlan, State? Function()? state, Zone? Function()? zone, }) { return SubscriptionResponse(
+SubscriptionResponse copyWith({Request2App? Function()? app, List<ComponentValue2>? Function()? componentValues, Currency? Function()? currency, CurrentPeriodEnd? Function()? currentPeriodEnd, CurrentPeriodStart? Function()? currentPeriodStart, Frequency? Function()? frequency, SchemasIdentifier? Function()? id, Price? Function()? price, RatePlan2? Function()? ratePlan, State? Function()? state, Zone? Function()? zone, }) { return SubscriptionResponse(
   app: app != null ? app() : this.app,
   componentValues: componentValues != null ? componentValues() : this.componentValues,
   currency: currency != null ? currency() : this.currency,

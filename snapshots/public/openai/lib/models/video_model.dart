@@ -113,7 +113,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sora2, W
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [VideoModelVariant2]
-typedef VideoModel = OneOf2<String,VideoModelVariant2>;
+@immutable final class VideoModel {/// A value built from one or more typed views (at least one must be present).
+const VideoModel({this.string = const Omittable.absent(), this.videoModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const VideoModel._({required this.rawValue, required this.string, required this.videoModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory VideoModel.fromJson(Object? json) { return VideoModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  videoModelVariant2: parseAnyOfVariant<VideoModelVariant2>(json, (value) => VideoModelVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `VideoModelVariant2`, when it matches.
+final Omittable<VideoModelVariant2> videoModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || videoModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (videoModelVariant2.isPresent) videoModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is VideoModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'VideoModel(${toJson()})';
+
+ }

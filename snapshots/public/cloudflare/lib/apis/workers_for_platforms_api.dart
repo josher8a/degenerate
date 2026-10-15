@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkersForPlatformsApi" (25 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/namespace_worker_create_request.dart';import 'package:pub_cloudflare/models/namespace_worker_patch_namespace_request.dart';import 'package:pub_cloudflare/models/namespace_worker_patch_script_settings_request.dart';import 'package:pub_cloudflare/models/namespace_worker_put_namespace_request.dart';import 'package:pub_cloudflare/models/namespace_worker_put_script_content_request.dart';import 'package:pub_cloudflare/models/namespace_worker_script_upload_worker_module_bindings_inherit.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_object.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_response/workers_create_assets_upload_session_response_result.dart';import 'package:pub_cloudflare/models/workers_dispatch_namespace_name.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_multipart_script.dart';import 'package:pub_cloudflare/models/workers_namespace_response.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item.dart';import 'package:pub_cloudflare/models/workers_namespace_script_delete_bulk_response.dart';import 'package:pub_cloudflare/models/workers_namespace_script_response.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';import 'package:pub_cloudflare/models/workers_script_response_upload.dart';import 'package:pub_cloudflare/models/workers_secret.dart';import 'package:pub_cloudflare/models/workers_secret_name.dart';import 'package:pub_cloudflare/models/workers_secret_name_url_encoded.dart';import 'package:pub_cloudflare/models/workers_tag.dart';/// WorkersForPlatformsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/namespace_worker_create_request.dart';import 'package:pub_cloudflare/models/namespace_worker_patch_namespace_request.dart';import 'package:pub_cloudflare/models/namespace_worker_patch_script_settings_request.dart';import 'package:pub_cloudflare/models/namespace_worker_put_namespace_request.dart';import 'package:pub_cloudflare/models/namespace_worker_put_script_content_request.dart';import 'package:pub_cloudflare/models/namespace_worker_script_upload_worker_module_bindings_inherit.dart';import 'package:pub_cloudflare/models/workers_binding_item_response.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_object.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_response/workers_create_assets_upload_session_response_result.dart';import 'package:pub_cloudflare/models/workers_dispatch_namespace_name.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_multipart_script_request.dart';import 'package:pub_cloudflare/models/workers_namespace_response.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item_response.dart';import 'package:pub_cloudflare/models/workers_namespace_script_delete_bulk_response.dart';import 'package:pub_cloudflare/models/workers_namespace_script_response.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';import 'package:pub_cloudflare/models/workers_script_response_upload.dart';import 'package:pub_cloudflare/models/workers_secret.dart';import 'package:pub_cloudflare/models/workers_secret_name.dart';import 'package:pub_cloudflare/models/workers_secret_name_url_encoded.dart';import 'package:pub_cloudflare/models/workers_secret_response.dart';import 'package:pub_cloudflare/models/workers_tag.dart';/// WorkersForPlatformsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -209,7 +209,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WorkersNamespaceScriptDeleteBulkResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -231,7 +231,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -245,7 +245,7 @@ return execute(
 /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}`
-Future<ApiResult<WorkersScriptResponseUpload, CreateWorkerVersionError>> namespaceWorkerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersMultipartScript body, NamespaceWorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersScriptResponseUpload, CreateWorkerVersionError>> namespaceWorkerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersMultipartScriptRequest body, NamespaceWorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) {
   queryParameters['bindings_inherit'] = bindingsInherit.toJson();
@@ -268,7 +268,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -299,7 +299,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -324,7 +324,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -338,7 +338,7 @@ return execute(
 /// Fetch script bindings from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/bindings`
-Future<ApiResult<List<WorkersBindingItem>, CreateWorkerVersionError>> namespaceWorkerGetScriptBindings({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorkersBindingItemResponse>, CreateWorkerVersionError>> namespaceWorkerGetScriptBindings({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -347,11 +347,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => WorkersBindingItemResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -370,7 +370,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -404,7 +404,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -418,7 +418,7 @@ return execute(
 /// List secrets bound to a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets`
-Future<ApiResult<List<WorkersSecret>, CreateWorkerVersionError>> namespaceWorkerListScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorkersSecretResponse>, CreateWorkerVersionError>> namespaceWorkerListScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -427,11 +427,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => WorkersSecret.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => WorkersSecretResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -441,7 +441,7 @@ return execute(
 /// Add a secret to a script uploaded to a Workers for Platforms namespace.
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets`
-Future<ApiResult<WorkersSecret, CreateWorkerVersionError>> namespaceWorkerPutScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersSecret body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersSecretResponse, CreateWorkerVersionError>> namespaceWorkerPutScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersSecret body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -452,11 +452,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorkersSecret.fromJson(json['result'] as Map<String, dynamic>);
+    return WorkersSecretResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -466,7 +466,7 @@ return execute(
 /// Get a given secret binding (value omitted) on a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<WorkersSecret, CreateWorkerVersionError>> namespaceWorkerGetScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersSecretResponse, CreateWorkerVersionError>> namespaceWorkerGetScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (urlEncoded != null) {
   queryParameters['url_encoded'] = urlEncoded.toJson().toString();
@@ -483,11 +483,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorkersSecret.fromJson(json['result'] as Map<String, dynamic>);
+    return WorkersSecretResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -514,7 +514,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -528,7 +528,7 @@ return execute(
 /// Get script settings from a script uploaded to a Workers for Platforms namespace.
 ///
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings`
-Future<ApiResult<WorkersNamespaceScriptAndVersionSettingsItem?, CreateWorkerVersionError>> namespaceWorkerGetScriptSettings({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersNamespaceScriptAndVersionSettingsItemResponse?, CreateWorkerVersionError>> namespaceWorkerGetScriptSettings({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -537,11 +537,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItem.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItemResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -551,7 +551,7 @@ return execute(
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings`
-Future<ApiResult<WorkersNamespaceScriptAndVersionSettingsItem?, CreateWorkerVersionError>> namespaceWorkerPatchScriptSettings({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required NamespaceWorkerPatchScriptSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersNamespaceScriptAndVersionSettingsItemResponse?, CreateWorkerVersionError>> namespaceWorkerPatchScriptSettings({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required NamespaceWorkerPatchScriptSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -565,11 +565,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItem.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItemResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
@@ -588,7 +588,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -613,7 +613,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -636,7 +636,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -659,7 +659,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

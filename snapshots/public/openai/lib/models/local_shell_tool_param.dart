@@ -2,7 +2,7 @@
 // Source: #/components/schemas/LocalShellToolParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool that allows the model to execute shell commands in a local environment.
-@immutable final class LocalShellToolParam {const LocalShellToolParam({this.type = 'local_shell'});
+@immutable final class LocalShellToolParam {const LocalShellToolParam({required this.type});
 
 factory LocalShellToolParam.fromJson(Map<String, dynamic> json) { return LocalShellToolParam(
   type: json['type'] as String,

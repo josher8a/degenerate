@@ -1,21 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TextToSpeech
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech {const TextToSpeech({required this.prompt, this.lang = 'en', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech {const TextToSpeech({required this.prompt, this.lang, });
 
 factory TextToSpeech.fromJson(Map<String, dynamic> json) { return TextToSpeech(
-  lang: json.containsKey('lang') ? json['lang'] as String : 'en',
+  lang: json['lang'] as String?,
   prompt: json['prompt'] as String,
 ); }
 
 /// The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
-final String lang;
+final String? lang;
 
 /// A text description of the audio you want to generate
 final String prompt;
 
+/// The value of `lang`, or its schema default when absent.
+String get langOrDefault => lang ?? 'en';
+
 Map<String, dynamic> toJson() { return {
-  'lang': lang,
+  'lang': ?lang,
   'prompt': prompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
@@ -23,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promp
 List<String> validate() { final errors = <String>[];
 if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
 return errors; } 
-TextToSpeech copyWith({String Function()? lang, String? prompt, }) { return TextToSpeech(
+TextToSpeech copyWith({String? Function()? lang, String? prompt, }) { return TextToSpeech(
   lang: lang != null ? lang() : this.lang,
   prompt: prompt ?? this.prompt,
 ); } 

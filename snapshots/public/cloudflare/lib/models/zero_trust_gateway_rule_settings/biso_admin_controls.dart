@@ -523,7 +523,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Fu
 
  }
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
-@immutable final class BisoAdminControls {const BisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version = BisoAdminControlsVersion.v1, });
+@immutable final class BisoAdminControls {const BisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version, });
 
 factory BisoAdminControls.fromJson(Map<String, dynamic> json) { return BisoAdminControls(
   copy: json['copy'] != null ? Copy.fromJson(json['copy'] as String) : null,
@@ -537,7 +537,7 @@ factory BisoAdminControls.fromJson(Map<String, dynamic> json) { return BisoAdmin
   paste: json['paste'] != null ? Paste.fromJson(json['paste'] as String) : null,
   printing: json['printing'] != null ? Printing.fromJson(json['printing'] as String) : null,
   upload: json['upload'] != null ? Upload.fromJson(json['upload'] as String) : null,
-  version: json.containsKey('version') ? BisoAdminControlsVersion.fromJson(json['version'] as String) : BisoAdminControlsVersion.v1,
+  version: json['version'] != null ? BisoAdminControlsVersion.fromJson(json['version'] as String) : null,
 ); }
 
 /// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
@@ -588,7 +588,10 @@ final Printing? printing;
 final Upload? upload;
 
 /// Indicate which version of the browser isolation controls should apply.
-final BisoAdminControlsVersion version;
+final BisoAdminControlsVersion? version;
+
+/// The value of `version`, or its schema default when absent.
+BisoAdminControlsVersion get versionOrDefault => version ?? BisoAdminControlsVersion.fromJson('v1');
 
 Map<String, dynamic> toJson() { return {
   if (copy != null) 'copy': copy?.toJson(),
@@ -602,10 +605,10 @@ Map<String, dynamic> toJson() { return {
   if (paste != null) 'paste': paste?.toJson(),
   if (printing != null) 'printing': printing?.toJson(),
   if (upload != null) 'upload': upload?.toJson(),
-  'version': version.toJson(),
+  if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key)); } 
-BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, Download? Function()? download, bool? Function()? dp, bool? Function()? du, Keyboard? Function()? keyboard, Paste? Function()? paste, Printing? Function()? printing, Upload? Function()? upload, BisoAdminControlsVersion Function()? version, }) { return BisoAdminControls(
+BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, Download? Function()? download, bool? Function()? dp, bool? Function()? du, Keyboard? Function()? keyboard, Paste? Function()? paste, Printing? Function()? printing, Upload? Function()? upload, BisoAdminControlsVersion? Function()? version, }) { return BisoAdminControls(
   copy: copy != null ? copy() : this.copy,
   dcp: dcp != null ? dcp() : this.dcp,
   dd: dd != null ? dd() : this.dd,

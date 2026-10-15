@@ -2,11 +2,11 @@
 // Source: #/components/schemas/ConfigMapKeySelector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Selects a key from a ConfigMap.
-@immutable final class ConfigMapKeySelector {const ConfigMapKeySelector({this.key = '', this.name = '', this.optional, });
+@immutable final class ConfigMapKeySelector {const ConfigMapKeySelector({required this.key, this.name, this.optional, });
 
 factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) { return ConfigMapKeySelector(
   key: json['key'] as String,
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
   optional: json['optional'] as bool?,
 ); }
 
@@ -14,18 +14,21 @@ factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) { return Config
 final String key;
 
 /// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-final String name;
+final String? name;
 
 /// Specify whether the ConfigMap or its key must be defined
 final bool? optional;
 
+/// The value of `name`, or its schema default when absent.
+String get nameOrDefault => name ?? '';
+
 Map<String, dynamic> toJson() { return {
   'key': key,
-  'name': name,
+  'name': ?name,
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-ConfigMapKeySelector copyWith({String? key, String Function()? name, bool? Function()? optional, }) { return ConfigMapKeySelector(
+ConfigMapKeySelector copyWith({String? key, String? Function()? name, bool? Function()? optional, }) { return ConfigMapKeySelector(
   key: key ?? this.key,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchInstanceChatCompletionRequest (inline: AiSearchOptions > QueryRewrite)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant1.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_model.dart';@immutable final class QueryRewrite {const QueryRewrite({this.enabled, this.model, this.rewritePrompt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_model.dart';@immutable final class QueryRewrite {const QueryRewrite({this.enabled, this.model, this.rewritePrompt, });
 
 factory QueryRewrite.fromJson(Map<String, dynamic> json) { return QueryRewrite(
   enabled: json['enabled'] as bool?,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? AiSearchInstanceChatCompletionRequestModel.fromJson(json['model']) : null,
   rewritePrompt: json['rewrite_prompt'] as String?,
 ); }
 

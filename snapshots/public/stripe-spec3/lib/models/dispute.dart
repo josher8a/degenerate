@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Dispute
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';sealed class EnhancedEligibilityTypes {const EnhancedEligibilityTypes();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';sealed class EnhancedEligibilityTypes {const EnhancedEligibilityTypes();
 
 factory EnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   amount: (json['amount'] as num).toInt(),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
-  charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
+  charge: ApplicationFeeCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   enhancedEligibilityTypes: (json['enhanced_eligibility_types'] as List<dynamic>).map((e) => EnhancedEligibilityTypes.fromJson(e as String)).toList(),
@@ -300,7 +300,7 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DisputeObject.fromJson(json['object'] as String),
-  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null) : const Omittable.absent(),
   paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
   status: DisputeStatus.fromJson(json['status'] as String),

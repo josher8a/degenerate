@@ -140,7 +140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
  }
 /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.
 /// 
-@immutable final class ComparisonFilter {const ComparisonFilter({required this.key, required this.value, this.type = ComparisonFilterType.eq, });
+@immutable final class ComparisonFilter {const ComparisonFilter({required this.type, required this.key, required this.value, });
 
 factory ComparisonFilter.fromJson(Map<String, dynamic> json) { return ComparisonFilter(
   type: ComparisonFilterType.fromJson(json['type'] as String),

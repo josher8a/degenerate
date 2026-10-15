@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses/reasoning.dart';import 'package:pub_cloudflare/models/responses/responses_input.dart';@immutable final class ResponsesAsyncRequests {const ResponsesAsyncRequests({required this.input, this.reasoning, });
 
 factory ResponsesAsyncRequests.fromJson(Map<String, dynamic> json) { return ResponsesAsyncRequests(
-  input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),
+  input: ResponsesInput.fromJson(json['input']),
   reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
 ); }
 

@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
  }
 /// A repository security advisory.
-@immutable final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, this.cvssSeverities, });
+@immutable final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, this.cvssSeverities = const Omittable.absent(), });
 
 factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return RepositoryAdvisory(
   ghsaId: json['ghsa_id'] as String,
@@ -137,7 +137,7 @@ factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return Reposito
   submission: json['submission'] != null ? Submission.fromJson(json['submission'] as Map<String, dynamic>) : null,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryVulnerability.fromJson(e as Map<String, dynamic>)).toList(),
   cvss: json['cvss'] != null ? CvssSeveritiesCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null,
-  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
+  cvssSeverities: json.containsKey('cvss_severities') ? Omittable(json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>?)?.map((e) => Cwes.fromJson(e as Map<String, dynamic>)).toList(),
   cweIds: (json['cwe_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
@@ -200,7 +200,7 @@ final List<RepositoryAdvisoryVulnerability>? vulnerabilities;
 
 final CvssSeveritiesCvss? cvss;
 
-final CvssSeverities? cvssSeverities;
+final Omittable<CvssSeverities?> cvssSeverities;
 
 final List<Cwes>? cwes;
 
@@ -240,7 +240,7 @@ Map<String, dynamic> toJson() { return {
   'submission': submission?.toJson(),
   'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
   'cvss': cvss?.toJson(),
-  if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
+  if (cvssSeverities.isPresent) 'cvss_severities': cvssSeverities.value?.toJson(),
   'cwes': cwes?.map((e) => e.toJson()).toList(),
   'cwe_ids': cweIds,
   'credits': credits?.map((e) => e.toJson()).toList(),
@@ -283,7 +283,7 @@ if (description$ != null) {
   if (description$.runes.length > 65535) { errors.add('description: length must be <= 65535'); }
 }
 return errors; } 
-RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, PrivateVulnerabilityReportCreateSeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, Submission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, CvssSeverities? Function()? cvssSeverities, List<Cwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
+RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, PrivateVulnerabilityReportCreateSeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, Submission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<Cwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,
@@ -303,7 +303,7 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
   submission: submission != null ? submission() : this.submission,
   vulnerabilities: vulnerabilities != null ? vulnerabilities() : this.vulnerabilities,
   cvss: cvss != null ? cvss() : this.cvss,
-  cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,
+  cvssSeverities: cvssSeverities ?? this.cvssSeverities,
   cwes: cwes != null ? cwes() : this.cwes,
   cweIds: cweIds != null ? cweIds() : this.cweIds,
   credits: credits != null ? credits() : this.credits,

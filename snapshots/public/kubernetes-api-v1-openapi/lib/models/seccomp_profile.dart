@@ -2,7 +2,7 @@
 // Source: #/components/schemas/SeccompProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SeccompProfile defines a pod/container's seccomp profile settings. Only one profile source may be set.
-@immutable final class SeccompProfile {const SeccompProfile({this.localhostProfile, this.type = '', });
+@immutable final class SeccompProfile {const SeccompProfile({required this.type, this.localhostProfile, });
 
 factory SeccompProfile.fromJson(Map<String, dynamic> json) { return SeccompProfile(
   localhostProfile: json['localhostProfile'] as String?,

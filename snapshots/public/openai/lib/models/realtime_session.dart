@@ -140,25 +140,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
  }
 /// Realtime session object for the beta interface.
-@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities = const Omittable.absent(), this.model, this.instructions, this.voice, this.inputAudioFormat = InputAudioFormat.pcm16, this.outputAudioFormat = RealtimeSessionOutputAudioFormat.pcm16, this.inputAudioTranscription = const Omittable.absent(), this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing = const Omittable.absent(), this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt = const Omittable.absent(), this.include = const Omittable.absent(), });
+@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities = const Omittable.absent(), this.model, this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription = const Omittable.absent(), this.turnDetection = const Omittable.absent(), this.inputAudioNoiseReduction, this.speed, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.expiresAt, this.prompt = const Omittable.absent(), this.include = const Omittable.absent(), });
 
 factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeSessionObject.fromJson(json['object'] as String) : null,
   modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => RealtimeSessionCreateRequestGaModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? RealtimeSessionCreateRequestGaModel.fromJson(json['model']) : null,
   instructions: json['instructions'] as String?,
-  voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
-  inputAudioFormat: json.containsKey('input_audio_format') ? InputAudioFormat.fromJson(json['input_audio_format'] as String) : InputAudioFormat.pcm16,
-  outputAudioFormat: json.containsKey('output_audio_format') ? RealtimeSessionOutputAudioFormat.fromJson(json['output_audio_format'] as String) : RealtimeSessionOutputAudioFormat.pcm16,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
+  inputAudioFormat: json['input_audio_format'] != null ? InputAudioFormat.fromJson(json['input_audio_format'] as String) : null,
+  outputAudioFormat: json['output_audio_format'] != null ? RealtimeSessionOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   inputAudioTranscription: json.containsKey('input_audio_transcription') ? Omittable(json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  turnDetection: json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
+  turnDetection: json.containsKey('turn_detection') ? Omittable(json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? InputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
-  speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
+  speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
   tracing: json.containsKey('tracing') ? Omittable(json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
-  toolChoice: json.containsKey('tool_choice') ? json['tool_choice'] as String : 'auto',
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.8,
+  toolChoice: json['tool_choice'] as String?,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxResponseOutputTokens: json['max_response_output_tokens'] != null ? OneOf2.parse(json['max_response_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -208,18 +208,18 @@ final VoiceIdsShared? voice;
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
 /// single channel (mono), and little-endian byte order.
 /// 
-final InputAudioFormat inputAudioFormat;
+final InputAudioFormat? inputAudioFormat;
 
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, output audio is sampled at a rate of 24kHz.
 /// 
-final RealtimeSessionOutputAudioFormat outputAudioFormat;
+final RealtimeSessionOutputAudioFormat? outputAudioFormat;
 
 /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
 /// 
 final Omittable<AudioTranscription?> inputAudioTranscription;
 
-final RealtimeTurnDetection? turnDetection;
+final Omittable<RealtimeTurnDetection?> turnDetection;
 
 /// Configuration for input audio noise reduction. This can be set to `null` to turn off.
 /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.
@@ -231,7 +231,7 @@ final InputAudioNoiseReduction? inputAudioNoiseReduction;
 /// the minimum speed. 1.5 is the maximum speed. This value can only be changed
 /// in between model turns, not while a response is in progress.
 /// 
-final double speed;
+final double? speed;
 
 /// Configuration options for tracing. Set to null to disable tracing. Once
 /// tracing is enabled for a session, the configuration cannot be modified.
@@ -247,11 +247,11 @@ final List<RealtimeFunctionTool>? tools;
 /// How the model chooses tools. Options are `auto`, `none`, `required`, or
 /// specify a function.
 /// 
-final String toolChoice;
+final String? toolChoice;
 
 /// Sampling temperature for the model, limited to `[0.6, 1.2]`. For audio models a temperature of 0.8 is highly recommended for best performance.
 /// 
-final double temperature;
+final double? temperature;
 
 /// Maximum number of output tokens for a single assistant response,
 /// inclusive of tool calls. Provide an integer between 1 and 4096 to
@@ -270,6 +270,21 @@ final Omittable<Prompt?> prompt;
 /// 
 final Omittable<List<Include>?> include;
 
+/// The value of `inputAudioFormat`, or its schema default when absent.
+InputAudioFormat get inputAudioFormatOrDefault => inputAudioFormat ?? InputAudioFormat.fromJson('pcm16');
+
+/// The value of `outputAudioFormat`, or its schema default when absent.
+RealtimeSessionOutputAudioFormat get outputAudioFormatOrDefault => outputAudioFormat ?? RealtimeSessionOutputAudioFormat.fromJson('pcm16');
+
+/// The value of `speed`, or its schema default when absent.
+double get speedOrDefault => speed ?? 1.0;
+
+/// The value of `toolChoice`, or its schema default when absent.
+String get toolChoiceOrDefault => toolChoice ?? 'auto';
+
+/// The value of `temperature`, or its schema default when absent.
+double get temperatureOrDefault => temperature ?? 0.8;
+
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
@@ -277,16 +292,16 @@ Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
   'instructions': ?instructions,
   if (voice != null) 'voice': voice?.toJson(),
-  'input_audio_format': inputAudioFormat.toJson(),
-  'output_audio_format': outputAudioFormat.toJson(),
+  if (inputAudioFormat != null) 'input_audio_format': inputAudioFormat?.toJson(),
+  if (outputAudioFormat != null) 'output_audio_format': outputAudioFormat?.toJson(),
   if (inputAudioTranscription.isPresent) 'input_audio_transcription': inputAudioTranscription.value?.toJson(),
-  if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
+  if (turnDetection.isPresent) 'turn_detection': turnDetection.value?.toJson(),
   if (inputAudioNoiseReduction != null) 'input_audio_noise_reduction': inputAudioNoiseReduction?.toJson(),
-  'speed': speed,
+  'speed': ?speed,
   if (tracing.isPresent) 'tracing': tracing.value?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
-  'tool_choice': toolChoice,
-  'temperature': temperature,
+  'tool_choice': ?toolChoice,
+  'temperature': ?temperature,
   if (maxResponseOutputTokens != null) 'max_response_output_tokens': maxResponseOutputTokens?.toJson(),
   'expires_at': ?expiresAt,
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
@@ -295,10 +310,13 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
-if (speed > 1.5) { errors.add('speed: must be <= 1.5'); }
+final speed$ = speed;
+if (speed$ != null) {
+  if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
+  if (speed$ > 1.5) { errors.add('speed: must be <= 1.5'); }
+}
 return errors; } 
-RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, RealtimeTurnDetection? Function()? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double Function()? speed, Omittable<RealtimeSessionCreateRequestTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String Function()? toolChoice, double Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<Include>?>? include, }) { return RealtimeSession(
+RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat? Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat? Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, Omittable<RealtimeTurnDetection?>? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double? Function()? speed, Omittable<RealtimeSessionCreateRequestTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<Include>?>? include, }) { return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   modalities: modalities ?? this.modalities,
@@ -308,7 +326,7 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,
   outputAudioFormat: outputAudioFormat != null ? outputAudioFormat() : this.outputAudioFormat,
   inputAudioTranscription: inputAudioTranscription ?? this.inputAudioTranscription,
-  turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
+  turnDetection: turnDetection ?? this.turnDetection,
   inputAudioNoiseReduction: inputAudioNoiseReduction != null ? inputAudioNoiseReduction() : this.inputAudioNoiseReduction,
   speed: speed != null ? speed() : this.speed,
   tracing: tracing ?? this.tracing,

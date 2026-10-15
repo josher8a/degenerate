@@ -53,7 +53,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 @override int get hashCode => value.hashCode;
 
  }
-/// Variants:
-/// - `.a` → [OrganizationId]
-/// - `.b` → [OrganizationListOrganizationsParentIdVariant2]
-typedef OrganizationListOrganizationsParentId = OneOf2<OrganizationId,OrganizationListOrganizationsParentIdVariant2>;
+@immutable final class OrganizationListOrganizationsParentId {/// A value built from one or more typed views (at least one must be present).
+const OrganizationListOrganizationsParentId({this.organizationId = const Omittable.absent(), this.organizationListOrganizationsParentIdVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const OrganizationListOrganizationsParentId._({required this.rawValue, required this.organizationId, required this.organizationListOrganizationsParentIdVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory OrganizationListOrganizationsParentId.fromJson(Object? json) { return OrganizationListOrganizationsParentId._(
+  rawValue: Omittable(json),
+  organizationId: parseAnyOfVariant<OrganizationId>(json, (value) => OrganizationId.fromJson(value! as String)),
+  organizationListOrganizationsParentIdVariant2: parseAnyOfVariant<OrganizationListOrganizationsParentIdVariant2>(json, (value) => OrganizationListOrganizationsParentIdVariant2.fromJson(value! as String)),
+); }
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `OrganizationId`, when it matches.
+final Omittable<OrganizationId> organizationId;
+
+/// The payload decoded as `OrganizationListOrganizationsParentIdVariant2`, when it matches.
+final Omittable<OrganizationListOrganizationsParentIdVariant2> organizationListOrganizationsParentIdVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => organizationId.isPresent || organizationListOrganizationsParentIdVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (organizationId.isPresent) organizationId.value?.toJson(),
+    if (organizationListOrganizationsParentIdVariant2.isPresent) organizationListOrganizationsParentIdVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is OrganizationListOrganizationsParentId && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'OrganizationListOrganizationsParentId(${toJson()})';
+
+ }

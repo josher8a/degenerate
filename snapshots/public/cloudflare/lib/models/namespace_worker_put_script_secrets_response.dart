@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NamespaceWorkerPutScriptSecretsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_secret.dart';@immutable final class NamespaceWorkerPutScriptSecretsResponse {const NamespaceWorkerPutScriptSecretsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_secret_response.dart';@immutable final class NamespaceWorkerPutScriptSecretsResponse {const NamespaceWorkerPutScriptSecretsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory NamespaceWorkerPutScriptSecretsResponse.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPutScriptSecretsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: WorkersSecret.fromJson(json['result'] as Map<String, dynamic>),
+  result: WorkersSecretResponse.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
 final List<WorkersMessages2> errors;
@@ -19,7 +19,7 @@ final List<WorkersMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final WorkersSecret result;
+final WorkersSecretResponse result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-NamespaceWorkerPutScriptSecretsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkersSecret? result, }) { return NamespaceWorkerPutScriptSecretsResponse(
+NamespaceWorkerPutScriptSecretsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkersSecretResponse? result, }) { return NamespaceWorkerPutScriptSecretsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

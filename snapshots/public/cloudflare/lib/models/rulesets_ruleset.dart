@@ -2,10 +2,10 @@
 // Source: #/components/schemas/RulesetsRuleset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';/// A ruleset object.
-@immutable final class RulesetsRuleset {const RulesetsRuleset({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, });
+@immutable final class RulesetsRuleset {const RulesetsRuleset({required this.id, required this.lastUpdated, required this.version, this.description, this.name, });
 
 factory RulesetsRuleset.fromJson(Map<String, dynamic> json) { return RulesetsRuleset(
-  description: json.containsKey('description') ? json['description'] as String : '',
+  description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
   name: json['name'] as String?,
@@ -15,7 +15,7 @@ factory RulesetsRuleset.fromJson(Map<String, dynamic> json) { return RulesetsRul
 /// An informative description of the ruleset.
 /// 
 /// Example: `'A description for my ruleset.'`
-final String description;
+final String? description;
 
 final RulesetsRulesetId id;
 
@@ -31,8 +31,11 @@ final String? name;
 
 final RulesetsRulesetVersion version;
 
+/// The value of `description`, or its schema default when absent.
+String get descriptionOrDefault => description ?? '';
+
 Map<String, dynamic> toJson() { return {
-  'description': description,
+  'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
   'name': ?name,
@@ -48,7 +51,7 @@ if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
 }
 return errors; } 
-RulesetsRuleset copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, }) { return RulesetsRuleset(
+RulesetsRuleset copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, }) { return RulesetsRuleset(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,

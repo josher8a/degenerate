@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > Invoices)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/invoices_default_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/invoices_hosted_payment_method_save.dart';@immutable final class PostAccountsAccountRequestSettingsInvoices {const PostAccountsAccountRequestSettingsInvoices({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/invoices_default_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/invoices_hosted_payment_method_save.dart';@immutable final class PostAccountsAccountRequestSettingsInvoices {const PostAccountsAccountRequestSettingsInvoices({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
 
 factory PostAccountsAccountRequestSettingsInvoices.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsInvoices(
-  defaultAccountTaxIds: json['default_account_tax_ids'] != null ? OneOf2.parse(json['default_account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  defaultAccountTaxIds: json['default_account_tax_ids'] != null ? InvoicesDefaultAccountTaxIds.fromJson(json['default_account_tax_ids']) : null,
   hostedPaymentMethodSave: json['hosted_payment_method_save'] != null ? InvoicesHostedPaymentMethodSave.fromJson(json['hosted_payment_method_save'] as String) : null,
 ); }
 

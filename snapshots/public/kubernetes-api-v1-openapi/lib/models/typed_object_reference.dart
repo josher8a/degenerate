@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TypedObjectReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// TypedObjectReference contains enough information to let you locate the typed referenced object
-@immutable final class TypedObjectReference {const TypedObjectReference({this.apiGroup, this.kind = '', this.name = '', this.namespace, });
+@immutable final class TypedObjectReference {const TypedObjectReference({required this.kind, required this.name, this.apiGroup, this.namespace, });
 
 factory TypedObjectReference.fromJson(Map<String, dynamic> json) { return TypedObjectReference(
   apiGroup: json['apiGroup'] as String?,

@@ -27,7 +27,7 @@ RadarGetAiBotsTimeseriesResponseResult copyWith({RadarGetAiBotsTimeseriesGroupBy
           meta == other.meta &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(meta, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(meta, mapHash(additionalProperties));
 
 @override String toString() => 'RadarGetAiBotsTimeseriesResponseResult(meta: $meta, additionalProperties: $additionalProperties)';
 

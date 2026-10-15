@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// A data source config which specifies the metadata property of your logs query.
 /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
 /// 
-@immutable final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig({this.type = CodeInterpreterOutputLogsType.logs, this.metadata, });
+@immutable final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig({required this.type, this.metadata, });
 
 factory CreateEvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalLogsDataSourceConfig(
   type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),

@@ -60,7 +60,7 @@ factory WebhookMembershipAdded.fromJson(Map<String, dynamic> json) { return Webh
   action: WebhookInstallationRepositoriesAddedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
-  member: WebhooksUser.fromJson(json['member'] as Map<String, dynamic>),
+  member: json['member'] != null ? WebhooksUser.fromJson(json['member'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   scope: WebhookMembershipAddedScope.fromJson(json['scope'] as String),
@@ -74,7 +74,7 @@ final EnterpriseWebhooks? enterprise;
 
 final SimpleInstallation? installation;
 
-final WebhooksUser member;
+final WebhooksUser? member;
 
 final OrganizationSimpleWebhooks organization;
 
@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
-  'member': member.toJson(),
+  'member': member?.toJson(),
   'organization': organization.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'scope': scope.toJson(),
@@ -104,11 +104,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('scope') &&
       json.containsKey('sender') &&
       json.containsKey('team'); } 
-WebhookMembershipAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipAddedScope? scope, Sender? Function()? sender, WebhooksTeam? team, }) { return WebhookMembershipAdded(
+WebhookMembershipAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? Function()? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipAddedScope? scope, Sender? Function()? sender, WebhooksTeam? team, }) { return WebhookMembershipAdded(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
-  member: member ?? this.member,
+  member: member != null ? member() : this.member,
   organization: organization ?? this.organization,
   repository: repository != null ? repository() : this.repository,
   scope: scope ?? this.scope,

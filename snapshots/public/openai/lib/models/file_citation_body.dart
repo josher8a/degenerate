@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FileCitationBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation to a file.
-@immutable final class FileCitationBody {const FileCitationBody({required this.fileId, required this.index, required this.filename, this.type = 'file_citation', });
+@immutable final class FileCitationBody {const FileCitationBody({required this.type, required this.fileId, required this.index, required this.filename, });
 
 factory FileCitationBody.fromJson(Map<String, dynamic> json) { return FileCitationBody(
   type: json['type'] as String,

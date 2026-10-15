@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentRecordsIdReportRefundRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_amount.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_processor_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/refunded.dart';/// The outcome of the reported refund.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_amount.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_processor_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/refunded.dart';/// The outcome of the reported refund.
 sealed class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome();
 
 factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) { return switch (json) {
@@ -60,7 +60,7 @@ factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> js
   amount: json['amount'] != null ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   initiatedAt: json['initiated_at'] != null ? (json['initiated_at'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   outcome: PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(json['outcome'] as String),
   processorDetails: PostPaymentRecordsIdReportRefundRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   refunded: Refunded.fromJson(json['refunded'] as Map<String, dynamic>),

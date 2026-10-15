@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssuingCard
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/issuing_card/personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_card/replaced_by.dart';import 'package:pub_stripe_spec3/models/issuing_card/replacement_for.dart';import 'package:pub_stripe_spec3/models/issuing_card_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_card_fraud_warning.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping.dart';import 'package:pub_stripe_spec3/models/issuing_card_wallets.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';/// The reason why the card was canceled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/issuing_card/personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_card/replaced_by.dart';import 'package:pub_stripe_spec3/models/issuing_card/replacement_for.dart';import 'package:pub_stripe_spec3/models/issuing_card_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_card_fraud_warning.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping.dart';import 'package:pub_stripe_spec3/models/issuing_card_wallets.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';/// The reason why the card was canceled.
 sealed class IssuingCardCancellationReason {const IssuingCardCancellationReason();
 
 factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
@@ -255,9 +255,9 @@ factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   number: json['number'] as String?,
   object: IssuingCardObject.fromJson(json['object'] as String),
-  personalizationDesign: json.containsKey('personalization_design') ? Omittable(json['personalization_design'] != null ? OneOf2.parse(json['personalization_design'], fromA: (v) => v as String, fromB: (v) => IssuingPersonalizationDesign.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  replacedBy: json.containsKey('replaced_by') ? Omittable(json['replaced_by'] != null ? OneOf2.parse(json['replaced_by'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  replacementFor: json.containsKey('replacement_for') ? Omittable(json['replacement_for'] != null ? OneOf2.parse(json['replacement_for'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  personalizationDesign: json.containsKey('personalization_design') ? Omittable(json['personalization_design'] != null ? PersonalizationDesign.fromJson(json['personalization_design']) : null) : const Omittable.absent(),
+  replacedBy: json.containsKey('replaced_by') ? Omittable(json['replaced_by'] != null ? ReplacedBy.fromJson(json['replaced_by']) : null) : const Omittable.absent(),
+  replacementFor: json.containsKey('replacement_for') ? Omittable(json['replacement_for'] != null ? ReplacementFor.fromJson(json['replacement_for']) : null) : const Omittable.absent(),
   replacementReason: json.containsKey('replacement_reason') ? Omittable(json['replacement_reason'] != null ? IssuingCardReplacementReason.fromJson(json['replacement_reason'] as String) : null) : const Omittable.absent(),
   secondLine: json.containsKey('second_line') ? Omittable(json['second_line'] as String?) : const Omittable.absent(),
   shipping: json.containsKey('shipping') ? Omittable(json['shipping'] != null ? IssuingCardShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),

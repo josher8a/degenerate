@@ -83,23 +83,26 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class UserContentVariant2ImageUrl {const UserContentVariant2ImageUrl({this.detail = Detail.auto, this.url, });
+@immutable final class UserContentVariant2ImageUrl {const UserContentVariant2ImageUrl({this.detail, this.url, });
 
 factory UserContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) { return UserContentVariant2ImageUrl(
-  detail: json.containsKey('detail') ? Detail.fromJson(json['detail'] as String) : Detail.auto,
+  detail: json['detail'] != null ? Detail.fromJson(json['detail'] as String) : null,
   url: json['url'] as String?,
 ); }
 
-final Detail detail;
+final Detail? detail;
 
 final String? url;
 
+/// The value of `detail`, or its schema default when absent.
+Detail get detailOrDefault => detail ?? Detail.fromJson('auto');
+
 Map<String, dynamic> toJson() { return {
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detail', 'url'}.contains(key)); } 
-UserContentVariant2ImageUrl copyWith({Detail Function()? detail, String? Function()? url, }) { return UserContentVariant2ImageUrl(
+UserContentVariant2ImageUrl copyWith({Detail? Function()? detail, String? Function()? url, }) { return UserContentVariant2ImageUrl(
   detail: detail != null ? detail() : this.detail,
   url: url != null ? url() : this.url,
 ); } 

@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheTtl
 
 factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) { return ZonesCacheTtlByStatus(
   id: json['id'] != null ? ZonesCacheTtlByStatusId.fromJson(json['id'] as String) : null,
-  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ValueVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),))),
+  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ValueValue.fromJson(v))),
 ); }
 
 /// Enterprise customers can set cache time-to-live (TTL) based on the

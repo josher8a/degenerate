@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PauseResumeStopRecordingResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_one_recording_response/get_one_recording_response_data.dart';@immutable final class PauseResumeStopRecordingResponse {const PauseResumeStopRecordingResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_one_recording_response/get_one_recording_response_data.dart';@immutable final class PauseResumeStopRecordingResponse {const PauseResumeStopRecordingResponse({required this.success, this.data, });
 
 factory PauseResumeStopRecordingResponse.fromJson(Map<String, dynamic> json) { return PauseResumeStopRecordingResponse(
   data: json['data'] != null ? GetOneRecordingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

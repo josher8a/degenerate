@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "Web3HostnameApi" (12 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_create_ipfs_universal_path_gateway_content_list_entry_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_create_web3_hostname_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_delete_web3_hostname_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_details_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_edit_ipfs_universal_path_gateway_content_list_entry_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_edit_web3_hostname_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_ipfs_universal_path_gateway_content_list_details_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_ipfs_universal_path_gateway_content_list_entry_details_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_list_ipfs_universal_path_gateway_content_list_entries_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_list_web3_hostnames_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_update_ipfs_universal_path_gateway_content_list_error.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/web3_content_list_details.dart';import 'package:pub_cloudflare/models/web3_content_list_entry.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_collection_response/web3_content_list_entry_collection_response_result.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_create_request.dart';import 'package:pub_cloudflare/models/web3_content_list_update_request.dart';import 'package:pub_cloudflare/models/web3_create_request.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_modify_request.dart';import 'package:pub_cloudflare/models/web3_web3_hostname.dart';/// Web3HostnameApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_create_ipfs_universal_path_gateway_content_list_entry_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_create_web3_hostname_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_delete_web3_hostname_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_details_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_edit_ipfs_universal_path_gateway_content_list_entry_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_edit_web3_hostname_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_ipfs_universal_path_gateway_content_list_details_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_ipfs_universal_path_gateway_content_list_entry_details_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_list_ipfs_universal_path_gateway_content_list_entries_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_list_web3_hostnames_error.dart';import 'package:pub_cloudflare/models/errors/web3_hostname_update_ipfs_universal_path_gateway_content_list_error.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/web3_content_list_details.dart';import 'package:pub_cloudflare/models/web3_content_list_entry.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_collection_response/web3_content_list_entry_collection_response_result.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_create_request.dart';import 'package:pub_cloudflare/models/web3_content_list_update_request_request.dart';import 'package:pub_cloudflare/models/web3_create_request.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_modify_request.dart';import 'package:pub_cloudflare/models/web3_web3_hostname.dart';/// Web3HostnameApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -109,7 +109,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -130,7 +130,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -142,7 +142,7 @@ return execute(
 /// Update IPFS Universal Path Gateway Content List
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
-Future<ApiResult<Web3ContentListDetails, Web3HostnameUpdateIpfsUniversalPathGatewayContentListError>> web3HostnameUpdateIpfsUniversalPathGatewayContentList({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListDetails, Web3HostnameUpdateIpfsUniversalPathGatewayContentListError>> web3HostnameUpdateIpfsUniversalPathGatewayContentList({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListUpdateRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,7 +153,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -174,7 +174,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -197,7 +197,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -218,7 +218,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -241,7 +241,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -262,7 +262,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

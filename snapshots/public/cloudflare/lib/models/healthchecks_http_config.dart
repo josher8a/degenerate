@@ -2,26 +2,26 @@
 // Source: #/components/schemas/HealthchecksHttpConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_http_config/healthchecks_http_config_method.dart';/// Parameters specific to an HTTP or HTTPS health check.
-@immutable final class HealthchecksHttpConfig {const HealthchecksHttpConfig({this.allowInsecure = false, this.expectedBody = '', this.expectedCodes = const Omittable.absent(), this.followRedirects = false, this.header = const Omittable.absent(), this.method = HealthchecksHttpConfigMethod.$get, this.path = '/', this.port = 80, });
+@immutable final class HealthchecksHttpConfig {const HealthchecksHttpConfig({this.allowInsecure, this.expectedBody, this.expectedCodes = const Omittable.absent(), this.followRedirects, this.header = const Omittable.absent(), this.method, this.path, this.port, });
 
 factory HealthchecksHttpConfig.fromJson(Map<String, dynamic> json) { return HealthchecksHttpConfig(
-  allowInsecure: json.containsKey('allow_insecure') ? json['allow_insecure'] as bool : false,
-  expectedBody: json.containsKey('expected_body') ? json['expected_body'] as String : '',
+  allowInsecure: json['allow_insecure'] as bool?,
+  expectedBody: json['expected_body'] as String?,
   expectedCodes: json.containsKey('expected_codes') ? Omittable((json['expected_codes'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
-  followRedirects: json.containsKey('follow_redirects') ? json['follow_redirects'] as bool : false,
+  followRedirects: json['follow_redirects'] as bool?,
   header: json.containsKey('header') ? Omittable((json['header'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()))) : const Omittable.absent(),
-  method: json.containsKey('method') ? HealthchecksHttpConfigMethod.fromJson(json['method'] as String) : HealthchecksHttpConfigMethod.$get,
-  path: json.containsKey('path') ? json['path'] as String : '/',
-  port: json.containsKey('port') ? (json['port'] as num).toInt() : 80,
+  method: json['method'] != null ? HealthchecksHttpConfigMethod.fromJson(json['method'] as String) : null,
+  path: json['path'] as String?,
+  port: json['port'] != null ? (json['port'] as num).toInt() : null,
 ); }
 
 /// Do not validate the certificate when the health check uses HTTPS.
-final bool allowInsecure;
+final bool? allowInsecure;
 
 /// A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy.
 /// 
 /// Example: `'success'`
-final String expectedBody;
+final String? expectedBody;
 
 /// The expected HTTP response codes (e.g. "200") or code ranges (e.g. "2xx" for all codes starting with 2) of the health check.
 /// 
@@ -29,7 +29,7 @@ final String expectedBody;
 final Omittable<List<String>?> expectedCodes;
 
 /// Follow redirects if the origin returns a 3xx status code.
-final bool followRedirects;
+final bool? followRedirects;
 
 /// The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden.
 /// 
@@ -37,28 +37,46 @@ final bool followRedirects;
 final Omittable<Map<String,List<String>>?> header;
 
 /// The HTTP method to use for the health check.
-final HealthchecksHttpConfigMethod method;
+final HealthchecksHttpConfigMethod? method;
 
 /// The endpoint path to health check against.
 /// 
 /// Example: `'/health'`
-final String path;
+final String? path;
 
 /// Port number to connect to for the health check. Defaults to 80 if type is HTTP or 443 if type is HTTPS.
-final int port;
+final int? port;
+
+/// The value of `allowInsecure`, or its schema default when absent.
+bool get allowInsecureOrDefault => allowInsecure ?? false;
+
+/// The value of `expectedBody`, or its schema default when absent.
+String get expectedBodyOrDefault => expectedBody ?? '';
+
+/// The value of `followRedirects`, or its schema default when absent.
+bool get followRedirectsOrDefault => followRedirects ?? false;
+
+/// The value of `method`, or its schema default when absent.
+HealthchecksHttpConfigMethod get methodOrDefault => method ?? HealthchecksHttpConfigMethod.fromJson('GET');
+
+/// The value of `path`, or its schema default when absent.
+String get pathOrDefault => path ?? '/';
+
+/// The value of `port`, or its schema default when absent.
+int get portOrDefault => port ?? 80;
 
 Map<String, dynamic> toJson() { return {
-  'allow_insecure': allowInsecure,
-  'expected_body': expectedBody,
+  'allow_insecure': ?allowInsecure,
+  'expected_body': ?expectedBody,
   if (expectedCodes.isPresent) 'expected_codes': expectedCodes.value,
-  'follow_redirects': followRedirects,
+  'follow_redirects': ?followRedirects,
   if (header.isPresent) 'header': header.value,
-  'method': method.toJson(),
-  'path': path,
-  'port': port,
+  if (method != null) 'method': method?.toJson(),
+  'path': ?path,
+  'port': ?port,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'method', 'path', 'port'}.contains(key)); } 
-HealthchecksHttpConfig copyWith({bool Function()? allowInsecure, String Function()? expectedBody, Omittable<List<String>?>? expectedCodes, bool Function()? followRedirects, Omittable<Map<String,List<String>>?>? header, HealthchecksHttpConfigMethod Function()? method, String Function()? path, int Function()? port, }) { return HealthchecksHttpConfig(
+HealthchecksHttpConfig copyWith({bool? Function()? allowInsecure, String? Function()? expectedBody, Omittable<List<String>?>? expectedCodes, bool? Function()? followRedirects, Omittable<Map<String,List<String>>?>? header, HealthchecksHttpConfigMethod? Function()? method, String? Function()? path, int? Function()? port, }) { return HealthchecksHttpConfig(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   expectedBody: expectedBody != null ? expectedBody() : this.expectedBody,
   expectedCodes: expectedCodes ?? this.expectedCodes,

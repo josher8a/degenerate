@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitT
 
  }
 /// Confirmation payload returned after deleting a thread.
-@immutable final class DeletedThreadResource {const DeletedThreadResource({required this.id, required this.deleted, this.object = DeletedThreadResourceObject.chatkitThreadDeleted, });
+@immutable final class DeletedThreadResource {const DeletedThreadResource({required this.id, required this.object, required this.deleted, });
 
 factory DeletedThreadResource.fromJson(Map<String, dynamic> json) { return DeletedThreadResource(
   id: json['id'] as String,

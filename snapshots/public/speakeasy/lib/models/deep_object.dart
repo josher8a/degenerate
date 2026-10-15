@@ -11,7 +11,7 @@ factory DeepObject.fromJson(Map<String, dynamic> json) { return DeepObject(
   obj: SimpleObject.fromJson(json['obj'] as Map<String, dynamic>),
   map: (json['map'] as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObject.fromJson(v as Map<String, dynamic>))),
   arr: (json['arr'] as List<dynamic>).map((e) => SimpleObject.fromJson(e as Map<String, dynamic>)).toList(),
-  any: OneOf2.parse(json['any'], fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,),
+  any: Any.fromJson(json['any']),
   type: json['type'] as String?,
 ); }
 

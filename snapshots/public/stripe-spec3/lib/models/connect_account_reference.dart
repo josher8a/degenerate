@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ConnectAccountReference
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/connect_account_reference/connect_account_reference_type.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/connect_account_reference/connect_account_reference_type.dart';/// 
 @immutable final class ConnectAccountReference {const ConnectAccountReference({required this.type, this.account, });
 
 factory ConnectAccountReference.fromJson(Map<String, dynamic> json) { return ConnectAccountReference(
-  account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
+  account: json['account'] != null ? ApplicationFeeAccount.fromJson(json['account']) : null,
   type: ConnectAccountReferenceType.fromJson(json['type'] as String),
 ); }
 

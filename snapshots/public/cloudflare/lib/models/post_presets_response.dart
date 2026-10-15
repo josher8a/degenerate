@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPresetsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_presets_preset_id_response/delete_presets_preset_id_response_data.dart';@immutable final class PostPresetsResponse {const PostPresetsResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_presets_preset_id_response/delete_presets_preset_id_response_data.dart';@immutable final class PostPresetsResponse {const PostPresetsResponse({required this.data, required this.success, });
 
 factory PostPresetsResponse.fromJson(Map<String, dynamic> json) { return PostPresetsResponse(
   data: DeletePresetsPresetIdResponseData.fromJson(json['data'] as Map<String, dynamic>),

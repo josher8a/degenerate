@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneSubscriptionApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zone_subscription_create_zone_subscription_error.dart';import 'package:pub_cloudflare/models/errors/zone_subscription_details_error.dart';import 'package:pub_cloudflare/models/errors/zone_subscription_update_zone_subscription_error.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/subscription2.dart';import 'package:pub_cloudflare/models/subscription_response.dart';/// ZoneSubscriptionApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zone_subscription_create_zone_subscription_error.dart';import 'package:pub_cloudflare/models/errors/zone_subscription_details_error.dart';import 'package:pub_cloudflare/models/errors/zone_subscription_update_zone_subscription_error.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/request2.dart';import 'package:pub_cloudflare/models/subscription_response.dart';/// ZoneSubscriptionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -37,7 +37,7 @@ return execute(
 /// Create a zone subscription, either plan or add-ons.
 ///
 /// `POST /zones/{zone_id}/subscription`
-Future<ApiResult<SubscriptionResponse, ZoneSubscriptionCreateZoneSubscriptionError>> zoneSubscriptionCreateZoneSubscription({required Identifier zoneId, required Subscription2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionResponse, ZoneSubscriptionCreateZoneSubscriptionError>> zoneSubscriptionCreateZoneSubscription({required Identifier zoneId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -62,7 +62,7 @@ return execute(
 /// Updates zone subscriptions, either plan or add-ons.
 ///
 /// `PUT /zones/{zone_id}/subscription`
-Future<ApiResult<SubscriptionResponse, ZoneSubscriptionUpdateZoneSubscriptionError>> zoneSubscriptionUpdateZoneSubscription({required Identifier zoneId, required Subscription2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionResponse, ZoneSubscriptionUpdateZoneSubscriptionError>> zoneSubscriptionUpdateZoneSubscription({required Identifier zoneId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,7 +73,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;

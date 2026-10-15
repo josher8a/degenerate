@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
  }
 /// Configuration for a code interpreter container. Optionally specify the IDs of the files to run the code on.
-@immutable final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({this.type = AutoCodeInterpreterToolParamType.auto, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, });
+@immutable final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({required this.type, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, });
 
 factory AutoCodeInterpreterToolParam.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParam(
   type: AutoCodeInterpreterToolParamType.fromJson(json['type'] as String),
